@@ -1739,7 +1739,7 @@ gpm_manager_systemd_inhibit (GDBusProxy *proxy) {
     /* Should we define these elsewhere? */
     const char* arg_what = "handle-power-key:handle-suspend-key:handle-lid-switch";
     const char* arg_who = g_get_user_name ();
-    const char* arg_why = "Mate power manager handles these events";
+    const char* arg_why = "Cafe power manager handles these events";
     const char* arg_mode = "block";
 
 	egg_debug ("Inhibiting systemd sleep");

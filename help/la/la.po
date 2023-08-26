@@ -933,7 +933,7 @@ msgstr "De Hac Re"
 #. (itstool) path: section/para
 #: C/index.docbook:760
 msgid ""
-"CAFE Power Manager was written by Mate Development. To find more information"
+"CAFE Power Manager was written by Cafe Development. To find more information"
 " about CAFE Power Manager, please visit the <ulink url=\"https://github.com"
 "/cafe-desktop/cafe-power-manager\" type=\"http\"> <application>CAFE Power "
 "Manager</application> web page</ulink>. Origin power-manager was written by "

@@ -1134,7 +1134,7 @@ msgstr "Thoát sau khi nạp bộ quản lý (để gỡ lỗi)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
 msgid "CAFE Power Manager"
-msgstr "Bộ Quản Lý Điện Năng Mate"
+msgstr "Bộ Quản Lý Điện Năng Cafe"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1471,7 +1471,7 @@ msgstr "UPS đã quá hạn nên máy tính này sắp tắt máy."
 
 #: src/gpm-prefs.c:81
 msgid "CAFE Power Preferences"
-msgstr "Tùy thích Điện năng Mate"
+msgstr "Tùy thích Điện năng Cafe"
 
 #: src/gpm-prefs-core.c:238
 msgid "Shutdown"

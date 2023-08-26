@@ -9,7 +9,7 @@ Name=Brightness Applet
 Description=Adjusts Laptop panel brightness
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
 Icon=cafe-brightness-applet
-MateComponentId=OAFIID:CAFE_BrightnessApplet
+CafeComponentId=OAFIID:CAFE_BrightnessApplet
 X-CAFE-Bugzilla-Bugzilla=CAFE
 X-CAFE-Bugzilla-Product=cafe-power-manager
 X-CAFE-Bugzilla-Component=applets

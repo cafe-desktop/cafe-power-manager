@@ -45,7 +45,7 @@
 #define GPM_INHIBIT_APPLET_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), GPM_TYPE_INHIBIT_APPLET, GpmInhibitAppletClass))
 
 typedef struct{
-	MatePanelApplet parent;
+	CafePanelApplet parent;
 	/* applet state */
 	guint cookie;
 	/* the icon */
@@ -60,7 +60,7 @@ typedef struct{
 } GpmInhibitApplet;
 
 typedef struct{
-	MatePanelAppletClass	parent_class;
+	CafePanelAppletClass	parent_class;
 } GpmInhibitAppletClass;
 
 GType                gpm_inhibit_applet_get_type  (void);
@@ -76,7 +76,7 @@ static void	gpm_applet_size_allocate_cb     (GtkWidget *widget, GdkRectangle *al
 static void	gpm_applet_update_tooltip	(GpmInhibitApplet *applet);
 static gboolean	gpm_applet_click_cb		(GpmInhibitApplet *applet, GdkEventButton *event);
 static void	gpm_applet_dialog_about_cb	(GtkAction *action, gpointer data);
-static gboolean	gpm_applet_cb		        (MatePanelApplet *_applet, const gchar *iid, gpointer data);
+static gboolean	gpm_applet_cb		        (CafePanelApplet *_applet, const gchar *iid, gpointer data);
 static void	gpm_applet_destroy_cb		(GtkWidget *widget);
 
 #define GPM_INHIBIT_APPLET_ID		        "InhibitApplet"
@@ -496,7 +496,7 @@ gpm_inhibit_applet_init (GpmInhibitApplet *applet)
  * the function called by libcafe-panel-applet factory after creation
  **/
 static gboolean
-gpm_applet_cb (MatePanelApplet *_applet, const gchar *iid, gpointer data)
+gpm_applet_cb (CafePanelApplet *_applet, const gchar *iid, gpointer data)
 {
 	GpmInhibitApplet *applet = GPM_INHIBIT_APPLET(_applet);
 	GtkActionGroup *action_group;

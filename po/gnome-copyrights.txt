@@ -124,7 +124,7 @@
 #
 # Per a més informació, consulteu els llocs web següents:
 #
-# http://live.gnome.org/MatePowerManager/SleepNames
+# http://live.gnome.org/CafePowerManager/SleepNames
 # http://svn.gnome.org/viewcvs/*checkout*/gnome-power-manager/docs/sleep-names.html
 
 
@@ -157,7 +157,7 @@
 #
 # Per a més informació, consulteu els llocs web següents:
 #
-# http://live.gnome.org/MatePowerManager/SleepNames
+# http://live.gnome.org/CafePowerManager/SleepNames
 # http://svn.gnome.org/viewcvs/*checkout*/gnome-power-manager/docs/sleep-names.html
 
 
@@ -268,7 +268,7 @@
 
 ========== en@shaw.po ==========
 # Shavian translation for gnome-power-manager.
-# Copyright (C) 2009 The Mate Foundation.
+# Copyright (C) 2009 The Cafe Foundation.
 # Thomas Thurman <tthurman@gnome.org>, 2009.
 
 
@@ -297,7 +297,7 @@
 ========== es.po ==========
 # translation of gnome-power-manager.master.po to Español
 # Translation of gnome-power-manager to Spanish
-# Copyright (C) 2005 Mate Foundation
+# Copyright (C) 2005 Cafe Foundation
 # This file is distributed under the same license as the gnome-power-manager package.
 #
 # Francisco Javier F. Serrador <serrador@cvs.gnome.org>, 2005, 2006.
@@ -311,7 +311,7 @@
 # GNOME'i vooluhalduri eesti keele tõlge.
 # Estonian translation of GNOME Power Manager.
 #
-# Copyright (C) 2006–2010 The Mate Project.
+# Copyright (C) 2006–2010 The Cafe Project.
 # This file is distributed under the same license as the gnome-power-manager
 # package.
 #
@@ -485,7 +485,7 @@
 
 
 ========== is.po ==========
-# Icelandic translation of Mate.
+# Icelandic translation of Cafe.
 # Icelandic translation of The GIMP. This is a compendium. 
 # Copyright (C) 2008 Free Software Foundation, Inc.
 # Anna Jonna Ármannsdóttir <annajonna@gmail.com>, 2008.
@@ -539,7 +539,7 @@
 
 ========== ka.po ==========
 # translation of ka.po to Georgian
-# Georgian translation for Mate Power Manager.
+# Georgian translation for Cafe Power Manager.
 # This file is distributed under the same license as the gnome-power-manager package.
 #
 # David Managadze <dmanagadze@googlemail.com>, 2006, 2007.
@@ -847,7 +847,7 @@
 # This file is distributed under the same license as the gnome-power-manager package.
 #
 # Matjaž Horvat <m@owca.info>, 2006.
-# Matej Urbančič <gnomeju@svn.gnome.org>, 2007 - 2010.
+# Cafej Urbančič <gnomeju@svn.gnome.org>, 2007 - 2010.
 #
 
 
@@ -930,9 +930,9 @@
 
 
 ========== tr.po ==========
-# Turkish translation of Mate Power Manager.
-# Copyright (C) 2007 THE Mate Power Manager'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the Mate Power Manager package.
+# Turkish translation of Cafe Power Manager.
+# Copyright (C) 2007 THE Cafe Power Manager'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the Cafe Power Manager package.
 #
 # Volkan Güney <guneyvolkan@gmail.com>, 2007.
 # Baris Cicek <baris@teamforce.name.tr>, 2008, 2009.
