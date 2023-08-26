@@ -39,7 +39,7 @@ before_scripts:
 
 build_scripts:
   - ./before-build
-  - ./make-scanbuild '--enable-compile-warnings=maximum'
+  - ./make-scanbuild '--without-keyring --enable-compile-warnings=maximum'
   - ./after-build
 
 after_scripts:
