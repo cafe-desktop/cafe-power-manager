@@ -5,11 +5,11 @@
 <policyconfig>
 
   <!--
-    Policy definitions for MATE Power Manager system-wide actions.
+    Policy definitions for CAFE Power Manager system-wide actions.
     Copyright (c) 2010 Richard Hughes <richard@hughsie.com>
   -->
 
-  <vendor>MATE Power Manager</vendor>
+  <vendor>CAFE Power Manager</vendor>
   <vendor_url>https://cafe-desktop.org</vendor_url>
   <icon_name>battery</icon_name>
 

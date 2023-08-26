@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -40,7 +40,7 @@ msgstr "调整笔记本屏幕亮度。"
 #: applets/brightness/brightness-applet.c:364
 #: applets/inhibit/inhibit-applet.c:225
 msgid "Cannot connect to cafe-power-manager"
-msgstr "无法连接到 MATE 电源管理器"
+msgstr "无法连接到 CAFE 电源管理器"
 
 #: applets/brightness/brightness-applet.c:366
 msgid "Cannot get laptop panel brightness"
@@ -772,8 +772,8 @@ msgstr "配置电源管理"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
-msgstr "MATE;power;management;preferences;settings;"
+msgid "CAFE;power;management;preferences;settings;"
+msgstr "CAFE;power;management;preferences;settings;"
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
 #: src/gpm-statistics.c:1090 src/gpm-statistics.c:1577
@@ -960,8 +960,8 @@ msgid "Get the number of brightness levels supported"
 msgstr "获取支持的亮度级数"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
-msgstr "MATE 电源管理器背光助手"
+msgid "CAFE Power Manager Backlight Helper"
+msgstr "CAFE 电源管理器背光助手"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1099,8 +1099,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "在管理器加载后退出(用于调试)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "MATE 电源管理器"
+msgid "CAFE Power Manager"
+msgstr "CAFE 电源管理器"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1432,8 +1432,8 @@ msgid ""
 msgstr "UPS 电量将用尽，计算机将开始关机。"
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
-msgstr "MATE 电源首选项"
+msgid "CAFE Power Preferences"
+msgstr "CAFE 电源首选项"
 
 #: src/gpm-prefs-core.c:238
 msgid "Shutdown"
@@ -1798,8 +1798,8 @@ msgid "Processor"
 msgstr "处理器"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
-msgstr "版权所有 © 2011-2018 MATE 开发者"
+msgid "Copyright © 2011-2018 CAFE developers"
+msgstr "版权所有 © 2011-2018 CAFE 开发者"
 
 #: src/gpm-tray-icon.c:193
 msgid "translator-credits"

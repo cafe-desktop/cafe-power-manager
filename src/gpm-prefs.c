@@ -78,9 +78,9 @@ main (int argc, char **argv)
 		{ NULL}
 	};
 
-	context = g_option_context_new (N_("MATE Power Preferences"));
+	context = g_option_context_new (N_("CAFE Power Preferences"));
 
-	bindtextdomain (GETTEXT_PACKAGE, MATELOCALEDIR);
+	bindtextdomain (GETTEXT_PACKAGE, CAFELOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 

@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -33,7 +33,7 @@ msgstr "Ajusta la brillantor de la pantalla de l'ordinador portàtil."
 #: applets/brightness/brightness-applet.c:364
 #: applets/inhibit/inhibit-applet.c:225
 msgid "Cannot connect to cafe-power-manager"
-msgstr "No s'ha pogut establir la connexió amb el gestor d'energia del MATE"
+msgstr "No s'ha pogut establir la connexió amb el gestor d'energia del CAFE"
 
 #: applets/brightness/brightness-applet.c:366
 msgid "Cannot get laptop panel brightness"
@@ -85,7 +85,7 @@ msgid ""
 "02110-1301, USA."
 msgstr ""
 "Hauríeu d'haver rebut una còpia de la Llicència Pública General GNU\n"
-"juntament amb el gestor d'energia del MATE; en cas contrari, escriviu a la\n"
+"juntament amb el gestor d'energia del CAFE; en cas contrari, escriviu a la\n"
 "Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,\n"
 "MA 02110-1301, USA."
 
@@ -511,7 +511,7 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:166
 msgid "Use cafe-screensaver lock setting"
-msgstr "Utilitza les opcions de bloqueig de l'estalvi de pantalla del MATE"
+msgstr "Utilitza les opcions de bloqueig de l'estalvi de pantalla del CAFE"
 
 #: data/org.cafe.power-manager.gschema.xml.in:167
 msgid ""
@@ -519,7 +519,7 @@ msgid ""
 "screen is locked after a hibernate, suspend or blank screen."
 msgstr ""
 "Indica si s'utilitzen els paràmetres de bloqueig de pantalla de l'estalvi de"
-" pantalla del MATE per a decidir si s'ha de bloquejar la pantalla després "
+" pantalla del CAFE per a decidir si s'ha de bloquejar la pantalla després "
 "d'una hibernació, d'una parada temporal o d'un enfosquiment de la pantalla."
 
 #: data/org.cafe.power-manager.gschema.xml.in:171
@@ -944,7 +944,7 @@ msgstr "Configureu la gestió d'energia"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
+msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
@@ -1132,8 +1132,8 @@ msgid "Get the number of brightness levels supported"
 msgstr "Obtín el nombre de nivells de brillantor admesos"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
-msgstr "Ajudant de la retroil·luminació del gestor d'energia del MATE"
+msgid "CAFE Power Manager Backlight Helper"
+msgstr "Ajudant de la retroil·luminació del gestor d'energia del CAFE"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1275,8 +1275,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "Ix després que s'haja carregat el gestor (útil en depurar)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "Gestor d'energia del MATE"
+msgid "CAFE Power Manager"
+msgstr "Gestor d'energia del CAFE"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1643,8 +1643,8 @@ msgstr ""
 "se."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
-msgstr "Preferències de l'energia del MATE"
+msgid "CAFE Power Preferences"
+msgstr "Preferències de l'energia del CAFE"
 
 #: src/gpm-prefs-core.c:238
 msgid "Shutdown"
@@ -2014,8 +2014,8 @@ msgid "Processor"
 msgstr "Processador"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
-msgstr "Drets d'autor © 2011-2018 els desenvolupadors del MATE"
+msgid "Copyright © 2011-2018 CAFE developers"
+msgstr "Drets d'autor © 2011-2018 els desenvolupadors del CAFE"
 
 #: src/gpm-tray-icon.c:193
 msgid "translator-credits"

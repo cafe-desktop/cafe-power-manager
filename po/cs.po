@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -465,7 +465,7 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:166
 msgid "Use cafe-screensaver lock setting"
-msgstr "Používat nastavení zamykání šetřiče obrazovky MATE"
+msgstr "Používat nastavení zamykání šetřiče obrazovky CAFE"
 
 #: data/org.cafe.power-manager.gschema.xml.in:167
 msgid ""
@@ -860,8 +860,8 @@ msgstr "Nastavit správu napájení"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
-msgstr "MATE;napájení;správa;předvolby;nastavení;"
+msgid "CAFE;power;management;preferences;settings;"
+msgstr "CAFE;napájení;správa;předvolby;nastavení;"
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
 #: src/gpm-statistics.c:1090 src/gpm-statistics.c:1577
@@ -1048,8 +1048,8 @@ msgid "Get the number of brightness levels supported"
 msgstr "Získat počet podporovaných úrovní jasu"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
-msgstr "Pomoc s podsvícením ve Správci napájení MATE"
+msgid "CAFE Power Manager Backlight Helper"
+msgstr "Pomoc s podsvícením ve Správci napájení CAFE"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1199,8 +1199,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "Ukončit poté, co se načte správce (pro účely ladění programu)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "Správce napájení MATE"
+msgid "CAFE Power Manager"
+msgstr "Správce napájení CAFE"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1565,8 +1565,8 @@ msgstr ""
 "vypnut."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
-msgstr "Nastavení napájení MATE"
+msgid "CAFE Power Preferences"
+msgstr "Nastavení napájení CAFE"
 
 #: src/gpm-prefs-core.c:238
 msgid "Shutdown"
@@ -1946,8 +1946,8 @@ msgid "Processor"
 msgstr "Procesor"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
-msgstr "Copyright © 2011-2018 Vývojáři MATE"
+msgid "Copyright © 2011-2018 CAFE developers"
+msgstr "Copyright © 2011-2018 Vývojáři CAFE"
 
 #: src/gpm-tray-icon.c:193
 msgid "translator-credits"

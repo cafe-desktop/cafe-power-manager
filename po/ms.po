@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -864,8 +864,8 @@ msgstr "Konfigur pengurusan kuasa"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
-msgstr "MATE;kuasa;pengurusan;keutamaan;tetapan;"
+msgid "CAFE;power;management;preferences;settings;"
+msgstr "CAFE;kuasa;pengurusan;keutamaan;tetapan;"
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
 #: src/gpm-statistics.c:1090 src/gpm-statistics.c:1577
@@ -1052,8 +1052,8 @@ msgid "Get the number of brightness levels supported"
 msgstr "Dapatkan sokongan tahap bilangan kecerahan"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
-msgstr "Pembantu Cahaya Latar MATE Power Manager"
+msgid "CAFE Power Manager Backlight Helper"
+msgstr "Pembantu Cahaya Latar CAFE Power Manager"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1191,8 +1191,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "Keluar selepas pengurus dimuatkan (untuk penyahpepijatan)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "Pengurus Kuasa MATE"
+msgid "CAFE Power Manager"
+msgstr "Pengurus Kuasa CAFE"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1549,8 +1549,8 @@ msgid ""
 msgstr "UPS dibawah tahap kritikal dan komputer akan dimatikan."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
-msgstr "Keutamaan Kuasa MATE"
+msgid "CAFE Power Preferences"
+msgstr "Keutamaan Kuasa CAFE"
 
 #: src/gpm-prefs-core.c:238
 msgid "Shutdown"
@@ -1915,8 +1915,8 @@ msgid "Processor"
 msgstr "Pemproses"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
-msgstr "Hakcipta © 2011-2018 pembangun MATE"
+msgid "Copyright © 2011-2018 CAFE developers"
+msgstr "Hakcipta © 2011-2018 pembangun CAFE"
 
 #: src/gpm-tray-icon.c:193
 msgid "translator-credits"

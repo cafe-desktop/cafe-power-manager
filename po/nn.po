@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -806,7 +806,7 @@ msgstr "Set opp straumstyring"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
+msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
@@ -994,7 +994,7 @@ msgid "Get the number of brightness levels supported"
 msgstr ""
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
+msgid "CAFE Power Manager Backlight Helper"
 msgstr ""
 
 #: src/gpm-backlight-helper.c:192
@@ -1137,8 +1137,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "Avslutt når tenesten har starta (for feilsøking)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "MATE straumstyring"
+msgid "CAFE Power Manager"
+msgstr "CAFE straumstyring"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1480,7 +1480,7 @@ msgstr ""
 "UPSen er under kritisk nivå og datamaskina er i ferd med å slå seg av."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
+msgid "CAFE Power Preferences"
 msgstr "Innstillingar for straum"
 
 #: src/gpm-prefs-core.c:238
@@ -1851,7 +1851,7 @@ msgid "Processor"
 msgstr "Prosessor"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
+msgid "Copyright © 2011-2018 CAFE developers"
 msgstr ""
 
 #: src/gpm-tray-icon.c:193

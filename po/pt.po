@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -885,8 +885,8 @@ msgstr "Configurar o gestor de energia"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
-msgstr "MATE;energia;gestor;preferências;definições;"
+msgid "CAFE;power;management;preferences;settings;"
+msgstr "CAFE;energia;gestor;preferências;definições;"
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
 #: src/gpm-statistics.c:1090 src/gpm-statistics.c:1577
@@ -1073,8 +1073,8 @@ msgid "Get the number of brightness levels supported"
 msgstr "Obter o número de níveis de brilho suportados"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
-msgstr "Assistente de Iluminação de Ecrã do Gestor de Energia do MATE"
+msgid "CAFE Power Manager Backlight Helper"
+msgstr "Assistente de Iluminação de Ecrã do Gestor de Energia do CAFE"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1216,8 +1216,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "Terminar após o gestor ter sido lido (para depuração)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "Gestor de Energia do MATE"
+msgid "CAFE Power Manager"
+msgstr "Gestor de Energia do CAFE"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1585,8 +1585,8 @@ msgstr ""
 "A UPS está abaixo do nível grave e o computador está prestes a desligar-se."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
-msgstr "Preferências de Energia do MATE"
+msgid "CAFE Power Preferences"
+msgstr "Preferências de Energia do CAFE"
 
 #: src/gpm-prefs-core.c:238
 msgid "Shutdown"
@@ -1956,8 +1956,8 @@ msgid "Processor"
 msgstr "Processador"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
-msgstr "Direitos de Autor © 2011-2018 MATE - Programadores"
+msgid "Copyright © 2011-2018 CAFE developers"
+msgstr "Direitos de Autor © 2011-2018 CAFE - Programadores"
 
 #: src/gpm-tray-icon.c:193
 msgid "translator-credits"

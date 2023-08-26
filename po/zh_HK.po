@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -33,7 +33,7 @@ msgstr "調整手提電腦面板亮度。"
 #: applets/brightness/brightness-applet.c:364
 #: applets/inhibit/inhibit-applet.c:225
 msgid "Cannot connect to cafe-power-manager"
-msgstr "無法連線至 MATE 電源管理程式"
+msgstr "無法連線至 CAFE 電源管理程式"
 
 #: applets/brightness/brightness-applet.c:366
 msgid "Cannot get laptop panel brightness"
@@ -765,7 +765,7 @@ msgstr "設定電源管理程式"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
+msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
@@ -953,8 +953,8 @@ msgid "Get the number of brightness levels supported"
 msgstr "支援取得亮度等級的數字"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
-msgstr "MATE 電源管理背光協助程式"
+msgid "CAFE Power Manager Backlight Helper"
+msgstr "CAFE 電源管理背光協助程式"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1092,8 +1092,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "當管理員載入後離開（偵錯用）"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "MATE 電源管理程式"
+msgid "CAFE Power Manager"
+msgstr "CAFE 電源管理程式"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1425,8 +1425,8 @@ msgid ""
 msgstr "不斷電系統的電量已處於極低的程度，這台電腦即將關機。"
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
-msgstr "MATE 電源偏好設定"
+msgid "CAFE Power Preferences"
+msgstr "CAFE 電源偏好設定"
 
 #: src/gpm-prefs-core.c:238
 msgid "Shutdown"
@@ -1791,7 +1791,7 @@ msgid "Processor"
 msgstr "處理器"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
+msgid "Copyright © 2011-2018 CAFE developers"
 msgstr ""
 
 #: src/gpm-tray-icon.c:193

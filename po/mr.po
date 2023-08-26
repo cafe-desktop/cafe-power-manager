@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -829,7 +829,7 @@ msgstr "पावर व्यवस्थापन संयोजीत कर
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
+msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
@@ -1018,8 +1018,8 @@ msgid "Get the number of brightness levels supported"
 msgstr "समर्थित तेजस्वीपणा पातळ्यांची संख्या द्या"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
-msgstr "MATE पावर व्यवस्थापक बॅकलाईट मदतनीस"
+msgid "CAFE Power Manager Backlight Helper"
+msgstr "CAFE पावर व्यवस्थापक बॅकलाईट मदतनीस"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1161,8 +1161,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "व्यवस्थापक दाखल केल्यावर बाहेर पडा (फक्त दोष निर्धारण करीता)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "MATE पावर व्यवस्थापक"
+msgid "CAFE Power Manager"
+msgstr "CAFE पावर व्यवस्थापक"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1527,8 +1527,8 @@ msgstr ""
 "UPS गंभीररित्या स्थरावर कार्यरत आहे व हा संगणक बंद होण्याच्या मार्गावर आहे."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
-msgstr "MATE पावर प्राधान्यता"
+msgid "CAFE Power Preferences"
+msgstr "CAFE पावर प्राधान्यता"
 
 #: src/gpm-prefs-core.c:238
 msgid "Shutdown"
@@ -1898,7 +1898,7 @@ msgid "Processor"
 msgstr "प्रोसेसर"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
+msgid "Copyright © 2011-2018 CAFE developers"
 msgstr ""
 
 #: src/gpm-tray-icon.c:193

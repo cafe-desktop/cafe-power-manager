@@ -302,7 +302,7 @@ msd_osd_window_style_updated (GtkWidget *widget)
 
         GTK_WIDGET_CLASS (msd_osd_window_parent_class)->style_updated (widget);
 
-        /* We set our border width to 12 (per the MATE standard), plus the
+        /* We set our border width to 12 (per the CAFE standard), plus the
          * padding of the frame that we draw in our expose handler.  This will
          * make our child be 12 pixels away from the frame.
          */

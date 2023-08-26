@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -37,7 +37,7 @@ msgstr "Dizüstü parlaklığını ayarlar."
 #: applets/brightness/brightness-applet.c:364
 #: applets/inhibit/inhibit-applet.c:225
 msgid "Cannot connect to cafe-power-manager"
-msgstr "MATE Güç Yöneticisi'ne bağlanılamıyor"
+msgstr "CAFE Güç Yöneticisi'ne bağlanılamıyor"
 
 #: applets/brightness/brightness-applet.c:366
 msgid "Cannot get laptop panel brightness"
@@ -862,7 +862,7 @@ msgstr "Güç yönetimini yapılandır"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
+msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
@@ -1050,8 +1050,8 @@ msgid "Get the number of brightness levels supported"
 msgstr "Desteklenen parlaklık seviyeleri sayısını al"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
-msgstr "MATE Güç Yönetimi Arkaışık Yardımcısı"
+msgid "CAFE Power Manager Backlight Helper"
+msgstr "CAFE Güç Yönetimi Arkaışık Yardımcısı"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1193,8 +1193,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "Yönetici yüklendikten sonra çık (hata ayıklama için)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "MATE Güç Yöneticisi"
+msgid "CAFE Power Manager"
+msgstr "CAFE Güç Yöneticisi"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1559,8 +1559,8 @@ msgid ""
 msgstr "UPS tehlikeli seviyenin altında ve bu bilgisayar kapatılmak üzere."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
-msgstr "MATE Güç Tercihleri"
+msgid "CAFE Power Preferences"
+msgstr "CAFE Güç Tercihleri"
 
 #: src/gpm-prefs-core.c:238
 msgid "Shutdown"
@@ -1930,8 +1930,8 @@ msgid "Processor"
 msgstr "İşlemci"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
-msgstr "Telif hakkı © 2011-2018 MATE geliştiricileri"
+msgid "Copyright © 2011-2018 CAFE developers"
+msgstr "Telif hakkı © 2011-2018 CAFE geliştiricileri"
 
 #: src/gpm-tray-icon.c:193
 msgid "translator-credits"
@@ -1941,7 +1941,7 @@ msgstr ""
 "Görkem Çetin <gorkem@gelecek.com.tr>, 2002/2003.\n"
 "Barış Çicek <baris@teamforce.name.tr>, 2004, 2008, 2009.\n"
 "Muhammet Kara <muhammet.k@gmail.com>, 2011.\n"
-"MATE projesine katkıda bulunanlar:\n"
+"CAFE projesine katkıda bulunanlar:\n"
 "hsngrms <dead-bodies-everywhere@hotmail.com>, 2012\n"
 "mauron, 2012, 2013, 2014, 2015, 2016, 2017, 2018\n"
 "Atilla Öntaş <tarakbumba@gmail.com>, 2014\n"

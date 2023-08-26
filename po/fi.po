@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -36,7 +36,7 @@ msgstr "Säädä näytön kirkkautta."
 #: applets/brightness/brightness-applet.c:364
 #: applets/inhibit/inhibit-applet.c:225
 msgid "Cannot connect to cafe-power-manager"
-msgstr "MATEn virrankäytön hallintaan ei saada yhteyttä"
+msgstr "CAFEn virrankäytön hallintaan ei saada yhteyttä"
 
 #: applets/brightness/brightness-applet.c:366
 msgid "Cannot get laptop panel brightness"
@@ -813,7 +813,7 @@ msgstr "Virransäästöasetusten hallinta"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
+msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
@@ -1001,8 +1001,8 @@ msgid "Get the number of brightness levels supported"
 msgstr "Hae tuettujen kirkkausasteiden lukumäärä"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
-msgstr "MATEn virranhallinnan taustavaloavustin"
+msgid "CAFE Power Manager Backlight Helper"
+msgstr "CAFEn virranhallinnan taustavaloavustin"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1144,8 +1144,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "Sulje hallintaohjelman käynnistyttyä (tarkoitettu vianetsintään)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "MATEn virranhallinta"
+msgid "CAFE Power Manager"
+msgstr "CAFEn virranhallinta"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1489,8 +1489,8 @@ msgid ""
 msgstr "UPSin lataus on alle kriittisen arvon ja siksi tietokone sammutetaan."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
-msgstr "MATEn virrankäytön asetukset"
+msgid "CAFE Power Preferences"
+msgstr "CAFEn virrankäytön asetukset"
 
 #: src/gpm-prefs-core.c:238
 msgid "Shutdown"
@@ -1860,7 +1860,7 @@ msgid "Processor"
 msgstr "Suoritin"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
+msgid "Copyright © 2011-2018 CAFE developers"
 msgstr ""
 
 #: src/gpm-tray-icon.c:193

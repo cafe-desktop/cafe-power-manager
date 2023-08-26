@@ -1,6 +1,6 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: t; c-basic-offset: 8 -*-
  *
- * MATE Power Manager Inhibit Applet
+ * CAFE Power Manager Inhibit Applet
  * Copyright (C) 2006 Benjamin Canou <bookeldor@gmail.com>
  * Copyright (C) 2006-2009 Richard Hughes <richard@hughsie.com>
  *
@@ -86,8 +86,8 @@ static void	gpm_applet_destroy_cb		(GtkWidget *widget);
 #define GPM_INHIBIT_APPLET_ICON_UNINHIBIT	"gpm-hibernate"
 #define GPM_INHIBIT_APPLET_NAME			_("Power Manager Inhibit Applet")
 #define GPM_INHIBIT_APPLET_DESC			_("Allows user to inhibit automatic power saving.")
-#define MATE_PANEL_APPLET_VERTICAL(p)					\
-	 (((p) == MATE_PANEL_APPLET_ORIENT_LEFT) || ((p) == MATE_PANEL_APPLET_ORIENT_RIGHT))
+#define CAFE_PANEL_APPLET_VERTICAL(p)					\
+	 (((p) == CAFE_PANEL_APPLET_ORIENT_LEFT) || ((p) == CAFE_PANEL_APPLET_ORIENT_RIGHT))
 
 
 /** cookie is returned as an unsigned integer */
@@ -193,14 +193,14 @@ gpm_applet_size_allocate_cb (GtkWidget    *widget,
 	GpmInhibitApplet *applet = GPM_INHIBIT_APPLET (widget);
 	int               size = 0;
 
-	switch (cafe_panel_applet_get_orient (MATE_PANEL_APPLET (applet))) {
-		case MATE_PANEL_APPLET_ORIENT_LEFT:
-		case MATE_PANEL_APPLET_ORIENT_RIGHT:
+	switch (cafe_panel_applet_get_orient (CAFE_PANEL_APPLET (applet))) {
+		case CAFE_PANEL_APPLET_ORIENT_LEFT:
+		case CAFE_PANEL_APPLET_ORIENT_RIGHT:
 			size = allocation->width;
 			break;
 
-		case MATE_PANEL_APPLET_ORIENT_UP:
-		case MATE_PANEL_APPLET_ORIENT_DOWN:
+		case CAFE_PANEL_APPLET_ORIENT_UP:
+		case CAFE_PANEL_APPLET_ORIENT_DOWN:
 			size = allocation->height;
 			break;
 	}
@@ -310,7 +310,7 @@ gpm_applet_dialog_about_cb (GtkAction *action, gpointer data)
 	                       "title", _("About Power Manager Inhibit Applet"),
 	                       "comments", GPM_INHIBIT_APPLET_DESC,
 	                       "copyright", _("Copyright \xC2\xA9 2006-2007 Richard Hughes\n"
-	                                      "Copyright \xC2\xA9 2011-2020 MATE developers"),
+	                                      "Copyright \xC2\xA9 2011-2020 CAFE developers"),
 	                       "icon-name", GPM_INHIBIT_APPLET_ICON_INHIBIT,
 	                       "logo-icon-name", GPM_INHIBIT_APPLET_ICON_INHIBIT,
 	                       "license", license_trans,
@@ -467,7 +467,7 @@ gpm_inhibit_applet_init (GpmInhibitApplet *applet)
 				  applet, NULL);
 
 	/* prepare */
-	cafe_panel_applet_set_flags (MATE_PANEL_APPLET (applet), MATE_PANEL_APPLET_EXPAND_MINOR);
+	cafe_panel_applet_set_flags (CAFE_PANEL_APPLET (applet), CAFE_PANEL_APPLET_EXPAND_MINOR);
 	applet->image = gtk_image_new();
 	gtk_container_add (GTK_CONTAINER (applet), applet->image);
 
@@ -522,7 +522,7 @@ gpm_applet_cb (MatePanelApplet *_applet, const gchar *iid, gpointer data)
 				      G_N_ELEMENTS (menu_actions),
 				      applet);
 	ui_path = g_build_filename (INHIBIT_MENU_UI_DIR, "inhibit-applet-menu.xml", NULL);
-	cafe_panel_applet_setup_menu_from_file (MATE_PANEL_APPLET (applet), ui_path, action_group);
+	cafe_panel_applet_setup_menu_from_file (CAFE_PANEL_APPLET (applet), ui_path, action_group);
 	g_free (ui_path);
 	g_object_unref (action_group);
 
@@ -532,7 +532,7 @@ gpm_applet_cb (MatePanelApplet *_applet, const gchar *iid, gpointer data)
 /**
  * this generates a main with a applet factory
  **/
-MATE_PANEL_APPLET_OUT_PROCESS_FACTORY
+CAFE_PANEL_APPLET_OUT_PROCESS_FACTORY
  (/* the factory iid */
  GPM_INHIBIT_APPLET_FACTORY_ID,
  /* generates brighness applets instead of regular cafe applets  */

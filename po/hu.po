@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -38,7 +38,7 @@ msgstr "A noteszgépkijelző fényerejét szabályozza."
 #: applets/brightness/brightness-applet.c:364
 #: applets/inhibit/inhibit-applet.c:225
 msgid "Cannot connect to cafe-power-manager"
-msgstr "Nem lehet csatlakozni a MATE Energiakezelőhöz."
+msgstr "Nem lehet csatlakozni a CAFE Energiakezelőhöz."
 
 #: applets/brightness/brightness-applet.c:366
 msgid "Cannot get laptop panel brightness"
@@ -548,7 +548,7 @@ msgid ""
 "Whether the GNOME keyring is locked before the computer enters suspend. This"
 " means the keyring will have to be unlocked on resume."
 msgstr ""
-"A MATE kulcstartó zárolásra kerüljön-e a számítógép felfüggesztése előtt. Ez"
+"A CAFE kulcstartó zárolásra kerüljön-e a számítógép felfüggesztése előtt. Ez"
 " azt jelenti, hogy folytatáskor fel kell oldania a kulcstartó zárolását."
 
 #: data/org.cafe.power-manager.gschema.xml.in:192
@@ -556,7 +556,7 @@ msgid ""
 "Whether the GNOME keyring is locked before the computer enters hibernate. "
 "This means the keyring will have to be unlocked on resume."
 msgstr ""
-"A MATE kulcstartó zárolásra kerüljön-e a számítógép hibernálása előtt. Ez "
+"A CAFE kulcstartó zárolásra kerüljön-e a számítógép hibernálása előtt. Ez "
 "azt jelenti, hogy folytatáskor fel kell oldania a kulcstartó zárolását."
 
 #: data/org.cafe.power-manager.gschema.xml.in:196
@@ -895,7 +895,7 @@ msgstr "Energiagazdálkodás beállítása"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
+msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
@@ -1083,8 +1083,8 @@ msgid "Get the number of brightness levels supported"
 msgstr "A támogatott fényerőszintek számának lekérése"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
-msgstr "MATE Energiakezelő háttérvilágítás-segéd"
+msgid "CAFE Power Manager Backlight Helper"
+msgstr "CAFE Energiakezelő háttérvilágítás-segéd"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1226,8 +1226,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "Kilépés a felügyelő betöltése után (hibakereséshez)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "MATE Energiakezelő"
+msgid "CAFE Power Manager"
+msgstr "CAFE Energiakezelő"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1597,8 +1597,8 @@ msgstr ""
 "készül."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
-msgstr "A MATE energiagazdálkodási beállításai"
+msgid "CAFE Power Preferences"
+msgstr "A CAFE energiagazdálkodási beállításai"
 
 #: src/gpm-prefs-core.c:238
 msgid "Shutdown"
@@ -1968,8 +1968,8 @@ msgid "Processor"
 msgstr "Processzor"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
-msgstr "Copyright © 2011-2018 MATE fejlesztők"
+msgid "Copyright © 2011-2018 CAFE developers"
+msgstr "Copyright © 2011-2018 CAFE fejlesztők"
 
 #: src/gpm-tray-icon.c:193
 msgid "translator-credits"

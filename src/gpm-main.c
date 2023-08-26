@@ -180,17 +180,17 @@ main (int argc, char *argv[])
 	};
 
 	setlocale (LC_ALL, "");
-	bindtextdomain (GETTEXT_PACKAGE, MATELOCALEDIR);
+	bindtextdomain (GETTEXT_PACKAGE, CAFELOCALEDIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
 	textdomain (GETTEXT_PACKAGE);
 
 	dbus_g_thread_init ();
 
-	context = g_option_context_new (N_("MATE Power Manager"));
+	context = g_option_context_new (N_("CAFE Power Manager"));
 	/* TRANSLATORS: program name, a simple app to view pending updates */
 	g_option_context_add_main_entries (context, options, GETTEXT_PACKAGE);
 	g_option_context_set_translation_domain(context, GETTEXT_PACKAGE);
-	g_option_context_set_summary (context, _("MATE Power Manager"));
+	g_option_context_set_summary (context, _("CAFE Power Manager"));
 	g_option_context_parse (context, &argc, &argv, NULL);
 
 	if (version) {
@@ -203,7 +203,7 @@ main (int argc, char *argv[])
 	gtk_init (&argc, &argv);
 	egg_debug_init (verbose);
 
-	egg_debug ("MATE %s %s", GPM_NAME, VERSION);
+	egg_debug ("CAFE %s %s", GPM_NAME, VERSION);
 
 	/* check dbus connections, exit if not valid */
 	system_connection = dbus_g_bus_get (DBUS_BUS_SYSTEM, &error);
