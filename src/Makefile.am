@@ -4,9 +4,9 @@ AUTOMAKE_OPTIONS = 1.7
 NULL =
 
 EXTRA_DIST =						\
-	org.mate.PowerManager.xml			\
-	org.mate.PowerManager.Backlight.xml		\
-	org.mate.PowerManager.KbdBacklight.xml		\
+	org.cafe.PowerManager.xml			\
+	org.cafe.PowerManager.Backlight.xml		\
+	org.cafe.PowerManager.KbdBacklight.xml		\
 	gpm-marshal.list				\
 	$(NULL)
 
@@ -42,18 +42,18 @@ AM_CPPFLAGS =						\
 AM_CPPFLAGS += $(NULL)
 
 bin_PROGRAMS =						\
-	mate-power-manager				\
-	mate-power-preferences				\
-	mate-power-statistics				\
+	cafe-power-manager				\
+	cafe-power-preferences				\
+	cafe-power-statistics				\
 	$(NULL)
 
 sbin_PROGRAMS =						\
-	mate-power-backlight-helper			\
+	cafe-power-backlight-helper			\
 	$(NULL)
 
 if HAVE_TESTS
 check_PROGRAMS =					\
-	mate-power-self-test
+	cafe-power-self-test
 endif
 
 noinst_LIBRARIES = libgpmshared.a
@@ -81,28 +81,28 @@ libgpmshared_a_SOURCES =				\
 	gpm-upower.c					\
 	gpm-upower.h
 
-mate_power_backlight_helper_SOURCES =			\
+cafe_power_backlight_helper_SOURCES =			\
 	gpm-backlight-helper.c				\
 	$(NULL)
 
-mate_power_backlight_helper_LDADD =			\
+cafe_power_backlight_helper_LDADD =			\
 	libgpmshared.a					\
 	$(GLIB_LIBS)					\
 	-lm
 
-mate_power_backlight_helper_CFLAGS =			\
+cafe_power_backlight_helper_CFLAGS =			\
 	$(WARN_CFLAGS)					\
 	$(NULL)
 
-mate-power-statistics-resources.h mate-power-statistics-resources.c: $(srcdir)/../data/org.mate.power-manager.statistics.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir)/../data $(srcdir)/../data/org.mate.power-manager.statistics.gresource.xml)
+cafe-power-statistics-resources.h cafe-power-statistics-resources.c: $(srcdir)/../data/org.cafe.power-manager.statistics.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir)/../data $(srcdir)/../data/org.cafe.power-manager.statistics.gresource.xml)
 	$(AM_V_GEN) XMLLINT=$(XMLLINT) $(GLIB_COMPILE_RESOURCES) --target $@ --sourcedir $(srcdir)/../data --generate --c-name statistics $<
 
-nodist_mate_power_statistics_SOURCES =			\
-	mate-power-statistics-resources.h		\
-	mate-power-statistics-resources.c		\
+nodist_cafe_power_statistics_SOURCES =			\
+	cafe-power-statistics-resources.h		\
+	cafe-power-statistics-resources.c		\
 	$(NULL)
 
-mate_power_statistics_SOURCES =				\
+cafe_power_statistics_SOURCES =				\
 	gpm-statistics.c				\
 	gpm-point-obj.c					\
 	gpm-point-obj.h					\
@@ -110,7 +110,7 @@ mate_power_statistics_SOURCES =				\
 	gpm-graph-widget.c				\
 	$(NULL)
 
-mate_power_statistics_LDADD =				\
+cafe_power_statistics_LDADD =				\
 	libgpmshared.a					\
 	$(GLIB_LIBS)					\
 	$(X11_LIBS)					\
@@ -119,25 +119,25 @@ mate_power_statistics_LDADD =				\
 	$(DBUS_LIBS)					\
 	-lm
 
-mate_power_statistics_CFLAGS =				\
+cafe_power_statistics_CFLAGS =				\
 	$(WARN_CFLAGS)					\
 	$(NULL)
 
-mate-power-preferences-resources.h mate-power-preferences-resources.c: $(srcdir)/../data/org.mate.power-manager.preferences.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir)/../data $(srcdir)/../data/org.mate.power-manager.preferences.gresource.xml)
+cafe-power-preferences-resources.h cafe-power-preferences-resources.c: $(srcdir)/../data/org.cafe.power-manager.preferences.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir)/../data $(srcdir)/../data/org.cafe.power-manager.preferences.gresource.xml)
 	$(AM_V_GEN) XMLLINT=$(XMLLINT) $(GLIB_COMPILE_RESOURCES) --target $@ --sourcedir $(srcdir)/../data --generate --c-name preferences $<
 
-nodist_mate_power_preferences_SOURCES =			\
-	mate-power-preferences-resources.h		\
-	mate-power-preferences-resources.c		\
+nodist_cafe_power_preferences_SOURCES =			\
+	cafe-power-preferences-resources.h		\
+	cafe-power-preferences-resources.c		\
 	$(NULL)
 
-mate_power_preferences_SOURCES =			\
+cafe_power_preferences_SOURCES =			\
 	gpm-prefs.c					\
 	gpm-prefs-core.h				\
 	gpm-prefs-core.c				\
 	$(NULL)
 
-mate_power_preferences_LDADD =				\
+cafe_power_preferences_LDADD =				\
 	libgpmshared.a					\
 	$(GLIB_LIBS)					\
 	$(X11_LIBS)					\
@@ -147,19 +147,19 @@ mate_power_preferences_LDADD =				\
 	$(UPOWER_LIBS)					\
 	-lm
 
-mate_power_preferences_CFLAGS =				\
+cafe_power_preferences_CFLAGS =				\
 	$(WARN_CFLAGS)					\
 	$(NULL)
 
-mate-power-manager-resources.h mate-power-manager-resources.c: $(srcdir)/../data/org.mate.power-manager.manager.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir)/../data $(srcdir)/../data/org.mate.power-manager.manager.gresource.xml)
+cafe-power-manager-resources.h cafe-power-manager-resources.c: $(srcdir)/../data/org.cafe.power-manager.manager.gresource.xml Makefile $(shell $(GLIB_COMPILE_RESOURCES) --generate-dependencies --sourcedir $(srcdir)/../data $(srcdir)/../data/org.cafe.power-manager.manager.gresource.xml)
 	$(AM_V_GEN) XMLLINT=$(XMLLINT) $(GLIB_COMPILE_RESOURCES) --target $@ --sourcedir $(srcdir)/../data --generate --c-name preferences $<
 
-nodist_mate_power_manager_SOURCES =			\
-	mate-power-manager-resources.h			\
-	mate-power-manager-resources.c			\
+nodist_cafe_power_manager_SOURCES =			\
+	cafe-power-manager-resources.h			\
+	cafe-power-manager-resources.c			\
 	$(NULL)
 
-mate_power_manager_SOURCES =				\
+cafe_power_manager_SOURCES =				\
 	gpm-dpms.h					\
 	gpm-dpms.c					\
 	gpm-phone.h					\
@@ -196,7 +196,7 @@ mate_power_manager_SOURCES =				\
 	gpm-engine.c					\
 	$(NULL)
 
-mate_power_manager_LDADD =				\
+cafe_power_manager_LDADD =				\
 	libgpmshared.a					\
 	$(GLIB_LIBS)					\
 	$(X11_LIBS)					\
@@ -211,12 +211,12 @@ mate_power_manager_LDADD =				\
 	$(UPOWER_LIBS)					\
 	-lm
 
-mate_power_manager_CFLAGS =				\
+cafe_power_manager_CFLAGS =				\
 	$(WARN_CFLAGS)					\
 	$(NULL)
 
 if HAVE_TESTS
-mate_power_self_test_SOURCES =				\
+cafe_power_self_test_SOURCES =				\
 	gpm-self-test.c					\
 	egg-color.h					\
 	egg-color.c					\
@@ -262,7 +262,7 @@ mate_power_self_test_SOURCES =				\
 	gpm-upower.c					\
 	$(NULL)
 
-mate_power_self_test_LDADD =				\
+cafe_power_self_test_LDADD =				\
 	$(GLIB_LIBS)					\
 	$(X11_LIBS)					\
 	$(CAIRO_LIBS)					\
@@ -275,7 +275,7 @@ mate_power_self_test_LDADD =				\
 	$(GPM_EXTRA_LIBS)				\
 	-lm
 
-mate_power_self_test_CFLAGS = 				\
+cafe_power_self_test_CFLAGS = 				\
 	-DEGG_TEST					\
 	$(AM_CFLAGS)					\
 	$(WARN_CFLAGS)					\
@@ -283,9 +283,9 @@ mate_power_self_test_CFLAGS = 				\
 endif
 
 BUILT_SOURCES = 					\
-	org.mate.PowerManager.h				\
-	org.mate.PowerManager.Backlight.h		\
-	org.mate.PowerManager.KbdBacklight.h		\
+	org.cafe.PowerManager.h				\
+	org.cafe.PowerManager.Backlight.h		\
+	org.cafe.PowerManager.KbdBacklight.h		\
 	gpm-marshal.c					\
 	gpm-marshal.h					\
 	$(NULL)
@@ -297,26 +297,26 @@ gpm-marshal.c: gpm-marshal.list
 gpm-marshal.h: gpm-marshal.list
 	@GLIB_GENMARSHAL@ $< --prefix=gpm_marshal --header > $@
 
-org.mate.PowerManager.h: org.mate.PowerManager.xml
+org.cafe.PowerManager.h: org.cafe.PowerManager.xml
 	$(LIBTOOL) --mode=execute dbus-binding-tool	\
 		--prefix=gpm_manager			\
 		--mode=glib-server			\
-		--output=org.mate.PowerManager.h	\
-		$(srcdir)/org.mate.PowerManager.xml
+		--output=org.cafe.PowerManager.h	\
+		$(srcdir)/org.cafe.PowerManager.xml
 
-org.mate.PowerManager.Backlight.h: org.mate.PowerManager.Backlight.xml
+org.cafe.PowerManager.Backlight.h: org.cafe.PowerManager.Backlight.xml
 	$(LIBTOOL) --mode=execute dbus-binding-tool	\
 		--prefix=gpm_backlight			\
 		--mode=glib-server			\
-		--output=org.mate.PowerManager.Backlight.h	\
-		$(srcdir)/org.mate.PowerManager.Backlight.xml
+		--output=org.cafe.PowerManager.Backlight.h	\
+		$(srcdir)/org.cafe.PowerManager.Backlight.xml
 
-org.mate.PowerManager.KbdBacklight.h: org.mate.PowerManager.KbdBacklight.xml
+org.cafe.PowerManager.KbdBacklight.h: org.cafe.PowerManager.KbdBacklight.xml
 	$(LIBTOOL) --mode=execute dbus-binding-tool	\
 		--prefix=gpm_kbd_backlight		\
 		--mode=glib-server			\
-		--output=org.mate.PowerManager.KbdBacklight.h	\
-		$(srcdir)/org.mate.PowerManager.KbdBacklight.xml
+		--output=org.cafe.PowerManager.KbdBacklight.h	\
+		$(srcdir)/org.cafe.PowerManager.KbdBacklight.xml
 
 clean-local:
 	rm -f *~
@@ -324,16 +324,16 @@ clean-local:
 
 CLEANFILES = \
 	$(BUILT_SOURCES)				\
-	mate-power-manager-resources.h			\
-	mate-power-manager-resources.c			\
-	mate-power-preferences-resources.h		\
-	mate-power-preferences-resources.c		\
-	mate-power-statistics-resources.h		\
-	mate-power-statistics-resources.c		\
+	cafe-power-manager-resources.h			\
+	cafe-power-manager-resources.c			\
+	cafe-power-preferences-resources.h		\
+	cafe-power-preferences-resources.c		\
+	cafe-power-statistics-resources.h		\
+	cafe-power-statistics-resources.c		\
 	$(NULL)
 
 if HAVE_TESTS
-TESTS = mate-power-self-test
+TESTS = cafe-power-self-test
 endif
 
 MAINTAINERCLEANFILES =					\

@@ -16,7 +16,7 @@
     along with MATE Power Manager.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <gresources>
-  <gresource prefix="/org/mate/powermanager/preferences/">
+  <gresource prefix="/org/cafe/powermanager/preferences/">
     <file compressed="true">gpm-prefs.ui</file>
   </gresource>
 </gresources>

@@ -28,7 +28,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <mate-panel-applet.h>
+#include <cafe-panel-applet.h>
 #include <gtk/gtk.h>
 #include <glib-object.h>
 #include <glib/gi18n.h>
@@ -193,7 +193,7 @@ gpm_applet_size_allocate_cb (GtkWidget    *widget,
 	GpmInhibitApplet *applet = GPM_INHIBIT_APPLET (widget);
 	int               size = 0;
 
-	switch (mate_panel_applet_get_orient (MATE_PANEL_APPLET (applet))) {
+	switch (cafe_panel_applet_get_orient (MATE_PANEL_APPLET (applet))) {
 		case MATE_PANEL_APPLET_ORIENT_LEFT:
 		case MATE_PANEL_APPLET_ORIENT_RIGHT:
 			size = allocation->width;
@@ -222,7 +222,7 @@ gpm_applet_update_tooltip (GpmInhibitApplet *applet)
 {
 	const gchar *buf;
 	if (applet->proxy == NULL) {
-		buf = _("Cannot connect to mate-power-manager");
+		buf = _("Cannot connect to cafe-power-manager");
 	} else {
 		if (applet->cookie > 0) {
 			buf = _("Automatic sleep inhibited");
@@ -318,7 +318,7 @@ gpm_applet_dialog_about_cb (GtkAction *action, gpointer data)
 	                       "documenters", documenters,
 	                       "translator-credits", _("translator-credits"),
 	                       "wrap-license", TRUE,
-	                       "website", "https://mate-desktop.org",
+	                       "website", "https://cafe-desktop.org",
 	                       NULL);
 
 	g_free (license_trans);
@@ -467,7 +467,7 @@ gpm_inhibit_applet_init (GpmInhibitApplet *applet)
 				  applet, NULL);
 
 	/* prepare */
-	mate_panel_applet_set_flags (MATE_PANEL_APPLET (applet), MATE_PANEL_APPLET_EXPAND_MINOR);
+	cafe_panel_applet_set_flags (MATE_PANEL_APPLET (applet), MATE_PANEL_APPLET_EXPAND_MINOR);
 	applet->image = gtk_image_new();
 	gtk_container_add (GTK_CONTAINER (applet), applet->image);
 
@@ -493,7 +493,7 @@ gpm_inhibit_applet_init (GpmInhibitApplet *applet)
  * @_applet: GpmInhibitApplet instance created by the applet factory
  * @iid: Applet id
  *
- * the function called by libmate-panel-applet factory after creation
+ * the function called by libcafe-panel-applet factory after creation
  **/
 static gboolean
 gpm_applet_cb (MatePanelApplet *_applet, const gchar *iid, gpointer data)
@@ -522,7 +522,7 @@ gpm_applet_cb (MatePanelApplet *_applet, const gchar *iid, gpointer data)
 				      G_N_ELEMENTS (menu_actions),
 				      applet);
 	ui_path = g_build_filename (INHIBIT_MENU_UI_DIR, "inhibit-applet-menu.xml", NULL);
-	mate_panel_applet_setup_menu_from_file (MATE_PANEL_APPLET (applet), ui_path, action_group);
+	cafe_panel_applet_setup_menu_from_file (MATE_PANEL_APPLET (applet), ui_path, action_group);
 	g_free (ui_path);
 	g_object_unref (action_group);
 
@@ -535,7 +535,7 @@ gpm_applet_cb (MatePanelApplet *_applet, const gchar *iid, gpointer data)
 MATE_PANEL_APPLET_OUT_PROCESS_FACTORY
  (/* the factory iid */
  GPM_INHIBIT_APPLET_FACTORY_ID,
- /* generates brighness applets instead of regular mate applets  */
+ /* generates brighness applets instead of regular cafe applets  */
  GPM_TYPE_INHIBIT_APPLET,
  /* the applet name */
  "InhibitApplet",

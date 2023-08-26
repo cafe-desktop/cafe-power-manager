@@ -2,8 +2,8 @@
 Name=Power Statistics
 Comment=Observe power management
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-Icon=mate-power-statistics
-Exec=mate-power-statistics
+Icon=cafe-power-statistics
+Exec=cafe-power-statistics
 Terminal=false
 Type=Application
 # Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
@@ -12,7 +12,7 @@ OnlyShowIn=MATE;
 NoDisplay=false
 StartupNotify=true
 X-MATE-Bugzilla-Bugzilla=MATE
-X-MATE-Bugzilla-Product=mate-power-manager
-X-MATE-Bugzilla-Component=mate-power-statistics
+X-MATE-Bugzilla-Product=cafe-power-manager
+X-MATE-Bugzilla-Component=cafe-power-statistics
 X-MATE-Bugzilla-Version=@VERSION@
 X-Desktop-File-Install-Version=0.10

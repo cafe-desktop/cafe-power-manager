@@ -1,3 +1,3 @@
 [D-BUS Service]
-Name=org.mate.panel.applet.BrightnessAppletFactory
-Exec=@LIBEXECDIR@/mate-brightness-applet
+Name=org.cafe.panel.applet.BrightnessAppletFactory
+Exec=@LIBEXECDIR@/cafe-brightness-applet

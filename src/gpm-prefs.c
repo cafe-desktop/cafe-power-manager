@@ -92,7 +92,7 @@ main (int argc, char **argv)
 	egg_debug_init (verbose);
 
 	gdk_init (&argc, &argv);
-	app = gtk_application_new("org.mate.PowerManager.Preferences", 0);
+	app = gtk_application_new("org.cafe.PowerManager.Preferences", 0);
 
 	prefs = gpm_prefs_new ();
 

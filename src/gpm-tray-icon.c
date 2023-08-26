@@ -146,7 +146,7 @@ gpm_tray_icon_show_info_cb (GtkMenuItem *item, gpointer data)
 	const gchar *object_path;
 
 	object_path = g_object_get_data (G_OBJECT (item), "object-path");
-	path = g_strdup_printf ("%s/mate-power-statistics --device %s", BINDIR, object_path);
+	path = g_strdup_printf ("%s/cafe-power-statistics --device %s", BINDIR, object_path);
 	if (!g_spawn_command_line_async (path, NULL))
 		egg_warning ("Couldn't execute command: %s", path);
 	g_free (path);
@@ -159,7 +159,7 @@ gpm_tray_icon_show_info_cb (GtkMenuItem *item, gpointer data)
 static void
 gpm_tray_icon_show_preferences_cb (GtkMenuItem *item, gpointer data)
 {
-	const gchar *command = "mate-power-preferences";
+	const gchar *command = "cafe-power-preferences";
 
 	if (g_spawn_command_line_async (command, NULL) == FALSE)
 		egg_warning ("Couldn't execute command: %s", command);
@@ -183,7 +183,7 @@ gpm_tray_icon_show_about_cb (GtkMenuItem *item, gpointer data)
 	char **authors;
 	gsize n_authors = 0, i;
 
-	bytes = g_resources_lookup_data ("/org/mate/powermanager/manager/mate-power-manager.about",
+	bytes = g_resources_lookup_data ("/org/cafe/powermanager/manager/cafe-power-manager.about",
 	                                 G_RESOURCE_LOOKUP_FLAGS_NONE, &error);
 	g_assert_no_error (error);
 
@@ -211,9 +211,9 @@ gpm_tray_icon_show_about_cb (GtkMenuItem *item, gpointer data)
 				* box to give credit to the translator(s).
 				*/
 				"translator-credits", _("translator-credits"),
-				"icon-name", "mate-power-manager",
-				"logo-icon-name", "mate-power-manager",
-				"website", "https://mate-desktop.org",
+				"icon-name", "cafe-power-manager",
+				"logo-icon-name", "cafe-power-manager",
+				"website", "https://cafe-desktop.org",
 				NULL);
 
 	g_strfreev (authors);
@@ -385,7 +385,7 @@ gpm_tray_icon_create_menu (GpmTrayIcon *icon)
 	GtkStyleContext *context;
 	context = gtk_widget_get_style_context (GTK_WIDGET(toplevel));
 	gtk_style_context_add_class(context,"gnome-panel-menu-bar");
-	gtk_style_context_add_class(context,"mate-panel-menu-bar");
+	gtk_style_context_add_class(context,"cafe-panel-menu-bar");
 
 	/* about */
 	item = gtk_image_menu_item_new_from_stock ("gtk-about", NULL);

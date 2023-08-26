@@ -16,7 +16,7 @@
     along with MATE Power Manager.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <gresources>
-  <gresource prefix="/org/mate/powermanager/manager/">
-    <file compressed="true">mate-power-manager.about</file>
+  <gresource prefix="/org/cafe/powermanager/manager/">
+    <file compressed="true">cafe-power-manager.about</file>
   </gresource>
 </gresources>

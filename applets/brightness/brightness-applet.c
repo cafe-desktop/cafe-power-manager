@@ -28,7 +28,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <mate-panel-applet.h>
+#include <cafe-panel-applet.h>
 #include <gtk/gtk.h>
 #include <glib/gi18n.h>
 #include <gdk/gdkkeysyms.h>
@@ -71,9 +71,9 @@ typedef struct{
 GType                gpm_brightness_applet_get_type  (void);
 
 
-#define	GPM_DBUS_SERVICE		"org.mate.PowerManager"
-#define	GPM_DBUS_PATH_BACKLIGHT		"/org/mate/PowerManager/Backlight"
-#define	GPM_DBUS_INTERFACE_BACKLIGHT	"org.mate.PowerManager.Backlight"
+#define	GPM_DBUS_SERVICE		"org.cafe.PowerManager"
+#define	GPM_DBUS_PATH_BACKLIGHT		"/org/cafe/PowerManager/Backlight"
+#define	GPM_DBUS_INTERFACE_BACKLIGHT	"org.cafe.PowerManager.Backlight"
 
 G_DEFINE_TYPE (GpmBrightnessApplet, gpm_brightness_applet, PANEL_TYPE_APPLET)
 
@@ -101,7 +101,7 @@ static void      gpm_applet_destroy_cb            (GtkWidget *widget);
 
 #define GPM_BRIGHTNESS_APPLET_ID		"BrightnessApplet"
 #define GPM_BRIGHTNESS_APPLET_FACTORY_ID	"BrightnessAppletFactory"
-#define GPM_BRIGHTNESS_APPLET_ICON		"mate-brightness-applet"
+#define GPM_BRIGHTNESS_APPLET_ICON		"cafe-brightness-applet"
 #define GPM_BRIGHTNESS_APPLET_ICON_DISABLED	"gpm-brightness-lcd-disabled"
 #define GPM_BRIGHTNESS_APPLET_ICON_INVALID	"gpm-brightness-lcd-invalid"
 #define GPM_BRIGHTNESS_APPLET_NAME		_("Power Manager Brightness Applet")
@@ -231,7 +231,7 @@ gpm_applet_check_size (GpmBrightnessApplet *applet)
 	/* we don't use the size function here, but the yet allocated size because the
 	   size value is false (kind of rounded) */
 	gtk_widget_get_allocation (GTK_WIDGET (applet), &allocation);
-	if (MATE_PANEL_APPLET_VERTICAL(mate_panel_applet_get_orient (MATE_PANEL_APPLET (applet)))) {
+	if (MATE_PANEL_APPLET_VERTICAL(cafe_panel_applet_get_orient (MATE_PANEL_APPLET (applet)))) {
 		if (applet->size != allocation.width) {
 			applet->size = allocation.width;
 			gpm_applet_get_icon (applet);
@@ -285,7 +285,7 @@ gpm_applet_draw_cb (GpmBrightnessApplet *applet)
 	cr = gdk_cairo_create (gtk_widget_get_window (GTK_WIDGET(applet)));
 
 	/* draw pixmap background */
-	bg_type = mate_panel_applet_get_background (MATE_PANEL_APPLET (applet), &color, &pattern);
+	bg_type = cafe_panel_applet_get_background (MATE_PANEL_APPLET (applet), &color, &pattern);
 	if (bg_type == PANEL_PIXMAP_BACKGROUND && !applet->popped) {
 		/* fill with given background pixmap */
 		cairo_set_source (cr, pattern);
@@ -361,7 +361,7 @@ gpm_applet_update_tooltip (GpmBrightnessApplet *applet)
 	gchar *buf = NULL;
 	if (applet->popped == FALSE) {
 		if (applet->proxy == NULL) {
-			buf = g_strdup (_("Cannot connect to mate-power-manager"));
+			buf = g_strdup (_("Cannot connect to cafe-power-manager"));
 		} else if (applet->call_worked == FALSE) {
 			buf = g_strdup (_("Cannot get laptop panel brightness"));
 		} else {
@@ -580,7 +580,7 @@ static void
 gpm_applet_create_popup (GpmBrightnessApplet *applet)
 {
 	static GtkWidget *box, *frame;
-	gint orientation = mate_panel_applet_get_orient (MATE_PANEL_APPLET (MATE_PANEL_APPLET (applet)));
+	gint orientation = cafe_panel_applet_get_orient (MATE_PANEL_APPLET (MATE_PANEL_APPLET (applet)));
 
 	gpm_applet_destroy_popup_cb (applet);
 
@@ -640,7 +640,7 @@ gpm_applet_create_popup (GpmBrightnessApplet *applet)
 	GtkWidget *toplevel = gtk_widget_get_toplevel (frame);
 	GtkStyleContext *context;
 	context = gtk_widget_get_style_context (GTK_WIDGET(toplevel));
-	gtk_style_context_add_class(context,"mate-panel-applet-slider");
+	gtk_style_context_add_class(context,"cafe-panel-applet-slider");
 	/*Make transparency possible in gtk3 theme3 */
  	GdkScreen *screen = gtk_widget_get_screen(GTK_WIDGET(toplevel));
 	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
@@ -694,7 +694,7 @@ gpm_applet_popup_cb (GpmBrightnessApplet *applet, GdkEventButton *event)
 	gtk_widget_show_all (applet->popup);
 
 	/* retrieve geometry parameters and move window appropriately */
-	orientation = mate_panel_applet_get_orient (MATE_PANEL_APPLET (MATE_PANEL_APPLET (applet)));
+	orientation = cafe_panel_applet_get_orient (MATE_PANEL_APPLET (MATE_PANEL_APPLET (applet)));
 	gdk_window_get_origin (gtk_widget_get_window (GTK_WIDGET(applet)), &x, &y);
 
 	gtk_widget_get_allocation (GTK_WIDGET (applet), &allocation);
@@ -821,7 +821,7 @@ gpm_applet_dialog_about_cb (GtkAction *action, gpointer data)
 	                       "documenters", documenters,
 	                       "translator-credits", _("translator-credits"),
 	                       "wrap-license", TRUE,
-	                       "website", "https://mate-desktop.org",
+	                       "website", "https://cafe-desktop.org",
 	                       NULL);
 
 	g_free (license_trans);
@@ -992,7 +992,7 @@ gpm_brightness_applet_init (GpmBrightnessApplet *applet)
 	gpm_applet_update_popup_level (applet);
 
 	/* prepare */
-	mate_panel_applet_set_flags (MATE_PANEL_APPLET (applet), MATE_PANEL_APPLET_EXPAND_MINOR);
+	cafe_panel_applet_set_flags (MATE_PANEL_APPLET (applet), MATE_PANEL_APPLET_EXPAND_MINOR);
 	gtk_widget_set_events (GTK_WIDGET (applet), GDK_SCROLL_MASK);
 
 	/* show */
@@ -1037,7 +1037,7 @@ gpm_brightness_applet_init (GpmBrightnessApplet *applet)
  * @_applet: GpmBrightnessApplet instance created by the applet factory
  * @iid: Applet id
  *
- * the function called by libmate-panel-applet factory after creation
+ * the function called by libcafe-panel-applet factory after creation
  **/
 static gboolean
 gpm_applet_cb (MatePanelApplet *_applet, const gchar *iid, gpointer data)
@@ -1066,7 +1066,7 @@ gpm_applet_cb (MatePanelApplet *_applet, const gchar *iid, gpointer data)
 				      G_N_ELEMENTS (menu_actions),
 				      applet);
 	ui_path = g_build_filename (BRIGHTNESS_MENU_UI_DIR, "brightness-applet-menu.xml", NULL);
-	mate_panel_applet_setup_menu_from_file (MATE_PANEL_APPLET (applet), ui_path, action_group);
+	cafe_panel_applet_setup_menu_from_file (MATE_PANEL_APPLET (applet), ui_path, action_group);
 	g_free (ui_path);
 	g_object_unref (action_group);
 
@@ -1080,7 +1080,7 @@ gpm_applet_cb (MatePanelApplet *_applet, const gchar *iid, gpointer data)
 MATE_PANEL_APPLET_OUT_PROCESS_FACTORY
  (/* the factory iid */
  GPM_BRIGHTNESS_APPLET_FACTORY_ID,
- /* generates brighness applets instead of regular mate applets  */
+ /* generates brighness applets instead of regular cafe applets  */
  GPM_TYPE_BRIGHTNESS_APPLET,
  /* the applet name */
  "BrightnessApplet",

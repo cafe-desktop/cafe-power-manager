@@ -1,6 +1,6 @@
 [Applet Factory]
 Id=BrightnessAppletFactory
-Location=@LIBEXECDIR@/mate-brightness-applet
+Location=@LIBEXECDIR@/cafe-brightness-applet
 Name=Brightness Applet Factory
 Description=Factory for Brightness Applet
 
@@ -8,10 +8,10 @@ Description=Factory for Brightness Applet
 Name=Brightness Applet
 Description=Adjusts Laptop panel brightness
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-Icon=mate-brightness-applet
+Icon=cafe-brightness-applet
 MateComponentId=OAFIID:MATE_BrightnessApplet
 X-MATE-Bugzilla-Bugzilla=MATE
-X-MATE-Bugzilla-Product=mate-power-manager
+X-MATE-Bugzilla-Product=cafe-power-manager
 X-MATE-Bugzilla-Component=applets
 X-MATE-Bugzilla-Version=@VERSION@
-X-MATE-Bugzilla-OtherBinaries=mate-brightness-applet
+X-MATE-Bugzilla-OtherBinaries=cafe-brightness-applet

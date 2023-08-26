@@ -1,6 +1,6 @@
 #! /bin/sh
 
-PACKAGE=mate-power-manager;
+PACKAGE=cafe-power-manager;
 
 # normal translations
 make -C po $PACKAGE.pot && mv po/$PACKAGE.pot .

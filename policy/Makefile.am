@@ -1,5 +1,5 @@
 polkit_policydir = $(datadir)/polkit-1/actions
-polkit_policy_in_files = org.mate.power.policy.in
+polkit_policy_in_files = org.cafe.power.policy.in
 polkit_policy_DATA = $(polkit_policy_in_files:.policy.in=.policy)
 
 $(polkit_policy_DATA): $(polkit_policy_in_files)
@@ -8,7 +8,7 @@ $(polkit_policy_DATA): $(polkit_policy_in_files)
 .in2.in:
 	sed "s|[@]sbindir@|${sbindir}|" $< > $@
 
-EXTRA_DIST = org.mate.power.policy.in2
+EXTRA_DIST = org.cafe.power.policy.in2
 DISTCLEANFILES = $(polkit_policy_DATA) $(polkit_policy_in_files)
 
 clean-local :

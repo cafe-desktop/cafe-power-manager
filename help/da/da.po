@@ -9,7 +9,7 @@ msgstr ""
 "POT-Creation-Date: 2020-01-12 18:32+0100\n"
 "PO-Revision-Date: 2020-02-15 16:28+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
-"Language-Team: Danish (https://www.transifex.com/mate/teams/13566/da/)\n"
+"Language-Team: Danish (https://www.transifex.com/cafe/teams/13566/da/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -102,13 +102,13 @@ msgstr "Tilbagemelding"
 msgid ""
 "To report a bug or make a suggestion regarding the MATE Power Manager "
 "application or this manual, follow the directions in the <ulink "
-"url=\"https://github.com/mate-desktop/mate-power-manager/\" "
+"url=\"https://github.com/cafe-desktop/cafe-power-manager/\" "
 "type=\"http\"><application>MATE Power Manager</application> Contact "
 "Page</ulink>."
 msgstr ""
 "For at rapportere en fejl eller komme med et forslag jævnfør MATE-"
 "strømhåndteringen eller denne manual, så følg retningslinjerne i <ulink "
-"url=\"https://github.com/mate-desktop/mate-power-manager/\" "
+"url=\"https://github.com/cafe-desktop/cafe-power-manager/\" "
 "type=\"http\"><application>MATE-strømhåndteringens</application> "
 "kontaktside</ulink>."
 
@@ -119,8 +119,8 @@ msgstr "<primary><application>MATE-strømhåndtering</application></primary>"
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:118
-msgid "<primary>mate-power-manager</primary>"
-msgstr "<primary>mate-power-manager</primary>"
+msgid "<primary>cafe-power-manager</primary>"
+msgstr "<primary>cafe-power-manager</primary>"
 
 #. (itstool) path: section/title
 #: C/index.docbook:125
@@ -131,10 +131,10 @@ msgstr "Indledning"
 #: C/index.docbook:129
 msgid ""
 "<primary><application>MATE Power Manager</application></primary> "
-"<secondary>Manual</secondary> <tertiary>mate-power-manager</tertiary>"
+"<secondary>Manual</secondary> <tertiary>cafe-power-manager</tertiary>"
 msgstr ""
 "<primary><application>MATE-strømhåndtering</application></primary> "
-"<secondary>Manual</secondary> <tertiary>mate-power-manager</tertiary>"
+"<secondary>Manual</secondary> <tertiary>cafe-power-manager</tertiary>"
 
 #. (itstool) path: section/para
 #: C/index.docbook:135
@@ -169,10 +169,10 @@ msgstr "Kommandolinje"
 #. (itstool) path: listitem/para
 #: C/index.docbook:152
 msgid ""
-"Type <command>mate-power-manager --verbose --no-daemon</command>, then press"
+"Type <command>cafe-power-manager --verbose --no-daemon</command>, then press"
 " <keycap>Return</keycap>:"
 msgstr ""
-"Tast <command>mate-power-manager --verbose --no-daemon</command>, tryk så "
+"Tast <command>cafe-power-manager --verbose --no-daemon</command>, tryk så "
 "<keycap>Retur</keycap>:"
 
 #. (itstool) path: section/title
@@ -217,10 +217,10 @@ msgstr ""
 #: C/index.docbook:180
 msgid ""
 "You can disable this notification by changing the dconf key "
-"<command>org.mate.power-manager notify-discharging</command>."
+"<command>org.cafe.power-manager notify-discharging</command>."
 msgstr ""
 "Du kan deaktivere denne påmindelse ved at ændre dconf-nøglen "
-"<command>org.mate.power-manager notify-discharging</command>."
+"<command>org.cafe.power-manager notify-discharging</command>."
 
 #. (itstool) path: section/title
 #: C/index.docbook:188
@@ -253,9 +253,9 @@ msgstr ""
 #: C/index.docbook:200
 msgid ""
 "You can disable this notification by changing the dconf key "
-"<command>org.mate.power-manager notify-fully-charged</command>."
+"<command>org.cafe.power-manager notify-fully-charged</command>."
 msgstr ""
-"Du kan ændre denne påmindelse ved at ændre dconf-nøglen  <command>org.mate"
+"Du kan ændre denne påmindelse ved at ændre dconf-nøglen  <command>org.cafe"
 ".power-manager notify-fully-charged</command>."
 
 #. (itstool) path: note/para
@@ -306,10 +306,10 @@ msgstr ""
 #: C/index.docbook:232
 msgid ""
 "You can disable this notification by changing the dconf key "
-"<command>org.mate.power-manager notify-low-power</command>."
+"<command>org.cafe.power-manager notify-low-power</command>."
 msgstr ""
 "Du kan deaktivere denne påmindelse ved at ændre dconf-nøglen "
-"<command>org.mate.power-manager notify-low-power</command>."
+"<command>org.cafe.power-manager notify-low-power</command>."
 
 #. (itstool) path: section/title
 #: C/index.docbook:240
@@ -387,10 +387,10 @@ msgstr ""
 #: C/index.docbook:276
 msgid ""
 "You can disable this notification by changing the dconf key "
-"<command>org.mate.power-manager notify-sleep-failed</command>."
+"<command>org.cafe.power-manager notify-sleep-failed</command>."
 msgstr ""
 "Du kan deaktivere denne påmindelse ved at ændre dconf-nøglen "
-"<command>org.mate.power-manager notify-sleep-failed</command>."
+"<command>org.cafe.power-manager notify-sleep-failed</command>."
 
 #. (itstool) path: section/title
 #: C/index.docbook:285
@@ -506,13 +506,13 @@ msgstr ""
 
 #. (itstool) path: section/title
 #: C/index.docbook:352
-msgid "Estimated Time History"
+msgid "Esticafed Time History"
 msgstr "Estimeret tidshistorik"
 
 #. (itstool) path: section/para
 #: C/index.docbook:353
 msgid ""
-"This graph shows the estimated charge history for the composite primary "
+"This graph shows the esticafed charge history for the composite primary "
 "battery. This line represents the amount of time required until charged, or "
 "the amount of time until discharge. This line should go proportionally up "
 "when the rate decreases and down when the rate increases. A legend is shown "
@@ -654,18 +654,18 @@ msgstr "Sessionstider og ledige systemtider"
 #. (itstool) path: section/para
 #: C/index.docbook:449
 msgid ""
-"<command>mate-screensaver</command> is a session daemon that monitors user "
+"<command>cafe-screensaver</command> is a session daemon that monitors user "
 "input, and if the mouse has not been moved, or the keyboard been pressed "
 "then it starts a timeout. When the value of this timeout reaches the value "
-"set in <command>mate-screensaver-preferences</command>, then the login is "
+"set in <command>cafe-screensaver-preferences</command>, then the login is "
 "marked as 'session idle'. This is when <application>MATE Power "
 "Manager</application> performs all the session idle actions such as enabling"
 " low-power mode and lowering the laptop panel brightness."
 msgstr ""
-"<command>mate-screensaver</command> er en sessionsdæmon, der overvåger "
+"<command>cafe-screensaver</command> er en sessionsdæmon, der overvåger "
 "brugerindtastning, og hvis musen ikke har bevæget sig eller tastaturet er "
 "anvendt startes et tidsudløb. Når værdien af dette tidsudløb når værdien "
-"angivet i <command>mate-screensaver-preferences</command>, så markeres det "
+"angivet i <command>cafe-screensaver-preferences</command>, så markeres det "
 "aktuelle logind som »session ledig«. På dette tidspunkt udfører <application"
 ">MATE-strømhåndtering</application> alle sessionens handlinger såsom "
 "aktivering af lav strøm-tilstand og sænkning af den bærbares panellysstyrke."
@@ -673,10 +673,10 @@ msgstr ""
 #. (itstool) path: figure/title
 #: C/index.docbook:461
 msgid ""
-"Changing the session idle timeout in <command>mate-screensaver-"
+"Changing the session idle timeout in <command>cafe-screensaver-"
 "preferences</command>"
 msgstr ""
-"Ændring af sessionens tidsudløb ved manglende brug i <command>mate-"
+"Ændring af sessionens tidsudløb ved manglende brug i <command>cafe-"
 "screensaver-preferences</command>"
 
 #. (itstool) path: imageobject/imagedata
@@ -696,32 +696,32 @@ msgstr ""
 msgid ""
 "As soon as the session is marked at idle, <application>MATE Power "
 "Manager</application> starts its own 'system' timer. When the timeout set in"
-" <command>mate-power-preferences</command> is reached, and the CPU load is "
+" <command>cafe-power-preferences</command> is reached, and the CPU load is "
 "idle, then the idle action is performed, which is usually to turn off the "
 "screen, or to suspend or hibernate."
 msgstr ""
 "Så snart at sessionen er markeret som ledig, starter <application>MATE-"
 "strømstyring</application> sin egen systemtidstager. Når tidsudløbet angivet"
-" i <command>mate-power-preferences</command> er opfyldt og der ingen CPU-"
+" i <command>cafe-power-preferences</command> er opfyldt og der ingen CPU-"
 "belastning er, så udføres handlingen ledig, som normalt indebærer at skærmen"
 " slukkes, eller går i hvile eller dvale."
 
 #. (itstool) path: section/para
 #: C/index.docbook:479
 msgid ""
-"To make this clearer, the sliders in <command>mate-power-"
+"To make this clearer, the sliders in <command>cafe-power-"
 "preferences</command> are set to start at the value of the session-timeout +"
 " 1 minute, as we cannot logically trigger before the session is marked as "
 "idle. If you adjust the value of the 'session idle' timeout in <command"
-">mate-screensaver-preferences</command> then the start of the sliders in "
-"<command>mate-power-preferences</command> will change accordingly."
+">cafe-screensaver-preferences</command> then the start of the sliders in "
+"<command>cafe-power-preferences</command> will change accordingly."
 msgstr ""
-"For at gøre det tydligere, skyderne i <command>mate-power-"
+"For at gøre det tydligere, skyderne i <command>cafe-power-"
 "preferences</command> er angivet til at starte ved værdien for session-"
 "timeout + 1 minut, da vi logisk ikke kan udløse før sessionen er markeret "
 "som ledig. Hvis du justerer værdien for sessions-idle-tidsudløbet i <command"
-">mate-screensaver-preferences</command> så vil starten af skyderne i "
-"<command>mate-power-preferences</command> ændre sig tilsvarende."
+">cafe-screensaver-preferences</command> så vil starten af skyderne i "
+"<command>cafe-power-preferences</command> ændre sig tilsvarende."
 
 #. (itstool) path: section/title
 #: C/index.docbook:491
@@ -737,10 +737,10 @@ msgstr "Lysstyrke for skærmdæmpningen"
 #: C/index.docbook:496
 msgid ""
 "You can change the idle laptop panel brightness by changing the dconf key "
-"<command>org.mate.power-manager idle-brightness</command>."
+"<command>org.cafe.power-manager idle-brightness</command>."
 msgstr ""
 "Du kan ændre lysstyrken for bærbarpanelet ved inaktivitet ved at ændre "
-"dconf-nøglen <command>org.mate.power-manager idle-brightness</command>."
+"dconf-nøglen <command>org.cafe.power-manager idle-brightness</command>."
 
 #. (itstool) path: section/title
 #: C/index.docbook:504
@@ -752,12 +752,12 @@ msgstr "Skærmlås"
 msgid ""
 "By default, <application>MATE Power Manager</application> supports a simple "
 "locking scheme. This means that the screen will lock if set to \"Lock "
-"screen\" in mate-screensaver when the lid is closed, or the system performs "
+"screen\" in cafe-screensaver when the lid is closed, or the system performs "
 "a suspend or hibernate action."
 msgstr ""
 "Som standard understøtter <application>MATE-strømhåndteringent</application>"
 " et simpelt låseskema. Dette betyder, at skærmen vil låse hvis angivet til "
-"»Lås skærm« i mate-screensaver, når låget lukkes eller systemet udfører en "
+"»Lås skærm« i cafe-screensaver, når låget lukkes eller systemet udfører en "
 "hvile eller dvale handling."
 
 #. (itstool) path: section/para
@@ -773,40 +773,40 @@ msgstr ""
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:519
-msgid "<command>org.mate.power-manager lock-use-screensaver</command>"
-msgstr "<command>org.mate.power-manager lock-use-screensaver</command>"
+msgid "<command>org.cafe.power-manager lock-use-screensaver</command>"
+msgstr "<command>org.cafe.power-manager lock-use-screensaver</command>"
 
 #. (itstool) path: section/para
 #: C/index.docbook:524
 msgid ""
-"Then the policy keys can be set to force a mate-screensaver lock and unlock "
+"Then the policy keys can be set to force a cafe-screensaver lock and unlock "
 "when the action is performed:"
 msgstr ""
-"Så kan politiknøglerne sættes til at fremtvinge en mate-screensaver-låsning "
+"Så kan politiknøglerne sættes til at fremtvinge en cafe-screensaver-låsning "
 "og åbning når handlingen er udført:"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:531
-msgid "<command>org.mate.power-manager lock-blank-screen</command>"
-msgstr "<command>org.mate.power-manager lock-blank-screen</command>"
+msgid "<command>org.cafe.power-manager lock-blank-screen</command>"
+msgstr "<command>org.cafe.power-manager lock-blank-screen</command>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:536
-msgid "<command>org.mate.power-manager lock-suspend</command>"
-msgstr "<command>org.mate.power-manager lock-suspend</command>"
+msgid "<command>org.cafe.power-manager lock-suspend</command>"
+msgstr "<command>org.cafe.power-manager lock-suspend</command>"
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:541
-msgid "<command>org.mate.power-manager lock-hibernate</command>"
-msgstr "<command>org.mate.power-manager lock-hibernate</command>"
+msgid "<command>org.cafe.power-manager lock-hibernate</command>"
+msgstr "<command>org.cafe.power-manager lock-hibernate</command>"
 
 #. (itstool) path: note/para
 #: C/index.docbook:548
 msgid ""
-"The lock policy for mate-screensaver is ignored until the simple mode is re-"
+"The lock policy for cafe-screensaver is ignored until the simple mode is re-"
 "enabled."
 msgstr ""
-"Låsepolitikken for mate-screensaver ignoreres indtil den simple tilstand er "
+"Låsepolitikken for cafe-screensaver ignoreres indtil den simple tilstand er "
 "genaktiveret."
 
 #. (itstool) path: section/title
@@ -1018,14 +1018,14 @@ msgstr ""
 msgid ""
 "You have to change the DPMS suspend mode <application>MATE Power "
 "Manager</application> uses. Open <command>dconf-editor</command>, and then "
-"change the keys <literal>org.mate.power-manager dpms-method-ac</literal> and"
-" <literal>org.mate.power-manager dpms-method-battery</literal> to one of the"
+"change the keys <literal>org.cafe.power-manager dpms-method-ac</literal> and"
+" <literal>org.cafe.power-manager dpms-method-battery</literal> to one of the"
 " modes that work, e.g. standby, suspend or off."
 msgstr ""
 "Du skal ændre DPMS-hviletilstanden <application>MATE-"
 "strømhåndteringen</application> bruger. Åbn <command>dconf-editor</command>,"
-" og ændr så nøglerne <literal>org.mate.power-manager dpms-method-"
-"ac</literal> og <literal>org.mate.power-manager dpms-method-"
+" og ændr så nøglerne <literal>org.cafe.power-manager dpms-method-"
+"ac</literal> og <literal>org.cafe.power-manager dpms-method-"
 "battery</literal> til en af tilstandene der fungerer, f.eks. standby, dvale "
 "eller deaktiveret."
 
@@ -1043,14 +1043,14 @@ msgstr ""
 msgid ""
 "You might be able to use the percentage charge for g-p-m to use as the "
 "policy data. Open <command>dconf-editor</command>, and then change the key "
-"<command>org.mate.power-manager use-time-for-policy</command> to false. You "
-"can do this easily by doing: <command> gsettings get org.mate.power-manager "
+"<command>org.cafe.power-manager use-time-for-policy</command> to false. You "
+"can do this easily by doing: <command> gsettings get org.cafe.power-manager "
 "use-time-for-policy false </command>"
 msgstr ""
 "Du kan måske bruge procentladningen for g-p-m til brug for politikdata. Åbn "
-"<command>dconf-editor</command>, og ændr nøglen <command>org.mate.power-"
+"<command>dconf-editor</command>, og ændr nøglen <command>org.cafe.power-"
 "manager use-time-for-policy</command> til falsk. Du kan gøre dette nemt ved "
-"at: <command>gsettings get org.mate.power-manager use-time-for-policy "
+"at: <command>gsettings get org.cafe.power-manager use-time-for-policy "
 "false</command>"
 
 #. (itstool) path: section/para
@@ -1073,13 +1073,13 @@ msgstr ""
 #: C/index.docbook:713
 msgid ""
 "If your application is doing a long operation, you might want to disable the"
-" ability to suspend for a little while. You should use mate-session if you "
+" ability to suspend for a little while. You should use cafe-session if you "
 "really don't want the user to be able to suspend, or for the computer to "
 "save power by hibernating or suspending."
 msgstr ""
 "Hvis dit program udfører en operation, der tager lang tid, så kan du "
 "deaktivere denne mulighed for at gå i hvile i en kort tidsperiode. Du bør "
-"bruge mate-session, hvis du virkelig ikke ønsker at brugeren skal kunne gå i"
+"bruge cafe-session, hvis du virkelig ikke ønsker at brugeren skal kunne gå i"
 " hviletilstand, eller at computeren skal spare på strømmen ved dvale eller "
 "hvile."
 

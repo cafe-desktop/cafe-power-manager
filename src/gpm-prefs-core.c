@@ -822,7 +822,7 @@ gpm_prefs_init (GpmPrefs *prefs)
 
 	error = NULL;
 	prefs->priv->builder = gtk_builder_new ();
-	retval = gtk_builder_add_from_resource (prefs->priv->builder, "/org/mate/powermanager/preferences/gpm-prefs.ui", &error);
+	retval = gtk_builder_add_from_resource (prefs->priv->builder, "/org/cafe/powermanager/preferences/gpm-prefs.ui", &error);
 
 	if (error) {
 		egg_error ("failed to load ui: %s", error->message);
