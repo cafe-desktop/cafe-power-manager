@@ -1,0 +1,1292 @@
+# 
+# Translators:
+# Joe Hansen <joedalton2@yahoo.dk>, 2020
+# Stefano Karapetsas <stefano@karapetsas.com>, 2020
+# 
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2020-01-12 18:32+0100\n"
+"PO-Revision-Date: 2020-02-15 16:28+0000\n"
+"Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
+"Language-Team: Danish (https://www.transifex.com/mate/teams/13566/da/)\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: da\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
+msgctxt "_"
+msgid "translator-credits"
+msgstr ""
+"\"Joe Hansen, 2012, 2013, 2014, 2015, 2016, 2017, 2018, 2019.\\n\"\n"
+"\"\\n\"\n"
+"\"Dansk-gruppen <dansk@dansk-gruppen.dk>\\n\"\n"
+"\"Mere info: http://www.dansk-gruppen.dk\""
+
+#. (itstool) path: articleinfo/title
+#: C/index.docbook:23
+msgid "<application>MATE Power Manager</application> Manual"
+msgstr "Manual for <application>MATE-strømhåndteringen</application>"
+
+#. (itstool) path: abstract/para
+#: C/index.docbook:25
+msgid ""
+"<application>MATE Power Manager</application> is a session daemon for the "
+"MATE Desktop that manages the power settings for your laptop or desktop "
+"computer."
+msgstr ""
+"<application>MATE-strømhåndteringen</application> er en sessionsdæmon for "
+"MATE-skrivebordet, som håndterer strømindstillingerne for din bærbare eller "
+"skrivebordscomputer."
+
+#. (itstool) path: articleinfo/copyright
+#: C/index.docbook:30
+msgid "<year>2015-2020</year> <holder>MATE Documentation Team</holder>"
+msgstr "<year>2015-2020</year> <holder>MATE-dokumentationsholdet</holder>"
+
+#. (itstool) path: articleinfo/copyright
+#: C/index.docbook:34
+msgid ""
+"<year>2006-2009</year> <holder>Richard Hughes (richard@hughsie.com)</holder>"
+msgstr ""
+"<year>2006-2009</year> <holder>Richard Hughes (richard@hughsie.com)</holder>"
+
+#. (itstool) path: publisher/publishername
+#: C/index.docbook:52
+msgid "MATE Documentation Team"
+msgstr "MATE-dokumentationsholdet"
+
+#. (itstool) path: publisher/publishername
+#. (itstool) path: revdescription/para
+#: C/index.docbook:55 C/index.docbook:98
+msgid "Richard Hughes"
+msgstr "Richard Hughes"
+
+#. (itstool) path: authorgroup/author
+#: C/index.docbook:61
+msgid ""
+"<surname>MATE Documentation Team</surname> <affiliation> </affiliation>"
+msgstr ""
+"<surname>MATE-dokumentationsholdet</surname> <affiliation> </affiliation>"
+
+#. (itstool) path: authorgroup/author
+#: C/index.docbook:71
+msgid ""
+"<firstname>Richard</firstname> <surname>Hughes</surname> "
+"<email>richard@hughsie.com</email>"
+msgstr ""
+"<firstname>Richard</firstname> <surname>Hughes</surname> "
+"<email>richard@hughsie.com</email>"
+
+#. (itstool) path: revdescription/para
+#: C/index.docbook:95
+msgid "Richard Hughes <email>richard@hughsie.com</email>"
+msgstr "Richard Hughes <email>richard@hughsie.com</email>"
+
+#. (itstool) path: revhistory/revision
+#: C/index.docbook:91
+msgid ""
+"<revnumber>2.0</revnumber> <date>2006-08-30</date> <_:revdescription-1/>"
+msgstr ""
+"<revnumber>2.0</revnumber> <date>2006-08-30</date> <_:revdescription-1/>"
+
+#. (itstool) path: legalnotice/title
+#: C/index.docbook:104
+msgid "Feedback"
+msgstr "Tilbagemelding"
+
+#. (itstool) path: legalnotice/para
+#: C/index.docbook:105
+msgid ""
+"To report a bug or make a suggestion regarding the MATE Power Manager "
+"application or this manual, follow the directions in the <ulink "
+"url=\"https://github.com/mate-desktop/mate-power-manager/\" "
+"type=\"http\"><application>MATE Power Manager</application> Contact "
+"Page</ulink>."
+msgstr ""
+"For at rapportere en fejl eller komme med et forslag jævnfør MATE-"
+"strømhåndteringen eller denne manual, så følg retningslinjerne i <ulink "
+"url=\"https://github.com/mate-desktop/mate-power-manager/\" "
+"type=\"http\"><application>MATE-strømhåndteringens</application> "
+"kontaktside</ulink>."
+
+#. (itstool) path: article/indexterm
+#: C/index.docbook:115
+msgid "<primary><application>MATE Power Manager</application></primary>"
+msgstr "<primary><application>MATE-strømhåndtering</application></primary>"
+
+#. (itstool) path: article/indexterm
+#: C/index.docbook:118
+msgid "<primary>mate-power-manager</primary>"
+msgstr "<primary>mate-power-manager</primary>"
+
+#. (itstool) path: section/title
+#: C/index.docbook:125
+msgid "Introduction"
+msgstr "Indledning"
+
+#. (itstool) path: section/indexterm
+#: C/index.docbook:129
+msgid ""
+"<primary><application>MATE Power Manager</application></primary> "
+"<secondary>Manual</secondary> <tertiary>mate-power-manager</tertiary>"
+msgstr ""
+"<primary><application>MATE-strømhåndtering</application></primary> "
+"<secondary>Manual</secondary> <tertiary>mate-power-manager</tertiary>"
+
+#. (itstool) path: section/para
+#: C/index.docbook:135
+msgid ""
+"The MATE Power Manager session daemon is a power management daemon for the "
+"<systemitem>MATE desktop</systemitem>"
+msgstr ""
+"MATE-strømhåndteringens sessionsdæmon er en strømhåndteringsdæmon for "
+"<systemitem>MATE-skrivebordet</systemitem>"
+
+#. (itstool) path: section/title
+#: C/index.docbook:143
+msgid "Usage"
+msgstr "Brug"
+
+#. (itstool) path: section/para
+#: C/index.docbook:144
+msgid ""
+"<application>MATE Power Manager</application> is usually started in MATE "
+"startup, but you can manually start <application>MATE Power "
+"Manager</application> by doing:"
+msgstr ""
+"<application>MATE-strømhåndteringen</application> startes normalt i MATE-"
+"opstart, men du kan manuelt starte <application>MATE-"
+"strømhåndteringen</application> på følgende måde:"
+
+#. (itstool) path: varlistentry/term
+#: C/index.docbook:150
+msgid "Command line"
+msgstr "Kommandolinje"
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:152
+msgid ""
+"Type <command>mate-power-manager --verbose --no-daemon</command>, then press"
+" <keycap>Return</keycap>:"
+msgstr ""
+"Tast <command>mate-power-manager --verbose --no-daemon</command>, tryk så "
+"<keycap>Retur</keycap>:"
+
+#. (itstool) path: section/title
+#: C/index.docbook:162
+msgid "Notification Messages"
+msgstr "Påmindelser"
+
+#. (itstool) path: section/para
+#: C/index.docbook:163
+msgid ""
+"When <application>MATE Power Manager</application> has started, the "
+"following notifications may be displayed."
+msgstr ""
+"Når <application>MATE-strømhåndteringen</application> er startet kan de "
+"følgende påmindelser blive vist."
+
+#. (itstool) path: section/title
+#: C/index.docbook:168
+msgid "AC Adapter Unplugged"
+msgstr "Strømforsyning frakoblet"
+
+#. (itstool) path: figure/title
+#: C/index.docbook:170
+msgid "MATE Power Manager Notification when AC adapter is removed"
+msgstr "Påmindelse fra MATE-strømhåndteringen når strømforsyningen fjernes"
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:174
+msgctxt "_"
+msgid ""
+"external ref='figures/gpm-unplugged.png' "
+"md5='e9e38fa48737547a19b20af6a15d9e95'"
+msgstr ""
+"external ref='figures/gpm-unplugged.png' "
+"md5='e9e38fa48737547a19b20af6a15d9e95'"
+
+#. (itstool) path: note/para
+#: C/index.docbook:180
+msgid ""
+"You can disable this notification by changing the dconf key "
+"<command>org.mate.power-manager notify-discharging</command>."
+msgstr ""
+"Du kan deaktivere denne påmindelse ved at ændre dconf-nøglen "
+"<command>org.mate.power-manager notify-discharging</command>."
+
+#. (itstool) path: section/title
+#: C/index.docbook:188
+msgid "Fully Charged"
+msgstr "Fuldt opladet"
+
+#. (itstool) path: figure/title
+#: C/index.docbook:190
+msgid ""
+"MATE Power Manager Notification when laptop primary battery is fully charged"
+msgstr ""
+"Påmindelse fra MATE-strømhåndteringen når den bærbares primære batteri er "
+"fuldt opladet"
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:194
+msgctxt "_"
+msgid ""
+"external ref='figures/gpm-charged.png' "
+"md5='cc83716555d07b13a3659683f96c531c'"
+msgstr ""
+"external ref='figures/gpm-charged.png' "
+"md5='cc83716555d07b13a3659683f96c531c'"
+
+#. (itstool) path: note/para
+#: C/index.docbook:200
+msgid ""
+"You can disable this notification by changing the dconf key "
+"<command>org.mate.power-manager notify-fully-charged</command>."
+msgstr ""
+"Du kan ændre denne påmindelse ved at ændre dconf-nøglen  <command>org.mate"
+".power-manager notify-fully-charged</command>."
+
+#. (itstool) path: note/para
+#: C/index.docbook:206
+msgid ""
+"You will only get a repeat notification if your battery percentage charge "
+"drops below 95% and then is again fully charged. This prevents some machines"
+" from showing unwanted repeat notifications if the battery is incorrectly "
+"reporting the charged status."
+msgstr ""
+"Du får kun en gentagelsespåmindelse hvis din batteriprocent er under 95 % og"
+" når det igen er fuldt opladet. Dette forhindrer nogle maskiner i at vise "
+"uønskede gentagelsespåmindelser hvis batteriet rapporterer ukorrekt status "
+"for opladningen."
+
+#. (itstool) path: section/title
+#: C/index.docbook:216
+msgid "Power Low"
+msgstr "Lav strøm"
+
+#. (itstool) path: section/para
+#: C/index.docbook:217
+msgid ""
+"When the battery is low, you will receive the following notification. You "
+"should consider switching to AC power really soon."
+msgstr ""
+"Når batteriet er ved at være tømt, så vil du modtage den følgende "
+"påmindelse. Du bør overveje at skifte til vekselstrøm snarest."
+
+#. (itstool) path: figure/title
+#: C/index.docbook:222
+msgid "MATE Power Manager Notification when battery power is low"
+msgstr "Påmindelse fra MATE-strømhåndteringen når strømniveauet er lavt"
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:226
+msgctxt "_"
+msgid ""
+"external ref='figures/gpm-low.png' md5='6cd86acf26f251d78060dd2ecb6b6506'"
+msgstr ""
+"external ref='figures/gpm-low.png' md5='6cd86acf26f251d78060dd2ecb6b6506'"
+
+#. (itstool) path: note/para
+#: C/index.docbook:232
+msgid ""
+"You can disable this notification by changing the dconf key "
+"<command>org.mate.power-manager notify-low-power</command>."
+msgstr ""
+"Du kan deaktivere denne påmindelse ved at ændre dconf-nøglen "
+"<command>org.mate.power-manager notify-low-power</command>."
+
+#. (itstool) path: section/title
+#: C/index.docbook:240
+msgid "Power Critical"
+msgstr "Kristisk strømniveau"
+
+#. (itstool) path: section/para
+#: C/index.docbook:241
+msgid ""
+"When the computer has run out of power, it will show this notification "
+"explaining what action is required. You can change the critical low action "
+"using the preferences tool."
+msgstr ""
+"Når computeren er løbet tør for strøm, vil denne påmindelse blive vist, der "
+"forklarer hvilken handling, som er krævet. Du kan ændre handling for kritisk"
+" strømniveau under præferenceværktøjet."
+
+#. (itstool) path: figure/title
+#: C/index.docbook:247
+msgid ""
+"MATE Power Manager Notification when the system power is critically low"
+msgstr ""
+"Påmindelse fra MATE-strømhåndteringen når strømniveauet er kritisk lavt"
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:251
+msgctxt "_"
+msgid ""
+"external ref='figures/gpm-critical.png' "
+"md5='77b0848ed3bd0510b65f89e0d07a2fed'"
+msgstr ""
+"external ref='figures/gpm-critical.png' "
+"md5='77b0848ed3bd0510b65f89e0d07a2fed'"
+
+#. (itstool) path: section/title
+#: C/index.docbook:259
+msgid "Suspend Failure"
+msgstr "Fejl ved hvile"
+
+#. (itstool) path: section/para
+#: C/index.docbook:260
+msgid ""
+"When a Suspend Failure occurs you may get this following warning. The most "
+"common reason for this notification is that the current user does not have "
+"permission to suspend or hibernate the computer."
+msgstr ""
+"Når der opstår en hvilefejl, kan du modtage den følgende advarsel. Den mest "
+"gængse årsag for denne påmindelse er, at den nuværende bruger ikke har "
+"tilladelse til at sætte computeren i hvile eller dvale."
+
+#. (itstool) path: figure/title
+#: C/index.docbook:266
+msgid "MATE Power Manager Notification when suspend failure occurs"
+msgstr "Påmindelse for MATE-strømhåndteringen når hvilefejl opstår"
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:270
+msgctxt "_"
+msgid ""
+"external ref='figures/gpm-suspend-problem.png' "
+"md5='4e4c1fafda61c5ace02f957717ea7ce6'"
+msgstr ""
+"external ref='figures/gpm-suspend-problem.png' "
+"md5='4e4c1fafda61c5ace02f957717ea7ce6'"
+
+#. (itstool) path: note/para
+#: C/index.docbook:276
+msgid ""
+"You can disable this notification by changing the dconf key "
+"<command>org.mate.power-manager notify-sleep-failed</command>."
+msgstr ""
+"Du kan deaktivere denne påmindelse ved at ændre dconf-nøglen "
+"<command>org.mate.power-manager notify-sleep-failed</command>."
+
+#. (itstool) path: section/title
+#: C/index.docbook:285
+msgid "Statistics"
+msgstr "Statistik"
+
+#. (itstool) path: section/para
+#: C/index.docbook:286
+msgid ""
+"The statistics program allows you to visualize the power consumption of your"
+" laptop hardware."
+msgstr ""
+"Statistikprogrammet gør det muligt at visualisere strømforbruget på din "
+"bærbare."
+
+#. (itstool) path: note/para
+#: C/index.docbook:291
+msgid ""
+"This has been removed from the information window of previous versions of "
+"MATE Power Manager as the data interface is now using DBUS rather than "
+"internal IPC. This allows other applications to query and display the data "
+"if required."
+msgstr ""
+"Dette er blevet fjernet fra informationsvinduet for tidligere versioner af "
+"MATE-strømhåndteringen da datagrænsefladen nu bruger DBUS frem for intern "
+"IPC. Dette gør, at andre programmer kan forespørge og vise dataene hvis "
+"krævet."
+
+#. (itstool) path: figure/title
+#: C/index.docbook:298
+msgid "Power History going from battery power to AC"
+msgstr "Strømhistorik gående fra batteri til strømforsyning"
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:302
+msgctxt "_"
+msgid ""
+"external ref='figures/gpm-stats-graph.png' "
+"md5='c7cfa37ad6e96041a1c312d85236e7f6'"
+msgstr ""
+"external ref='figures/gpm-stats-graph.png' "
+"md5='c7cfa37ad6e96041a1c312d85236e7f6'"
+
+#. (itstool) path: note/para
+#: C/index.docbook:308
+msgid ""
+"You may not see some options or graphs if your computer does not have the "
+"required hardware. You may also see other hardware not shown here (for "
+"example UPS devices) but these are treated the same way as other devices."
+msgstr ""
+"Du ser måske ikke nogle indstillinger eller grafer, hvis din computer ikke "
+"har det krævede udstyr. Du kan eventuelt også se andet udstyr ikke vist her "
+"(for eksempel UPS-enheder), men disse behandles på samme måde som andre "
+"enheder."
+
+#. (itstool) path: section/title
+#: C/index.docbook:317
+msgid "Charge History"
+msgstr "Opladningshistorik"
+
+#. (itstool) path: section/para
+#: C/index.docbook:318
+msgid ""
+"This graph shows the available percentage of charge for the composite "
+"primary battery, so if you have a main laptop battery and an auxiliary "
+"battery then only the averaged value will be shown. A legend is not shown "
+"with this graph."
+msgstr ""
+"Denne graf viser procentladningen tilgængelig for det sammensatte primære "
+"batteri, så hvis du har et hovedbatteri for den bærbare og et ekstra "
+"batteri, vil kun den gennemsnitlige værdi blive vist. En indskrift vises "
+"ikke med denne graf."
+
+#. (itstool) path: section/title
+#: C/index.docbook:327
+msgid "Power History"
+msgstr "Strømhistorik"
+
+#. (itstool) path: section/para
+#: C/index.docbook:328
+msgid ""
+"This graph shows the power history charge used by the composite primary "
+"battery. This line represents the amount of power that is either being used "
+"to charge the batteries in the system, or the power being used by the system"
+" from the batteries. You should see the line go up when processor intensive "
+"tasks are performed, and down when the system is at idle, or when the screen"
+" is dimmed. A legend is shown with this graph when data events have been "
+"received."
+msgstr ""
+"Denne graf viser strømladningen historisk brugt af det sammensatte primære "
+"batteri. Denne linje repræsenterer mængden af strøm som enten bruges til at "
+"lade batterierne i systemet, eller strømme brugt af systemet fra "
+"batterierne. Du bør se linjen gå op når processorintensive opgaver udføres, "
+"og ned når systemet er ledigt, eller når skærmen er dæmpet. En indskrift "
+"vises med denne graf, når datahændelser er blevet modtaget."
+
+#. (itstool) path: note/para
+#: C/index.docbook:341
+msgid ""
+"You will not receive rate data from your computer if it is not charging or "
+"discharging, or if the computer is suspended. This is due to hardware "
+"limitations where the rate is only sent from the battery management chip, "
+"rather than the power management chip on the motherboard."
+msgstr ""
+"Du vil ikke modtage hastighedsdata fra din computer hvis den ikke lader "
+"eller aflader, eller hvis computeren er i hvile. Dette skyldes "
+"udstyrsbegrænsninger hvor hastigheden kun sendes fra batterihåndteringens "
+"chip, frem fra strømhåndteringens chip på bundkortet."
+
+#. (itstool) path: section/title
+#: C/index.docbook:352
+msgid "Estimated Time History"
+msgstr "Estimeret tidshistorik"
+
+#. (itstool) path: section/para
+#: C/index.docbook:353
+msgid ""
+"This graph shows the estimated charge history for the composite primary "
+"battery. This line represents the amount of time required until charged, or "
+"the amount of time until discharge. This line should go proportionally up "
+"when the rate decreases and down when the rate increases. A legend is shown "
+"with this graph when data events have been received."
+msgstr ""
+"Denne graf viser den estimerede ladningshistorik for det sammensatte primære"
+" batteri. Denne linje repræsenterer tidsperioden krævet indtil ladet, eller "
+"mængden af tid indtil afladning. Denne linje bør gå proportionalt op når "
+"hastigheden sænkes og ned når hastigheden øges. En indskrift vises med denne"
+" graf, når datahændelser er blevet modtaget."
+
+#. (itstool) path: section/title
+#: C/index.docbook:366
+msgid "Preferences"
+msgstr "Indstillinger"
+
+#. (itstool) path: section/para
+#: C/index.docbook:368
+msgid "The preferences window allows you to control:"
+msgstr "Præferencevinduet gør at du kan kontrollere:"
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:372
+msgid "The LCD brightness when on AC and battery power"
+msgstr "LCD-lysstyrken når på strømforsyning og batteri"
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:377
+msgid "The idle time for the screen power-down and suspend action"
+msgstr "Inaktivt tidsrum før skærmen lukker ned eller går i hvile"
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:382
+msgid "The actions to perform when the laptop lid is closed"
+msgstr "Handlingerne der udføres idet computerens låg lukkes"
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:387
+msgid "The notification area icon policy"
+msgstr "Påmindelsesområdets ikonpolitik"
+
+#. (itstool) path: note/para
+#: C/index.docbook:394
+msgid ""
+"Some sliders or option boxes may be disabled if the dconf policy keys are "
+"not writable. This allows administrators to lock-down the actions that a "
+"user can select."
+msgstr ""
+"Nogle skydere eller indstillingsbokse kan være deaktiveret hvis dconf-"
+"politiknøglerne ikke er skrivbare. Dette gør det muligt for administratorer "
+"at låse de handlinger en bruger kan vælge."
+
+#. (itstool) path: section/title
+#: C/index.docbook:402
+msgid "AC Preferences"
+msgstr "Præferencer for strømforsyning"
+
+#. (itstool) path: figure/title
+#: C/index.docbook:404
+msgid "MATE Power Manager AC tab"
+msgstr "MATES-strømstyrings faneblad for strømforsyningen"
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:408
+msgctxt "_"
+msgid ""
+"external ref='figures/gpm-prefs-ac.png' "
+"md5='dc4409a63218146e52d3e670b26785bd'"
+msgstr ""
+"external ref='figures/gpm-prefs-ac.png' "
+"md5='dc4409a63218146e52d3e670b26785bd'"
+
+#. (itstool) path: section/title
+#: C/index.docbook:416
+msgid "Battery Preferences"
+msgstr "Batteripræferencer"
+
+#. (itstool) path: figure/title
+#: C/index.docbook:418
+msgid "MATE Power Manager battery tab"
+msgstr "MATE-strømhåndteringens batterifaneblad"
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:422
+msgctxt "_"
+msgid ""
+"external ref='figures/gpm-prefs-battery.png' "
+"md5='89fe431e4f38073f7d58f38425ad1ee7'"
+msgstr ""
+"external ref='figures/gpm-prefs-battery.png' "
+"md5='89fe431e4f38073f7d58f38425ad1ee7'"
+
+#. (itstool) path: section/para
+#: C/index.docbook:427
+msgid ""
+"This allows a powerful computer to reduce the power usage when idle, or when"
+" the full capabilities are not required."
+msgstr ""
+"Dette gør at en funktionsrig computer kan reducer strømforbruget når ledig, "
+"eller når fuld kapacitet ikke er krævet."
+
+#. (itstool) path: section/title
+#: C/index.docbook:434
+msgid "General Preferences"
+msgstr "Generelle præferencer"
+
+#. (itstool) path: figure/title
+#: C/index.docbook:436
+msgid "MATE Power Manager general tab"
+msgstr "MATE-strømstyringens generelle faneblad"
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:440
+msgctxt "_"
+msgid ""
+"external ref='figures/gpm-prefs-general.png' "
+"md5='52b7d145bd085d8af6f3194ac632c547'"
+msgstr ""
+"external ref='figures/gpm-prefs-general.png' "
+"md5='52b7d145bd085d8af6f3194ac632c547'"
+
+#. (itstool) path: section/title
+#: C/index.docbook:448
+msgid "Session and system idle times"
+msgstr "Sessionstider og ledige systemtider"
+
+#. (itstool) path: section/para
+#: C/index.docbook:449
+msgid ""
+"<command>mate-screensaver</command> is a session daemon that monitors user "
+"input, and if the mouse has not been moved, or the keyboard been pressed "
+"then it starts a timeout. When the value of this timeout reaches the value "
+"set in <command>mate-screensaver-preferences</command>, then the login is "
+"marked as 'session idle'. This is when <application>MATE Power "
+"Manager</application> performs all the session idle actions such as enabling"
+" low-power mode and lowering the laptop panel brightness."
+msgstr ""
+"<command>mate-screensaver</command> er en sessionsdæmon, der overvåger "
+"brugerindtastning, og hvis musen ikke har bevæget sig eller tastaturet er "
+"anvendt startes et tidsudløb. Når værdien af dette tidsudløb når værdien "
+"angivet i <command>mate-screensaver-preferences</command>, så markeres det "
+"aktuelle logind som »session ledig«. På dette tidspunkt udfører <application"
+">MATE-strømhåndtering</application> alle sessionens handlinger såsom "
+"aktivering af lav strøm-tilstand og sænkning af den bærbares panellysstyrke."
+
+#. (itstool) path: figure/title
+#: C/index.docbook:461
+msgid ""
+"Changing the session idle timeout in <command>mate-screensaver-"
+"preferences</command>"
+msgstr ""
+"Ændring af sessionens tidsudløb ved manglende brug i <command>mate-"
+"screensaver-preferences</command>"
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:467
+msgctxt "_"
+msgid ""
+"external ref='figures/gs-prefs.png' md5='e9ce36b6ef557681ca4e8e90b71a7f46'"
+msgstr ""
+"external ref='figures/gs-prefs.png' md5='e9ce36b6ef557681ca4e8e90b71a7f46'"
+
+#. (itstool) path: section/para
+#: C/index.docbook:472
+msgid ""
+"As soon as the session is marked at idle, <application>MATE Power "
+"Manager</application> starts its own 'system' timer. When the timeout set in"
+" <command>mate-power-preferences</command> is reached, and the CPU load is "
+"idle, then the idle action is performed, which is usually to turn off the "
+"screen, or to suspend or hibernate."
+msgstr ""
+"Så snart at sessionen er markeret som ledig, starter <application>MATE-"
+"strømstyring</application> sin egen systemtidstager. Når tidsudløbet angivet"
+" i <command>mate-power-preferences</command> er opfyldt og der ingen CPU-"
+"belastning er, så udføres handlingen ledig, som normalt indebærer at skærmen"
+" slukkes, eller går i hvile eller dvale."
+
+#. (itstool) path: section/para
+#: C/index.docbook:479
+msgid ""
+"To make this clearer, the sliders in <command>mate-power-"
+"preferences</command> are set to start at the value of the session-timeout +"
+" 1 minute, as we cannot logically trigger before the session is marked as "
+"idle. If you adjust the value of the 'session idle' timeout in <command"
+">mate-screensaver-preferences</command> then the start of the sliders in "
+"<command>mate-power-preferences</command> will change accordingly."
+msgstr ""
+"For at gøre det tydligere, skyderne i <command>mate-power-"
+"preferences</command> er angivet til at starte ved værdien for session-"
+"timeout + 1 minut, da vi logisk ikke kan udløse før sessionen er markeret "
+"som ledig. Hvis du justerer værdien for sessions-idle-tidsudløbet i <command"
+">mate-screensaver-preferences</command> så vil starten af skyderne i "
+"<command>mate-power-preferences</command> ændre sig tilsvarende."
+
+#. (itstool) path: section/title
+#: C/index.docbook:491
+msgid "Advanced Preferences"
+msgstr "Avancerede præferencer"
+
+#. (itstool) path: section/title
+#: C/index.docbook:494
+msgid "Screen Dim Brightness"
+msgstr "Lysstyrke for skærmdæmpningen"
+
+#. (itstool) path: note/para
+#: C/index.docbook:496
+msgid ""
+"You can change the idle laptop panel brightness by changing the dconf key "
+"<command>org.mate.power-manager idle-brightness</command>."
+msgstr ""
+"Du kan ændre lysstyrken for bærbarpanelet ved inaktivitet ved at ændre "
+"dconf-nøglen <command>org.mate.power-manager idle-brightness</command>."
+
+#. (itstool) path: section/title
+#: C/index.docbook:504
+msgid "Screen Locking"
+msgstr "Skærmlås"
+
+#. (itstool) path: section/para
+#: C/index.docbook:505
+msgid ""
+"By default, <application>MATE Power Manager</application> supports a simple "
+"locking scheme. This means that the screen will lock if set to \"Lock "
+"screen\" in mate-screensaver when the lid is closed, or the system performs "
+"a suspend or hibernate action."
+msgstr ""
+"Som standard understøtter <application>MATE-strømhåndteringent</application>"
+" et simpelt låseskema. Dette betyder, at skærmen vil låse hvis angivet til "
+"»Lås skærm« i mate-screensaver, når låget lukkes eller systemet udfører en "
+"hvile eller dvale handling."
+
+#. (itstool) path: section/para
+#: C/index.docbook:511
+msgid ""
+"There is a complex locking scheme available for power users that allows "
+"locking policy to change for the lid, suspend and hibernate actions. To "
+"enable this complex mode, you will have to disable the dconf key:"
+msgstr ""
+"Der er et kompleks låseskema tilgængelig for superbrugere, der tillader at "
+"låsepolitikken ændres for låget, hvile- og dvalehandlinger. For at aktivere "
+"denne komplekse tilstand skal du deaktivere dconf-nøglen:"
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:519
+msgid "<command>org.mate.power-manager lock-use-screensaver</command>"
+msgstr "<command>org.mate.power-manager lock-use-screensaver</command>"
+
+#. (itstool) path: section/para
+#: C/index.docbook:524
+msgid ""
+"Then the policy keys can be set to force a mate-screensaver lock and unlock "
+"when the action is performed:"
+msgstr ""
+"Så kan politiknøglerne sættes til at fremtvinge en mate-screensaver-låsning "
+"og åbning når handlingen er udført:"
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:531
+msgid "<command>org.mate.power-manager lock-blank-screen</command>"
+msgstr "<command>org.mate.power-manager lock-blank-screen</command>"
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:536
+msgid "<command>org.mate.power-manager lock-suspend</command>"
+msgstr "<command>org.mate.power-manager lock-suspend</command>"
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:541
+msgid "<command>org.mate.power-manager lock-hibernate</command>"
+msgstr "<command>org.mate.power-manager lock-hibernate</command>"
+
+#. (itstool) path: note/para
+#: C/index.docbook:548
+msgid ""
+"The lock policy for mate-screensaver is ignored until the simple mode is re-"
+"enabled."
+msgstr ""
+"Låsepolitikken for mate-screensaver ignoreres indtil den simple tilstand er "
+"genaktiveret."
+
+#. (itstool) path: section/title
+#: C/index.docbook:557
+msgid "MATE Power Applets"
+msgstr "MATE-strømpanelprogrammer"
+
+#. (itstool) path: section/title
+#: C/index.docbook:560
+msgid "Brightness Applet"
+msgstr "Lysstyrke-panelprogram"
+
+#. (itstool) path: section/para
+#: C/index.docbook:561
+msgid ""
+"The brightness applet allows the user to change the brightness temporarily "
+"without changing the default policy. This may be useful if you have got a "
+"laptop without brightness buttons, as you can now change the brightness "
+"easily."
+msgstr ""
+"Panelprogrammet lysstyrke gør det muligt at ændre lysstyrken midlertidigt "
+"uden at ændre standardpolitikken. Dette kan være nyttigt, hvis du har en "
+"bærbar uden knapper til lysstyrken, da du så nemt kan ændre lysstyrken."
+
+#. (itstool) path: figure/title
+#: C/index.docbook:568
+msgid "Brightness applet drop-down."
+msgstr "Rullegardin for panelprogrammet lysstyrke"
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:574
+msgctxt "_"
+msgid ""
+"external ref='figures/applet-brightness.png' "
+"md5='8ce34f6733215fb86009471f19850dcc'"
+msgstr ""
+"external ref='figures/applet-brightness.png' "
+"md5='8ce34f6733215fb86009471f19850dcc'"
+
+#. (itstool) path: note/para
+#: C/index.docbook:580
+msgid "You will not get the slider if your hardware is not supported."
+msgstr "Du får ikke vist skyderen, hvis dit udstyr ikke er understøttet."
+
+#. (itstool) path: section/title
+#: C/index.docbook:587
+msgid "Inhibit Applet"
+msgstr "Hindringspanelprogram"
+
+#. (itstool) path: section/para
+#: C/index.docbook:588
+msgid ""
+"The <application>Inhibit Applet</application> allows the user to prevent the"
+" computer auto-sleeping when inactive. This may be required with old or "
+"proprietary programs such as VMWare or Matlab. Just click the icon for the "
+"auto-suspend to be inhibited, and click it again for normal operation."
+msgstr ""
+"<application>Hindringspanelprogrammet</application> gør det muligt for "
+"brugeren at forhindre computeren i automatisk hvile når inaktiv. Dette kan "
+"være krævet med gamle eller proprietære programmer såsom WMWare eller "
+"Matlab. Bare klik på ikonet for at hindre den automatiske hvile og klik på "
+"den igen for normal operation."
+
+#. (itstool) path: figure/title
+#: C/index.docbook:596
+msgid "Inhibit applet in inhibited state."
+msgstr "Hindringspanelprogram i hindringstilstand."
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:602
+msgctxt "_"
+msgid ""
+"external ref='figures/applet-inhibit.png' "
+"md5='7381a44dae4f17bfd47abaa54c0ca2a4'"
+msgstr ""
+"external ref='figures/applet-inhibit.png' "
+"md5='7381a44dae4f17bfd47abaa54c0ca2a4'"
+
+#. (itstool) path: note/para
+#: C/index.docbook:608
+msgid ""
+"Don't use this applet if you just use MATE software, instead file a bug to "
+"make the application use the <function>Inhibit()</function> and "
+"<function>UnInhibit()</function> methods as this should 'just work'."
+msgstr ""
+"Brug ikke dette panelprogram hvis du bare bruger MATE-programmer, indsend i "
+"stedet for en fejlrapport så programmet bruger "
+"<function>imhibit()</function>- og "
+"<function>UnInhibit()</function>-metoderne, da dette bare bør fungere."
+
+#. (itstool) path: section/title
+#: C/index.docbook:618
+msgid "Frequently Asked Questions"
+msgstr "Ofte stillede spørgsmål"
+
+#. (itstool) path: section/para
+#: C/index.docbook:619
+msgid "These are questions the mailing list gets asked frequently."
+msgstr "Dette er spørgsmålene postlisten modtager oftest"
+
+#. (itstool) path: section/title
+#: C/index.docbook:623
+msgid "What is battery capacity?"
+msgstr "Hvad er batterikapaciteten?"
+
+#. (itstool) path: section/para
+#: C/index.docbook:624
+msgid ""
+"Capacity is how much charge your battery can store compared to its "
+"manufacturer's guidelines."
+msgstr ""
+"Kapacitet er hvor stor ladning dit batteri kan lagre sammenlignet med dets "
+"leverandørs retningslinjer."
+
+#. (itstool) path: figure/title
+#: C/index.docbook:629
+msgid ""
+"This graph shows the capacity of a typical lithium ion battery over a few "
+"hundred charge-discharge cycles."
+msgstr ""
+"Denne graf viser kapaciteten for et typisk lithium ion-batteri over et par "
+"hundrede oplad-aflad cyklusser."
+
+#. (itstool) path: imageobject/imagedata
+#. This is a reference to an external file such as an image or video. When
+#. the file changes, the md5 hash will change to let you know you need to
+#. update your localized copy. The msgstr is not used at all. Set it to
+#. whatever you like once you have updated your copy of the file.
+#: C/index.docbook:636
+msgctxt "_"
+msgid ""
+"external ref='figures/gpm-cell-capacity.png' "
+"md5='7635c3b846f39faf7b16a921a6ebb55c'"
+msgstr ""
+"external ref='figures/gpm-cell-capacity.png' "
+"md5='7635c3b846f39faf7b16a921a6ebb55c'"
+
+#. (itstool) path: section/title
+#: C/index.docbook:644
+msgid "What's the difference between suspend and hibernate?"
+msgstr "Hvad er forskellen mellem hvile og dvale?"
+
+#. (itstool) path: section/para
+#: C/index.docbook:645
+msgid ""
+"The Suspend state is a power saving feature which is the lowest level of "
+"power consumption that preserves program data on the computer's memory. When"
+" your computer is in the Suspended state, computation will not be performed "
+"until normal activity is resumed. It will not resume until signaled by an "
+"external event such as a keyboard button press. It generally takes a few "
+"seconds to suspend and then resume your computer."
+msgstr ""
+"Hviletilstasnden er en funktion til strømbesparelse, hvilket er det laveste "
+"niveau for strømforbrug, der bevarer programdata i computerens hukommelse. "
+"Når din computer er i hvile, vil beregninger ikke blive udført før normal "
+"aktivitet er genoptaget. Computeren vil ikke gå i gang igen før en ekstern "
+"hændelse såsom et tastaturtryk registreres. Det tager normalt et par "
+"sekunder at gå i hvile og retur igen for din computer."
+
+#. (itstool) path: caution/para
+#: C/index.docbook:655
+msgid ""
+"You still use a small amount of battery power while suspended, so is not "
+"recommended for the low power action. If you remove AC power on a desktop, "
+"or run out of battery power on a laptop then you will lose your work."
+msgstr ""
+"Du bruger stadig en lille mængde batteri når i hvile, så det anbefales ikke "
+"for handlingen lav strøm. Hvis du fjerner vekselstrøm på et skrivebord, "
+"eller batteriet er tomt på en bærbar, så vil du miste dit arbejde."
+
+#. (itstool) path: section/para
+#: C/index.docbook:662
+msgid ""
+"The Hibernation state saves the complete state of the computer to hard disk "
+"and turns off the power, so that the computer appears to be off. It will not"
+" resume until signaled by an external event such as a keyboard button press."
+" This is the lowest power sleeping state available. If you remove AC power "
+"on a desktop, or run out of battery power on a laptop then work will not be "
+"lost. It can take up to a minute or more to hibernate and wake your "
+"computer."
+msgstr ""
+"Dvaletiltanden gemmer den fuldstændige tilstand for computeren til "
+"harddisken og slukker for strømmen, så computeren fremstår som slukket. "
+"Computeren vil ikke gå i gang før den modtager et eksternt signal, såsom et "
+"tastaturtryk. Dette er den laveste strømsovetilstand tilgængelig. Hvis du "
+"fjerner strømforsyningen på et skrivebord eller løber tør for batteristrøm "
+"på en bærbar, så vil arbejdet ikke blive tabt. Det kan tage op til et minut "
+"eller flere at vågne fra dvale og få gang i din computer."
+
+#. (itstool) path: section/title
+#: C/index.docbook:675
+msgid ""
+"My monitor is broken and treats DPMS standby and off states as 'no-signal' "
+"which leaves the monitor powered on."
+msgstr ""
+"Min skærm er ødelagt og opfatter DPMS-standby og deaktiverede tilstande som "
+"»no-signal«, hvilket efterlader skærmen med strømmen tændt."
+
+#. (itstool) path: section/para
+#: C/index.docbook:679
+msgid ""
+"You have to change the DPMS suspend mode <application>MATE Power "
+"Manager</application> uses. Open <command>dconf-editor</command>, and then "
+"change the keys <literal>org.mate.power-manager dpms-method-ac</literal> and"
+" <literal>org.mate.power-manager dpms-method-battery</literal> to one of the"
+" modes that work, e.g. standby, suspend or off."
+msgstr ""
+"Du skal ændre DPMS-hviletilstanden <application>MATE-"
+"strømhåndteringen</application> bruger. Åbn <command>dconf-editor</command>,"
+" og ændr så nøglerne <literal>org.mate.power-manager dpms-method-"
+"ac</literal> og <literal>org.mate.power-manager dpms-method-"
+"battery</literal> til en af tilstandene der fungerer, f.eks. standby, dvale "
+"eller deaktiveret."
+
+#. (itstool) path: section/title
+#: C/index.docbook:689
+msgid ""
+"My time to discharge is always incorrect due to a faulty battery, what can I"
+" do?"
+msgstr ""
+"Tidsangivelse for afladning er altid forkert på grund af et fejlramt "
+"batteri, hvad kan jeg gøre?"
+
+#. (itstool) path: section/para
+#: C/index.docbook:693
+msgid ""
+"You might be able to use the percentage charge for g-p-m to use as the "
+"policy data. Open <command>dconf-editor</command>, and then change the key "
+"<command>org.mate.power-manager use-time-for-policy</command> to false. You "
+"can do this easily by doing: <command> gsettings get org.mate.power-manager "
+"use-time-for-policy false </command>"
+msgstr ""
+"Du kan måske bruge procentladningen for g-p-m til brug for politikdata. Åbn "
+"<command>dconf-editor</command>, og ændr nøglen <command>org.mate.power-"
+"manager use-time-for-policy</command> til falsk. Du kan gøre dette nemt ved "
+"at: <command>gsettings get org.mate.power-manager use-time-for-policy "
+"false</command>"
+
+#. (itstool) path: section/para
+#: C/index.docbook:703
+msgid ""
+"This should get the policy actions working for you, but of course the time "
+"remaining will still be incorrect."
+msgstr ""
+"Dette bør få politikhandlingerne til at fungere for dig, men den "
+"tilbageværende tid vil selvfølgelig stadig være ukorrekt."
+
+#. (itstool) path: section/title
+#: C/index.docbook:710
+msgid "How do I make my application stop the computer auto-suspending?"
+msgstr ""
+"Hvordan får jeg mit program til at stoppe computerens automatiske "
+"hviletilstand?"
+
+#. (itstool) path: section/para
+#: C/index.docbook:713
+msgid ""
+"If your application is doing a long operation, you might want to disable the"
+" ability to suspend for a little while. You should use mate-session if you "
+"really don't want the user to be able to suspend, or for the computer to "
+"save power by hibernating or suspending."
+msgstr ""
+"Hvis dit program udfører en operation, der tager lang tid, så kan du "
+"deaktivere denne mulighed for at gå i hvile i en kort tidsperiode. Du bør "
+"bruge mate-session, hvis du virkelig ikke ønsker at brugeren skal kunne gå i"
+" hviletilstand, eller at computeren skal spare på strømmen ved dvale eller "
+"hvile."
+
+#. (itstool) path: section/title
+#: C/index.docbook:723
+msgid ""
+"I'm running ACPI. Why do events (such as removing the AC adapter) take so "
+"long to register?"
+msgstr ""
+"Jeg kører ACPI. Hvorfor er hændelser (såsom fjernelse af strømforsyningen) "
+"så lang tid om at blive registreret?"
+
+#. (itstool) path: section/para
+#: C/index.docbook:727
+msgid "One of two things might be the problem."
+msgstr "Et af to ting kan være problemet."
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:732
+msgid "HAL might not be running the add-on that captures the ACPI event."
+msgstr "HAL afvikler måske ikke udvidelsen, der optager ACPI-hændelsen."
+
+#. (itstool) path: listitem/para
+#: C/index.docbook:737
+msgid ""
+"You BIOS could be faulty, and might need a work-around. Please send a bug "
+"report."
+msgstr ""
+"Din BIOS kan være fejlbehæftet og skal bruge en omgåelse. Indsend venligst "
+"en fejlrapport."
+
+#. (itstool) path: section/para
+#: C/index.docbook:743
+msgid ""
+"For the first case, try to find the HAL processes that are running: "
+"<command>ps -eaf | grep hal</command>"
+msgstr ""
+"I det første tilfælde, prøv at finde HAL-processeren: <command>ps -eaf | "
+"grep hal</command>"
+
+#. (itstool) path: section/para
+#: C/index.docbook:747
+msgid ""
+"And check for the process <command>hald-addon-acpi</command>. If it is not "
+"being run, then please make sure that HAL is being run with the <command"
+">--retain-privileges</command> option in the <command>haldaemon</command> "
+"initscript. An alternative to this is to use acpid, rather than the kernel "
+"proc file."
+msgstr ""
+"Og kontroller for processen <command>hald-addon-acpi</command>. Hvis den "
+"ikke afvikles, så sikr dig at HAL afvikles med tilvalget <command>--retain-"
+"priivileges</command> i opstartsskriptet <command>haldaemon</command>. Et "
+"alternativ til dette er at bruge acpid, frem for kerneproc-filen."
+
+#. (itstool) path: para/ulink
+#: C/legal.xml:9
+msgid "link"
+msgstr "henvisning"
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:2
+msgid ""
+"Permission is granted to copy, distribute and/or modify this document under "
+"the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
+"later version published by the Free Software Foundation with no Invariant "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy"
+" of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
+"with this manual."
+msgstr ""
+"Der gives tilladelse til at kopiere, distribuere og/eller ændre dette "
+"dokument under betingelserne i GNU Free Documentation License (GFDL), "
+"version 1.1 eller enhver nyere version, udgivet af Free Software Foundation "
+"uden invariante afsnit, uden forsidetekster, og uden bagsidetekster. Du kan "
+"finde en kopi af GFDL'en her <_:ulink-1/> eller i filen COPYING-DOCS, der "
+"distribueres med denne manual."
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:12
+msgid ""
+"This manual is part of a collection of MATE manuals distributed under the "
+"GFDL. If you want to distribute this manual separately from the collection, "
+"you can do so by adding a copy of the license to the manual, as described in"
+" section 6 of the license."
+msgstr ""
+"Denne manual er en del af MATE-manualsamlingen distribueret under GFDL. Hvis"
+" du vil distribuere denne manual separat fra denne samling, kan du gøre det "
+"ved at tilføje en kopi af licensen til manualen, som beskrevet i sektion 6 "
+"af licensen."
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:19
+msgid ""
+"Many of the names used by companies to distinguish their products and "
+"services are claimed as trademarks. Where those names appear in any MATE "
+"documentation, and the members of the MATE Documentation Project are made "
+"aware of those trademarks, then the names are in capital letters or initial "
+"capital letters."
+msgstr ""
+"Mange af navnene brugt af firmaer til at skelne deres produkter og tjenester"
+" er registrerede varemærker. Der hvor disse navne optræder i MATE-"
+"dokumentationen, og medlemmerne af MATE-dokumentationsprojektet er blevet "
+"gjort opmærksomme på disse varemærker, er navnene skrevet med store "
+"bogstaver eller store forbogstaver."
+
+#. (itstool) path: listitem/para
+#: C/legal.xml:35
+msgid ""
+"DOCUMENT IS PROVIDED ON AN \"AS IS\" BASIS, WITHOUT WARRANTY OF ANY KIND, "
+"EITHER EXPRESSED OR IMPLIED, INCLUDING, WITHOUT LIMITATION, WARRANTIES THAT "
+"THE DOCUMENT OR MODIFIED VERSION OF THE DOCUMENT IS FREE OF DEFECTS "
+"MERCHANTABLE, FIT FOR A PARTICULAR PURPOSE OR NON-INFRINGING. THE ENTIRE "
+"RISK AS TO THE QUALITY, ACCURACY, AND PERFORMANCE OF THE DOCUMENT OR "
+"MODIFIED VERSION OF THE DOCUMENT IS WITH YOU. SHOULD ANY DOCUMENT OR "
+"MODIFIED VERSION PROVE DEFECTIVE IN ANY RESPECT, YOU (NOT THE INITIAL "
+"WRITER, AUTHOR OR ANY CONTRIBUTOR) ASSUME THE COST OF ANY NECESSARY "
+"SERVICING, REPAIR OR CORRECTION. THIS DISCLAIMER OF WARRANTY CONSTITUTES AN "
+"ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
+"OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
+msgstr ""
+"DETTE DOKUMENT GØRES TILGÆNGELIGT SÅDAN SOM DET ER, UDEN NOGEN FORM FOR "
+"GARANTI, HVERKEN UDTALT ELLER ANTYDET, DERIBLANDT, UDEN BEGRÆNSNINGER, "
+"GARANTIER OM AT DOKUMENTET ELLER ÆNDREDE VERSIONER AF DOKUMENTET ER FRIT FOR"
+" DEFEKTER, PASSENDE TIL ET BESTEMT FORMÅL ELLER IKKE-KRÆNKENDE. DU HÆFTER "
+"SELV FOR HELE RISIKOEN VEDRØRENDE KVALITET, KORREKTHED OG YDELSE FOR "
+"DOKUMENTET ELLER ÆNDREDE VERSIONER AF DOKUMENTET. SKULLE ET DOKUMENT, ELLER "
+"EN ÆNDRET VERSION AF ET DOKUMENT VISE SIG AT VÆRE DEFEKT PÅ EN HVILKEN SOM "
+"HELST MÅDE, HÆFTER DU FOR BETALING FOR EVENTUEL NØDVENDIG SERVICE, "
+"REPARATION ELLER KORREKTION (OG IKKE HVERKEN DEN OPRINDELIGE FORFATTER, "
+"SKRIBENT ELLER NOGEN ANDEN BIDRAGYDER). DENNE ERKLÆRING OM GARANTIFORBEHOLD "
+"ER EN ESSENTIEL DEL AF DENNE LICENS. INGEN BRUG AF NOGET DOKUMENT ELLER "
+"ÆNDRET VERSION AF DOKUMENTET ER AUTORISERET HERUNDER BORTSET FRA DENNE "
+"FORBEHOLDSERKLÆRING; OG"
+
+#. (itstool) path: listitem/para
+#: C/legal.xml:55
+msgid ""
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING"
+" NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
+"DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
+"FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
+"ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES"
+" OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE"
+" POSSIBILITY OF SUCH DAMAGES."
+msgstr ""
+"UNDER INGEN OMSTÆNDIGHEDER OG UNDER INGEN JURIDISK TEORI, UANSET OM DET ER "
+"EN BEVIDST SKADENDE HANDLING (INKLUSIVE UFORSVARLIGHED) ELLER PÅ HVILKEN SOM"
+" HELST ANDEN MÅDE, KAN FORFATTEREN, SKRIBENT, BIDRAGYDERE, DISTRIBUTØRER "
+"ELLER FORSYNER AF DETTE DOKUMENT ELLER MODIFICEREDE VERSIONER GØRES "
+"ANSVARLIG OVERFOR NOGEN PERSON FOR NOGEN DIREKTE, INDIREKTE, SPECIEL, "
+"TILFÆLDIG ELLER FØLGENDE SKADE PÅFØRT NOGEN INKLUSIVE, UDEN BEGRÆNSNING, "
+"SKADE SOM FØLGE AF TAB AF RYGTE, ARBEJDSSTOP, COMPUTER-FEJL ELLER -SVIGT, "
+"ELLER ENHVER ANDEN FORM FOR SKADE ELLER TAB SOM ER OPSTÅET I FORBINDELSE MED"
+" BRUG AF DETTE DOKUMENT ELLER MODIFICEREDE VERSIONER HERAF, SELV HVIS EN "
+"SÅDAN PART HAR VÆRET INFORMERET OM MULIGHEDEN FOR SÅDANNE SKADER."
+
+#. (itstool) path: legalnotice/para
+#: C/legal.xml:28
+msgid ""
+"DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
+"OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
+"<_:orderedlist-1/>"
+msgstr ""
+"DETTE DOKUMENT OG MODIFICEREDE VERSIONER GØRES TILGÆNGELIGT UNDER "
+"BETINGELSERNE I GNU FREE DOCUMENTATION LICENSE UNDER DEN FORUDSÆTNING AT: "
+"<_:orderedlist-1/>"
+
+#. (itstool) path: formalpara/title
+#: C/legal.xml:77
+msgid "Software Licence"
+msgstr "Programlicens"
+
+#. (itstool) path: formalpara/para
+#: C/legal.xml:78
+msgid ""
+"MATE Power Manager is free software; you can redistribute it and/or modify "
+"it under the terms of the GNU General Public License as published by the "
+"Free Software Foundation; either version 2 of the License, or (at your "
+"option) any later version."
+msgstr ""
+"MATE-strømstyring er et frit program; det kan distribueres og/eller ændres "
+"under betingelserne i GNU General Public License, som udgivet af Free "
+"Software Foundation; enten version 2 af licensen eller, (efter eget valg), "
+"enhver nyere version."
+
+#. (itstool) path: formalpara/para
+#: C/legal.xml:83
+msgid ""
+"MATE Power Manager is distributed in the hope that it will be useful, but "
+"WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY "
+"or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for "
+"more details."
+msgstr ""
+"MATE-strømstyring distribueres i håb om at det viser sig nyttigt, men UDEN "
+"NOGEN GARANTI; selv uden de underforståede garantier for SALGBARHED eller "
+"EGNETHED TIL ET BESTEMT FORMÅL. Se GNU General Public License for yderligere"
+" detaljer."
+
+#. (itstool) path: formalpara/para
+#: C/legal.xml:88
+msgid ""
+"You should have received a copy of the GNU General Public License along with"
+" MATE Power Manager; if not, write to the Free Software Foundation, Inc., 51"
+" Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+msgstr ""
+"Du bør have modtaget en kopi af GNU General Public License sammen med MATE-"
+"strømstyring; er dette ikke tilfældet, så skriv til Free Software "
+"Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301 USA"
