@@ -41,7 +41,7 @@
 #include "gpm-manager.h"
 #include "gpm-session.h"
 
-#include "org.mate.PowerManager.h"
+#include "org.cafe.PowerManager.h"
 
 #include "egg-debug.h"
 
@@ -50,7 +50,7 @@
  * @connection: What we want to register to
  * @object: The GObject we want to register
  *
- * Register org.mate.PowerManager on the session bus.
+ * Register org.cafe.PowerManager on the session bus.
  * This function MUST be called before DBUS service will work.
  *
  * Return value: success
@@ -223,7 +223,7 @@ main (int argc, char *argv[])
 		egg_error ("This program cannot start until you start the "
 			   "dbus session service.\n\n"
 			   "This is usually started automatically in X "
-			   "or mate startup when you start a new session.");
+			   "or cafe startup when you start a new session.");
 	}
 
 	/* add application specific icons to search path */
@@ -237,7 +237,7 @@ main (int argc, char *argv[])
 	g_signal_connect (session, "stop", G_CALLBACK (gpm_main_stop_cb), loop);
 	g_signal_connect (session, "query-end-session", G_CALLBACK (gpm_main_query_end_session_cb), loop);
 	g_signal_connect (session, "end-session", G_CALLBACK (gpm_main_end_session_cb), loop);
-	gpm_session_register_client (session, "mate-power-manager", getenv ("DESKTOP_AUTOSTART_ID"));
+	gpm_session_register_client (session, "cafe-power-manager", getenv ("DESKTOP_AUTOSTART_ID"));
 
 	/* create a new gui object */
 	manager = gpm_manager_new ();

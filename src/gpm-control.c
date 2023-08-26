@@ -154,7 +154,7 @@ gpm_control_shutdown (GpmControl *control, GError **error)
  * @policy: The policy string.
  *
  * This function finds out if we should lock the screen when we do an
- * action. It is required as we can either use the mate-screensaver policy
+ * action. It is required as we can either use the cafe-screensaver policy
  * or the custom policy. See the yelp file for more information.
  *
  * Return value: TRUE if we should lock.
@@ -168,7 +168,7 @@ gpm_control_get_lock_policy (GpmControl *control, const gchar *policy)
 	gboolean schema_exists;
 	gint i;
 
-	/* Check if the mate-screensaver schema exists before trying to read
+	/* Check if the cafe-screensaver schema exists before trying to read
 	   the lock setting to prevent crashing. See GNOME bug #651225. */
 	g_settings_schema_source_list_schemas (g_settings_schema_source_get_default (), TRUE, &schemas, NULL);
 	schema_exists = FALSE;
@@ -182,7 +182,7 @@ gpm_control_get_lock_policy (GpmControl *control, const gchar *policy)
 	g_strfreev (schemas);
 
 	/* This allows us to over-ride the custom lock settings set
-	   with a system default set in mate-screensaver.
+	   with a system default set in cafe-screensaver.
 	   See bug #331164 for all the juicy details. :-) */
 	use_ss_setting = g_settings_get_boolean (control->priv->settings, GPM_SETTINGS_LOCK_USE_SCREENSAVER);
 	if (use_ss_setting && schema_exists) {

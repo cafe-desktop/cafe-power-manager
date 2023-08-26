@@ -61,8 +61,8 @@
 #include "gpm-engine.h"
 #include "gpm-upower.h"
 
-#include "org.mate.PowerManager.Backlight.h"
-#include "org.mate.PowerManager.KbdBacklight.h"
+#include "org.cafe.PowerManager.Backlight.h"
+#include "org.cafe.PowerManager.KbdBacklight.h"
 
 static void     gpm_manager_finalize	(GObject	 *object);
 
@@ -347,7 +347,7 @@ gpm_manager_is_inhibit_valid (GpmManager *manager, gboolean user_action, const c
  *
  * Changes the policy if required, setting brightness, display and computer
  * timeouts.
- * We have to make sure mate-screensaver disables screensaving, and enables
+ * We have to make sure cafe-screensaver disables screensaving, and enables
  * monitor DPMS instead when on batteries to save power.
  **/
 static void
@@ -391,7 +391,7 @@ gpm_manager_blank_screen (GpmManager *manager, GError **noerror)
 					       GPM_SETTINGS_LOCK_ON_BLANK_SCREEN);
 	if (do_lock) {
 		if (!gpm_screensaver_lock (manager->priv->screensaver))
-			egg_debug ("Could not lock screen via mate-screensaver");
+			egg_debug ("Could not lock screen via cafe-screensaver");
 	}
 	gpm_dpms_set_mode (manager->priv->dpms, GPM_DPMS_MODE_OFF, &error);
 	if (error) {
@@ -499,7 +499,7 @@ gpm_manager_notify (GpmManager *manager, NotifyNotification **notification_class
 		egg_warning ("failed to show notification: %s", error->message);
 		g_error_free (error);
 
-		/* show modal dialog as libmatenotify failed */
+		/* show modal dialog as libcafenotify failed */
 		dialog = gtk_message_dialog_new_with_markup (NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
 							     GTK_MESSAGE_INFO, GTK_BUTTONS_CLOSE,
 							     "<span size='larger'><b>%s</b></span>", title);
@@ -846,7 +846,7 @@ gpm_manager_update_dpms_throttle (GpmManager *manager)
 		if (manager->priv->screensaver_dpms_throttle_id != 0) {
 			gpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_dpms_throttle_id);
 		}
-		/* TRANSLATORS: this is the mate-screensaver throttle */
+		/* TRANSLATORS: this is the cafe-screensaver throttle */
 		manager->priv->screensaver_dpms_throttle_id = gpm_screensaver_add_throttle (manager->priv->screensaver, _("Display DPMS activated"));
 	}
 }
@@ -865,7 +865,7 @@ gpm_manager_update_ac_throttle (GpmManager *manager)
 		/* if throttle already exists then remove */
 		if (manager->priv->screensaver_ac_throttle_id != 0)
 			gpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_ac_throttle_id);
-		/* TRANSLATORS: this is the mate-screensaver throttle */
+		/* TRANSLATORS: this is the cafe-screensaver throttle */
 		manager->priv->screensaver_ac_throttle_id = gpm_screensaver_add_throttle (manager->priv->screensaver, _("On battery power"));
 	}
 }
@@ -930,7 +930,7 @@ gpm_manager_button_pressed_cb (GpmButton *button, const gchar *type, GpmManager 
 		g_free (message);
 	}
 
-	/* really belongs in mate-screensaver */
+	/* really belongs in cafe-screensaver */
 	if (g_strcmp0 (type, GPM_BUTTON_LOCK) == 0)
 		gpm_screensaver_lock (manager->priv->screensaver);
 
@@ -1311,7 +1311,7 @@ gpm_manager_engine_charge_low_cb (GpmEngine *engine, UpDevice *device, GpmManage
 		remaining_text = gpm_get_timestring (time_to_empty);
 
 		/* TRANSLATORS: tell the user how much time they have got */
-		message = g_strdup_printf (_("Approximately <b>%s</b> remaining (%.0f%%)"), remaining_text, percentage);
+		message = g_strdup_printf (_("Approxicafely <b>%s</b> remaining (%.0f%%)"), remaining_text, percentage);
 
 	} else if (kind == UP_DEVICE_KIND_UPS) {
 		/* TRANSLATORS: UPS is starting to get a little low */
@@ -1319,7 +1319,7 @@ gpm_manager_engine_charge_low_cb (GpmEngine *engine, UpDevice *device, GpmManage
 		remaining_text = gpm_get_timestring (time_to_empty);
 
 		/* TRANSLATORS: tell the user how much time they have got */
-		message = g_strdup_printf (_("Approximately <b>%s</b> of remaining UPS backup power (%.0f%%)"),
+		message = g_strdup_printf (_("Approxicafely <b>%s</b> of remaining UPS backup power (%.0f%%)"),
 					   remaining_text, percentage);
 	} else if (kind == UP_DEVICE_KIND_MOUSE) {
 		gboolean notify = g_settings_get_boolean (manager->priv->settings,
@@ -1456,7 +1456,7 @@ gpm_manager_engine_charge_critical_cb (GpmEngine *engine, UpDevice *device, GpmM
 		remaining_text = gpm_get_timestring (time_to_empty);
 
 		/* TRANSLATORS: give the user a ultimatum */
-		message = g_strdup_printf (_("Approximately <b>%s</b> of remaining UPS power (%.0f%%). "
+		message = g_strdup_printf (_("Approxicafely <b>%s</b> of remaining UPS power (%.0f%%). "
 					     "Restore AC power to your computer to avoid losing data."),
 					   remaining_text, percentage);
 		g_free (remaining_text);
@@ -1853,7 +1853,7 @@ gpm_manager_init (GpmManager *manager)
 	g_signal_connect (manager->priv->client, "notify::on-battery",
 			  G_CALLBACK (gpm_manager_client_changed_cb), manager);
 
-	/* use libmatenotify */
+	/* use libcafenotify */
 	notify_init (GPM_NAME);
 
 	/* coldplug so we are in the correct state at startup */

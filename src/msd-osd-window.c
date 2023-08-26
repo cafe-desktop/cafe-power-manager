@@ -1,6 +1,6 @@
 /* -*- Mode: C; tab-width: 8; indent-tabs-mode: nil; c-basic-offset: 8 -*-
  *
- * On-screen-display (OSD) window for mate-settings-daemon's plugins
+ * On-screen-display (OSD) window for cafe-settings-daemon's plugins
  *
  * Copyright (C) 2006-2007 William Jon McCann <mccann@jhu.edu> 
  * Copyright (C) 2009 Novell, Inc

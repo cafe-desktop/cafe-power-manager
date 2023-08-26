@@ -32,9 +32,9 @@
 
 static void     gpm_screensaver_finalize   (GObject		*object);
 
-#define GS_LISTENER_SERVICE	"org.mate.ScreenSaver"
+#define GS_LISTENER_SERVICE	"org.cafe.ScreenSaver"
 #define GS_LISTENER_PATH	"/"
-#define GS_LISTENER_INTERFACE	"org.mate.ScreenSaver"
+#define GS_LISTENER_INTERFACE	"org.cafe.ScreenSaver"
 
 struct GpmScreensaverPrivate
 {
@@ -63,7 +63,7 @@ gpm_screensaver_lock (GpmScreensaver *screensaver)
 		return FALSE;
 	}
 
-	egg_debug ("doing mate-screensaver lock");
+	egg_debug ("doing cafe-screensaver lock");
 	dbus_g_proxy_call_no_reply (screensaver->priv->proxy,
 				    "Lock", G_TYPE_INVALID);
 
@@ -79,7 +79,7 @@ gpm_screensaver_lock (GpmScreensaver *screensaver)
 		/* Sleep for 1/10s */
 		g_usleep (1000 * 100);
 		if (sleepcount++ > 50) {
-			egg_debug ("timeout waiting for mate-screensaver");
+			egg_debug ("timeout waiting for cafe-screensaver");
 			break;
 		}
 	}
@@ -168,7 +168,7 @@ gpm_screensaver_remove_throttle (GpmScreensaver *screensaver, guint cookie)
 /**
  * gpm_screensaver_check_running:
  * @screensaver: This class instance
- * Return value: TRUE if mate-screensaver is running
+ * Return value: TRUE if cafe-screensaver is running
  **/
 gboolean
 gpm_screensaver_check_running (GpmScreensaver *screensaver)

@@ -1,7 +1,7 @@
-applets/brightness/org.mate.BrightnessApplet.mate-panel-applet.in
-applets/inhibit/org.mate.InhibitApplet.mate-panel-applet.in
-data/mate-power-manager.desktop.in
-data/mate-power-preferences.desktop.in
-data/mate-power-statistics.desktop.in
+applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.in
+applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.in
+data/cafe-power-manager.desktop.in
+data/cafe-power-preferences.desktop.in
+data/cafe-power-statistics.desktop.in
 applets/brightness/gpm-common.c
 applets/inhibit/gpm-common.c

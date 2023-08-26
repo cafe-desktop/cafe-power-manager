@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
-# This file is distributed under the same license as the mate-power-manager package.
+# This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
@@ -14,12 +14,12 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-power-manager 1.23.1\n"
-"Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
+"Project-Id-Version: cafe-power-manager 1.23.1\n"
+"Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
 "POT-Creation-Date: 2019-11-12 15:22+0100\n"
 "PO-Revision-Date: 2020-02-15 16:27+0000\n"
 "Last-Translator: Saif Husam <saifxman10@yahoo.com>, 2020\n"
-"Language-Team: Arabic (https://www.transifex.com/mate/teams/13566/ar/)\n"
+"Language-Team: Arabic (https://www.transifex.com/cafe/teams/13566/ar/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -36,7 +36,7 @@ msgstr "يضبط سطوع لوحة الحاسوب المحمول."
 
 #: applets/brightness/brightness-applet.c:364
 #: applets/inhibit/inhibit-applet.c:225
-msgid "Cannot connect to mate-power-manager"
+msgid "Cannot connect to cafe-power-manager"
 msgstr "تعذّر الاتصال بمدير طاقة متّة"
 
 #: applets/brightness/brightness-applet.c:366
@@ -99,18 +99,18 @@ msgstr "_عنْ"
 msgid "_Help"
 msgstr "_مساعدة"
 
-#: applets/brightness/org.mate.BrightnessApplet.mate-panel-applet.desktop.in.in:5
+#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Brightness Applet Factory"
 msgstr "مصنع بريمج السطوع"
 
-#: applets/brightness/org.mate.BrightnessApplet.mate-panel-applet.desktop.in.in:9
+#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Brightness Applet"
 msgstr "بريمج السطوع"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/brightness/org.mate.BrightnessApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-brightness-applet"
+#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:12
+msgid "cafe-brightness-applet"
 msgstr ""
 
 #: applets/inhibit/inhibit-applet.c:87
@@ -133,61 +133,61 @@ msgstr "فُعِّل النوم الآلي"
 msgid "Manual inhibit"
 msgstr "تثبيط يدوي"
 
-#: applets/inhibit/org.mate.InhibitApplet.mate-panel-applet.desktop.in.in:5
+#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Inhibit Applet Factory"
 msgstr "مصنع بريمج التثبيط"
 
-#: applets/inhibit/org.mate.InhibitApplet.mate-panel-applet.desktop.in.in:9
+#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Inhibit Applet"
 msgstr "بريمج التثبيط"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/inhibit/org.mate.InhibitApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-inhibit-applet"
+#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:12
+msgid "cafe-inhibit-applet"
 msgstr ""
 
-#: data/mate-power-manager.desktop.in.in:3 src/gpm-tray-icon.c:184
+#: data/cafe-power-manager.desktop.in.in:3 src/gpm-tray-icon.c:184
 msgid "Power Manager"
 msgstr "مدير الطاقة"
 
-#: data/mate-power-manager.desktop.in.in:4 src/gpm-tray-icon.c:186
+#: data/cafe-power-manager.desktop.in.in:4 src/gpm-tray-icon.c:186
 msgid "Power management daemon"
 msgstr "جني إدارة الطاقة"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: data/mate-power-manager.desktop.in.in:6
-#: data/mate-power-preferences.desktop.in.in:6
-msgid "mate-power-manager"
+#: data/cafe-power-manager.desktop.in.in:6
+#: data/cafe-power-preferences.desktop.in.in:6
+msgid "cafe-power-manager"
 msgstr ""
 
-#: data/org.mate.power-manager.gschema.xml.in:26
-#: data/org.mate.power-manager.gschema.xml.in:41
+#: data/org.cafe.power-manager.gschema.xml.in:26
+#: data/org.cafe.power-manager.gschema.xml.in:41
 msgid "Whether to hibernate, suspend or do nothing when inactive"
 msgstr "ما إذا يتم سبات, توقيف أو فعل لا شيء عند عدم النشاط"
 
-#: data/org.mate.power-manager.gschema.xml.in:27
-#: data/org.mate.power-manager.gschema.xml.in:42
+#: data/org.cafe.power-manager.gschema.xml.in:27
+#: data/org.cafe.power-manager.gschema.xml.in:42
 msgid ""
 "The type of sleeping that should be performed when the computer is inactive."
 msgstr "نوع النّوم الذي ينبغي أن يقوم فيه الحاسوب بعد عدم النشاط."
 
-#: data/org.mate.power-manager.gschema.xml.in:31
+#: data/org.cafe.power-manager.gschema.xml.in:31
 msgid "Battery critical low action"
 msgstr "إجراء انخفاض البطارية الحرِج"
 
-#: data/org.mate.power-manager.gschema.xml.in:32
+#: data/org.cafe.power-manager.gschema.xml.in:32
 msgid "The action to take when the battery is critically low."
 msgstr "الإجراءات المتّبعة عند انخفاض قدرة البطّارية بشكل كبير."
 
-#: data/org.mate.power-manager.gschema.xml.in:36
+#: data/org.cafe.power-manager.gschema.xml.in:36
 msgid ""
 "If the battery event should occur when the lid is shut and the power "
 "disconnected"
 msgstr "إذا يفترض حدوث حدث البطارية حينما يغلق الغطاء و تفصل الطاقة"
 
-#: data/org.mate.power-manager.gschema.xml.in:37
+#: data/org.cafe.power-manager.gschema.xml.in:37
 msgid ""
 "If the battery lid close event should occur (for example 'Suspend when lid "
 "closed on battery') when the lid is previously shut and the AC power "
@@ -197,27 +197,27 @@ msgstr ""
 "إغلاق الجهاز على البطارية) في حالة كان الغطاء مغلق مسبقا و من ثم تم فصل طاقة"
 " التيار المتردد لاحقًا"
 
-#: data/org.mate.power-manager.gschema.xml.in:46
+#: data/org.cafe.power-manager.gschema.xml.in:46
 msgid "UPS critical low action"
 msgstr "الإجراء العاجل لـ UPS"
 
-#: data/org.mate.power-manager.gschema.xml.in:47
+#: data/org.cafe.power-manager.gschema.xml.in:47
 msgid "The action to take when the UPS is critically low."
 msgstr "الإجراءات المتّبعة عند انخفاض قدرة وحدة التّخزين UPS بشكل كبير."
 
-#: data/org.mate.power-manager.gschema.xml.in:51
+#: data/org.cafe.power-manager.gschema.xml.in:51
 msgid "UPS low power action"
 msgstr "تصرف الUPS في حالة الطاقة المنخفضة"
 
-#: data/org.mate.power-manager.gschema.xml.in:52
+#: data/org.cafe.power-manager.gschema.xml.in:52
 msgid "The action to take when the UPS is low."
 msgstr "الإجراءات المتّبعة عند انخفاض قدرة وحدة التّخزين UPS"
 
-#: data/org.mate.power-manager.gschema.xml.in:56
+#: data/org.cafe.power-manager.gschema.xml.in:56
 msgid "Allow backlight brightness adjustment"
 msgstr "اسمح بضبط سطوع الضوء الخلفي"
 
-#: data/org.mate.power-manager.gschema.xml.in:57
+#: data/org.cafe.power-manager.gschema.xml.in:57
 msgid ""
 "If the screen brightness should be changed when switching between AC and "
 "battery power."
@@ -225,11 +225,11 @@ msgstr ""
 "إن كان يمكن تغيير سطوع الشاشة عند التحويل بين الطاقة المتناوبة وطاقة "
 "البطارية."
 
-#: data/org.mate.power-manager.gschema.xml.in:61
+#: data/org.cafe.power-manager.gschema.xml.in:61
 msgid "Reduce the backlight brightness when on battery power"
 msgstr "خفض سطوع الإضاءة الخلفية أثناء استعمال طاقة البطارية"
 
-#: data/org.mate.power-manager.gschema.xml.in:62
+#: data/org.cafe.power-manager.gschema.xml.in:62
 msgid ""
 "If the screen should be reduced in brightness when the computer is on "
 "battery power."
@@ -237,11 +237,11 @@ msgstr ""
 "إن كان يفترض خفض إضاءة الشاشة لحفظ الطاقة إذا كان الحاسوب في حالة خامدة "
 "أثناء استعمال طاقة البطارية."
 
-#: data/org.mate.power-manager.gschema.xml.in:66
+#: data/org.cafe.power-manager.gschema.xml.in:66
 msgid "Reduce the keyboard backlight when on battery power"
 msgstr "تقليل إضاءة خلفية لوحة المفاتيح عندما يكون على طاقة البطارية"
 
-#: data/org.mate.power-manager.gschema.xml.in:67
+#: data/org.cafe.power-manager.gschema.xml.in:67
 msgid ""
 "If the keyboard backlight brightness should be reduced when the computer is "
 "on battery power"
@@ -249,11 +249,11 @@ msgstr ""
 " ضرورة تخفيض سطوع إضاءة خلفية لوحة المفاتيح عندما يكون الكمبيوتر على طاقة "
 "البطارية"
 
-#: data/org.mate.power-manager.gschema.xml.in:71
+#: data/org.cafe.power-manager.gschema.xml.in:71
 msgid "Keyboard backlight brightness when on AC power."
 msgstr "سطوع الإضاءة الخلفية للوحة المفاتيح عندما يكون بالطاقة الكهربائية."
 
-#: data/org.mate.power-manager.gschema.xml.in:72
+#: data/org.cafe.power-manager.gschema.xml.in:72
 msgid ""
 "Percent brightness to set keyboard backlight at when on AC power. Legal "
 "values are between 0 and 100."
@@ -261,12 +261,12 @@ msgstr ""
 "السطوع بالمئة لضبط إضاءة خلفية لوحة المفاتيح عندما يكون بالطاقة الكهربائية. "
 "القيم المحددة تتراوح بين 0 و 100."
 
-#: data/org.mate.power-manager.gschema.xml.in:76
+#: data/org.cafe.power-manager.gschema.xml.in:76
 msgid "Percent to reduce keyboard backlight by when on battery power."
 msgstr ""
 "النسبة بالمئة لتخفيف إضاءة خلفية لوحة المفاتيح عندما تكون على طاقة البطارية."
 
-#: data/org.mate.power-manager.gschema.xml.in:77
+#: data/org.cafe.power-manager.gschema.xml.in:77
 msgid ""
 "The percentage to reduce the keyboard backlight by when on battery power. "
 "For example, if set to '60', the backlight will be cut by 40% on battery "
@@ -276,11 +276,11 @@ msgstr ""
 "البطارية. على سبيل المثال، إذا كانت النتيجة '60'، سيتم خفض الإضاءة الخلفية "
 "بنسبة 40٪ على طاقة البطارية. القيم المحددة تتراوح بين 0 و 100."
 
-#: data/org.mate.power-manager.gschema.xml.in:81
+#: data/org.cafe.power-manager.gschema.xml.in:81
 msgid "Percent to reduce keyboard backlight by when idle."
 msgstr "النسبة بالمئة لتخفيف إضاءة خلفية لوحة المفاتيح عند الخمول."
 
-#: data/org.mate.power-manager.gschema.xml.in:82
+#: data/org.cafe.power-manager.gschema.xml.in:82
 msgid ""
 "The percentage to reduce the keyboard backlight by when idle. For example, "
 "if set to '60', the backlight will be cut by 40% when idle. Legal values are"
@@ -290,11 +290,11 @@ msgstr ""
 " إذا كانت النتيجة '60'، سيتم خفض الإضاءة الخلفية بنسبة 40٪ عند الخمول. القيم"
 " المحددة تتراوح بين 0 و 100."
 
-#: data/org.mate.power-manager.gschema.xml.in:86
+#: data/org.cafe.power-manager.gschema.xml.in:86
 msgid "The brightness of the screen when idle"
 msgstr "سطوع الشاشة عندما تكون في حالة خمول"
 
-#: data/org.mate.power-manager.gschema.xml.in:87
+#: data/org.cafe.power-manager.gschema.xml.in:87
 msgid ""
 "This is the laptop panel screen brightness used when the session is idle. "
 "Only valid when use-time-for-policy is true."
@@ -302,12 +302,12 @@ msgstr ""
 "التوهج المستعمل لشاشة الحاسوب النقال عندما تكون الجلسة غير نشطة. تستعمل فقط "
 "عندما تكون use_time_for_policy صحيح. "
 
-#: data/org.mate.power-manager.gschema.xml.in:91
+#: data/org.cafe.power-manager.gschema.xml.in:91
 msgid "Dim the screen after a period of inactivity when on battery power"
 msgstr ""
 "أخفت إضاءة الشاشة بعد انقضاء مدة من عدم النشاط أثناء استعمال طاقة البطارية"
 
-#: data/org.mate.power-manager.gschema.xml.in:92
+#: data/org.cafe.power-manager.gschema.xml.in:92
 msgid ""
 "If the screen should be dimmed to save power when the computer is idle when "
 "on battery power."
@@ -315,19 +315,19 @@ msgstr ""
 "إن كان يفترض خفض إضاءة الشاشة لحفظ الطاقة إذا كان الحاسوب في حالة خامدة "
 "أثناء استعمال طاقة البطارية."
 
-#: data/org.mate.power-manager.gschema.xml.in:96
+#: data/org.cafe.power-manager.gschema.xml.in:96
 msgid "The default amount of time to dim the screen after idle"
 msgstr "وقت الخمول الافتراضي الذي ستُعتّم الشاشة بعده"
 
-#: data/org.mate.power-manager.gschema.xml.in:97
+#: data/org.cafe.power-manager.gschema.xml.in:97
 msgid "The default amount of time to dim the screen after idle."
 msgstr "وقت الخمول الافتراضي الذي ستُعتّم الشاشة بعده."
 
-#: data/org.mate.power-manager.gschema.xml.in:101
+#: data/org.cafe.power-manager.gschema.xml.in:101
 msgid "LCD dimming amount when on battery"
 msgstr "درجة خفوت شاشة الكريستال السائل عند استخدام البطارية"
 
-#: data/org.mate.power-manager.gschema.xml.in:102
+#: data/org.cafe.power-manager.gschema.xml.in:102
 msgid ""
 "The amount to dim the brightness of the display when on battery power. "
 "Possible values are between 0 and 100."
@@ -335,13 +335,13 @@ msgstr ""
 "الحجم الذي تعتم الشّاشة فيه عند استعمال البطارية. القيم الممكنة بين 0 و 100."
 " "
 
-#: data/org.mate.power-manager.gschema.xml.in:106
+#: data/org.cafe.power-manager.gschema.xml.in:106
 msgid "Dim the screen after a period of inactivity when on AC power"
 msgstr ""
 "أخفت إضاءة الشاشة بعد انقضاء مدة من عدم النشاط أثناء استعمال الطاقة "
 "الاعتيادية"
 
-#: data/org.mate.power-manager.gschema.xml.in:107
+#: data/org.cafe.power-manager.gschema.xml.in:107
 msgid ""
 "If the screen should be dimmed to save power when the computer is idle when "
 "on AC power."
@@ -349,61 +349,61 @@ msgstr ""
 "إن كان يفترض خفض إضاءة الشاشة لحفظ الطاقة إذا كان الحاسوب في حالة خامدة "
 "أثناء استعمال الطاقة الاعتيادية"
 
-#: data/org.mate.power-manager.gschema.xml.in:111
+#: data/org.cafe.power-manager.gschema.xml.in:111
 msgid "Method used to blank screen on AC"
 msgstr "الطريقة المستخدمة لإفراغ الشاشة مع التيار المتردد"
 
-#: data/org.mate.power-manager.gschema.xml.in:112
+#: data/org.cafe.power-manager.gschema.xml.in:112
 msgid "The DPMS method used to blank the screen when on AC power."
 msgstr "طريقة DPMS المستعملة لتفريغ الشّاشة وذلك في حالة التّيار المتردد."
 
-#: data/org.mate.power-manager.gschema.xml.in:116
+#: data/org.cafe.power-manager.gschema.xml.in:116
 msgid "Method used to blank screen on battery"
 msgstr "الطريقة المستخدمة لإفراغ الشاشة مع البطارية"
 
-#: data/org.mate.power-manager.gschema.xml.in:117
+#: data/org.cafe.power-manager.gschema.xml.in:117
 msgid "The DPMS method used to blank the screen when on battery power."
 msgstr "طريقة DPMS المستعملة لتفريغ الشّاشة وذلك في حالة التّيار البطارية."
 
-#: data/org.mate.power-manager.gschema.xml.in:121
+#: data/org.cafe.power-manager.gschema.xml.in:121
 msgid "LCD brightness when on AC"
 msgstr "سطوع شاشة الكريستال السائل LCD عند استخدام التيار المتردد"
 
-#: data/org.mate.power-manager.gschema.xml.in:122
+#: data/org.cafe.power-manager.gschema.xml.in:122
 msgid ""
 "The brightness of the display when on AC power. Possible values are between "
 "0.0 and 100.0."
 msgstr "توهج الشاشة عند استعمال التيار. القيم الممكنة بين 0.0 و 100.0.  "
 
-#: data/org.mate.power-manager.gschema.xml.in:126
+#: data/org.cafe.power-manager.gschema.xml.in:126
 msgid "Suspend button action"
 msgstr "إجراء زر التعليق"
 
-#: data/org.mate.power-manager.gschema.xml.in:127
+#: data/org.cafe.power-manager.gschema.xml.in:127
 msgid "The action to take when the system suspend button is pressed."
 msgstr "الإجراءات المتّبعة عند الضّغط على زرّ التّعليق."
 
-#: data/org.mate.power-manager.gschema.xml.in:131
+#: data/org.cafe.power-manager.gschema.xml.in:131
 msgid "Hibernate button action"
 msgstr "إجراء زر السبات"
 
-#: data/org.mate.power-manager.gschema.xml.in:132
+#: data/org.cafe.power-manager.gschema.xml.in:132
 msgid "The action to take when the system hibernate button is pressed."
 msgstr "الإجراءات المتّبعة عند الضّغط على زرّ الإسبات."
 
-#: data/org.mate.power-manager.gschema.xml.in:136
+#: data/org.cafe.power-manager.gschema.xml.in:136
 msgid "Power button action"
 msgstr "إجراء زر الطاقة"
 
-#: data/org.mate.power-manager.gschema.xml.in:137
+#: data/org.cafe.power-manager.gschema.xml.in:137
 msgid "The action to take when the system power button is pressed."
 msgstr "الإجراءات المتّبعة عند الضّغط على زرّ التّشغيل."
 
-#: data/org.mate.power-manager.gschema.xml.in:141
+#: data/org.cafe.power-manager.gschema.xml.in:141
 msgid "Laptop lid close action on battery"
 msgstr "الإجراء اللازم عند إغلاق غطاء الجهاز المحمول أثناء استخدام البطارية"
 
-#: data/org.mate.power-manager.gschema.xml.in:142
+#: data/org.cafe.power-manager.gschema.xml.in:142
 msgid ""
 "The action to take when the laptop lid is closed and the laptop is on "
 "battery power."
@@ -411,12 +411,12 @@ msgstr ""
 "الإجراءات المتّبعة عند مُلامسة قطعتي المحمول بعضهما و المحمول موصول بتيار "
 "البطّارية."
 
-#: data/org.mate.power-manager.gschema.xml.in:146
+#: data/org.cafe.power-manager.gschema.xml.in:146
 msgid "Laptop lid close action when on AC"
 msgstr ""
 "الإجراء اللازم عند إغلاق غطاء الجهاز المحمول أثناء استخدام التيار المتردد"
 
-#: data/org.mate.power-manager.gschema.xml.in:147
+#: data/org.cafe.power-manager.gschema.xml.in:147
 msgid ""
 "The action to take when the laptop lid is closed and the laptop is on AC "
 "power."
@@ -424,11 +424,11 @@ msgstr ""
 "الإجراءات المتّبعة عند مُلامسة قطعتي المحمول بعضهما و المحمول موصول بالتّيار"
 " المتردد."
 
-#: data/org.mate.power-manager.gschema.xml.in:151
+#: data/org.cafe.power-manager.gschema.xml.in:151
 msgid "Whether to use time-based notifications"
 msgstr "ما إذا يتم استخدام تنبيهات مبنية على الوقت"
 
-#: data/org.mate.power-manager.gschema.xml.in:152
+#: data/org.cafe.power-manager.gschema.xml.in:152
 msgid ""
 "If time based notifications should be used. If set to false, then the "
 "percentage change is used instead, which may fix a broken ACPI BIOS."
@@ -436,41 +436,41 @@ msgstr ""
 "إن كان يفترض استعمال تنبيهات وقتية. إذا لم يتم تفعيل هذا الخيار, سيتم "
 "استعمال تغير النسبة المئوية."
 
-#: data/org.mate.power-manager.gschema.xml.in:156
+#: data/org.cafe.power-manager.gschema.xml.in:156
 msgid "Check CPU load before sleeping"
 msgstr "راجع حِمْل المعالج قبل النوم"
 
-#: data/org.mate.power-manager.gschema.xml.in:157
+#: data/org.cafe.power-manager.gschema.xml.in:157
 msgid "If the CPU load should be checked before doing the idle action."
 msgstr "إذا يفترض التأكد من تحميل المعالج قبل عمل إجراء الخمول."
 
-#: data/org.mate.power-manager.gschema.xml.in:161
+#: data/org.cafe.power-manager.gschema.xml.in:161
 msgid "Whether NetworkManager should be connected and disconnected on sleep."
 msgstr "ما إذا سيكون مُدير الشّبكة مُتّصلًا أو لا عند النّوم."
 
-#: data/org.mate.power-manager.gschema.xml.in:162
+#: data/org.cafe.power-manager.gschema.xml.in:162
 msgid ""
 "Whether NetworkManager should disconnect before suspending or hibernating "
 "and connect on resume."
 msgstr "فك اتصال مدير الشبكة عند التعليق أو الإسبات وأوصله عند الاسترجاع."
 
-#: data/org.mate.power-manager.gschema.xml.in:166
-msgid "Use mate-screensaver lock setting"
+#: data/org.cafe.power-manager.gschema.xml.in:166
+msgid "Use cafe-screensaver lock setting"
 msgstr "استعمل خيارات القفل لـحافظة الشاشة لمتّة"
 
-#: data/org.mate.power-manager.gschema.xml.in:167
+#: data/org.cafe.power-manager.gschema.xml.in:167
 msgid ""
-"Whether to use the screen lock setting of mate-screensaver to decide if the "
+"Whether to use the screen lock setting of cafe-screensaver to decide if the "
 "screen is locked after a hibernate, suspend or blank screen."
 msgstr ""
-"إن كانت ستُستخدم خيارات القفل ل mate-screensaver لتحديد هل يتم قفل الشاشة "
+"إن كانت ستُستخدم خيارات القفل ل cafe-screensaver لتحديد هل يتم قفل الشاشة "
 "بعد السبات أو التوقيف أو فراغ الشاشة."
 
-#: data/org.mate.power-manager.gschema.xml.in:171
+#: data/org.cafe.power-manager.gschema.xml.in:171
 msgid "Lock screen when blanked"
 msgstr "أقفل الشاشة عند الإفراغ"
 
-#: data/org.mate.power-manager.gschema.xml.in:172
+#: data/org.cafe.power-manager.gschema.xml.in:172
 msgid ""
 "Whether the screen is locked when the screen is turned off. Only used if "
 "lock-use-screensaver is false."
@@ -478,11 +478,11 @@ msgstr ""
 "إن كانت الشاشة مقفلة أثناء إغلاق الشاشة. تستخدم فقط إن كان  lock-use-"
 "screensaver-settings محددًا ب false."
 
-#: data/org.mate.power-manager.gschema.xml.in:176
+#: data/org.cafe.power-manager.gschema.xml.in:176
 msgid "Lock screen on suspend"
 msgstr "أقفل الشاشة في حالة التعليق"
 
-#: data/org.mate.power-manager.gschema.xml.in:177
+#: data/org.cafe.power-manager.gschema.xml.in:177
 msgid ""
 "Whether the screen is locked when the computer wakes up from a suspend. Only"
 " used if lock-use-screensaver is false."
@@ -490,11 +490,11 @@ msgstr ""
 "إن كان يفترض قفل الشاشة عند إيقاظ الحاسوب من التوقيف. يتم استعمالها فقط إذا "
 "كان  lock-use-screensaver-settings محددًا ب false."
 
-#: data/org.mate.power-manager.gschema.xml.in:181
+#: data/org.cafe.power-manager.gschema.xml.in:181
 msgid "Lock screen on hibernate"
 msgstr "أقفل الشاشة في حالة السبات"
 
-#: data/org.mate.power-manager.gschema.xml.in:182
+#: data/org.cafe.power-manager.gschema.xml.in:182
 msgid ""
 "Whether the screen is locked when the computer wakes up from a hibernate. "
 "Only used if lock-use-screensaver is false."
@@ -502,12 +502,12 @@ msgstr ""
 "إن كان يفترض قفل الشاشة عند إيقاظ الحاسوب من السبات. يتم استعمالها فقط إذا "
 "كان  lock-use-screensaver-settings محددا ب false."
 
-#: data/org.mate.power-manager.gschema.xml.in:186
-#: data/org.mate.power-manager.gschema.xml.in:191
+#: data/org.cafe.power-manager.gschema.xml.in:186
+#: data/org.cafe.power-manager.gschema.xml.in:191
 msgid "Lock GNOME keyring on sleep"
 msgstr "أغلق حلقة مفاتيح جنوم عند النوم"
 
-#: data/org.mate.power-manager.gschema.xml.in:187
+#: data/org.cafe.power-manager.gschema.xml.in:187
 msgid ""
 "Whether the GNOME keyring is locked before the computer enters suspend. This"
 " means the keyring will have to be unlocked on resume."
@@ -515,7 +515,7 @@ msgstr ""
 "إن كانت حلقة مفاتيح جنوم مُقفلة قبل دخول الحاسوب لحالة التعليق. هذا يعني أن "
 "حلقة المفاتيح ستُفتح عند المتابعة."
 
-#: data/org.mate.power-manager.gschema.xml.in:192
+#: data/org.cafe.power-manager.gschema.xml.in:192
 msgid ""
 "Whether the GNOME keyring is locked before the computer enters hibernate. "
 "This means the keyring will have to be unlocked on resume."
@@ -523,47 +523,47 @@ msgstr ""
 "إن كانت حلقة مفاتيح جنوم مقفلة قبل دخول الحاسوب لحالة الإسبات. هذا يعني أن "
 "حلقة المفاتيح ستُفتح عند المتابعة."
 
-#: data/org.mate.power-manager.gschema.xml.in:196
+#: data/org.cafe.power-manager.gschema.xml.in:196
 msgid "If we should show the low capacity warning for a broken battery"
 msgstr "إن كان سيُظهر تنبيه إفراغ البطارية إذا كانت البطارية فاسدة"
 
-#: data/org.mate.power-manager.gschema.xml.in:197
+#: data/org.cafe.power-manager.gschema.xml.in:197
 msgid "If we should show the low capacity warning for a broken battery."
 msgstr "إن كان سيُظهر تنبيه إفراغ البطارية إذا كانت البطارية فاسدة."
 
-#: data/org.mate.power-manager.gschema.xml.in:201
+#: data/org.cafe.power-manager.gschema.xml.in:201
 msgid "Notify when AC adapter is disconnected"
 msgstr "التنبيه حين يتم فصل التيار المتردد"
 
-#: data/org.mate.power-manager.gschema.xml.in:202
+#: data/org.cafe.power-manager.gschema.xml.in:202
 msgid "If the user should be notified when the AC adapter is disconnected."
 msgstr "إذا يفترض إعلام المستخدم في حال إنقطاع التيار المتردد"
 
-#: data/org.mate.power-manager.gschema.xml.in:206
+#: data/org.cafe.power-manager.gschema.xml.in:206
 msgid "Notify when fully charged"
 msgstr "التنبيه حين اكتمال الشحن"
 
-#: data/org.mate.power-manager.gschema.xml.in:207
+#: data/org.cafe.power-manager.gschema.xml.in:207
 msgid ""
 "If a notification message should be displayed when the battery is fully "
 "charged."
 msgstr "إن كان يفترض إظهار رسالة تنبيهية في حال اكتمال شحن البطارية"
 
-#: data/org.mate.power-manager.gschema.xml.in:211
+#: data/org.cafe.power-manager.gschema.xml.in:211
 msgid "Notify on a sleep failure"
 msgstr "التبليغ في حال فشل النوم"
 
-#: data/org.mate.power-manager.gschema.xml.in:212
+#: data/org.cafe.power-manager.gschema.xml.in:212
 msgid ""
 "If a notification message should be displayed after suspend or hibernate "
 "failed."
 msgstr "إن كان يفترض إظهار رسالة تنبيهية في حال فشل تعليق أو إسبات الحاسوب"
 
-#: data/org.mate.power-manager.gschema.xml.in:216
+#: data/org.cafe.power-manager.gschema.xml.in:216
 msgid "The URI to show to the user on sleep failure"
 msgstr "إظهار رابط URI للمستخدم في حال فشل النّوم"
 
-#: data/org.mate.power-manager.gschema.xml.in:217
+#: data/org.cafe.power-manager.gschema.xml.in:217
 msgid ""
 "When sleep fails we can show the user a button to help fix the situation. "
 "Leave this blank if the button should not be shown."
@@ -571,105 +571,105 @@ msgstr ""
 "عند فشل وضع النّوم بإمكاننا عرض زرّ للمُستخدم ليساعده في الإصلاح. اتركه "
 "فارغًا في حال عدم رغبتك بمشاهدة ذلك الزّر."
 
-#: data/org.mate.power-manager.gschema.xml.in:221
+#: data/org.cafe.power-manager.gschema.xml.in:221
 msgid "Notify on a low power"
 msgstr "التبليغ في حالة الطاقة المنخفضة"
 
-#: data/org.mate.power-manager.gschema.xml.in:222
-#: data/org.mate.power-manager.gschema.xml.in:227
+#: data/org.cafe.power-manager.gschema.xml.in:222
+#: data/org.cafe.power-manager.gschema.xml.in:227
 msgid ""
 "If a notification message should be displayed when the battery is getting "
 "low."
 msgstr "نبّهني إذا كانت البطارية ضعيفة الشحن."
 
-#: data/org.mate.power-manager.gschema.xml.in:226
+#: data/org.cafe.power-manager.gschema.xml.in:226
 msgid "Notify on low capacity of mouse battery"
 msgstr ""
 
-#: data/org.mate.power-manager.gschema.xml.in:231
+#: data/org.cafe.power-manager.gschema.xml.in:231
 msgid "Whether we should show the history data points"
 msgstr "ما إذا سيتم عرض نقاط بيانات التأريخ"
 
-#: data/org.mate.power-manager.gschema.xml.in:232
+#: data/org.cafe.power-manager.gschema.xml.in:232
 msgid ""
 "Whether we should show the history data points in the statistics window."
 msgstr "ما إذا سيتم عرض نقاط بيانات التأريخ في نافذة الإحصائيات."
 
-#: data/org.mate.power-manager.gschema.xml.in:236
+#: data/org.cafe.power-manager.gschema.xml.in:236
 msgid "Whether we should smooth the history data"
 msgstr "في حال ما توجب علينا صقل بيانات التّأريخ في الرسم البياني"
 
-#: data/org.mate.power-manager.gschema.xml.in:237
+#: data/org.cafe.power-manager.gschema.xml.in:237
 msgid "Whether we should smooth the history data in the graph."
 msgstr "في حال ما توجب علينا صقل بيانات التّأريخ في الرسم البياني."
 
-#: data/org.mate.power-manager.gschema.xml.in:241
+#: data/org.cafe.power-manager.gschema.xml.in:241
 msgid "The default graph type to show for history"
 msgstr "نوع الرسم البياني الافتراضي لإظهاره في التّأريخ"
 
-#: data/org.mate.power-manager.gschema.xml.in:242
+#: data/org.cafe.power-manager.gschema.xml.in:242
 msgid "The default graph type to show in the history window."
 msgstr "نوع الرسم البياني الأفتراضي لإظهاره في نافذة التأريخ."
 
-#: data/org.mate.power-manager.gschema.xml.in:246
+#: data/org.cafe.power-manager.gschema.xml.in:246
 msgid "The maximum time displayed for history"
 msgstr "أقصى ظهور للوقت في التأريخ"
 
-#: data/org.mate.power-manager.gschema.xml.in:247
+#: data/org.cafe.power-manager.gschema.xml.in:247
 msgid ""
 "The maximum duration of time displayed on the x-axis of the history graph."
 msgstr "أقصى مدة لظهور الوقت على محور-س في الرسم البياني للتأريخ."
 
-#: data/org.mate.power-manager.gschema.xml.in:251
+#: data/org.cafe.power-manager.gschema.xml.in:251
 msgid "Whether we should show the stats data points"
 msgstr "ما إذا سيتم عرض نقاط بيانات الإحصائيات"
 
-#: data/org.mate.power-manager.gschema.xml.in:252
+#: data/org.cafe.power-manager.gschema.xml.in:252
 msgid "Whether we should show the stats data points in the statistics window."
 msgstr "في حال ما توجب علينا إظهار نقاط بيانات الإحصاء في نافذة الإحصاءات."
 
-#: data/org.mate.power-manager.gschema.xml.in:256
+#: data/org.cafe.power-manager.gschema.xml.in:256
 msgid "Whether we should smooth the stats data"
 msgstr "في حال ما توجب علينا صقل بيانات الإحصائيات"
 
-#: data/org.mate.power-manager.gschema.xml.in:257
+#: data/org.cafe.power-manager.gschema.xml.in:257
 msgid "Whether we should smooth the stats data in the graph."
 msgstr "في حال ما توجب علينا صقل بيانات الإحصائيات في الرسم البياني."
 
-#: data/org.mate.power-manager.gschema.xml.in:261
+#: data/org.cafe.power-manager.gschema.xml.in:261
 msgid "The default graph type to show for stats"
 msgstr "نوع الرسم البياني الافتراضي لإظهاره في الإحصائيات"
 
-#: data/org.mate.power-manager.gschema.xml.in:262
+#: data/org.cafe.power-manager.gschema.xml.in:262
 msgid "The default graph type to show in the stats window."
 msgstr "نوع الرسم البياني الأفتراضي لأظهاره في نافذة الاحصاءات."
 
-#: data/org.mate.power-manager.gschema.xml.in:266
+#: data/org.cafe.power-manager.gschema.xml.in:266
 msgid "The index of the page number to show by default"
 msgstr "فهرس رقم الصّفحة لإظهاره افتراضيًا"
 
-#: data/org.mate.power-manager.gschema.xml.in:267
+#: data/org.cafe.power-manager.gschema.xml.in:267
 msgid ""
 "The index of the page number to show by default which is used to return "
 "focus to the correct page."
 msgstr ""
 "فهرس رقم الصّفحة لإظهاره افتراضيًا حيث يُستخدم للتّركيز على الصّفحة الصّحيحة"
 
-#: data/org.mate.power-manager.gschema.xml.in:271
+#: data/org.cafe.power-manager.gschema.xml.in:271
 msgid "The ID of the last device selected"
 msgstr "معرّف آخر جهار تم اختياره"
 
-#: data/org.mate.power-manager.gschema.xml.in:272
+#: data/org.cafe.power-manager.gschema.xml.in:272
 msgid ""
 "The identifier of the last device which is used to return focus to the "
 "correct device."
 msgstr "مُعرّف آخر جهاز حيث يستخدم للتّركيز على الجهاز الصّحيح."
 
-#: data/org.mate.power-manager.gschema.xml.in:276
+#: data/org.cafe.power-manager.gschema.xml.in:276
 msgid "Percentage considered low"
 msgstr "النسبة تُعد منخفضة"
 
-#: data/org.mate.power-manager.gschema.xml.in:277
+#: data/org.cafe.power-manager.gschema.xml.in:277
 msgid ""
 "The percentage of the battery when it is considered low. Only valid when "
 "use-time-for-policy is false."
@@ -677,11 +677,11 @@ msgstr ""
 "نسبة البطارية التي تعتبر منخفضة. فقط صحيحة عندما يكون use-time-for-policy "
 "غير صحيح. "
 
-#: data/org.mate.power-manager.gschema.xml.in:281
+#: data/org.cafe.power-manager.gschema.xml.in:281
 msgid "Percentage considered critical"
 msgstr "النسبة تُعد حرجة"
 
-#: data/org.mate.power-manager.gschema.xml.in:282
+#: data/org.cafe.power-manager.gschema.xml.in:282
 msgid ""
 "The percentage of the battery when it is considered critical. Only valid "
 "when use-time-for-policy is false."
@@ -689,11 +689,11 @@ msgstr ""
 "نسبة البطارية التي تعتبر حاسمة. فقط صحيحة عندما يكون use-time-for-policy غير"
 " صحيح. "
 
-#: data/org.mate.power-manager.gschema.xml.in:286
+#: data/org.cafe.power-manager.gschema.xml.in:286
 msgid "Percentage action is taken"
 msgstr "تم إتخاذ الإجراء النسبي"
 
-#: data/org.mate.power-manager.gschema.xml.in:287
+#: data/org.cafe.power-manager.gschema.xml.in:287
 msgid ""
 "The percentage of the battery when the critical action is performed. Only "
 "valid when use-time-for-policy is false."
@@ -701,11 +701,11 @@ msgstr ""
 "نسبة البطارية عند انجاز الإجراء الحاسم. فقط صحيحة عندما يكون use-time-for-"
 "policy غير صحيح. "
 
-#: data/org.mate.power-manager.gschema.xml.in:291
+#: data/org.cafe.power-manager.gschema.xml.in:291
 msgid "The time remaining when low"
 msgstr "الوقت المتبقي في الحالة المنخفضة"
 
-#: data/org.mate.power-manager.gschema.xml.in:292
+#: data/org.cafe.power-manager.gschema.xml.in:292
 msgid ""
 "The time remaining in seconds of the battery when it is considered low. Only"
 " valid when use-time-for-policy is true."
@@ -713,11 +713,11 @@ msgstr ""
 "الوقت المتبقي للبطارية بالثواني عند اعتبارها منخفضة. فقط صحيحة عندما يكون "
 "use-time-for-policy صحيح."
 
-#: data/org.mate.power-manager.gschema.xml.in:296
+#: data/org.cafe.power-manager.gschema.xml.in:296
 msgid "The time remaining when critical"
 msgstr "الوقت المتبقي في الحالة الحرجة"
 
-#: data/org.mate.power-manager.gschema.xml.in:297
+#: data/org.cafe.power-manager.gschema.xml.in:297
 msgid ""
 "The time remaining in seconds of the battery when it is considered critical."
 " Only valid when use-time-for-policy is true."
@@ -725,11 +725,11 @@ msgstr ""
 "الوقت المتبقي للبطارية بالثواني عند اعتبارها حاسمة. فقط صحيحة عندما يكون "
 "use-time-for-policy صحيح."
 
-#: data/org.mate.power-manager.gschema.xml.in:301
+#: data/org.cafe.power-manager.gschema.xml.in:301
 msgid "The time remaining when action is taken"
 msgstr "الوقت المتبقي بعد إتخاذ الإجراء اللازم"
 
-#: data/org.mate.power-manager.gschema.xml.in:302
+#: data/org.cafe.power-manager.gschema.xml.in:302
 msgid ""
 "The time remaining in seconds of the battery when critical action is taken. "
 "Only valid when use-time-for-policy is true."
@@ -737,11 +737,11 @@ msgstr ""
 "الوقت المتبقي للبطارية بالثواني عند انجاز الاجراء الحاسم. فقط صحيحة عندما "
 "يكون use-time-for-policy صحيح."
 
-#: data/org.mate.power-manager.gschema.xml.in:306
+#: data/org.cafe.power-manager.gschema.xml.in:306
 msgid "Sleep timeout computer when on battery"
 msgstr "جعل الحاسوب ينام بعد فترة الاستراحة عندما يكون على البطارية"
 
-#: data/org.mate.power-manager.gschema.xml.in:307
+#: data/org.cafe.power-manager.gschema.xml.in:307
 msgid ""
 "The amount of time in seconds the computer on battery power needs to be "
 "inactive before it goes to sleep."
@@ -749,11 +749,11 @@ msgstr ""
 "مقدار الوقت بالثانية بعد عدم استعمال الحاسوب على البطارية قبل جعل الحاسوب في"
 " حالة نوم. "
 
-#: data/org.mate.power-manager.gschema.xml.in:311
+#: data/org.cafe.power-manager.gschema.xml.in:311
 msgid "Sleep timeout computer when on AC"
 msgstr "جعل الحاسوب ينام بعد فترة الاستراحة عندما يكون على التيار"
 
-#: data/org.mate.power-manager.gschema.xml.in:312
+#: data/org.cafe.power-manager.gschema.xml.in:312
 msgid ""
 "The amount of time in seconds the computer on AC power needs to be inactive "
 "before it goes to sleep."
@@ -761,11 +761,11 @@ msgstr ""
 "مقدار الوقت بالثانية بعد عدم استعمال الحاسوب على التيار قبل جعل الحاسوب في "
 "حالة نوم. "
 
-#: data/org.mate.power-manager.gschema.xml.in:316
+#: data/org.cafe.power-manager.gschema.xml.in:316
 msgid "Sleep timeout computer when on UPS"
 msgstr "جعل الحاسوب ينام بعد فترة الاستراحة عندما يكون على وحدة التخزين UPS"
 
-#: data/org.mate.power-manager.gschema.xml.in:317
+#: data/org.cafe.power-manager.gschema.xml.in:317
 msgid ""
 "The amount of time in seconds the computer on UPS power needs to be inactive"
 " before it goes to sleep."
@@ -773,22 +773,22 @@ msgstr ""
 "كميّة الوقت بالثّواني لجعل الحاسب غير نشط قبل وضع النّوم ، و ذلك عند العمل "
 "على وحدة تخزين الطاقة UPS."
 
-#: data/org.mate.power-manager.gschema.xml.in:321
+#: data/org.cafe.power-manager.gschema.xml.in:321
 msgid "Sleep timeout display when on AC"
 msgstr "جعل الشاشة تنام بعد فترة الاستراحة عندما يكون على التيار"
 
-#: data/org.mate.power-manager.gschema.xml.in:322
+#: data/org.cafe.power-manager.gschema.xml.in:322
 msgid ""
 "The amount of time in seconds before the display goes to sleep when the "
 "computer is on AC power."
 msgstr ""
 "مقدار الوقت بالثانية قبل نوم الشاشة عندما يكون الحاسوب موصولًا بالتيار."
 
-#: data/org.mate.power-manager.gschema.xml.in:326
+#: data/org.cafe.power-manager.gschema.xml.in:326
 msgid "Sleep timeout display when on battery"
 msgstr "جعل الشاشة تنام بعد فترة الاستراحة عندما يكون على البطارية"
 
-#: data/org.mate.power-manager.gschema.xml.in:327
+#: data/org.cafe.power-manager.gschema.xml.in:327
 msgid ""
 "The amount of time in seconds the computer on battery power needs to be "
 "inactive before the display goes to sleep."
@@ -796,11 +796,11 @@ msgstr ""
 "مقدار الوقت بالثانية بعد عدم استعمال الحاسوب على البطارية و غير نشط قبل جعل "
 "الشاشة في حالة نوم. "
 
-#: data/org.mate.power-manager.gschema.xml.in:331
+#: data/org.cafe.power-manager.gschema.xml.in:331
 msgid "Sleep timeout display when on UPS"
 msgstr "جعل الشاشة تنام بعد فترة الاستراحة عندما يكون على وحدة التخزين UPS"
 
-#: data/org.mate.power-manager.gschema.xml.in:332
+#: data/org.cafe.power-manager.gschema.xml.in:332
 msgid ""
 "The amount of time in seconds the computer on UPS power needs to be inactive"
 " before the display goes to sleep."
@@ -808,11 +808,11 @@ msgstr ""
 "كميّة الوقت بالثّواني لجعل الحاسب غير نشط قبل جعل جهاز العرض في وضع النّوم ،"
 " و ذلك عند العمل على وحدة تخزين الطاقة UPS"
 
-#: data/org.mate.power-manager.gschema.xml.in:336
+#: data/org.cafe.power-manager.gschema.xml.in:336
 msgid "If sounds should be used"
 msgstr "إن كانت الأصوات ستُستخدم"
 
-#: data/org.mate.power-manager.gschema.xml.in:337
+#: data/org.cafe.power-manager.gschema.xml.in:337
 msgid ""
 "If sounds should be used when the power is critically low, or inhibit "
 "requests have stopped the policy action."
@@ -820,46 +820,46 @@ msgstr ""
 "استعمل الأصوات إذا كانت الطاقة ضعيفة جدا أو أن طلبات التثبيط أوقفت عمل "
 "السياسة."
 
-#: data/org.mate.power-manager.gschema.xml.in:341
+#: data/org.cafe.power-manager.gschema.xml.in:341
 msgid ""
 "If preferences and statistics items should be shown in the context menu"
 msgstr "إذا ما كان يتعين عرض عنصر التفضيلات والإحصائيات في قائمة السياق"
 
-#: data/org.mate.power-manager.gschema.xml.in:345
+#: data/org.cafe.power-manager.gschema.xml.in:345
 msgid "When to show the notification icon"
 msgstr "متى يتم عرض ايقونة التنبيه"
 
-#: data/org.mate.power-manager.gschema.xml.in:346
+#: data/org.cafe.power-manager.gschema.xml.in:346
 msgid "Display options for the notification icon."
 msgstr "أظهر خيارات أيقونة التنبيهات."
 
-#: data/mate-power-preferences.desktop.in.in:3
+#: data/cafe-power-preferences.desktop.in.in:3
 msgid "Power Management"
 msgstr "إدارة الطاقة"
 
-#: data/mate-power-preferences.desktop.in.in:4
+#: data/cafe-power-preferences.desktop.in.in:4
 msgid "Configure power management"
 msgstr "اضبط إدارة الطاقة"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: data/mate-power-preferences.desktop.in.in:13
+#: data/cafe-power-preferences.desktop.in.in:13
 msgid "MATE;power;management;preferences;settings;"
 msgstr ""
 
-#: data/mate-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
+#: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
 #: src/gpm-statistics.c:1090 src/gpm-statistics.c:1577
 msgid "Power Statistics"
 msgstr "إحصاءات الطاقة"
 
-#: data/mate-power-statistics.desktop.in.in:4
+#: data/cafe-power-statistics.desktop.in.in:4
 msgid "Observe power management"
 msgstr "راجع إدارة الطاقة"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: data/mate-power-statistics.desktop.in.in:6
-msgid "mate-power-statistics"
+#: data/cafe-power-statistics.desktop.in.in:6
+msgid "cafe-power-statistics"
 msgstr ""
 
 #: data/gpm-statistics.ui:113 src/gpm-statistics.c:208
@@ -1329,7 +1329,7 @@ msgstr "بطارية الحاسوب المحمول منخفضة"
 
 #: src/gpm-manager.c:1314
 #, c-format
-msgid "Approximately <b>%s</b> remaining (%.0f%%)"
+msgid "Approxicafely <b>%s</b> remaining (%.0f%%)"
 msgstr "لديك تقريبًا <b>%s</b> متبقية (%.0f%%)"
 
 #: src/gpm-manager.c:1318
@@ -1338,7 +1338,7 @@ msgstr "طاقة UPS منخفضة"
 
 #: src/gpm-manager.c:1322
 #, c-format
-msgid "Approximately <b>%s</b> of remaining UPS backup power (%.0f%%)"
+msgid "Approxicafely <b>%s</b> of remaining UPS backup power (%.0f%%)"
 msgstr "تقريبًا <b>%s</b> متبقية من شحنة طاقة مزود الطاقة اللامنفطعة (%.0f%%)"
 
 #: src/gpm-manager.c:1331 src/gpm-manager.c:1470
@@ -1435,7 +1435,7 @@ msgstr "طاقة UPS منخفضة جدًا"
 #: src/gpm-manager.c:1459
 #, c-format
 msgid ""
-"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
+"Approxicafely <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
 " your computer to avoid losing data."
 msgstr ""
 "لديك تقريبًا <b>%s</b> متبقية من شحنة UPS‏ (%.0f%%). أرجع التيار للحاسوب "

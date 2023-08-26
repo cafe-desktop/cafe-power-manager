@@ -1,6 +1,6 @@
 # SOME DESCRIPTIVE TITLE.
 # Copyright (C) YEAR MATE Desktop Environment team
-# This file is distributed under the same license as the mate-power-manager package.
+# This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
@@ -16,12 +16,12 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: mate-power-manager 1.23.1\n"
-"Report-Msgid-Bugs-To: https://mate-desktop.org/\n"
+"Project-Id-Version: cafe-power-manager 1.23.1\n"
+"Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
 "POT-Creation-Date: 2019-11-12 15:22+0100\n"
 "PO-Revision-Date: 2020-02-15 16:27+0000\n"
 "Last-Translator: Pjotr <pjotrvertaalt@gmail.com>, 2020\n"
-"Language-Team: Dutch (https://www.transifex.com/mate/teams/13566/nl/)\n"
+"Language-Team: Dutch (https://www.transifex.com/cafe/teams/13566/nl/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -38,8 +38,8 @@ msgstr "Past de helderheid van het laptopscherm aan."
 
 #: applets/brightness/brightness-applet.c:364
 #: applets/inhibit/inhibit-applet.c:225
-msgid "Cannot connect to mate-power-manager"
-msgstr "Kan geen verbinding maken met mate-power-manager"
+msgid "Cannot connect to cafe-power-manager"
+msgstr "Kan geen verbinding maken met cafe-power-manager"
 
 #: applets/brightness/brightness-applet.c:366
 msgid "Cannot get laptop panel brightness"
@@ -104,19 +104,19 @@ msgstr "_Info"
 msgid "_Help"
 msgstr "_Hulp"
 
-#: applets/brightness/org.mate.BrightnessApplet.mate-panel-applet.desktop.in.in:5
+#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Brightness Applet Factory"
 msgstr "Helderheidsprogrammaatje-fabriek"
 
-#: applets/brightness/org.mate.BrightnessApplet.mate-panel-applet.desktop.in.in:9
+#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Brightness Applet"
 msgstr "Helderheidsprogrammaatje"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/brightness/org.mate.BrightnessApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-brightness-applet"
-msgstr "mate-brightness-applet"
+#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:12
+msgid "cafe-brightness-applet"
+msgstr "cafe-brightness-applet"
 
 #: applets/inhibit/inhibit-applet.c:87
 msgid "Power Manager Inhibit Applet"
@@ -139,59 +139,59 @@ msgstr "Automatische pauzestand ingeschakeld"
 msgid "Manual inhibit"
 msgstr "Handmatige verhindering"
 
-#: applets/inhibit/org.mate.InhibitApplet.mate-panel-applet.desktop.in.in:5
+#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Inhibit Applet Factory"
 msgstr "Fabriek voor verhinderingsprogrammaatje"
 
-#: applets/inhibit/org.mate.InhibitApplet.mate-panel-applet.desktop.in.in:9
+#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Inhibit Applet"
 msgstr "Verhinderingsprogrammaatje"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: applets/inhibit/org.mate.InhibitApplet.mate-panel-applet.desktop.in.in:12
-msgid "mate-inhibit-applet"
-msgstr "mate-inhibit-applet"
+#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:12
+msgid "cafe-inhibit-applet"
+msgstr "cafe-inhibit-applet"
 
-#: data/mate-power-manager.desktop.in.in:3 src/gpm-tray-icon.c:184
+#: data/cafe-power-manager.desktop.in.in:3 src/gpm-tray-icon.c:184
 msgid "Power Manager"
 msgstr "Energiebeheer"
 
-#: data/mate-power-manager.desktop.in.in:4 src/gpm-tray-icon.c:186
+#: data/cafe-power-manager.desktop.in.in:4 src/gpm-tray-icon.c:186
 msgid "Power management daemon"
 msgstr "Energiebeheer-achtergronddienst"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: data/mate-power-manager.desktop.in.in:6
-#: data/mate-power-preferences.desktop.in.in:6
-msgid "mate-power-manager"
-msgstr "mate-power-manager"
+#: data/cafe-power-manager.desktop.in.in:6
+#: data/cafe-power-preferences.desktop.in.in:6
+msgid "cafe-power-manager"
+msgstr "cafe-power-manager"
 
-#: data/org.mate.power-manager.gschema.xml.in:26
-#: data/org.mate.power-manager.gschema.xml.in:41
+#: data/org.cafe.power-manager.gschema.xml.in:26
+#: data/org.cafe.power-manager.gschema.xml.in:41
 msgid "Whether to hibernate, suspend or do nothing when inactive"
 msgstr ""
 "Of bij inactiviteit de laptop in slaapstand dan wel pauzestand wordt gezet, "
 "of dat er niets gedaan wordt"
 
-#: data/org.mate.power-manager.gschema.xml.in:27
-#: data/org.mate.power-manager.gschema.xml.in:42
+#: data/org.cafe.power-manager.gschema.xml.in:27
+#: data/org.cafe.power-manager.gschema.xml.in:42
 msgid ""
 "The type of sleeping that should be performed when the computer is inactive."
 msgstr ""
 "Het type slaapstand dat moet worden uitgevoerd wanneer de computer inactief "
 "is."
 
-#: data/org.mate.power-manager.gschema.xml.in:31
+#: data/org.cafe.power-manager.gschema.xml.in:31
 msgid "Battery critical low action"
 msgstr "Actie wanneer de acculading kritiek laag is"
 
-#: data/org.mate.power-manager.gschema.xml.in:32
+#: data/org.cafe.power-manager.gschema.xml.in:32
 msgid "The action to take when the battery is critically low."
 msgstr "De te ondernemen actie wanneer de acculading kritiek laag is."
 
-#: data/org.mate.power-manager.gschema.xml.in:36
+#: data/org.cafe.power-manager.gschema.xml.in:36
 msgid ""
 "If the battery event should occur when the lid is shut and the power "
 "disconnected"
@@ -199,7 +199,7 @@ msgstr ""
 "Of de accugebeurtenis plaats moet vinden als het laptopscherm dichtgeklapt "
 "wordt en de netstroom niet aangesloten is"
 
-#: data/org.mate.power-manager.gschema.xml.in:37
+#: data/org.cafe.power-manager.gschema.xml.in:37
 msgid ""
 "If the battery lid close event should occur (for example 'Suspend when lid "
 "closed on battery') when the lid is previously shut and the AC power "
@@ -210,27 +210,27 @@ msgstr ""
 " het laptopscherm eerder dichtgeklapt werd en de netstroom pas later wordt "
 "verbroken."
 
-#: data/org.mate.power-manager.gschema.xml.in:46
+#: data/org.cafe.power-manager.gschema.xml.in:46
 msgid "UPS critical low action"
 msgstr "Actie wanneer de UPS-lading kritiek laag is"
 
-#: data/org.mate.power-manager.gschema.xml.in:47
+#: data/org.cafe.power-manager.gschema.xml.in:47
 msgid "The action to take when the UPS is critically low."
 msgstr "De te ondernemen actie wanneer de UPS-lading kritiek laag is."
 
-#: data/org.mate.power-manager.gschema.xml.in:51
+#: data/org.cafe.power-manager.gschema.xml.in:51
 msgid "UPS low power action"
 msgstr "Actie wanneer de UPS-lading laag is"
 
-#: data/org.mate.power-manager.gschema.xml.in:52
+#: data/org.cafe.power-manager.gschema.xml.in:52
 msgid "The action to take when the UPS is low."
 msgstr "De te ondernemen actie wanneer de UPS-lading laag is."
 
-#: data/org.mate.power-manager.gschema.xml.in:56
+#: data/org.cafe.power-manager.gschema.xml.in:56
 msgid "Allow backlight brightness adjustment"
 msgstr "Aanpassen van de helderheid van de achtergrondverlichting toestaan"
 
-#: data/org.mate.power-manager.gschema.xml.in:57
+#: data/org.cafe.power-manager.gschema.xml.in:57
 msgid ""
 "If the screen brightness should be changed when switching between AC and "
 "battery power."
@@ -238,13 +238,13 @@ msgstr ""
 "Of de helderheid van het scherm moet worden gewijzigd wanneer er afgewisseld"
 " wordt tussen netstroom en accustroom."
 
-#: data/org.mate.power-manager.gschema.xml.in:61
+#: data/org.cafe.power-manager.gschema.xml.in:61
 msgid "Reduce the backlight brightness when on battery power"
 msgstr ""
 "Verminder de helderheid van de achtergrondverlichting wanneer de computer op"
 " accustroom werkt"
 
-#: data/org.mate.power-manager.gschema.xml.in:62
+#: data/org.cafe.power-manager.gschema.xml.in:62
 msgid ""
 "If the screen should be reduced in brightness when the computer is on "
 "battery power."
@@ -252,12 +252,12 @@ msgstr ""
 "Of de schermhelderheid moet worden verminderd wanneer de computer op "
 "accustroom draait."
 
-#: data/org.mate.power-manager.gschema.xml.in:66
+#: data/org.cafe.power-manager.gschema.xml.in:66
 msgid "Reduce the keyboard backlight when on battery power"
 msgstr ""
 "Verminder de toetsenbordverlichting indien de computer op accustroom werkt"
 
-#: data/org.mate.power-manager.gschema.xml.in:67
+#: data/org.cafe.power-manager.gschema.xml.in:67
 msgid ""
 "If the keyboard backlight brightness should be reduced when the computer is "
 "on battery power"
@@ -265,11 +265,11 @@ msgstr ""
 "Of de toetsenbordverlichting wordt verminderd wanneer de computer op "
 "accustroom draait."
 
-#: data/org.mate.power-manager.gschema.xml.in:71
+#: data/org.cafe.power-manager.gschema.xml.in:71
 msgid "Keyboard backlight brightness when on AC power."
 msgstr "Toetsenbordverlichting wanneer de computer op netstroom werkt."
 
-#: data/org.mate.power-manager.gschema.xml.in:72
+#: data/org.cafe.power-manager.gschema.xml.in:72
 msgid ""
 "Percent brightness to set keyboard backlight at when on AC power. Legal "
 "values are between 0 and 100."
@@ -277,13 +277,13 @@ msgstr ""
 "Helderheid voor de toetsenbordverlichting wanneer de computer op netstroom "
 "werkt, in procenten. Waarden tussen 0 en 100."
 
-#: data/org.mate.power-manager.gschema.xml.in:76
+#: data/org.cafe.power-manager.gschema.xml.in:76
 msgid "Percent to reduce keyboard backlight by when on battery power."
 msgstr ""
 "Percentage om de toetsenbordverlichting mee te verminderen wanneer de "
 "computer op accustroom werkt."
 
-#: data/org.mate.power-manager.gschema.xml.in:77
+#: data/org.cafe.power-manager.gschema.xml.in:77
 msgid ""
 "The percentage to reduce the keyboard backlight by when on battery power. "
 "For example, if set to '60', the backlight will be cut by 40% on battery "
@@ -294,13 +294,13 @@ msgstr ""
 "verlichting 40% verminderd worden wanneer op accustroom. Waarden tussen 0 en"
 " 100."
 
-#: data/org.mate.power-manager.gschema.xml.in:81
+#: data/org.cafe.power-manager.gschema.xml.in:81
 msgid "Percent to reduce keyboard backlight by when idle."
 msgstr ""
 "Percentage om de toetsenbordverlichting mee te verminderen wanneer de "
 "computer niet wordt gebruikt."
 
-#: data/org.mate.power-manager.gschema.xml.in:82
+#: data/org.cafe.power-manager.gschema.xml.in:82
 msgid ""
 "The percentage to reduce the keyboard backlight by when idle. For example, "
 "if set to '60', the backlight will be cut by 40% when idle. Legal values are"
@@ -311,11 +311,11 @@ msgstr ""
 "zal de verlichting 40% verminderd worden wanneer de computer niet wordt "
 "gebruikt. Waarden tussen 0 en 100."
 
-#: data/org.mate.power-manager.gschema.xml.in:86
+#: data/org.cafe.power-manager.gschema.xml.in:86
 msgid "The brightness of the screen when idle"
 msgstr "De helderheid van het scherm bij inactiviteit"
 
-#: data/org.mate.power-manager.gschema.xml.in:87
+#: data/org.cafe.power-manager.gschema.xml.in:87
 msgid ""
 "This is the laptop panel screen brightness used when the session is idle. "
 "Only valid when use-time-for-policy is true."
@@ -323,13 +323,13 @@ msgstr ""
 "Dit is de helderheid van het laptopscherm wanneer de sessie niet actief is. "
 "Alleen geldig wanneer use-time-for-policy aanstaat."
 
-#: data/org.mate.power-manager.gschema.xml.in:91
+#: data/org.cafe.power-manager.gschema.xml.in:91
 msgid "Dim the screen after a period of inactivity when on battery power"
 msgstr ""
 "Verminder de helderheid van het scherm na een periode van inactiviteit, "
 "wanneer op accustroom"
 
-#: data/org.mate.power-manager.gschema.xml.in:92
+#: data/org.cafe.power-manager.gschema.xml.in:92
 msgid ""
 "If the screen should be dimmed to save power when the computer is idle when "
 "on battery power."
@@ -337,23 +337,23 @@ msgstr ""
 "Of de helderheid van het scherm moet worden verminderd om energie te "
 "besparen wanneer de computer inactief is en op accustroom draait."
 
-#: data/org.mate.power-manager.gschema.xml.in:96
+#: data/org.cafe.power-manager.gschema.xml.in:96
 msgid "The default amount of time to dim the screen after idle"
 msgstr ""
 "De standaardhoeveelheid tijdverloop waarna de helderheid van het scherm "
 "wegens inactiviteit wordt verminderd"
 
-#: data/org.mate.power-manager.gschema.xml.in:97
+#: data/org.cafe.power-manager.gschema.xml.in:97
 msgid "The default amount of time to dim the screen after idle."
 msgstr ""
 "De standaardhoeveelheid tijdverloop waarna de helderheid van het scherm "
 "wegens inactiviteit wordt verminderd."
 
-#: data/org.mate.power-manager.gschema.xml.in:101
+#: data/org.cafe.power-manager.gschema.xml.in:101
 msgid "LCD dimming amount when on battery"
 msgstr "LCD-helderheidsreductie bij accustroom"
 
-#: data/org.mate.power-manager.gschema.xml.in:102
+#: data/org.cafe.power-manager.gschema.xml.in:102
 msgid ""
 "The amount to dim the brightness of the display when on battery power. "
 "Possible values are between 0 and 100."
@@ -361,13 +361,13 @@ msgstr ""
 "De helderheidsreductie van het scherm wanneer de accu gebruikt wordt. "
 "Mogelijke waarden liggen tussen 0 en 100."
 
-#: data/org.mate.power-manager.gschema.xml.in:106
+#: data/org.cafe.power-manager.gschema.xml.in:106
 msgid "Dim the screen after a period of inactivity when on AC power"
 msgstr ""
 "Verminder de helderheid van het scherm na een periode van inactiviteit, "
 "wanneer op netstroom"
 
-#: data/org.mate.power-manager.gschema.xml.in:107
+#: data/org.cafe.power-manager.gschema.xml.in:107
 msgid ""
 "If the screen should be dimmed to save power when the computer is idle when "
 "on AC power."
@@ -375,35 +375,35 @@ msgstr ""
 "Of de helderheid van het scherm wordt verminderd om energie te besparen "
 "wanneer de computer inactief is en op netstroom draait."
 
-#: data/org.mate.power-manager.gschema.xml.in:111
+#: data/org.cafe.power-manager.gschema.xml.in:111
 msgid "Method used to blank screen on AC"
 msgstr ""
 "Methode die gebruikt wordt voor het op zwart zetten van het scherm bij "
 "netstroom"
 
-#: data/org.mate.power-manager.gschema.xml.in:112
+#: data/org.cafe.power-manager.gschema.xml.in:112
 msgid "The DPMS method used to blank the screen when on AC power."
 msgstr ""
 "De DPMS-methode om het scherm uit te schakelen wanneer de computer op "
 "netstroom werkt."
 
-#: data/org.mate.power-manager.gschema.xml.in:116
+#: data/org.cafe.power-manager.gschema.xml.in:116
 msgid "Method used to blank screen on battery"
 msgstr ""
 "Methode die gebruikt wordt voor het op zwart zetten van het scherm bij "
 "accustroom"
 
-#: data/org.mate.power-manager.gschema.xml.in:117
+#: data/org.cafe.power-manager.gschema.xml.in:117
 msgid "The DPMS method used to blank the screen when on battery power."
 msgstr ""
 "De DPMS-methode om het scherm uit te schakelen wanneer de computer op "
 "accustroom werkt."
 
-#: data/org.mate.power-manager.gschema.xml.in:121
+#: data/org.cafe.power-manager.gschema.xml.in:121
 msgid "LCD brightness when on AC"
 msgstr "Helderheid van LCD-scherm bij netstroom"
 
-#: data/org.mate.power-manager.gschema.xml.in:122
+#: data/org.cafe.power-manager.gschema.xml.in:122
 msgid ""
 "The brightness of the display when on AC power. Possible values are between "
 "0.0 and 100.0."
@@ -411,35 +411,35 @@ msgstr ""
 "De helderheid van het scherm wanneer de computer op netstroom werkt. "
 "Mogelijke waarden liggen tussen 0,0 en 100,0."
 
-#: data/org.mate.power-manager.gschema.xml.in:126
+#: data/org.cafe.power-manager.gschema.xml.in:126
 msgid "Suspend button action"
 msgstr "Actie bij indrukken van pauzestandknop"
 
-#: data/org.mate.power-manager.gschema.xml.in:127
+#: data/org.cafe.power-manager.gschema.xml.in:127
 msgid "The action to take when the system suspend button is pressed."
 msgstr "De te ondernemen actie wanneer de pauzestandknop wordt ingedrukt."
 
-#: data/org.mate.power-manager.gschema.xml.in:131
+#: data/org.cafe.power-manager.gschema.xml.in:131
 msgid "Hibernate button action"
 msgstr "Actie bij indrukken van slaapstandknop"
 
-#: data/org.mate.power-manager.gschema.xml.in:132
+#: data/org.cafe.power-manager.gschema.xml.in:132
 msgid "The action to take when the system hibernate button is pressed."
 msgstr "De te ondernemen actie wanneer de slaapstandknop wordt ingedrukt."
 
-#: data/org.mate.power-manager.gschema.xml.in:136
+#: data/org.cafe.power-manager.gschema.xml.in:136
 msgid "Power button action"
 msgstr "Actie bij het indrukken van de aan/uit-knop"
 
-#: data/org.mate.power-manager.gschema.xml.in:137
+#: data/org.cafe.power-manager.gschema.xml.in:137
 msgid "The action to take when the system power button is pressed."
 msgstr "De te ondernemen actie wanneer de aan/uitknop wordt ingedrukt."
 
-#: data/org.mate.power-manager.gschema.xml.in:141
+#: data/org.cafe.power-manager.gschema.xml.in:141
 msgid "Laptop lid close action on battery"
 msgstr "Actie bij dichtklappen van laptopscherm wanneer op accustroom"
 
-#: data/org.mate.power-manager.gschema.xml.in:142
+#: data/org.cafe.power-manager.gschema.xml.in:142
 msgid ""
 "The action to take when the laptop lid is closed and the laptop is on "
 "battery power."
@@ -447,11 +447,11 @@ msgstr ""
 "De te ondernemen actie wanneer het laptopscherm wordt dichtgeklapt en de "
 "laptop op accustroom draait."
 
-#: data/org.mate.power-manager.gschema.xml.in:146
+#: data/org.cafe.power-manager.gschema.xml.in:146
 msgid "Laptop lid close action when on AC"
 msgstr "Actie bij sluiten van laptopscherm wanneer op netstroom"
 
-#: data/org.mate.power-manager.gschema.xml.in:147
+#: data/org.cafe.power-manager.gschema.xml.in:147
 msgid ""
 "The action to take when the laptop lid is closed and the laptop is on AC "
 "power."
@@ -459,11 +459,11 @@ msgstr ""
 "De te ondernemen actie wanneer het laptopscherm wordt dichtgeklapt en de "
 "laptop op netstroom draait."
 
-#: data/org.mate.power-manager.gschema.xml.in:151
+#: data/org.cafe.power-manager.gschema.xml.in:151
 msgid "Whether to use time-based notifications"
 msgstr "Of er tijdgebaseerde meldingen gebruikt worden"
 
-#: data/org.mate.power-manager.gschema.xml.in:152
+#: data/org.cafe.power-manager.gschema.xml.in:152
 msgid ""
 "If time based notifications should be used. If set to false, then the "
 "percentage change is used instead, which may fix a broken ACPI BIOS."
@@ -473,23 +473,23 @@ msgstr ""
 " kan worden benut bij een incorrect functionerende ACPI (energiebeheer) in "
 "het BIOS."
 
-#: data/org.mate.power-manager.gschema.xml.in:156
+#: data/org.cafe.power-manager.gschema.xml.in:156
 msgid "Check CPU load before sleeping"
 msgstr "Controleer CPU-belasting voordat slaapstand wordt geactiveerd"
 
-#: data/org.mate.power-manager.gschema.xml.in:157
+#: data/org.cafe.power-manager.gschema.xml.in:157
 msgid "If the CPU load should be checked before doing the idle action."
 msgstr ""
 "Of de belasting van de CPU gecontroleerd moet worden voordat de "
 "inactiviteitsactie ondernomen wordt."
 
-#: data/org.mate.power-manager.gschema.xml.in:161
+#: data/org.cafe.power-manager.gschema.xml.in:161
 msgid "Whether NetworkManager should be connected and disconnected on sleep."
 msgstr ""
 "Of Netwerkbeheer bij aanvang van slaapstand of pauzestand de verbinding moet"
 " verbreken."
 
-#: data/org.mate.power-manager.gschema.xml.in:162
+#: data/org.cafe.power-manager.gschema.xml.in:162
 msgid ""
 "Whether NetworkManager should disconnect before suspending or hibernating "
 "and connect on resume."
@@ -497,24 +497,24 @@ msgstr ""
 "Of Netwerkbeheer de verbinding moet verbreken bij aanvang van pauzestand of "
 "slaapstand en de verbinding weer moet herstellen bij het einde daarvan."
 
-#: data/org.mate.power-manager.gschema.xml.in:166
-msgid "Use mate-screensaver lock setting"
+#: data/org.cafe.power-manager.gschema.xml.in:166
+msgid "Use cafe-screensaver lock setting"
 msgstr "Gebruik instelling voor vergrendeling van de Mate-schermbeveiliging"
 
-#: data/org.mate.power-manager.gschema.xml.in:167
+#: data/org.cafe.power-manager.gschema.xml.in:167
 msgid ""
-"Whether to use the screen lock setting of mate-screensaver to decide if the "
+"Whether to use the screen lock setting of cafe-screensaver to decide if the "
 "screen is locked after a hibernate, suspend or blank screen."
 msgstr ""
 "Of de instelling voor vergrendeling van de Mate-schermbeveiliging gebruikt "
 "moet worden om het scherm te vergrendelen bij slaapstand, pauzestand of het "
 "op zwart zetten van het scherm."
 
-#: data/org.mate.power-manager.gschema.xml.in:171
+#: data/org.cafe.power-manager.gschema.xml.in:171
 msgid "Lock screen when blanked"
 msgstr "Scherm vergrendelen bij het op zwart zetten"
 
-#: data/org.mate.power-manager.gschema.xml.in:172
+#: data/org.cafe.power-manager.gschema.xml.in:172
 msgid ""
 "Whether the screen is locked when the screen is turned off. Only used if "
 "lock-use-screensaver is false."
@@ -522,11 +522,11 @@ msgstr ""
 "Of het scherm wordt vergrendeld wanneer het scherm wordt uitgeschakeld. "
 "Wordt alleen gebruikt wanneer lock-use-screensaver uitstaat."
 
-#: data/org.mate.power-manager.gschema.xml.in:176
+#: data/org.cafe.power-manager.gschema.xml.in:176
 msgid "Lock screen on suspend"
 msgstr "Scherm vergrendelen bij pauzestand"
 
-#: data/org.mate.power-manager.gschema.xml.in:177
+#: data/org.cafe.power-manager.gschema.xml.in:177
 msgid ""
 "Whether the screen is locked when the computer wakes up from a suspend. Only"
 " used if lock-use-screensaver is false."
@@ -534,11 +534,11 @@ msgstr ""
 "Of het scherm wordt vergrendeld wanneer de computer ontwaakt uit de "
 "pauzestand. Wordt alleen gebruikt wanneer lock-use-screensaver uitstaat."
 
-#: data/org.mate.power-manager.gschema.xml.in:181
+#: data/org.cafe.power-manager.gschema.xml.in:181
 msgid "Lock screen on hibernate"
 msgstr "Scherm vergrendelen bij slaapstand"
 
-#: data/org.mate.power-manager.gschema.xml.in:182
+#: data/org.cafe.power-manager.gschema.xml.in:182
 msgid ""
 "Whether the screen is locked when the computer wakes up from a hibernate. "
 "Only used if lock-use-screensaver is false."
@@ -546,12 +546,12 @@ msgstr ""
 "Of het scherm wordt vergrendeld wanneer de computer ontwaakt uit de "
 "slaapstand. Wordt alleen gebruikt wanneer lock-use-screensaver uitstaat."
 
-#: data/org.mate.power-manager.gschema.xml.in:186
-#: data/org.mate.power-manager.gschema.xml.in:191
+#: data/org.cafe.power-manager.gschema.xml.in:186
+#: data/org.cafe.power-manager.gschema.xml.in:191
 msgid "Lock GNOME keyring on sleep"
 msgstr "GNOME-sleutelbos vergrendelen tijdens slaapstand"
 
-#: data/org.mate.power-manager.gschema.xml.in:187
+#: data/org.cafe.power-manager.gschema.xml.in:187
 msgid ""
 "Whether the GNOME keyring is locked before the computer enters suspend. This"
 " means the keyring will have to be unlocked on resume."
@@ -559,7 +559,7 @@ msgstr ""
 "Of de GNOME-sleutelbos wordt vergrendeld voordat de computer de pauzestand "
 "in gaat. Dit betekent dat u de sleutelbos moet ontgrendelen bij hervatting."
 
-#: data/org.mate.power-manager.gschema.xml.in:192
+#: data/org.cafe.power-manager.gschema.xml.in:192
 msgid ""
 "Whether the GNOME keyring is locked before the computer enters hibernate. "
 "This means the keyring will have to be unlocked on resume."
@@ -567,34 +567,34 @@ msgstr ""
 "Of de GNOME-sleutelbos wordt vergrendeld voordat de computer de slaapstand "
 "in gaat. Dit betekent dat u de sleutelbos moet ontgrendelen bij hervatting."
 
-#: data/org.mate.power-manager.gschema.xml.in:196
+#: data/org.cafe.power-manager.gschema.xml.in:196
 msgid "If we should show the low capacity warning for a broken battery"
 msgstr ""
 "Of er een zinloze waarschuwing voor lage lading zal worden getoond bij een "
 "kapotte accu"
 
-#: data/org.mate.power-manager.gschema.xml.in:197
+#: data/org.cafe.power-manager.gschema.xml.in:197
 msgid "If we should show the low capacity warning for a broken battery."
 msgstr ""
 "Of de waarschuwing voor lage lading zal worden getoond bij een kapotte accu."
 " Die waarschuwing heeft dan natuurlijk geen zin, dus uitschakelen van die "
 "waarschuwing is in dat geval een goed idee."
 
-#: data/org.mate.power-manager.gschema.xml.in:201
+#: data/org.cafe.power-manager.gschema.xml.in:201
 msgid "Notify when AC adapter is disconnected"
 msgstr "Melden wanneer de netstroomstekker verwijderd wordt"
 
-#: data/org.mate.power-manager.gschema.xml.in:202
+#: data/org.cafe.power-manager.gschema.xml.in:202
 msgid "If the user should be notified when the AC adapter is disconnected."
 msgstr ""
 "Of de gebruiker op de hoogte wordt gebracht wanneer de netstroomstekker "
 "verwijderd wordt."
 
-#: data/org.mate.power-manager.gschema.xml.in:206
+#: data/org.cafe.power-manager.gschema.xml.in:206
 msgid "Notify when fully charged"
 msgstr "Melden wanneer volledig opgeladen"
 
-#: data/org.mate.power-manager.gschema.xml.in:207
+#: data/org.cafe.power-manager.gschema.xml.in:207
 msgid ""
 "If a notification message should be displayed when the battery is fully "
 "charged."
@@ -602,11 +602,11 @@ msgstr ""
 "Of de gebruiker op de hoogte wordt gebracht wanneer de accu volledig is "
 "opgeladen."
 
-#: data/org.mate.power-manager.gschema.xml.in:211
+#: data/org.cafe.power-manager.gschema.xml.in:211
 msgid "Notify on a sleep failure"
 msgstr "Melden als slaapstand mislukt"
 
-#: data/org.mate.power-manager.gschema.xml.in:212
+#: data/org.cafe.power-manager.gschema.xml.in:212
 msgid ""
 "If a notification message should be displayed after suspend or hibernate "
 "failed."
@@ -614,11 +614,11 @@ msgstr ""
 "Of de gebruiker op de hoogte wordt gebracht als pauzestand of slaapstand "
 "mislukt."
 
-#: data/org.mate.power-manager.gschema.xml.in:216
+#: data/org.cafe.power-manager.gschema.xml.in:216
 msgid "The URI to show to the user on sleep failure"
 msgstr "De aan de gebruiker te tonen URI bij een fout tijdens de slaapstand."
 
-#: data/org.mate.power-manager.gschema.xml.in:217
+#: data/org.cafe.power-manager.gschema.xml.in:217
 msgid ""
 "When sleep fails we can show the user a button to help fix the situation. "
 "Leave this blank if the button should not be shown."
@@ -627,87 +627,87 @@ msgstr ""
 "te helpen het probleem op te lossen. Laat dit veld leeg om deze knop uit te "
 "schakelen."
 
-#: data/org.mate.power-manager.gschema.xml.in:221
+#: data/org.cafe.power-manager.gschema.xml.in:221
 msgid "Notify on a low power"
 msgstr "Lage acculading melden"
 
-#: data/org.mate.power-manager.gschema.xml.in:222
-#: data/org.mate.power-manager.gschema.xml.in:227
+#: data/org.cafe.power-manager.gschema.xml.in:222
+#: data/org.cafe.power-manager.gschema.xml.in:227
 msgid ""
 "If a notification message should be displayed when the battery is getting "
 "low."
 msgstr "Of de gebruiker een melding krijgt wanneer de accu bijna leeg is."
 
-#: data/org.mate.power-manager.gschema.xml.in:226
+#: data/org.cafe.power-manager.gschema.xml.in:226
 msgid "Notify on low capacity of mouse battery"
 msgstr "Melden bij lage capaciteit van muisaccu"
 
-#: data/org.mate.power-manager.gschema.xml.in:231
+#: data/org.cafe.power-manager.gschema.xml.in:231
 msgid "Whether we should show the history data points"
 msgstr "Of er verloopgegevens moeten worden getoond"
 
-#: data/org.mate.power-manager.gschema.xml.in:232
+#: data/org.cafe.power-manager.gschema.xml.in:232
 msgid ""
 "Whether we should show the history data points in the statistics window."
 msgstr ""
 "Of er verloopgegevens moeten worden weergegeven in het statistiekenvenster."
 
-#: data/org.mate.power-manager.gschema.xml.in:236
+#: data/org.cafe.power-manager.gschema.xml.in:236
 msgid "Whether we should smooth the history data"
 msgstr "Of de verloopgegevens vloeiend moeten worden getekend"
 
-#: data/org.mate.power-manager.gschema.xml.in:237
+#: data/org.cafe.power-manager.gschema.xml.in:237
 msgid "Whether we should smooth the history data in the graph."
 msgstr "Of de verloopgegevens vloeiend moeten worden getekend in de grafiek."
 
-#: data/org.mate.power-manager.gschema.xml.in:241
+#: data/org.cafe.power-manager.gschema.xml.in:241
 msgid "The default graph type to show for history"
 msgstr "Het standaardgrafiektype voor het verloop"
 
-#: data/org.mate.power-manager.gschema.xml.in:242
+#: data/org.cafe.power-manager.gschema.xml.in:242
 msgid "The default graph type to show in the history window."
 msgstr "Het standaardgrafiektype voor het verloopvenster."
 
-#: data/org.mate.power-manager.gschema.xml.in:246
+#: data/org.cafe.power-manager.gschema.xml.in:246
 msgid "The maximum time displayed for history"
 msgstr "De maximale verlooptijd"
 
-#: data/org.mate.power-manager.gschema.xml.in:247
+#: data/org.cafe.power-manager.gschema.xml.in:247
 msgid ""
 "The maximum duration of time displayed on the x-axis of the history graph."
 msgstr "De maximale tijdsduur op de x-as van de verloopgrafiek."
 
-#: data/org.mate.power-manager.gschema.xml.in:251
+#: data/org.cafe.power-manager.gschema.xml.in:251
 msgid "Whether we should show the stats data points"
 msgstr "Of de gegevenspunten van de statistieken moeten worden weergegeven"
 
-#: data/org.mate.power-manager.gschema.xml.in:252
+#: data/org.cafe.power-manager.gschema.xml.in:252
 msgid "Whether we should show the stats data points in the statistics window."
 msgstr ""
 "Of de gegevenspunten van de statistieken moeten worden weergegeven in het "
 "statistiekenvenster."
 
-#: data/org.mate.power-manager.gschema.xml.in:256
+#: data/org.cafe.power-manager.gschema.xml.in:256
 msgid "Whether we should smooth the stats data"
 msgstr "Of de statistieken vloeiend moeten worden getekend"
 
-#: data/org.mate.power-manager.gschema.xml.in:257
+#: data/org.cafe.power-manager.gschema.xml.in:257
 msgid "Whether we should smooth the stats data in the graph."
 msgstr "Of de statistieken in de grafiek vloeiend moeten worden getekend."
 
-#: data/org.mate.power-manager.gschema.xml.in:261
+#: data/org.cafe.power-manager.gschema.xml.in:261
 msgid "The default graph type to show for stats"
 msgstr "Het standaardgrafiektype voor statistieken"
 
-#: data/org.mate.power-manager.gschema.xml.in:262
+#: data/org.cafe.power-manager.gschema.xml.in:262
 msgid "The default graph type to show in the stats window."
 msgstr "Het standaardgrafiektype in het statistiekenvenster."
 
-#: data/org.mate.power-manager.gschema.xml.in:266
+#: data/org.cafe.power-manager.gschema.xml.in:266
 msgid "The index of the page number to show by default"
 msgstr "De index van het paginanummer dat standaard wordt weergegeven"
 
-#: data/org.mate.power-manager.gschema.xml.in:267
+#: data/org.cafe.power-manager.gschema.xml.in:267
 msgid ""
 "The index of the page number to show by default which is used to return "
 "focus to the correct page."
@@ -715,11 +715,11 @@ msgstr ""
 "De index van het paginanummer dat standaard wordt weergegeven, wat gebruikt "
 "wordt om de scherpstelling terug te zetten op de juiste pagina."
 
-#: data/org.mate.power-manager.gschema.xml.in:271
+#: data/org.cafe.power-manager.gschema.xml.in:271
 msgid "The ID of the last device selected"
 msgstr "Het ID  van het laatst geselecteerde apparaat"
 
-#: data/org.mate.power-manager.gschema.xml.in:272
+#: data/org.cafe.power-manager.gschema.xml.in:272
 msgid ""
 "The identifier of the last device which is used to return focus to the "
 "correct device."
@@ -727,11 +727,11 @@ msgstr ""
 "Het identificatienummer van het laatste apparaat, dat wordt gebruikt om de "
 "scherpstelling terug te zetten op het juiste apparaat."
 
-#: data/org.mate.power-manager.gschema.xml.in:276
+#: data/org.cafe.power-manager.gschema.xml.in:276
 msgid "Percentage considered low"
 msgstr "Percentage dat als laag wordt beschouwd"
 
-#: data/org.mate.power-manager.gschema.xml.in:277
+#: data/org.cafe.power-manager.gschema.xml.in:277
 msgid ""
 "The percentage of the battery when it is considered low. Only valid when "
 "use-time-for-policy is false."
@@ -739,11 +739,11 @@ msgstr ""
 "De resterende accuduur als percentage wanneer het als laag wordt beschouwd. "
 "Alleen geldig wanneer use-time-for-policy uitstaat."
 
-#: data/org.mate.power-manager.gschema.xml.in:281
+#: data/org.cafe.power-manager.gschema.xml.in:281
 msgid "Percentage considered critical"
 msgstr "Percentage dat als kritiek laag wordt beschouwd"
 
-#: data/org.mate.power-manager.gschema.xml.in:282
+#: data/org.cafe.power-manager.gschema.xml.in:282
 msgid ""
 "The percentage of the battery when it is considered critical. Only valid "
 "when use-time-for-policy is false."
@@ -751,11 +751,11 @@ msgstr ""
 "De resterende accuduur als percentage wanneer het als kritiek laag wordt "
 "beschouwd. Alleen geldig wanneer 'use-time-for-policy' uitstaat."
 
-#: data/org.mate.power-manager.gschema.xml.in:286
+#: data/org.cafe.power-manager.gschema.xml.in:286
 msgid "Percentage action is taken"
 msgstr "Percentage-actie wordt uitgevoerd"
 
-#: data/org.mate.power-manager.gschema.xml.in:287
+#: data/org.cafe.power-manager.gschema.xml.in:287
 msgid ""
 "The percentage of the battery when the critical action is performed. Only "
 "valid when use-time-for-policy is false."
@@ -763,11 +763,11 @@ msgstr ""
 "De resterende accuduur als percentage wanneer de kritiek-laag-actie wordt "
 "ondernomen. Alleen geldig wanneer 'use-time-for-policy' uitstaat."
 
-#: data/org.mate.power-manager.gschema.xml.in:291
+#: data/org.cafe.power-manager.gschema.xml.in:291
 msgid "The time remaining when low"
 msgstr "De resterende tijd indien accu laag"
 
-#: data/org.mate.power-manager.gschema.xml.in:292
+#: data/org.cafe.power-manager.gschema.xml.in:292
 msgid ""
 "The time remaining in seconds of the battery when it is considered low. Only"
 " valid when use-time-for-policy is true."
@@ -775,11 +775,11 @@ msgstr ""
 "De resterende accuduur in seconden wanneer die als laag wordt beschouwd. "
 "Alleen geldig wanneer use-time-for-policy aanstaat."
 
-#: data/org.mate.power-manager.gschema.xml.in:296
+#: data/org.cafe.power-manager.gschema.xml.in:296
 msgid "The time remaining when critical"
 msgstr "De resterende tijd wanneer kritiek laag"
 
-#: data/org.mate.power-manager.gschema.xml.in:297
+#: data/org.cafe.power-manager.gschema.xml.in:297
 msgid ""
 "The time remaining in seconds of the battery when it is considered critical."
 " Only valid when use-time-for-policy is true."
@@ -787,11 +787,11 @@ msgstr ""
 "De resterende accuduur in seconden wanneer die als kritiek laag wordt "
 "beschouwd. Alleen geldig wanneer 'use-time-for-policy' aanstaat."
 
-#: data/org.mate.power-manager.gschema.xml.in:301
+#: data/org.cafe.power-manager.gschema.xml.in:301
 msgid "The time remaining when action is taken"
 msgstr "De resterende tijd als de actie wordt uitgevoerd"
 
-#: data/org.mate.power-manager.gschema.xml.in:302
+#: data/org.cafe.power-manager.gschema.xml.in:302
 msgid ""
 "The time remaining in seconds of the battery when critical action is taken. "
 "Only valid when use-time-for-policy is true."
@@ -799,11 +799,11 @@ msgstr ""
 "De resterende accuduur in seconden wanneer de kritiek-laag-actie wordt "
 "ondernomen. Alleen geldig wanneer 'use-time-for-policy' aanstaat."
 
-#: data/org.mate.power-manager.gschema.xml.in:306
+#: data/org.cafe.power-manager.gschema.xml.in:306
 msgid "Sleep timeout computer when on battery"
 msgstr "Wachttijd voor de slaapstand wanneer de accu gebruikt wordt"
 
-#: data/org.mate.power-manager.gschema.xml.in:307
+#: data/org.cafe.power-manager.gschema.xml.in:307
 msgid ""
 "The amount of time in seconds the computer on battery power needs to be "
 "inactive before it goes to sleep."
@@ -811,11 +811,11 @@ msgstr ""
 "Het aantal seconden inactiviteit voordat de computer in slaapstand gaat "
 "wanneer de accu gebruikt wordt."
 
-#: data/org.mate.power-manager.gschema.xml.in:311
+#: data/org.cafe.power-manager.gschema.xml.in:311
 msgid "Sleep timeout computer when on AC"
 msgstr "Wachttijd voor de slaapstand wanneer netstroom gebruikt wordt"
 
-#: data/org.mate.power-manager.gschema.xml.in:312
+#: data/org.cafe.power-manager.gschema.xml.in:312
 msgid ""
 "The amount of time in seconds the computer on AC power needs to be inactive "
 "before it goes to sleep."
@@ -823,11 +823,11 @@ msgstr ""
 "Het aantal seconden inactiviteit voordat de computer in slaapstand gaat "
 "wanneer netstroom gebruikt wordt."
 
-#: data/org.mate.power-manager.gschema.xml.in:316
+#: data/org.cafe.power-manager.gschema.xml.in:316
 msgid "Sleep timeout computer when on UPS"
 msgstr "Wachttijd voor de slaapstand wanneer de UPS gebruikt wordt"
 
-#: data/org.mate.power-manager.gschema.xml.in:317
+#: data/org.cafe.power-manager.gschema.xml.in:317
 msgid ""
 "The amount of time in seconds the computer on UPS power needs to be inactive"
 " before it goes to sleep."
@@ -835,11 +835,11 @@ msgstr ""
 "Het aantal seconden inactiviteit voordat de computer in slaapstand gaat "
 "wanneer de UPS gebruikt wordt."
 
-#: data/org.mate.power-manager.gschema.xml.in:321
+#: data/org.cafe.power-manager.gschema.xml.in:321
 msgid "Sleep timeout display when on AC"
 msgstr "Slaapstand-wachttijd voor het scherm wanneer netstroom gebruikt wordt"
 
-#: data/org.mate.power-manager.gschema.xml.in:322
+#: data/org.cafe.power-manager.gschema.xml.in:322
 msgid ""
 "The amount of time in seconds before the display goes to sleep when the "
 "computer is on AC power."
@@ -847,11 +847,11 @@ msgstr ""
 "Het aantal seconden inactiviteit voordat het scherm uitgaat wanneer "
 "netstroom gebruikt wordt."
 
-#: data/org.mate.power-manager.gschema.xml.in:326
+#: data/org.cafe.power-manager.gschema.xml.in:326
 msgid "Sleep timeout display when on battery"
 msgstr "Slaapstand-wachttijd voor het scherm wanneer de accu gebruikt wordt"
 
-#: data/org.mate.power-manager.gschema.xml.in:327
+#: data/org.cafe.power-manager.gschema.xml.in:327
 msgid ""
 "The amount of time in seconds the computer on battery power needs to be "
 "inactive before the display goes to sleep."
@@ -859,11 +859,11 @@ msgstr ""
 "Het aantal seconden inactiviteit voordat het scherm uitgaat wanneer de accu "
 "gebruikt wordt."
 
-#: data/org.mate.power-manager.gschema.xml.in:331
+#: data/org.cafe.power-manager.gschema.xml.in:331
 msgid "Sleep timeout display when on UPS"
 msgstr "Slaapstand-wachttijd voor het scherm wanneer de UPS gebruikt wordt"
 
-#: data/org.mate.power-manager.gschema.xml.in:332
+#: data/org.cafe.power-manager.gschema.xml.in:332
 msgid ""
 "The amount of time in seconds the computer on UPS power needs to be inactive"
 " before the display goes to sleep."
@@ -871,11 +871,11 @@ msgstr ""
 "Het aantal seconden inactiviteit voordat het scherm uitgaat wanneer de UPS "
 "gebruikt wordt."
 
-#: data/org.mate.power-manager.gschema.xml.in:336
+#: data/org.cafe.power-manager.gschema.xml.in:336
 msgid "If sounds should be used"
 msgstr "Of er geluiden gebruikt moet worden"
 
-#: data/org.mate.power-manager.gschema.xml.in:337
+#: data/org.cafe.power-manager.gschema.xml.in:337
 msgid ""
 "If sounds should be used when the power is critically low, or inhibit "
 "requests have stopped the policy action."
@@ -884,47 +884,47 @@ msgstr ""
 "kritiek laag is, of wanneer verhinderingsverzoeken de beleidsactie hebben "
 "belet."
 
-#: data/org.mate.power-manager.gschema.xml.in:341
+#: data/org.cafe.power-manager.gschema.xml.in:341
 msgid ""
 "If preferences and statistics items should be shown in the context menu"
 msgstr "Of het contextmenu onderdelen toont voor voorkeuren en statistieken"
 
-#: data/org.mate.power-manager.gschema.xml.in:345
+#: data/org.cafe.power-manager.gschema.xml.in:345
 msgid "When to show the notification icon"
 msgstr "Wanneer het meldingspictogram weer te geven"
 
-#: data/org.mate.power-manager.gschema.xml.in:346
+#: data/org.cafe.power-manager.gschema.xml.in:346
 msgid "Display options for the notification icon."
 msgstr "Weergaveopties voor het meldingspictogram."
 
-#: data/mate-power-preferences.desktop.in.in:3
+#: data/cafe-power-preferences.desktop.in.in:3
 msgid "Power Management"
 msgstr "Energiebeheer"
 
-#: data/mate-power-preferences.desktop.in.in:4
+#: data/cafe-power-preferences.desktop.in.in:4
 msgid "Configure power management"
 msgstr "Energiebeheer instellen"
 
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
-#: data/mate-power-preferences.desktop.in.in:13
+#: data/cafe-power-preferences.desktop.in.in:13
 msgid "MATE;power;management;preferences;settings;"
 msgstr "MATE;energie;beheer;voorrkeuren;instellingen;"
 
-#: data/mate-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
+#: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
 #: src/gpm-statistics.c:1090 src/gpm-statistics.c:1577
 msgid "Power Statistics"
 msgstr "Spanningsstatistieken"
 
-#: data/mate-power-statistics.desktop.in.in:4
+#: data/cafe-power-statistics.desktop.in.in:4
 msgid "Observe power management"
 msgstr "Energiebeheer observeren"
 
 #. Translators: Do NOT translate or transliterate this text (this is an icon
 #. file name)!
-#: data/mate-power-statistics.desktop.in.in:6
-msgid "mate-power-statistics"
-msgstr "mate-power-statistics"
+#: data/cafe-power-statistics.desktop.in.in:6
+msgid "cafe-power-statistics"
+msgstr "cafe-power-statistics"
 
 #: data/gpm-statistics.ui:113 src/gpm-statistics.c:208
 msgid "Details"
@@ -1374,7 +1374,7 @@ msgstr "Laptopaccu laag"
 
 #: src/gpm-manager.c:1314
 #, c-format
-msgid "Approximately <b>%s</b> remaining (%.0f%%)"
+msgid "Approxicafely <b>%s</b> remaining (%.0f%%)"
 msgstr "Ongeveer <b>%s</b> resterende accutijd (%.0f%%)"
 
 #: src/gpm-manager.c:1318
@@ -1383,7 +1383,7 @@ msgstr "UPS laag"
 
 #: src/gpm-manager.c:1322
 #, c-format
-msgid "Approximately <b>%s</b> of remaining UPS backup power (%.0f%%)"
+msgid "Approxicafely <b>%s</b> of remaining UPS backup power (%.0f%%)"
 msgstr "Ongeveer <b>%s</b> resterende UPS-tijd (%.0f%%)"
 
 #: src/gpm-manager.c:1331 src/gpm-manager.c:1470
@@ -1487,7 +1487,7 @@ msgstr "UPS-lading kritiek laag"
 #: src/gpm-manager.c:1459
 #, c-format
 msgid ""
-"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
+"Approxicafely <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
 " your computer to avoid losing data."
 msgstr ""
 "Er is ongeveer <b>%s</b> resterende UPS-lading (%.0f%%). Sluit de laptop aan"

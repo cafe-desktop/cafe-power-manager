@@ -1238,7 +1238,7 @@ main (int argc, char *argv[])
 	egg_debug_init (verbose);
 	gtk_init (&argc, &argv);
 
-	app = gtk_application_new ("org.mate.PowerManager.Statistics", 0);
+	app = gtk_application_new ("org.cafe.PowerManager.Statistics", 0);
 
 	g_signal_connect (app, "activate",
 			  G_CALLBACK (gpm_stats_window_activated_cb), NULL);
@@ -1252,7 +1252,7 @@ main (int argc, char *argv[])
 
 	/* get UI */
 	builder = gtk_builder_new ();
-	retval = gtk_builder_add_from_resource (builder, "/org/mate/powermanager/statistics/gpm-statistics.ui", &error);
+	retval = gtk_builder_add_from_resource (builder, "/org/cafe/powermanager/statistics/gpm-statistics.ui", &error);
 
 	if (error) {
 		egg_error ("failed to load ui: %s", error->message);

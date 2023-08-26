@@ -1,6 +1,6 @@
 AC_PREREQ(2.63)
 
-AC_INIT([mate-power-manager], [1.24.2], [https://mate-desktop.org/])
+AC_INIT([cafe-power-manager], [1.24.2], [https://cafe-desktop.org/])
 AC_CONFIG_SRCDIR(src)
 AM_INIT_AUTOMAKE([1.9 no-dist-gzip dist-xz check-news tar-ustar])
 AC_CONFIG_HEADERS([config.h])
@@ -163,7 +163,7 @@ have_applets=no
 if test x$enable_applets = xyes ; then
     have_applets=yes
 
-    PKG_CHECK_MODULES(PANEL, [libmatepanelapplet-4.0 >= $LIBPANEL_REQUIRED])
+    PKG_CHECK_MODULES(PANEL, [libcafepanelapplet-4.0 >= $LIBPANEL_REQUIRED])
     AC_DEFINE(HAVE_APPLETS, 1, [Define if we are building applets])
 fi
 AC_MSG_RESULT([$have_applets])
@@ -203,10 +203,10 @@ help/Makefile
 po/Makefile.in
 policy/Makefile
 data/Makefile
-data/mate-power-manager.desktop.in
-data/mate-power-preferences.desktop.in
-data/mate-power-statistics.desktop.in
-data/org.mate.power-manager.gschema.xml
+data/cafe-power-manager.desktop.in
+data/cafe-power-preferences.desktop.in
+data/cafe-power-statistics.desktop.in
+data/org.cafe.power-manager.gschema.xml
 data/icons/Makefile
 ])
 
@@ -230,11 +230,11 @@ echo "
 if [[ "${prefix}" != "/usr" ]] ; then
 	echo '
 WARNING!!!  MATE Power Manager uses the "pkexec" utility to provide root
-permissions necessary for the "mate-power-backlight-helper" executable to run.
+permissions necessary for the "cafe-power-backlight-helper" executable to run.
 
 A link should be provided from the file
-"/usr/share/polkit-1/actions/org.mate.power.policy" to the installed version
-"${prefix}/share/polkit-1/actions/org.mate.power.policy" after installation.
+"/usr/share/polkit-1/actions/org.cafe.power.policy" to the installed version
+"${prefix}/share/polkit-1/actions/org.cafe.power.policy" after installation.
 '
 fi
 

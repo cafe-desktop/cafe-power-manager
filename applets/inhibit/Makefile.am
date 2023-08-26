@@ -16,7 +16,7 @@ AM_CPPFLAGS =							\
 	-DVERSION="\"$(VERSION)\"" 				\
 	-DGPM_ICONS_DATA=\"$(pkgdatadir)/icons\"		\
 	-DINHIBIT_MENU_UI_DIR=\""$(uidir)"\"			\
-	-DEGG_LOG_FILE=\""~/mate-power-manager.log"\"		\
+	-DEGG_LOG_FILE=\""~/cafe-power-manager.log"\"		\
 	-DEGG_VERBOSE="\"GPM_VERBOSE\""				\
 	-DEGG_LOGGING="\"GPM_LOGGING\""				\
 	-DEGG_CONSOLE="\"GPM_CONSOLE\""				\
@@ -24,23 +24,23 @@ AM_CPPFLAGS =							\
 	$(WARN_CFLAGS)						\
 	$(NULL)
 
-libexec_PROGRAMS=mate-inhibit-applet
+libexec_PROGRAMS=cafe-inhibit-applet
 
-mate_inhibit_applet_SOURCES =					\
+cafe_inhibit_applet_SOURCES =					\
 	inhibit-applet.c					\
 	egg-debug.c						\
 	egg-debug.h						\
 	gpm-common.c						\
 	gpm-common.h
 
-mate_inhibit_applet_LDADD =					\
+cafe_inhibit_applet_LDADD =					\
 	$(DBUS_LIBS)						\
 	$(CAIRO_LIBS)						\
 	$(PANEL_LIBS)
 
-appletdir       = $(datadir)/mate-panel/applets
-applet_in_files = org.mate.InhibitApplet.mate-panel-applet.desktop.in
-applet_DATA     = $(applet_in_files:.mate-panel-applet.desktop.in=.mate-panel-applet)
+appletdir       = $(datadir)/cafe-panel/applets
+applet_in_files = org.cafe.InhibitApplet.cafe-panel-applet.desktop.in
+applet_DATA     = $(applet_in_files:.cafe-panel-applet.desktop.in=.cafe-panel-applet)
 
 $(applet_in_files): $(applet_in_files).in
 	$(AM_V_GEN) sed \
@@ -52,15 +52,15 @@ $(applet_DATA): $(applet_in_files)
 	$(AM_V_GEN) $(MSGFMT) --desktop --keyword=Name --keyword=Description --template $< -d $(top_srcdir)/po -o $@
 
 servicedir       = $(datadir)/dbus-1/services
-service_in_files = org.mate.panel.applet.InhibitAppletFactory.service.in
+service_in_files = org.cafe.panel.applet.InhibitAppletFactory.service.in
 service_DATA     = $(service_in_files:.service.in=.service)
 
-org.mate.panel.applet.InhibitAppletFactory.service: $(service_in_files)
+org.cafe.panel.applet.InhibitAppletFactory.service: $(service_in_files)
 	$(AM_V_GEN)sed \
             -e "s|\@LIBEXECDIR\@|$(libexecdir)|" \
             $< > $@
 
-uidir   = $(datadir)/mate-power-manager/ui
+uidir   = $(datadir)/cafe-power-manager/ui
 ui_DATA = inhibit-applet-menu.xml
 
 EXTRA_DIST = $(applet_in_files).in $(ui_DATA) $(service_in_files)

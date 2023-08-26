@@ -73,7 +73,7 @@ msgstr ""
 
 #. (itstool) path: legalnotice/para
 #: C/index.docbook:105
-msgid "To report a bug or make a suggestion regarding the MATE Power Manager application or this manual, follow the directions in the <ulink url=\"https://github.com/mate-desktop/mate-power-manager/\" type=\"http\"><application>MATE Power Manager</application> Contact Page</ulink>."
+msgid "To report a bug or make a suggestion regarding the MATE Power Manager application or this manual, follow the directions in the <ulink url=\"https://github.com/cafe-desktop/cafe-power-manager/\" type=\"http\"><application>MATE Power Manager</application> Contact Page</ulink>."
 msgstr ""
 
 #. (itstool) path: article/indexterm
@@ -83,7 +83,7 @@ msgstr ""
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:118
-msgid "<primary>mate-power-manager</primary>"
+msgid "<primary>cafe-power-manager</primary>"
 msgstr ""
 
 #. (itstool) path: section/title
@@ -93,7 +93,7 @@ msgstr ""
 
 #. (itstool) path: section/indexterm
 #: C/index.docbook:129
-msgid "<primary><application>MATE Power Manager</application></primary> <secondary>Manual</secondary> <tertiary>mate-power-manager</tertiary>"
+msgid "<primary><application>MATE Power Manager</application></primary> <secondary>Manual</secondary> <tertiary>cafe-power-manager</tertiary>"
 msgstr ""
 
 #. (itstool) path: section/para
@@ -118,7 +118,7 @@ msgstr ""
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:152
-msgid "Type <command>mate-power-manager --verbose --no-daemon</command>, then press <keycap>Return</keycap>:"
+msgid "Type <command>cafe-power-manager --verbose --no-daemon</command>, then press <keycap>Return</keycap>:"
 msgstr ""
 
 #. (itstool) path: section/title
@@ -153,7 +153,7 @@ msgstr ""
 
 #. (itstool) path: note/para
 #: C/index.docbook:180
-msgid "You can disable this notification by changing the dconf key <command>org.mate.power-manager notify-discharging</command>."
+msgid "You can disable this notification by changing the dconf key <command>org.cafe.power-manager notify-discharging</command>."
 msgstr ""
 
 #. (itstool) path: section/title
@@ -178,7 +178,7 @@ msgstr ""
 
 #. (itstool) path: note/para
 #: C/index.docbook:200
-msgid "You can disable this notification by changing the dconf key <command>org.mate.power-manager notify-fully-charged</command>."
+msgid "You can disable this notification by changing the dconf key <command>org.cafe.power-manager notify-fully-charged</command>."
 msgstr ""
 
 #. (itstool) path: note/para
@@ -213,7 +213,7 @@ msgstr ""
 
 #. (itstool) path: note/para
 #: C/index.docbook:232
-msgid "You can disable this notification by changing the dconf key <command>org.mate.power-manager notify-low-power</command>."
+msgid "You can disable this notification by changing the dconf key <command>org.cafe.power-manager notify-low-power</command>."
 msgstr ""
 
 #. (itstool) path: section/title
@@ -268,7 +268,7 @@ msgstr ""
 
 #. (itstool) path: note/para
 #: C/index.docbook:276
-msgid "You can disable this notification by changing the dconf key <command>org.mate.power-manager notify-sleep-failed</command>."
+msgid "You can disable this notification by changing the dconf key <command>org.cafe.power-manager notify-sleep-failed</command>."
 msgstr ""
 
 #. (itstool) path: section/title
@@ -333,12 +333,12 @@ msgstr ""
 
 #. (itstool) path: section/title
 #: C/index.docbook:352
-msgid "Estimated Time History"
+msgid "Esticafed Time History"
 msgstr ""
 
 #. (itstool) path: section/para
 #: C/index.docbook:353
-msgid "This graph shows the estimated charge history for the composite primary battery. This line represents the amount of time required until charged, or the amount of time until discharge. This line should go proportionally up when the rate decreases and down when the rate increases. A legend is shown with this graph when data events have been received."
+msgid "This graph shows the esticafed charge history for the composite primary battery. This line represents the amount of time required until charged, or the amount of time until discharge. This line should go proportionally up when the rate decreases and down when the rate increases. A legend is shown with this graph when data events have been received."
 msgstr ""
 
 #. (itstool) path: section/title
@@ -448,12 +448,12 @@ msgstr ""
 
 #. (itstool) path: section/para
 #: C/index.docbook:449
-msgid "<command>mate-screensaver</command> is a session daemon that monitors user input, and if the mouse has not been moved, or the keyboard been pressed then it starts a timeout. When the value of this timeout reaches the value set in <command>mate-screensaver-preferences</command>, then the login is marked as 'session idle'. This is when <application>MATE Power Manager</application> performs all the session idle actions such as enabling low-power mode and lowering the laptop panel brightness."
+msgid "<command>cafe-screensaver</command> is a session daemon that monitors user input, and if the mouse has not been moved, or the keyboard been pressed then it starts a timeout. When the value of this timeout reaches the value set in <command>cafe-screensaver-preferences</command>, then the login is marked as 'session idle'. This is when <application>MATE Power Manager</application> performs all the session idle actions such as enabling low-power mode and lowering the laptop panel brightness."
 msgstr ""
 
 #. (itstool) path: figure/title
 #: C/index.docbook:461
-msgid "Changing the session idle timeout in <command>mate-screensaver-preferences</command>"
+msgid "Changing the session idle timeout in <command>cafe-screensaver-preferences</command>"
 msgstr ""
 
 #. (itstool) path: imageobject/imagedata
@@ -468,12 +468,12 @@ msgstr ""
 
 #. (itstool) path: section/para
 #: C/index.docbook:472
-msgid "As soon as the session is marked at idle, <application>MATE Power Manager</application> starts its own 'system' timer. When the timeout set in <command>mate-power-preferences</command> is reached, and the CPU load is idle, then the idle action is performed, which is usually to turn off the screen, or to suspend or hibernate."
+msgid "As soon as the session is marked at idle, <application>MATE Power Manager</application> starts its own 'system' timer. When the timeout set in <command>cafe-power-preferences</command> is reached, and the CPU load is idle, then the idle action is performed, which is usually to turn off the screen, or to suspend or hibernate."
 msgstr ""
 
 #. (itstool) path: section/para
 #: C/index.docbook:479
-msgid "To make this clearer, the sliders in <command>mate-power-preferences</command> are set to start at the value of the session-timeout + 1 minute, as we cannot logically trigger before the session is marked as idle. If you adjust the value of the 'session idle' timeout in <command>mate-screensaver-preferences</command> then the start of the sliders in <command>mate-power-preferences</command> will change accordingly."
+msgid "To make this clearer, the sliders in <command>cafe-power-preferences</command> are set to start at the value of the session-timeout + 1 minute, as we cannot logically trigger before the session is marked as idle. If you adjust the value of the 'session idle' timeout in <command>cafe-screensaver-preferences</command> then the start of the sliders in <command>cafe-power-preferences</command> will change accordingly."
 msgstr ""
 
 #. (itstool) path: section/title
@@ -488,7 +488,7 @@ msgstr ""
 
 #. (itstool) path: note/para
 #: C/index.docbook:496
-msgid "You can change the idle laptop panel brightness by changing the dconf key <command>org.mate.power-manager idle-brightness</command>."
+msgid "You can change the idle laptop panel brightness by changing the dconf key <command>org.cafe.power-manager idle-brightness</command>."
 msgstr ""
 
 #. (itstool) path: section/title
@@ -498,7 +498,7 @@ msgstr ""
 
 #. (itstool) path: section/para
 #: C/index.docbook:505
-msgid "By default, <application>MATE Power Manager</application> supports a simple locking scheme. This means that the screen will lock if set to \"Lock screen\" in mate-screensaver when the lid is closed, or the system performs a suspend or hibernate action."
+msgid "By default, <application>MATE Power Manager</application> supports a simple locking scheme. This means that the screen will lock if set to \"Lock screen\" in cafe-screensaver when the lid is closed, or the system performs a suspend or hibernate action."
 msgstr ""
 
 #. (itstool) path: section/para
@@ -508,32 +508,32 @@ msgstr ""
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:519
-msgid "<command>org.mate.power-manager lock-use-screensaver</command>"
+msgid "<command>org.cafe.power-manager lock-use-screensaver</command>"
 msgstr ""
 
 #. (itstool) path: section/para
 #: C/index.docbook:524
-msgid "Then the policy keys can be set to force a mate-screensaver lock and unlock when the action is performed:"
+msgid "Then the policy keys can be set to force a cafe-screensaver lock and unlock when the action is performed:"
 msgstr ""
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:531
-msgid "<command>org.mate.power-manager lock-blank-screen</command>"
+msgid "<command>org.cafe.power-manager lock-blank-screen</command>"
 msgstr ""
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:536
-msgid "<command>org.mate.power-manager lock-suspend</command>"
+msgid "<command>org.cafe.power-manager lock-suspend</command>"
 msgstr ""
 
 #. (itstool) path: listitem/para
 #: C/index.docbook:541
-msgid "<command>org.mate.power-manager lock-hibernate</command>"
+msgid "<command>org.cafe.power-manager lock-hibernate</command>"
 msgstr ""
 
 #. (itstool) path: note/para
 #: C/index.docbook:548
-msgid "The lock policy for mate-screensaver is ignored until the simple mode is re-enabled."
+msgid "The lock policy for cafe-screensaver is ignored until the simple mode is re-enabled."
 msgstr ""
 
 #. (itstool) path: section/title
@@ -663,7 +663,7 @@ msgstr ""
 
 #. (itstool) path: section/para
 #: C/index.docbook:679
-msgid "You have to change the DPMS suspend mode <application>MATE Power Manager</application> uses. Open <command>dconf-editor</command>, and then change the keys <literal>org.mate.power-manager dpms-method-ac</literal> and <literal>org.mate.power-manager dpms-method-battery</literal> to one of the modes that work, e.g. standby, suspend or off."
+msgid "You have to change the DPMS suspend mode <application>MATE Power Manager</application> uses. Open <command>dconf-editor</command>, and then change the keys <literal>org.cafe.power-manager dpms-method-ac</literal> and <literal>org.cafe.power-manager dpms-method-battery</literal> to one of the modes that work, e.g. standby, suspend or off."
 msgstr ""
 
 #. (itstool) path: section/title
@@ -673,7 +673,7 @@ msgstr ""
 
 #. (itstool) path: section/para
 #: C/index.docbook:693
-msgid "You might be able to use the percentage charge for g-p-m to use as the policy data. Open <command>dconf-editor</command>, and then change the key <command>org.mate.power-manager use-time-for-policy</command> to false. You can do this easily by doing: <command> gsettings get org.mate.power-manager use-time-for-policy false </command>"
+msgid "You might be able to use the percentage charge for g-p-m to use as the policy data. Open <command>dconf-editor</command>, and then change the key <command>org.cafe.power-manager use-time-for-policy</command> to false. You can do this easily by doing: <command> gsettings get org.cafe.power-manager use-time-for-policy false </command>"
 msgstr ""
 
 #. (itstool) path: section/para
@@ -688,7 +688,7 @@ msgstr ""
 
 #. (itstool) path: section/para
 #: C/index.docbook:713
-msgid "If your application is doing a long operation, you might want to disable the ability to suspend for a little while. You should use mate-session if you really don't want the user to be able to suspend, or for the computer to save power by hibernating or suspending."
+msgid "If your application is doing a long operation, you might want to disable the ability to suspend for a little while. You should use cafe-session if you really don't want the user to be able to suspend, or for the computer to save power by hibernating or suspending."
 msgstr ""
 
 #. (itstool) path: section/title

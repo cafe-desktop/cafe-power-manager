@@ -22,7 +22,7 @@ snapshot:
 	$(MAKE) dist distdir=$(PACKAGE)-$(VERSION)-`date +"%Y%m%d"`
 
 DISTCLEANFILES =					\
-	mate-power-manager-*.tar.gz
+	cafe-power-manager-*.tar.gz
 
 DISTCHECK_CONFIGURE_FLAGS =   \
 	--disable-schemas-install \

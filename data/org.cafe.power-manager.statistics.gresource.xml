@@ -16,7 +16,7 @@
     along with MATE Power Manager.  If not, see <http://www.gnu.org/licenses/>.
 -->
 <gresources>
-  <gresource prefix="/org/mate/powermanager/statistics/">
+  <gresource prefix="/org/cafe/powermanager/statistics/">
     <file compressed="true">gpm-statistics.ui</file>
   </gresource>
 </gresources>

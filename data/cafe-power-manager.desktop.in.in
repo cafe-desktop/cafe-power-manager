@@ -2,14 +2,14 @@
 Name=Power Manager
 Comment=Power management daemon
 # Translators: Do NOT translate or transliterate this text (this is an icon file name)!
-Icon=mate-power-manager
-Exec=mate-power-manager
+Icon=cafe-power-manager
+Exec=cafe-power-manager
 Terminal=false
 Type=Application
 OnlyShowIn=MATE;
 X-MATE-Bugzilla-Bugzilla=MATE
-X-MATE-Bugzilla-Product=mate-power-manager
-X-MATE-Bugzilla-Component=mate-power-manager
+X-MATE-Bugzilla-Product=cafe-power-manager
+X-MATE-Bugzilla-Component=cafe-power-manager
 X-MATE-Bugzilla-Version=@VERSION@
 #X-MATE-AutoRestart=true
 
