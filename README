@@ -1,17 +1,17 @@
-			      MATE Power Manager
-			   A Power Manager for MATE
+			      CAFE Power Manager
+			   A Power Manager for CAFE
 
-MATE Power Manager is a MATE session daemon that acts as a policy agent on
+CAFE Power Manager is a CAFE session daemon that acts as a policy agent on
 top of UPower. It listens to system events and responds with user-configurable
 actions.
 
-MATE Power Manager comes in three main parts:
+CAFE Power Manager comes in three main parts:
 
 	- cafe-power-manager:	   the manager daemon itself
 	- cafe-power-preferences:  the control panel program, for configuration
 	- cafe-power-statistics:   the statistics graphing program
 
-To build, MATE Power Manager requires
+To build, CAFE Power Manager requires
 
 	- Glib (2.36.0 or later)
 	- GTK+3 (3.14.0 or later)
@@ -26,6 +26,6 @@ To build, MATE Power Manager requires
 
 To work properly, cafe-power-manager requires udevd and upowerd to be running.
 
-MATE Power Manager is a fork of GNOME Power Manager.
+CAFE Power Manager is a fork of GNOME Power Manager.
 
 For more information, please see https://cafe-desktop.org/

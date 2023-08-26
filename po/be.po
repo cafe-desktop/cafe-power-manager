@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -768,7 +768,7 @@ msgstr "Наставіць кіраванне сілкаваннем"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
+msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
@@ -956,8 +956,8 @@ msgid "Get the number of brightness levels supported"
 msgstr "Атрымаць колькасць даступных узроўняў яркасці"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
-msgstr "Дапаможнік падсветкі кіраўніка сілкаваннея MATE"
+msgid "CAFE Power Manager Backlight Helper"
+msgstr "Дапаможнік падсветкі кіраўніка сілкаваннея CAFE"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1107,8 +1107,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "Выйсці пасля таго, як кіраўнік загрузіцца (для наладкі)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "Кіраўнік сілкавання MATE"
+msgid "CAFE Power Manager"
+msgstr "Кіраўнік сілкавання CAFE"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1470,8 +1470,8 @@ msgstr ""
 "Энергія UPS ніжэйшая за крытычны ўзровень. Камп'ютар хутка адключыцца."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
-msgstr "Настáўленні сілкавання MATE"
+msgid "CAFE Power Preferences"
+msgstr "Настáўленні сілкавання CAFE"
 
 #: src/gpm-prefs-core.c:238
 msgid "Shutdown"
@@ -1851,7 +1851,7 @@ msgid "Processor"
 msgstr "Працэсар"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
+msgid "Copyright © 2011-2018 CAFE developers"
 msgstr ""
 
 #: src/gpm-tray-icon.c:193

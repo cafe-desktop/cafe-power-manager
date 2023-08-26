@@ -3,7 +3,7 @@
   * Translations update
   * gpm-kbd-backlight: do not change keyboard back-light, when disabled
   * build: silent build warnings for distcheck
-  * build: do not override the default value for MATE_COMPILE_WARNINGS
+  * build: do not override the default value for CAFE_COMPILE_WARNINGS
   * Remove unused entry from autostart
 
 ### cafe-power-manager 1.24.1
@@ -36,7 +36,7 @@
 
   * Translations update
   * brightness-applet: use GdkSeat operations
-  * Set compiler debug flags using MATE_DEBUG_CHECK
+  * Set compiler debug flags using CAFE_DEBUG_CHECK
   * Use WARN_CFLAGS which are only set with -enable-compiler-warnings
   * drop obsolete version checks for upower
   * require upower-0.99.8

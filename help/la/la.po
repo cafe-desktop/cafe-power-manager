@@ -4,7 +4,7 @@
 # 
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: CAFE Desktop Environment\n"
 "POT-Creation-Date: 2019-03-20 16:48+0100\n"
 "PO-Revision-Date: 2018-10-04 15:52+0000\n"
 "Last-Translator: Vendelín Slezák <klaykap@yandex.com>, 2018\n"
@@ -22,20 +22,20 @@ msgstr "Vendelín Slezák <klaykap@yandex.com>"
 
 #. (itstool) path: articleinfo/title
 #: C/index.docbook:23
-msgid "<application>MATE Power Manager</application> Manual"
+msgid "<application>CAFE Power Manager</application> Manual"
 msgstr ""
 
 #. (itstool) path: abstract/para
 #: C/index.docbook:25
 msgid ""
-"<application>MATE Power Manager</application> is a session daemon for the "
-"MATE Desktop that manages the power settings for your laptop or desktop "
+"<application>CAFE Power Manager</application> is a session daemon for the "
+"CAFE Desktop that manages the power settings for your laptop or desktop "
 "computer."
 msgstr ""
 
 #. (itstool) path: articleinfo/copyright
 #: C/index.docbook:30
-msgid "<year>2015</year> <holder>MATE Documentation Team</holder>"
+msgid "<year>2015</year> <holder>CAFE Documentation Team</holder>"
 msgstr ""
 
 #. (itstool) path: articleinfo/copyright
@@ -46,7 +46,7 @@ msgstr ""
 
 #. (itstool) path: publisher/publishername
 #: C/index.docbook:52
-msgid "MATE Documentation Team"
+msgid "CAFE Documentation Team"
 msgstr ""
 
 #. (itstool) path: publisher/publishername
@@ -58,7 +58,7 @@ msgstr ""
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:61
 msgid ""
-"<surname>MATE Documentation Team</surname> <affiliation> </affiliation>"
+"<surname>CAFE Documentation Team</surname> <affiliation> </affiliation>"
 msgstr ""
 
 #. (itstool) path: authorgroup/author
@@ -87,16 +87,16 @@ msgstr ""
 #. (itstool) path: legalnotice/para
 #: C/index.docbook:105
 msgid ""
-"To report a bug or make a suggestion regarding the MATE Power Manager "
+"To report a bug or make a suggestion regarding the CAFE Power Manager "
 "application or this manual, follow the directions in the <ulink "
 "url=\"https://github.com/cafe-desktop/cafe-power-manager/\" "
-"type=\"http\"><application>MATE Power Manager</application> Contact "
+"type=\"http\"><application>CAFE Power Manager</application> Contact "
 "Page</ulink>."
 msgstr ""
 
 #. (itstool) path: article/indexterm
 #: C/index.docbook:115
-msgid "<primary><application>MATE Power Manager</application></primary>"
+msgid "<primary><application>CAFE Power Manager</application></primary>"
 msgstr ""
 
 #. (itstool) path: article/indexterm
@@ -112,15 +112,15 @@ msgstr ""
 #. (itstool) path: section/indexterm
 #: C/index.docbook:129
 msgid ""
-"<primary><application>MATE Power Manager</application></primary> "
+"<primary><application>CAFE Power Manager</application></primary> "
 "<secondary>Manual</secondary> <tertiary>cafe-power-manager</tertiary>"
 msgstr ""
 
 #. (itstool) path: section/para
 #: C/index.docbook:135
 msgid ""
-"The MATE Power Manager session daemon is a power management daemon for the "
-"<systemitem>MATE desktop</systemitem>"
+"The CAFE Power Manager session daemon is a power management daemon for the "
+"<systemitem>CAFE desktop</systemitem>"
 msgstr ""
 
 #. (itstool) path: section/title
@@ -131,8 +131,8 @@ msgstr ""
 #. (itstool) path: section/para
 #: C/index.docbook:144
 msgid ""
-"<application>MATE Power Manager</application> is usually started in MATE "
-"startup, but you can manually start <application>MATE Power "
+"<application>CAFE Power Manager</application> is usually started in CAFE "
+"startup, but you can manually start <application>CAFE Power "
 "Manager</application> by doing:"
 msgstr ""
 
@@ -156,7 +156,7 @@ msgstr ""
 #. (itstool) path: section/para
 #: C/index.docbook:163
 msgid ""
-"When <application>MATE Power Manager</application> has started, the "
+"When <application>CAFE Power Manager</application> has started, the "
 "following notifications may be displayed."
 msgstr ""
 
@@ -167,7 +167,7 @@ msgstr ""
 
 #. (itstool) path: figure/title
 #: C/index.docbook:170
-msgid "MATE Power Manager Notification when AC adapter is removed"
+msgid "CAFE Power Manager Notification when AC adapter is removed"
 msgstr ""
 
 #. (itstool) path: imageobject/imagedata
@@ -197,7 +197,7 @@ msgstr ""
 #. (itstool) path: figure/title
 #: C/index.docbook:190
 msgid ""
-"MATE Power Manager Notification when laptop primary battery is fully charged"
+"CAFE Power Manager Notification when laptop primary battery is fully charged"
 msgstr ""
 
 #. (itstool) path: imageobject/imagedata
@@ -242,7 +242,7 @@ msgstr ""
 
 #. (itstool) path: figure/title
 #: C/index.docbook:222
-msgid "MATE Power Manager Notification when battery power is low"
+msgid "CAFE Power Manager Notification when battery power is low"
 msgstr ""
 
 #. (itstool) path: imageobject/imagedata
@@ -279,7 +279,7 @@ msgstr ""
 #. (itstool) path: figure/title
 #: C/index.docbook:247
 msgid ""
-"MATE Power Manager Notification when the system power is critically low"
+"CAFE Power Manager Notification when the system power is critically low"
 msgstr ""
 
 #. (itstool) path: imageobject/imagedata
@@ -309,7 +309,7 @@ msgstr ""
 
 #. (itstool) path: figure/title
 #: C/index.docbook:266
-msgid "MATE Power Manager Notification when suspend failure occurs"
+msgid "CAFE Power Manager Notification when suspend failure occurs"
 msgstr ""
 
 #. (itstool) path: imageobject/imagedata
@@ -347,7 +347,7 @@ msgstr ""
 #: C/index.docbook:291
 msgid ""
 "This has been removed from the information window of previous versions of "
-"MATE Power Manager as the data interface is now using DBUS rather than "
+"CAFE Power Manager as the data interface is now using DBUS rather than "
 "internal IPC. This allows other applications to query and display the data "
 "if required."
 msgstr ""
@@ -477,7 +477,7 @@ msgstr ""
 
 #. (itstool) path: figure/title
 #: C/index.docbook:404
-msgid "MATE Power Manager AC tab"
+msgid "CAFE Power Manager AC tab"
 msgstr ""
 
 #. (itstool) path: imageobject/imagedata
@@ -499,7 +499,7 @@ msgstr ""
 
 #. (itstool) path: figure/title
 #: C/index.docbook:418
-msgid "MATE Power Manager battery tab"
+msgid "CAFE Power Manager battery tab"
 msgstr ""
 
 #. (itstool) path: imageobject/imagedata
@@ -528,7 +528,7 @@ msgstr ""
 
 #. (itstool) path: figure/title
 #: C/index.docbook:436
-msgid "MATE Power Manager general tab"
+msgid "CAFE Power Manager general tab"
 msgstr ""
 
 #. (itstool) path: imageobject/imagedata
@@ -555,7 +555,7 @@ msgid ""
 "input, and if the mouse has not been moved, or the keyboard been pressed "
 "then it starts a timeout. When the value of this timeout reaches the value "
 "set in <command>cafe-screensaver-preferences</command>, then the login is "
-"marked as 'session idle'. This is when <application>MATE Power "
+"marked as 'session idle'. This is when <application>CAFE Power "
 "Manager</application> performs all the session idle actions such as enabling"
 " low-power mode and lowering the laptop panel brightness."
 msgstr ""
@@ -581,7 +581,7 @@ msgstr ""
 #. (itstool) path: section/para
 #: C/index.docbook:472
 msgid ""
-"As soon as the session is marked at idle, <application>MATE Power "
+"As soon as the session is marked at idle, <application>CAFE Power "
 "Manager</application> starts its own 'system' timer. When the timeout set in"
 " <command>cafe-power-preferences</command> is reached, and the CPU load is "
 "idle, then the idle action is performed, which is usually to turn off the "
@@ -624,7 +624,7 @@ msgstr ""
 #. (itstool) path: section/para
 #: C/index.docbook:505
 msgid ""
-"By default, <application>MATE Power Manager</application> supports a simple "
+"By default, <application>CAFE Power Manager</application> supports a simple "
 "locking scheme. This means that the screen will lock if set to \"Lock "
 "screen\" in cafe-screensaver when the lid is closed, or the system performs "
 "a suspend or hibernate action."
@@ -674,7 +674,7 @@ msgstr ""
 
 #. (itstool) path: section/title
 #: C/index.docbook:557
-msgid "MATE Power Applets"
+msgid "CAFE Power Applets"
 msgstr ""
 
 #. (itstool) path: section/title
@@ -747,7 +747,7 @@ msgstr ""
 #. (itstool) path: note/para
 #: C/index.docbook:608
 msgid ""
-"Don't use this applet if you just use MATE software, instead file a bug to "
+"Don't use this applet if you just use CAFE software, instead file a bug to "
 "make the application use the <function>Inhibit()</function> and "
 "<function>UnInhibit()</function> methods as this should 'just work'."
 msgstr ""
@@ -839,7 +839,7 @@ msgstr ""
 #. (itstool) path: section/para
 #: C/index.docbook:679
 msgid ""
-"You have to change the DPMS suspend mode <application>MATE Power "
+"You have to change the DPMS suspend mode <application>CAFE Power "
 "Manager</application> uses. Open <command>dconf-editor</command>, and then "
 "change the keys <literal>org.cafe.power-manager dpms-method-ac</literal> and"
 " <literal>org.cafe.power-manager dpms-method-battery</literal> to one of the"
@@ -933,9 +933,9 @@ msgstr "De Hac Re"
 #. (itstool) path: section/para
 #: C/index.docbook:760
 msgid ""
-"MATE Power Manager was written by Mate Development. To find more information"
-" about MATE Power Manager, please visit the <ulink url=\"https://github.com"
-"/cafe-desktop/cafe-power-manager\" type=\"http\"> <application>MATE Power "
+"CAFE Power Manager was written by Mate Development. To find more information"
+" about CAFE Power Manager, please visit the <ulink url=\"https://github.com"
+"/cafe-desktop/cafe-power-manager\" type=\"http\"> <application>CAFE Power "
 "Manager</application> web page</ulink>. Origin power-manager was written by "
 "Richard Hughes <email>richard@hughsie.com</email>."
 msgstr ""
@@ -945,7 +945,7 @@ msgstr ""
 msgid ""
 "To report a bug or make a suggestion regarding this application or this "
 "manual, follow the directions at the <ulink url=\"https://github.com/cafe-"
-"desktop/cafe-power-manager\" type=\"http\"> <application>MATE Power "
+"desktop/cafe-power-manager\" type=\"http\"> <application>CAFE Power "
 "Manager</application> Bug Page</ulink>."
 msgstr ""
 
@@ -978,7 +978,7 @@ msgstr ""
 #. (itstool) path: legalnotice/para
 #: C/legal.xml:12
 msgid ""
-"This manual is part of a collection of MATE manuals distributed under the "
+"This manual is part of a collection of CAFE manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
 "you can do so by adding a copy of the license to the manual, as described in"
 " section 6 of the license."
@@ -988,8 +988,8 @@ msgstr ""
 #: C/legal.xml:19
 msgid ""
 "Many of the names used by companies to distinguish their products and "
-"services are claimed as trademarks. Where those names appear in any MATE "
-"documentation, and the members of the MATE Documentation Project are made "
+"services are claimed as trademarks. Where those names appear in any CAFE "
+"documentation, and the members of the CAFE Documentation Project are made "
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""

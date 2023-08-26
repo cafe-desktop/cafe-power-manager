@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -792,7 +792,7 @@ msgstr "전원 관리 설정"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
+msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
@@ -980,7 +980,7 @@ msgid "Get the number of brightness levels supported"
 msgstr "지원하는 밝기 값을 가져옵니다"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
+msgid "CAFE Power Manager Backlight Helper"
 msgstr "마테 전원 관리자 백라이트 도우미"
 
 #: src/gpm-backlight-helper.c:192
@@ -1119,7 +1119,7 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "전원 관리자가 시작한 다음 끝냅니다(디버깅용)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
+msgid "CAFE Power Manager"
 msgstr "마테 전원 관리자"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
@@ -1456,7 +1456,7 @@ msgid ""
 msgstr "배터리 전원이 위험 수준보다 부족하여 이 컴퓨터를 끕니다."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
+msgid "CAFE Power Preferences"
 msgstr "마테 전원 기본 설정"
 
 #: src/gpm-prefs-core.c:238
@@ -1822,8 +1822,8 @@ msgid "Processor"
 msgstr "프로세서"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
-msgstr "Copyright © 2011-2018 MATE developers"
+msgid "Copyright © 2011-2018 CAFE developers"
+msgstr "Copyright © 2011-2018 CAFE developers"
 
 #: src/gpm-tray-icon.c:193
 msgid "translator-credits"
@@ -1833,7 +1833,7 @@ msgstr ""
 "Yoo Duk Nam https://launchpad.net/~yoo2001818\n"
 "onlyeriko https://launchpad.net/~onlyeriko\n"
 "Seong-ho Cho <darkcircle.0426@gmail.com>\n"
-"MATE Desktop Environment Team <https://www.transifex.com/cafe/teams/13566/ko/>"
+"CAFE Desktop Environment Team <https://www.transifex.com/cafe/teams/13566/ko/>"
 
 #: src/gpm-tray-icon.c:295
 #, c-format

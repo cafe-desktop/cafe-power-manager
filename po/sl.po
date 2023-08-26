@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -873,7 +873,7 @@ msgstr "Nastavi upravljanje porabe energije"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
+msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
@@ -1061,8 +1061,8 @@ msgid "Get the number of brightness levels supported"
 msgstr "Pridobi število podprtih ravni svetlosti"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
-msgstr "Pomočnik luči ozadja upravljanja porabe energije MATE"
+msgid "CAFE Power Manager Backlight Helper"
+msgstr "Pomočnik luči ozadja upravljanja porabe energije CAFE"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1212,8 +1212,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "Končaj po uspešno naloženem upravljalniku (za razhroščevanje)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "Upravljalnik porabe energije MATE"
+msgid "CAFE Power Manager"
+msgstr "Upravljalnik porabe energije CAFE"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1581,8 +1581,8 @@ msgid ""
 msgstr "Vir UPS je pod kritično ravnjo. Računalnik se bo izklopil."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
-msgstr "Možnosti porabe energije MATE"
+msgid "CAFE Power Preferences"
+msgstr "Možnosti porabe energije CAFE"
 
 #: src/gpm-prefs-core.c:238
 msgid "Shutdown"
@@ -1962,8 +1962,8 @@ msgid "Processor"
 msgstr "Procesor"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
-msgstr "Copyright © 2011-2018 MATE razvijalci"
+msgid "Copyright © 2011-2018 CAFE developers"
+msgstr "Copyright © 2011-2018 CAFE razvijalci"
 
 #: src/gpm-tray-icon.c:193
 msgid "translator-credits"

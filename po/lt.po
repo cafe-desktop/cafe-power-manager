@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -88,7 +88,7 @@ msgid ""
 "02110-1301, USA."
 msgstr ""
 "Jūs turėjote gauti GNU bendrosios viešosios licencijos kopiją kartu su\n"
-"MATE energijos tvarkytuve; jeigu negavote, rašykite Free Software Foundation,\n"
+"CAFE energijos tvarkytuve; jeigu negavote, rašykite Free Software Foundation,\n"
 "Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 
 #: applets/brightness/brightness-applet.c:1063
@@ -884,9 +884,9 @@ msgstr "Konfigūruokite energijos valdymą"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
+msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
-"MATE;maitinimas;maitinimo;energijos;energija;valdymas;valdymo;tvarkymo;tvarkymas;nuostatos;nustatymai;"
+"CAFE;maitinimas;maitinimo;energijos;energija;valdymas;valdymo;tvarkymo;tvarkymas;nuostatos;nustatymai;"
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
 #: src/gpm-statistics.c:1090 src/gpm-statistics.c:1577
@@ -1073,8 +1073,8 @@ msgid "Get the number of brightness levels supported"
 msgstr "Gauti palaikomų ryškumo lygių skaičių"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
-msgstr "MATE energijos tvarkytuvės foninio apšvietimo pagalbinė programa"
+msgid "CAFE Power Manager Backlight Helper"
+msgstr "CAFE energijos tvarkytuvės foninio apšvietimo pagalbinė programa"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1224,8 +1224,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "Išeiti įkėlus tvarkytuvę (klaidoms ieškoti)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "MATE energijos tvarkytuvė"
+msgid "CAFE Power Manager"
+msgstr "CAFE energijos tvarkytuvė"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1603,8 +1603,8 @@ msgstr ""
 "išjungtas."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
-msgstr "MATE energijos nustatymai"
+msgid "CAFE Power Preferences"
+msgstr "CAFE energijos nustatymai"
 
 #: src/gpm-prefs-core.c:238
 msgid "Shutdown"
@@ -1984,8 +1984,8 @@ msgid "Processor"
 msgstr "Procesorius"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
-msgstr "Autorių teisės © 2011-2018 MATE kūrėjai"
+msgid "Copyright © 2011-2018 CAFE developers"
+msgstr "Autorių teisės © 2011-2018 CAFE kūrėjai"
 
 #: src/gpm-tray-icon.c:193
 msgid "translator-credits"

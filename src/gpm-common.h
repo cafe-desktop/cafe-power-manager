@@ -41,7 +41,7 @@ G_BEGIN_DECLS
 
 /* common descriptions of this program */
 #define GPM_NAME 			_("Power Manager")
-#define GPM_DESCRIPTION 		_("Power Manager for the MATE desktop")
+#define GPM_DESCRIPTION 		_("Power Manager for the CAFE desktop")
 
 /* schema location */
 #define GPM_SETTINGS_SCHEMA				"org.cafe.power-manager"

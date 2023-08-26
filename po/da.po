@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -33,7 +33,7 @@ msgstr "Justerer LCD-skærmens lysstyrke."
 #: applets/brightness/brightness-applet.c:364
 #: applets/inhibit/inhibit-applet.c:225
 msgid "Cannot connect to cafe-power-manager"
-msgstr "Kan ikke forbinde til MATE strømstyring"
+msgstr "Kan ikke forbinde til CAFE strømstyring"
 
 #: applets/brightness/brightness-applet.c:366
 msgid "Cannot get laptop panel brightness"
@@ -856,9 +856,9 @@ msgstr "Konfigurer strømstyring"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
+msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
-"MATE;power;management;preferences;settings;strømstyrke;håndtering;præferencer;indstillinger;"
+"CAFE;power;management;preferences;settings;strømstyrke;håndtering;præferencer;indstillinger;"
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
 #: src/gpm-statistics.c:1090 src/gpm-statistics.c:1577
@@ -1045,8 +1045,8 @@ msgid "Get the number of brightness levels supported"
 msgstr "Hent antallet af lysstyrkeniveauer, der understøttes"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
-msgstr "Hjemmeside for MATE Strømstyrings bagbelysningshjælper"
+msgid "CAFE Power Manager Backlight Helper"
+msgstr "Hjemmeside for CAFE Strømstyrings bagbelysningshjælper"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1188,8 +1188,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "Afslut efter håndteringsinstansen er indlæst (til fejlsøgning)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "MATE Strømstyring"
+msgid "CAFE Power Manager"
+msgstr "CAFE Strømstyring"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1556,8 +1556,8 @@ msgstr ""
 "Nødstrømmen har nået det kritiske niveau og computeren vil snart lukke ned."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
-msgstr "MATE Strømindstillinger"
+msgid "CAFE Power Preferences"
+msgstr "CAFE Strømindstillinger"
 
 #: src/gpm-prefs-core.c:238
 msgid "Shutdown"
@@ -1927,8 +1927,8 @@ msgid "Processor"
 msgstr "Processor"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
-msgstr "Ophavsret 2011-2018 MATE-udviklerne"
+msgid "Copyright © 2011-2018 CAFE developers"
+msgstr "Ophavsret 2011-2018 CAFE-udviklerne"
 
 #: src/gpm-tray-icon.c:193
 msgid "translator-credits"

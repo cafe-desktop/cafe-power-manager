@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <!DOCTYPE article PUBLIC "-//OASIS//DTD DocBook XML V4.3//EN"
     "http://www.oasis-open.org/docbook/xml/4.3/docbookx.dtd" [
-  <!ENTITY app "MATE Power Manager">
+  <!ENTITY app "CAFE Power Manager">
   <!ENTITY application "<application>&app;</application>">
   <!ENTITY appversion "1.10.0">
   <!ENTITY manrevision "1.10.0">
 ]>
 <!--
       (Do not remove this comment block.)
-  Template Maintained by the MATE Documentation Project:
+  Template Maintained by the CAFE Documentation Project:
 	  https://cafe-desktop.org/development/
   Template version: 2.0 beta
   Template last modified Feb 12, 2002
@@ -23,13 +23,13 @@
     <title>&application; Manual</title>
     <abstract role="description">
       <para>
-        &application; is a session daemon for the MATE Desktop that
+        &application; is a session daemon for the CAFE Desktop that
         manages the power settings for your laptop or desktop computer.
       </para>
     </abstract>
     <copyright>
       <year>2015-2020</year>
-      <holder>MATE Documentation Team</holder>
+      <holder>CAFE Documentation Team</holder>
     </copyright>
     <copyright>
       <year>2006-2009</year>
@@ -49,7 +49,7 @@
      not specified, the publisher/author is the same for all versions of the
      document.  -->
     <publisher role="maintainer">
-      <publishername>MATE Documentation Team</publishername>
+      <publishername>CAFE Documentation Team</publishername>
     </publisher>
     <publisher role="maintainer">
       <publishername>Richard Hughes</publishername>
@@ -59,9 +59,9 @@
 
     <authorgroup>
       <author role="maintainer"> 
-	<surname>MATE Documentation Team</surname>
+	<surname>CAFE Documentation Team</surname>
 	<affiliation>
-	  <!-- <orgname>MATE Documentation
+	  <!-- <orgname>CAFE Documentation
 	  Project</orgname> -->
 	  <!-- The email address of the author is optional and is commented out by default.
 	  <address> <email>doc-writer2@cafe.org</email> </address>
@@ -134,7 +134,7 @@
 
   <para>
   The &app; session daemon is a power management daemon
-  for the <systemitem>MATE desktop</systemitem>
+  for the <systemitem>CAFE desktop</systemitem>
   </para>
 
 </section>
@@ -142,7 +142,7 @@
 <section id="using">
   <title>Usage</title>
   <para>
-    <application>&app;</application> is usually started in MATE startup, but
+    <application>&app;</application> is usually started in CAFE startup, but
     you can manually start <application>&app;</application> by doing:
   </para>
   <variablelist>
@@ -554,7 +554,7 @@
 </section>
 
 <section id="applets-general">
-  <title>MATE Power Applets</title>
+  <title>CAFE Power Applets</title>
 
   <section id="applets-brightness">
     <title>Brightness Applet</title>
@@ -606,7 +606,7 @@
     </figure>
     <note>
       <para>
-        Don't use this applet if you just use MATE software, instead
+        Don't use this applet if you just use CAFE software, instead
         file a bug to make the application use the <function>Inhibit()</function> and
         <function>UnInhibit()</function> methods as this should 'just work'.
       </para>

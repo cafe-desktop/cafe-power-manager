@@ -9,7 +9,7 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: MATE Desktop Environment\n"
+"Project-Id-Version: CAFE Desktop Environment\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2018-10-04 17:35+0200\n"
 "PO-Revision-Date: 2018-03-11 20:39+0000\n"
@@ -931,7 +931,7 @@ msgstr ""
 
 #. TRANSLATORS: tool that is used when copying profiles system-wide
 #: ../src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
+msgid "CAFE Power Manager Backlight Helper"
 msgstr ""
 
 #. TRANSLATORS: user did not specify valid options
@@ -1084,7 +1084,7 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr ""
 
 #: ../src/gpm-main.c:189 ../src/gpm-main.c:193
-msgid "MATE Power Manager"
+msgid "CAFE Power Manager"
 msgstr ""
 
 #. TRANSLATORS: this is the sound description
@@ -1504,7 +1504,7 @@ msgid ""
 msgstr ""
 
 #: ../src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
+msgid "CAFE Power Preferences"
 msgstr ""
 
 #: ../src/gpm-prefs-core.c:241
@@ -1943,7 +1943,7 @@ msgid "Processor"
 msgstr ""
 
 #: ../src/gpm-tray-icon.c:189
-msgid "Copyright © 2011-2018 MATE developers"
+msgid "Copyright © 2011-2018 CAFE developers"
 msgstr ""
 
 #. Translators should localize the following string

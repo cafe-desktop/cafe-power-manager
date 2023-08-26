@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -39,7 +39,7 @@ msgstr "ラップトップ画面の明るさを調節します"
 #: applets/brightness/brightness-applet.c:364
 #: applets/inhibit/inhibit-applet.c:225
 msgid "Cannot connect to cafe-power-manager"
-msgstr "MATE 電源管理デーモンに接続できませんでした"
+msgstr "CAFE 電源管理デーモンに接続できませんでした"
 
 #: applets/brightness/brightness-applet.c:366
 msgid "Cannot get laptop panel brightness"
@@ -63,7 +63,7 @@ msgid ""
 "as published by the Free Software Foundation; either version 2\n"
 "of the License, or (at your option) any later version."
 msgstr ""
-"MATE 電源管理はフリーソフトウェアです;\n"
+"CAFE 電源管理はフリーソフトウェアです;\n"
 "フリーソフトウェア財団が発行する GNU 一般公衆利用許諾契約書の\n"
 "第二版、あるいはそれ以降の版が定める条項の下で本プログラムを\n"
 "再頒布または変更することができます。"
@@ -76,7 +76,7 @@ msgid ""
 "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
 "GNU General Public License for more details."
 msgstr ""
-"MATE 電源管理は何かの役に立つことを期待して配布されているものですが、\n"
+"CAFE 電源管理は何かの役に立つことを期待して配布されているものですが、\n"
 "完全に無保証です。商用利用または特定の目的における適合性の保証はありません。\n"
 "詳細は GNU 一般公衆利用許諾契約書をご覧ください。"
 
@@ -430,7 +430,7 @@ msgstr "サスペンドまたはハイバーネートする前に NetworkManager
 
 #: data/org.cafe.power-manager.gschema.xml.in:166
 msgid "Use cafe-screensaver lock setting"
-msgstr "MATE スクリーンセーバーでロックするかどうか"
+msgstr "CAFE スクリーンセーバーでロックするかどうか"
 
 #: data/org.cafe.power-manager.gschema.xml.in:167
 msgid ""
@@ -789,7 +789,7 @@ msgstr "電源管理の設定を行います"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
+msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
@@ -981,8 +981,8 @@ msgid "Get the number of brightness levels supported"
 msgstr "サポートしている明るさレベルを取得"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
-msgstr "MATE 電源管理 バックライトヘルパー"
+msgid "CAFE Power Manager Backlight Helper"
+msgstr "CAFE 電源管理 バックライトヘルパー"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1120,8 +1120,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "デーモンを起動した後に終了する (デバッグ用)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "MATE 電源管理"
+msgid "CAFE Power Manager"
+msgstr "CAFE 電源管理"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1455,7 +1455,7 @@ msgid ""
 msgstr "次に示すように、UPS の残量が深刻な状態でシャットダウンしようとしています。"
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
+msgid "CAFE Power Preferences"
 msgstr "電源管理の設定"
 
 #: src/gpm-prefs-core.c:238
@@ -1821,7 +1821,7 @@ msgid "Processor"
 msgstr "プロセッサ"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
+msgid "Copyright © 2011-2018 CAFE developers"
 msgstr ""
 
 #: src/gpm-tray-icon.c:193

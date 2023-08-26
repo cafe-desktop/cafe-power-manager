@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -844,7 +844,7 @@ msgstr "اضبط إدارة الطاقة"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
+msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
@@ -1032,7 +1032,7 @@ msgid "Get the number of brightness levels supported"
 msgstr "احصل على عدد مستويات السطوع المدعومة"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
+msgid "CAFE Power Manager Backlight Helper"
 msgstr "مساعد الإضاءة الخلفية لمدير طاقة متّة"
 
 #: src/gpm-backlight-helper.c:192
@@ -1191,7 +1191,7 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "اخرج بعد تحميل المدير (للتنقيح)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
+msgid "CAFE Power Manager"
 msgstr "مدير طاقة متّة"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
@@ -1546,7 +1546,7 @@ msgid ""
 msgstr "ال UPS دون المستوى الحرج وهذا الحاسوب على وشك الإغلاق."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
+msgid "CAFE Power Preferences"
 msgstr "تفضيلات الطّاقة لمتّة"
 
 #: src/gpm-prefs-core.c:238
@@ -1937,7 +1937,7 @@ msgid "Processor"
 msgstr "المعالج"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
+msgid "Copyright © 2011-2018 CAFE developers"
 msgstr ""
 
 #: src/gpm-tray-icon.c:193

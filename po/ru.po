@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -876,8 +876,8 @@ msgstr "Настройка управления питанием"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
-msgstr "MATE;power;management;preferences;settings;"
+msgid "CAFE;power;management;preferences;settings;"
+msgstr "CAFE;power;management;preferences;settings;"
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
 #: src/gpm-statistics.c:1090 src/gpm-statistics.c:1577
@@ -1064,8 +1064,8 @@ msgid "Get the number of brightness levels supported"
 msgstr "Получить поддерживаемое количество уровней яркости"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
-msgstr "Помощник управления подсветкой диспетчера питания MATE"
+msgid "CAFE Power Manager Backlight Helper"
+msgstr "Помощник управления подсветкой диспетчера питания CAFE"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1215,8 +1215,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "Выйти после полной загрузки (для отладки)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "Управление питанием среды MATE"
+msgid "CAFE Power Manager"
+msgstr "Управление питанием среды CAFE"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1586,7 +1586,7 @@ msgstr ""
 "Уровень заряда ИБП ниже критического, компьютер сейчас будет выключен."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
+msgid "CAFE Power Preferences"
 msgstr "Параметры управления питанием"
 
 #: src/gpm-prefs-core.c:238
@@ -1967,8 +1967,8 @@ msgid "Processor"
 msgstr "Процессор"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
-msgstr "Копирайт © 2011-2018 Разработчики MATE"
+msgid "Copyright © 2011-2018 CAFE developers"
+msgstr "Копирайт © 2011-2018 Разработчики CAFE"
 
 #: src/gpm-tray-icon.c:193
 msgid "translator-credits"

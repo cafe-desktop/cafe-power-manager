@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -63,7 +63,7 @@ msgid ""
 "as published by the Free Software Foundation; either version 2\n"
 "of the License, or (at your option) any later version."
 msgstr ""
-"MATE-energiebeheer is vrije programmatuur; u mag het herdistribueren en/of\n"
+"CAFE-energiebeheer is vrije programmatuur; u mag het herdistribueren en/of\n"
 "aanpassen onder de voorwaarden van de GNU General Public License, zoals\n"
 "gepubliceerd door de Free Software Foundation; ofwel versie 2 van de\n"
 "licentie, of (naargelang gewenst) een latere versie."
@@ -76,7 +76,7 @@ msgid ""
 "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
 "GNU General Public License for more details."
 msgstr ""
-"MATE-energiebeheer wordt uitgegeven in de hoop dat het nuttig zal zijn,\n"
+"CAFE-energiebeheer wordt uitgegeven in de hoop dat het nuttig zal zijn,\n"
 "maar ZONDER ENIGE GARANTIE; zonder zelfs een impliciete garantie van\n"
 "VERKOOPBAARHEID of GESCHIKTHEID VOOR EEN BEPAALD DOEL. Zie de GNU General\n"
 "Public License voor meer informatie."
@@ -908,8 +908,8 @@ msgstr "Energiebeheer instellen"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
-msgstr "MATE;energie;beheer;voorrkeuren;instellingen;"
+msgid "CAFE;power;management;preferences;settings;"
+msgstr "CAFE;energie;beheer;voorrkeuren;instellingen;"
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
 #: src/gpm-statistics.c:1090 src/gpm-statistics.c:1577
@@ -1096,7 +1096,7 @@ msgid "Get the number of brightness levels supported"
 msgstr "Vraag het aantal ondersteunde helderheidswaarden op"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
+msgid "CAFE Power Manager Backlight Helper"
 msgstr "Hulpprogramma voor achtergrondverlichting van Mate Energiebeheer"
 
 #: src/gpm-backlight-helper.c:192
@@ -1239,7 +1239,7 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "Afsluiten nadat energiebeheer is geladen (voor foutopsporing)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
+msgid "CAFE Power Manager"
 msgstr "Mate Energiebeheer"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
@@ -1607,7 +1607,7 @@ msgid ""
 msgstr "De UPS is bijna leeg. Deze computer zal zo worden afgesloten."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
+msgid "CAFE Power Preferences"
 msgstr "Voorkeuren van Mate Energiebeheer"
 
 #: src/gpm-prefs-core.c:238
@@ -1978,8 +1978,8 @@ msgid "Processor"
 msgstr "Processor"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
-msgstr "Auteursrecht © 2011-2018 De ontwikkelaars van MATE"
+msgid "Copyright © 2011-2018 CAFE developers"
+msgstr "Auteursrecht © 2011-2018 De ontwikkelaars van CAFE"
 
 #: src/gpm-tray-icon.c:193
 msgid "translator-credits"

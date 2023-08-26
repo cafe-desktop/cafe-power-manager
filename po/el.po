@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -563,7 +563,7 @@ msgid ""
 "Whether the GNOME keyring is locked before the computer enters suspend. This"
 " means the keyring will have to be unlocked on resume."
 msgstr ""
-"Αν θα κλειδώνεται η κλειδοθήκη του MATE όταν ο υπολογιστής αναστέλλεται. Αν "
+"Αν θα κλειδώνεται η κλειδοθήκη του CAFE όταν ο υπολογιστής αναστέλλεται. Αν "
 "ναι, η κλειδοθήκη θα πρέπει να ξεκλειδωθεί κατά την επαναφορά."
 
 #: data/org.cafe.power-manager.gschema.xml.in:192
@@ -571,7 +571,7 @@ msgid ""
 "Whether the GNOME keyring is locked before the computer enters hibernate. "
 "This means the keyring will have to be unlocked on resume."
 msgstr ""
-"Αν θα κλειδώνεται η κλειδοθήκη του MATE όταν ο υπολογιστής αδρανοποιείται. "
+"Αν θα κλειδώνεται η κλειδοθήκη του CAFE όταν ο υπολογιστής αδρανοποιείται. "
 "Αν ναι, η κλειδοθήκη θα πρέπει να ξεκλειδωθεί κατά την επαναφορά."
 
 #: data/org.cafe.power-manager.gschema.xml.in:196
@@ -941,7 +941,7 @@ msgstr "Ρύθμιση διαχείρισης ενέργειας"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
+msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
@@ -1130,8 +1130,8 @@ msgid "Get the number of brightness levels supported"
 msgstr "Λήψη του αριθμού των επιπέδων φωτεινότητας που υποστηρίζονται"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
-msgstr "Βοηθός οπίσθιου φωτισμού της Διαχείρισης ενέργειας MATE"
+msgid "CAFE Power Manager Backlight Helper"
+msgstr "Βοηθός οπίσθιου φωτισμού της Διαχείρισης ενέργειας CAFE"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1274,8 +1274,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "Έξοδος μετά τη φόρτωση της διαχείρισης ενέργειας (για αποσφαλμάτωση)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "Διαχείριση ενέργειας MATE"
+msgid "CAFE Power Manager"
+msgstr "Διαχείριση ενέργειας CAFE"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1654,8 +1654,8 @@ msgstr ""
 "Το φορτίο του UPS είναι εξαιρετικά χαμηλό. Ο υπολογιστής θα τερματιστεί."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
-msgstr "Προτιμήσεις ενέργειας του MATE"
+msgid "CAFE Power Preferences"
+msgstr "Προτιμήσεις ενέργειας του CAFE"
 
 #: src/gpm-prefs-core.c:238
 msgid "Shutdown"
@@ -2025,13 +2025,13 @@ msgid "Processor"
 msgstr "Επεξεργαστής"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
-msgstr "Πνευματική ιδιοκτησία © 2011-2018 MATE προγραμματιστές"
+msgid "Copyright © 2011-2018 CAFE developers"
+msgstr "Πνευματική ιδιοκτησία © 2011-2018 CAFE προγραμματιστές"
 
 #: src/gpm-tray-icon.c:193
 msgid "translator-credits"
 msgstr ""
-"Ελληνική μεταφραστική ομάδα MATE\n"
+"Ελληνική μεταφραστική ομάδα CAFE\n"
 " Αλέξανδρος Μουχτσής <alexandros@gnugr.org>\n"
 "\n"
 "Για περισσότερες πληροφορίες, επισκεφθείτε την σελίδα http://www.cafe.gr/"

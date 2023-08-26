@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -874,8 +874,8 @@ msgstr "Atur manajemen daya"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
-msgstr "MATE;daya;manajemen;preferensi;pengaturan;setelan;"
+msgid "CAFE;power;management;preferences;settings;"
+msgstr "CAFE;daya;manajemen;preferensi;pengaturan;setelan;"
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
 #: src/gpm-statistics.c:1090 src/gpm-statistics.c:1577
@@ -1062,8 +1062,8 @@ msgid "Get the number of brightness levels supported"
 msgstr "Ambil cacah aras kecerahan yang didukung"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
-msgstr "Pembantu Backlight Manajer Daya MATE"
+msgid "CAFE Power Manager Backlight Helper"
+msgstr "Pembantu Backlight Manajer Daya CAFE"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1201,8 +1201,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "Keluar setelah manajer telah dimuat (untuk pengawa-kutuan)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "Manajer Daya MATE"
+msgid "CAFE Power Manager"
+msgstr "Manajer Daya CAFE"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1561,8 +1561,8 @@ msgid ""
 msgstr "Baterai UPS di bawah tingkat kritis dan komputer ini akan dimatikan."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
-msgstr "Preferensi Daya MATE"
+msgid "CAFE Power Preferences"
+msgstr "Preferensi Daya CAFE"
 
 #: src/gpm-prefs-core.c:238
 msgid "Shutdown"
@@ -1927,8 +1927,8 @@ msgid "Processor"
 msgstr "Prosesor"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
-msgstr "Hak Cipta © 2011-2018 Pengembang MATE"
+msgid "Copyright © 2011-2018 CAFE developers"
+msgstr "Hak Cipta © 2011-2018 Pengembang CAFE"
 
 #: src/gpm-tray-icon.c:193
 msgid "translator-credits"
@@ -1936,7 +1936,7 @@ msgstr ""
 "Mohammad DAMT <mdamt@bisnisweb.com>\n"
 "Ahmad Riza H Nst  <ari@160c.afraid.org>\n"
 "Dirgita <dirgita@gmail.com>\n"
-"Tim MATE Indonesia <http://id.cafe.org>\n"
+"Tim CAFE Indonesia <http://id.cafe.org>\n"
 "Kukuh Syafaat <syafaatkukuh@gmail.com>, 2017.\n"
 "Andika Triwidada <andika@gmail.com>, 2020."
 

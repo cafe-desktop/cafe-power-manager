@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -534,7 +534,7 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:186
 #: data/org.cafe.power-manager.gschema.xml.in:191
 msgid "Lock GNOME keyring on sleep"
-msgstr "Bloquear o anel de chaves so MATE ao pasar ao modo de baixo consumo"
+msgstr "Bloquear o anel de chaves so CAFE ao pasar ao modo de baixo consumo"
 
 #: data/org.cafe.power-manager.gschema.xml.in:187
 msgid ""
@@ -550,7 +550,7 @@ msgid ""
 "Whether the GNOME keyring is locked before the computer enters hibernate. "
 "This means the keyring will have to be unlocked on resume."
 msgstr ""
-"Indica se o anel de chaves do MATE bloquéase antes de que o computador pase "
+"Indica se o anel de chaves do CAFE bloquéase antes de que o computador pase "
 "a hibernación. Isto implica que o anel de chaves terá que ser desbloqueado "
 "ao continuar."
 
@@ -911,8 +911,8 @@ msgstr "Configurar a xestión de enerxía"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
-msgstr "MATE;enerxía;administración;preferencias;axustes;"
+msgid "CAFE;power;management;preferences;settings;"
+msgstr "CAFE;enerxía;administración;preferencias;axustes;"
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
 #: src/gpm-statistics.c:1090 src/gpm-statistics.c:1577
@@ -1100,8 +1100,8 @@ msgid "Get the number of brightness levels supported"
 msgstr "Obter o número de niveis de brillo admitidos"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
-msgstr "Axudante de retroiluminación do Xestor de enerxía do MATE"
+msgid "CAFE Power Manager Backlight Helper"
+msgstr "Axudante de retroiluminación do Xestor de enerxía do CAFE"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1243,8 +1243,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "Saír despois de que o xestor se cargara (para depuración)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "Xestor de enerxía do MATE"
+msgid "CAFE Power Manager"
+msgstr "Xestor de enerxía do CAFE"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1609,8 +1609,8 @@ msgid ""
 msgstr "O SAI está por debaixo dun nivel crítico e o computador apagarase."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
-msgstr "Preferencias de enerxía do MATE"
+msgid "CAFE Power Preferences"
+msgstr "Preferencias de enerxía do CAFE"
 
 #: src/gpm-prefs-core.c:238
 msgid "Shutdown"
@@ -1980,8 +1980,8 @@ msgid "Processor"
 msgstr "Procesador"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
-msgstr "Dereitos de autoría © 2011-2018 Os desenvolvedores do MATE"
+msgid "Copyright © 2011-2018 CAFE developers"
+msgstr "Dereitos de autoría © 2011-2018 Os desenvolvedores do CAFE"
 
 #: src/gpm-tray-icon.c:193
 msgid "translator-credits"

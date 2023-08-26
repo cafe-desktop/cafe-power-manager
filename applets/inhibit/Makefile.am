@@ -8,7 +8,7 @@ AM_CPPFLAGS =							\
 	$(PANEL_CFLAGS)						\
 	$(LIBNOTIFY_CFLAGS)					\
 	-DBINDIR=\"$(bindir)\"			 		\
-	-DMATELOCALEDIR=\""$(datadir)/locale"\"			\
+	-DCAFELOCALEDIR=\""$(datadir)/locale"\"			\
 	-DDATADIR=\"$(datadir)\"				\
 	-DPREFIX=\""$(prefix)"\" 				\
 	-DSYSCONFDIR=\""$(sysconfdir)"\" 			\

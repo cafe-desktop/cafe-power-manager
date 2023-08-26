@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -470,14 +470,14 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:166
 msgid "Use cafe-screensaver lock setting"
-msgstr "Koristi postavku zaključavanja MATE-ovog zaslonskog čuvara"
+msgstr "Koristi postavku zaključavanja CAFE-ovog zaslonskog čuvara"
 
 #: data/org.cafe.power-manager.gschema.xml.in:167
 msgid ""
 "Whether to use the screen lock setting of cafe-screensaver to decide if the "
 "screen is locked after a hibernate, suspend or blank screen."
 msgstr ""
-"Treba li koristiti postavku zaključavanja zaslona MATE-ovog zaslonskog "
+"Treba li koristiti postavku zaključavanja zaslona CAFE-ovog zaslonskog "
 "čuvara za odluku hoće li zaslon bit zaključan nakon hiberniranja, obustave "
 "rada ili zatamnjenja."
 
@@ -877,7 +877,7 @@ msgstr "Postavi energetsko upravljanje"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
+msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
@@ -1065,8 +1065,8 @@ msgid "Get the number of brightness levels supported"
 msgstr "Saznaj broj podržanih razina svjetline"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
-msgstr "Pomoćnik za pozadinsko osvjetljenje energetskog upravitelja MATE-a"
+msgid "CAFE Power Manager Backlight Helper"
+msgstr "Pomoćnik za pozadinsko osvjetljenje energetskog upravitelja CAFE-a"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1212,8 +1212,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "Izađi nakon što je upravitelj učitan (za uklanjanje neispravnosti)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "Energetski upravitelj MATE-a"
+msgid "CAFE Power Manager"
+msgstr "Energetski upravitelj CAFE-a"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1574,8 +1574,8 @@ msgid ""
 msgstr "UPS je ispod kritične razine pa će se ovo računalo isključiti."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
-msgstr "Energetske prilagodbe MATE-a"
+msgid "CAFE Power Preferences"
+msgstr "Energetske prilagodbe CAFE-a"
 
 #: src/gpm-prefs-core.c:238
 msgid "Shutdown"
@@ -1950,8 +1950,8 @@ msgid "Processor"
 msgstr "Procesor"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
-msgstr "Autorska prava © 2011-2018 MATE razvijatelji"
+msgid "Copyright © 2011-2018 CAFE developers"
+msgstr "Autorska prava © 2011-2018 CAFE razvijatelji"
 
 #: src/gpm-tray-icon.c:193
 msgid "translator-credits"

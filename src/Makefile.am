@@ -23,7 +23,7 @@ AM_CPPFLAGS =						\
 	$(UPOWER_CFLAGS)				\
 	-DBINDIR=\"$(bindir)\"			 	\
 	-DSBINDIR=\"$(sbindir)\"			\
-	-DMATELOCALEDIR=\""$(datadir)/locale"\"		\
+	-DCAFELOCALEDIR=\""$(datadir)/locale"\"		\
 	-DDATADIR=\"$(datadir)\"			\
 	-DPREFIX=\""$(prefix)"\" 			\
 	-DSYSCONFDIR=\""$(sysconfdir)"\" 		\

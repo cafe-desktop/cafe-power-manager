@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -802,7 +802,7 @@ msgstr "ਪਾਵਰ ਪਰਬੰਧ ਸੰਰਚਨਾ"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
+msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
@@ -990,7 +990,7 @@ msgid "Get the number of brightness levels supported"
 msgstr "ਸਹਾਇਕ ਚਮਕ ਲੈਵਲਾਂ ਦੀ ਗਿਣਤੀ ਲਵੋ"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
+msgid "CAFE Power Manager Backlight Helper"
 msgstr "ਗਨੋਮ ਪਾਵਰ ਮੈਨੇਜਰ ਬੈਕਲਾਈਟ ਮੱਦਦਗਾਰ"
 
 #: src/gpm-backlight-helper.c:192
@@ -1133,7 +1133,7 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "ਇੱਕ ਮੈਨੇਜਰ ਲੋਡ ਹੋਣ ਉਪਰੰਤ ਬੰਦ ਕਰੋ (ਡੀਬੱਗ ਕਰਨ ਲਈ)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
+msgid "CAFE Power Manager"
 msgstr "ਗਨੋਮ ਪਾਵਰ ਮੈਨੇਜਰ"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
@@ -1500,7 +1500,7 @@ msgstr ""
 "ਵਾਲਾ ਹੀ ਹੈ।"
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
+msgid "CAFE Power Preferences"
 msgstr "ਗਨੋਮ ਪਾਵਰ ਪਸੰਦ"
 
 #: src/gpm-prefs-core.c:238
@@ -1871,7 +1871,7 @@ msgid "Processor"
 msgstr "ਪਰੋਸੈਸਰ"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
+msgid "Copyright © 2011-2018 CAFE developers"
 msgstr ""
 
 #: src/gpm-tray-icon.c:193

@@ -201,7 +201,7 @@ gpm_screensaver_check_running (GpmScreensaver *screensaver)
  * gpm_screensaver_poke:
  * @screensaver: This class instance
  *
- * Pokes MATE Screensaver simulating hardware events. This displays the unlock
+ * Pokes CAFE Screensaver simulating hardware events. This displays the unlock
  * dialogue when we resume, so the user doesn't have to move the mouse or press
  * any key before the window comes up.
  **/

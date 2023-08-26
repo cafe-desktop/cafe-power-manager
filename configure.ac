@@ -9,8 +9,8 @@ AC_CONFIG_MACRO_DIR([m4])
 # enable nice build output on automake1.11
 m4_ifdef([AM_SILENT_RULES],[AM_SILENT_RULES([yes])])
 
-MATE_DEBUG_CHECK([no])
-MATE_COMPILE_WARNINGS
+CAFE_DEBUG_CHECK([no])
+CAFE_COMPILE_WARNINGS
 
 AC_PROG_CC
 AM_PROG_CC_C_O
@@ -214,7 +214,7 @@ AC_OUTPUT
 
 dnl ==========================================================================
 echo "
-                    MATE Power Manager $VERSION
+                    CAFE Power Manager $VERSION
                   =============================
 
         prefix:                    ${prefix}
@@ -229,7 +229,7 @@ echo "
 "
 if [[ "${prefix}" != "/usr" ]] ; then
 	echo '
-WARNING!!!  MATE Power Manager uses the "pkexec" utility to provide root
+WARNING!!!  CAFE Power Manager uses the "pkexec" utility to provide root
 permissions necessary for the "cafe-power-backlight-helper" executable to run.
 
 A link should be provided from the file

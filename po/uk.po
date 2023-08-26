@@ -1,5 +1,5 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR MATE Desktop Environment team
+# Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
@@ -874,7 +874,7 @@ msgstr "Налаштовування керування живленням"
 #. Translators: Search terms to find this application. Do NOT translate or
 #. localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
-msgid "MATE;power;management;preferences;settings;"
+msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
 #: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
@@ -1062,8 +1062,8 @@ msgid "Get the number of brightness levels supported"
 msgstr "Отримати підтримувану кількість рівнів яскравости"
 
 #: src/gpm-backlight-helper.c:184
-msgid "MATE Power Manager Backlight Helper"
-msgstr "Помічник керування підсвічуванням диспетчера живлення MATE"
+msgid "CAFE Power Manager Backlight Helper"
+msgstr "Помічник керування підсвічуванням диспетчера живлення CAFE"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1213,8 +1213,8 @@ msgid "Exit after the manager has loaded (for debugging)"
 msgstr "Завершити роботу після завантаження керівника (для зневадження)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
-msgid "MATE Power Manager"
-msgstr "Керування живленням MATE"
+msgid "CAFE Power Manager"
+msgstr "Керування живленням CAFE"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1583,8 +1583,8 @@ msgid ""
 msgstr "Заряд UPS нижчий критичного рівню і комп'ютер буде вимкнено."
 
 #: src/gpm-prefs.c:81
-msgid "MATE Power Preferences"
-msgstr "Параметри живлення MATE"
+msgid "CAFE Power Preferences"
+msgstr "Параметри живлення CAFE"
 
 #: src/gpm-prefs-core.c:238
 msgid "Shutdown"
@@ -1964,8 +1964,8 @@ msgid "Processor"
 msgstr "Процесор"
 
 #: src/gpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 MATE developers"
-msgstr "Авторське право © 2011-2018 Розробники MATE"
+msgid "Copyright © 2011-2018 CAFE developers"
+msgstr "Авторське право © 2011-2018 Розробники CAFE"
 
 #: src/gpm-tray-icon.c:193
 msgid "translator-credits"

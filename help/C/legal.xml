@@ -9,7 +9,7 @@
 	  url="help:fdl">link</ulink> or in the file COPYING-DOCS
 	  distributed with this manual.
          </para>
-         <para> This manual is part of a collection of MATE manuals
+         <para> This manual is part of a collection of CAFE manuals
           distributed under the GFDL.  If you want to distribute this
           manual separately from the collection, you can do so by
           adding a copy of the license to the manual, as described in
@@ -19,8 +19,8 @@
 	<para>
 	  Many of the names used by companies to distinguish their
 	  products and services are claimed as trademarks. Where those
-	  names appear in any MATE documentation, and the members of
-	  the MATE Documentation Project are made aware of those
+	  names appear in any CAFE documentation, and the members of
+	  the CAFE Documentation Project are made aware of those
 	  trademarks, then the names are in capital letters or initial
 	  capital letters.
 	</para>
@@ -75,18 +75,18 @@
 
     <formalpara>
       <title>Software Licence</title>
-      <para>MATE Power Manager is free software; you can redistribute it and/or
+      <para>CAFE Power Manager is free software; you can redistribute it and/or
             modify it under the terms of the GNU General Public License
             as published by the Free Software Foundation; either version 2
             of the License, or (at your option) any later version.
       </para>
-      <para>MATE Power Manager is distributed in the hope that it will be useful,
+      <para>CAFE Power Manager is distributed in the hope that it will be useful,
             but WITHOUT ANY WARRANTY; without even the implied warranty of
             MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
             GNU General Public License for more details.
       </para>
       <para>You should have received a copy of the GNU General Public License
-            along with MATE Power Manager; if not, write to the Free Software
+            along with CAFE Power Manager; if not, write to the Free Software
             Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
       </para>
     </formalpara>

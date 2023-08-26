@@ -23,7 +23,7 @@ which yelp-build || {
 }
 
 REQUIRED_AUTOMAKE_VERSION=1.9
-MATE_DATADIR="$cafe_datadir"
+CAFE_DATADIR="$cafe_datadir"
 
 . cafe-autogen
 

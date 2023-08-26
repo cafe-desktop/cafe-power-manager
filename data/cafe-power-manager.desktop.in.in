@@ -6,10 +6,10 @@ Icon=cafe-power-manager
 Exec=cafe-power-manager
 Terminal=false
 Type=Application
-OnlyShowIn=MATE;
-X-MATE-Bugzilla-Bugzilla=MATE
-X-MATE-Bugzilla-Product=cafe-power-manager
-X-MATE-Bugzilla-Component=cafe-power-manager
-X-MATE-Bugzilla-Version=@VERSION@
-#X-MATE-AutoRestart=true
+OnlyShowIn=CAFE;
+X-CAFE-Bugzilla-Bugzilla=CAFE
+X-CAFE-Bugzilla-Product=cafe-power-manager
+X-CAFE-Bugzilla-Component=cafe-power-manager
+X-CAFE-Bugzilla-Version=@VERSION@
+#X-CAFE-AutoRestart=true
 
