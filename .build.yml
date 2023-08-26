@@ -29,10 +29,12 @@ requires:
     - libxml-parser-perl
     - libxrandr-dev
     - make
-    - cafe-common
     - pkg-config
     - xmlto
     - yelp-tools
+
+    #required for cafe-common
+    - autoconf
 
 before_scripts:
   - ./html-cppcheck
