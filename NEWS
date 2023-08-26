@@ -179,7 +179,7 @@
 
 ### cafe-power-manager 1.16.0
 
-  * Use GtkAboutDialog instead of MateAboutDialog
+  * Use GtkAboutDialog instead of CafeAboutDialog
   * Drop dependency on libcafe-desktop
   * Show the primary device time remaining as the first entry in
     the context menu
@@ -194,7 +194,7 @@
 
 ### cafe-power-manager 1.14.0
 
-  * Drop MateConf migration script
+  * Drop CafeConf migration script
   * Fix possible crash when an Xorg function call fails
   * GTK+3: fix deprecations in brightness applet
   * Some more fixes and cleanups

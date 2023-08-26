@@ -499,14 +499,14 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:166
 msgid "Use cafe-screensaver lock setting"
-msgstr "Gebruik instelling voor vergrendeling van de Mate-schermbeveiliging"
+msgstr "Gebruik instelling voor vergrendeling van de Cafe-schermbeveiliging"
 
 #: data/org.cafe.power-manager.gschema.xml.in:167
 msgid ""
 "Whether to use the screen lock setting of cafe-screensaver to decide if the "
 "screen is locked after a hibernate, suspend or blank screen."
 msgstr ""
-"Of de instelling voor vergrendeling van de Mate-schermbeveiliging gebruikt "
+"Of de instelling voor vergrendeling van de Cafe-schermbeveiliging gebruikt "
 "moet worden om het scherm te vergrendelen bij slaapstand, pauzestand of het "
 "op zwart zetten van het scherm."
 
@@ -1097,7 +1097,7 @@ msgstr "Vraag het aantal ondersteunde helderheidswaarden op"
 
 #: src/gpm-backlight-helper.c:184
 msgid "CAFE Power Manager Backlight Helper"
-msgstr "Hulpprogramma voor achtergrondverlichting van Mate Energiebeheer"
+msgstr "Hulpprogramma voor achtergrondverlichting van Cafe Energiebeheer"
 
 #: src/gpm-backlight-helper.c:192
 msgid "No valid option was specified"
@@ -1240,7 +1240,7 @@ msgstr "Afsluiten nadat energiebeheer is geladen (voor foutopsporing)"
 
 #: src/gpm-main.c:189 src/gpm-main.c:193
 msgid "CAFE Power Manager"
-msgstr "Mate Energiebeheer"
+msgstr "Cafe Energiebeheer"
 
 #: src/gpm-manager.c:222 src/gpm-manager.c:294
 msgid "Battery is very low"
@@ -1608,7 +1608,7 @@ msgstr "De UPS is bijna leeg. Deze computer zal zo worden afgesloten."
 
 #: src/gpm-prefs.c:81
 msgid "CAFE Power Preferences"
-msgstr "Voorkeuren van Mate Energiebeheer"
+msgstr "Voorkeuren van Cafe Energiebeheer"
 
 #: src/gpm-prefs-core.c:238
 msgid "Shutdown"

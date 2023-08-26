@@ -415,7 +415,7 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:166
 msgid "Use cafe-screensaver lock setting"
-msgstr "Mîhengên kilîtkirina dîmenderparêza-Mate bikar bîne"
+msgstr "Mîhengên kilîtkirina dîmenderparêza-Cafe bikar bîne"
 
 #: data/org.cafe.power-manager.gschema.xml.in:167
 msgid ""

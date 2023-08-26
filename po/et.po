@@ -451,7 +451,7 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:166
 msgid "Use cafe-screensaver lock setting"
-msgstr "Mate-ekraanisäästja lukustussätete kasutamine"
+msgstr "Cafe-ekraanisäästja lukustussätete kasutamine"
 
 #: data/org.cafe.power-manager.gschema.xml.in:167
 msgid ""

@@ -46,7 +46,7 @@
 #define GPM_BRIGHTNESS_APPLET_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), GPM_TYPE_BRIGHTNESS_APPLET, GpmBrightnessAppletClass))
 
 typedef struct{
-	MatePanelApplet parent;
+	CafePanelApplet parent;
 	/* applet state */
 	gboolean call_worked; /* g-p-m refusing action */
 	gboolean popped; /* the popup is shown */
@@ -65,7 +65,7 @@ typedef struct{
 } GpmBrightnessApplet;
 
 typedef struct{
-	MatePanelAppletClass	parent_class;
+	CafePanelAppletClass	parent_class;
 } GpmBrightnessAppletClass;
 
 GType                gpm_brightness_applet_get_type  (void);
@@ -81,7 +81,7 @@ static void      gpm_applet_get_icon              (GpmBrightnessApplet *applet);
 static void      gpm_applet_check_size            (GpmBrightnessApplet *applet);
 static gboolean  gpm_applet_draw_cb               (GpmBrightnessApplet *applet);
 static void      gpm_applet_change_background_cb  (GpmBrightnessApplet *applet,
-						   MatePanelAppletBackgroundType arg1,
+						   CafePanelAppletBackgroundType arg1,
 						   cairo_pattern_t *arg2, gpointer data);
 static void      gpm_applet_theme_change_cb (GtkIconTheme *icon_theme, gpointer data);
 static void      gpm_applet_stop_scroll_events_cb (GtkWidget *widget, GdkEvent  *event);
@@ -96,7 +96,7 @@ static gboolean  gpm_applet_slide_cb              (GtkWidget *w, GpmBrightnessAp
 static void      gpm_applet_create_popup          (GpmBrightnessApplet *applet);
 static gboolean  gpm_applet_popup_cb              (GpmBrightnessApplet *applet, GdkEventButton *event);
 static void      gpm_applet_dialog_about_cb       (GtkAction *action, gpointer data);
-static gboolean  gpm_applet_cb                    (MatePanelApplet *_applet, const gchar *iid, gpointer data);
+static gboolean  gpm_applet_cb                    (CafePanelApplet *_applet, const gchar *iid, gpointer data);
 static void      gpm_applet_destroy_cb            (GtkWidget *widget);
 
 #define GPM_BRIGHTNESS_APPLET_ID		"BrightnessApplet"
@@ -325,7 +325,7 @@ gpm_applet_draw_cb (GpmBrightnessApplet *applet)
  **/
 static void
 gpm_applet_change_background_cb (GpmBrightnessApplet *applet,
-				 MatePanelAppletBackgroundType arg1,
+				 CafePanelAppletBackgroundType arg1,
 				 cairo_pattern_t *arg2, gpointer data)
 {
 	gtk_widget_queue_draw (GTK_WIDGET (applet));
@@ -1040,7 +1040,7 @@ gpm_brightness_applet_init (GpmBrightnessApplet *applet)
  * the function called by libcafe-panel-applet factory after creation
  **/
 static gboolean
-gpm_applet_cb (MatePanelApplet *_applet, const gchar *iid, gpointer data)
+gpm_applet_cb (CafePanelApplet *_applet, const gchar *iid, gpointer data)
 {
 	GpmBrightnessApplet *applet = GPM_BRIGHTNESS_APPLET(_applet);
 	GtkActionGroup *action_group;

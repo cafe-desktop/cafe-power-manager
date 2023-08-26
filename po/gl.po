@@ -541,7 +541,7 @@ msgid ""
 "Whether the GNOME keyring is locked before the computer enters suspend. This"
 " means the keyring will have to be unlocked on resume."
 msgstr ""
-"Indica se o anel de chaves do Mate se bloquea antes de que o computador pase"
+"Indica se o anel de chaves do Cafe se bloquea antes de que o computador pase"
 " a suspensión. Isto implica que o anel de chaves terá que ser desbloqueado "
 "ao continuar."
 
