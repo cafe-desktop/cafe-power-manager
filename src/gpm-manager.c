@@ -89,7 +89,7 @@ struct GpmManagerPrivate
 	guint32			 screensaver_dpms_throttle_id;
 	guint32			 screensaver_lid_throttle_id;
 	guint32                  critical_alert_timeout_id;
-	ca_proplist             *critical_alert_loop_props;
+	ka_proplist             *critical_alert_loop_props;
 	UpClient		*client;
 	gboolean		 on_battery;
 	gboolean		 just_resumed;
@@ -158,9 +158,9 @@ gpm_manager_error_get_type (void)
 static gboolean
 gpm_manager_play_loop_timeout_cb (GpmManager *manager)
 {
-	ca_context *context;
-	context = ca_ctk_context_get_for_screen (cdk_screen_get_default ());
-	ca_context_play_full (context, 0,
+	ka_context *context;
+	context = ka_ctk_context_get_for_screen (cdk_screen_get_default ());
+	ka_context_play_full (context, 0,
 			      manager->priv->critical_alert_loop_props,
 			      NULL,
 			      NULL);
@@ -179,7 +179,7 @@ gpm_manager_play_loop_stop (GpmManager *manager)
 	}
 
 	g_source_remove (manager->priv->critical_alert_timeout_id);
-	ca_proplist_destroy (manager->priv->critical_alert_loop_props);
+	ka_proplist_destroy (manager->priv->critical_alert_loop_props);
 
 	manager->priv->critical_alert_loop_props = NULL;
 	manager->priv->critical_alert_timeout_id = 0;
@@ -197,7 +197,7 @@ gpm_manager_play_loop_start (GpmManager *manager, GpmManagerSound action, gboole
 	const gchar *desc = NULL;
 	gboolean ret;
 	gint retval;
-	ca_context *context;
+	ka_context *context;
 
 	ret = g_settings_get_boolean (manager->priv->settings, GPM_SETTINGS_ENABLE_SOUND);
 	if (!ret && !force) {
@@ -228,10 +228,10 @@ gpm_manager_play_loop_start (GpmManager *manager, GpmManagerSound action, gboole
 		return FALSE;
 	}
 
-	ca_proplist_create (&(manager->priv->critical_alert_loop_props));
-	ca_proplist_sets (manager->priv->critical_alert_loop_props,
+	ka_proplist_create (&(manager->priv->critical_alert_loop_props));
+	ka_proplist_sets (manager->priv->critical_alert_loop_props,
 			  CA_PROP_EVENT_ID, id);
-	ca_proplist_sets (manager->priv->critical_alert_loop_props,
+	ka_proplist_sets (manager->priv->critical_alert_loop_props,
 			  CA_PROP_EVENT_DESCRIPTION, desc);
 
 	manager->priv->critical_alert_timeout_id = g_timeout_add_seconds (timeout,
@@ -241,12 +241,12 @@ gpm_manager_play_loop_start (GpmManager *manager, GpmManagerSound action, gboole
 	g_source_set_name_by_id (manager->priv->critical_alert_timeout_id, "[GpmManager] play-loop");
 
 	/* play the sound, using sounds from the naming spec */
-	context = ca_ctk_context_get_for_screen (cdk_screen_get_default ());
-	retval = ca_context_play (context, 0,
+	context = ka_ctk_context_get_for_screen (cdk_screen_get_default ());
+	retval = ka_context_play (context, 0,
 				  CA_PROP_EVENT_ID, id,
 				  CA_PROP_EVENT_DESCRIPTION, desc, NULL);
 	if (retval < 0)
-		egg_warning ("failed to play %s: %s", id, ca_strerror (retval));
+		egg_warning ("failed to play %s: %s", id, ka_strerror (retval));
 	return TRUE;
 }
 
@@ -260,7 +260,7 @@ gpm_manager_play (GpmManager *manager, GpmManagerSound action, gboolean force)
 	const gchar *desc = NULL;
 	gboolean ret;
 	gint retval;
-	ca_context *context;
+	ka_context *context;
 
 	ret = g_settings_get_boolean (manager->priv->settings, GPM_SETTINGS_ENABLE_SOUND);
 	if (!ret && !force) {
@@ -317,12 +317,12 @@ gpm_manager_play (GpmManager *manager, GpmManagerSound action, gboolean force)
 	}
 
 	/* play the sound, using sounds from the naming spec */
-	context = ca_ctk_context_get_for_screen (cdk_screen_get_default ());
-	retval = ca_context_play (context, 0,
+	context = ka_ctk_context_get_for_screen (cdk_screen_get_default ());
+	retval = ka_context_play (context, 0,
 				  CA_PROP_EVENT_ID, id,
 				  CA_PROP_EVENT_DESCRIPTION, desc, NULL);
 	if (retval < 0)
-		egg_warning ("failed to play %s: %s", id, ca_strerror (retval));
+		egg_warning ("failed to play %s: %s", id, ka_strerror (retval));
 	return TRUE;
 }
 
