@@ -27,7 +27,7 @@
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_IDLE		(gpm_idle_get_type ())
+#define GPM_TYPE_IDLE		(cpm_idle_get_type ())
 #define GPM_IDLE(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_IDLE, GpmIdle))
 #define GPM_IDLE_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_IDLE, GpmIdleClass))
 #define GPM_IS_IDLE(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_IDLE))
@@ -56,18 +56,18 @@ typedef struct
 							 GpmIdleMode	 mode);
 } GpmIdleClass;
 
-GType		 gpm_idle_get_type			(void);
-GpmIdle		*gpm_idle_new				(void);
-GpmIdleMode	 gpm_idle_get_mode			(GpmIdle	*idle);
-void		 gpm_idle_set_check_cpu			(GpmIdle	*idle,
+GType		 cpm_idle_get_type			(void);
+GpmIdle		*cpm_idle_new				(void);
+GpmIdleMode	 cpm_idle_get_mode			(GpmIdle	*idle);
+void		 cpm_idle_set_check_cpu			(GpmIdle	*idle,
 							 gboolean	 check_type_cpu);
-gboolean	 gpm_idle_set_timeout_dim		(GpmIdle	*idle,
+gboolean	 cpm_idle_set_timeout_dim		(GpmIdle	*idle,
 							 guint		 timeout);
-gboolean	 gpm_idle_set_timeout_blank		(GpmIdle	*idle,
+gboolean	 cpm_idle_set_timeout_blank		(GpmIdle	*idle,
 							 guint		 timeout);
-gboolean	 gpm_idle_set_timeout_sleep		(GpmIdle	*idle,
+gboolean	 cpm_idle_set_timeout_sleep		(GpmIdle	*idle,
 							 guint		 timeout);
-void		 gpm_idle_test				(gpointer	 data);
+void		 cpm_idle_test				(gpointer	 data);
 
 G_END_DECLS
 

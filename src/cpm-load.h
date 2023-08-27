@@ -26,7 +26,7 @@
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_LOAD		(gpm_load_get_type ())
+#define GPM_TYPE_LOAD		(cpm_load_get_type ())
 #define GPM_LOAD(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_LOAD, GpmLoad))
 #define GPM_LOAD_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_LOAD, GpmLoadClass))
 #define GPM_IS_LOAD(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_LOAD))
@@ -46,10 +46,10 @@ typedef struct
 	GObjectClass	parent_class;
 } GpmLoadClass;
 
-GType		 gpm_load_get_type		(void);
-GpmLoad		*gpm_load_new			(void);
+GType		 cpm_load_get_type		(void);
+GpmLoad		*cpm_load_new			(void);
 
-gdouble		 gpm_load_get_current		(GpmLoad	*load);
+gdouble		 cpm_load_get_current		(GpmLoad	*load);
 
 G_END_DECLS
 

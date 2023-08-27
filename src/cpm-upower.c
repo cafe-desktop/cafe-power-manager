@@ -34,7 +34,7 @@
 #define GPM_UP_TEXT_MIN_TIME			120
 
 /**
- * gpm_upower_get_device_icon_index:
+ * cpm_upower_get_device_icon_index:
  * @percent: The charge of the device
  *
  * The index value depends on the percentage charge:
@@ -48,7 +48,7 @@
  * Return value: The character string for the filename suffix.
  **/
 static const gchar *
-gpm_upower_get_device_icon_index (UpDevice *device)
+cpm_upower_get_device_icon_index (UpDevice *device)
 {
 	gdouble percentage;
 	/* get device properties */
@@ -67,13 +67,13 @@ gpm_upower_get_device_icon_index (UpDevice *device)
 }
 
 /**
- * gpm_upower_get_device_icon:
+ * cpm_upower_get_device_icon:
  *
  * Need to free the return value
  *
  **/
 gchar *
-gpm_upower_get_device_icon (UpDevice *device)
+cpm_upower_get_device_icon (UpDevice *device)
 {
 	gchar *filename = NULL;
 	const gchar *prefix = NULL;
@@ -110,11 +110,11 @@ gpm_upower_get_device_icon (UpDevice *device)
 			filename = g_strdup_printf ("cpm-%s-100", prefix);
 
 		} else if (state == UP_DEVICE_STATE_CHARGING) {
-			index_str = gpm_upower_get_device_icon_index (device);
+			index_str = cpm_upower_get_device_icon_index (device);
 			filename = g_strdup_printf ("cpm-%s-%s-charging", prefix, index_str);
 
 		} else if (state == UP_DEVICE_STATE_DISCHARGING) {
-			index_str = gpm_upower_get_device_icon_index (device);
+			index_str = cpm_upower_get_device_icon_index (device);
 			filename = g_strdup_printf ("cpm-%s-%s", prefix, index_str);
 		}
 	} else if (kind == UP_DEVICE_KIND_BATTERY) {
@@ -129,20 +129,20 @@ gpm_upower_get_device_icon (UpDevice *device)
 			filename = g_strdup_printf ("cpm-%s-charged", prefix);
 
 		} else if (state == UP_DEVICE_STATE_CHARGING) {
-			index_str = gpm_upower_get_device_icon_index (device);
+			index_str = cpm_upower_get_device_icon_index (device);
 			filename = g_strdup_printf ("cpm-%s-%s-charging", prefix, index_str);
 
 		} else if (state == UP_DEVICE_STATE_DISCHARGING) {
-			index_str = gpm_upower_get_device_icon_index (device);
+			index_str = cpm_upower_get_device_icon_index (device);
 			filename = g_strdup_printf ("cpm-%s-%s", prefix, index_str);
 
 		} else if (state == UP_DEVICE_STATE_PENDING_CHARGE) {
-			index_str = gpm_upower_get_device_icon_index (device);
+			index_str = cpm_upower_get_device_icon_index (device);
 			/* FIXME: do new grey icons */
 			filename = g_strdup_printf ("cpm-%s-%s-charging", prefix, index_str);
 
 		} else if (state == UP_DEVICE_STATE_PENDING_DISCHARGE) {
-			index_str = gpm_upower_get_device_icon_index (device);
+			index_str = cpm_upower_get_device_icon_index (device);
 			filename = g_strdup_printf ("cpm-%s-%s", prefix, index_str);
 		} else {
 			filename = g_strdup ("cpm-battery-missing");
@@ -159,7 +159,7 @@ gpm_upower_get_device_icon (UpDevice *device)
 			filename = g_strdup_printf ("cpm-%s-100", prefix);
 
 		} else if (state == UP_DEVICE_STATE_DISCHARGING) {
-			index_str = gpm_upower_get_device_icon_index (device);
+			index_str = cpm_upower_get_device_icon_index (device);
 			filename = g_strdup_printf ("cpm-%s-%s", prefix, index_str);
 		}
 	}
@@ -175,10 +175,10 @@ gpm_upower_get_device_icon (UpDevice *device)
 }
 
 /**
- * gpm_upower_get_device_summary:
+ * cpm_upower_get_device_summary:
  **/
 gchar *
-gpm_upower_get_device_summary (UpDevice *device)
+cpm_upower_get_device_summary (UpDevice *device)
 {
 	const gchar *kind_desc = NULL;
 	gchar *description = NULL;
@@ -203,7 +203,7 @@ gpm_upower_get_device_summary (UpDevice *device)
 		      "time-to-empty", &time_to_empty,
 		      NULL);
 
-	kind_desc = gpm_device_kind_to_localised_string (kind, 1);
+	kind_desc = cpm_device_kind_to_localised_string (kind, 1);
 
 	/* not installed */
 	if (!is_present) {
@@ -234,7 +234,7 @@ gpm_upower_get_device_summary (UpDevice *device)
 	if (state == UP_DEVICE_STATE_FULLY_CHARGED) {
 
 		if (kind == UP_DEVICE_KIND_BATTERY && time_to_empty_round > GPM_UP_TEXT_MIN_TIME) {
-			time_to_empty_str = gpm_get_timestring (time_to_empty_round);
+			time_to_empty_str = cpm_get_timestring (time_to_empty_round);
 			/* TRANSLATORS: The laptop battery is fully charged, and we know a time */
 			description = g_strdup_printf (_("Battery is fully charged.\nProvides %s laptop runtime"),
 							time_to_empty_str);
@@ -247,7 +247,7 @@ gpm_upower_get_device_summary (UpDevice *device)
 	} else if (state == UP_DEVICE_STATE_DISCHARGING) {
 
 		if (time_to_empty_round > GPM_UP_TEXT_MIN_TIME) {
-			time_to_empty_str = gpm_get_timestring (time_to_empty_round);
+			time_to_empty_str = cpm_get_timestring (time_to_empty_round);
 			/* TRANSLATORS: the device is discharging, and we have a time remaining */
 			description = g_strdup_printf (_("%s %s remaining (%.1f%%)"),
 							kind_desc, time_to_empty_str, percentage);
@@ -264,8 +264,8 @@ gpm_upower_get_device_summary (UpDevice *device)
 		    time_to_empty_round > GPM_UP_TEXT_MIN_TIME) {
 
 			/* display both discharge and charge time */
-			time_to_full_str = gpm_get_timestring (time_to_full_round);
-			time_to_empty_str = gpm_get_timestring (time_to_empty_round);
+			time_to_full_str = cpm_get_timestring (time_to_full_round);
+			time_to_empty_str = cpm_get_timestring (time_to_empty_round);
 
 			/* TRANSLATORS: the device is charging, and we have a time to full and empty */
 			description = g_strdup_printf (_("%s %s until charged (%.1f%%)\nProvides %s battery runtime"),
@@ -276,7 +276,7 @@ gpm_upower_get_device_summary (UpDevice *device)
 		} else if (time_to_full_round > GPM_UP_TEXT_MIN_TIME) {
 
 			/* display only charge time */
-			time_to_full_str = gpm_get_timestring (time_to_full_round);
+			time_to_full_str = cpm_get_timestring (time_to_full_round);
 
 			/* TRANSLATORS: device is charging, and we have a time to full and a percentage */
 			description = g_strdup_printf (_("%s %s until charged (%.1f%%)"),
@@ -315,10 +315,10 @@ gpm_upower_get_device_summary (UpDevice *device)
 }
 
 /**
- * gpm_upower_get_device_description:
+ * cpm_upower_get_device_description:
  **/
 gchar *
-gpm_upower_get_device_description (UpDevice *device)
+cpm_upower_get_device_description (UpDevice *device)
 {
 	GString	*details;
 	const gchar *text;
@@ -361,7 +361,7 @@ gpm_upower_get_device_description (UpDevice *device)
 		      NULL);
 
 	details = g_string_new ("");
-	text = gpm_device_kind_to_localised_string (kind, 1);
+	text = cpm_device_kind_to_localised_string (kind, 1);
 	/* TRANSLATORS: the type of data, e.g. Laptop battery */
 	g_string_append_printf (details, "<b>%s</b> %s\n", _("Product:"), text);
 
@@ -388,7 +388,7 @@ gpm_upower_get_device_description (UpDevice *device)
 		g_string_append_printf (details, "<b>%s</b> %s\n", _("Vendor:"), vendor);
 	}
 	if (technology != UP_DEVICE_TECHNOLOGY_UNKNOWN) {
-		text = gpm_device_technology_to_localised_string (technology);
+		text = cpm_device_technology_to_localised_string (technology);
 		/* TRANSLATORS: how the battery is made, e.g. Lithium Ion */
 		g_string_append_printf (details, "<b>%s</b> %s\n", _("Technology:"), text);
 	}
@@ -401,13 +401,13 @@ gpm_upower_get_device_description (UpDevice *device)
 		g_string_append_printf (details, "<b>%s</b> %s\n", _("Model:"), model);
 	}
 	if (time_to_full > 0) {
-		time_str = gpm_get_timestring (time_to_full);
+		time_str = cpm_get_timestring (time_to_full);
 		/* TRANSLATORS: time to fully charged */
 		g_string_append_printf (details, "<b>%s</b> %s\n", _("Charge time:"), time_str);
 		g_free (time_str);
 	}
 	if (time_to_empty > 0) {
-		time_str = gpm_get_timestring (time_to_empty);
+		time_str = cpm_get_timestring (time_to_empty);
 		/* TRANSLATORS: time to empty */
 		g_string_append_printf (details, "<b>%s</b> %s\n", _("Discharge time:"), time_str);
 		g_free (time_str);
@@ -475,10 +475,10 @@ gpm_upower_get_device_description (UpDevice *device)
 }
 
 /**
- * gpm_device_kind_to_localised_string:
+ * cpm_device_kind_to_localised_string:
  **/
 const gchar *
-gpm_device_kind_to_localised_string (UpDeviceKind kind, guint number)
+cpm_device_kind_to_localised_string (UpDeviceKind kind, guint number)
 {
 	const gchar *text = NULL;
 	switch (kind) {
@@ -534,10 +534,10 @@ gpm_device_kind_to_localised_string (UpDeviceKind kind, guint number)
 }
 
 /**
- * gpm_device_kind_to_icon:
+ * cpm_device_kind_to_icon:
  **/
 const gchar *
-gpm_device_kind_to_icon (UpDeviceKind kind)
+cpm_device_kind_to_icon (UpDeviceKind kind)
 {
 	const gchar *icon = NULL;
 	switch (kind) {
@@ -582,10 +582,10 @@ gpm_device_kind_to_icon (UpDeviceKind kind)
 }
 
 /**
- * gpm_device_technology_to_localised_string:
+ * cpm_device_technology_to_localised_string:
  **/
 const gchar *
-gpm_device_technology_to_localised_string (UpDeviceTechnology technology_enum)
+cpm_device_technology_to_localised_string (UpDeviceTechnology technology_enum)
 {
 	const gchar *technology = NULL;
 	switch (technology_enum) {
@@ -625,10 +625,10 @@ gpm_device_technology_to_localised_string (UpDeviceTechnology technology_enum)
 }
 
 /**
- * gpm_device_state_to_localised_string:
+ * cpm_device_state_to_localised_string:
  **/
 const gchar *
-gpm_device_state_to_localised_string (UpDeviceState state)
+cpm_device_state_to_localised_string (UpDeviceState state)
 {
 	const gchar *state_string = NULL;
 

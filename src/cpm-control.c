@@ -63,32 +63,32 @@ enum {
 };
 
 static guint signals [LAST_SIGNAL] = { 0 };
-static gpointer gpm_control_object = NULL;
+static gpointer cpm_control_object = NULL;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmControl, gpm_control, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (GpmControl, cpm_control, G_TYPE_OBJECT)
 
 /**
- * gpm_control_error_quark:
+ * cpm_control_error_quark:
  * Return value: Our personal error quark.
  **/
 GQuark
-gpm_control_error_quark (void)
+cpm_control_error_quark (void)
 {
 	static GQuark quark = 0;
 	if (!quark)
-		quark = g_quark_from_static_string ("gpm_control_error");
+		quark = g_quark_from_static_string ("cpm_control_error");
 	return quark;
 }
 
 /**
- * gpm_manager_systemd_shutdown:
+ * cpm_manager_systemd_shutdown:
  *
  * Shutdown the system using systemd-logind.
  *
  * Return value: fd, -1 on error
  **/
 static gboolean
-gpm_control_systemd_shutdown (void) {
+cpm_control_systemd_shutdown (void) {
 	GError *error = NULL;
 	GDBusProxy *proxy;
 	GVariant *res = NULL;
@@ -127,19 +127,19 @@ gpm_control_systemd_shutdown (void) {
 }
 
 /**
- * gpm_control_shutdown:
+ * cpm_control_shutdown:
  * @control: This class instance
  *
  * Shuts down the computer
  **/
 gboolean
-gpm_control_shutdown (GpmControl *control, GError **error)
+cpm_control_shutdown (GpmControl *control, GError **error)
 {
 	gboolean ret;
 	EggConsoleKit *console;
 
 	if (LOGIND_RUNNING()) {
-		ret = gpm_control_systemd_shutdown ();
+		ret = cpm_control_systemd_shutdown ();
 	} else {
 		console = egg_console_kit_new ();
 		ret = egg_console_kit_stop (console, error);
@@ -149,7 +149,7 @@ gpm_control_shutdown (GpmControl *control, GError **error)
 }
 
 /**
- * gpm_control_get_lock_policy:
+ * cpm_control_get_lock_policy:
  * @control: This class instance
  * @policy: The policy string.
  *
@@ -160,7 +160,7 @@ gpm_control_shutdown (GpmControl *control, GError **error)
  * Return value: TRUE if we should lock.
  **/
 gboolean
-gpm_control_get_lock_policy (GpmControl *control, const gchar *policy)
+cpm_control_get_lock_policy (GpmControl *control, const gchar *policy)
 {
 	gboolean do_lock;
 	gboolean use_ss_setting;
@@ -199,10 +199,10 @@ gpm_control_get_lock_policy (GpmControl *control, const gchar *policy)
 }
 
 /**
- * gpm_control_suspend:
+ * cpm_control_suspend:
  **/
 gboolean
-gpm_control_suspend (GpmControl *control, GError **error)
+cpm_control_suspend (GpmControl *control, GError **error)
 {
 	gboolean allowed = FALSE;
 	gboolean ret = FALSE;
@@ -220,7 +220,7 @@ gpm_control_suspend (GpmControl *control, GError **error)
 	GDBusProxy *proxy;
 	GVariant *res = NULL;
 
-	screensaver = gpm_screensaver_new ();
+	screensaver = cpm_screensaver_new ();
 
 	if (!LOGIND_RUNNING()) {
 		console = egg_console_kit_new ();
@@ -244,15 +244,15 @@ gpm_control_suspend (GpmControl *control, GError **error)
 	}
 #endif /* WITH_KEYRING */
 
-	do_lock = gpm_control_get_lock_policy (control, GPM_SETTINGS_LOCK_ON_SUSPEND);
+	do_lock = cpm_control_get_lock_policy (control, GPM_SETTINGS_LOCK_ON_SUSPEND);
 	if (do_lock) {
-		throttle_cookie = gpm_screensaver_add_throttle (screensaver, "suspend");
-		gpm_screensaver_lock (screensaver);
+		throttle_cookie = cpm_screensaver_add_throttle (screensaver, "suspend");
+		cpm_screensaver_lock (screensaver);
 	}
 
 	nm_sleep = g_settings_get_boolean (control->priv->settings, GPM_SETTINGS_NETWORKMANAGER_SLEEP);
 	if (nm_sleep)
-		gpm_networkmanager_sleep ();
+		cpm_networkmanager_sleep ();
 
 	/* Do the suspend */
 	egg_debug ("emitting sleep");
@@ -302,14 +302,14 @@ gpm_control_suspend (GpmControl *control, GError **error)
 	g_signal_emit (control, signals [RESUME], 0, GPM_CONTROL_ACTION_SUSPEND);
 
 	if (do_lock) {
-		gpm_screensaver_poke (screensaver);
+		cpm_screensaver_poke (screensaver);
 		if (throttle_cookie)
-			gpm_screensaver_remove_throttle (screensaver, throttle_cookie);
+			cpm_screensaver_remove_throttle (screensaver, throttle_cookie);
 	}
 
 	nm_sleep = g_settings_get_boolean (control->priv->settings, GPM_SETTINGS_NETWORKMANAGER_SLEEP);
 	if (nm_sleep)
-		gpm_networkmanager_wake ();
+		cpm_networkmanager_wake ();
 
 out:
 	g_object_unref (screensaver);
@@ -317,10 +317,10 @@ out:
 }
 
 /**
- * gpm_control_hibernate:
+ * cpm_control_hibernate:
  **/
 gboolean
-gpm_control_hibernate (GpmControl *control, GError **error)
+cpm_control_hibernate (GpmControl *control, GError **error)
 {
 	gboolean allowed = FALSE;
 	gboolean ret = FALSE;
@@ -338,7 +338,7 @@ gpm_control_hibernate (GpmControl *control, GError **error)
 	GDBusProxy *proxy;
 	GVariant *res = NULL;
 
-	screensaver = gpm_screensaver_new ();
+	screensaver = cpm_screensaver_new ();
 
 	if (!LOGIND_RUNNING()) {
 		console = egg_console_kit_new ();
@@ -363,15 +363,15 @@ gpm_control_hibernate (GpmControl *control, GError **error)
 	}
 #endif /* WITH_KEYRING */
 
-	do_lock = gpm_control_get_lock_policy (control, GPM_SETTINGS_LOCK_ON_HIBERNATE);
+	do_lock = cpm_control_get_lock_policy (control, GPM_SETTINGS_LOCK_ON_HIBERNATE);
 	if (do_lock) {
-		throttle_cookie = gpm_screensaver_add_throttle (screensaver, "hibernate");
-		gpm_screensaver_lock (screensaver);
+		throttle_cookie = cpm_screensaver_add_throttle (screensaver, "hibernate");
+		cpm_screensaver_lock (screensaver);
 	}
 
 	nm_sleep = g_settings_get_boolean (control->priv->settings, GPM_SETTINGS_NETWORKMANAGER_SLEEP);
 	if (nm_sleep)
-		gpm_networkmanager_sleep ();
+		cpm_networkmanager_sleep ();
 
 	egg_debug ("emitting sleep");
 	g_signal_emit (control, signals [SLEEP], 0, GPM_CONTROL_ACTION_HIBERNATE);
@@ -419,14 +419,14 @@ gpm_control_hibernate (GpmControl *control, GError **error)
 	g_signal_emit (control, signals [RESUME], 0, GPM_CONTROL_ACTION_HIBERNATE);
 
 	if (do_lock) {
-		gpm_screensaver_poke (screensaver);
+		cpm_screensaver_poke (screensaver);
 		if (throttle_cookie)
-			gpm_screensaver_remove_throttle (screensaver, throttle_cookie);
+			cpm_screensaver_remove_throttle (screensaver, throttle_cookie);
 	}
 
 	nm_sleep = g_settings_get_boolean (control->priv->settings, GPM_SETTINGS_NETWORKMANAGER_SLEEP);
 	if (nm_sleep)
-		gpm_networkmanager_wake ();
+		cpm_networkmanager_wake ();
 
 out:
 	g_object_unref (screensaver);
@@ -434,10 +434,10 @@ out:
 }
 
 /**
- * gpm_control_finalize:
+ * cpm_control_finalize:
  **/
 static void
-gpm_control_finalize (GObject *object)
+cpm_control_finalize (GObject *object)
 {
 	GpmControl *control;
 
@@ -448,17 +448,17 @@ gpm_control_finalize (GObject *object)
 	g_object_unref (control->priv->settings);
 
 	g_return_if_fail (control->priv != NULL);
-	G_OBJECT_CLASS (gpm_control_parent_class)->finalize (object);
+	G_OBJECT_CLASS (cpm_control_parent_class)->finalize (object);
 }
 
 /**
- * gpm_control_class_init:
+ * cpm_control_class_init:
  **/
 static void
-gpm_control_class_init (GpmControlClass *klass)
+cpm_control_class_init (GpmControlClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-	object_class->finalize = gpm_control_finalize;
+	object_class->finalize = cpm_control_finalize;
 
 	signals [RESUME] =
 		g_signal_new ("resume",
@@ -481,30 +481,30 @@ gpm_control_class_init (GpmControlClass *klass)
 }
 
 /**
- * gpm_control_init:
+ * cpm_control_init:
  * @control: This control class instance
  **/
 static void
-gpm_control_init (GpmControl *control)
+cpm_control_init (GpmControl *control)
 {
-	control->priv = gpm_control_get_instance_private (control);
+	control->priv = cpm_control_get_instance_private (control);
 
 	control->priv->settings = g_settings_new (GPM_SETTINGS_SCHEMA);
 }
 
 /**
- * gpm_control_new:
+ * cpm_control_new:
  * Return value: A new control class instance.
  **/
 GpmControl *
-gpm_control_new (void)
+cpm_control_new (void)
 {
-	if (gpm_control_object != NULL) {
-		g_object_ref (gpm_control_object);
+	if (cpm_control_object != NULL) {
+		g_object_ref (cpm_control_object);
 	} else {
-		gpm_control_object = g_object_new (GPM_TYPE_CONTROL, NULL);
-		g_object_add_weak_pointer (gpm_control_object, &gpm_control_object);
+		cpm_control_object = g_object_new (GPM_TYPE_CONTROL, NULL);
+		g_object_add_weak_pointer (cpm_control_object, &cpm_control_object);
 	}
-	return GPM_CONTROL (gpm_control_object);
+	return GPM_CONTROL (cpm_control_object);
 }
 

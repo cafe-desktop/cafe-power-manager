@@ -31,7 +31,7 @@
 #include "cpm-common.h"
 
 /**
- * gpm_get_timestring:
+ * cpm_get_timestring:
  * @time_secs: The time value to convert in seconds
  * @cookie: The cookie we are looking for
  *
@@ -40,7 +40,7 @@
  * Return value: The time string, e.g. "2 hours 3 minutes"
  **/
 gchar *
-gpm_get_timestring (guint time_secs)
+cpm_get_timestring (guint time_secs)
 {
 	char* timestring = NULL;
 	gint  hours;
@@ -79,7 +79,7 @@ gpm_get_timestring (guint time_secs)
 }
 
 /**
- * gpm_discrete_from_percent:
+ * cpm_discrete_from_percent:
  * @percentage: The percentage to convert
  * @levels: The number of discrete levels
  *
@@ -89,7 +89,7 @@ gpm_get_timestring (guint time_secs)
  * Return value: The discrete value for this percentage.
  **/
 guint
-gpm_discrete_from_percent (guint percentage, guint levels)
+cpm_discrete_from_percent (guint percentage, guint levels)
 {
     /* for levels < 10 min value is 0 */
     gint factor;
@@ -105,7 +105,7 @@ gpm_discrete_from_percent (guint percentage, guint levels)
 }
 
 /**
- * gpm_discrete_to_percent:
+ * cpm_discrete_to_percent:
  * @hw: The discrete level
  * @levels: The number of discrete levels
  *
@@ -114,7 +114,7 @@ gpm_discrete_from_percent (guint percentage, guint levels)
  * Return value: The percentage for this discrete value.
  **/
 guint
-gpm_discrete_to_percent (guint discrete, guint levels)
+cpm_discrete_to_percent (guint discrete, guint levels)
 {
     /* for levels < 10 min value is 0 */
     gint factor;
@@ -131,11 +131,11 @@ gpm_discrete_to_percent (guint discrete, guint levels)
 
 
 /**
- * gpm_help_display:
+ * cpm_help_display:
  * @link_id: Subsection of cafe-power-manager help section
  **/
 void
-gpm_help_display (const gchar *link_id)
+cpm_help_display (const gchar *link_id)
 {
 	GError *error = NULL;
 	gchar *uri;
@@ -159,10 +159,10 @@ gpm_help_display (const gchar *link_id)
 }
 
 /**
- * gpm_dialog_page_scroll_event_cb:
+ * cpm_dialog_page_scroll_event_cb:
  **/
 gboolean
-gpm_dialog_page_scroll_event_cb (CtkWidget *widget, CdkEventScroll *event, CtkWindow *window)
+cpm_dialog_page_scroll_event_cb (CtkWidget *widget, CdkEventScroll *event, CtkWindow *window)
 {
         CtkNotebook *notebook = CTK_NOTEBOOK (widget);
         CtkWidget *child, *event_widget, *action_widget;
@@ -224,7 +224,7 @@ gpm_dialog_page_scroll_event_cb (CtkWidget *widget, CdkEventScroll *event, CtkWi
 #include "egg-test.h"
 
 void
-gpm_common_test (gpointer data)
+cpm_common_test (gpointer data)
 {
 	EggTest *test = (EggTest *) data;
 	if (egg_test_start (test, "GpmCommon") == FALSE)

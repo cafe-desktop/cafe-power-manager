@@ -35,27 +35,27 @@
 #include "cpm-prefs-core.h"
 
 /**
- * gpm_prefs_help_cb
+ * cpm_prefs_help_cb
  * @prefs: This prefs class instance
  *
  * What to do when help is requested
  **/
 static void
-gpm_prefs_help_cb (GpmPrefs *prefs)
+cpm_prefs_help_cb (GpmPrefs *prefs)
 {
-	gpm_help_display ("preferences");
+	cpm_help_display ("preferences");
 }
 
 /**
- * gpm_prefs_activated_cb
+ * cpm_prefs_activated_cb
  * @prefs: This prefs class instance
  *
  * We have been asked to show the window
  **/
 static void
-gpm_prefs_activated_cb (CtkApplication *app, GpmPrefs *prefs)
+cpm_prefs_activated_cb (CtkApplication *app, GpmPrefs *prefs)
 {
-	gpm_prefs_activate_window (app, prefs);
+	cpm_prefs_activate_window (app, prefs);
 }
 
 /**
@@ -94,13 +94,13 @@ main (int argc, char **argv)
 	cdk_init (&argc, &argv);
 	app = ctk_application_new("org.cafe.PowerManager.Preferences", 0);
 
-	prefs = gpm_prefs_new ();
+	prefs = cpm_prefs_new ();
 
-	window = gpm_window (prefs);
+	window = cpm_window (prefs);
 	g_signal_connect (app, "activate",
-			  G_CALLBACK (gpm_prefs_activated_cb), prefs);
+			  G_CALLBACK (cpm_prefs_activated_cb), prefs);
 	g_signal_connect (prefs, "action-help",
-			  G_CALLBACK (gpm_prefs_help_cb), prefs);
+			  G_CALLBACK (cpm_prefs_help_cb), prefs);
 	g_signal_connect_swapped (prefs, "action-close",
 			  G_CALLBACK (ctk_widget_destroy), window);
 

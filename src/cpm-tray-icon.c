@@ -48,7 +48,7 @@
 #include "cpm-icon-names.h"
 #include "cpm-tray-icon.h"
 
-static void     gpm_tray_icon_finalize   (GObject	   *object);
+static void     cpm_tray_icon_finalize   (GObject	   *object);
 
 struct GpmTrayIconPrivate
 {
@@ -58,35 +58,35 @@ struct GpmTrayIconPrivate
 	gboolean		 show_actions;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmTrayIcon, gpm_tray_icon, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (GpmTrayIcon, cpm_tray_icon, G_TYPE_OBJECT)
 
 /**
- * gpm_tray_icon_enable_actions:
+ * cpm_tray_icon_enable_actions:
  **/
 static void
-gpm_tray_icon_enable_actions (GpmTrayIcon *icon, gboolean enabled)
+cpm_tray_icon_enable_actions (GpmTrayIcon *icon, gboolean enabled)
 {
 	g_return_if_fail (GPM_IS_TRAY_ICON (icon));
 	icon->priv->show_actions = enabled;
 }
 
 /**
- * gpm_tray_icon_show:
+ * cpm_tray_icon_show:
  * @enabled: If we should show the tray
  **/
 static void
-gpm_tray_icon_show (GpmTrayIcon *icon, gboolean enabled)
+cpm_tray_icon_show (GpmTrayIcon *icon, gboolean enabled)
 {
 	g_return_if_fail (GPM_IS_TRAY_ICON (icon));
 	ctk_status_icon_set_visible (icon->priv->status_icon, enabled);
 }
 
 /**
- * gpm_tray_icon_set_tooltip:
+ * cpm_tray_icon_set_tooltip:
  * @tooltip: The tooltip text, e.g. "Batteries charged"
  **/
 gboolean
-gpm_tray_icon_set_tooltip (GpmTrayIcon *icon, const gchar *tooltip)
+cpm_tray_icon_set_tooltip (GpmTrayIcon *icon, const gchar *tooltip)
 {
 	g_return_val_if_fail (icon != NULL, FALSE);
 	g_return_val_if_fail (GPM_IS_TRAY_ICON (icon), FALSE);
@@ -98,23 +98,23 @@ gpm_tray_icon_set_tooltip (GpmTrayIcon *icon, const gchar *tooltip)
 }
 
 /**
- * gpm_tray_icon_get_status_icon:
+ * cpm_tray_icon_get_status_icon:
  **/
 CtkStatusIcon *
-gpm_tray_icon_get_status_icon (GpmTrayIcon *icon)
+cpm_tray_icon_get_status_icon (GpmTrayIcon *icon)
 {
 	g_return_val_if_fail (GPM_IS_TRAY_ICON (icon), NULL);
 	return g_object_ref (icon->priv->status_icon);
 }
 
 /**
- * gpm_tray_icon_set_icon:
+ * cpm_tray_icon_set_icon:
  * @icon_name: The icon name, e.g. GPM_ICON_APP_ICON, or NULL to remove.
  *
  * Loads a pixmap from disk, and sets as the tooltip icon.
  **/
 gboolean
-gpm_tray_icon_set_icon (GpmTrayIcon *icon, const gchar *icon_name)
+cpm_tray_icon_set_icon (GpmTrayIcon *icon, const gchar *icon_name)
 {
 	g_return_val_if_fail (icon != NULL, FALSE);
 	g_return_val_if_fail (GPM_IS_TRAY_ICON (icon), FALSE);
@@ -125,22 +125,22 @@ gpm_tray_icon_set_icon (GpmTrayIcon *icon, const gchar *icon_name)
 		                                    icon_name);
 
 		/* make sure that we are visible */
-		gpm_tray_icon_show (icon, TRUE);
+		cpm_tray_icon_show (icon, TRUE);
 	} else {
 		/* remove icon */
 		egg_debug ("no icon will be displayed");
 
 		/* make sure that we are hidden */
-		gpm_tray_icon_show (icon, FALSE);
+		cpm_tray_icon_show (icon, FALSE);
 	}
 	return TRUE;
 }
 
 /**
- * gpm_tray_icon_show_info_cb:
+ * cpm_tray_icon_show_info_cb:
  **/
 static void
-gpm_tray_icon_show_info_cb (CtkMenuItem *item, gpointer data)
+cpm_tray_icon_show_info_cb (CtkMenuItem *item, gpointer data)
 {
 	gchar *path;
 	const gchar *object_path;
@@ -153,11 +153,11 @@ gpm_tray_icon_show_info_cb (CtkMenuItem *item, gpointer data)
 }
 
 /**
- * gpm_tray_icon_show_preferences_cb:
+ * cpm_tray_icon_show_preferences_cb:
  * @action: A valid CtkAction
  **/
 static void
-gpm_tray_icon_show_preferences_cb (CtkMenuItem *item, gpointer data)
+cpm_tray_icon_show_preferences_cb (CtkMenuItem *item, gpointer data)
 {
 	const gchar *command = "cafe-power-preferences";
 
@@ -169,11 +169,11 @@ gpm_tray_icon_show_preferences_cb (CtkMenuItem *item, gpointer data)
 #define EMAILIFY(string) (g_strdelimit ((string), "%", '@'))
 
 /**
- * gpm_tray_icon_show_about_cb:
+ * cpm_tray_icon_show_about_cb:
  * @action: A valid CtkAction
  **/
 static void
-gpm_tray_icon_show_about_cb (CtkMenuItem *item, gpointer data)
+cpm_tray_icon_show_about_cb (CtkMenuItem *item, gpointer data)
 {
 	GKeyFile *key_file;
 	GBytes *bytes;
@@ -220,21 +220,21 @@ gpm_tray_icon_show_about_cb (CtkMenuItem *item, gpointer data)
 }
 
 /**
- * gpm_tray_icon_class_init:
+ * cpm_tray_icon_class_init:
  **/
 static void
-gpm_tray_icon_class_init (GpmTrayIconClass *klass)
+cpm_tray_icon_class_init (GpmTrayIconClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-	object_class->finalize = gpm_tray_icon_finalize;
+	object_class->finalize = cpm_tray_icon_finalize;
 }
 
 /**
- * gpm_tray_icon_add_device:
+ * cpm_tray_icon_add_device:
  **/
 static guint
-gpm_tray_icon_add_device (GpmTrayIcon *icon, CtkMenu *menu, const GPtrArray *array, UpDeviceKind kind)
+cpm_tray_icon_add_device (GpmTrayIcon *icon, CtkMenu *menu, const GPtrArray *array, UpDeviceKind kind)
 {
 	guint i;
 	guint added = 0;
@@ -271,18 +271,18 @@ gpm_tray_icon_add_device (GpmTrayIcon *icon, CtkMenu *menu, const GPtrArray *arr
 			label = g_strdup_printf ("%s %s (%.1f%%)", vendor, model, percentage);
 		}
 		else {
-			label = g_strdup_printf ("%s (%.1f%%)", gpm_device_kind_to_localised_string (kind, 1), percentage);
+			label = g_strdup_printf ("%s (%.1f%%)", cpm_device_kind_to_localised_string (kind, 1), percentage);
 		}
 		item = ctk_image_menu_item_new_with_label (label);
 
 		/* generate the image */
-		icon_name = gpm_upower_get_device_icon (device);
+		icon_name = cpm_upower_get_device_icon (device);
 		image = ctk_image_new_from_icon_name (icon_name, CTK_ICON_SIZE_MENU);
 		ctk_image_menu_item_set_image (CTK_IMAGE_MENU_ITEM (item), image);
 		ctk_image_menu_item_set_always_show_image (CTK_IMAGE_MENU_ITEM (item), TRUE);
 
 		/* set callback and add the menu */
-		g_signal_connect (G_OBJECT (item), "activate", G_CALLBACK (gpm_tray_icon_show_info_cb), icon);
+		g_signal_connect (G_OBJECT (item), "activate", G_CALLBACK (cpm_tray_icon_show_info_cb), icon);
 		g_object_set_data (G_OBJECT (item), "object-path", (gpointer) object_path);
 		ctk_menu_shell_append (CTK_MENU_SHELL (menu), item);
 
@@ -295,10 +295,10 @@ gpm_tray_icon_add_device (GpmTrayIcon *icon, CtkMenu *menu, const GPtrArray *arr
 }
 
 /**
- * gpm_tray_icon_add_primary_device:
+ * cpm_tray_icon_add_primary_device:
  **/
 static void
-gpm_tray_icon_add_primary_device (GpmTrayIcon *icon, CtkMenu *menu, UpDevice *device)
+cpm_tray_icon_add_primary_device (GpmTrayIcon *icon, CtkMenu *menu, UpDevice *device)
 {
 	CtkWidget *item;
 	gchar *time_str;
@@ -311,7 +311,7 @@ gpm_tray_icon_add_primary_device (GpmTrayIcon *icon, CtkMenu *menu, UpDevice *de
 		      NULL);
 
 	/* convert time to string */
-	time_str = gpm_get_timestring (time_to_empty);
+	time_str = cpm_get_timestring (time_to_empty);
 
 	/* TRANSLATORS: % is a timestring, e.g. "6 hours 10 minutes" */
 	string = g_strdup_printf (_("%s remaining"), time_str);
@@ -322,12 +322,12 @@ gpm_tray_icon_add_primary_device (GpmTrayIcon *icon, CtkMenu *menu, UpDevice *de
 }
 
 /**
- * gpm_tray_icon_create_menu:
+ * cpm_tray_icon_create_menu:
  *
  * Create the popup menu.
  **/
 static CtkMenu *
-gpm_tray_icon_create_menu (GpmTrayIcon *icon)
+cpm_tray_icon_create_menu (GpmTrayIcon *icon)
 {
 	CtkMenu *menu = (CtkMenu*) ctk_menu_new ();
 	CtkWidget *item;
@@ -337,24 +337,24 @@ gpm_tray_icon_create_menu (GpmTrayIcon *icon)
 	UpDevice *device = NULL;
 
 	/* show the primary device time remaining */
-	device = gpm_engine_get_primary_device (icon->priv->engine);
+	device = cpm_engine_get_primary_device (icon->priv->engine);
 	if (device != NULL) {
-		gpm_tray_icon_add_primary_device (icon, menu, device);
+		cpm_tray_icon_add_primary_device (icon, menu, device);
 		item = ctk_separator_menu_item_new ();
 		ctk_menu_shell_append (CTK_MENU_SHELL (menu), item);
 	}
 
 	/* add all device types to the drop down menu */
-	array = gpm_engine_get_devices (icon->priv->engine);
-	dev_cnt += gpm_tray_icon_add_device (icon, menu, array, UP_DEVICE_KIND_BATTERY);
-	dev_cnt += gpm_tray_icon_add_device (icon, menu, array, UP_DEVICE_KIND_UPS);
-	dev_cnt += gpm_tray_icon_add_device (icon, menu, array, UP_DEVICE_KIND_MOUSE);
-	dev_cnt += gpm_tray_icon_add_device (icon, menu, array, UP_DEVICE_KIND_KEYBOARD);
-	dev_cnt += gpm_tray_icon_add_device (icon, menu, array, UP_DEVICE_KIND_PDA);
-	dev_cnt += gpm_tray_icon_add_device (icon, menu, array, UP_DEVICE_KIND_PHONE);
-	dev_cnt += gpm_tray_icon_add_device (icon, menu, array, UP_DEVICE_KIND_MEDIA_PLAYER);
-	dev_cnt += gpm_tray_icon_add_device (icon, menu, array, UP_DEVICE_KIND_TABLET);
-	dev_cnt += gpm_tray_icon_add_device (icon, menu, array, UP_DEVICE_KIND_COMPUTER);
+	array = cpm_engine_get_devices (icon->priv->engine);
+	dev_cnt += cpm_tray_icon_add_device (icon, menu, array, UP_DEVICE_KIND_BATTERY);
+	dev_cnt += cpm_tray_icon_add_device (icon, menu, array, UP_DEVICE_KIND_UPS);
+	dev_cnt += cpm_tray_icon_add_device (icon, menu, array, UP_DEVICE_KIND_MOUSE);
+	dev_cnt += cpm_tray_icon_add_device (icon, menu, array, UP_DEVICE_KIND_KEYBOARD);
+	dev_cnt += cpm_tray_icon_add_device (icon, menu, array, UP_DEVICE_KIND_PDA);
+	dev_cnt += cpm_tray_icon_add_device (icon, menu, array, UP_DEVICE_KIND_PHONE);
+	dev_cnt += cpm_tray_icon_add_device (icon, menu, array, UP_DEVICE_KIND_MEDIA_PLAYER);
+	dev_cnt += cpm_tray_icon_add_device (icon, menu, array, UP_DEVICE_KIND_TABLET);
+	dev_cnt += cpm_tray_icon_add_device (icon, menu, array, UP_DEVICE_KIND_COMPUTER);
 	g_ptr_array_unref (array);
 
 	/* skip for things like live-cd's and GDM */
@@ -372,7 +372,7 @@ gpm_tray_icon_create_menu (GpmTrayIcon *icon)
 	image = ctk_image_new_from_icon_name ("preferences-system", CTK_ICON_SIZE_MENU);
 	ctk_image_menu_item_set_image (CTK_IMAGE_MENU_ITEM (item), image);
 	g_signal_connect (G_OBJECT (item), "activate",
-			  G_CALLBACK (gpm_tray_icon_show_preferences_cb), icon);
+			  G_CALLBACK (cpm_tray_icon_show_preferences_cb), icon);
 	ctk_menu_shell_append (CTK_MENU_SHELL (menu), item);
 	
 	/*Set up custom panel menu theme support-ctk3 only */
@@ -390,7 +390,7 @@ gpm_tray_icon_create_menu (GpmTrayIcon *icon)
 	/* about */
 	item = ctk_image_menu_item_new_from_stock ("ctk-about", NULL);
 	g_signal_connect (G_OBJECT (item), "activate",
-			  G_CALLBACK (gpm_tray_icon_show_about_cb), icon);
+			  G_CALLBACK (cpm_tray_icon_show_about_cb), icon);
 	ctk_menu_shell_append (CTK_MENU_SHELL (menu), item);
 
 skip_prefs:
@@ -400,13 +400,13 @@ skip_prefs:
 }
 
 /**
- * gpm_tray_icon_popup_cleared_cd:
+ * cpm_tray_icon_popup_cleared_cd:
  * @widget: The popup Ctkwidget
  *
  * We have to re-enable the tooltip when the popup is removed
  **/
 static void
-gpm_tray_icon_popup_cleared_cd (CtkWidget *widget, GpmTrayIcon *icon)
+cpm_tray_icon_popup_cleared_cd (CtkWidget *widget, GpmTrayIcon *icon)
 {
 	g_return_if_fail (GPM_IS_TRAY_ICON (icon));
 	egg_debug ("clear tray");
@@ -415,16 +415,16 @@ gpm_tray_icon_popup_cleared_cd (CtkWidget *widget, GpmTrayIcon *icon)
 }
 
 /**
- * gpm_tray_icon_popup_menu:
+ * cpm_tray_icon_popup_menu:
  *
  * Display the popup menu.
  **/
 static void
-gpm_tray_icon_popup_menu (GpmTrayIcon *icon, guint32 timestamp)
+cpm_tray_icon_popup_menu (GpmTrayIcon *icon, guint32 timestamp)
 {
 	CtkMenu *menu;
 
-	menu = gpm_tray_icon_create_menu (icon);
+	menu = cpm_tray_icon_create_menu (icon);
 
 	/* show the menu */
 	ctk_widget_show_all (CTK_WIDGET (menu));
@@ -433,90 +433,90 @@ gpm_tray_icon_popup_menu (GpmTrayIcon *icon, guint32 timestamp)
 			1, timestamp);
 
 	g_signal_connect (CTK_WIDGET (menu), "hide",
-			  G_CALLBACK (gpm_tray_icon_popup_cleared_cd), icon);
+			  G_CALLBACK (cpm_tray_icon_popup_cleared_cd), icon);
 }
 
 /**
- * gpm_tray_icon_popup_menu_cb:
+ * cpm_tray_icon_popup_menu_cb:
  *
  * Display the popup menu.
  **/
 static void
-gpm_tray_icon_popup_menu_cb (CtkStatusIcon *status_icon, guint button, guint32 timestamp, GpmTrayIcon *icon)
+cpm_tray_icon_popup_menu_cb (CtkStatusIcon *status_icon, guint button, guint32 timestamp, GpmTrayIcon *icon)
 {
 	egg_debug ("icon right clicked");
-	gpm_tray_icon_popup_menu (icon, timestamp);
+	cpm_tray_icon_popup_menu (icon, timestamp);
 }
 
 
 /**
- * gpm_tray_icon_activate_cb:
+ * cpm_tray_icon_activate_cb:
  * @button: Which buttons are pressed
  *
  * Callback when the icon is clicked
  **/
 static void
-gpm_tray_icon_activate_cb (CtkStatusIcon *status_icon, GpmTrayIcon *icon)
+cpm_tray_icon_activate_cb (CtkStatusIcon *status_icon, GpmTrayIcon *icon)
 {
 	egg_debug ("icon left clicked");
-	gpm_tray_icon_popup_menu (icon, ctk_get_current_event_time());
+	cpm_tray_icon_popup_menu (icon, ctk_get_current_event_time());
 }
 
 /**
- * gpm_tray_icon_settings_changed_cb:
+ * cpm_tray_icon_settings_changed_cb:
  *
  * We might have to do things when the settings change; do them here.
  **/
 static void
-gpm_tray_icon_settings_changed_cb (GSettings *settings, const gchar *key, GpmTrayIcon *icon)
+cpm_tray_icon_settings_changed_cb (GSettings *settings, const gchar *key, GpmTrayIcon *icon)
 {
 	gboolean allowed_in_menu;
 
 	if (g_strcmp0 (key, GPM_SETTINGS_SHOW_ACTIONS) == 0) {
 		allowed_in_menu = g_settings_get_boolean (settings, key);
-		gpm_tray_icon_enable_actions (icon, allowed_in_menu);
+		cpm_tray_icon_enable_actions (icon, allowed_in_menu);
 	}
 }
 
 /**
- * gpm_tray_icon_init:
+ * cpm_tray_icon_init:
  *
  * Initialise the tray object
  **/
 static void
-gpm_tray_icon_init (GpmTrayIcon *icon)
+cpm_tray_icon_init (GpmTrayIcon *icon)
 {
 	gboolean allowed_in_menu;
 
-	icon->priv = gpm_tray_icon_get_instance_private (icon);
+	icon->priv = cpm_tray_icon_get_instance_private (icon);
 
-	icon->priv->engine = gpm_engine_new ();
+	icon->priv->engine = cpm_engine_new ();
 
 	icon->priv->settings = g_settings_new (GPM_SETTINGS_SCHEMA);
 	g_signal_connect (icon->priv->settings, "changed",
-			  G_CALLBACK (gpm_tray_icon_settings_changed_cb), icon);
+			  G_CALLBACK (cpm_tray_icon_settings_changed_cb), icon);
 
 	icon->priv->status_icon = ctk_status_icon_new ();
-	gpm_tray_icon_show (icon, FALSE);
+	cpm_tray_icon_show (icon, FALSE);
 	g_signal_connect_object (G_OBJECT (icon->priv->status_icon),
 				 "popup_menu",
-				 G_CALLBACK (gpm_tray_icon_popup_menu_cb),
+				 G_CALLBACK (cpm_tray_icon_popup_menu_cb),
 				 icon, 0);
 	g_signal_connect_object (G_OBJECT (icon->priv->status_icon),
 				 "activate",
-				 G_CALLBACK (gpm_tray_icon_activate_cb),
+				 G_CALLBACK (cpm_tray_icon_activate_cb),
 				 icon, 0);
 
 	allowed_in_menu = g_settings_get_boolean (icon->priv->settings, GPM_SETTINGS_SHOW_ACTIONS);
-	gpm_tray_icon_enable_actions (icon, allowed_in_menu);
+	cpm_tray_icon_enable_actions (icon, allowed_in_menu);
 }
 
 /**
- * gpm_tray_icon_finalize:
+ * cpm_tray_icon_finalize:
  * @object: This TrayIcon class instance
  **/
 static void
-gpm_tray_icon_finalize (GObject *object)
+cpm_tray_icon_finalize (GObject *object)
 {
 	GpmTrayIcon *tray_icon;
 
@@ -529,15 +529,15 @@ gpm_tray_icon_finalize (GObject *object)
 	g_object_unref (tray_icon->priv->engine);
 	g_return_if_fail (tray_icon->priv != NULL);
 
-	G_OBJECT_CLASS (gpm_tray_icon_parent_class)->finalize (object);
+	G_OBJECT_CLASS (cpm_tray_icon_parent_class)->finalize (object);
 }
 
 /**
- * gpm_tray_icon_new:
+ * cpm_tray_icon_new:
  * Return value: A new TrayIcon object.
  **/
 GpmTrayIcon *
-gpm_tray_icon_new (void)
+cpm_tray_icon_new (void)
 {
 	GpmTrayIcon *tray_icon;
 	tray_icon = g_object_new (GPM_TYPE_TRAY_ICON, NULL);

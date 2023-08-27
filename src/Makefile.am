@@ -292,28 +292,28 @@ BUILT_SOURCES = 					\
 
 cpm-marshal.c: cpm-marshal.list
 	echo "#include \"cpm-marshal.h\"" > $@ && \
-	@GLIB_GENMARSHAL@ $< --prefix=gpm_marshal --body >> $@
+	@GLIB_GENMARSHAL@ $< --prefix=cpm_marshal --body >> $@
 
 cpm-marshal.h: cpm-marshal.list
-	@GLIB_GENMARSHAL@ $< --prefix=gpm_marshal --header > $@
+	@GLIB_GENMARSHAL@ $< --prefix=cpm_marshal --header > $@
 
 org.cafe.PowerManager.h: org.cafe.PowerManager.xml
 	$(LIBTOOL) --mode=execute dbus-binding-tool	\
-		--prefix=gpm_manager			\
+		--prefix=cpm_manager			\
 		--mode=glib-server			\
 		--output=org.cafe.PowerManager.h	\
 		$(srcdir)/org.cafe.PowerManager.xml
 
 org.cafe.PowerManager.Backlight.h: org.cafe.PowerManager.Backlight.xml
 	$(LIBTOOL) --mode=execute dbus-binding-tool	\
-		--prefix=gpm_backlight			\
+		--prefix=cpm_backlight			\
 		--mode=glib-server			\
 		--output=org.cafe.PowerManager.Backlight.h	\
 		$(srcdir)/org.cafe.PowerManager.Backlight.xml
 
 org.cafe.PowerManager.KbdBacklight.h: org.cafe.PowerManager.KbdBacklight.xml
 	$(LIBTOOL) --mode=execute dbus-binding-tool	\
-		--prefix=gpm_kbd_backlight		\
+		--prefix=cpm_kbd_backlight		\
 		--mode=glib-server			\
 		--output=org.cafe.PowerManager.KbdBacklight.h	\
 		$(srcdir)/org.cafe.PowerManager.KbdBacklight.xml

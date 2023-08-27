@@ -155,17 +155,17 @@ typedef enum {
 	GPM_ACTION_POLICY_NOTHING
 } GpmActionPolicy;
 
-gchar        *gpm_get_timestring                (guint time);
-guint        gpm_discrete_from_percent          (guint percentage,
+gchar        *cpm_get_timestring                (guint time);
+guint        cpm_discrete_from_percent          (guint percentage,
                                                  guint levels);
-guint        gpm_discrete_to_percent            (guint discrete,
+guint        cpm_discrete_to_percent            (guint discrete,
                                                  guint levels);
-void         gpm_help_display                   (const gchar    *link_id);
-gboolean     gpm_dialog_page_scroll_event_cb    (CtkWidget      *widget,
+void         cpm_help_display                   (const gchar    *link_id);
+gboolean     cpm_dialog_page_scroll_event_cb    (CtkWidget      *widget,
                                                  CdkEventScroll *event,
                                                  CtkWindow      *window);
 #ifdef EGG_TEST
-void         gpm_common_test                     (gpointer data);
+void         cpm_common_test                     (gpointer data);
 #endif
 
 G_END_DECLS

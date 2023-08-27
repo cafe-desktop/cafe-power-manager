@@ -27,7 +27,7 @@
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_CONTROL		(gpm_control_get_type ())
+#define GPM_TYPE_CONTROL		(cpm_control_get_type ())
 #define GPM_CONTROL(o)			(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_CONTROL, GpmControl))
 #define GPM_CONTROL_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_CONTROL, GpmControlClass))
 #define GPM_IS_CONTROL(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_CONTROL))
@@ -68,18 +68,18 @@ typedef struct
 							 const gchar	**type);
 } GpmControlClass;
 
-#define GPM_CONTROL_ERROR gpm_control_error_quark ()
+#define GPM_CONTROL_ERROR cpm_control_error_quark ()
 
-GQuark		 gpm_control_error_quark		(void);
-GType		 gpm_control_get_type			(void);
-GpmControl	*gpm_control_new			(void);
-gboolean	 gpm_control_suspend			(GpmControl	*control,
+GQuark		 cpm_control_error_quark		(void);
+GType		 cpm_control_get_type			(void);
+GpmControl	*cpm_control_new			(void);
+gboolean	 cpm_control_suspend			(GpmControl	*control,
 							 GError		**error);
-gboolean	 gpm_control_hibernate			(GpmControl	*control,
+gboolean	 cpm_control_hibernate			(GpmControl	*control,
 							 GError		**error);
-gboolean	 gpm_control_shutdown			(GpmControl	*control,
+gboolean	 cpm_control_shutdown			(GpmControl	*control,
 						 	 GError		**error);
-gboolean	 gpm_control_get_lock_policy		(GpmControl	*control,
+gboolean	 cpm_control_get_lock_policy		(GpmControl	*control,
 							 const gchar	*policy);
 
 G_END_DECLS

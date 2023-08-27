@@ -26,7 +26,7 @@
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_SESSION		(gpm_session_get_type ())
+#define GPM_TYPE_SESSION		(cpm_session_get_type ())
 #define GPM_SESSION(o)			(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_SESSION, GpmSession))
 #define GPM_SESSION_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_SESSION, GpmSessionClass))
 #define GPM_IS_SESSION(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_SESSION))
@@ -60,17 +60,17 @@ typedef struct
 	void		(* cancel_end_session)		(GpmSession	*session);
 } GpmSessionClass;
 
-GType		 gpm_session_get_type			(void);
-GpmSession	*gpm_session_new			(void);
+GType		 cpm_session_get_type			(void);
+GpmSession	*cpm_session_new			(void);
 
-gboolean	 gpm_session_logout			(GpmSession	*session);
-gboolean	 gpm_session_get_idle			(GpmSession	*session);
-gboolean	 gpm_session_get_idle_inhibited		(GpmSession	*session);
-gboolean	 gpm_session_get_suspend_inhibited	(GpmSession	*session);
-gboolean	 gpm_session_register_client		(GpmSession	*session,
+gboolean	 cpm_session_logout			(GpmSession	*session);
+gboolean	 cpm_session_get_idle			(GpmSession	*session);
+gboolean	 cpm_session_get_idle_inhibited		(GpmSession	*session);
+gboolean	 cpm_session_get_suspend_inhibited	(GpmSession	*session);
+gboolean	 cpm_session_register_client		(GpmSession	*session,
 							 const gchar	*app_id,
 							 const gchar	*client_startup_id);
-gboolean	 gpm_session_end_session_response	(GpmSession	*session,
+gboolean	 cpm_session_end_session_response	(GpmSession	*session,
 							 gboolean	 is_okay,
 							 const gchar	*reason);
 

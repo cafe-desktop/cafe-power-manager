@@ -27,7 +27,7 @@
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_ENGINE		(gpm_engine_get_type ())
+#define GPM_TYPE_ENGINE		(cpm_engine_get_type ())
 #define GPM_ENGINE(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_ENGINE, GpmEngine))
 #define GPM_ENGINE_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_ENGINE, GpmEngineClass))
 #define GPM_IS_ENGINE(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_ENGINE))
@@ -64,12 +64,12 @@ typedef struct
 	void		(* devices_changed)	(GpmEngine	*engine);
 } GpmEngineClass;
 
-GType		 gpm_engine_get_type		(void);
-GpmEngine	*gpm_engine_new			(void);
-gchar		*gpm_engine_get_icon		(GpmEngine	*engine);
-gchar		*gpm_engine_get_summary		(GpmEngine	*engine);
-GPtrArray	*gpm_engine_get_devices		(GpmEngine	*engine);
-UpDevice	*gpm_engine_get_primary_device	(GpmEngine	*engine);
+GType		 cpm_engine_get_type		(void);
+GpmEngine	*cpm_engine_new			(void);
+gchar		*cpm_engine_get_icon		(GpmEngine	*engine);
+gchar		*cpm_engine_get_summary		(GpmEngine	*engine);
+GPtrArray	*cpm_engine_get_devices		(GpmEngine	*engine);
+UpDevice	*cpm_engine_get_primary_device	(GpmEngine	*engine);
 
 G_END_DECLS
 

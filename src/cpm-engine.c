@@ -35,7 +35,7 @@
 #include "cpm-icon-names.h"
 #include "cpm-phone.h"
 
-static void     gpm_engine_finalize   (GObject	  *object);
+static void     cpm_engine_finalize   (GObject	  *object);
 
 #define GPM_ENGINE_RESUME_DELAY		2*1000
 #define GPM_ENGINE_WARN_ACCURACY	20
@@ -76,13 +76,13 @@ enum {
 };
 
 static guint signals [LAST_SIGNAL] = { 0 };
-static gpointer gpm_engine_object = NULL;
+static gpointer cpm_engine_object = NULL;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmEngine, gpm_engine, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (GpmEngine, cpm_engine, G_TYPE_OBJECT)
 
-static UpDevice *gpm_engine_get_composite_device (GpmEngine *engine, UpDevice *original_device);
-static UpDevice *gpm_engine_update_composite_device (GpmEngine *engine, UpDevice *original_device);
-static void gpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, GpmEngine *engine);
+static UpDevice *cpm_engine_get_composite_device (GpmEngine *engine, UpDevice *original_device);
+static UpDevice *cpm_engine_update_composite_device (GpmEngine *engine, UpDevice *original_device);
+static void cpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, GpmEngine *engine);
 
 #define GPM_ENGINE_WARNING_NONE UP_DEVICE_LEVEL_NONE
 #define GPM_ENGINE_WARNING_DISCHARGING UP_DEVICE_LEVEL_DISCHARGING
@@ -91,7 +91,7 @@ static void gpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, G
 #define GPM_ENGINE_WARNING_ACTION UP_DEVICE_LEVEL_ACTION
 
 /**
- * gpm_engine_get_warning:
+ * cpm_engine_get_warning:
  *
  * This gets the possible engine state for the device according to the
  * policy, which could be per-percent, or per-time.
@@ -99,7 +99,7 @@ static void gpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, G
  * Return value: A GpmEngine state, e.g. GPM_ENGINE_WARNING_DISCHARGING
  **/
 static UpDeviceLevel
-gpm_engine_get_warning (GpmEngine *engine, UpDevice *device)
+cpm_engine_get_warning (GpmEngine *engine, UpDevice *device)
 {
 	UpDeviceLevel warning;
 	g_object_get (device, "warning-level", &warning, NULL);
@@ -107,14 +107,14 @@ gpm_engine_get_warning (GpmEngine *engine, UpDevice *device)
 }
 
 /**
- * gpm_engine_get_summary:
+ * cpm_engine_get_summary:
  * @engine: This engine class instance
  * @string: The returned string
  *
  * Returns the complete tooltip ready for display
  **/
 gchar *
-gpm_engine_get_summary (GpmEngine *engine)
+cpm_engine_get_summary (GpmEngine *engine)
 {
 	guint i;
 	GPtrArray *array;
@@ -141,7 +141,7 @@ gpm_engine_get_summary (GpmEngine *engine)
 			continue;
 		if (state == UP_DEVICE_STATE_EMPTY)
 			continue;
-		part = gpm_upower_get_device_summary (device);
+		part = cpm_upower_get_device_summary (device);
 		if (part != NULL)
 			g_string_append_printf (tooltip, "%s\n", part);
 		g_free (part);
@@ -156,12 +156,12 @@ gpm_engine_get_summary (GpmEngine *engine)
 }
 
 /**
- * gpm_engine_get_icon_priv:
+ * cpm_engine_get_icon_priv:
  *
  * Returns the icon
  **/
 static gchar *
-gpm_engine_get_icon_priv (GpmEngine *engine, UpDeviceKind device_kind, UpDeviceLevel warning, gboolean use_state)
+cpm_engine_get_icon_priv (GpmEngine *engine, UpDeviceKind device_kind, UpDeviceLevel warning, gboolean use_state)
 {
 	guint i;
 	GPtrArray *array;
@@ -185,33 +185,33 @@ gpm_engine_get_icon_priv (GpmEngine *engine, UpDeviceKind device_kind, UpDeviceL
 
 		/* if battery then use composite device to cope with multiple batteries */
 		if (kind == UP_DEVICE_KIND_BATTERY)
-			device = gpm_engine_get_composite_device (engine, device);
+			device = cpm_engine_get_composite_device (engine, device);
 
 		warning_temp = GPOINTER_TO_INT(g_object_get_data (G_OBJECT(device), "engine-warning-old"));
 		if (kind == device_kind && is_present) {
 			if (warning != GPM_ENGINE_WARNING_NONE) {
 				if (warning_temp == warning)
-					return gpm_upower_get_device_icon (device);
+					return cpm_upower_get_device_icon (device);
 				continue;
 			}
 			if (use_state) {
 				if (state == UP_DEVICE_STATE_CHARGING || state == UP_DEVICE_STATE_DISCHARGING)
-					return gpm_upower_get_device_icon (device);
+					return cpm_upower_get_device_icon (device);
 				continue;
 			}
-			return gpm_upower_get_device_icon (device);
+			return cpm_upower_get_device_icon (device);
 		}
 	}
 	return NULL;
 }
 
 /**
- * gpm_engine_get_icon:
+ * cpm_engine_get_icon:
  *
  * Returns the icon
  **/
 gchar *
-gpm_engine_get_icon (GpmEngine *engine)
+cpm_engine_get_icon (GpmEngine *engine)
 {
 	gchar *icon = NULL;
 
@@ -224,16 +224,16 @@ gpm_engine_get_icon (GpmEngine *engine)
 	}
 
 	/* we try CRITICAL: BATTERY, UPS, MOUSE, KEYBOARD */
-	icon = gpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_BATTERY, GPM_ENGINE_WARNING_CRITICAL, FALSE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_BATTERY, GPM_ENGINE_WARNING_CRITICAL, FALSE);
 	if (icon != NULL)
 		return icon;
-	icon = gpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_UPS, GPM_ENGINE_WARNING_CRITICAL, FALSE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_UPS, GPM_ENGINE_WARNING_CRITICAL, FALSE);
 	if (icon != NULL)
 		return icon;
-	icon = gpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_MOUSE, GPM_ENGINE_WARNING_CRITICAL, FALSE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_MOUSE, GPM_ENGINE_WARNING_CRITICAL, FALSE);
 	if (icon != NULL)
 		return icon;
-	icon = gpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_KEYBOARD, GPM_ENGINE_WARNING_CRITICAL, FALSE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_KEYBOARD, GPM_ENGINE_WARNING_CRITICAL, FALSE);
 	if (icon != NULL)
 		return icon;
 
@@ -244,16 +244,16 @@ gpm_engine_get_icon (GpmEngine *engine)
 	}
 
 	/* we try CRITICAL: BATTERY, UPS, MOUSE, KEYBOARD */
-	icon = gpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_BATTERY, GPM_ENGINE_WARNING_LOW, FALSE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_BATTERY, GPM_ENGINE_WARNING_LOW, FALSE);
 	if (icon != NULL)
 		return icon;
-	icon = gpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_UPS, GPM_ENGINE_WARNING_LOW, FALSE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_UPS, GPM_ENGINE_WARNING_LOW, FALSE);
 	if (icon != NULL)
 		return icon;
-	icon = gpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_MOUSE, GPM_ENGINE_WARNING_LOW, FALSE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_MOUSE, GPM_ENGINE_WARNING_LOW, FALSE);
 	if (icon != NULL)
 		return icon;
-	icon = gpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_KEYBOARD, GPM_ENGINE_WARNING_LOW, FALSE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_KEYBOARD, GPM_ENGINE_WARNING_LOW, FALSE);
 	if (icon != NULL)
 		return icon;
 
@@ -264,10 +264,10 @@ gpm_engine_get_icon (GpmEngine *engine)
 	}
 
 	/* we try (DIS)CHARGING: BATTERY, UPS */
-	icon = gpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_BATTERY, GPM_ENGINE_WARNING_NONE, TRUE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_BATTERY, GPM_ENGINE_WARNING_NONE, TRUE);
 	if (icon != NULL)
 		return icon;
-	icon = gpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_UPS, GPM_ENGINE_WARNING_NONE, TRUE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_UPS, GPM_ENGINE_WARNING_NONE, TRUE);
 	if (icon != NULL)
 		return icon;
 
@@ -278,10 +278,10 @@ gpm_engine_get_icon (GpmEngine *engine)
 	}
 
 	/* we try PRESENT: BATTERY, UPS */
-	icon = gpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_BATTERY, GPM_ENGINE_WARNING_NONE, FALSE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_BATTERY, GPM_ENGINE_WARNING_NONE, FALSE);
 	if (icon != NULL)
 		return icon;
-	icon = gpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_UPS, GPM_ENGINE_WARNING_NONE, FALSE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_UPS, GPM_ENGINE_WARNING_NONE, FALSE);
 	if (icon != NULL)
 		return icon;
 
@@ -297,10 +297,10 @@ gpm_engine_get_icon (GpmEngine *engine)
 }
 
 /**
- * gpm_engine_recalculate_state_icon:
+ * cpm_engine_recalculate_state_icon:
  */
 static gboolean
-gpm_engine_recalculate_state_icon (GpmEngine *engine)
+cpm_engine_recalculate_state_icon (GpmEngine *engine)
 {
 	gchar *icon;
 
@@ -308,7 +308,7 @@ gpm_engine_recalculate_state_icon (GpmEngine *engine)
 	g_return_val_if_fail (GPM_IS_ENGINE (engine), FALSE);
 
 	/* show a different icon if we are disconnected */
-	icon = gpm_engine_get_icon (engine);
+	icon = cpm_engine_get_icon (engine);
 	if (icon == NULL) {
 		/* none before, now none */
 		if (engine->priv->previous_icon == NULL)
@@ -346,14 +346,14 @@ gpm_engine_recalculate_state_icon (GpmEngine *engine)
 }
 
 /**
- * gpm_engine_recalculate_state_summary:
+ * cpm_engine_recalculate_state_summary:
  */
 static gboolean
-gpm_engine_recalculate_state_summary (GpmEngine *engine)
+cpm_engine_recalculate_state_summary (GpmEngine *engine)
 {
 	gchar *summary;
 
-	summary = gpm_engine_get_summary (engine);
+	summary = cpm_engine_get_summary (engine);
 	if (engine->priv->previous_summary == NULL) {
 		engine->priv->previous_summary = summary;
 		egg_debug ("** EMIT: summary-changed(1): %s", summary);
@@ -375,26 +375,26 @@ gpm_engine_recalculate_state_summary (GpmEngine *engine)
 }
 
 /**
- * gpm_engine_recalculate_state:
+ * cpm_engine_recalculate_state:
  */
 static void
-gpm_engine_recalculate_state (GpmEngine *engine)
+cpm_engine_recalculate_state (GpmEngine *engine)
 {
 
 	g_return_if_fail (engine != NULL);
 	g_return_if_fail (GPM_IS_ENGINE (engine));
 
-	gpm_engine_recalculate_state_icon (engine);
-	gpm_engine_recalculate_state_summary (engine);
+	cpm_engine_recalculate_state_icon (engine);
+	cpm_engine_recalculate_state_summary (engine);
 
 	g_signal_emit (engine, signals [DEVICES_CHANGED], 0);
 }
 
 /**
- * gpm_engine_settings_key_changed_cb:
+ * cpm_engine_settings_key_changed_cb:
  **/
 static void
-gpm_engine_settings_key_changed_cb (GSettings *settings, const gchar *key, GpmEngine *engine)
+cpm_engine_settings_key_changed_cb (GSettings *settings, const gchar *key, GpmEngine *engine)
 {
 
 	if (g_strcmp0 (key, GPM_SETTINGS_USE_TIME_POLICY) == 0) {
@@ -406,15 +406,15 @@ gpm_engine_settings_key_changed_cb (GSettings *settings, const gchar *key, GpmEn
 		engine->priv->icon_policy = g_settings_get_enum (settings, key);
 
 		/* perhaps change icon */
-		gpm_engine_recalculate_state_icon (engine);
+		cpm_engine_recalculate_state_icon (engine);
 	}
 }
 
 /**
- * gpm_engine_device_check_capacity:
+ * cpm_engine_device_check_capacity:
  **/
 static gboolean
-gpm_engine_device_check_capacity (GpmEngine *engine, UpDevice *device)
+cpm_engine_device_check_capacity (GpmEngine *engine, UpDevice *device)
 {
 	gboolean ret;
 	UpDeviceKind kind;
@@ -448,19 +448,19 @@ gpm_engine_device_check_capacity (GpmEngine *engine, UpDevice *device)
 }
 
 /**
- * gpm_engine_get_composite_device:
+ * cpm_engine_get_composite_device:
  **/
 static UpDevice *
-gpm_engine_get_composite_device (GpmEngine *engine, UpDevice *original_device)
+cpm_engine_get_composite_device (GpmEngine *engine, UpDevice *original_device)
 {
 	return engine->priv->battery_composite;
 }
 
 /**
- * gpm_engine_update_composite_device:
+ * cpm_engine_update_composite_device:
  **/
 static UpDevice *
-gpm_engine_update_composite_device (GpmEngine *engine, UpDevice *original_device)
+cpm_engine_update_composite_device (GpmEngine *engine, UpDevice *original_device)
 {
 	gchar *text;
 
@@ -469,16 +469,16 @@ gpm_engine_update_composite_device (GpmEngine *engine, UpDevice *original_device
 	g_free (text);
 
 	/* force update of icon */
-	gpm_engine_recalculate_state_icon (engine);
+	cpm_engine_recalculate_state_icon (engine);
 
 	return engine->priv->battery_composite;
 }
 
 /**
- * gpm_engine_device_add:
+ * cpm_engine_device_add:
  **/
 static void
-gpm_engine_device_add (GpmEngine *engine, UpDevice *device)
+cpm_engine_device_add (GpmEngine *engine, UpDevice *device)
 {
 	UpDeviceLevel warning;
 	UpDeviceState state;
@@ -486,11 +486,11 @@ gpm_engine_device_add (GpmEngine *engine, UpDevice *device)
 	UpDevice *composite;
 
 	/* assign warning */
-	warning = gpm_engine_get_warning (engine, device);
+	warning = cpm_engine_get_warning (engine, device);
 	g_object_set_data (G_OBJECT(device), "engine-warning-old", GUINT_TO_POINTER(warning));
 
 	/* check capacity */
-	gpm_engine_device_check_capacity (engine, device);
+	cpm_engine_device_check_capacity (engine, device);
 
 	/* get device properties */
 	g_object_get (device,
@@ -504,25 +504,25 @@ gpm_engine_device_add (GpmEngine *engine, UpDevice *device)
 
 	if (kind == UP_DEVICE_KIND_BATTERY) {
 		egg_debug ("updating because we added a device");
-		composite = gpm_engine_update_composite_device (engine, device);
+		composite = cpm_engine_update_composite_device (engine, device);
 
 		/* get the same values for the composite device */
-		warning = gpm_engine_get_warning (engine, composite);
+		warning = cpm_engine_get_warning (engine, composite);
 		g_object_set_data (G_OBJECT(composite), "engine-warning-old", GUINT_TO_POINTER(warning));
 		g_object_get (composite, "state", &state, NULL);
 		g_object_set_data (G_OBJECT(composite), "engine-state-old", GUINT_TO_POINTER(state));
 	}
 
-	g_signal_connect (device, "notify", G_CALLBACK (gpm_engine_device_changed_cb), engine);
+	g_signal_connect (device, "notify", G_CALLBACK (cpm_engine_device_changed_cb), engine);
 	g_ptr_array_add (engine->priv->array, g_object_ref (device));
-	gpm_engine_recalculate_state (engine);
+	cpm_engine_recalculate_state (engine);
 }
 
 /**
- * gpm_engine_coldplug_idle_cb:
+ * cpm_engine_coldplug_idle_cb:
  **/
 static gboolean
-gpm_engine_coldplug_idle_cb (GpmEngine *engine)
+cpm_engine_coldplug_idle_cb (GpmEngine *engine)
 {
 	guint i;
 	GPtrArray *array = NULL;
@@ -531,15 +531,15 @@ gpm_engine_coldplug_idle_cb (GpmEngine *engine)
 	g_return_val_if_fail (engine != NULL, FALSE);
 	g_return_val_if_fail (GPM_IS_ENGINE (engine), FALSE);
 	/* connected mobile phones */
-	gpm_phone_coldplug (engine->priv->phone);
+	cpm_phone_coldplug (engine->priv->phone);
 
-	gpm_engine_recalculate_state (engine);
+	cpm_engine_recalculate_state (engine);
 
 	/* add to database */
 	array = up_client_get_devices2 (engine->priv->client);
 	for (i=0;i<array->len;i++) {
 		device = g_ptr_array_index (array, i);
-		gpm_engine_device_add (engine, device);
+		cpm_engine_device_add (engine, device);
 	}
 	if (array != NULL)
 		g_ptr_array_unref (array);
@@ -548,19 +548,19 @@ gpm_engine_coldplug_idle_cb (GpmEngine *engine)
 }
 
 /**
- * gpm_engine_device_added_cb:
+ * cpm_engine_device_added_cb:
  **/
 static void
-gpm_engine_device_added_cb (UpClient *client, UpDevice *device, GpmEngine *engine)
+cpm_engine_device_added_cb (UpClient *client, UpDevice *device, GpmEngine *engine)
 {
-	gpm_engine_device_add (engine, device);
+	cpm_engine_device_add (engine, device);
 }
 
 /**
- * gpm_engine_device_removed_cb:
+ * cpm_engine_device_removed_cb:
  **/
 static void
-gpm_engine_device_removed_cb (UpClient *client, const char *object_path, GpmEngine *engine)
+cpm_engine_device_removed_cb (UpClient *client, const char *object_path, GpmEngine *engine)
 {
 	guint i;
 
@@ -572,14 +572,14 @@ gpm_engine_device_removed_cb (UpClient *client, const char *object_path, GpmEngi
 			break;
 		}
 	}
-	gpm_engine_recalculate_state (engine);
+	cpm_engine_recalculate_state (engine);
 }
 
 /**
- * gpm_engine_device_changed_cb:
+ * cpm_engine_device_changed_cb:
  **/
 static void
-gpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, GpmEngine *engine)
+cpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, GpmEngine *engine)
 {
 	UpDeviceKind kind;
 	UpDeviceState state;
@@ -595,7 +595,7 @@ gpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, GpmEngine *en
 	/* if battery then use composite device to cope with multiple batteries */
 	if (kind == UP_DEVICE_KIND_BATTERY) {
 		egg_debug ("updating because %s changed", up_device_get_object_path (device));
-		device = gpm_engine_update_composite_device (engine, device);
+		device = cpm_engine_update_composite_device (engine, device);
 	}
 
 	/* get device properties (may be composite) */
@@ -622,7 +622,7 @@ gpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, GpmEngine *en
 
 	/* check the warning state has not changed */
 	warning_old = GPOINTER_TO_INT(g_object_get_data (G_OBJECT(device), "engine-warning-old"));
-	warning = gpm_engine_get_warning (engine, device);
+	warning = cpm_engine_get_warning (engine, device);
 	if (warning != warning_old) {
 		if (warning == GPM_ENGINE_WARNING_LOW) {
 			egg_debug ("** EMIT: charge-low");
@@ -638,27 +638,27 @@ gpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, GpmEngine *en
 		g_object_set_data (G_OBJECT(device), "engine-warning-old", GUINT_TO_POINTER(warning));
 	}
 
-	gpm_engine_recalculate_state (engine);
+	cpm_engine_recalculate_state (engine);
 }
 
 /**
- * gpm_engine_get_devices:
+ * cpm_engine_get_devices:
  *
  * Return value: the UpDevice array, free with g_ptr_array_unref()
  **/
 GPtrArray *
-gpm_engine_get_devices (GpmEngine *engine)
+cpm_engine_get_devices (GpmEngine *engine)
 {
 	return g_ptr_array_ref (engine->priv->array);
 }
 
 /**
- * gpm_engine_get_primary_device:
+ * cpm_engine_get_primary_device:
  *
  * Return value: the #UpDevice, free with g_object_unref()
  **/
 UpDevice *
-gpm_engine_get_primary_device (GpmEngine *engine)
+cpm_engine_get_primary_device (GpmEngine *engine)
 {
 	guint i;
 	UpDevice *device = NULL;
@@ -690,7 +690,7 @@ gpm_engine_get_primary_device (GpmEngine *engine)
 			continue;
 
 		/* use composite device to cope with multiple batteries */
-		device = g_object_ref (gpm_engine_get_composite_device (engine, device_tmp));
+		device = g_object_ref (cpm_engine_get_composite_device (engine, device_tmp));
 		break;
 	}
 	return device;
@@ -716,9 +716,9 @@ phone_device_added_cb (GpmPhone *phone, guint idx, GpmEngine *engine)
 		      NULL);
 
 	/* state changed */
-	gpm_engine_device_add (engine, device);
+	cpm_engine_device_add (engine, device);
 	g_ptr_array_add (engine->priv->array, g_object_ref (device));
-	gpm_engine_recalculate_state (engine);
+	cpm_engine_recalculate_state (engine);
 }
 
 /**
@@ -748,7 +748,7 @@ phone_device_removed_cb (GpmPhone *phone, guint idx, GpmEngine *engine)
 	}
 
 	/* state changed */
-	gpm_engine_recalculate_state (engine);
+	cpm_engine_recalculate_state (engine);
 }
 
 /**
@@ -778,41 +778,41 @@ phone_device_refresh_cb (GpmPhone *phone, guint idx, GpmEngine *engine)
 			      NULL);
 
 		if (kind == UP_DEVICE_KIND_PHONE) {
-			is_present = gpm_phone_get_present (phone, idx);
-			state = gpm_phone_get_on_ac (phone, idx) ? UP_DEVICE_STATE_CHARGING : UP_DEVICE_STATE_DISCHARGING;
-			percentage = gpm_phone_get_percentage (phone, idx);
+			is_present = cpm_phone_get_present (phone, idx);
+			state = cpm_phone_get_on_ac (phone, idx) ? UP_DEVICE_STATE_CHARGING : UP_DEVICE_STATE_DISCHARGING;
+			percentage = cpm_phone_get_percentage (phone, idx);
 			break;
 		}
 	}
 
 	/* state changed */
-	gpm_engine_recalculate_state (engine);
+	cpm_engine_recalculate_state (engine);
 }
 
 /**
- * gpm_engine_init:
+ * cpm_engine_init:
  * @engine: This class instance
  **/
 static void
-gpm_engine_init (GpmEngine *engine)
+cpm_engine_init (GpmEngine *engine)
 {
 	GPtrArray *array = NULL;
 	guint i;
 	guint idle_id;
-	engine->priv = gpm_engine_get_instance_private (engine);
+	engine->priv = cpm_engine_get_instance_private (engine);
 
 	engine->priv->array = g_ptr_array_new_with_free_func (g_object_unref);
 	engine->priv->client = up_client_new ();
 	g_signal_connect (engine->priv->client, "device-added",
-			  G_CALLBACK (gpm_engine_device_added_cb), engine);
+			  G_CALLBACK (cpm_engine_device_added_cb), engine);
 	g_signal_connect (engine->priv->client, "device-removed",
-			  G_CALLBACK (gpm_engine_device_removed_cb), engine);
+			  G_CALLBACK (cpm_engine_device_removed_cb), engine);
 
 	engine->priv->settings = g_settings_new (GPM_SETTINGS_SCHEMA);
 	g_signal_connect (engine->priv->settings, "changed",
-			  G_CALLBACK (gpm_engine_settings_key_changed_cb), engine);
+			  G_CALLBACK (cpm_engine_settings_key_changed_cb), engine);
 
-	engine->priv->phone = gpm_phone_new ();
+	engine->priv->phone = cpm_phone_new ();
 	g_signal_connect (engine->priv->phone, "device-added",
 			  G_CALLBACK (phone_device_added_cb), engine);
 	g_signal_connect (engine->priv->phone, "device-removed",
@@ -823,7 +823,7 @@ gpm_engine_init (GpmEngine *engine)
 	/* create a fake virtual composite battery */
 	engine->priv->battery_composite = up_client_get_display_device (engine->priv->client);
 	g_signal_connect (engine->priv->battery_composite, "notify",
-			  G_CALLBACK (gpm_engine_device_changed_cb), engine);
+			  G_CALLBACK (cpm_engine_device_changed_cb), engine);
 
 	engine->priv->previous_icon = NULL;
 	engine->priv->previous_summary = NULL;
@@ -848,19 +848,19 @@ gpm_engine_init (GpmEngine *engine)
 	else
 		egg_debug ("Using percentage notification policy");
 
-	idle_id = g_idle_add ((GSourceFunc) gpm_engine_coldplug_idle_cb, engine);
+	idle_id = g_idle_add ((GSourceFunc) cpm_engine_coldplug_idle_cb, engine);
 	g_source_set_name_by_id (idle_id, "[GpmEngine] coldplug");
 }
 
 /**
- * gpm_engine_class_init:
+ * cpm_engine_class_init:
  * @engine: This class instance
  **/
 static void
-gpm_engine_class_init (GpmEngineClass *klass)
+cpm_engine_class_init (GpmEngineClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-	object_class->finalize = gpm_engine_finalize;
+	object_class->finalize = cpm_engine_finalize;
 
 	signals [ICON_CHANGED] =
 		g_signal_new ("icon-changed",
@@ -928,11 +928,11 @@ gpm_engine_class_init (GpmEngineClass *klass)
 }
 
 /**
- * gpm_engine_finalize:
+ * cpm_engine_finalize:
  * @object: This class instance
  **/
 static void
-gpm_engine_finalize (GObject *object)
+cpm_engine_finalize (GObject *object)
 {
 	GpmEngine *engine;
 
@@ -940,7 +940,7 @@ gpm_engine_finalize (GObject *object)
 	g_return_if_fail (GPM_IS_ENGINE (object));
 
 	engine = GPM_ENGINE (object);
-	engine->priv = gpm_engine_get_instance_private (engine);
+	engine->priv = cpm_engine_get_instance_private (engine);
 
 	g_ptr_array_unref (engine->priv->array);
 	g_object_unref (engine->priv->client);
@@ -950,23 +950,23 @@ gpm_engine_finalize (GObject *object)
 	g_free (engine->priv->previous_icon);
 	g_free (engine->priv->previous_summary);
 
-	G_OBJECT_CLASS (gpm_engine_parent_class)->finalize (object);
+	G_OBJECT_CLASS (cpm_engine_parent_class)->finalize (object);
 }
 
 /**
- * gpm_engine_new:
+ * cpm_engine_new:
  * Return value: new class instance.
  **/
 GpmEngine *
-gpm_engine_new (void)
+cpm_engine_new (void)
 {
-	if (gpm_engine_object != NULL) {
-		g_object_ref (gpm_engine_object);
+	if (cpm_engine_object != NULL) {
+		g_object_ref (cpm_engine_object);
 	} else {
-		gpm_engine_object = g_object_new (GPM_TYPE_ENGINE, NULL);
-		g_object_add_weak_pointer (gpm_engine_object, &gpm_engine_object);
+		cpm_engine_object = g_object_new (GPM_TYPE_ENGINE, NULL);
+		g_object_add_weak_pointer (cpm_engine_object, &cpm_engine_object);
 	}
-	return GPM_ENGINE (gpm_engine_object);
+	return GPM_ENGINE (cpm_engine_object);
 
 }
 

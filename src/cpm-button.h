@@ -26,7 +26,7 @@
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_BUTTON		(gpm_button_get_type ())
+#define GPM_TYPE_BUTTON		(cpm_button_get_type ())
 #define GPM_BUTTON(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_BUTTON, GpmButton))
 #define GPM_BUTTON_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_BUTTON, GpmButtonClass))
 #define GPM_IS_BUTTON(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_BUTTON))
@@ -63,10 +63,10 @@ typedef struct
 						 const gchar	*type);
 } GpmButtonClass;
 
-GType		 gpm_button_get_type		(void);
-GpmButton	*gpm_button_new			(void);
-gboolean	 gpm_button_is_lid_closed	(GpmButton *button);
-gboolean	 gpm_button_reset_time		(GpmButton *button);
+GType		 cpm_button_get_type		(void);
+GpmButton	*cpm_button_new			(void);
+gboolean	 cpm_button_is_lid_closed	(GpmButton *button);
+gboolean	 cpm_button_reset_time		(GpmButton *button);
 
 G_END_DECLS
 

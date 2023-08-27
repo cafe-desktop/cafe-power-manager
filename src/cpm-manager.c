@@ -64,7 +64,7 @@
 #include "org.cafe.PowerManager.Backlight.h"
 #include "org.cafe.PowerManager.KbdBacklight.h"
 
-static void     gpm_manager_finalize	(GObject	 *object);
+static void     cpm_manager_finalize	(GObject	 *object);
 
 #define GPM_MANAGER_NOTIFY_TIMEOUT_NEVER	0 /* ms */
 #define GPM_MANAGER_NOTIFY_TIMEOUT_SHORT	10 * 1000 /* ms */
@@ -116,27 +116,27 @@ typedef enum {
 	GPM_MANAGER_SOUND_LAST
 } GpmManagerSound;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmManager, gpm_manager, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (GpmManager, cpm_manager, G_TYPE_OBJECT)
 
 /**
- * gpm_manager_error_quark:
+ * cpm_manager_error_quark:
  * Return value: Our personal error quark.
  **/
 GQuark
-gpm_manager_error_quark (void)
+cpm_manager_error_quark (void)
 {
 	static GQuark quark = 0;
 	if (!quark)
-		quark = g_quark_from_static_string ("gpm_manager_error");
+		quark = g_quark_from_static_string ("cpm_manager_error");
 	return quark;
 }
 
 /**
- * gpm_manager_error_get_type:
+ * cpm_manager_error_get_type:
  **/
 #define ENUM_ENTRY(NAME, DESC) { NAME, "" #NAME "", DESC }
 GType
-gpm_manager_error_get_type (void)
+cpm_manager_error_get_type (void)
 {
 	static GType etype = 0;
 
@@ -153,10 +153,10 @@ gpm_manager_error_get_type (void)
 }
 
 /**
- * gpm_manager_play_loop_timeout_cb:
+ * cpm_manager_play_loop_timeout_cb:
  **/
 static gboolean
-gpm_manager_play_loop_timeout_cb (GpmManager *manager)
+cpm_manager_play_loop_timeout_cb (GpmManager *manager)
 {
 	ka_context *context;
 	context = ka_ctk_context_get_for_screen (cdk_screen_get_default ());
@@ -168,10 +168,10 @@ gpm_manager_play_loop_timeout_cb (GpmManager *manager)
 }
 
 /**
- * gpm_manager_play_loop_stop:
+ * cpm_manager_play_loop_stop:
  **/
 static gboolean
-gpm_manager_play_loop_stop (GpmManager *manager)
+cpm_manager_play_loop_stop (GpmManager *manager)
 {
 	if (manager->priv->critical_alert_timeout_id == 0) {
 		egg_warning ("no sound loop present to stop");
@@ -188,10 +188,10 @@ gpm_manager_play_loop_stop (GpmManager *manager)
 }
 
 /**
- * gpm_manager_play_loop_start:
+ * cpm_manager_play_loop_start:
  **/
 static gboolean
-gpm_manager_play_loop_start (GpmManager *manager, GpmManagerSound action, gboolean force, guint timeout)
+cpm_manager_play_loop_start (GpmManager *manager, GpmManagerSound action, gboolean force, guint timeout)
 {
 	const gchar *id = NULL;
 	const gchar *desc = NULL;
@@ -213,7 +213,7 @@ gpm_manager_play_loop_start (GpmManager *manager, GpmManagerSound action, gboole
 	/* if a sound loop is already running, stop the existing loop */
 	if (manager->priv->critical_alert_timeout_id != 0) {
 		egg_warning ("was instructed to play a sound loop with one already playing");
-		gpm_manager_play_loop_stop (manager);
+		cpm_manager_play_loop_stop (manager);
 	}
 
 	if (action == GPM_MANAGER_SOUND_BATTERY_LOW) {
@@ -235,7 +235,7 @@ gpm_manager_play_loop_start (GpmManager *manager, GpmManagerSound action, gboole
 			  KA_PROP_EVENT_DESCRIPTION, desc);
 
 	manager->priv->critical_alert_timeout_id = g_timeout_add_seconds (timeout,
-									  (GSourceFunc) gpm_manager_play_loop_timeout_cb,
+									  (GSourceFunc) cpm_manager_play_loop_timeout_cb,
 									  manager);
 
 	g_source_set_name_by_id (manager->priv->critical_alert_timeout_id, "[GpmManager] play-loop");
@@ -251,10 +251,10 @@ gpm_manager_play_loop_start (GpmManager *manager, GpmManagerSound action, gboole
 }
 
 /**
- * gpm_manager_play:
+ * cpm_manager_play:
  **/
 static gboolean
-gpm_manager_play (GpmManager *manager, GpmManagerSound action, gboolean force)
+cpm_manager_play (GpmManager *manager, GpmManagerSound action, gboolean force)
 {
 	const gchar *id = NULL;
 	const gchar *desc = NULL;
@@ -327,7 +327,7 @@ gpm_manager_play (GpmManager *manager, GpmManagerSound action, gboolean force)
 }
 
 /**
- * gpm_manager_is_inhibit_valid:
+ * cpm_manager_is_inhibit_valid:
  * @manager: This class instance
  * @action: The action we want to do, e.g. "suspend"
  *
@@ -336,13 +336,13 @@ gpm_manager_play (GpmManager *manager, GpmManagerSound action, gboolean force)
  * Return value: TRUE if we can perform the action.
  **/
 static gboolean
-gpm_manager_is_inhibit_valid (GpmManager *manager, gboolean user_action, const char *action)
+cpm_manager_is_inhibit_valid (GpmManager *manager, gboolean user_action, const char *action)
 {
 	return TRUE;
 }
 
 /**
- * gpm_manager_sync_policy_sleep:
+ * cpm_manager_sync_policy_sleep:
  * @manager: This class instance
  *
  * Changes the policy if required, setting brightness, display and computer
@@ -351,7 +351,7 @@ gpm_manager_is_inhibit_valid (GpmManager *manager, gboolean user_action, const c
  * monitor DPMS instead when on batteries to save power.
  **/
 static void
-gpm_manager_sync_policy_sleep (GpmManager *manager)
+cpm_manager_sync_policy_sleep (GpmManager *manager)
 {
 	guint sleep_display;
 	guint sleep_computer;
@@ -365,12 +365,12 @@ gpm_manager_sync_policy_sleep (GpmManager *manager)
 	}
 
 	/* set the new sleep (inactivity) value */
-	gpm_idle_set_timeout_blank (manager->priv->idle, sleep_display);
-	gpm_idle_set_timeout_sleep (manager->priv->idle, sleep_computer);
+	cpm_idle_set_timeout_blank (manager->priv->idle, sleep_display);
+	cpm_idle_set_timeout_sleep (manager->priv->idle, sleep_computer);
 }
 
 /**
- * gpm_manager_blank_screen:
+ * cpm_manager_blank_screen:
  * @manager: This class instance
  *
  * Turn off the backlight of the LCD when we shut the lid, and lock
@@ -381,19 +381,19 @@ gpm_manager_sync_policy_sleep (GpmManager *manager)
  * Return value: Success.
  **/
 static gboolean
-gpm_manager_blank_screen (GpmManager *manager, GError **noerror)
+cpm_manager_blank_screen (GpmManager *manager, GError **noerror)
 {
 	gboolean do_lock;
 	gboolean ret = TRUE;
 	GError *error = NULL;
 
-	do_lock = gpm_control_get_lock_policy (manager->priv->control,
+	do_lock = cpm_control_get_lock_policy (manager->priv->control,
 					       GPM_SETTINGS_LOCK_ON_BLANK_SCREEN);
 	if (do_lock) {
-		if (!gpm_screensaver_lock (manager->priv->screensaver))
+		if (!cpm_screensaver_lock (manager->priv->screensaver))
 			egg_debug ("Could not lock screen via cafe-screensaver");
 	}
-	gpm_dpms_set_mode (manager->priv->dpms, GPM_DPMS_MODE_OFF, &error);
+	cpm_dpms_set_mode (manager->priv->dpms, GPM_DPMS_MODE_OFF, &error);
 	if (error) {
 		egg_debug ("Unable to set DPMS mode: %s", error->message);
 		g_error_free (error);
@@ -403,7 +403,7 @@ gpm_manager_blank_screen (GpmManager *manager, GError **noerror)
 }
 
 /**
- * gpm_manager_unblank_screen:
+ * cpm_manager_unblank_screen:
  * @manager: This class instance
  *
  * Unblank the screen after we have opened the lid of the laptop
@@ -411,30 +411,30 @@ gpm_manager_blank_screen (GpmManager *manager, GError **noerror)
  * Return value: Success.
  **/
 static gboolean
-gpm_manager_unblank_screen (GpmManager *manager, GError **noerror)
+cpm_manager_unblank_screen (GpmManager *manager, GError **noerror)
 {
 	gboolean do_lock;
 	gboolean ret = TRUE;
 	GError *error = NULL;
 
-	gpm_dpms_set_mode (manager->priv->dpms, GPM_DPMS_MODE_ON, &error);
+	cpm_dpms_set_mode (manager->priv->dpms, GPM_DPMS_MODE_ON, &error);
 	if (error) {
 		egg_debug ("Unable to set DPMS mode: %s", error->message);
 		g_error_free (error);
 		ret = FALSE;
 	}
 
-	do_lock = gpm_control_get_lock_policy (manager->priv->control, GPM_SETTINGS_LOCK_ON_BLANK_SCREEN);
+	do_lock = cpm_control_get_lock_policy (manager->priv->control, GPM_SETTINGS_LOCK_ON_BLANK_SCREEN);
 	if (do_lock)
-		gpm_screensaver_poke (manager->priv->screensaver);
+		cpm_screensaver_poke (manager->priv->screensaver);
 	return ret;
 }
 
 /**
- * gpm_manager_notify_close:
+ * cpm_manager_notify_close:
  **/
 static gboolean
-gpm_manager_notify_close (GpmManager *manager, NotifyNotification *notification)
+cpm_manager_notify_close (GpmManager *manager, NotifyNotification *notification)
 {
 	gboolean ret = FALSE;
 	GError *error = NULL;
@@ -455,10 +455,10 @@ out:
 }
 
 /**
- * gpm_manager_notification_closed_cb:
+ * cpm_manager_notification_closed_cb:
  **/
 static void
-gpm_manager_notification_closed_cb (NotifyNotification *notification, NotifyNotification **notification_class)
+cpm_manager_notification_closed_cb (NotifyNotification *notification, NotifyNotification **notification_class)
 {
 	egg_debug ("caught notification closed signal %p", notification);
 	/* the object is already unreffed in _close_signal_handler */
@@ -466,10 +466,10 @@ gpm_manager_notification_closed_cb (NotifyNotification *notification, NotifyNoti
 }
 
 /**
- * gpm_manager_notify:
+ * cpm_manager_notify:
  **/
 static gboolean
-gpm_manager_notify (GpmManager *manager, NotifyNotification **notification_class,
+cpm_manager_notify (GpmManager *manager, NotifyNotification **notification_class,
 		    const gchar *title, const gchar *message,
 		    guint timeout, const gchar *icon, NotifyUrgency urgency)
 {
@@ -479,7 +479,7 @@ gpm_manager_notify (GpmManager *manager, NotifyNotification **notification_class
 	CtkWidget *dialog;
 
 	/* close any existing notification of this class */
-	gpm_manager_notify_close (manager, *notification_class);
+	cpm_manager_notify_close (manager, *notification_class);
 
 	/* if the status icon is hidden, don't point at it */
 	if (manager->priv->status_icon != NULL &&
@@ -489,7 +489,7 @@ gpm_manager_notify (GpmManager *manager, NotifyNotification **notification_class
 		notification = notify_notification_new (title, message, icon);
 	notify_notification_set_timeout (notification, timeout);
 	notify_notification_set_urgency (notification, urgency);
-	g_signal_connect (notification, "closed", G_CALLBACK (gpm_manager_notification_closed_cb), notification_class);
+	g_signal_connect (notification, "closed", G_CALLBACK (cpm_manager_notification_closed_cb), notification_class);
 
 	egg_debug ("notification %p: %s : %s", notification, title, message);
 
@@ -522,10 +522,10 @@ out:
 
 
 /**
- * gpm_manager_sleep_failure_response_cb:
+ * cpm_manager_sleep_failure_response_cb:
  **/
 static void
-gpm_manager_sleep_failure_response_cb (CtkDialog *dialog, gint response_id, GpmManager *manager)
+cpm_manager_sleep_failure_response_cb (CtkDialog *dialog, gint response_id, GpmManager *manager)
 {
 	CtkWidget *dialog_error;
 	GError *error = NULL;
@@ -549,10 +549,10 @@ gpm_manager_sleep_failure_response_cb (CtkDialog *dialog, gint response_id, GpmM
 }
 
 /**
- * gpm_manager_sleep_failure:
+ * cpm_manager_sleep_failure:
  **/
 static void
-gpm_manager_sleep_failure (GpmManager *manager, gboolean is_suspend, const gchar *detail)
+cpm_manager_sleep_failure (GpmManager *manager, gboolean is_suspend, const gchar *detail)
 {
 	gboolean show_sleep_failed;
 	GString *string = NULL;
@@ -565,7 +565,7 @@ gpm_manager_sleep_failure (GpmManager *manager, gboolean is_suspend, const gchar
 	show_sleep_failed = g_settings_get_boolean (manager->priv->settings, GPM_SETTINGS_NOTIFY_SLEEP_FAILED);
 
 	egg_debug ("sleep failed");
-	gpm_manager_play (manager, GPM_MANAGER_SOUND_SUSPEND_ERROR, TRUE);
+	cpm_manager_play (manager, GPM_MANAGER_SOUND_SUSPEND_ERROR, TRUE);
 
 	/* only emit if specified in settings */
 	if (!show_sleep_failed)
@@ -606,60 +606,60 @@ gpm_manager_sleep_failure (GpmManager *manager, gboolean is_suspend, const gchar
 
 	/* wait async for close */
 	ctk_widget_show (dialog);
-	g_signal_connect (dialog, "response", G_CALLBACK (gpm_manager_sleep_failure_response_cb), manager);
+	g_signal_connect (dialog, "response", G_CALLBACK (cpm_manager_sleep_failure_response_cb), manager);
 out:
 	g_free (uri);
 	g_string_free (string, TRUE);
 }
 
 /**
- * gpm_manager_action_suspend:
+ * cpm_manager_action_suspend:
  **/
 static gboolean
-gpm_manager_action_suspend (GpmManager *manager, const gchar *reason)
+cpm_manager_action_suspend (GpmManager *manager, const gchar *reason)
 {
 	gboolean ret;
 	GError *error = NULL;
 
 	/* check to see if we are inhibited */
-	if (gpm_manager_is_inhibit_valid (manager, FALSE, "suspend") == FALSE)
+	if (cpm_manager_is_inhibit_valid (manager, FALSE, "suspend") == FALSE)
 		return FALSE;
 
 	egg_debug ("suspending, reason: %s", reason);
-	ret = gpm_control_suspend (manager->priv->control, &error);
+	ret = cpm_control_suspend (manager->priv->control, &error);
 	if (!ret) {
-		gpm_manager_sleep_failure (manager, TRUE, error->message);
+		cpm_manager_sleep_failure (manager, TRUE, error->message);
 		g_error_free (error);
 	}
-	gpm_button_reset_time (manager->priv->button);
+	cpm_button_reset_time (manager->priv->button);
 	return TRUE;
 }
 
 /**
- * gpm_manager_action_hibernate:
+ * cpm_manager_action_hibernate:
  **/
 static gboolean
-gpm_manager_action_hibernate (GpmManager *manager, const gchar *reason)
+cpm_manager_action_hibernate (GpmManager *manager, const gchar *reason)
 {
 	gboolean ret;
 	GError *error = NULL;
 
 	/* check to see if we are inhibited */
-	if (gpm_manager_is_inhibit_valid (manager, FALSE, "hibernate") == FALSE)
+	if (cpm_manager_is_inhibit_valid (manager, FALSE, "hibernate") == FALSE)
 		return FALSE;
 
 	egg_debug ("hibernating, reason: %s", reason);
-	ret = gpm_control_hibernate (manager->priv->control, &error);
+	ret = cpm_control_hibernate (manager->priv->control, &error);
 	if (!ret) {
-		gpm_manager_sleep_failure (manager, TRUE, error->message);
+		cpm_manager_sleep_failure (manager, TRUE, error->message);
 		g_error_free (error);
 	}
-	gpm_button_reset_time (manager->priv->button);
+	cpm_button_reset_time (manager->priv->button);
 	return TRUE;
 }
 
 /**
- * gpm_manager_perform_policy:
+ * cpm_manager_perform_policy:
  * @manager: This class instance
  * @policy: The policy that we should do, e.g. "suspend"
  * @reason: The reason we are performing the policy action, e.g. "battery critical"
@@ -667,12 +667,12 @@ gpm_manager_action_hibernate (GpmManager *manager, const gchar *reason)
  * Does one of the policy actions specified in the settings.
  **/
 static gboolean
-gpm_manager_perform_policy (GpmManager  *manager, const gchar *policy_key, const gchar *reason)
+cpm_manager_perform_policy (GpmManager  *manager, const gchar *policy_key, const gchar *reason)
 {
 	GpmActionPolicy policy;
 
 	/* are we inhibited? */
-	if (gpm_manager_is_inhibit_valid (manager, FALSE, "policy action") == FALSE)
+	if (cpm_manager_is_inhibit_valid (manager, FALSE, "policy action") == FALSE)
 		return FALSE;
 
 	policy = g_settings_get_enum (manager->priv->settings, policy_key);
@@ -681,23 +681,23 @@ gpm_manager_perform_policy (GpmManager  *manager, const gchar *policy_key, const
 	if (policy == GPM_ACTION_POLICY_NOTHING) {
 		egg_debug ("doing nothing, reason: %s", reason);
 	} else if (policy == GPM_ACTION_POLICY_SUSPEND) {
-		gpm_manager_action_suspend (manager, reason);
+		cpm_manager_action_suspend (manager, reason);
 
 	} else if (policy == GPM_ACTION_POLICY_HIBERNATE) {
-		gpm_manager_action_hibernate (manager, reason);
+		cpm_manager_action_hibernate (manager, reason);
 
 	} else if (policy == GPM_ACTION_POLICY_BLANK) {
-		gpm_manager_blank_screen (manager, NULL);
+		cpm_manager_blank_screen (manager, NULL);
 
 	} else if (policy == GPM_ACTION_POLICY_SHUTDOWN) {
 		egg_debug ("shutting down, reason: %s", reason);
-		gpm_control_shutdown (manager->priv->control, NULL);
+		cpm_control_shutdown (manager->priv->control, NULL);
 
 	} else if (policy == GPM_ACTION_POLICY_INTERACTIVE) {
 		GpmSession *session;
 		egg_debug ("logout, reason: %s", reason);
-		session = gpm_session_new ();
-		gpm_session_logout (session);
+		session = cpm_session_new ();
+		cpm_session_logout (session);
 		g_object_unref (session);
 	} else {
 		egg_warning ("unknown action %i", policy);
@@ -707,14 +707,14 @@ gpm_manager_perform_policy (GpmManager  *manager, const gchar *policy_key, const
 }
 
 /**
- * gpm_manager_idle_do_sleep:
+ * cpm_manager_idle_do_sleep:
  * @manager: This class instance
  *
  * This callback is called when we want to sleep. Use the users
  * preference from the settings, but change it if we can't do the action.
  **/
 static void
-gpm_manager_idle_do_sleep (GpmManager *manager)
+cpm_manager_idle_do_sleep (GpmManager *manager)
 {
 	gboolean ret;
 	GError *error = NULL;
@@ -730,12 +730,12 @@ gpm_manager_idle_do_sleep (GpmManager *manager)
 
 	} else if (policy == GPM_ACTION_POLICY_SUSPEND) {
 		egg_debug ("suspending, reason: System idle");
-		ret = gpm_control_suspend (manager->priv->control, &error);
+		ret = cpm_control_suspend (manager->priv->control, &error);
 		if (!ret) {
 			egg_warning ("cannot suspend (error: %s), so trying hibernate", error->message);
 			g_error_free (error);
 			error = NULL;
-			ret = gpm_control_hibernate (manager->priv->control, &error);
+			ret = cpm_control_hibernate (manager->priv->control, &error);
 			if (!ret) {
 				egg_warning ("cannot suspend or hibernate: %s", error->message);
 				g_error_free (error);
@@ -744,12 +744,12 @@ gpm_manager_idle_do_sleep (GpmManager *manager)
 
 	} else if (policy == GPM_ACTION_POLICY_HIBERNATE) {
 		egg_debug ("hibernating, reason: System idle");
-		ret = gpm_control_hibernate (manager->priv->control, &error);
+		ret = cpm_control_hibernate (manager->priv->control, &error);
 		if (!ret) {
 			egg_warning ("cannot hibernate (error: %s), so trying suspend", error->message);
 			g_error_free (error);
 			error = NULL;
-			ret = gpm_control_suspend (manager->priv->control, &error);
+			ret = cpm_control_suspend (manager->priv->control, &error);
 			if (!ret) {
 				egg_warning ("cannot suspend or hibernate: %s", error->message);
 				g_error_free (error);
@@ -759,7 +759,7 @@ gpm_manager_idle_do_sleep (GpmManager *manager)
 }
 
 /**
- * gpm_manager_idle_changed_cb:
+ * cpm_manager_idle_changed_cb:
  * @idle: The idle class instance
  * @mode: The idle mode, e.g. GPM_IDLE_MODE_BLANK
  * @manager: This class instance
@@ -770,7 +770,7 @@ gpm_manager_idle_do_sleep (GpmManager *manager)
  * session timeout has elapsed for the idle action.
  **/
 static void
-gpm_manager_idle_changed_cb (GpmIdle *idle, GpmIdleMode mode, GpmManager *manager)
+cpm_manager_idle_changed_cb (GpmIdle *idle, GpmIdleMode mode, GpmManager *manager)
 {
 	/* ConsoleKit/systemd say we are not on active console */
 	if (!LOGIND_RUNNING() && !egg_console_kit_is_active (manager->priv->console)) {
@@ -781,7 +781,7 @@ gpm_manager_idle_changed_cb (GpmIdle *idle, GpmIdleMode mode, GpmManager *manage
 	/* Ignore back-to-NORMAL events when the lid is closed, as the DPMS is
 	 * already off, and we don't want to re-enable the screen when the user
 	 * moves the mouse on systems that do not support hardware blanking. */
-	if (gpm_button_is_lid_closed (manager->priv->button) &&
+	if (cpm_button_is_lid_closed (manager->priv->button) &&
 	    mode == GPM_IDLE_MODE_NORMAL) {
 		egg_debug ("lid is closed, so we are ignoring ->NORMAL state changes");
 		return;
@@ -789,14 +789,14 @@ gpm_manager_idle_changed_cb (GpmIdle *idle, GpmIdleMode mode, GpmManager *manage
 
 	if (mode == GPM_IDLE_MODE_SLEEP) {
 		egg_debug ("Idle state changed: SLEEP");
-		if (gpm_manager_is_inhibit_valid (manager, FALSE, "timeout action") == FALSE)
+		if (cpm_manager_is_inhibit_valid (manager, FALSE, "timeout action") == FALSE)
 			return;
-		gpm_manager_idle_do_sleep (manager);
+		cpm_manager_idle_do_sleep (manager);
 	}
 }
 
 /**
- * gpm_manager_lid_button_pressed:
+ * cpm_manager_lid_button_pressed:
  * @manager: This class instance
  * @state: TRUE for closed
  *
@@ -804,99 +804,99 @@ gpm_manager_idle_changed_cb (GpmIdle *idle, GpmIdleMode mode, GpmManager *manage
  * battery power.
  **/
 static void
-gpm_manager_lid_button_pressed (GpmManager *manager, gboolean pressed)
+cpm_manager_lid_button_pressed (GpmManager *manager, gboolean pressed)
 {
 	if (pressed)
-		gpm_manager_play (manager, GPM_MANAGER_SOUND_LID_CLOSE, FALSE);
+		cpm_manager_play (manager, GPM_MANAGER_SOUND_LID_CLOSE, FALSE);
 	else
-		gpm_manager_play (manager, GPM_MANAGER_SOUND_LID_OPEN, FALSE);
+		cpm_manager_play (manager, GPM_MANAGER_SOUND_LID_OPEN, FALSE);
 
 	if (pressed == FALSE) {
 		/* we turn the lid dpms back on unconditionally */
-		gpm_manager_unblank_screen (manager, NULL);
+		cpm_manager_unblank_screen (manager, NULL);
 		return;
 	}
 
 	if (!manager->priv->on_battery) {
 		egg_debug ("Performing AC policy");
-		gpm_manager_perform_policy (manager, GPM_SETTINGS_BUTTON_LID_AC,
+		cpm_manager_perform_policy (manager, GPM_SETTINGS_BUTTON_LID_AC,
 					    "The lid has been closed on ac power.");
 		return;
 	}
 
 	egg_debug ("Performing battery policy");
-	gpm_manager_perform_policy (manager, GPM_SETTINGS_BUTTON_LID_BATT,
+	cpm_manager_perform_policy (manager, GPM_SETTINGS_BUTTON_LID_BATT,
 				    "The lid has been closed on battery power.");
 }
 
 static void
-gpm_manager_update_dpms_throttle (GpmManager *manager)
+cpm_manager_update_dpms_throttle (GpmManager *manager)
 {
 	GpmDpmsMode mode;
-	gpm_dpms_get_mode (manager->priv->dpms, &mode, NULL);
+	cpm_dpms_get_mode (manager->priv->dpms, &mode, NULL);
 
 	/* Throttle the manager when DPMS is active since we can't see it anyway */
 	if (mode == GPM_DPMS_MODE_ON) {
 		if (manager->priv->screensaver_dpms_throttle_id != 0) {
-			gpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_dpms_throttle_id);
+			cpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_dpms_throttle_id);
 			manager->priv->screensaver_dpms_throttle_id = 0;
 		}
 	} else {
 		/* if throttle already exists then remove */
 		if (manager->priv->screensaver_dpms_throttle_id != 0) {
-			gpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_dpms_throttle_id);
+			cpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_dpms_throttle_id);
 		}
 		/* TRANSLATORS: this is the cafe-screensaver throttle */
-		manager->priv->screensaver_dpms_throttle_id = gpm_screensaver_add_throttle (manager->priv->screensaver, _("Display DPMS activated"));
+		manager->priv->screensaver_dpms_throttle_id = cpm_screensaver_add_throttle (manager->priv->screensaver, _("Display DPMS activated"));
 	}
 }
 
 static void
-gpm_manager_update_ac_throttle (GpmManager *manager)
+cpm_manager_update_ac_throttle (GpmManager *manager)
 {
 	/* Throttle the manager when we are not on AC power so we don't
 	   waste the battery */
 	if (!manager->priv->on_battery) {
 		if (manager->priv->screensaver_ac_throttle_id != 0) {
-			gpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_ac_throttle_id);
+			cpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_ac_throttle_id);
 			manager->priv->screensaver_ac_throttle_id = 0;
 		}
 	} else {
 		/* if throttle already exists then remove */
 		if (manager->priv->screensaver_ac_throttle_id != 0)
-			gpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_ac_throttle_id);
+			cpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_ac_throttle_id);
 		/* TRANSLATORS: this is the cafe-screensaver throttle */
-		manager->priv->screensaver_ac_throttle_id = gpm_screensaver_add_throttle (manager->priv->screensaver, _("On battery power"));
+		manager->priv->screensaver_ac_throttle_id = cpm_screensaver_add_throttle (manager->priv->screensaver, _("On battery power"));
 	}
 }
 
 static void
-gpm_manager_update_lid_throttle (GpmManager *manager, gboolean lid_is_closed)
+cpm_manager_update_lid_throttle (GpmManager *manager, gboolean lid_is_closed)
 {
 	/* Throttle the screensaver when the lid is close since we can't see it anyway
 	   and it may overheat the laptop */
 	if (lid_is_closed == FALSE) {
 		if (manager->priv->screensaver_lid_throttle_id != 0) {
-			gpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_lid_throttle_id);
+			cpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_lid_throttle_id);
 			manager->priv->screensaver_lid_throttle_id = 0;
 		}
 	} else {
 		/* if throttle already exists then remove */
 		if (manager->priv->screensaver_lid_throttle_id != 0)
-			gpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_lid_throttle_id);
-		manager->priv->screensaver_lid_throttle_id = gpm_screensaver_add_throttle (manager->priv->screensaver, _("Laptop lid is closed"));
+			cpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_lid_throttle_id);
+		manager->priv->screensaver_lid_throttle_id = cpm_screensaver_add_throttle (manager->priv->screensaver, _("Laptop lid is closed"));
 	}
 }
 
 /**
- * gpm_manager_button_pressed_cb:
+ * cpm_manager_button_pressed_cb:
  * @power: The power class instance
  * @type: The button type, e.g. "power"
  * @state: The state, where TRUE is depressed or closed
  * @manager: This class instance
  **/
 static void
-gpm_manager_button_pressed_cb (GpmButton *button, const gchar *type, GpmManager *manager)
+cpm_manager_button_pressed_cb (GpmButton *button, const gchar *type, GpmManager *manager)
 {
 	gchar *message;
 	egg_debug ("Button press event type=%s", type);
@@ -908,20 +908,20 @@ gpm_manager_button_pressed_cb (GpmButton *button, const gchar *type, GpmManager 
 	}
 
 	if (g_strcmp0 (type, GPM_BUTTON_POWER) == 0) {
-		gpm_manager_perform_policy (manager, GPM_SETTINGS_BUTTON_POWER, "The power button has been pressed.");
+		cpm_manager_perform_policy (manager, GPM_SETTINGS_BUTTON_POWER, "The power button has been pressed.");
 	} else if (g_strcmp0 (type, GPM_BUTTON_SLEEP) == 0) {
-		gpm_manager_perform_policy (manager, GPM_SETTINGS_BUTTON_SUSPEND, "The suspend button has been pressed.");
+		cpm_manager_perform_policy (manager, GPM_SETTINGS_BUTTON_SUSPEND, "The suspend button has been pressed.");
 	} else if (g_strcmp0 (type, GPM_BUTTON_SUSPEND) == 0) {
-		gpm_manager_perform_policy (manager, GPM_SETTINGS_BUTTON_SUSPEND, "The suspend button has been pressed.");
+		cpm_manager_perform_policy (manager, GPM_SETTINGS_BUTTON_SUSPEND, "The suspend button has been pressed.");
 	} else if (g_strcmp0 (type, GPM_BUTTON_HIBERNATE) == 0) {
-		gpm_manager_perform_policy (manager, GPM_SETTINGS_BUTTON_HIBERNATE, "The hibernate button has been pressed.");
+		cpm_manager_perform_policy (manager, GPM_SETTINGS_BUTTON_HIBERNATE, "The hibernate button has been pressed.");
 	} else if (g_strcmp0 (type, GPM_BUTTON_LID_OPEN) == 0) {
-		gpm_manager_lid_button_pressed (manager, FALSE);
+		cpm_manager_lid_button_pressed (manager, FALSE);
 	} else if (g_strcmp0 (type, GPM_BUTTON_LID_CLOSED) == 0) {
-		gpm_manager_lid_button_pressed (manager, TRUE);
+		cpm_manager_lid_button_pressed (manager, TRUE);
 	} else if (g_strcmp0 (type, GPM_BUTTON_BATTERY) == 0) {
-		message = gpm_engine_get_summary (manager->priv->engine);
-		gpm_manager_notify (manager, &manager->priv->notification_general,
+		message = cpm_engine_get_summary (manager->priv->engine);
+		cpm_manager_notify (manager, &manager->priv->notification_general,
 				    _("Power Information"),
 				    message,
 				    GPM_MANAGER_NOTIFY_TIMEOUT_LONG,
@@ -932,21 +932,21 @@ gpm_manager_button_pressed_cb (GpmButton *button, const gchar *type, GpmManager 
 
 	/* really belongs in cafe-screensaver */
 	if (g_strcmp0 (type, GPM_BUTTON_LOCK) == 0)
-		gpm_screensaver_lock (manager->priv->screensaver);
+		cpm_screensaver_lock (manager->priv->screensaver);
 
 	/* disable or enable the fancy screensaver, as we don't want
 	 * this starting when the lid is shut */
 	if (g_strcmp0 (type, GPM_BUTTON_LID_CLOSED) == 0)
-		gpm_manager_update_lid_throttle (manager, TRUE);
+		cpm_manager_update_lid_throttle (manager, TRUE);
 	else if (g_strcmp0 (type, GPM_BUTTON_LID_OPEN) == 0)
-		gpm_manager_update_lid_throttle (manager, FALSE);
+		cpm_manager_update_lid_throttle (manager, FALSE);
 }
 
 /**
- * gpm_manager_client_changed_cb:
+ * cpm_manager_client_changed_cb:
  **/
 static void
-gpm_manager_client_changed_cb (UpClient *client, GParamSpec *pspec, GpmManager *manager)
+cpm_manager_client_changed_cb (UpClient *client, GParamSpec *pspec, GpmManager *manager)
 {
 	gboolean event_when_closed;
 	gint timeout;
@@ -966,14 +966,14 @@ gpm_manager_client_changed_cb (UpClient *client, GParamSpec *pspec, GpmManager *
 	/* close any discharging notifications */
 	if (!on_battery) {
 		egg_debug ("clearing notify due ac being present");
-		gpm_manager_notify_close (manager, manager->priv->notification_warning_low);
-		gpm_manager_notify_close (manager, manager->priv->notification_discharging);
+		cpm_manager_notify_close (manager, manager->priv->notification_warning_low);
+		cpm_manager_notify_close (manager, manager->priv->notification_discharging);
 	}
 
 	/* if we are playing a critical charge sound loop, stop it */
 	if (!on_battery && manager->priv->critical_alert_timeout_id) {
 		egg_debug ("stopping alert loop due to ac being present");
-		gpm_manager_play_loop_stop (manager);
+		cpm_manager_play_loop_stop (manager);
 	}
 
 	/* save in local cache */
@@ -987,18 +987,18 @@ gpm_manager_client_changed_cb (UpClient *client, GParamSpec *pspec, GpmManager *
 
 	egg_debug ("on_battery: %d", on_battery);
 
-	gpm_manager_sync_policy_sleep (manager);
+	cpm_manager_sync_policy_sleep (manager);
 
-	gpm_manager_update_ac_throttle (manager);
+	cpm_manager_update_ac_throttle (manager);
 
 	/* simulate user input, but only when the lid is open */
 	if (!lid_is_closed)
-		gpm_screensaver_poke (manager->priv->screensaver);
+		cpm_screensaver_poke (manager->priv->screensaver);
 
 	if (!on_battery)
-		gpm_manager_play (manager, GPM_MANAGER_SOUND_POWER_PLUG, FALSE);
+		cpm_manager_play (manager, GPM_MANAGER_SOUND_POWER_PLUG, FALSE);
 	else
-		gpm_manager_play (manager, GPM_MANAGER_SOUND_POWER_UNPLUG, FALSE);
+		cpm_manager_play (manager, GPM_MANAGER_SOUND_POWER_UNPLUG, FALSE);
 
 	/* We do the lid close on battery action if the ac adapter is removed
 	   when the laptop is closed and on battery. Fixes #331655 */
@@ -1008,7 +1008,7 @@ gpm_manager_client_changed_cb (UpClient *client, GParamSpec *pspec, GpmManager *
 	   lid close on battery action if the ac adapter is removed when the laptop
 	   is closed. Fixes #331655 */
 	if (event_when_closed && on_battery && lid_is_closed) {
-		gpm_manager_perform_policy (manager, GPM_SETTINGS_BUTTON_LID_BATT,
+		cpm_manager_perform_policy (manager, GPM_SETTINGS_BUTTON_LID_BATT,
 					    "The lid has been closed, and the ac adapter "
 					    "removed (and GSettings is okay).");
 	}
@@ -1028,61 +1028,61 @@ manager_critical_action_do (GpmManager *manager)
 {
 	/* stop playing the alert as it's too late to do anything now */
 	if (manager->priv->critical_alert_timeout_id)
-		gpm_manager_play_loop_stop (manager);
+		cpm_manager_play_loop_stop (manager);
 
-	gpm_manager_perform_policy (manager, GPM_SETTINGS_ACTION_CRITICAL_BATT, "Battery is critically low.");
+	cpm_manager_perform_policy (manager, GPM_SETTINGS_ACTION_CRITICAL_BATT, "Battery is critically low.");
 	return FALSE;
 }
 
 /**
- * gpm_manager_class_init:
+ * cpm_manager_class_init:
  * @klass: The GpmManagerClass
  **/
 static void
-gpm_manager_class_init (GpmManagerClass *klass)
+cpm_manager_class_init (GpmManagerClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-	object_class->finalize = gpm_manager_finalize;
+	object_class->finalize = cpm_manager_finalize;
 }
 
 /**
- * gpm_manager_settings_changed_cb:
+ * cpm_manager_settings_changed_cb:
  *
  * We might have to do things when the keys change; do them here.
  **/
 static void
-gpm_manager_settings_changed_cb (GSettings *settings, const gchar *key, GpmManager *manager)
+cpm_manager_settings_changed_cb (GSettings *settings, const gchar *key, GpmManager *manager)
 {
 	if (g_strcmp0 (key, GPM_SETTINGS_SLEEP_COMPUTER_BATT) == 0 ||
 	    g_strcmp0 (key, GPM_SETTINGS_SLEEP_COMPUTER_AC) == 0 ||
 	    g_strcmp0 (key, GPM_SETTINGS_SLEEP_DISPLAY_BATT) == 0 ||
 	    g_strcmp0 (key, GPM_SETTINGS_SLEEP_DISPLAY_AC) == 0)
-		gpm_manager_sync_policy_sleep (manager);
+		cpm_manager_sync_policy_sleep (manager);
 }
 
 /**
- * gpm_manager_engine_icon_changed_cb:
+ * cpm_manager_engine_icon_changed_cb:
  */
 static void
-gpm_manager_engine_icon_changed_cb (GpmEngine  *engine, gchar *icon, GpmManager *manager)
+cpm_manager_engine_icon_changed_cb (GpmEngine  *engine, gchar *icon, GpmManager *manager)
 {
-	gpm_tray_icon_set_icon (manager->priv->tray_icon, icon);
+	cpm_tray_icon_set_icon (manager->priv->tray_icon, icon);
 }
 
 /**
- * gpm_manager_engine_summary_changed_cb:
+ * cpm_manager_engine_summary_changed_cb:
  */
 static void
-gpm_manager_engine_summary_changed_cb (GpmEngine *engine, gchar *summary, GpmManager *manager)
+cpm_manager_engine_summary_changed_cb (GpmEngine *engine, gchar *summary, GpmManager *manager)
 {
-	gpm_tray_icon_set_tooltip (manager->priv->tray_icon, summary);
+	cpm_tray_icon_set_tooltip (manager->priv->tray_icon, summary);
 }
 
 /**
- * gpm_manager_engine_low_capacity_cb:
+ * cpm_manager_engine_low_capacity_cb:
  */
 static void
-gpm_manager_engine_low_capacity_cb (GpmEngine *engine, UpDevice *device, GpmManager *manager)
+cpm_manager_engine_low_capacity_cb (GpmEngine *engine, UpDevice *device, GpmManager *manager)
 {
 	gchar *message = NULL;
 	const gchar *title;
@@ -1109,17 +1109,17 @@ gpm_manager_engine_low_capacity_cb (GpmEngine *engine, UpDevice *device, GpmMana
 	/* TRANSLATORS: notify the user that that battery is broken as the capacity is very low */
 	message = g_strdup_printf (_("Battery has a very low capacity (%1.1f%%), "
 				     "which means that it may be old or broken."), capacity);
-	gpm_manager_notify (manager, &manager->priv->notification_general, title, message, GPM_MANAGER_NOTIFY_TIMEOUT_SHORT,
+	cpm_manager_notify (manager, &manager->priv->notification_general, title, message, GPM_MANAGER_NOTIFY_TIMEOUT_SHORT,
 			    "dialog-information", NOTIFY_URGENCY_LOW);
 out:
 	g_free (message);
 }
 
 /**
- * gpm_manager_engine_fully_charged_cb:
+ * cpm_manager_engine_fully_charged_cb:
  */
 static void
-gpm_manager_engine_fully_charged_cb (GpmEngine *engine, UpDevice *device, GpmManager *manager)
+cpm_manager_engine_fully_charged_cb (GpmEngine *engine, UpDevice *device, GpmManager *manager)
 {
 	UpDeviceKind kind;
 	gchar *native_path = NULL;
@@ -1152,12 +1152,12 @@ gpm_manager_engine_fully_charged_cb (GpmEngine *engine, UpDevice *device, GpmMan
 			plural = 2;
 
 		/* hide the discharging notification */
-		gpm_manager_notify_close (manager, manager->priv->notification_warning_low);
-		gpm_manager_notify_close (manager, manager->priv->notification_discharging);
+		cpm_manager_notify_close (manager, manager->priv->notification_warning_low);
+		cpm_manager_notify_close (manager, manager->priv->notification_discharging);
 
 		/* TRANSLATORS: show the charged notification */
 		title = ngettext ("Battery Charged", "Batteries Charged", plural);
-		gpm_manager_notify (manager, &manager->priv->notification_fully_charged,
+		cpm_manager_notify (manager, &manager->priv->notification_fully_charged,
 				    title, NULL, GPM_MANAGER_NOTIFY_TIMEOUT_SHORT,
 				    "dialog-information", NOTIFY_URGENCY_LOW);
 	}
@@ -1166,10 +1166,10 @@ out:
 }
 
 /**
- * gpm_manager_engine_discharging_cb:
+ * cpm_manager_engine_discharging_cb:
  */
 static void
-gpm_manager_engine_discharging_cb (GpmEngine *engine, UpDevice *device, GpmManager *manager)
+cpm_manager_engine_discharging_cb (GpmEngine *engine, UpDevice *device, GpmManager *manager)
 {
 	UpDeviceKind kind;
 	gboolean ret;
@@ -1197,8 +1197,8 @@ gpm_manager_engine_discharging_cb (GpmEngine *engine, UpDevice *device, GpmManag
 
 	/* only show text if there is a valid time */
 	if (time_to_empty > 0)
-		remaining_text = gpm_get_timestring (time_to_empty);
-	kind_desc = gpm_device_kind_to_localised_string (kind, 1);
+		remaining_text = cpm_get_timestring (time_to_empty);
+	kind_desc = cpm_device_kind_to_localised_string (kind, 1);
 
 	if (kind == UP_DEVICE_KIND_BATTERY) {
 		/* TRANSLATORS: laptop battery is now discharging */
@@ -1229,9 +1229,9 @@ gpm_manager_engine_discharging_cb (GpmEngine *engine, UpDevice *device, GpmManag
 		goto out;
 	}
 
-	icon = gpm_upower_get_device_icon (device);
+	icon = cpm_upower_get_device_icon (device);
 	/* show the notification */
-	gpm_manager_notify (manager, &manager->priv->notification_discharging, title, message, GPM_MANAGER_NOTIFY_TIMEOUT_LONG,
+	cpm_manager_notify (manager, &manager->priv->notification_discharging, title, message, GPM_MANAGER_NOTIFY_TIMEOUT_LONG,
 			    icon, NOTIFY_URGENCY_NORMAL);
 out:
 	g_free (icon);
@@ -1240,10 +1240,10 @@ out:
 }
 
 /**
- * gpm_manager_engine_just_laptop_battery:
+ * cpm_manager_engine_just_laptop_battery:
  */
 static gboolean
-gpm_manager_engine_just_laptop_battery (GpmManager *manager)
+cpm_manager_engine_just_laptop_battery (GpmManager *manager)
 {
 	UpDevice *device;
 	UpDeviceKind kind;
@@ -1253,7 +1253,7 @@ gpm_manager_engine_just_laptop_battery (GpmManager *manager)
 
 	/* find if there are any other device types that mean we have to
 	 * be more specific in our wording */
-	array = gpm_engine_get_devices (manager->priv->engine);
+	array = cpm_engine_get_devices (manager->priv->engine);
 	for (i=0; i<array->len; i++) {
 		device = g_ptr_array_index (array, i);
 		g_object_get (device, "kind", &kind, NULL);
@@ -1267,10 +1267,10 @@ gpm_manager_engine_just_laptop_battery (GpmManager *manager)
 }
 
 /**
- * gpm_manager_engine_charge_low_cb:
+ * cpm_manager_engine_charge_low_cb:
  */
 static void
-gpm_manager_engine_charge_low_cb (GpmEngine *engine, UpDevice *device, GpmManager *manager)
+cpm_manager_engine_charge_low_cb (GpmEngine *engine, UpDevice *device, GpmManager *manager)
 {
 	const gchar *title = NULL;
 	gchar *message = NULL;
@@ -1299,7 +1299,7 @@ gpm_manager_engine_charge_low_cb (GpmEngine *engine, UpDevice *device, GpmManage
 	if (kind == UP_DEVICE_KIND_BATTERY) {
 
 		/* if the user has no other batteries, drop the "Laptop" wording */
-		ret = gpm_manager_engine_just_laptop_battery (manager);
+		ret = cpm_manager_engine_just_laptop_battery (manager);
 		if (ret) {
 			/* TRANSLATORS: laptop battery low, and we only have one battery */
 			title = _("Battery low");
@@ -1308,7 +1308,7 @@ gpm_manager_engine_charge_low_cb (GpmEngine *engine, UpDevice *device, GpmManage
 			title = _("Laptop battery low");
 		}
 
-		remaining_text = gpm_get_timestring (time_to_empty);
+		remaining_text = cpm_get_timestring (time_to_empty);
 
 		/* TRANSLATORS: tell the user how much time they have got */
 		message = g_strdup_printf (_("Approxicafely <b>%s</b> remaining (%.0f%%)"), remaining_text, percentage);
@@ -1316,7 +1316,7 @@ gpm_manager_engine_charge_low_cb (GpmEngine *engine, UpDevice *device, GpmManage
 	} else if (kind == UP_DEVICE_KIND_UPS) {
 		/* TRANSLATORS: UPS is starting to get a little low */
 		title = _("UPS low");
-		remaining_text = gpm_get_timestring (time_to_empty);
+		remaining_text = cpm_get_timestring (time_to_empty);
 
 		/* TRANSLATORS: tell the user how much time they have got */
 		message = g_strdup_printf (_("Approxicafely <b>%s</b> of remaining UPS backup power (%.0f%%)"),
@@ -1377,19 +1377,19 @@ gpm_manager_engine_charge_low_cb (GpmEngine *engine, UpDevice *device, GpmManage
 	}
 
 	/* get correct icon */
-	icon = gpm_upower_get_device_icon (device);
-	gpm_manager_notify (manager, &manager->priv->notification_warning_low, title, message, GPM_MANAGER_NOTIFY_TIMEOUT_LONG, icon, NOTIFY_URGENCY_NORMAL);
-	gpm_manager_play (manager, GPM_MANAGER_SOUND_BATTERY_CAUTION, TRUE);
+	icon = cpm_upower_get_device_icon (device);
+	cpm_manager_notify (manager, &manager->priv->notification_warning_low, title, message, GPM_MANAGER_NOTIFY_TIMEOUT_LONG, icon, NOTIFY_URGENCY_NORMAL);
+	cpm_manager_play (manager, GPM_MANAGER_SOUND_BATTERY_CAUTION, TRUE);
 out:
 	g_free (icon);
 	g_free (message);
 }
 
 /**
- * gpm_manager_engine_charge_critical_cb:
+ * cpm_manager_engine_charge_critical_cb:
  */
 static void
-gpm_manager_engine_charge_critical_cb (GpmEngine *engine, UpDevice *device, GpmManager *manager)
+cpm_manager_engine_charge_critical_cb (GpmEngine *engine, UpDevice *device, GpmManager *manager)
 {
 	const gchar *title = NULL;
 	gchar *message = NULL;
@@ -1418,7 +1418,7 @@ gpm_manager_engine_charge_critical_cb (GpmEngine *engine, UpDevice *device, GpmM
 	if (kind == UP_DEVICE_KIND_BATTERY) {
 
 		/* if the user has no other batteries, drop the "Laptop" wording */
-		ret = gpm_manager_engine_just_laptop_battery (manager);
+		ret = cpm_manager_engine_just_laptop_battery (manager);
 		if (ret) {
 			/* TRANSLATORS: laptop battery critically low, and only have one kind of battery */
 			title = _("Battery critically low");
@@ -1453,7 +1453,7 @@ gpm_manager_engine_charge_critical_cb (GpmEngine *engine, UpDevice *device, GpmM
 
 		/* TRANSLATORS: the UPS is very low */
 		title = _("UPS critically low");
-		remaining_text = gpm_get_timestring (time_to_empty);
+		remaining_text = cpm_get_timestring (time_to_empty);
 
 		/* TRANSLATORS: give the user a ultimatum */
 		message = g_strdup_printf (_("Approxicafely <b>%s</b> of remaining UPS power (%.0f%%). "
@@ -1531,22 +1531,22 @@ gpm_manager_engine_charge_critical_cb (GpmEngine *engine, UpDevice *device, GpmM
 	}
 
 	/* get correct icon */
-	icon = gpm_upower_get_device_icon (device);
-	gpm_manager_notify (manager, &manager->priv->notification_warning_low, title, message, GPM_MANAGER_NOTIFY_TIMEOUT_NEVER, icon, NOTIFY_URGENCY_CRITICAL);
+	icon = cpm_upower_get_device_icon (device);
+	cpm_manager_notify (manager, &manager->priv->notification_warning_low, title, message, GPM_MANAGER_NOTIFY_TIMEOUT_NEVER, icon, NOTIFY_URGENCY_CRITICAL);
 
 	switch (kind) {
 
 	case UP_DEVICE_KIND_BATTERY:
 	case UP_DEVICE_KIND_UPS:
 		egg_debug ("critical charge level reached, starting sound loop");
-		gpm_manager_play_loop_start (manager,
+		cpm_manager_play_loop_start (manager,
 					     GPM_MANAGER_SOUND_BATTERY_LOW,
 					     TRUE,
 					     GPM_MANAGER_CRITICAL_ALERT_TIMEOUT);
 		break;
 
 	default:
-		gpm_manager_play (manager, GPM_MANAGER_SOUND_BATTERY_LOW, TRUE);
+		cpm_manager_play (manager, GPM_MANAGER_SOUND_BATTERY_LOW, TRUE);
 	}
 out:
 	g_free (icon);
@@ -1554,10 +1554,10 @@ out:
 }
 
 /**
- * gpm_manager_engine_charge_action_cb:
+ * cpm_manager_engine_charge_action_cb:
  */
 static void
-gpm_manager_engine_charge_action_cb (GpmEngine *engine, UpDevice *device, GpmManager *manager)
+cpm_manager_engine_charge_action_cb (GpmEngine *engine, UpDevice *device, GpmManager *manager)
 {
 	const gchar *title = NULL;
 	gchar *message = NULL;
@@ -1654,25 +1654,25 @@ gpm_manager_engine_charge_action_cb (GpmEngine *engine, UpDevice *device, GpmMan
 	}
 
 	/* get correct icon */
-	icon = gpm_upower_get_device_icon (device);
-	gpm_manager_notify (manager, &manager->priv->notification_warning_low,
+	icon = cpm_upower_get_device_icon (device);
+	cpm_manager_notify (manager, &manager->priv->notification_warning_low,
 			    title, message, GPM_MANAGER_NOTIFY_TIMEOUT_NEVER,
 			    icon, NOTIFY_URGENCY_CRITICAL);
-	gpm_manager_play (manager, GPM_MANAGER_SOUND_BATTERY_LOW, TRUE);
+	cpm_manager_play (manager, GPM_MANAGER_SOUND_BATTERY_LOW, TRUE);
 out:
 	g_free (icon);
 	g_free (message);
 }
 
 /**
- * gpm_manager_dpms_mode_changed_cb:
+ * cpm_manager_dpms_mode_changed_cb:
  * @mode: The DPMS mode, e.g. GPM_DPMS_MODE_OFF
  * @info: This class instance
  *
  * Log when the DPMS mode is changed.
  **/
 static void
-gpm_manager_dpms_mode_changed_cb (GpmDpms *dpms, GpmDpmsMode mode, GpmManager *manager)
+cpm_manager_dpms_mode_changed_cb (GpmDpms *dpms, GpmDpmsMode mode, GpmManager *manager)
 {
 	egg_debug ("DPMS mode changed: %d", mode);
 
@@ -1685,51 +1685,51 @@ gpm_manager_dpms_mode_changed_cb (GpmDpms *dpms, GpmDpmsMode mode, GpmManager *m
 	else if (mode == GPM_DPMS_MODE_OFF)
 		egg_debug ("dpms off");
 
-	gpm_manager_update_dpms_throttle (manager);
+	cpm_manager_update_dpms_throttle (manager);
 }
 
 /*
- * gpm_manager_reset_just_resumed_cb
+ * cpm_manager_reset_just_resumed_cb
  */
 static gboolean
-gpm_manager_reset_just_resumed_cb (gpointer user_data)
+cpm_manager_reset_just_resumed_cb (gpointer user_data)
 {
 	GpmManager *manager = GPM_MANAGER (user_data);
 
 	if (manager->priv->notification_general != NULL)
-		gpm_manager_notify_close (manager, manager->priv->notification_general);
+		cpm_manager_notify_close (manager, manager->priv->notification_general);
 	if (manager->priv->notification_warning_low != NULL)
-		gpm_manager_notify_close (manager, manager->priv->notification_warning_low);
+		cpm_manager_notify_close (manager, manager->priv->notification_warning_low);
 	if (manager->priv->notification_discharging != NULL)
-		gpm_manager_notify_close (manager, manager->priv->notification_discharging);
+		cpm_manager_notify_close (manager, manager->priv->notification_discharging);
 	if (manager->priv->notification_fully_charged != NULL)
-		gpm_manager_notify_close (manager, manager->priv->notification_fully_charged);
+		cpm_manager_notify_close (manager, manager->priv->notification_fully_charged);
 
 	manager->priv->just_resumed = FALSE;
 	return FALSE;
 }
 
 /**
- * gpm_manager_control_resume_cb
+ * cpm_manager_control_resume_cb
  **/
 static void
-gpm_manager_control_resume_cb (GpmControl *control, GpmControlAction action, GpmManager *manager)
+cpm_manager_control_resume_cb (GpmControl *control, GpmControlAction action, GpmManager *manager)
 {
 	guint timer_id;
 	manager->priv->just_resumed = TRUE;
-	timer_id = g_timeout_add_seconds (1, gpm_manager_reset_just_resumed_cb, manager);
+	timer_id = g_timeout_add_seconds (1, cpm_manager_reset_just_resumed_cb, manager);
 	g_source_set_name_by_id (timer_id, "[GpmManager] just-resumed");
 }
 
 /**
- * gpm_main_systemd_inhibit:
+ * cpm_main_systemd_inhibit:
  *
  * Return a fd to the to the inhibitor, that we can close on exit.
  *
  * Return value: fd, -1 on error
  **/
 static gint32
-gpm_manager_systemd_inhibit (GDBusProxy *proxy) {
+cpm_manager_systemd_inhibit (GDBusProxy *proxy) {
     GError *error = NULL;
     gint32 r = -1;
     gint32 fd = -1;
@@ -1796,34 +1796,34 @@ on_icon_theme_change (CtkSettings *settings,
                       GParamSpec  *pspec,
                       GpmManager  *manager)
 {
-	gchar *icon = gpm_engine_get_icon (manager->priv->engine);
+	gchar *icon = cpm_engine_get_icon (manager->priv->engine);
 	if (icon == NULL) {
 		return;
 	}
 
-	gpm_tray_icon_set_icon (manager->priv->tray_icon, icon);
+	cpm_tray_icon_set_icon (manager->priv->tray_icon, icon);
 	g_free (icon);
 }
 
 /**
- * gpm_manager_init:
+ * cpm_manager_init:
  * @manager: This class instance
  **/
 static void
-gpm_manager_init (GpmManager *manager)
+cpm_manager_init (GpmManager *manager)
 {
 	gboolean check_type_cpu;
 	DBusGConnection *connection;
 	GDBusConnection *g_connection;
 	GError *error = NULL;
 
-	manager->priv = gpm_manager_get_instance_private (manager);
+	manager->priv = cpm_manager_get_instance_private (manager);
 	connection = dbus_g_bus_get (DBUS_BUS_SESSION, &error);
 	g_connection = g_bus_get_sync (G_BUS_TYPE_SESSION, NULL, &error);
 
 	/* We want to inhibit the systemd suspend options, and take care of them ourselves */
 	if (LOGIND_RUNNING()) {
-		manager->priv->systemd_inhibit = gpm_manager_systemd_inhibit (manager->priv->systemd_inhibit_proxy);
+		manager->priv->systemd_inhibit = cpm_manager_systemd_inhibit (manager->priv->systemd_inhibit_proxy);
 	}
 
 	/* init to unthrottled */
@@ -1846,12 +1846,12 @@ gpm_manager_init (GpmManager *manager)
 	manager->priv->notification_fully_charged = NULL;
 	manager->priv->settings = g_settings_new (GPM_SETTINGS_SCHEMA);
 	g_signal_connect (manager->priv->settings, "changed",
-			  G_CALLBACK (gpm_manager_settings_changed_cb), manager);
+			  G_CALLBACK (cpm_manager_settings_changed_cb), manager);
 	manager->priv->client = up_client_new ();
 	g_signal_connect (manager->priv->client, "notify::lid-is-closed",
-			  G_CALLBACK (gpm_manager_client_changed_cb), manager);
+			  G_CALLBACK (cpm_manager_client_changed_cb), manager);
 	g_signal_connect (manager->priv->client, "notify::on-battery",
-			  G_CALLBACK (gpm_manager_client_changed_cb), manager);
+			  G_CALLBACK (cpm_manager_client_changed_cb), manager);
 
 	/* use libcafenotify */
 	notify_init (GPM_NAME);
@@ -1861,75 +1861,75 @@ gpm_manager_init (GpmManager *manager)
 		      "on-battery", &manager->priv->on_battery,
 		      NULL);
 
-	manager->priv->button = gpm_button_new ();
+	manager->priv->button = cpm_button_new ();
 	g_signal_connect (manager->priv->button, "button-pressed",
-			  G_CALLBACK (gpm_manager_button_pressed_cb), manager);
+			  G_CALLBACK (cpm_manager_button_pressed_cb), manager);
 
 	/* try and start an interactive service */
-	manager->priv->screensaver = gpm_screensaver_new ();
+	manager->priv->screensaver = cpm_screensaver_new ();
 
 	/* try an start an interactive service */
-	manager->priv->backlight = gpm_backlight_new ();
+	manager->priv->backlight = cpm_backlight_new ();
 	if (manager->priv->backlight != NULL) {
 		/* add the new brightness lcd DBUS interface */
 		dbus_g_object_type_install_info (GPM_TYPE_BACKLIGHT,
-						 &dbus_glib_gpm_backlight_object_info);
+						 &dbus_glib_cpm_backlight_object_info);
 		dbus_g_connection_register_g_object (connection, GPM_DBUS_PATH_BACKLIGHT,
 						     G_OBJECT (manager->priv->backlight));
 	}
 
-    manager->priv->kbd_backlight = gpm_kbd_backlight_new ();
+    manager->priv->kbd_backlight = cpm_kbd_backlight_new ();
     if (manager->priv->kbd_backlight != NULL) {
     	dbus_g_object_type_install_info (GPM_TYPE_KBD_BACKLIGHT,
-						 &dbus_glib_gpm_kbd_backlight_object_info);
+						 &dbus_glib_cpm_kbd_backlight_object_info);
 		dbus_g_connection_register_g_object (connection, GPM_DBUS_PATH_KBD_BACKLIGHT,
 						     G_OBJECT (manager->priv->kbd_backlight));
     
     }
 
-	manager->priv->idle = gpm_idle_new ();
+	manager->priv->idle = cpm_idle_new ();
 	g_signal_connect (manager->priv->idle, "idle-changed",
-			  G_CALLBACK (gpm_manager_idle_changed_cb), manager);
+			  G_CALLBACK (cpm_manager_idle_changed_cb), manager);
 
 	/* set up the check_type_cpu, so we can disable the CPU load check */
 	check_type_cpu = g_settings_get_boolean (manager->priv->settings, GPM_SETTINGS_IDLE_CHECK_CPU);
-	gpm_idle_set_check_cpu (manager->priv->idle, check_type_cpu);
+	cpm_idle_set_check_cpu (manager->priv->idle, check_type_cpu);
 
-	manager->priv->dpms = gpm_dpms_new ();
+	manager->priv->dpms = cpm_dpms_new ();
 	g_signal_connect (manager->priv->dpms, "mode-changed",
-			  G_CALLBACK (gpm_manager_dpms_mode_changed_cb), manager);
+			  G_CALLBACK (cpm_manager_dpms_mode_changed_cb), manager);
 
 	/* use the control object */
 	egg_debug ("creating new control instance");
-	manager->priv->control = gpm_control_new ();
+	manager->priv->control = cpm_control_new ();
 	g_signal_connect (manager->priv->control, "resume",
-			  G_CALLBACK (gpm_manager_control_resume_cb), manager);
+			  G_CALLBACK (cpm_manager_control_resume_cb), manager);
 
 	egg_debug ("creating new tray icon");
-	manager->priv->tray_icon = gpm_tray_icon_new ();
+	manager->priv->tray_icon = cpm_tray_icon_new ();
 
 	/* keep a reference for the notifications */
-	manager->priv->status_icon = gpm_tray_icon_get_status_icon (manager->priv->tray_icon);
+	manager->priv->status_icon = cpm_tray_icon_get_status_icon (manager->priv->tray_icon);
 
-	gpm_manager_sync_policy_sleep (manager);
+	cpm_manager_sync_policy_sleep (manager);
 
-	manager->priv->engine = gpm_engine_new ();
+	manager->priv->engine = cpm_engine_new ();
 	g_signal_connect (manager->priv->engine, "low-capacity",
-			  G_CALLBACK (gpm_manager_engine_low_capacity_cb), manager);
+			  G_CALLBACK (cpm_manager_engine_low_capacity_cb), manager);
 	g_signal_connect (manager->priv->engine, "icon-changed",
-			  G_CALLBACK (gpm_manager_engine_icon_changed_cb), manager);
+			  G_CALLBACK (cpm_manager_engine_icon_changed_cb), manager);
 	g_signal_connect (manager->priv->engine, "summary-changed",
-			  G_CALLBACK (gpm_manager_engine_summary_changed_cb), manager);
+			  G_CALLBACK (cpm_manager_engine_summary_changed_cb), manager);
 	g_signal_connect (manager->priv->engine, "fully-charged",
-			  G_CALLBACK (gpm_manager_engine_fully_charged_cb), manager);
+			  G_CALLBACK (cpm_manager_engine_fully_charged_cb), manager);
 	g_signal_connect (manager->priv->engine, "discharging",
-			  G_CALLBACK (gpm_manager_engine_discharging_cb), manager);
+			  G_CALLBACK (cpm_manager_engine_discharging_cb), manager);
 	g_signal_connect (manager->priv->engine, "charge-low",
-			  G_CALLBACK (gpm_manager_engine_charge_low_cb), manager);
+			  G_CALLBACK (cpm_manager_engine_charge_low_cb), manager);
 	g_signal_connect (manager->priv->engine, "charge-critical",
-			  G_CALLBACK (gpm_manager_engine_charge_critical_cb), manager);
+			  G_CALLBACK (cpm_manager_engine_charge_critical_cb), manager);
 	g_signal_connect (manager->priv->engine, "charge-action",
-			  G_CALLBACK (gpm_manager_engine_charge_action_cb), manager);
+			  G_CALLBACK (cpm_manager_engine_charge_action_cb), manager);
 
 	g_signal_connect (ctk_settings_get_default (),
 	                  "notify::ctk-icon-theme-name",
@@ -1937,17 +1937,17 @@ gpm_manager_init (GpmManager *manager)
 	                  manager);
 
 	/* update ac throttle */
-	gpm_manager_update_ac_throttle (manager);
+	cpm_manager_update_ac_throttle (manager);
 }
 
 /**
- * gpm_manager_finalize:
+ * cpm_manager_finalize:
  * @object: The object to finalize
  *
  * Finalise the manager, by unref'ing all the depending modules.
  **/
 static void
-gpm_manager_finalize (GObject *object)
+cpm_manager_finalize (GObject *object)
 {
 	GpmManager *manager;
 
@@ -1960,13 +1960,13 @@ gpm_manager_finalize (GObject *object)
 
 	/* close any notifications (also unrefs them) */
 	if (manager->priv->notification_general != NULL)
-		gpm_manager_notify_close (manager, manager->priv->notification_general);
+		cpm_manager_notify_close (manager, manager->priv->notification_general);
 	if (manager->priv->notification_warning_low != NULL)
-		gpm_manager_notify_close (manager, manager->priv->notification_warning_low);
+		cpm_manager_notify_close (manager, manager->priv->notification_warning_low);
 	if (manager->priv->notification_discharging != NULL)
-		gpm_manager_notify_close (manager, manager->priv->notification_discharging);
+		cpm_manager_notify_close (manager, manager->priv->notification_discharging);
 	if (manager->priv->notification_fully_charged != NULL)
-		gpm_manager_notify_close (manager, manager->priv->notification_fully_charged);
+		cpm_manager_notify_close (manager, manager->priv->notification_fully_charged);
 
 	if (manager->priv->critical_alert_timeout_id != 0) {
 		g_source_remove (manager->priv->critical_alert_timeout_id);
@@ -2001,16 +2001,16 @@ gpm_manager_finalize (GObject *object)
 		}
 	}
 
-	G_OBJECT_CLASS (gpm_manager_parent_class)->finalize (object);
+	G_OBJECT_CLASS (cpm_manager_parent_class)->finalize (object);
 }
 
 /**
- * gpm_manager_new:
+ * cpm_manager_new:
  *
  * Return value: a new GpmManager object.
  **/
 GpmManager *
-gpm_manager_new (void)
+cpm_manager_new (void)
 {
 	GpmManager *manager;
 	manager = g_object_new (GPM_TYPE_MANAGER, NULL);

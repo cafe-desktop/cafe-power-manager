@@ -26,7 +26,7 @@
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_PREFS		(gpm_prefs_get_type ())
+#define GPM_TYPE_PREFS		(cpm_prefs_get_type ())
 #define GPM_PREFS(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_PREFS, GpmPrefs))
 #define GPM_PREFS_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_PREFS, GpmPrefsClass))
 #define GPM_IS_PREFS(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_PREFS))
@@ -48,10 +48,10 @@ typedef struct
 	void		(* action_close)		(GpmPrefs	*prefs);
 } GpmPrefsClass;
 
-GType		 gpm_prefs_get_type			(void);
-GpmPrefs	*gpm_prefs_new				(void);
-CtkWidget	*gpm_window				(GpmPrefs	*prefs);
-void		 gpm_prefs_activate_window		(CtkApplication *app, GpmPrefs	*prefs);
+GType		 cpm_prefs_get_type			(void);
+GpmPrefs	*cpm_prefs_new				(void);
+CtkWidget	*cpm_window				(GpmPrefs	*prefs);
+void		 cpm_prefs_activate_window		(CtkApplication *app, GpmPrefs	*prefs);
 
 G_END_DECLS
 
