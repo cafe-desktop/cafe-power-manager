@@ -34,14 +34,14 @@
 #define NM_LISTENER_INTERFACE	"org.freedesktop.NetworkManager"
 
 /**
- * gpm_networkmanager_sleep:
+ * cpm_networkmanager_sleep:
  *
  * Tell NetworkManager to put the network devices to sleep
  *
  * Return value: TRUE if NetworkManager is now sleeping.
  **/
 gboolean
-gpm_networkmanager_sleep (void)
+cpm_networkmanager_sleep (void)
 {
 	DBusGConnection *connection = NULL;
 	DBusGProxy *nm_proxy = NULL;
@@ -68,14 +68,14 @@ gpm_networkmanager_sleep (void)
 }
 
 /**
- * gpm_networkmanager_wake:
+ * cpm_networkmanager_wake:
  *
  * Tell NetworkManager to wake up all the network devices
  *
  * Return value: TRUE if NetworkManager is now awake.
  **/
 gboolean
-gpm_networkmanager_wake (void)
+cpm_networkmanager_wake (void)
 {
 	DBusGConnection *connection = NULL;
 	DBusGProxy *nm_proxy = NULL;

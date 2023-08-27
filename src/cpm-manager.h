@@ -28,14 +28,14 @@
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_MANAGER	 (gpm_manager_get_type ())
+#define GPM_TYPE_MANAGER	 (cpm_manager_get_type ())
 #define GPM_MANAGER(o)		 (G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_MANAGER, GpmManager))
 #define GPM_MANAGER_CLASS(k)	 (G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_MANAGER, GpmManagerClass))
 #define GPM_IS_MANAGER(o)	 (G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_MANAGER))
 #define GPM_IS_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), GPM_TYPE_MANAGER))
 #define GPM_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), GPM_TYPE_MANAGER, GpmManagerClass))
-#define GPM_MANAGER_ERROR	 (gpm_manager_error_quark ())
-#define GPM_MANAGER_TYPE_ERROR	 (gpm_manager_error_get_type ()) 
+#define GPM_MANAGER_ERROR	 (cpm_manager_error_quark ())
+#define GPM_MANAGER_TYPE_ERROR	 (cpm_manager_error_get_type ()) 
 
 typedef struct GpmManagerPrivate GpmManagerPrivate;
 
@@ -58,19 +58,19 @@ typedef enum
 } GpmManagerError;
 
 
-GQuark		 gpm_manager_error_quark		(void);
-GType		 gpm_manager_error_get_type		(void);
-GType		 gpm_manager_get_type		  	(void);
-GpmManager	*gpm_manager_new			(void);
+GQuark		 cpm_manager_error_quark		(void);
+GType		 cpm_manager_error_get_type		(void);
+GType		 cpm_manager_get_type		  	(void);
+GpmManager	*cpm_manager_new			(void);
 
-gboolean	 gpm_manager_suspend			(GpmManager	*manager,
+gboolean	 cpm_manager_suspend			(GpmManager	*manager,
 							 GError		**error);
-gboolean	 gpm_manager_hibernate			(GpmManager	*manager,
+gboolean	 cpm_manager_hibernate			(GpmManager	*manager,
 							 GError		**error);
-gboolean	 gpm_manager_can_suspend		(GpmManager	*manager,
+gboolean	 cpm_manager_can_suspend		(GpmManager	*manager,
 							 gboolean	*can_suspend,
 							 GError		**error);
-gboolean	 gpm_manager_can_hibernate		(GpmManager	*manager,
+gboolean	 cpm_manager_can_hibernate		(GpmManager	*manager,
 							 gboolean	*can_hibernate,
 							 GError		**error);
 

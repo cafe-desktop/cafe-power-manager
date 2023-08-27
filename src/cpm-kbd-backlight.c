@@ -60,23 +60,23 @@ enum {
 
 static guint signals [LAST_SIGNAL] = { 0 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmKbdBacklight, gpm_kbd_backlight, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (GpmKbdBacklight, cpm_kbd_backlight, G_TYPE_OBJECT)
 
 /**
- * gpm_kbd_backlight_error_quark:
+ * cpm_kbd_backlight_error_quark:
  * Return value: Our personal error quark.
  **/
 GQuark
-gpm_kbd_backlight_error_quark (void)
+cpm_kbd_backlight_error_quark (void)
 {
    static GQuark quark = 0;
    if (!quark)
-       quark = g_quark_from_static_string ("gpm_kbd_backlight_error");
+       quark = g_quark_from_static_string ("cpm_kbd_backlight_error");
    return quark;
 }
 
 /**
- * gpm_kbd_backlight_get_brightness:
+ * cpm_kbd_backlight_get_brightness:
  * @backlight:
  * @brightness:
  * @error:
@@ -84,7 +84,7 @@ gpm_kbd_backlight_error_quark (void)
  * Return value:
  */
 gboolean
-gpm_kbd_backlight_get_brightness (GpmKbdBacklight *backlight,
+cpm_kbd_backlight_get_brightness (GpmKbdBacklight *backlight,
                  guint *brightness,
                  GError **error)
 {
@@ -93,7 +93,7 @@ gpm_kbd_backlight_get_brightness (GpmKbdBacklight *backlight,
    g_return_val_if_fail (brightness != NULL, FALSE);
 
    if (backlight->priv->can_dim == FALSE) {
-       g_set_error_literal (error, gpm_kbd_backlight_error_quark (),
+       g_set_error_literal (error, cpm_kbd_backlight_error_quark (),
                     GPM_KBD_BACKLIGHT_ERROR_HARDWARE_NOT_PRESENT,
                     "Dim capable hardware not present");
        return FALSE;
@@ -104,7 +104,7 @@ gpm_kbd_backlight_get_brightness (GpmKbdBacklight *backlight,
 }
 
 static gboolean
-gpm_kbd_backlight_set (GpmKbdBacklight *backlight,
+cpm_kbd_backlight_set (GpmKbdBacklight *backlight,
               guint percentage)
 {
    gint scale;
@@ -117,7 +117,7 @@ gpm_kbd_backlight_set (GpmKbdBacklight *backlight,
    /* if we're setting the same we are, don't bother */
    //g_return_val_if_fail (backlight->priv->brightness_percent != percentage, FALSE);
 
-   goal = gpm_discrete_from_percent (percentage, backlight->priv->max_brightness);
+   goal = cpm_discrete_from_percent (percentage, backlight->priv->max_brightness);
    scale = percentage > backlight->priv->brightness_percent ? 1 : -1;
 
    /* if percentage change too small force next value */
@@ -128,7 +128,7 @@ gpm_kbd_backlight_set (GpmKbdBacklight *backlight,
    /* step loop down by 1 for a dimming effect */
    while (backlight->priv->brightness != goal) {
        backlight->priv->brightness += scale;
-       backlight->priv->brightness_percent = gpm_discrete_to_percent (backlight->priv->brightness, backlight->priv->max_brightness);
+       backlight->priv->brightness_percent = cpm_discrete_to_percent (backlight->priv->brightness, backlight->priv->max_brightness);
 
        g_dbus_proxy_call (backlight->priv->upower_proxy,
                       "SetBrightness",
@@ -144,10 +144,10 @@ gpm_kbd_backlight_set (GpmKbdBacklight *backlight,
 }
 
 /** 
- * gpm_kbd_backlight_dialog_init
+ * cpm_kbd_backlight_dialog_init
  **/
 static void
-gpm_kbd_backlight_dialog_init (GpmKbdBacklight *backlight) 
+cpm_kbd_backlight_dialog_init (GpmKbdBacklight *backlight) 
 {  
     if (backlight->priv->popup != NULL
 	    && !msd_osd_window_is_valid (MSD_OSD_WINDOW (backlight->priv->popup))) {
@@ -165,12 +165,12 @@ gpm_kbd_backlight_dialog_init (GpmKbdBacklight *backlight)
     }
 }
 /**
- * gpm_kbd_backlight_dialog_show:
+ * cpm_kbd_backlight_dialog_show:
  *
  * Show the brightness popup, and place it nicely on the screen.
  **/
 static void
-gpm_kbd_backlight_dialog_show (GpmKbdBacklight *backlight)
+cpm_kbd_backlight_dialog_show (GpmKbdBacklight *backlight)
 {
 	int            orig_w;
 	int            orig_h;
@@ -232,32 +232,32 @@ gpm_kbd_backlight_dialog_show (GpmKbdBacklight *backlight)
 }
 
 /**
- * gpm_kbd_backlight_brightness_up:
+ * cpm_kbd_backlight_brightness_up:
  **/
 static gboolean
-gpm_kbd_backlight_brightness_up (GpmKbdBacklight *backlight)
+cpm_kbd_backlight_brightness_up (GpmKbdBacklight *backlight)
 {
    guint new;
 
    new = MIN (backlight->priv->brightness_percent + GPM_KBD_BACKLIGHT_STEP, 100u);
-   return gpm_kbd_backlight_set (backlight, new);
+   return cpm_kbd_backlight_set (backlight, new);
 }
 
 /**
- * gpm_kbd_backlight_brightness_down:
+ * cpm_kbd_backlight_brightness_down:
  **/
 static gboolean
-gpm_kbd_backlight_brightness_down (GpmKbdBacklight *backlight)
+cpm_kbd_backlight_brightness_down (GpmKbdBacklight *backlight)
 {
    guint new;
 
    // we can possibly go below 0 here, so by converting to a gint we avoid underflow errors.
    new = MAX ((gint) backlight->priv->brightness_percent - GPM_KBD_BACKLIGHT_STEP, 0);
-   return gpm_kbd_backlight_set (backlight, new);
+   return cpm_kbd_backlight_set (backlight, new);
 }
 
 /**
- * gpm_kbd_backlight_set_brightness:
+ * cpm_kbd_backlight_set_brightness:
  * @backlight:
  * @percentage:
  * @error:
@@ -265,7 +265,7 @@ gpm_kbd_backlight_brightness_down (GpmKbdBacklight *backlight)
  * Return value:
  **/
 gboolean
-gpm_kbd_backlight_set_brightness (GpmKbdBacklight *backlight,
+cpm_kbd_backlight_set_brightness (GpmKbdBacklight *backlight,
                  guint percentage,
                  GError **error)
 {
@@ -275,7 +275,7 @@ gpm_kbd_backlight_set_brightness (GpmKbdBacklight *backlight,
    g_return_val_if_fail (GPM_IS_KBD_BACKLIGHT (backlight), FALSE);
 
    if (backlight->priv->can_dim == FALSE) {
-       g_set_error_literal (error, gpm_kbd_backlight_error_quark (),
+       g_set_error_literal (error, cpm_kbd_backlight_error_quark (),
                     GPM_KBD_BACKLIGHT_ERROR_HARDWARE_NOT_PRESENT,
                     "Dim capable hardware not present");
        return FALSE;
@@ -283,9 +283,9 @@ gpm_kbd_backlight_set_brightness (GpmKbdBacklight *backlight,
 
    backlight->priv->master_percentage = percentage;
 
-   ret = gpm_kbd_backlight_set (backlight, percentage);
+   ret = cpm_kbd_backlight_set (backlight, percentage);
    if (!ret) {
-       g_set_error_literal (error, gpm_kbd_backlight_error_quark (),
+       g_set_error_literal (error, cpm_kbd_backlight_error_quark (),
                     GPM_KBD_BACKLIGHT_ERROR_GENERAL,
                     "Cannot set keyboard backlight brightness");
    }
@@ -294,20 +294,20 @@ gpm_kbd_backlight_set_brightness (GpmKbdBacklight *backlight,
 }
 
 static void
-gpm_kbd_backlight_on_brightness_changed (GpmKbdBacklight *backlight,
+cpm_kbd_backlight_on_brightness_changed (GpmKbdBacklight *backlight,
                     guint value)
 {
    backlight->priv->brightness = value;
-   backlight->priv->brightness_percent = gpm_discrete_to_percent (value, backlight->priv->max_brightness);
+   backlight->priv->brightness_percent = cpm_discrete_to_percent (value, backlight->priv->max_brightness);
    backlight->priv->master_percentage = backlight->priv->brightness_percent;
    g_signal_emit (backlight, signals [BRIGHTNESS_CHANGED], 0, backlight->priv->brightness_percent);
 }
 
 /**
- * gpm_kbd_backlight_on_dbus_signal:
+ * cpm_kbd_backlight_on_dbus_signal:
  **/
 static void
-gpm_kbd_backlight_on_dbus_signal (GDBusProxy *proxy,
+cpm_kbd_backlight_on_dbus_signal (GDBusProxy *proxy,
                  gchar      *sender_name,
                  gchar      *signal_name,
                  GVariant   *parameters,
@@ -318,7 +318,7 @@ gpm_kbd_backlight_on_dbus_signal (GDBusProxy *proxy,
 
    if (g_strcmp0 (signal_name, "BrightnessChanged") == 0) {
        g_variant_get (parameters, "(i)", &value);
-       gpm_kbd_backlight_on_brightness_changed (backlight, value);
+       cpm_kbd_backlight_on_brightness_changed (backlight, value);
        return;
    }
 
@@ -326,7 +326,7 @@ gpm_kbd_backlight_on_dbus_signal (GDBusProxy *proxy,
 }
 
 /**
- * gpm_kbd_backlight_dbus_method_call:
+ * cpm_kbd_backlight_dbus_method_call:
  * @connection:
  * @object_path:
  * @interface_name:
@@ -336,7 +336,7 @@ gpm_kbd_backlight_on_dbus_signal (GDBusProxy *proxy,
  * @user_data:
  **/
 static void
-gpm_kbd_backlight_dbus_method_call (GDBusConnection *connection,
+cpm_kbd_backlight_dbus_method_call (GDBusConnection *connection,
                    const gchar *sender,
                    const gchar *object_path,
                    const gchar *interface_name,
@@ -351,7 +351,7 @@ gpm_kbd_backlight_dbus_method_call (GDBusConnection *connection,
    GpmKbdBacklight *backlight = GPM_KBD_BACKLIGHT (user_data);
 
    if (g_strcmp0 (method_name, "GetBrightness") == 0) {
-       ret = gpm_kbd_backlight_get_brightness (backlight, &value, &error);
+       ret = cpm_kbd_backlight_get_brightness (backlight, &value, &error);
        if (!ret) {
            g_dbus_method_invocation_return_gerror (invocation, error);
            g_error_free (error);
@@ -363,7 +363,7 @@ gpm_kbd_backlight_dbus_method_call (GDBusConnection *connection,
 
    if (g_strcmp0 (method_name, "SetBrightness") == 0) {
        g_variant_get (parameters, "(u)", &value);
-       ret = gpm_kbd_backlight_set_brightness (backlight, value, &error);
+       ret = cpm_kbd_backlight_set_brightness (backlight, value, &error);
        if (!ret) {
            g_dbus_method_invocation_return_gerror (invocation, error);
            g_error_free (error);
@@ -378,7 +378,7 @@ gpm_kbd_backlight_dbus_method_call (GDBusConnection *connection,
 
 
 /**
- * gpm_kbd_backlight_dbus_property_get:
+ * cpm_kbd_backlight_dbus_property_get:
  * @sender:
  * @object_path:
  * @interface_name:
@@ -389,7 +389,7 @@ gpm_kbd_backlight_dbus_method_call (GDBusConnection *connection,
  * Return value:
  **/
 static GVariant *
-gpm_kbd_backlight_dbus_property_get (GDBusConnection *connection,
+cpm_kbd_backlight_dbus_property_get (GDBusConnection *connection,
                     const gchar *sender,
                     const gchar *object_path,
                     const gchar *interface_name,
@@ -402,7 +402,7 @@ gpm_kbd_backlight_dbus_property_get (GDBusConnection *connection,
 }
 
 /**
- * gpm_kbd_backlight_dbus_property_set:
+ * cpm_kbd_backlight_dbus_property_set:
  * @connection:
  * @sender:
  * @object_path:
@@ -412,7 +412,7 @@ gpm_kbd_backlight_dbus_property_get (GDBusConnection *connection,
  * Return value:
  **/
 static gboolean
-gpm_kbd_backlight_dbus_property_set (GDBusConnection *connection,
+cpm_kbd_backlight_dbus_property_set (GDBusConnection *connection,
                     const gchar *sender,
                     const gchar *object_path,
                         const gchar *interface_name,
@@ -426,7 +426,7 @@ gpm_kbd_backlight_dbus_property_set (GDBusConnection *connection,
 }
 
 static gboolean
-gpm_kbd_backlight_evaluate_power_source_and_set (GpmKbdBacklight *backlight)
+cpm_kbd_backlight_evaluate_power_source_and_set (GpmKbdBacklight *backlight)
 {
    gfloat brightness;
    gfloat scale;
@@ -467,52 +467,52 @@ gpm_kbd_backlight_evaluate_power_source_and_set (GpmKbdBacklight *backlight)
        value = g_settings_get_int (backlight->priv->settings, GPM_SETTINGS_KBD_BRIGHTNESS_ON_AC);
    }
 
-   ret = gpm_kbd_backlight_set (backlight, value);
+   ret = cpm_kbd_backlight_set (backlight, value);
    return ret;
 }
 
 /**
- * gpm_kbd_backlight_control_resume_cb:
+ * cpm_kbd_backlight_control_resume_cb:
  * @control: The control class instance
  * @backlight: This backlight class instance
  *
  * Just make sure that the backlight is back on
  **/
 static void
-gpm_kbd_backlight_control_resume_cb (GpmControl *control,
+cpm_kbd_backlight_control_resume_cb (GpmControl *control,
                     GpmControlAction action,
                     GpmKbdBacklight *backlight)
 {
    gboolean ret;
 
-   ret = gpm_kbd_backlight_evaluate_power_source_and_set (backlight);
+   ret = cpm_kbd_backlight_evaluate_power_source_and_set (backlight);
    if (!ret)
        g_warning ("Failed to turn kbd brightness back on after resuming");
 }
 
 /**
- * gpm_kbd_backlight_client_changed_cb:
+ * cpm_kbd_backlight_client_changed_cb:
  * @client: The up_client class instance
  * @backlight: This class instance
  *
  * Does the actions when the ac power source is inserted/removed.
  **/
 static void
-gpm_kbd_backlight_client_changed_cb (UpClient *client,
+cpm_kbd_backlight_client_changed_cb (UpClient *client,
                                      GParamSpec *pspec,
                                      GpmKbdBacklight *backlight)
 {
-   gpm_kbd_backlight_evaluate_power_source_and_set (backlight);
+   cpm_kbd_backlight_evaluate_power_source_and_set (backlight);
 }
 
 /**
- * gpm_kbd_backlight_button_pressed_cb:
+ * cpm_kbd_backlight_button_pressed_cb:
  * @power: The power class instance
  * @type: The button type, but here we only care about keyboard brightness buttons
  * @backlight: This class instance
  **/
 static void
-gpm_kbd_backlight_button_pressed_cb (GpmButton *button,
+cpm_kbd_backlight_button_pressed_cb (GpmButton *button,
                     const gchar *type,
                     GpmKbdBacklight *backlight)
 {
@@ -522,39 +522,39 @@ gpm_kbd_backlight_button_pressed_cb (GpmButton *button,
    saved_brightness = backlight->priv->master_percentage;
 
    if (g_strcmp0 (type, GPM_BUTTON_KBD_BRIGHT_UP) == 0) {
-       ret = gpm_kbd_backlight_brightness_up (backlight);
+       ret = cpm_kbd_backlight_brightness_up (backlight);
         
         if (ret) {
             egg_debug("Going to display OSD");
-            gpm_kbd_backlight_dialog_init (backlight);
+            cpm_kbd_backlight_dialog_init (backlight);
 			msd_media_keys_window_set_volume_level (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup), backlight->priv->brightness_percent);
-            gpm_kbd_backlight_dialog_show (backlight);
+            cpm_kbd_backlight_dialog_show (backlight);
         }
 
    } else if (g_strcmp0 (type, GPM_BUTTON_KBD_BRIGHT_DOWN) == 0) {
-       ret = gpm_kbd_backlight_brightness_down (backlight);
+       ret = cpm_kbd_backlight_brightness_down (backlight);
 
         if (ret) {
             egg_debug("Going to display OSD");
-            gpm_kbd_backlight_dialog_init (backlight);
+            cpm_kbd_backlight_dialog_init (backlight);
 			msd_media_keys_window_set_volume_level (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup), backlight->priv->brightness_percent);
-            gpm_kbd_backlight_dialog_show (backlight);
+            cpm_kbd_backlight_dialog_show (backlight);
         }
         
    } else if (g_strcmp0 (type, GPM_BUTTON_KBD_BRIGHT_TOGGLE) == 0) {
        if (backlight->priv->master_percentage == 0) {
            /* backlight is off turn it back on */
-           gpm_kbd_backlight_set (backlight, saved_brightness);
+           cpm_kbd_backlight_set (backlight, saved_brightness);
        } else {
            /* backlight is on, turn it off and save current value */
            saved_brightness = backlight->priv->master_percentage;
-           gpm_kbd_backlight_set (backlight, 0);
+           cpm_kbd_backlight_set (backlight, 0);
        }
    }
 }
 
 /**
- * gpm_kbd_backlight_idle_changed_cb:
+ * cpm_kbd_backlight_idle_changed_cb:
  * @idle: The idle class instance
  * @mode: The idle mode, e.g. GPM_IDLE_MODE_BLANK
  * @backlight: This class instance
@@ -565,7 +565,7 @@ gpm_kbd_backlight_button_pressed_cb (GpmButton *button,
  * session timeout has elapsed for the idle action.
  **/
 static void
-gpm_kbd_backlight_idle_changed_cb (GpmIdle *idle,
+cpm_kbd_backlight_idle_changed_cb (GpmIdle *idle,
                   GpmIdleMode mode,
                   GpmKbdBacklight *backlight)
 {
@@ -578,7 +578,7 @@ gpm_kbd_backlight_idle_changed_cb (GpmIdle *idle,
 
     egg_debug("Idle changed");
 
-   lid_closed = gpm_button_is_lid_closed (backlight->priv->button);
+   lid_closed = cpm_button_is_lid_closed (backlight->priv->button);
 
    if (lid_closed)
        return;
@@ -599,7 +599,7 @@ gpm_kbd_backlight_idle_changed_cb (GpmIdle *idle,
    if (mode == GPM_IDLE_MODE_NORMAL) {
         egg_debug("GPM_IDLE_MODE_NORMAL");
        backlight->priv->master_percentage = 100;
-       gpm_kbd_backlight_evaluate_power_source_and_set (backlight);
+       cpm_kbd_backlight_evaluate_power_source_and_set (backlight);
    } else if (mode == GPM_IDLE_MODE_DIM) {
        egg_debug("GPM_IDLE_MODE_DIM");
        brightness = backlight->priv->master_percentage;
@@ -614,18 +614,18 @@ gpm_kbd_backlight_idle_changed_cb (GpmIdle *idle,
        brightness *= scale;
 
        value = (guint) brightness;
-       gpm_kbd_backlight_set (backlight, value);
+       cpm_kbd_backlight_set (backlight, value);
    } else if (mode == GPM_IDLE_MODE_BLANK) {
-       gpm_kbd_backlight_set (backlight, 0u);
+       cpm_kbd_backlight_set (backlight, 0u);
    }
 }
 
 /**
- * gpm_kbd_backlight_finalize:
+ * cpm_kbd_backlight_finalize:
  * @object:
  **/
 static void
-gpm_kbd_backlight_finalize (GObject *object)
+cpm_kbd_backlight_finalize (GObject *object)
 {
    GpmKbdBacklight *backlight;
 
@@ -652,18 +652,18 @@ gpm_kbd_backlight_finalize (GObject *object)
    g_object_unref (backlight->priv->idle);
 
    g_return_if_fail (backlight->priv != NULL);
-   G_OBJECT_CLASS (gpm_kbd_backlight_parent_class)->finalize (object);
+   G_OBJECT_CLASS (cpm_kbd_backlight_parent_class)->finalize (object);
 }
 
 /**
- * gpm_kbd_backlight_class_init:
+ * cpm_kbd_backlight_class_init:
  * @klass:
  **/
 static void
-gpm_kbd_backlight_class_init (GpmKbdBacklightClass *klass)
+cpm_kbd_backlight_class_init (GpmKbdBacklightClass *klass)
 {
    GObjectClass *object_class = G_OBJECT_CLASS (klass);
-   object_class->finalize = gpm_kbd_backlight_finalize;
+   object_class->finalize = cpm_kbd_backlight_finalize;
 
    signals [BRIGHTNESS_CHANGED] =
        g_signal_new ("brightness-changed",
@@ -679,19 +679,19 @@ gpm_kbd_backlight_class_init (GpmKbdBacklightClass *klass)
 }
 
 /**
- * gpm_kbd_backlight_init:
+ * cpm_kbd_backlight_init:
  * @backlight: This KbdBacklight class instance
  *
  * Initializes the KbdBacklight class.
  **/
 static void
-gpm_kbd_backlight_init (GpmKbdBacklight *backlight)
+cpm_kbd_backlight_init (GpmKbdBacklight *backlight)
 {
    GVariant *u_brightness;
    GVariant *u_max_brightness;
    GError   *error = NULL;
 
-   backlight->priv = gpm_kbd_backlight_get_instance_private (backlight);
+   backlight->priv = cpm_kbd_backlight_get_instance_private (backlight);
 
    backlight->priv->upower_proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SYSTEM,
                                       G_DBUS_PROXY_FLAGS_DO_NOT_LOAD_PROPERTIES,
@@ -709,7 +709,7 @@ gpm_kbd_backlight_init (GpmKbdBacklight *backlight)
 
    g_signal_connect (backlight->priv->upower_proxy,
              "g-signal",
-             G_CALLBACK (gpm_kbd_backlight_on_dbus_signal),
+             G_CALLBACK (cpm_kbd_backlight_on_dbus_signal),
              backlight);
 
    u_brightness = g_dbus_proxy_call_sync (backlight->priv->upower_proxy,
@@ -744,7 +744,7 @@ gpm_kbd_backlight_init (GpmKbdBacklight *backlight)
    g_variant_get (u_brightness, "(i)", &backlight->priv->brightness);
    g_variant_get (u_max_brightness, "(i)", &backlight->priv->max_brightness);
 
-   backlight->priv->brightness_percent = gpm_discrete_to_percent (backlight->priv->brightness,
+   backlight->priv->brightness_percent = cpm_discrete_to_percent (backlight->priv->brightness,
                                       backlight->priv->max_brightness);
 
    g_variant_unref (u_brightness);
@@ -766,18 +766,18 @@ noerr:
    /* Use upower for ac changed signal */
    backlight->priv->client = up_client_new ();
    g_signal_connect (backlight->priv->client, "notify",
-             G_CALLBACK (gpm_kbd_backlight_client_changed_cb), backlight);
+             G_CALLBACK (cpm_kbd_backlight_client_changed_cb), backlight);
 
    backlight->priv->settings = g_settings_new (GPM_SETTINGS_SCHEMA);
 
    /* watch for kbd brightness up and down button presses */
-   backlight->priv->button = gpm_button_new ();
+   backlight->priv->button = cpm_button_new ();
    g_signal_connect (backlight->priv->button, "button-pressed",
-             G_CALLBACK (gpm_kbd_backlight_button_pressed_cb), backlight);
+             G_CALLBACK (cpm_kbd_backlight_button_pressed_cb), backlight);
 
-   backlight->priv->idle = gpm_idle_new ();
+   backlight->priv->idle = cpm_idle_new ();
    g_signal_connect (backlight->priv->idle, "idle-changed",
-             G_CALLBACK (gpm_kbd_backlight_idle_changed_cb), backlight);
+             G_CALLBACK (cpm_kbd_backlight_idle_changed_cb), backlight);
 
     /* use a visual widget */
    backlight->priv->popup = msd_media_keys_window_new ();
@@ -788,23 +788,23 @@ noerr:
    /* since gpm is just starting we can pretty safely assume that we're not idle */
    backlight->priv->system_is_idle = FALSE;
    backlight->priv->idle_dim_timeout = g_settings_get_int (backlight->priv->settings, GPM_SETTINGS_IDLE_DIM_TIME);
-   gpm_idle_set_timeout_dim (backlight->priv->idle, backlight->priv->idle_dim_timeout);
+   cpm_idle_set_timeout_dim (backlight->priv->idle, backlight->priv->idle_dim_timeout);
 
    /* make sure we turn the keyboard backlight back on after resuming */
-   backlight->priv->control = gpm_control_new ();
+   backlight->priv->control = cpm_control_new ();
    g_signal_connect (backlight->priv->control, "resume",
-             G_CALLBACK (gpm_kbd_backlight_control_resume_cb), backlight);
+             G_CALLBACK (cpm_kbd_backlight_control_resume_cb), backlight);
 
    /* set initial values for whether we're on AC or battery*/
-   gpm_kbd_backlight_evaluate_power_source_and_set (backlight);
+   cpm_kbd_backlight_evaluate_power_source_and_set (backlight);
 }
 
 /**
- * gpm_kbd_backlight_new:
+ * cpm_kbd_backlight_new:
  * Return value: A new GpmKbdBacklight class instance.
  **/
 GpmKbdBacklight *
-gpm_kbd_backlight_new (void)
+cpm_kbd_backlight_new (void)
 {
    GpmKbdBacklight *backlight = g_object_new (GPM_TYPE_KBD_BACKLIGHT, NULL);
    return backlight;

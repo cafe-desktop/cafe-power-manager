@@ -41,7 +41,7 @@
 #include "cpm-icon-names.h"
 #include "cpm-brightness.h"
 
-static void gpm_prefs_finalize (GObject *object);
+static void cpm_prefs_finalize (GObject *object);
 
 struct GpmPrefsPrivate
 {
@@ -67,17 +67,17 @@ enum {
 
 static guint signals [LAST_SIGNAL] = { 0 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmPrefs, gpm_prefs, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (GpmPrefs, cpm_prefs, G_TYPE_OBJECT)
 
 /**
- * gpm_prefs_class_init:
+ * cpm_prefs_class_init:
  * @klass: This prefs class instance
  **/
 static void
-gpm_prefs_class_init (GpmPrefsClass *klass)
+cpm_prefs_class_init (GpmPrefsClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-	object_class->finalize = gpm_prefs_finalize;
+	object_class->finalize = cpm_prefs_finalize;
 
 	signals [ACTION_HELP] =
 		g_signal_new ("action-help",
@@ -100,13 +100,13 @@ gpm_prefs_class_init (GpmPrefsClass *klass)
 }
 
 /**
- * gpm_prefs_activate_window:
+ * cpm_prefs_activate_window:
  * @prefs: This prefs class instance
  *
  * Activates (shows) the window.
  **/
 void
-gpm_prefs_activate_window (CtkApplication *app, GpmPrefs *prefs)
+cpm_prefs_activate_window (CtkApplication *app, GpmPrefs *prefs)
 {
 	CtkWindow *window;
 	window = CTK_WINDOW (ctk_builder_get_object (prefs->priv->builder, "dialog_preferences"));
@@ -115,23 +115,23 @@ gpm_prefs_activate_window (CtkApplication *app, GpmPrefs *prefs)
 }
 
 /**
- * gpm_prefs_help_cb:
+ * cpm_prefs_help_cb:
  * @widget: The CtkWidget object
  * @prefs: This prefs class instance
  **/
 static void
-gpm_prefs_help_cb (CtkWidget *widget, GpmPrefs *prefs)
+cpm_prefs_help_cb (CtkWidget *widget, GpmPrefs *prefs)
 {
 	egg_debug ("emitting action-help");
 	g_signal_emit (prefs, signals [ACTION_HELP], 0);
 }
 
 /**
- * gpm_prefs_icon_radio_cb:
+ * cpm_prefs_icon_radio_cb:
  * @widget: The CtkWidget object
  **/
 static void
-gpm_prefs_icon_radio_cb (CtkWidget *widget, GpmPrefs *prefs)
+cpm_prefs_icon_radio_cb (CtkWidget *widget, GpmPrefs *prefs)
 {
 	gint policy;
 
@@ -140,75 +140,75 @@ gpm_prefs_icon_radio_cb (CtkWidget *widget, GpmPrefs *prefs)
 }
 
 /**
- * gpm_prefs_format_percentage_cb:
+ * cpm_prefs_format_percentage_cb:
  * @scale: The CtkScale object
  * @value: The value in %.
  **/
 static gchar *
-gpm_prefs_format_percentage_cb (CtkScale *scale, gdouble value)
+cpm_prefs_format_percentage_cb (CtkScale *scale, gdouble value)
 {
 	return g_strdup_printf ("%.0f%%", value);
 }
 
 /**
- * gpm_prefs_action_combo_changed_cb:
+ * cpm_prefs_action_combo_changed_cb:
  **/
 static void
-gpm_prefs_action_combo_changed_cb (CtkWidget *widget, GpmPrefs *prefs)
+cpm_prefs_action_combo_changed_cb (CtkWidget *widget, GpmPrefs *prefs)
 {
 	GpmActionPolicy policy;
 	const GpmActionPolicy *actions;
-	const gchar *gpm_pref_key;
+	const gchar *cpm_pref_key;
 	guint active;
 
 	actions = (const GpmActionPolicy *) g_object_get_data (G_OBJECT (widget), "actions");
-	gpm_pref_key = (const gchar *) g_object_get_data (G_OBJECT (widget), "settings_key");
+	cpm_pref_key = (const gchar *) g_object_get_data (G_OBJECT (widget), "settings_key");
 
 	active = ctk_combo_box_get_active (CTK_COMBO_BOX (widget));
 	policy = actions[active];
-	g_settings_set_enum (prefs->priv->settings, gpm_pref_key, policy);
+	g_settings_set_enum (prefs->priv->settings, cpm_pref_key, policy);
 }
 
 /**
- * gpm_prefs_action_time_changed_cb:
+ * cpm_prefs_action_time_changed_cb:
  **/
 static void
-gpm_prefs_action_time_changed_cb (CtkWidget *widget, GpmPrefs *prefs)
+cpm_prefs_action_time_changed_cb (CtkWidget *widget, GpmPrefs *prefs)
 {
 	guint value;
 	const gint *values;
-	const gchar *gpm_pref_key;
+	const gchar *cpm_pref_key;
 	guint active;
 
 	values = (const gint *) g_object_get_data (G_OBJECT (widget), "values");
-	gpm_pref_key = (const gchar *) g_object_get_data (G_OBJECT (widget), "settings_key");
+	cpm_pref_key = (const gchar *) g_object_get_data (G_OBJECT (widget), "settings_key");
 
 	active = ctk_combo_box_get_active (CTK_COMBO_BOX (widget));
 	value = values[active];
 
-	egg_debug ("Changing %s to %i", gpm_pref_key, value);
-	g_settings_set_int (prefs->priv->settings, gpm_pref_key, value);
+	egg_debug ("Changing %s to %i", cpm_pref_key, value);
+	g_settings_set_int (prefs->priv->settings, cpm_pref_key, value);
 }
 
 /**
- * gpm_prefs_actions_destroy_cb:
+ * cpm_prefs_actions_destroy_cb:
  **/
 static void
-gpm_prefs_actions_destroy_cb (GpmActionPolicy *array)
+cpm_prefs_actions_destroy_cb (GpmActionPolicy *array)
 {
 	g_free (array);
 }
 
 /**
- * gpm_prefs_setup_action_combo:
+ * cpm_prefs_setup_action_combo:
  * @prefs: This prefs class instance
  * @widget_name: The CtkWidget name
- * @gpm_pref_key: The settings key for this preference setting.
+ * @cpm_pref_key: The settings key for this preference setting.
  * @actions: The actions to associate in an array.
  **/
 static void
-gpm_prefs_setup_action_combo (GpmPrefs *prefs, const gchar *widget_name,
-				  const gchar *gpm_pref_key, const GpmActionPolicy *actions)
+cpm_prefs_setup_action_combo (GpmPrefs *prefs, const gchar *widget_name,
+				  const gchar *cpm_pref_key, const GpmActionPolicy *actions)
 {
 	gint i;
 	gboolean is_writable;
@@ -220,15 +220,15 @@ gpm_prefs_setup_action_combo (GpmPrefs *prefs, const gchar *widget_name,
 
 	widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, widget_name));
 
-	value = g_settings_get_enum (prefs->priv->settings, gpm_pref_key);
-	is_writable = g_settings_is_writable (prefs->priv->settings, gpm_pref_key);
+	value = g_settings_get_enum (prefs->priv->settings, cpm_pref_key);
+	is_writable = g_settings_is_writable (prefs->priv->settings, cpm_pref_key);
 
 	ctk_widget_set_sensitive (widget, is_writable);
 
 	array = g_ptr_array_new ();
-	g_object_set_data (G_OBJECT (widget), "settings_key", (gpointer) gpm_pref_key);
+	g_object_set_data (G_OBJECT (widget), "settings_key", (gpointer) cpm_pref_key);
 	g_signal_connect (G_OBJECT (widget), "changed",
-			  G_CALLBACK (gpm_prefs_action_combo_changed_cb), prefs);
+			  G_CALLBACK (cpm_prefs_action_combo_changed_cb), prefs);
 
 	for (i=0; actions[i] != -1; i++) {
 		policy = actions[i];
@@ -267,7 +267,7 @@ gpm_prefs_setup_action_combo (GpmPrefs *prefs, const gchar *widget_name,
 		actions_added[i] = GPOINTER_TO_INT (g_ptr_array_index (array, i));
 	actions_added[i] = -1;
 
-	g_object_set_data_full (G_OBJECT (widget), "actions", (gpointer) actions_added, (GDestroyNotify) gpm_prefs_actions_destroy_cb);
+	g_object_set_data_full (G_OBJECT (widget), "actions", (gpointer) actions_added, (GDestroyNotify) cpm_prefs_actions_destroy_cb);
 
 	/* set what we have in the settings */
 	for (i=0; actions_added[i] != -1; i++) {
@@ -280,15 +280,15 @@ gpm_prefs_setup_action_combo (GpmPrefs *prefs, const gchar *widget_name,
 }
 
 /**
- * gpm_prefs_setup_time_combo:
+ * cpm_prefs_setup_time_combo:
  * @prefs: This prefs class instance
  * @widget_name: The CtkWidget name
- * @gpm_pref_key: The settings key for this preference setting.
+ * @cpm_pref_key: The settings key for this preference setting.
  * @actions: The actions to associate in an array.
  **/
 static void
-gpm_prefs_setup_time_combo (GpmPrefs *prefs, const gchar *widget_name,
-				const gchar *gpm_pref_key, const gint *values)
+cpm_prefs_setup_time_combo (GpmPrefs *prefs, const gchar *widget_name,
+				const gchar *cpm_pref_key, const gint *values)
 {
 	guint value;
 	gchar *text;
@@ -298,11 +298,11 @@ gpm_prefs_setup_time_combo (GpmPrefs *prefs, const gchar *widget_name,
 
 	widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, widget_name));
 
-	value = g_settings_get_int (prefs->priv->settings, gpm_pref_key);
-	is_writable = g_settings_is_writable (prefs->priv->settings, gpm_pref_key);
+	value = g_settings_get_int (prefs->priv->settings, cpm_pref_key);
+	is_writable = g_settings_is_writable (prefs->priv->settings, cpm_pref_key);
 	ctk_widget_set_sensitive (widget, is_writable);
 
-	g_object_set_data (G_OBJECT (widget), "settings_key", (gpointer) gpm_pref_key);
+	g_object_set_data (G_OBJECT (widget), "settings_key", (gpointer) cpm_pref_key);
 	g_object_set_data (G_OBJECT (widget), "values", (gpointer) values);
 
 	/* add each time */
@@ -310,7 +310,7 @@ gpm_prefs_setup_time_combo (GpmPrefs *prefs, const gchar *widget_name,
 
 		/* get translation for number of seconds */
 		if (values[i] != 0) {
-			text = gpm_get_timestring (values[i]);
+			text = cpm_get_timestring (values[i]);
 			ctk_combo_box_text_append_text(CTK_COMBO_BOX_TEXT (widget), text);
 			g_free (text);
 		} else {
@@ -324,31 +324,31 @@ gpm_prefs_setup_time_combo (GpmPrefs *prefs, const gchar *widget_name,
 
 	/* connect after set */
 	g_signal_connect (G_OBJECT (widget), "changed",
-			  G_CALLBACK (gpm_prefs_action_time_changed_cb), prefs);
+			  G_CALLBACK (cpm_prefs_action_time_changed_cb), prefs);
 }
 
 /**
- * gpm_prefs_close_cb:
+ * cpm_prefs_close_cb:
  * @widget: The CtkWidget object
  * @prefs: This prefs class instance
  **/
 static void
-gpm_prefs_close_cb (CtkWidget *widget, GpmPrefs *prefs)
+cpm_prefs_close_cb (CtkWidget *widget, GpmPrefs *prefs)
 {
 	egg_debug ("emitting action-close");
 	g_signal_emit (prefs, signals [ACTION_CLOSE], 0);
 }
 
 /**
- * gpm_prefs_delete_event_cb:
+ * cpm_prefs_delete_event_cb:
  * @widget: The CtkWidget object
  * @event: The event type, unused.
  * @prefs: This prefs class instance
  **/
 static gboolean
-gpm_prefs_delete_event_cb (CtkWidget *widget, CdkEvent *event, GpmPrefs *prefs)
+cpm_prefs_delete_event_cb (CtkWidget *widget, CdkEvent *event, GpmPrefs *prefs)
 {
-	gpm_prefs_close_cb (widget, prefs);
+	cpm_prefs_close_cb (widget, prefs);
 	return FALSE;
 }
 
@@ -409,15 +409,15 @@ prefs_setup_notification (GpmPrefs *prefs)
 	/* only connect the callbacks after we set the value, else the settings
 	 * keys gets written to (for a split second), and the icon flickers. */
 	g_signal_connect (radiobutton_icon_always, "clicked",
-			  G_CALLBACK (gpm_prefs_icon_radio_cb), prefs);
+			  G_CALLBACK (cpm_prefs_icon_radio_cb), prefs);
 	g_signal_connect (radiobutton_icon_present, "clicked",
-			  G_CALLBACK (gpm_prefs_icon_radio_cb), prefs);
+			  G_CALLBACK (cpm_prefs_icon_radio_cb), prefs);
 	g_signal_connect (radiobutton_icon_charge, "clicked",
-			  G_CALLBACK (gpm_prefs_icon_radio_cb), prefs);
+			  G_CALLBACK (cpm_prefs_icon_radio_cb), prefs);
 	g_signal_connect (radiobutton_icon_low, "clicked",
-			  G_CALLBACK (gpm_prefs_icon_radio_cb), prefs);
+			  G_CALLBACK (cpm_prefs_icon_radio_cb), prefs);
 	g_signal_connect (radiobutton_icon_never, "clicked",
-			  G_CALLBACK (gpm_prefs_icon_radio_cb), prefs);
+			  G_CALLBACK (cpm_prefs_icon_radio_cb), prefs);
 }
 
 static void
@@ -448,14 +448,14 @@ prefs_setup_ac (GpmPrefs *prefs)
 		 0, /* never */
 		 -1};
 
-	gpm_prefs_setup_time_combo (prefs, "combobox_ac_computer",
+	cpm_prefs_setup_time_combo (prefs, "combobox_ac_computer",
 					GPM_SETTINGS_SLEEP_COMPUTER_AC,
 					computer_times);
-	gpm_prefs_setup_time_combo (prefs, "combobox_ac_display",
+	cpm_prefs_setup_time_combo (prefs, "combobox_ac_display",
 					GPM_SETTINGS_SLEEP_DISPLAY_AC,
 					display_times);
 
-	gpm_prefs_setup_action_combo (prefs, "combobox_ac_lid",
+	cpm_prefs_setup_action_combo (prefs, "combobox_ac_lid",
 					  GPM_SETTINGS_BUTTON_LID_AC,
 					  button_lid_actions);
 
@@ -465,7 +465,7 @@ prefs_setup_ac (GpmPrefs *prefs)
 			 ctk_range_get_adjustment (CTK_RANGE (widget)), "value",
 			 G_SETTINGS_BIND_DEFAULT);
 	g_signal_connect (G_OBJECT (widget), "format-value",
-			  G_CALLBACK (gpm_prefs_format_percentage_cb), NULL);
+			  G_CALLBACK (cpm_prefs_format_percentage_cb), NULL);
 
 	/* set up the checkboxes */
 	widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "checkbutton_ac_display_dim"));
@@ -525,10 +525,10 @@ prefs_setup_battery (GpmPrefs *prefs)
 		 0, /* never */
 		 -1};
 
-	gpm_prefs_setup_time_combo (prefs, "combobox_battery_computer",
+	cpm_prefs_setup_time_combo (prefs, "combobox_battery_computer",
 					GPM_SETTINGS_SLEEP_COMPUTER_BATT,
 					computer_times);
-	gpm_prefs_setup_time_combo (prefs, "combobox_battery_display",
+	cpm_prefs_setup_time_combo (prefs, "combobox_battery_display",
 					GPM_SETTINGS_SLEEP_DISPLAY_BATT,
 					display_times);
 
@@ -540,10 +540,10 @@ prefs_setup_battery (GpmPrefs *prefs)
 		return;
 	}
 
-	gpm_prefs_setup_action_combo (prefs, "combobox_battery_lid",
+	cpm_prefs_setup_action_combo (prefs, "combobox_battery_lid",
 					  GPM_SETTINGS_BUTTON_LID_BATT,
 					  button_lid_actions);
-	gpm_prefs_setup_action_combo (prefs, "combobox_battery_critical",
+	cpm_prefs_setup_action_combo (prefs, "combobox_battery_critical",
 					  GPM_SETTINGS_ACTION_CRITICAL_BATT,
 					  battery_critical_actions);
 
@@ -598,18 +598,18 @@ prefs_setup_ups (GpmPrefs *prefs)
 		 0, /* never */
 		 -1};
 
-	gpm_prefs_setup_time_combo (prefs, "combobox_ups_computer",
+	cpm_prefs_setup_time_combo (prefs, "combobox_ups_computer",
 					GPM_SETTINGS_SLEEP_COMPUTER_UPS,
 					computer_times);
-	gpm_prefs_setup_time_combo (prefs, "combobox_ups_display",
+	cpm_prefs_setup_time_combo (prefs, "combobox_ups_display",
 					GPM_SETTINGS_SLEEP_DISPLAY_UPS,
 					display_times);
 
-	window = gpm_window (prefs);
+	window = cpm_window (prefs);
 	notebook = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "notebook_preferences"));
 	ctk_widget_add_events (notebook, CDK_SCROLL_MASK);
 	g_signal_connect (CTK_NOTEBOOK (notebook), "scroll-event",
-			  G_CALLBACK (gpm_dialog_page_scroll_event_cb),
+			  G_CALLBACK (cpm_dialog_page_scroll_event_cb),
 			  window);
 
 	if (prefs->priv->has_ups == FALSE) {
@@ -619,10 +619,10 @@ prefs_setup_ups (GpmPrefs *prefs)
 		return;
 	}
 
-	gpm_prefs_setup_action_combo (prefs, "combobox_ups_low",
+	cpm_prefs_setup_action_combo (prefs, "combobox_ups_low",
 					  GPM_SETTINGS_ACTION_LOW_UPS,
 					  ups_low_actions);
-	gpm_prefs_setup_action_combo (prefs, "combobox_ups_critical",
+	cpm_prefs_setup_action_combo (prefs, "combobox_ups_critical",
 					  GPM_SETTINGS_ACTION_CRITICAL_UPS,
 					  ups_low_actions);
 }
@@ -644,10 +644,10 @@ prefs_setup_general (GpmPrefs *prefs)
 				 GPM_ACTION_POLICY_HIBERNATE,
 				 -1};
 
-	gpm_prefs_setup_action_combo (prefs, "combobox_general_power",
+	cpm_prefs_setup_action_combo (prefs, "combobox_general_power",
 					  GPM_SETTINGS_BUTTON_POWER,
 					  power_button_actions);
-	gpm_prefs_setup_action_combo (prefs, "combobox_general_suspend",
+	cpm_prefs_setup_action_combo (prefs, "combobox_general_suspend",
 					  GPM_SETTINGS_BUTTON_SUSPEND,
 					  suspend_button_actions);
 
@@ -659,11 +659,11 @@ prefs_setup_general (GpmPrefs *prefs)
 }
 
 /**
- * gpm_prefs_init:
+ * cpm_prefs_init:
  * @prefs: This prefs class instance
  **/
 static void
-gpm_prefs_init (GpmPrefs *prefs)
+cpm_prefs_init (GpmPrefs *prefs)
 {
 	CtkWidget *main_window;
 	CtkWidget *widget;
@@ -679,7 +679,7 @@ gpm_prefs_init (GpmPrefs *prefs)
 	GVariant *res, *inner;
 	gchar * r;
 
-	prefs->priv = gpm_prefs_get_instance_private (prefs);
+	prefs->priv = cpm_prefs_get_instance_private (prefs);
 
 	prefs->priv->client = up_client_new ();
 	prefs->priv->console = egg_console_kit_new ();
@@ -804,8 +804,8 @@ gpm_prefs_init (GpmPrefs *prefs)
 	prefs->priv->has_button_suspend = TRUE;
 
 	/* find if we have brightness hardware */
-	brightness = gpm_brightness_new ();
-	prefs->priv->has_lcd = gpm_brightness_has_hw (brightness);
+	brightness = cpm_brightness_new ();
+	prefs->priv->has_lcd = cpm_brightness_has_hw (brightness);
 	g_object_unref (brightness);
 	devices = up_client_get_devices2 (prefs->priv->client);
 	for (i=0; i<devices->len; i++) {
@@ -836,15 +836,15 @@ gpm_prefs_init (GpmPrefs *prefs)
 
 	/* Get the main window quit */
 	g_signal_connect (main_window, "delete_event",
-			  G_CALLBACK (gpm_prefs_delete_event_cb), prefs);
+			  G_CALLBACK (cpm_prefs_delete_event_cb), prefs);
 
 	widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "button_close"));
 	g_signal_connect (widget, "clicked",
-			  G_CALLBACK (gpm_prefs_close_cb), prefs);
+			  G_CALLBACK (cpm_prefs_close_cb), prefs);
 
 	widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "button_help"));
 	g_signal_connect (widget, "clicked",
-			  G_CALLBACK (gpm_prefs_help_cb), prefs);
+			  G_CALLBACK (cpm_prefs_help_cb), prefs);
 
 	widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "button_defaults"));
 	ctk_widget_hide (widget);
@@ -857,33 +857,33 @@ gpm_prefs_init (GpmPrefs *prefs)
 }
 
 /**
- * gpm_prefs_finalize:
+ * cpm_prefs_finalize:
  * @object: This prefs class instance
  **/
 static void
-gpm_prefs_finalize (GObject *object)
+cpm_prefs_finalize (GObject *object)
 {
 	GpmPrefs *prefs;
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (GPM_IS_PREFS (object));
 
 	prefs = GPM_PREFS (object);
-	prefs->priv = gpm_prefs_get_instance_private (prefs);
+	prefs->priv = cpm_prefs_get_instance_private (prefs);
 
 	g_object_unref (prefs->priv->settings);
 	g_object_unref (prefs->priv->client);
 	g_object_unref (prefs->priv->console);
 	g_object_unref (prefs->priv->builder);
 
-	G_OBJECT_CLASS (gpm_prefs_parent_class)->finalize (object);
+	G_OBJECT_CLASS (cpm_prefs_parent_class)->finalize (object);
 }
 
 /**
- * gpm_prefs_new:
+ * cpm_prefs_new:
  * Return value: new GpmPrefs instance.
  **/
 GpmPrefs *
-gpm_prefs_new (void)
+cpm_prefs_new (void)
 {
 	GpmPrefs *prefs;
 	prefs = g_object_new (GPM_TYPE_PREFS, NULL);
@@ -891,11 +891,11 @@ gpm_prefs_new (void)
 }
 
 /**
- * gpm_window:
+ * cpm_window:
  * Return value: Prefs window widget.
  **/
 CtkWidget *
-gpm_window (GpmPrefs *prefs)
+cpm_window (GpmPrefs *prefs)
 {
 	return CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "dialog_preferences"));
 }

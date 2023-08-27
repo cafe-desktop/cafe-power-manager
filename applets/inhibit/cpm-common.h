@@ -26,9 +26,9 @@
 
 G_BEGIN_DECLS
 
-void 		 gpm_help_display				(const gchar	*link_id);
+void 		 cpm_help_display				(const gchar	*link_id);
 #ifdef EGG_TEST
-void		 gpm_common_test				(gpointer	 data);
+void		 cpm_common_test				(gpointer	 data);
 #endif
 
 G_END_DECLS

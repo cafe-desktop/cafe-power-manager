@@ -26,7 +26,7 @@
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_SCREENSAVER		(gpm_screensaver_get_type ())
+#define GPM_TYPE_SCREENSAVER		(cpm_screensaver_get_type ())
 #define GPM_SCREENSAVER(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_SCREENSAVER, GpmScreensaver))
 #define GPM_SCREENSAVER_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_SCREENSAVER, GpmScreensaverClass))
 #define GPM_IS_SCREENSAVER(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_SCREENSAVER))
@@ -46,17 +46,17 @@ typedef struct
 	GObjectClass	parent_class;
 } GpmScreensaverClass;
 
-GType		 gpm_screensaver_get_type		(void);
-GpmScreensaver	*gpm_screensaver_new			(void);
-void		 gpm_screensaver_test			(gpointer	 data);
+GType		 cpm_screensaver_get_type		(void);
+GpmScreensaver	*cpm_screensaver_new			(void);
+void		 cpm_screensaver_test			(gpointer	 data);
 
-gboolean	 gpm_screensaver_lock			(GpmScreensaver	*screensaver);
-guint32 	 gpm_screensaver_add_throttle    	(GpmScreensaver	*screensaver,
+gboolean	 cpm_screensaver_lock			(GpmScreensaver	*screensaver);
+guint32 	 cpm_screensaver_add_throttle    	(GpmScreensaver	*screensaver,
 							 const gchar	*reason);
-gboolean 	 gpm_screensaver_remove_throttle    	(GpmScreensaver	*screensaver,
+gboolean 	 cpm_screensaver_remove_throttle    	(GpmScreensaver	*screensaver,
 							 guint32         cookie);
-gboolean	 gpm_screensaver_check_running		(GpmScreensaver	*screensaver);
-gboolean	 gpm_screensaver_poke			(GpmScreensaver	*screensaver);
+gboolean	 cpm_screensaver_check_running		(GpmScreensaver	*screensaver);
+gboolean	 cpm_screensaver_poke			(GpmScreensaver	*screensaver);
 
 G_END_DECLS
 

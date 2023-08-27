@@ -27,7 +27,7 @@
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_TRAY_ICON		(gpm_tray_icon_get_type ())
+#define GPM_TYPE_TRAY_ICON		(cpm_tray_icon_get_type ())
 #define GPM_TRAY_ICON(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_TRAY_ICON, GpmTrayIcon))
 #define GPM_TRAY_ICON_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_TRAY_ICON, GpmTrayIconClass))
 #define GPM_IS_TRAY_ICON(o)	 	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_TRAY_ICON))
@@ -49,14 +49,14 @@ typedef struct
 	void	(* hibernate)				(GpmTrayIcon	*tray_icon);
 } GpmTrayIconClass;
 
-GType		 gpm_tray_icon_get_type			(void);
-GpmTrayIcon	*gpm_tray_icon_new			(void);
+GType		 cpm_tray_icon_get_type			(void);
+GpmTrayIcon	*cpm_tray_icon_new			(void);
 
-gboolean	 gpm_tray_icon_set_tooltip		(GpmTrayIcon	*icon,
+gboolean	 cpm_tray_icon_set_tooltip		(GpmTrayIcon	*icon,
 							 const gchar	*tooltip);
-gboolean	 gpm_tray_icon_set_icon			(GpmTrayIcon	*icon,
+gboolean	 cpm_tray_icon_set_icon			(GpmTrayIcon	*icon,
 							 const gchar	*icon_name);
-CtkStatusIcon	*gpm_tray_icon_get_status_icon		(GpmTrayIcon	*icon);
+CtkStatusIcon	*cpm_tray_icon_get_status_icon		(GpmTrayIcon	*icon);
 
 G_END_DECLS
 

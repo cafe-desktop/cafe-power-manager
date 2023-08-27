@@ -46,7 +46,7 @@
 #include "egg-debug.h"
 
 /**
- * gpm_object_register:
+ * cpm_object_register:
  * @connection: What we want to register to
  * @object: The GObject we want to register
  *
@@ -56,7 +56,7 @@
  * Return value: success
  **/
 static gboolean
-gpm_object_register (DBusGConnection *connection,
+cpm_object_register (DBusGConnection *connection,
 		     GObject	     *object)
 {
 	DBusGProxy *bus_proxy = NULL;
@@ -93,7 +93,7 @@ gpm_object_register (DBusGConnection *connection,
 		return FALSE;
 	}
 
-	dbus_g_object_type_install_info (GPM_TYPE_MANAGER, &dbus_glib_gpm_manager_object_info);
+	dbus_g_object_type_install_info (GPM_TYPE_MANAGER, &dbus_glib_cpm_manager_object_info);
 	dbus_g_error_domain_register (GPM_MANAGER_ERROR, NULL, GPM_MANAGER_TYPE_ERROR);
 	dbus_g_connection_register_g_object (connection, GPM_DBUS_PATH, object);
 
@@ -116,32 +116,32 @@ timed_exit_cb (GMainLoop *loop)
 }
 
 /**
- * gpm_main_stop_cb:
+ * cpm_main_stop_cb:
  **/
 static void
-gpm_main_stop_cb (GpmSession *session, GMainLoop *loop)
+cpm_main_stop_cb (GpmSession *session, GMainLoop *loop)
 {
 	g_main_loop_quit (loop);
 }
 
 /**
- * gpm_main_query_end_session_cb:
+ * cpm_main_query_end_session_cb:
  **/
 static void
-gpm_main_query_end_session_cb (GpmSession *session, guint flags, GMainLoop *loop)
+cpm_main_query_end_session_cb (GpmSession *session, guint flags, GMainLoop *loop)
 {
 	/* just send response */
-	gpm_session_end_session_response (session, TRUE, NULL);
+	cpm_session_end_session_response (session, TRUE, NULL);
 }
 
 /**
- * gpm_main_end_session_cb:
+ * cpm_main_end_session_cb:
  **/
 static void
-gpm_main_end_session_cb (GpmSession *session, guint flags, GMainLoop *loop)
+cpm_main_end_session_cb (GpmSession *session, guint flags, GMainLoop *loop)
 {
 	/* send response */
-	gpm_session_end_session_response (session, TRUE, NULL);
+	cpm_session_end_session_response (session, TRUE, NULL);
 
 	/* exit loop, will unref manager */
 	g_main_loop_quit (loop);
@@ -233,16 +233,16 @@ main (int argc, char *argv[])
 	loop = g_main_loop_new (NULL, FALSE);
 
 	/* optionally register with the session */
-	session = gpm_session_new ();
-	g_signal_connect (session, "stop", G_CALLBACK (gpm_main_stop_cb), loop);
-	g_signal_connect (session, "query-end-session", G_CALLBACK (gpm_main_query_end_session_cb), loop);
-	g_signal_connect (session, "end-session", G_CALLBACK (gpm_main_end_session_cb), loop);
-	gpm_session_register_client (session, "cafe-power-manager", getenv ("DESKTOP_AUTOSTART_ID"));
+	session = cpm_session_new ();
+	g_signal_connect (session, "stop", G_CALLBACK (cpm_main_stop_cb), loop);
+	g_signal_connect (session, "query-end-session", G_CALLBACK (cpm_main_query_end_session_cb), loop);
+	g_signal_connect (session, "end-session", G_CALLBACK (cpm_main_end_session_cb), loop);
+	cpm_session_register_client (session, "cafe-power-manager", getenv ("DESKTOP_AUTOSTART_ID"));
 
 	/* create a new gui object */
-	manager = gpm_manager_new ();
+	manager = cpm_manager_new ();
 
-	if (!gpm_object_register (session_connection, G_OBJECT (manager))) {
+	if (!cpm_object_register (session_connection, G_OBJECT (manager))) {
 		egg_error ("%s is already running in this session.", GPM_NAME);
 		goto unref_program;
 	}

@@ -31,11 +31,11 @@
 #include "cpm-common.h"
 
 /**
- * gpm_help_display:
+ * cpm_help_display:
  * @link_id: Subsection of cafe-power-manager help section
  **/
 void
-gpm_help_display (const gchar *link_id)
+cpm_help_display (const gchar *link_id)
 {
 	GError *error = NULL;
 	gchar *uri;
@@ -65,7 +65,7 @@ gpm_help_display (const gchar *link_id)
 #include "egg-test.h"
 
 void
-gpm_common_test (gpointer data)
+cpm_common_test (gpointer data)
 {
 	EggTest *test = (EggTest *) data;
 	if (egg_test_start (test, "GpmCommon") == FALSE)

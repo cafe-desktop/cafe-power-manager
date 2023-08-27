@@ -36,15 +36,15 @@ void egg_color_test (EggTest *test);
 void egg_array_float_test (EggTest *test);
 void egg_idletime_test (EggTest *test);
 
-void gpm_common_test (EggTest *test);
-void gpm_idle_test (EggTest *test);
-void gpm_phone_test (EggTest *test);
-void gpm_dpms_test (EggTest *test);
-void gpm_graph_widget_test (EggTest *test);
-void gpm_proxy_test (EggTest *test);
-void gpm_hal_manager_test (EggTest *test);
-void gpm_device_test (EggTest *test);
-void gpm_device_teststore (EggTest *test);
+void cpm_common_test (EggTest *test);
+void cpm_idle_test (EggTest *test);
+void cpm_phone_test (EggTest *test);
+void cpm_dpms_test (EggTest *test);
+void cpm_graph_widget_test (EggTest *test);
+void cpm_proxy_test (EggTest *test);
+void cpm_hal_manager_test (EggTest *test);
+void cpm_device_test (EggTest *test);
+void cpm_device_teststore (EggTest *test);
 
 int
 main (int argc, char **argv)
@@ -64,18 +64,18 @@ main (int argc, char **argv)
 	egg_array_float_test (test);
 //	egg_idletime_test (test);
 
-	gpm_common_test (test);
-//	gpm_idle_test (test);
-	gpm_phone_test (test);
-//	gpm_dpms_test (test);
-//	gpm_graph_widget_test (test);
-//	gpm_screensaver_test (test);
+	cpm_common_test (test);
+//	cpm_idle_test (test);
+	cpm_phone_test (test);
+//	cpm_dpms_test (test);
+//	cpm_graph_widget_test (test);
+//	cpm_screensaver_test (test);
 
 #if 0
-	gpm_proxy_test (test);
-	gpm_hal_manager_test (test);
-	gpm_device_test (test);
-	gpm_device_teststore (test);
+	cpm_proxy_test (test);
+	cpm_hal_manager_test (test);
+	cpm_device_test (test);
+	cpm_device_teststore (test);
 #endif
 
 	return (egg_test_finish (test));

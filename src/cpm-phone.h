@@ -26,7 +26,7 @@
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_PHONE		(gpm_phone_get_type ())
+#define GPM_TYPE_PHONE		(cpm_phone_get_type ())
 #define GPM_PHONE(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_PHONE, GpmPhone))
 #define GPM_PHONE_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_PHONE, GpmPhoneClass))
 #define GPM_IS_PHONE(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_PHONE))
@@ -56,19 +56,19 @@ typedef struct
 							 guint		 idx);
 } GpmPhoneClass;
 
-GType		 gpm_phone_get_type			(void);
-GpmPhone	*gpm_phone_new				(void);
+GType		 cpm_phone_get_type			(void);
+GpmPhone	*cpm_phone_new				(void);
 
-gboolean	 gpm_phone_get_present			(GpmPhone	*phone,
+gboolean	 cpm_phone_get_present			(GpmPhone	*phone,
 							 guint		 idx);
-guint		 gpm_phone_get_percentage		(GpmPhone	*phone,
+guint		 cpm_phone_get_percentage		(GpmPhone	*phone,
 							 guint		 idx);
-gboolean	 gpm_phone_get_on_ac			(GpmPhone	*phone,
+gboolean	 cpm_phone_get_on_ac			(GpmPhone	*phone,
 							 guint		 idx);
-guint		 gpm_phone_get_num_batteries		(GpmPhone	*phone);
-gboolean	 gpm_phone_coldplug			(GpmPhone	*phone);
+guint		 cpm_phone_get_num_batteries		(GpmPhone	*phone);
+gboolean	 cpm_phone_coldplug			(GpmPhone	*phone);
 #ifdef EGG_TEST
-void		 gpm_phone_test				(gpointer	 data);
+void		 cpm_phone_test				(gpointer	 data);
 #endif
 
 G_END_DECLS

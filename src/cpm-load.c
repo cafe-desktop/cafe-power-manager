@@ -45,7 +45,7 @@
 
 #include "cpm-load.h"
 
-static void     gpm_load_finalize   (GObject	  *object);
+static void     cpm_load_finalize   (GObject	  *object);
 
 struct GpmLoadPrivate
 {
@@ -53,31 +53,31 @@ struct GpmLoadPrivate
 	long unsigned	 old_total;
 };
 
-static gpointer gpm_load_object = NULL;
+static gpointer cpm_load_object = NULL;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmLoad, gpm_load, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (GpmLoad, cpm_load, G_TYPE_OBJECT)
 
 /**
- * gpm_load_class_init:
+ * cpm_load_class_init:
  * @klass: This class instance
  **/
 static void
-gpm_load_class_init (GpmLoadClass *klass)
+cpm_load_class_init (GpmLoadClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-	object_class->finalize = gpm_load_finalize;
+	object_class->finalize = cpm_load_finalize;
 }
 
 #if defined(sun) && defined(__SVR4)
 
 /**
- * gpm_load_get_cpu_values:
+ * cpm_load_get_cpu_values:
  * @cpu_idle: The idle time reported by the CPU
  * @cpu_total: The total time reported by the CPU
  * Return value: Success of reading /proc/stat.
  **/
 static gboolean
-gpm_load_get_cpu_values (long unsigned *cpu_idle, long unsigned *cpu_total)
+cpm_load_get_cpu_values (long unsigned *cpu_idle, long unsigned *cpu_total)
 {	
 	long unsigned cpu_user = 0;
 	long unsigned cpu_kernel = 0;
@@ -151,13 +151,13 @@ out:
 #else
 
 /**
- * gpm_load_get_cpu_values:
+ * cpm_load_get_cpu_values:
  * @cpu_idle: The idle time reported by the CPU
  * @cpu_total: The total time reported by the CPU
  * Return value: Success of reading /proc/stat.
  **/
 static gboolean
-gpm_load_get_cpu_values (long unsigned *cpu_idle, long unsigned *cpu_total)
+cpm_load_get_cpu_values (long unsigned *cpu_idle, long unsigned *cpu_total)
 {
 	long unsigned cpu_user;
 	long unsigned cpu_nice;
@@ -196,12 +196,12 @@ out:
 #endif /* sun & __SVR4 */
 
 /**
- * gpm_load_get_current:
+ * cpm_load_get_current:
  * @load: This class instance
  * Return value: The CPU idle load
  **/
 gdouble
-gpm_load_get_current (GpmLoad *load)
+cpm_load_get_current (GpmLoad *load)
 {
 	double percentage_load;
 	long unsigned cpu_idle;
@@ -211,7 +211,7 @@ gpm_load_get_current (GpmLoad *load)
 	gboolean ret;
 
 	/* work out the differences */
-	ret = gpm_load_get_cpu_values (&cpu_idle, &cpu_total);
+	ret = cpm_load_get_cpu_values (&cpu_idle, &cpu_total);
 	if (!ret)
 		return 0.0;
 
@@ -231,49 +231,49 @@ gpm_load_get_current (GpmLoad *load)
 }
 
 /**
- * gpm_load_init:
+ * cpm_load_init:
  */
 static void
-gpm_load_init (GpmLoad *load)
+cpm_load_init (GpmLoad *load)
 {
-	load->priv = gpm_load_get_instance_private (load);
+	load->priv = cpm_load_get_instance_private (load);
 
 	load->priv->old_idle = 0;
 	load->priv->old_total = 0;
 
 	/* we have to populate the values at startup */
-	gpm_load_get_cpu_values (&load->priv->old_idle, &load->priv->old_total);
+	cpm_load_get_cpu_values (&load->priv->old_idle, &load->priv->old_total);
 }
 
 /**
- * gpm_load_coldplug:
+ * cpm_load_coldplug:
  *
  * @object: This load instance
  */
 static void
-gpm_load_finalize (GObject *object)
+cpm_load_finalize (GObject *object)
 {
 	GpmLoad *load;
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (GPM_IS_LOAD (object));
 	load = GPM_LOAD (object);
 	g_return_if_fail (load->priv != NULL);
-	G_OBJECT_CLASS (gpm_load_parent_class)->finalize (object);
+	G_OBJECT_CLASS (cpm_load_parent_class)->finalize (object);
 }
 
 /**
- * gpm_load_new:
+ * cpm_load_new:
  * Return value: new GpmLoad instance.
  **/
 GpmLoad *
-gpm_load_new (void)
+cpm_load_new (void)
 {
-	if (gpm_load_object != NULL) {
-		g_object_ref (gpm_load_object);
+	if (cpm_load_object != NULL) {
+		g_object_ref (cpm_load_object);
 	} else {
-		gpm_load_object = g_object_new (GPM_TYPE_LOAD, NULL);
-		g_object_add_weak_pointer (gpm_load_object, &gpm_load_object);
+		cpm_load_object = g_object_new (GPM_TYPE_LOAD, NULL);
+		g_object_add_weak_pointer (cpm_load_object, &cpm_load_object);
 	}
-	return GPM_LOAD (gpm_load_object);
+	return GPM_LOAD (cpm_load_object);
 }
 

@@ -489,7 +489,7 @@ static guint event_time;
 GTimer *timer;
 
 static void
-gpm_alarm_expired_cb (EggIdletime *idletime, guint alarm, gpointer data)
+cpm_alarm_expired_cb (EggIdletime *idletime, guint alarm, gpointer data)
 {
 	last_alarm = alarm;
 	event_time = g_timer_elapsed (timer, NULL) * (gfloat) 1000.0f;
@@ -555,7 +555,7 @@ egg_idletime_test (gpointer data)
 		egg_test_failed (test, "could not get EggIdletime");
 	}
 	g_signal_connect (idletime, "alarm-expired",
-			  G_CALLBACK (gpm_alarm_expired_cb), NULL);
+			  G_CALLBACK (cpm_alarm_expired_cb), NULL);
 
 	/************************************************************/
 	egg_test_title (test, "check if we are alarm zero with no alarms");

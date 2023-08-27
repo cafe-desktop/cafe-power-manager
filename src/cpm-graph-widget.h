@@ -27,7 +27,7 @@
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_GRAPH_WIDGET		(gpm_graph_widget_get_type ())
+#define GPM_TYPE_GRAPH_WIDGET		(cpm_graph_widget_get_type ())
 #define GPM_GRAPH_WIDGET(obj)		(G_TYPE_CHECK_INSTANCE_CAST ((obj), GPM_TYPE_GRAPH_WIDGET, GpmGraphWidget))
 #define GPM_GRAPH_WIDGET_CLASS(obj)	(G_TYPE_CHECK_CLASS_CAST ((obj), GPM_GRAPH_WIDGET, GpmGraphWidgetClass))
 #define GPM_IS_GRAPH_WIDGET(obj)	(G_TYPE_CHECK_INSTANCE_TYPE ((obj), GPM_TYPE_GRAPH_WIDGET))
@@ -73,14 +73,14 @@ struct GpmGraphWidgetClass
 	CtkDrawingAreaClass parent_class;
 };
 
-GType		 gpm_graph_widget_get_type		(void);
-CtkWidget	*gpm_graph_widget_new			(void);
+GType		 cpm_graph_widget_get_type		(void);
+CtkWidget	*cpm_graph_widget_new			(void);
 
-gboolean	 gpm_graph_widget_data_clear		(GpmGraphWidget		*graph);
-gboolean	 gpm_graph_widget_data_assign		(GpmGraphWidget		*graph,
+gboolean	 cpm_graph_widget_data_clear		(GpmGraphWidget		*graph);
+gboolean	 cpm_graph_widget_data_assign		(GpmGraphWidget		*graph,
 							 GpmGraphWidgetPlot	 plot,
 							 GPtrArray		*array);
-gboolean	 gpm_graph_widget_key_data_add		(GpmGraphWidget		*graph,
+gboolean	 cpm_graph_widget_key_data_add		(GpmGraphWidget		*graph,
 							 guint32		 color,
 							 const gchar		*desc);
 

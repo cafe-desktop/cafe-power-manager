@@ -37,7 +37,7 @@
 #include "egg-debug.h"
 #include "cpm-common.h"
 
-#define GPM_TYPE_INHIBIT_APPLET		(gpm_inhibit_applet_get_type ())
+#define GPM_TYPE_INHIBIT_APPLET		(cpm_inhibit_applet_get_type ())
 #define GPM_INHIBIT_APPLET(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_INHIBIT_APPLET, GpmInhibitApplet))
 #define GPM_INHIBIT_APPLET_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_INHIBIT_APPLET, GpmInhibitAppletClass))
 #define GPM_IS_INHIBIT_APPLET(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_INHIBIT_APPLET))
@@ -63,21 +63,21 @@ typedef struct{
 	CafePanelAppletClass	parent_class;
 } GpmInhibitAppletClass;
 
-GType                gpm_inhibit_applet_get_type  (void);
+GType                cpm_inhibit_applet_get_type  (void);
 
 #define GS_DBUS_SERVICE		"org.gnome.SessionManager"
 #define GS_DBUS_PATH		"/org/gnome/SessionManager"
 #define GS_DBUS_INTERFACE	"org.gnome.SessionManager"
 
-G_DEFINE_TYPE (GpmInhibitApplet, gpm_inhibit_applet, PANEL_TYPE_APPLET)
+G_DEFINE_TYPE (GpmInhibitApplet, cpm_inhibit_applet, PANEL_TYPE_APPLET)
 
-static void	gpm_applet_update_icon		(GpmInhibitApplet *applet);
-static void	gpm_applet_size_allocate_cb     (CtkWidget *widget, CdkRectangle *allocation);;
-static void	gpm_applet_update_tooltip	(GpmInhibitApplet *applet);
-static gboolean	gpm_applet_click_cb		(GpmInhibitApplet *applet, CdkEventButton *event);
-static void	gpm_applet_dialog_about_cb	(CtkAction *action, gpointer data);
-static gboolean	gpm_applet_cb		        (CafePanelApplet *_applet, const gchar *iid, gpointer data);
-static void	gpm_applet_destroy_cb		(CtkWidget *widget);
+static void	cpm_applet_update_icon		(GpmInhibitApplet *applet);
+static void	cpm_applet_size_allocate_cb     (CtkWidget *widget, CdkRectangle *allocation);;
+static void	cpm_applet_update_tooltip	(GpmInhibitApplet *applet);
+static gboolean	cpm_applet_click_cb		(GpmInhibitApplet *applet, CdkEventButton *event);
+static void	cpm_applet_dialog_about_cb	(CtkAction *action, gpointer data);
+static gboolean	cpm_applet_cb		        (CafePanelApplet *_applet, const gchar *iid, gpointer data);
+static void	cpm_applet_destroy_cb		(CtkWidget *widget);
 
 #define GPM_INHIBIT_APPLET_ID		        "InhibitApplet"
 #define GPM_INHIBIT_APPLET_FACTORY_ID	        "InhibitAppletFactory"
@@ -92,7 +92,7 @@ static void	gpm_applet_destroy_cb		(CtkWidget *widget);
 
 /** cookie is returned as an unsigned integer */
 static gboolean
-gpm_applet_inhibit (GpmInhibitApplet *applet,
+cpm_applet_inhibit (GpmInhibitApplet *applet,
 		    const gchar     *appname,
 		    const gchar     *reason,
 		    guint           *cookie)
@@ -129,7 +129,7 @@ gpm_applet_inhibit (GpmInhibitApplet *applet,
 }
 
 static gboolean
-gpm_applet_uninhibit (GpmInhibitApplet *applet,
+cpm_applet_uninhibit (GpmInhibitApplet *applet,
 		      guint            cookie)
 {
 	GError *error = NULL;
@@ -157,13 +157,13 @@ gpm_applet_uninhibit (GpmInhibitApplet *applet,
 }
 
 /**
- * gpm_applet_update_icon:
+ * cpm_applet_update_icon:
  * @applet: Inhibit applet instance
  *
  * sets an icon from stock
  **/
 static void
-gpm_applet_update_icon (GpmInhibitApplet *applet)
+cpm_applet_update_icon (GpmInhibitApplet *applet)
 {
 	const gchar *icon;
 
@@ -181,13 +181,13 @@ gpm_applet_update_icon (GpmInhibitApplet *applet)
 }
 
 /**
- * gpm_applet_size_allocate_cb:
+ * cpm_applet_size_allocate_cb:
  * @applet: Inhibit applet instance
  *
  * resize icon when panel size changed
  **/
 static void
-gpm_applet_size_allocate_cb (CtkWidget    *widget,
+cpm_applet_size_allocate_cb (CtkWidget    *widget,
                              CdkRectangle *allocation)
 {
 	GpmInhibitApplet *applet = GPM_INHIBIT_APPLET (widget);
@@ -212,13 +212,13 @@ gpm_applet_size_allocate_cb (CtkWidget    *widget,
 
 
 /**
- * gpm_applet_update_tooltip:
+ * cpm_applet_update_tooltip:
  * @applet: Inhibit applet instance
  *
  * sets tooltip's content (percentage or disabled)
  **/
 static void
-gpm_applet_update_tooltip (GpmInhibitApplet *applet)
+cpm_applet_update_tooltip (GpmInhibitApplet *applet)
 {
 	const gchar *buf;
 	if (applet->proxy == NULL) {
@@ -234,13 +234,13 @@ gpm_applet_update_tooltip (GpmInhibitApplet *applet)
 }
 
 /**
- * gpm_applet_click_cb:
+ * cpm_applet_click_cb:
  * @applet: Inhibit applet instance
  *
  * pops and unpops
  **/
 static gboolean
-gpm_applet_click_cb (GpmInhibitApplet *applet, CdkEventButton *event)
+cpm_applet_click_cb (GpmInhibitApplet *applet, CdkEventButton *event)
 {
 	/* react only to left mouse button */
 	if (event->button != 1) {
@@ -249,29 +249,29 @@ gpm_applet_click_cb (GpmInhibitApplet *applet, CdkEventButton *event)
 
 	if (applet->cookie > 0) {
 		g_debug ("uninhibiting %u", applet->cookie);
-		gpm_applet_uninhibit (applet, applet->cookie);
+		cpm_applet_uninhibit (applet, applet->cookie);
 		applet->cookie = 0;
 	} else {
 		g_debug ("inhibiting");
-		gpm_applet_inhibit (applet,
+		cpm_applet_inhibit (applet,
 					  GPM_INHIBIT_APPLET_NAME,
 					  _("Manual inhibit"),
 					  &(applet->cookie));
 	}
 	/* update icon */
-	gpm_applet_update_icon (applet);
-	gpm_applet_update_tooltip (applet);
+	cpm_applet_update_icon (applet);
+	cpm_applet_update_tooltip (applet);
 
 	return TRUE;
 }
 
 /**
- * gpm_applet_dialog_about_cb:
+ * cpm_applet_dialog_about_cb:
  *
  * displays about dialog
  **/
 static void
-gpm_applet_dialog_about_cb (CtkAction *action, gpointer data)
+cpm_applet_dialog_about_cb (CtkAction *action, gpointer data)
 {
 	static const gchar *authors[] = {
 		"Benjamin Canou <bookeldor@gmail.com>",
@@ -325,22 +325,22 @@ gpm_applet_dialog_about_cb (CtkAction *action, gpointer data)
 }
 
 /**
- * gpm_applet_help_cb:
+ * cpm_applet_help_cb:
  *
  * open gpm help
  **/
 static void
-gpm_applet_help_cb (CtkAction *action, gpointer data)
+cpm_applet_help_cb (CtkAction *action, gpointer data)
 {
-	gpm_help_display ("applets-general#applets-inhibit");
+	cpm_help_display ("applets-general#applets-inhibit");
 }
 
 /**
- * gpm_applet_destroy_cb:
+ * cpm_applet_destroy_cb:
  * @widget: Class instance to destroy
  **/
 static void
-gpm_applet_destroy_cb (CtkWidget *widget)
+cpm_applet_destroy_cb (CtkWidget *widget)
 {
 	GpmInhibitApplet *applet = GPM_INHIBIT_APPLET(widget);
 
@@ -348,21 +348,21 @@ gpm_applet_destroy_cb (CtkWidget *widget)
 }
 
 /**
- * gpm_inhibit_applet_class_init:
+ * cpm_inhibit_applet_class_init:
  * @klass: Class instance
  **/
 static void
-gpm_inhibit_applet_class_init (GpmInhibitAppletClass *class)
+cpm_inhibit_applet_class_init (GpmInhibitAppletClass *class)
 {
 	/* nothing to do here */
 }
 
 
 /**
- * gpm_inhibit_applet_dbus_connect:
+ * cpm_inhibit_applet_dbus_connect:
  **/
 gboolean
-gpm_inhibit_applet_dbus_connect (GpmInhibitApplet *applet)
+cpm_inhibit_applet_dbus_connect (GpmInhibitApplet *applet)
 {
 	GError *error = NULL;
 
@@ -396,10 +396,10 @@ gpm_inhibit_applet_dbus_connect (GpmInhibitApplet *applet)
 }
 
 /**
- * gpm_inhibit_applet_dbus_disconnect:
+ * cpm_inhibit_applet_dbus_disconnect:
  **/
 gboolean
-gpm_inhibit_applet_dbus_disconnect (GpmInhibitApplet *applet)
+cpm_inhibit_applet_dbus_disconnect (GpmInhibitApplet *applet)
 {
 	if (applet->proxy != NULL) {
 		egg_debug ("removing proxy\n");
@@ -412,38 +412,38 @@ gpm_inhibit_applet_dbus_disconnect (GpmInhibitApplet *applet)
 }
 
 /**
- * gpm_inhibit_applet_name_appeared_cb:
+ * cpm_inhibit_applet_name_appeared_cb:
  **/
 static void
-gpm_inhibit_applet_name_appeared_cb (GDBusConnection *connection,
+cpm_inhibit_applet_name_appeared_cb (GDBusConnection *connection,
 				     const gchar *name,
 				     const gchar *name_owner,
 				     GpmInhibitApplet *applet)
 {
-	gpm_inhibit_applet_dbus_connect (applet);
-	gpm_applet_update_tooltip (applet);
-	gpm_applet_update_icon (applet);;
+	cpm_inhibit_applet_dbus_connect (applet);
+	cpm_applet_update_tooltip (applet);
+	cpm_applet_update_icon (applet);;
 }
 
 /**
- * gpm_inhibit_applet_name_vanished_cb:
+ * cpm_inhibit_applet_name_vanished_cb:
  **/
 void
-gpm_inhibit_applet_name_vanished_cb (GDBusConnection *connection,
+cpm_inhibit_applet_name_vanished_cb (GDBusConnection *connection,
 				     const gchar *name,
 				     GpmInhibitApplet *applet)
 {
-	gpm_inhibit_applet_dbus_disconnect (applet);
-	gpm_applet_update_tooltip (applet);
-	gpm_applet_update_icon (applet);
+	cpm_inhibit_applet_dbus_disconnect (applet);
+	cpm_applet_update_tooltip (applet);
+	cpm_applet_update_icon (applet);
 }
 
 /**
- * gpm_inhibit_applet_init:
+ * cpm_inhibit_applet_init:
  * @applet: Inhibit applet instance
  **/
 static void
-gpm_inhibit_applet_init (GpmInhibitApplet *applet)
+cpm_inhibit_applet_init (GpmInhibitApplet *applet)
 {
 	DBusGConnection *connection;
 
@@ -462,8 +462,8 @@ gpm_inhibit_applet_init (GpmInhibitApplet *applet)
 		g_bus_watch_name (G_BUS_TYPE_SESSION,
 				  GS_DBUS_SERVICE,
 				  G_BUS_NAME_WATCHER_FLAGS_NONE,
-				  (GBusNameAppearedCallback) gpm_inhibit_applet_name_appeared_cb,
-				  (GBusNameVanishedCallback) gpm_inhibit_applet_name_vanished_cb,
+				  (GBusNameAppearedCallback) cpm_inhibit_applet_name_appeared_cb,
+				  (GBusNameVanishedCallback) cpm_inhibit_applet_name_vanished_cb,
 				  applet, NULL);
 
 	/* prepare */
@@ -479,24 +479,24 @@ gpm_inhibit_applet_init (GpmInhibitApplet *applet)
 
 	/* connect */
 	g_signal_connect (G_OBJECT(applet), "button-press-event",
-			  G_CALLBACK(gpm_applet_click_cb), NULL);
+			  G_CALLBACK(cpm_applet_click_cb), NULL);
 
 	g_signal_connect (G_OBJECT(applet), "size-allocate",
-			  G_CALLBACK(gpm_applet_size_allocate_cb), NULL);
+			  G_CALLBACK(cpm_applet_size_allocate_cb), NULL);
 
 	g_signal_connect (G_OBJECT(applet), "destroy",
-			  G_CALLBACK(gpm_applet_destroy_cb), NULL);
+			  G_CALLBACK(cpm_applet_destroy_cb), NULL);
 }
 
 /**
- * gpm_applet_cb:
+ * cpm_applet_cb:
  * @_applet: GpmInhibitApplet instance created by the applet factory
  * @iid: Applet id
  *
  * the function called by libcafe-panel-applet factory after creation
  **/
 static gboolean
-gpm_applet_cb (CafePanelApplet *_applet, const gchar *iid, gpointer data)
+cpm_applet_cb (CafePanelApplet *_applet, const gchar *iid, gpointer data)
 {
 	GpmInhibitApplet *applet = GPM_INHIBIT_APPLET(_applet);
 	CtkActionGroup *action_group;
@@ -505,10 +505,10 @@ gpm_applet_cb (CafePanelApplet *_applet, const gchar *iid, gpointer data)
 	static const CtkActionEntry menu_actions [] = {
 		{ "About", "help-about", N_("_About"),
 		  NULL, NULL,
-		  G_CALLBACK (gpm_applet_dialog_about_cb) },
+		  G_CALLBACK (cpm_applet_dialog_about_cb) },
 		{ "Help", "help-browser", N_("_Help"),
 		  NULL, NULL,
-		  G_CALLBACK (gpm_applet_help_cb) }
+		  G_CALLBACK (cpm_applet_help_cb) }
 	};
 
 	if (strcmp (iid, GPM_INHIBIT_APPLET_ID) != 0) {
@@ -540,4 +540,4 @@ CAFE_PANEL_APPLET_OUT_PROCESS_FACTORY
  /* the applet name */
  "InhibitApplet",
  /* our callback (with no user data) */
- gpm_applet_cb, NULL)
+ cpm_applet_cb, NULL)

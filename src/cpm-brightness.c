@@ -79,13 +79,13 @@ typedef enum {
 	ACTION_BACKLIGHT_DEC
 } GpmXRandROp;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmBrightness, gpm_brightness, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (GpmBrightness, cpm_brightness, G_TYPE_OBJECT)
 
 static guint signals [LAST_SIGNAL] = { 0 };
-static gpointer gpm_brightness_object = NULL;
+static gpointer cpm_brightness_object = NULL;
 
 /**
- * gpm_brightness_helper_strtoint:
+ * cpm_brightness_helper_strtoint:
  * @text: The text to be converted
  * @value: The return numeric return value
  *
@@ -94,7 +94,7 @@ static gpointer gpm_brightness_object = NULL;
  * Return value: %TRUE if the string was converted correctly
  **/
 static gboolean
-gpm_brightness_helper_strtoint (const gchar *text, gint *value)
+cpm_brightness_helper_strtoint (const gchar *text, gint *value)
 {
 	gchar *endptr = NULL;
 	gint64 value_raw;
@@ -114,10 +114,10 @@ gpm_brightness_helper_strtoint (const gchar *text, gint *value)
 }
 
 /**
- * gpm_brightness_helper_get_value:
+ * cpm_brightness_helper_get_value:
  **/
 static gint
-gpm_brightness_helper_get_value (const gchar *argument)
+cpm_brightness_helper_get_value (const gchar *argument)
 {
 	gboolean ret;
 	GError *error = NULL;
@@ -138,7 +138,7 @@ gpm_brightness_helper_get_value (const gchar *argument)
 	egg_debug ("executing %s retval: %i", command, exit_status);
 
 	/* parse for a number */
-	ret = gpm_brightness_helper_strtoint (stdout_data, &value);
+	ret = cpm_brightness_helper_strtoint (stdout_data, &value);
 	if (!ret)
 		goto out;
 out:
@@ -148,10 +148,10 @@ out:
 }
 
 /**
- * gpm_brightness_helper_set_value:
+ * cpm_brightness_helper_set_value:
  **/
 static gboolean
-gpm_brightness_helper_set_value (const gchar *argument, gint value)
+cpm_brightness_helper_set_value (const gchar *argument, gint value)
 {
 	gboolean ret;
 	GError *error = NULL;
@@ -173,12 +173,12 @@ out:
 }
 
 /**
- * gpm_brightness_get_step:
+ * cpm_brightness_get_step:
  * @levels: The number of levels supported
  * Return value: the amount of hardware steps to do on each increment or decrement
  **/
 static guint
-gpm_brightness_get_step (guint levels)
+cpm_brightness_get_step (guint levels)
 {
 	/* macbook pro has a bazzillion brightness levels, do in 5% steps */
 	if (levels > 20)
@@ -187,10 +187,10 @@ gpm_brightness_get_step (guint levels)
 }
 
 /**
- * gpm_brightness_output_get_internal:
+ * cpm_brightness_output_get_internal:
  **/
 static gboolean
-gpm_brightness_output_get_internal (GpmBrightness *brightness, RROutput output, guint *cur)
+cpm_brightness_output_get_internal (GpmBrightness *brightness, RROutput output, guint *cur)
 {
 	unsigned long nitems;
 	unsigned long bytes_after;
@@ -220,10 +220,10 @@ gpm_brightness_output_get_internal (GpmBrightness *brightness, RROutput output, 
 }
 
 /**
- * gpm_brightness_output_set_internal:
+ * cpm_brightness_output_set_internal:
  **/
 static gboolean
-gpm_brightness_output_set_internal (GpmBrightness *brightness, RROutput output, guint value)
+cpm_brightness_output_set_internal (GpmBrightness *brightness, RROutput output, guint value)
 {
 	CdkDisplay *display;
 
@@ -249,10 +249,10 @@ gpm_brightness_output_set_internal (GpmBrightness *brightness, RROutput output, 
 }
 
 /**
- * gpm_brightness_setup_display:
+ * cpm_brightness_setup_display:
  **/
 static gboolean
-gpm_brightness_setup_display (GpmBrightness *brightness)
+cpm_brightness_setup_display (GpmBrightness *brightness)
 {
 	gint major, minor;
 
@@ -287,10 +287,10 @@ gpm_brightness_setup_display (GpmBrightness *brightness)
 }
 
 /**
- * gpm_brightness_output_get_limits:
+ * cpm_brightness_output_get_limits:
  **/
 static gboolean
-gpm_brightness_output_get_limits (GpmBrightness *brightness, RROutput output,
+cpm_brightness_output_get_limits (GpmBrightness *brightness, RROutput output,
 					 guint *min, guint *max)
 {
 	XRRPropertyInfo *info;
@@ -316,10 +316,10 @@ out:
 }
 
 /**
- * gpm_brightness_output_get_percentage:
+ * cpm_brightness_output_get_percentage:
  **/
 static gboolean
-gpm_brightness_output_get_percentage (GpmBrightness *brightness, RROutput output)
+cpm_brightness_output_get_percentage (GpmBrightness *brightness, RROutput output)
 {
 	guint cur;
 	gboolean ret;
@@ -328,10 +328,10 @@ gpm_brightness_output_get_percentage (GpmBrightness *brightness, RROutput output
 
 	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
 
-	ret = gpm_brightness_output_get_internal (brightness, output, &cur);
+	ret = cpm_brightness_output_get_internal (brightness, output, &cur);
 	if (!ret)
 		return FALSE;
-	ret = gpm_brightness_output_get_limits (brightness, output, &min, &max);
+	ret = cpm_brightness_output_get_limits (brightness, output, &min, &max);
 	if (!ret || min == max)
 		return FALSE;
 	egg_debug ("hard value=%i, min=%i, max=%i", cur, min, max);
@@ -342,10 +342,10 @@ gpm_brightness_output_get_percentage (GpmBrightness *brightness, RROutput output
 }
 
 /**
- * gpm_brightness_output_down:
+ * cpm_brightness_output_down:
  **/
 static gboolean
-gpm_brightness_output_down (GpmBrightness *brightness, RROutput output)
+cpm_brightness_output_down (GpmBrightness *brightness, RROutput output)
 {
 	guint cur;
 	guint step;
@@ -354,10 +354,10 @@ gpm_brightness_output_down (GpmBrightness *brightness, RROutput output)
 
 	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
 
-	ret = gpm_brightness_output_get_internal (brightness, output, &cur);
+	ret = cpm_brightness_output_get_internal (brightness, output, &cur);
 	if (!ret)
 		return FALSE;
-	ret = gpm_brightness_output_get_limits (brightness, output, &min, &max);
+	ret = cpm_brightness_output_get_limits (brightness, output, &min, &max);
 	if (!ret || min == max)
 		return FALSE;
 	egg_debug ("hard value=%i, min=%i, max=%i", cur, min, max);
@@ -365,22 +365,22 @@ gpm_brightness_output_down (GpmBrightness *brightness, RROutput output)
 		egg_debug ("already min");
 		return TRUE;
 	}
-	step = gpm_brightness_get_step ((max-min)+1);
+	step = cpm_brightness_get_step ((max-min)+1);
 	if (cur < step) {
 		egg_debug ("truncating to %i", min);
 		cur = min;
 	} else {
 		cur -= step;
 	}
-	ret = gpm_brightness_output_set_internal (brightness, output, cur);
+	ret = cpm_brightness_output_set_internal (brightness, output, cur);
 	return ret;
 }
 
 /**
- * gpm_brightness_output_up:
+ * cpm_brightness_output_up:
  **/
 static gboolean
-gpm_brightness_output_up (GpmBrightness *brightness, RROutput output)
+cpm_brightness_output_up (GpmBrightness *brightness, RROutput output)
 {
 	guint cur;
 	gboolean ret;
@@ -388,10 +388,10 @@ gpm_brightness_output_up (GpmBrightness *brightness, RROutput output)
 
 	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
 
-	ret = gpm_brightness_output_get_internal (brightness, output, &cur);
+	ret = cpm_brightness_output_get_internal (brightness, output, &cur);
 	if (!ret)
 		return FALSE;
-	ret = gpm_brightness_output_get_limits (brightness, output, &min, &max);
+	ret = cpm_brightness_output_get_limits (brightness, output, &min, &max);
 	if (!ret || min == max)
 		return FALSE;
 	egg_debug ("hard value=%i, min=%i, max=%i", cur, min, max);
@@ -399,20 +399,20 @@ gpm_brightness_output_up (GpmBrightness *brightness, RROutput output)
 		egg_debug ("already max");
 		return TRUE;
 	}
-	cur += gpm_brightness_get_step ((max-min)+1);
+	cur += cpm_brightness_get_step ((max-min)+1);
 	if (cur > max) {
 		egg_debug ("truncating to %i", max);
 		cur = max;
 	}
-	ret = gpm_brightness_output_set_internal (brightness, output, cur);
+	ret = cpm_brightness_output_set_internal (brightness, output, cur);
 	return ret;
 }
 
 /**
- * gpm_brightness_output_set:
+ * cpm_brightness_output_set:
  **/
 static gboolean
-gpm_brightness_output_set (GpmBrightness *brightness, RROutput output)
+cpm_brightness_output_set (GpmBrightness *brightness, RROutput output)
 {
 	guint cur;
 	gboolean ret;
@@ -423,10 +423,10 @@ gpm_brightness_output_set (GpmBrightness *brightness, RROutput output)
 
 	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
 
-	ret = gpm_brightness_output_get_internal (brightness, output, &cur);
+	ret = cpm_brightness_output_get_internal (brightness, output, &cur);
 	if (!ret)
 		return FALSE;
-	ret = gpm_brightness_output_get_limits (brightness, output, &min, &max);
+	ret = cpm_brightness_output_get_limits (brightness, output, &min, &max);
 	if (!ret || min == max)
 		return FALSE;
 
@@ -447,12 +447,12 @@ gpm_brightness_output_set (GpmBrightness *brightness, RROutput output)
 	if ((gint) cur < shared_value_abs) {
 
 		/* some adaptors have a large number of steps */
-		step = gpm_brightness_get_step (shared_value_abs - cur);
+		step = cpm_brightness_get_step (shared_value_abs - cur);
 		egg_debug ("using step of %i", step);
 
 		/* going up */
 		for (i=cur; i<=shared_value_abs; i+=step) {
-			ret = gpm_brightness_output_set_internal (brightness, output, i);
+			ret = cpm_brightness_output_set_internal (brightness, output, i);
 			if (!ret)
 				break;
 			if ((gint) cur != shared_value_abs)
@@ -461,12 +461,12 @@ gpm_brightness_output_set (GpmBrightness *brightness, RROutput output)
 	} else {
 
 		/* some adaptors have a large number of steps */
-		step = gpm_brightness_get_step (cur - shared_value_abs);
+		step = cpm_brightness_get_step (cur - shared_value_abs);
 		egg_debug ("using step of %i", step);
 
 		/* going down */
 		for (i=cur; i>=shared_value_abs; i-=step) {
-			ret = gpm_brightness_output_set_internal (brightness, output, i);
+			ret = cpm_brightness_output_set_internal (brightness, output, i);
 			if (!ret)
 				break;
 			if ((gint) cur != shared_value_abs)
@@ -477,10 +477,10 @@ gpm_brightness_output_set (GpmBrightness *brightness, RROutput output)
 }
 
 /**
- * gpm_brightness_foreach_resource:
+ * cpm_brightness_foreach_resource:
  **/
 static gboolean
-gpm_brightness_foreach_resource (GpmBrightness *brightness, GpmXRandROp op, XRRScreenResources *resources)
+cpm_brightness_foreach_resource (GpmBrightness *brightness, GpmXRandROp op, XRRScreenResources *resources)
 {
 	gint i;
 	gboolean ret;
@@ -494,13 +494,13 @@ gpm_brightness_foreach_resource (GpmBrightness *brightness, GpmXRandROp op, XRRS
 		output = resources->outputs[i];
 		egg_debug ("resource %i of %i", i+1, resources->noutput);
 		if (op==ACTION_BACKLIGHT_GET) {
-			ret = gpm_brightness_output_get_percentage (brightness, output);
+			ret = cpm_brightness_output_get_percentage (brightness, output);
 		} else if (op==ACTION_BACKLIGHT_INC) {
-			ret = gpm_brightness_output_up (brightness, output);
+			ret = cpm_brightness_output_up (brightness, output);
 		} else if (op==ACTION_BACKLIGHT_DEC) {
-			ret = gpm_brightness_output_down (brightness, output);
+			ret = cpm_brightness_output_down (brightness, output);
 		} else if (op==ACTION_BACKLIGHT_SET) {
-			ret = gpm_brightness_output_set (brightness, output);
+			ret = cpm_brightness_output_set (brightness, output);
 		} else {
 			ret = FALSE;
 			egg_warning ("op not known");
@@ -513,10 +513,10 @@ gpm_brightness_foreach_resource (GpmBrightness *brightness, GpmXRandROp op, XRRS
 }
 
 /**
- * gpm_brightness_foreach_screen:
+ * cpm_brightness_foreach_screen:
  **/
 static gboolean
-gpm_brightness_foreach_screen (GpmBrightness *brightness, GpmXRandROp op)
+cpm_brightness_foreach_screen (GpmBrightness *brightness, GpmXRandROp op)
 {
 	guint i;
 	guint length;
@@ -535,7 +535,7 @@ gpm_brightness_foreach_screen (GpmBrightness *brightness, GpmXRandROp op)
 	for (i=0; i<length; i++) {
 		resource = (XRRScreenResources *) g_ptr_array_index (brightness->priv->resources, i);
 		egg_debug ("using resource %p", resource);
-		ret = gpm_brightness_foreach_resource (brightness, op, resource);
+		ret = cpm_brightness_foreach_resource (brightness, op, resource);
 		if (ret)
 			success_any = TRUE;
 	}
@@ -544,12 +544,12 @@ gpm_brightness_foreach_screen (GpmBrightness *brightness, GpmXRandROp op)
 }
 
 /**
- * gpm_brightness_trust_cache:
+ * cpm_brightness_trust_cache:
  * @brightness: This brightness class instance
  * Return value: if we can trust the cache
  **/
 static gboolean
-gpm_brightness_trust_cache (GpmBrightness *brightness)
+cpm_brightness_trust_cache (GpmBrightness *brightness)
 {
 	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
 	/* only return the cached value if the cache is trusted and we have change events */
@@ -569,14 +569,14 @@ gpm_brightness_trust_cache (GpmBrightness *brightness)
 }
 
 /**
- * gpm_brightness_set:
+ * cpm_brightness_set:
  * @brightness: This brightness class instance
  * @percentage: The percentage brightness
  * @hw_changed: If the hardware was changed, i.e. the brightness changed
  * Return value: %TRUE if success, %FALSE if there was an error
  **/
 gboolean
-gpm_brightness_set (GpmBrightness *brightness, guint percentage, gboolean *hw_changed)
+cpm_brightness_set (GpmBrightness *brightness, guint percentage, gboolean *hw_changed)
 {
 	gboolean ret = FALSE;
 	gboolean trust_cache;
@@ -584,7 +584,7 @@ gpm_brightness_set (GpmBrightness *brightness, guint percentage, gboolean *hw_ch
 	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
 
 	/* can we check the new value with the cache? */
-	trust_cache = gpm_brightness_trust_cache (brightness);
+	trust_cache = cpm_brightness_trust_cache (brightness);
 	if (trust_cache && percentage == brightness->priv->cache_percentage) {
 		egg_debug ("not setting the same value %i", percentage);
 		return TRUE;
@@ -595,14 +595,14 @@ gpm_brightness_set (GpmBrightness *brightness, guint percentage, gboolean *hw_ch
 
 	/* reset to not-changed */
 	brightness->priv->hw_changed = FALSE;
-	ret = gpm_brightness_foreach_screen (brightness, ACTION_BACKLIGHT_SET);
+	ret = cpm_brightness_foreach_screen (brightness, ACTION_BACKLIGHT_SET);
 
 	/* legacy fallback */
 	if (!ret) {
 		if (brightness->priv->extension_levels < 0)
-			brightness->priv->extension_levels = gpm_brightness_helper_get_value ("get-max-brightness");
+			brightness->priv->extension_levels = cpm_brightness_helper_get_value ("get-max-brightness");
 		brightness->priv->extension_current = egg_discrete_from_percent (percentage, brightness->priv->extension_levels+1);
-		ret = gpm_brightness_helper_set_value ("set-brightness", brightness->priv->extension_current);
+		ret = cpm_brightness_helper_set_value ("set-brightness", brightness->priv->extension_current);
 	}
 
 	/* did the hardware have to be modified? */
@@ -617,7 +617,7 @@ gpm_brightness_set (GpmBrightness *brightness, guint percentage, gboolean *hw_ch
 }
 
 /**
- * gpm_brightness_get:
+ * cpm_brightness_get:
  * @brightness: This brightness class instance
  * Return value: The percentage brightness, or -1 for no hardware or error
  *
@@ -625,7 +625,7 @@ gpm_brightness_set (GpmBrightness *brightness, guint percentage, gboolean *hw_ch
  * brightness. This is quick as no HAL inquiry is done.
  **/
 gboolean
-gpm_brightness_get (GpmBrightness *brightness, guint *percentage)
+cpm_brightness_get (GpmBrightness *brightness, guint *percentage)
 {
 	gboolean ret = FALSE;
 	gboolean trust_cache;
@@ -635,21 +635,21 @@ gpm_brightness_get (GpmBrightness *brightness, guint *percentage)
 	g_return_val_if_fail (percentage != NULL, FALSE);
 
 	/* can we use the cache? */
-	trust_cache = gpm_brightness_trust_cache (brightness);
+	trust_cache = cpm_brightness_trust_cache (brightness);
 	if (trust_cache) {
 		*percentage = brightness->priv->cache_percentage;
 		return TRUE;
 	}
 
 	/* get the brightness from hardware -- slow */
-	ret = gpm_brightness_foreach_screen (brightness, ACTION_BACKLIGHT_GET);
+	ret = cpm_brightness_foreach_screen (brightness, ACTION_BACKLIGHT_GET);
 	percentage_local = brightness->priv->shared_value;
 
 	/* legacy fallback */
 	if (!ret) {
 		if (brightness->priv->extension_levels < 0)
-			brightness->priv->extension_levels = gpm_brightness_helper_get_value ("get-max-brightness");
-		brightness->priv->extension_current = gpm_brightness_helper_get_value ("get-brightness");
+			brightness->priv->extension_levels = cpm_brightness_helper_get_value ("get-max-brightness");
+		brightness->priv->extension_current = cpm_brightness_helper_get_value ("get-brightness");
 		percentage_local = egg_discrete_to_percent (brightness->priv->extension_current, brightness->priv->extension_levels+1);
 		ret = TRUE;
 	}
@@ -672,7 +672,7 @@ gpm_brightness_get (GpmBrightness *brightness, guint *percentage)
 }
 
 /**
- * gpm_brightness_up:
+ * cpm_brightness_up:
  * @brightness: This brightness class instance
  * @hw_changed: If the hardware was changed, i.e. the brightness changed
  * Return value: %TRUE if success, %FALSE if there was an error
@@ -680,7 +680,7 @@ gpm_brightness_get (GpmBrightness *brightness, guint *percentage)
  * If possible, put the brightness of the LCD up one unit.
  **/
 gboolean
-gpm_brightness_up (GpmBrightness *brightness, gboolean *hw_changed)
+cpm_brightness_up (GpmBrightness *brightness, gboolean *hw_changed)
 {
 	gboolean ret = FALSE;
 	guint step;
@@ -689,7 +689,7 @@ gpm_brightness_up (GpmBrightness *brightness, gboolean *hw_changed)
 
 	/* reset to not-changed */
 	brightness->priv->hw_changed = FALSE;
-	ret = gpm_brightness_foreach_screen (brightness, ACTION_BACKLIGHT_INC);
+	ret = cpm_brightness_foreach_screen (brightness, ACTION_BACKLIGHT_INC);
 
 	/* did the hardware have to be modified? */
 	if (ret && hw_changed != NULL)
@@ -702,16 +702,16 @@ gpm_brightness_up (GpmBrightness *brightness, gboolean *hw_changed)
 	/* legacy fallback */
 	if (!ret) {
 		if (brightness->priv->extension_levels < 0)
-			brightness->priv->extension_levels = gpm_brightness_helper_get_value ("get-max-brightness");
-		brightness->priv->extension_current = gpm_brightness_helper_get_value ("get-brightness");
+			brightness->priv->extension_levels = cpm_brightness_helper_get_value ("get-max-brightness");
+		brightness->priv->extension_current = cpm_brightness_helper_get_value ("get-brightness");
 
 		/* increase by the step, limiting to the maximum possible levels */
 		if (brightness->priv->extension_current < brightness->priv->extension_levels) {
-			step = gpm_brightness_get_step (brightness->priv->extension_levels);
+			step = cpm_brightness_get_step (brightness->priv->extension_levels);
 			brightness->priv->extension_current += step;
 			if (brightness->priv->extension_current > brightness->priv->extension_levels)
 				brightness->priv->extension_current = brightness->priv->extension_levels;
-			ret = gpm_brightness_helper_set_value ("set-brightness", brightness->priv->extension_current);
+			ret = cpm_brightness_helper_set_value ("set-brightness", brightness->priv->extension_current);
 		}
 		if (hw_changed != NULL)
 			*hw_changed = ret;
@@ -723,7 +723,7 @@ out:
 }
 
 /**
- * gpm_brightness_down:
+ * cpm_brightness_down:
  * @brightness: This brightness class instance
  * @hw_changed: If the hardware was changed, i.e. the brightness changed
  * Return value: %TRUE if success, %FALSE if there was an error
@@ -731,7 +731,7 @@ out:
  * If possible, put the brightness of the LCD down one unit.
  **/
 gboolean
-gpm_brightness_down (GpmBrightness *brightness, gboolean *hw_changed)
+cpm_brightness_down (GpmBrightness *brightness, gboolean *hw_changed)
 {
 	gboolean ret = FALSE;
 	guint step;
@@ -740,7 +740,7 @@ gpm_brightness_down (GpmBrightness *brightness, gboolean *hw_changed)
 
 	/* reset to not-changed */
 	brightness->priv->hw_changed = FALSE;
-	ret = gpm_brightness_foreach_screen (brightness, ACTION_BACKLIGHT_DEC);
+	ret = cpm_brightness_foreach_screen (brightness, ACTION_BACKLIGHT_DEC);
 
 	/* did the hardware have to be modified? */
 	if (ret && hw_changed != NULL)
@@ -753,16 +753,16 @@ gpm_brightness_down (GpmBrightness *brightness, gboolean *hw_changed)
 	/* legacy fallback */
 	if (!ret) {
 		if (brightness->priv->extension_levels < 0)
-			brightness->priv->extension_levels = gpm_brightness_helper_get_value ("get-max-brightness");
-		brightness->priv->extension_current = gpm_brightness_helper_get_value ("get-brightness");
+			brightness->priv->extension_levels = cpm_brightness_helper_get_value ("get-max-brightness");
+		brightness->priv->extension_current = cpm_brightness_helper_get_value ("get-brightness");
 
 		/* decrease by the step, limiting to zero */
 		if (brightness->priv->extension_current > 0) {
-			step = gpm_brightness_get_step (brightness->priv->extension_levels);
+			step = cpm_brightness_get_step (brightness->priv->extension_levels);
 			brightness->priv->extension_current -= step;
 			if (brightness->priv->extension_current < 0)
 				brightness->priv->extension_current = 0;
-			ret = gpm_brightness_helper_set_value ("set-brightness", brightness->priv->extension_current);
+			ret = cpm_brightness_helper_set_value ("set-brightness", brightness->priv->extension_current);
 		}
 		if (hw_changed != NULL)
 			*hw_changed = ret;
@@ -775,14 +775,14 @@ out:
 
 
 /**
- * gpm_brightness_may_have_changed:
+ * cpm_brightness_may_have_changed:
  **/
 static void
-gpm_brightness_may_have_changed (GpmBrightness *brightness)
+cpm_brightness_may_have_changed (GpmBrightness *brightness)
 {
 	gboolean ret;
 	guint percentage;
-	ret = gpm_brightness_get (brightness, &percentage);
+	ret = cpm_brightness_get (brightness, &percentage);
 	if (!ret) {
 		egg_warning ("failed to get output");
 		return;
@@ -792,36 +792,36 @@ gpm_brightness_may_have_changed (GpmBrightness *brightness)
 }
 
 /**
- * gpm_brightness_filter_xevents:
+ * cpm_brightness_filter_xevents:
  **/
 static CdkFilterReturn
-gpm_brightness_filter_xevents (CdkXEvent *xevent, CdkEvent *event, gpointer data)
+cpm_brightness_filter_xevents (CdkXEvent *xevent, CdkEvent *event, gpointer data)
 {
 	GpmBrightness *brightness = GPM_BRIGHTNESS (data);
 	if (event->type == CDK_NOTHING)
 		return CDK_FILTER_CONTINUE;
-	gpm_brightness_may_have_changed (brightness);
+	cpm_brightness_may_have_changed (brightness);
 	return CDK_FILTER_CONTINUE;
 }
 
 
-static void gpm_brightness_update_cache (GpmBrightness *brightness);
+static void cpm_brightness_update_cache (GpmBrightness *brightness);
 
 /**
- * gpm_brightness_monitors_changed:
+ * cpm_brightness_monitors_changed:
  **/
 static void
-gpm_brightness_monitors_changed (CdkScreen *screen, GpmBrightness *brightness)
+cpm_brightness_monitors_changed (CdkScreen *screen, GpmBrightness *brightness)
 {
 	g_return_if_fail (GPM_IS_BRIGHTNESS (brightness));
-	gpm_brightness_update_cache (brightness);
+	cpm_brightness_update_cache (brightness);
 }
 
 /**
- * gpm_brightness_update_cache:
+ * cpm_brightness_update_cache:
  **/
 static void
-gpm_brightness_update_cache (GpmBrightness *brightness)
+cpm_brightness_update_cache (GpmBrightness *brightness)
 {
 	guint length;
 	Window root;
@@ -844,7 +844,7 @@ gpm_brightness_update_cache (GpmBrightness *brightness)
 		egg_debug ("watching ::monitors_changed on %p", gscreen);
 		g_object_set_data (G_OBJECT (gscreen), "gpk-set-monitors-changed", (gpointer) "true");
 		g_signal_connect (G_OBJECT (gscreen), "monitors_changed",
-				  G_CALLBACK (gpm_brightness_monitors_changed), brightness);
+				  G_CALLBACK (cpm_brightness_monitors_changed), brightness);
 	}
 
 	root = RootWindow (brightness->priv->dpy, 0);
@@ -862,10 +862,10 @@ gpm_brightness_update_cache (GpmBrightness *brightness)
 }
 
 /**
- * gpm_brightness_has_hw:
+ * cpm_brightness_has_hw:
  **/
 gboolean
-gpm_brightness_has_hw (GpmBrightness *brightness)
+cpm_brightness_has_hw (GpmBrightness *brightness)
 {
 	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
 
@@ -875,17 +875,17 @@ gpm_brightness_has_hw (GpmBrightness *brightness)
 
 	/* fallback to legacy access */
 	if (brightness->priv->extension_levels < 0)
-		brightness->priv->extension_levels = gpm_brightness_helper_get_value ("get-max-brightness");
+		brightness->priv->extension_levels = cpm_brightness_helper_get_value ("get-max-brightness");
 	if (brightness->priv->extension_levels > 0)
 		return TRUE;
 	return FALSE;
 }
 
 /**
- * gpm_brightness_finalize:
+ * cpm_brightness_finalize:
  **/
 static void
-gpm_brightness_finalize (GObject *object)
+cpm_brightness_finalize (GObject *object)
 {
 	GpmBrightness *brightness;
 	g_return_if_fail (object != NULL);
@@ -893,18 +893,18 @@ gpm_brightness_finalize (GObject *object)
 	brightness = GPM_BRIGHTNESS (object);
 	g_ptr_array_unref (brightness->priv->resources);
 	cdk_window_remove_filter (brightness->priv->root_window,
-				  gpm_brightness_filter_xevents, brightness);
-	G_OBJECT_CLASS (gpm_brightness_parent_class)->finalize (object);
+				  cpm_brightness_filter_xevents, brightness);
+	G_OBJECT_CLASS (cpm_brightness_parent_class)->finalize (object);
 }
 
 /**
- * gpm_brightness_class_init:
+ * cpm_brightness_class_init:
  **/
 static void
-gpm_brightness_class_init (GpmBrightnessClass *klass)
+cpm_brightness_class_init (GpmBrightnessClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
-	object_class->finalize = gpm_brightness_finalize;
+	object_class->finalize = cpm_brightness_finalize;
 
 	signals [BRIGHTNESS_CHANGED] =
 		g_signal_new ("brightness-changed",
@@ -915,18 +915,18 @@ gpm_brightness_class_init (GpmBrightnessClass *klass)
 }
 
 /**
- * gpm_brightness_init:
+ * cpm_brightness_init:
  * @brightness: This brightness class instance
  **/
 static void
-gpm_brightness_init (GpmBrightness *brightness)
+cpm_brightness_init (GpmBrightness *brightness)
 {
 	CdkScreen *screen;
 	CdkDisplay *display;
 	int event_base;
 	int ignore;
 
-	brightness->priv = gpm_brightness_get_instance_private (brightness);
+	brightness->priv = cpm_brightness_get_instance_private (brightness);
 
 	brightness->priv->cache_trusted = FALSE;
 	brightness->priv->has_changed_events = FALSE;
@@ -936,7 +936,7 @@ gpm_brightness_init (GpmBrightness *brightness)
 	brightness->priv->resources = g_ptr_array_new_with_free_func ((GDestroyNotify) XRRFreeScreenResources);
 
 	/* can we do this */
-	brightness->priv->has_extension = gpm_brightness_setup_display (brightness);
+	brightness->priv->has_extension = cpm_brightness_setup_display (brightness);
 	if (brightness->priv->has_extension == FALSE)
 		egg_debug ("no XRANDR extension");
 
@@ -950,7 +950,7 @@ gpm_brightness_init (GpmBrightness *brightness)
 	}
 	cdk_x11_register_standard_event_type (display, event_base, RRNotify + 1);
 	cdk_window_add_filter (brightness->priv->root_window,
-			       gpm_brightness_filter_xevents, brightness);
+			       cpm_brightness_filter_xevents, brightness);
 
 	/* don't abort on error */
 	cdk_x11_display_error_trap_push (display);
@@ -963,23 +963,23 @@ gpm_brightness_init (GpmBrightness *brightness)
 		egg_warning ("failed to select XRRSelectInput");
 
 	/* create cache of XRRScreenResources as XRRGetScreenResources() is slow */
-	gpm_brightness_update_cache (brightness);
+	cpm_brightness_update_cache (brightness);
 }
 
 /**
- * gpm_brightness_new:
+ * cpm_brightness_new:
  * Return value: A new brightness class instance.
  * Can return NULL if no suitable hardware is found.
  **/
 GpmBrightness *
-gpm_brightness_new (void)
+cpm_brightness_new (void)
 {
-	if (gpm_brightness_object != NULL) {
-		g_object_ref (gpm_brightness_object);
+	if (cpm_brightness_object != NULL) {
+		g_object_ref (cpm_brightness_object);
 	} else {
-		gpm_brightness_object = g_object_new (GPM_TYPE_BRIGHTNESS, NULL);
-		g_object_add_weak_pointer (gpm_brightness_object, &gpm_brightness_object);
+		cpm_brightness_object = g_object_new (GPM_TYPE_BRIGHTNESS, NULL);
+		g_object_add_weak_pointer (cpm_brightness_object, &cpm_brightness_object);
 	}
-	return GPM_BRIGHTNESS (gpm_brightness_object);
+	return GPM_BRIGHTNESS (cpm_brightness_object);
 }
 

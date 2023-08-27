@@ -24,10 +24,10 @@
 #include "cpm-point-obj.h"
 
 /**
- * gpm_point_obj_copy:
+ * cpm_point_obj_copy:
  **/
 GpmPointObj *
-gpm_point_obj_copy (const GpmPointObj *cobj)
+cpm_point_obj_copy (const GpmPointObj *cobj)
 {
 	GpmPointObj *obj;
 	obj = g_new0 (GpmPointObj, 1);
@@ -38,10 +38,10 @@ gpm_point_obj_copy (const GpmPointObj *cobj)
 }
 
 /**
- * gpm_point_obj_new:
+ * cpm_point_obj_new:
  **/
 GpmPointObj *
-gpm_point_obj_new (void)
+cpm_point_obj_new (void)
 {
 	GpmPointObj *obj;
 	obj = g_new0 (GpmPointObj, 1);
@@ -52,10 +52,10 @@ gpm_point_obj_new (void)
 }
 
 /**
- * gpm_point_obj_free:
+ * cpm_point_obj_free:
  **/
 void
-gpm_point_obj_free (GpmPointObj *obj)
+cpm_point_obj_free (GpmPointObj *obj)
 {
 	if (obj == NULL)
 		return;

@@ -25,7 +25,7 @@
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_DPMS		(gpm_dpms_get_type ())
+#define GPM_TYPE_DPMS		(cpm_dpms_get_type ())
 #define GPM_DPMS(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_DPMS, GpmDpms))
 #define GPM_DPMS_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_DPMS, GpmDpmsClass))
 #define GPM_IS_DPMS(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_DPMS))
@@ -60,18 +60,18 @@ typedef enum
 	GPM_DPMS_ERROR_GENERAL
 } GpmDpmsError;
 
-#define GPM_DPMS_ERROR gpm_dpms_error_quark ()
+#define GPM_DPMS_ERROR cpm_dpms_error_quark ()
 
-GQuark		 gpm_dpms_error_quark		(void);
-GType		 gpm_dpms_get_type		(void);
-GpmDpms		*gpm_dpms_new			(void);
-gboolean	 gpm_dpms_get_mode	 	(GpmDpms	*dpms,
+GQuark		 cpm_dpms_error_quark		(void);
+GType		 cpm_dpms_get_type		(void);
+GpmDpms		*cpm_dpms_new			(void);
+gboolean	 cpm_dpms_get_mode	 	(GpmDpms	*dpms,
 						 GpmDpmsMode	*mode,
 						 GError		**error);
-gboolean	 gpm_dpms_set_mode	 	(GpmDpms	*dpms,
+gboolean	 cpm_dpms_set_mode	 	(GpmDpms	*dpms,
 						 GpmDpmsMode	 mode,
 						 GError		**error);
-void		 gpm_dpms_test			(gpointer	 data);
+void		 cpm_dpms_test			(gpointer	 data);
 
 G_END_DECLS
 

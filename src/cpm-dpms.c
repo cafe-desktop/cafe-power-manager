@@ -43,7 +43,7 @@
 #include "egg-debug.h"
 #include "cpm-dpms.h"
 
-static void   gpm_dpms_finalize  (GObject   *object);
+static void   cpm_dpms_finalize  (GObject   *object);
 
 /* until we get a nice event-emitting DPMS extension, we have to poll... */
 #define GPM_DPMS_POLL_TIME	10
@@ -62,27 +62,27 @@ enum {
 };
 
 static guint signals [LAST_SIGNAL] = { 0 };
-static gpointer gpm_dpms_object = NULL;
+static gpointer cpm_dpms_object = NULL;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmDpms, gpm_dpms, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (GpmDpms, cpm_dpms, G_TYPE_OBJECT)
 
 /**
- * gpm_dpms_error_quark:
+ * cpm_dpms_error_quark:
  **/
 GQuark
-gpm_dpms_error_quark (void)
+cpm_dpms_error_quark (void)
 {
 	static GQuark quark = 0;
 	if (!quark)
-		quark = g_quark_from_static_string ("gpm_dpms_error");
+		quark = g_quark_from_static_string ("cpm_dpms_error");
 	return quark;
 }
 
 /**
- * gpm_dpms_x11_get_mode:
+ * cpm_dpms_x11_get_mode:
  **/
 static gboolean
-gpm_dpms_x11_get_mode (GpmDpms *dpms, GpmDpmsMode *mode, GError **error)
+cpm_dpms_x11_get_mode (GpmDpms *dpms, GpmDpmsMode *mode, GError **error)
 {
 	GpmDpmsMode result;
 	BOOL enabled = FALSE;
@@ -125,10 +125,10 @@ out:
 }
 
 /**
- * gpm_dpms_x11_set_mode:
+ * cpm_dpms_x11_set_mode:
  **/
 static gboolean
-gpm_dpms_x11_set_mode (GpmDpms *dpms, GpmDpmsMode mode, GError **error)
+cpm_dpms_x11_set_mode (GpmDpms *dpms, GpmDpmsMode mode, GError **error)
 {
 	GpmDpmsMode current_mode;
 	CARD16 state;
@@ -174,7 +174,7 @@ gpm_dpms_x11_set_mode (GpmDpms *dpms, GpmDpmsMode mode, GError **error)
 		break;
 	}
 
-	gpm_dpms_x11_get_mode (dpms, &current_mode, NULL);
+	cpm_dpms_x11_get_mode (dpms, &current_mode, NULL);
 	if (current_mode != mode) {
 		if (! DPMSForceLevel (dpms->priv->display, state)) {
 			g_set_error (error, GPM_DPMS_ERROR, GPM_DPMS_ERROR_GENERAL,
@@ -188,10 +188,10 @@ gpm_dpms_x11_set_mode (GpmDpms *dpms, GpmDpmsMode mode, GError **error)
 }
 
 /**
- * gpm_dpms_set_mode:
+ * cpm_dpms_set_mode:
  **/
 gboolean
-gpm_dpms_set_mode (GpmDpms *dpms, GpmDpmsMode mode, GError **error)
+cpm_dpms_set_mode (GpmDpms *dpms, GpmDpmsMode mode, GError **error)
 {
 	gboolean ret;
 
@@ -204,35 +204,35 @@ gpm_dpms_set_mode (GpmDpms *dpms, GpmDpmsMode mode, GError **error)
 		return FALSE;
 	}
 
-	ret = gpm_dpms_x11_set_mode (dpms, mode, error);
+	ret = cpm_dpms_x11_set_mode (dpms, mode, error);
 	return ret;
 }
 
 /**
- * gpm_dpms_get_mode:
+ * cpm_dpms_get_mode:
  **/
 gboolean
-gpm_dpms_get_mode (GpmDpms *dpms, GpmDpmsMode *mode, GError **error)
+cpm_dpms_get_mode (GpmDpms *dpms, GpmDpmsMode *mode, GError **error)
 {
 	gboolean ret;
 	if (mode)
 		*mode = GPM_DPMS_MODE_UNKNOWN;
-	ret = gpm_dpms_x11_get_mode (dpms, mode, error);
+	ret = cpm_dpms_x11_get_mode (dpms, mode, error);
 	return ret;
 }
 
 /**
- * gpm_dpms_poll_mode_cb:
+ * cpm_dpms_poll_mode_cb:
  **/
 static gboolean
-gpm_dpms_poll_mode_cb (GpmDpms *dpms)
+cpm_dpms_poll_mode_cb (GpmDpms *dpms)
 {
 	gboolean ret;
 	GpmDpmsMode mode;
 	GError *error = NULL;
 
 	/* Try again */
-	ret = gpm_dpms_x11_get_mode (dpms, &mode, &error);
+	ret = cpm_dpms_x11_get_mode (dpms, &mode, &error);
 	if (!ret) {
 		g_clear_error (&error);
 		return TRUE;
@@ -247,10 +247,10 @@ gpm_dpms_poll_mode_cb (GpmDpms *dpms)
 }
 
 /**
- * gpm_dpms_clear_timeouts:
+ * cpm_dpms_clear_timeouts:
  **/
 static gboolean
-gpm_dpms_clear_timeouts (GpmDpms *dpms)
+cpm_dpms_clear_timeouts (GpmDpms *dpms)
 {
 	gboolean ret = FALSE;
 
@@ -268,14 +268,14 @@ out:
 }
 
 /**
- * gpm_dpms_class_init:
+ * cpm_dpms_class_init:
  **/
 static void
-gpm_dpms_class_init (GpmDpmsClass *klass)
+cpm_dpms_class_init (GpmDpmsClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
-	object_class->finalize = gpm_dpms_finalize;
+	object_class->finalize = cpm_dpms_finalize;
 
 	signals [MODE_CHANGED] =
 		g_signal_new ("mode-changed",
@@ -286,28 +286,28 @@ gpm_dpms_class_init (GpmDpmsClass *klass)
 }
 
 /**
- * gpm_dpms_init:
+ * cpm_dpms_init:
  **/
 static void
-gpm_dpms_init (GpmDpms *dpms)
+cpm_dpms_init (GpmDpms *dpms)
 {
-	dpms->priv = gpm_dpms_get_instance_private (dpms);
+	dpms->priv = cpm_dpms_get_instance_private (dpms);
 
 	/* DPMSCapable() can never change for a given display */
 	dpms->priv->display = CDK_DISPLAY_XDISPLAY (cdk_display_get_default());
 	dpms->priv->dpms_capable = DPMSCapable (dpms->priv->display);
-	dpms->priv->timer_id = g_timeout_add_seconds (GPM_DPMS_POLL_TIME, (GSourceFunc)gpm_dpms_poll_mode_cb, dpms);
+	dpms->priv->timer_id = g_timeout_add_seconds (GPM_DPMS_POLL_TIME, (GSourceFunc)cpm_dpms_poll_mode_cb, dpms);
 	g_source_set_name_by_id (dpms->priv->timer_id, "[GpmDpms] poll");
 
 	/* ensure we clear the default timeouts (Standby: 1200s, Suspend: 1800s, Off: 2400s) */
-	gpm_dpms_clear_timeouts (dpms);
+	cpm_dpms_clear_timeouts (dpms);
 }
 
 /**
- * gpm_dpms_finalize:
+ * cpm_dpms_finalize:
  **/
 static void
-gpm_dpms_finalize (GObject *object)
+cpm_dpms_finalize (GObject *object)
 {
 	GpmDpms *dpms;
 
@@ -323,22 +323,22 @@ gpm_dpms_finalize (GObject *object)
 		dpms->priv->timer_id = 0;
 	}
 
-	G_OBJECT_CLASS (gpm_dpms_parent_class)->finalize (object);
+	G_OBJECT_CLASS (cpm_dpms_parent_class)->finalize (object);
 }
 
 /**
- * gpm_dpms_new:
+ * cpm_dpms_new:
  **/
 GpmDpms *
-gpm_dpms_new (void)
+cpm_dpms_new (void)
 {
-	if (gpm_dpms_object != NULL) {
-		g_object_ref (gpm_dpms_object);
+	if (cpm_dpms_object != NULL) {
+		g_object_ref (cpm_dpms_object);
 	} else {
-		gpm_dpms_object = g_object_new (GPM_TYPE_DPMS, NULL);
-		g_object_add_weak_pointer (gpm_dpms_object, &gpm_dpms_object);
+		cpm_dpms_object = g_object_new (GPM_TYPE_DPMS, NULL);
+		g_object_add_weak_pointer (cpm_dpms_object, &cpm_dpms_object);
 	}
-	return GPM_DPMS (gpm_dpms_object);
+	return GPM_DPMS (cpm_dpms_object);
 }
 
 
@@ -349,7 +349,7 @@ gpm_dpms_new (void)
 #include "egg-test.h"
 
 void
-gpm_dpms_test (gpointer data)
+cpm_dpms_test (gpointer data)
 {
 	GpmDpms *dpms;
 	gboolean ret;
@@ -361,7 +361,7 @@ gpm_dpms_test (gpointer data)
 
 	/************************************************************/
 	egg_test_title (test, "get object");
-	dpms = gpm_dpms_new ();
+	dpms = cpm_dpms_new ();
 	if (dpms != NULL)
 		egg_test_success (test, NULL);
 	else
@@ -369,7 +369,7 @@ gpm_dpms_test (gpointer data)
 
 	/************************************************************/
 	egg_test_title (test, "set on");
-	ret = gpm_dpms_set_mode (dpms, GPM_DPMS_MODE_ON, &error);
+	ret = cpm_dpms_set_mode (dpms, GPM_DPMS_MODE_ON, &error);
 	if (ret)
 		egg_test_success (test, NULL);
 	else
@@ -379,7 +379,7 @@ gpm_dpms_test (gpointer data)
 
 	/************************************************************/
 	egg_test_title (test, "set STANDBY");
-	ret = gpm_dpms_set_mode (dpms, GPM_DPMS_MODE_STANDBY, &error);
+	ret = cpm_dpms_set_mode (dpms, GPM_DPMS_MODE_STANDBY, &error);
 	if (ret)
 		egg_test_success (test, NULL);
 	else
@@ -389,7 +389,7 @@ gpm_dpms_test (gpointer data)
 
 	/************************************************************/
 	egg_test_title (test, "set SUSPEND");
-	ret = gpm_dpms_set_mode (dpms, GPM_DPMS_MODE_SUSPEND, &error);
+	ret = cpm_dpms_set_mode (dpms, GPM_DPMS_MODE_SUSPEND, &error);
 	if (ret)
 		egg_test_success (test, NULL);
 	else
@@ -399,7 +399,7 @@ gpm_dpms_test (gpointer data)
 
 	/************************************************************/
 	egg_test_title (test, "set OFF");
-	ret = gpm_dpms_set_mode (dpms, GPM_DPMS_MODE_OFF, &error);
+	ret = cpm_dpms_set_mode (dpms, GPM_DPMS_MODE_OFF, &error);
 	if (ret)
 		egg_test_success (test, NULL);
 	else
@@ -409,7 +409,7 @@ gpm_dpms_test (gpointer data)
 
 	/************************************************************/
 	egg_test_title (test, "set on");
-	ret = gpm_dpms_set_mode (dpms, GPM_DPMS_MODE_ON, &error);
+	ret = cpm_dpms_set_mode (dpms, GPM_DPMS_MODE_ON, &error);
 	if (ret)
 		egg_test_success (test, NULL);
 	else
