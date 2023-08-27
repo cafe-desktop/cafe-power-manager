@@ -14,7 +14,6 @@ requires:
     - expect #required for unbuffer
     - gcc
     - git
-    - libcanberra-ctk3-dev
     - libdbus-glib-1-dev
     - libgcrypt20-dev
     - libglib2.0-dev
@@ -71,9 +70,19 @@ requires:
     - libxres-dev
     - ninja-build
 
+    #required for libkanberra
+    - gnome-pkg-tools
+    - libltdl-dev
+    - libasound2-dev
+    - libvorbis-dev
+    - libtdb-dev
+    - libpulse-dev
+    - libgstreamer1.0-dev
+
 before_scripts:
   - ./html-cppcheck
   - ./debrepo-install 'libctk-3-dev gir1.2-ctk-3.0 libctk-3-common libctk-3-0 libctk-3-doc'
+  - ./install-from-git https://github.com/cafe-desktop/libkanberra master
   - ./install-from-git https://github.com/cafe-desktop/libvnck master meson
   - ./install-from-git https://github.com/cafe-desktop/cafe-common master
   - ./install-from-git https://github.com/cafe-desktop/cafe-desktop master
