@@ -134,10 +134,10 @@
 
   * Translations update
   * update copyright year
-  * ctk 3.22: avoid deprecated gdk_screen_get_monitor... functions:
+  * ctk 3.22: avoid deprecated cdk_screen_get_monitor... functions:
   * don't abort on unknown DBus signal name
-  * avoid deprecated gdk_screen_get_width/height
-  * avoid deprecated gdk_display_get_screen
+  * avoid deprecated cdk_screen_get_width/height
+  * avoid deprecated cdk_display_get_screen
   * don't use deprecated ctk_show_uri
   * refresh tray icon on icon theme change
   * Restore Polish translation credits from GNOME

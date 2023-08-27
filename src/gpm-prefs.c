@@ -91,7 +91,7 @@ main (int argc, char **argv)
 
 	egg_debug_init (verbose);
 
-	gdk_init (&argc, &argv);
+	cdk_init (&argc, &argv);
 	app = ctk_application_new("org.cafe.PowerManager.Preferences", 0);
 
 	prefs = gpm_prefs_new ();

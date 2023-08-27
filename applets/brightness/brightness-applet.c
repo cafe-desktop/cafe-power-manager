@@ -31,7 +31,7 @@
 #include <cafe-panel-applet.h>
 #include <ctk/ctk.h>
 #include <glib/gi18n.h>
-#include <gdk/gdkkeysyms.h>
+#include <cdk/cdkkeysyms.h>
 #include <glib-object.h>
 #include <dbus/dbus-glib.h>
 
@@ -212,8 +212,8 @@ gpm_applet_get_icon (GpmBrightnessApplet *applet)
 	} else {
 		egg_debug ("got icon %s!\n", icon);
 		/* update size cache */
-		applet->icon_height = gdk_pixbuf_get_height (applet->icon);
-		applet->icon_width = gdk_pixbuf_get_width (applet->icon);
+		applet->icon_height = cdk_pixbuf_get_height (applet->icon);
+		applet->icon_width = cdk_pixbuf_get_width (applet->icon);
 	}
 }
 
@@ -282,7 +282,7 @@ gpm_applet_draw_cb (GpmBrightnessApplet *applet)
 	w = allocation.width;
 	h = allocation.height;
 
-	cr = gdk_cairo_create (ctk_widget_get_window (CTK_WIDGET(applet)));
+	cr = cdk_cairo_create (ctk_widget_get_window (CTK_WIDGET(applet)));
 
 	/* draw pixmap background */
 	bg_type = cafe_panel_applet_get_background (CAFE_PANEL_APPLET (applet), &color, &pattern);
@@ -295,7 +295,7 @@ gpm_applet_draw_cb (GpmBrightnessApplet *applet)
 	
 	/* draw color background */
 	if (bg_type == PANEL_COLOR_BACKGROUND && !applet->popped) {
-		gdk_cairo_set_source_rgba (cr, &color);
+		cdk_cairo_set_source_rgba (cr, &color);
 		cairo_rectangle (cr, 0, 0, w, h);
 		cairo_fill (cr);
 	}
@@ -304,13 +304,13 @@ gpm_applet_draw_cb (GpmBrightnessApplet *applet)
 	if (applet->popped) {
 		context = ctk_widget_get_style_context (CTK_WIDGET(applet));
 		ctk_style_context_get_color (context, CTK_STATE_FLAG_SELECTED, &color);
-		gdk_cairo_set_source_rgba (cr, &color);
+		cdk_cairo_set_source_rgba (cr, &color);
 		cairo_rectangle (cr, 0, 0, w, h);
 		cairo_fill (cr);
 	}
 
 	/* draw icon at center */
-	gdk_cairo_set_source_pixbuf (cr, applet->icon, (w - applet->icon_width)/2, (h - applet->icon_height)/2);
+	cdk_cairo_set_source_pixbuf (cr, applet->icon, (w - applet->icon_width)/2, (h - applet->icon_height)/2);
 	cairo_paint (cr);
 
 	cairo_destroy (cr);
@@ -643,7 +643,7 @@ gpm_applet_create_popup (GpmBrightnessApplet *applet)
 	ctk_style_context_add_class(context,"cafe-panel-applet-slider");
 	/*Make transparency possible in ctk3 theme3 */
  	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
-	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
+	GdkVisual *visual = cdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 }
 
@@ -695,7 +695,7 @@ gpm_applet_popup_cb (GpmBrightnessApplet *applet, GdkEventButton *event)
 
 	/* retrieve geometry parameters and move window appropriately */
 	orientation = cafe_panel_applet_get_orient (CAFE_PANEL_APPLET (CAFE_PANEL_APPLET (applet)));
-	gdk_window_get_origin (ctk_widget_get_window (CTK_WIDGET(applet)), &x, &y);
+	cdk_window_get_origin (ctk_widget_get_window (CTK_WIDGET(applet)), &x, &y);
 
 	ctk_widget_get_allocation (CTK_WIDGET (applet), &allocation);
 	ctk_widget_get_allocation (CTK_WIDGET (applet->popup), &popup_allocation);
@@ -730,9 +730,9 @@ gpm_applet_popup_cb (GpmBrightnessApplet *applet, GdkEventButton *event)
 
 	/* grab input */
 	window = ctk_widget_get_window (CTK_WIDGET (applet->popup));
-	display = gdk_window_get_display (window);
-	seat = gdk_display_get_default_seat (display);
-	gdk_seat_grab (seat,
+	display = cdk_window_get_display (window);
+	seat = cdk_display_get_default_seat (display);
+	cdk_seat_grab (seat,
 	               window,
 	               GDK_SEAT_CAPABILITY_ALL,
 	               TRUE,

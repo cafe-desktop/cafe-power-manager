@@ -205,18 +205,18 @@ gpm_kbd_backlight_dialog_show (GpmKbdBacklight *backlight)
 
 	pointer_screen = NULL;
 	display = ctk_widget_get_display (backlight->priv->popup);
-	seat = gdk_display_get_default_seat (display);
-	device = gdk_seat_get_pointer (seat);
-	gdk_device_get_position (device,
+	seat = cdk_display_get_default_seat (display);
+	device = cdk_seat_get_pointer (seat);
+	cdk_device_get_position (device,
 	                         &pointer_screen,
 	                         &pointer_x,
 	                         &pointer_y);
 
-	monitor = gdk_display_get_monitor_at_point (gdk_screen_get_display (pointer_screen),
+	monitor = cdk_display_get_monitor_at_point (cdk_screen_get_display (pointer_screen),
 						    pointer_x,
 						    pointer_y);
 
-	gdk_monitor_get_geometry (monitor, &geometry);
+	cdk_monitor_get_geometry (monitor, &geometry);
 
 	screen_w = geometry.width;
 	screen_h = geometry.height;
@@ -228,7 +228,7 @@ gpm_kbd_backlight_dialog_show (GpmKbdBacklight *backlight)
 
 	ctk_widget_show (backlight->priv->popup);
 
-	gdk_display_sync (ctk_widget_get_display (backlight->priv->popup));
+	cdk_display_sync (ctk_widget_get_display (backlight->priv->popup));
 }
 
 /**

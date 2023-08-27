@@ -35,7 +35,7 @@
 #include <glib.h>
 #include <glib/gi18n.h>
 #include <ctk/ctk.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 
 #include "msd-osd-window.h"
 
@@ -88,7 +88,7 @@ fade_timeout (MsdOsdWindow *window)
                 rect.height = allocation.height;
 
                 ctk_widget_realize (win);
-                gdk_window_invalidate_rect (ctk_widget_get_window (win), &rect, FALSE);
+                cdk_window_invalidate_rect (ctk_widget_get_window (win), &rect, FALSE);
         }
 
         return TRUE;
@@ -276,10 +276,10 @@ msd_osd_window_real_realize (CtkWidget *widget)
         cairo_region_t *region;
 
         screen = ctk_widget_get_screen (widget);
-        visual = gdk_screen_get_rgba_visual (screen);
+        visual = cdk_screen_get_rgba_visual (screen);
 
         if (visual == NULL) {
-                visual = gdk_screen_get_system_visual (screen);
+                visual = cdk_screen_get_system_visual (screen);
         }
 
         ctk_widget_set_visual (widget, visual);
@@ -427,7 +427,7 @@ msd_osd_window_is_valid (MsdOsdWindow *window)
 {
         GdkScreen *screen = ctk_widget_get_screen (CTK_WIDGET (window));
         gint scale_factor = ctk_widget_get_scale_factor (CTK_WIDGET (window));
-        return gdk_screen_is_composited (screen) == window->priv->is_composited
+        return cdk_screen_is_composited (screen) == window->priv->is_composited
             && scale_factor == window->priv->scale_factor;
 }
 
@@ -440,7 +440,7 @@ msd_osd_window_init (MsdOsdWindow *window)
 
         screen = ctk_widget_get_screen (CTK_WIDGET (window));
 
-        window->priv->is_composited = gdk_screen_is_composited (screen);
+        window->priv->is_composited = cdk_screen_is_composited (screen);
         window->priv->scale_factor = ctk_widget_get_scale_factor (CTK_WIDGET (window));
 
         if (window->priv->is_composited) {
@@ -454,8 +454,8 @@ msd_osd_window_init (MsdOsdWindow *window)
                 ctk_style_context_add_class (style, "window-frame");
 
                 /* assume 110x110 on a 640x480 display and scale from there */
-                scalew = WidthOfScreen (gdk_x11_screen_get_xscreen (screen)) / (640.0 * window->priv->scale_factor);
-                scaleh = HeightOfScreen (gdk_x11_screen_get_xscreen (screen)) / (480.0 * window->priv->scale_factor);
+                scalew = WidthOfScreen (cdk_x11_screen_get_xscreen (screen)) / (640.0 * window->priv->scale_factor);
+                scaleh = HeightOfScreen (cdk_x11_screen_get_xscreen (screen)) / (480.0 * window->priv->scale_factor);
                 scale = MIN (scalew, scaleh);
                 size = 110 * MAX (1, scale);
 

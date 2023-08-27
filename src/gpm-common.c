@@ -24,7 +24,7 @@
 #include <glib.h>
 #include <string.h>
 #include <glib/gi18n.h>
-#include <gdk/gdk.h>
+#include <cdk/cdk.h>
 #include <ctk/ctk.h>
 
 #include "egg-debug.h"
