@@ -26,11 +26,11 @@
 /**
  * cpm_point_obj_copy:
  **/
-GpmPointObj *
-cpm_point_obj_copy (const GpmPointObj *cobj)
+CpmPointObj *
+cpm_point_obj_copy (const CpmPointObj *cobj)
 {
-	GpmPointObj *obj;
-	obj = g_new0 (GpmPointObj, 1);
+	CpmPointObj *obj;
+	obj = g_new0 (CpmPointObj, 1);
 	obj->x = cobj->x;
 	obj->y = cobj->y;
 	obj->color = cobj->color;
@@ -40,11 +40,11 @@ cpm_point_obj_copy (const GpmPointObj *cobj)
 /**
  * cpm_point_obj_new:
  **/
-GpmPointObj *
+CpmPointObj *
 cpm_point_obj_new (void)
 {
-	GpmPointObj *obj;
-	obj = g_new0 (GpmPointObj, 1);
+	CpmPointObj *obj;
+	obj = g_new0 (CpmPointObj, 1);
 	obj->x = 0.0f;
 	obj->y = 0.0f;
 	obj->color = 0x0;
@@ -55,7 +55,7 @@ cpm_point_obj_new (void)
  * cpm_point_obj_free:
  **/
 void
-cpm_point_obj_free (GpmPointObj *obj)
+cpm_point_obj_free (CpmPointObj *obj)
 {
 	if (obj == NULL)
 		return;

@@ -43,7 +43,7 @@
 
 static void cpm_prefs_finalize (GObject *object);
 
-struct GpmPrefsPrivate
+struct CpmPrefsPrivate
 {
 	UpClient		*client;
 	CtkBuilder		*builder;
@@ -67,14 +67,14 @@ enum {
 
 static guint signals [LAST_SIGNAL] = { 0 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmPrefs, cpm_prefs, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (CpmPrefs, cpm_prefs, G_TYPE_OBJECT)
 
 /**
  * cpm_prefs_class_init:
  * @klass: This prefs class instance
  **/
 static void
-cpm_prefs_class_init (GpmPrefsClass *klass)
+cpm_prefs_class_init (CpmPrefsClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = cpm_prefs_finalize;
@@ -83,7 +83,7 @@ cpm_prefs_class_init (GpmPrefsClass *klass)
 		g_signal_new ("action-help",
 				  G_TYPE_FROM_CLASS (object_class),
 				  G_SIGNAL_RUN_LAST,
-				  G_STRUCT_OFFSET (GpmPrefsClass, action_help),
+				  G_STRUCT_OFFSET (CpmPrefsClass, action_help),
 				  NULL,
 				  NULL,
 				  g_cclosure_marshal_VOID__VOID,
@@ -92,7 +92,7 @@ cpm_prefs_class_init (GpmPrefsClass *klass)
 		g_signal_new ("action-close",
 				  G_TYPE_FROM_CLASS (object_class),
 				  G_SIGNAL_RUN_LAST,
-				  G_STRUCT_OFFSET (GpmPrefsClass, action_close),
+				  G_STRUCT_OFFSET (CpmPrefsClass, action_close),
 				  NULL,
 				  NULL,
 				  g_cclosure_marshal_VOID__VOID,
@@ -106,7 +106,7 @@ cpm_prefs_class_init (GpmPrefsClass *klass)
  * Activates (shows) the window.
  **/
 void
-cpm_prefs_activate_window (CtkApplication *app, GpmPrefs *prefs)
+cpm_prefs_activate_window (CtkApplication *app, CpmPrefs *prefs)
 {
 	CtkWindow *window;
 	window = CTK_WINDOW (ctk_builder_get_object (prefs->priv->builder, "dialog_preferences"));
@@ -120,7 +120,7 @@ cpm_prefs_activate_window (CtkApplication *app, GpmPrefs *prefs)
  * @prefs: This prefs class instance
  **/
 static void
-cpm_prefs_help_cb (CtkWidget *widget, GpmPrefs *prefs)
+cpm_prefs_help_cb (CtkWidget *widget, CpmPrefs *prefs)
 {
 	egg_debug ("emitting action-help");
 	g_signal_emit (prefs, signals [ACTION_HELP], 0);
@@ -131,7 +131,7 @@ cpm_prefs_help_cb (CtkWidget *widget, GpmPrefs *prefs)
  * @widget: The CtkWidget object
  **/
 static void
-cpm_prefs_icon_radio_cb (CtkWidget *widget, GpmPrefs *prefs)
+cpm_prefs_icon_radio_cb (CtkWidget *widget, CpmPrefs *prefs)
 {
 	gint policy;
 
@@ -154,14 +154,14 @@ cpm_prefs_format_percentage_cb (CtkScale *scale, gdouble value)
  * cpm_prefs_action_combo_changed_cb:
  **/
 static void
-cpm_prefs_action_combo_changed_cb (CtkWidget *widget, GpmPrefs *prefs)
+cpm_prefs_action_combo_changed_cb (CtkWidget *widget, CpmPrefs *prefs)
 {
-	GpmActionPolicy policy;
-	const GpmActionPolicy *actions;
+	CpmActionPolicy policy;
+	const CpmActionPolicy *actions;
 	const gchar *cpm_pref_key;
 	guint active;
 
-	actions = (const GpmActionPolicy *) g_object_get_data (G_OBJECT (widget), "actions");
+	actions = (const CpmActionPolicy *) g_object_get_data (G_OBJECT (widget), "actions");
 	cpm_pref_key = (const gchar *) g_object_get_data (G_OBJECT (widget), "settings_key");
 
 	active = ctk_combo_box_get_active (CTK_COMBO_BOX (widget));
@@ -173,7 +173,7 @@ cpm_prefs_action_combo_changed_cb (CtkWidget *widget, GpmPrefs *prefs)
  * cpm_prefs_action_time_changed_cb:
  **/
 static void
-cpm_prefs_action_time_changed_cb (CtkWidget *widget, GpmPrefs *prefs)
+cpm_prefs_action_time_changed_cb (CtkWidget *widget, CpmPrefs *prefs)
 {
 	guint value;
 	const gint *values;
@@ -194,7 +194,7 @@ cpm_prefs_action_time_changed_cb (CtkWidget *widget, GpmPrefs *prefs)
  * cpm_prefs_actions_destroy_cb:
  **/
 static void
-cpm_prefs_actions_destroy_cb (GpmActionPolicy *array)
+cpm_prefs_actions_destroy_cb (CpmActionPolicy *array)
 {
 	g_free (array);
 }
@@ -207,16 +207,16 @@ cpm_prefs_actions_destroy_cb (GpmActionPolicy *array)
  * @actions: The actions to associate in an array.
  **/
 static void
-cpm_prefs_setup_action_combo (GpmPrefs *prefs, const gchar *widget_name,
-				  const gchar *cpm_pref_key, const GpmActionPolicy *actions)
+cpm_prefs_setup_action_combo (CpmPrefs *prefs, const gchar *widget_name,
+				  const gchar *cpm_pref_key, const CpmActionPolicy *actions)
 {
 	gint i;
 	gboolean is_writable;
 	CtkWidget *widget;
-	GpmActionPolicy policy;
-	GpmActionPolicy	value;
+	CpmActionPolicy policy;
+	CpmActionPolicy	value;
 	GPtrArray *array;
-	GpmActionPolicy *actions_added;
+	CpmActionPolicy *actions_added;
 
 	widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, widget_name));
 
@@ -262,7 +262,7 @@ cpm_prefs_setup_action_combo (GpmPrefs *prefs, const gchar *widget_name,
 	}
 
 	/* save as array _only_ the actions we could add */
-	actions_added = g_new0 (GpmActionPolicy, array->len+1);
+	actions_added = g_new0 (CpmActionPolicy, array->len+1);
 	for (i=0; i<array->len; i++)
 		actions_added[i] = GPOINTER_TO_INT (g_ptr_array_index (array, i));
 	actions_added[i] = -1;
@@ -287,7 +287,7 @@ cpm_prefs_setup_action_combo (GpmPrefs *prefs, const gchar *widget_name,
  * @actions: The actions to associate in an array.
  **/
 static void
-cpm_prefs_setup_time_combo (GpmPrefs *prefs, const gchar *widget_name,
+cpm_prefs_setup_time_combo (CpmPrefs *prefs, const gchar *widget_name,
 				const gchar *cpm_pref_key, const gint *values)
 {
 	guint value;
@@ -333,7 +333,7 @@ cpm_prefs_setup_time_combo (GpmPrefs *prefs, const gchar *widget_name,
  * @prefs: This prefs class instance
  **/
 static void
-cpm_prefs_close_cb (CtkWidget *widget, GpmPrefs *prefs)
+cpm_prefs_close_cb (CtkWidget *widget, CpmPrefs *prefs)
 {
 	egg_debug ("emitting action-close");
 	g_signal_emit (prefs, signals [ACTION_CLOSE], 0);
@@ -346,7 +346,7 @@ cpm_prefs_close_cb (CtkWidget *widget, GpmPrefs *prefs)
  * @prefs: This prefs class instance
  **/
 static gboolean
-cpm_prefs_delete_event_cb (CtkWidget *widget, CdkEvent *event, GpmPrefs *prefs)
+cpm_prefs_delete_event_cb (CtkWidget *widget, CdkEvent *event, CpmPrefs *prefs)
 {
 	cpm_prefs_close_cb (widget, prefs);
 	return FALSE;
@@ -354,7 +354,7 @@ cpm_prefs_delete_event_cb (CtkWidget *widget, CdkEvent *event, GpmPrefs *prefs)
 
 /** setup the notification page */
 static void
-prefs_setup_notification (GpmPrefs *prefs)
+prefs_setup_notification (CpmPrefs *prefs)
 {
 	gint icon_policy;
 	CtkWidget *radiobutton_icon_always;
@@ -421,10 +421,10 @@ prefs_setup_notification (GpmPrefs *prefs)
 }
 
 static void
-prefs_setup_ac (GpmPrefs *prefs)
+prefs_setup_ac (CpmPrefs *prefs)
 {
 	CtkWidget *widget;
-	const GpmActionPolicy button_lid_actions[] =
+	const CpmActionPolicy button_lid_actions[] =
 				{CPM_ACTION_POLICY_NOTHING,
 				 CPM_ACTION_POLICY_BLANK,
 				 CPM_ACTION_POLICY_SUSPEND,
@@ -489,20 +489,20 @@ prefs_setup_ac (GpmPrefs *prefs)
 }
 
 static void
-prefs_setup_battery (GpmPrefs *prefs)
+prefs_setup_battery (CpmPrefs *prefs)
 {
 	CtkWidget *widget;
 	CtkNotebook *notebook;
 	gint page;
 
-	const GpmActionPolicy button_lid_actions[] =
+	const CpmActionPolicy button_lid_actions[] =
 				{CPM_ACTION_POLICY_NOTHING,
 				 CPM_ACTION_POLICY_BLANK,
 				 CPM_ACTION_POLICY_SUSPEND,
 				 CPM_ACTION_POLICY_HIBERNATE,
 				 CPM_ACTION_POLICY_SHUTDOWN,
 				 -1};
-	const GpmActionPolicy battery_critical_actions[] =
+	const CpmActionPolicy battery_critical_actions[] =
 				{CPM_ACTION_POLICY_NOTHING,
 				 CPM_ACTION_POLICY_SUSPEND,
 				 CPM_ACTION_POLICY_HIBERNATE,
@@ -569,14 +569,14 @@ prefs_setup_battery (GpmPrefs *prefs)
 }
 
 static void
-prefs_setup_ups (GpmPrefs *prefs)
+prefs_setup_ups (CpmPrefs *prefs)
 {
 	CtkWidget *widget;
 	CtkWidget *notebook;
 	CtkWidget *window;
 	gint page;
 
-	const GpmActionPolicy ups_low_actions[] =
+	const CpmActionPolicy ups_low_actions[] =
 				{CPM_ACTION_POLICY_NOTHING,
 				 CPM_ACTION_POLICY_HIBERNATE,
 				 CPM_ACTION_POLICY_SHUTDOWN,
@@ -628,17 +628,17 @@ prefs_setup_ups (GpmPrefs *prefs)
 }
 
 static void
-prefs_setup_general (GpmPrefs *prefs)
+prefs_setup_general (CpmPrefs *prefs)
 {
 	CtkWidget *widget;
-	const GpmActionPolicy power_button_actions[] =
+	const CpmActionPolicy power_button_actions[] =
 				{CPM_ACTION_POLICY_INTERACTIVE,
 				 CPM_ACTION_POLICY_SUSPEND,
 				 CPM_ACTION_POLICY_HIBERNATE,
 				 CPM_ACTION_POLICY_SHUTDOWN,
 				 CPM_ACTION_POLICY_NOTHING,
 				 -1};
-	const GpmActionPolicy suspend_button_actions[] =
+	const CpmActionPolicy suspend_button_actions[] =
 				{CPM_ACTION_POLICY_NOTHING,
 				 CPM_ACTION_POLICY_SUSPEND,
 				 CPM_ACTION_POLICY_HIBERNATE,
@@ -663,7 +663,7 @@ prefs_setup_general (GpmPrefs *prefs)
  * @prefs: This prefs class instance
  **/
 static void
-cpm_prefs_init (GpmPrefs *prefs)
+cpm_prefs_init (CpmPrefs *prefs)
 {
 	CtkWidget *main_window;
 	CtkWidget *widget;
@@ -672,7 +672,7 @@ cpm_prefs_init (GpmPrefs *prefs)
 	GPtrArray *devices = NULL;
 	UpDevice *device;
 	UpDeviceKind kind;
-	GpmBrightness *brightness;
+	CpmBrightness *brightness;
 	guint i;
 
 	GDBusProxy *proxy;
@@ -863,7 +863,7 @@ cpm_prefs_init (GpmPrefs *prefs)
 static void
 cpm_prefs_finalize (GObject *object)
 {
-	GpmPrefs *prefs;
+	CpmPrefs *prefs;
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (CPM_IS_PREFS (object));
 
@@ -880,12 +880,12 @@ cpm_prefs_finalize (GObject *object)
 
 /**
  * cpm_prefs_new:
- * Return value: new GpmPrefs instance.
+ * Return value: new CpmPrefs instance.
  **/
-GpmPrefs *
+CpmPrefs *
 cpm_prefs_new (void)
 {
-	GpmPrefs *prefs;
+	CpmPrefs *prefs;
 	prefs = g_object_new (CPM_TYPE_PREFS, NULL);
 	return CPM_PREFS (prefs);
 }
@@ -895,7 +895,7 @@ cpm_prefs_new (void)
  * Return value: Prefs window widget.
  **/
 CtkWidget *
-cpm_window (GpmPrefs *prefs)
+cpm_window (CpmPrefs *prefs)
 {
 	return CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "dialog_preferences"));
 }

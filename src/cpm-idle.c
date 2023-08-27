@@ -49,12 +49,12 @@
 #define CPM_IDLE_CPU_LIMIT			5
 #define	CPM_IDLE_IDLETIME_ID			1
 
-struct GpmIdlePrivate
+struct CpmIdlePrivate
 {
 	EggIdletime	*idletime;
-	GpmLoad		*load;
-	GpmSession	*session;
-	GpmIdleMode	 mode;
+	CpmLoad		*load;
+	CpmSession	*session;
+	CpmIdleMode	 mode;
 	guint		 timeout_dim;		/* in seconds */
 	guint		 timeout_blank;		/* in seconds */
 	guint		 timeout_sleep;		/* in seconds */
@@ -72,13 +72,13 @@ enum {
 static guint signals [LAST_SIGNAL] = { 0 };
 static gpointer cpm_idle_object = NULL;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmIdle, cpm_idle, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (CpmIdle, cpm_idle, G_TYPE_OBJECT)
 
 /**
  * cpm_idle_mode_to_string:
  **/
 static const gchar *
-cpm_idle_mode_to_string (GpmIdleMode mode)
+cpm_idle_mode_to_string (CpmIdleMode mode)
 {
 	if (mode == CPM_IDLE_MODE_NORMAL)
 		return "normal";
@@ -96,7 +96,7 @@ cpm_idle_mode_to_string (GpmIdleMode mode)
  * @mode: The new mode, e.g. CPM_IDLE_MODE_SLEEP
  **/
 static void
-cpm_idle_set_mode (GpmIdle *idle, GpmIdleMode mode)
+cpm_idle_set_mode (CpmIdle *idle, CpmIdleMode mode)
 {
 	g_return_if_fail (CPM_IS_IDLE (idle));
 
@@ -113,7 +113,7 @@ cpm_idle_set_mode (GpmIdle *idle, GpmIdleMode mode)
  *		    CPM_IDLE_MODE_SLEEP and the event is done.
  **/
 void
-cpm_idle_set_check_cpu (GpmIdle *idle, gboolean check_type_cpu)
+cpm_idle_set_check_cpu (CpmIdle *idle, gboolean check_type_cpu)
 {
 	g_return_if_fail (CPM_IS_IDLE (idle));
 	egg_debug ("Setting the CPU load check to %i", check_type_cpu);
@@ -124,8 +124,8 @@ cpm_idle_set_check_cpu (GpmIdle *idle, gboolean check_type_cpu)
  * cpm_idle_get_mode:
  * Return value: The current mode, e.g. CPM_IDLE_MODE_SLEEP
  **/
-GpmIdleMode
-cpm_idle_get_mode (GpmIdle *idle)
+CpmIdleMode
+cpm_idle_get_mode (CpmIdle *idle)
 {
 	return idle->priv->mode;
 }
@@ -134,7 +134,7 @@ cpm_idle_get_mode (GpmIdle *idle)
  * cpm_idle_blank_cb:
  **/
 static gboolean
-cpm_idle_blank_cb (GpmIdle *idle)
+cpm_idle_blank_cb (CpmIdle *idle)
 {
 	if (idle->priv->mode > CPM_IDLE_MODE_BLANK) {
 		egg_debug ("ignoring current mode %s", cpm_idle_mode_to_string (idle->priv->mode));
@@ -148,7 +148,7 @@ cpm_idle_blank_cb (GpmIdle *idle)
  * cpm_idle_sleep_cb:
  **/
 static gboolean
-cpm_idle_sleep_cb (GpmIdle *idle)
+cpm_idle_sleep_cb (CpmIdle *idle)
 {
 	gdouble load;
 	gboolean ret = FALSE;
@@ -172,7 +172,7 @@ out:
  * cpm_idle_evaluate:
  **/
 static void
-cpm_idle_evaluate (GpmIdle *idle)
+cpm_idle_evaluate (CpmIdle *idle)
 {
 	gboolean is_idle;
 	gboolean is_idle_inhibited;
@@ -226,7 +226,7 @@ cpm_idle_evaluate (GpmIdle *idle)
 		egg_debug ("setting up blank callback for %is", idle->priv->timeout_blank);
 		idle->priv->timeout_blank_id = g_timeout_add_seconds (idle->priv->timeout_blank,
 								      (GSourceFunc) cpm_idle_blank_cb, idle);
-		g_source_set_name_by_id (idle->priv->timeout_blank_id, "[GpmIdle] blank");
+		g_source_set_name_by_id (idle->priv->timeout_blank_id, "[CpmIdle] blank");
 	}
 
 	/* are we inhibited from sleeping */
@@ -243,7 +243,7 @@ cpm_idle_evaluate (GpmIdle *idle)
 			egg_debug ("setting up sleep callback %is", idle->priv->timeout_sleep);
 			idle->priv->timeout_sleep_id = g_timeout_add_seconds (idle->priv->timeout_sleep,
 									      (GSourceFunc) cpm_idle_sleep_cb, idle);
-			g_source_set_name_by_id (idle->priv->timeout_sleep_id, "[GpmIdle] sleep");
+			g_source_set_name_by_id (idle->priv->timeout_sleep_id, "[CpmIdle] sleep");
 		}
 	}
 out:
@@ -284,7 +284,7 @@ cpm_idle_adjust_timeout_dim (guint idle_time, guint timeout)
  * @timeout: The new timeout we want to set, in seconds
  **/
 gboolean
-cpm_idle_set_timeout_dim (GpmIdle *idle, guint timeout)
+cpm_idle_set_timeout_dim (CpmIdle *idle, guint timeout)
 {
 	gint64 idle_time_in_msec;
 	guint timeout_adjusted;
@@ -314,7 +314,7 @@ cpm_idle_set_timeout_dim (GpmIdle *idle, guint timeout)
  * @timeout: The new timeout we want to set, in seconds
  **/
 gboolean
-cpm_idle_set_timeout_blank (GpmIdle *idle, guint timeout)
+cpm_idle_set_timeout_blank (CpmIdle *idle, guint timeout)
 {
 	g_return_val_if_fail (CPM_IS_IDLE (idle), FALSE);
 
@@ -331,7 +331,7 @@ cpm_idle_set_timeout_blank (GpmIdle *idle, guint timeout)
  * @timeout: The new timeout we want to set, in seconds
  **/
 gboolean
-cpm_idle_set_timeout_sleep (GpmIdle *idle, guint timeout)
+cpm_idle_set_timeout_sleep (CpmIdle *idle, guint timeout)
 {
 	g_return_val_if_fail (CPM_IS_IDLE (idle), FALSE);
 
@@ -350,7 +350,7 @@ cpm_idle_set_timeout_sleep (GpmIdle *idle, guint timeout)
  * The SessionIdleChanged callback from cafe-session.
  **/
 static void
-cpm_idle_session_idle_changed_cb (GpmSession *session, gboolean is_idle, GpmIdle *idle)
+cpm_idle_session_idle_changed_cb (CpmSession *session, gboolean is_idle, CpmIdle *idle)
 {
 	egg_debug ("Received cafe session idle changed: %i", is_idle);
 	idle->priv->x_idle = is_idle;
@@ -361,7 +361,7 @@ cpm_idle_session_idle_changed_cb (GpmSession *session, gboolean is_idle, GpmIdle
  * cpm_idle_session_inhibited_changed_cb:
  **/
 static void
-cpm_idle_session_inhibited_changed_cb (GpmSession *session, gboolean is_idle_inhibited, gboolean is_suspend_inhibited, GpmIdle *idle)
+cpm_idle_session_inhibited_changed_cb (CpmSession *session, gboolean is_idle_inhibited, gboolean is_suspend_inhibited, CpmIdle *idle)
 {
 	egg_debug ("Received cafe session inhibited changed: idle=(%i), suspend=(%i)", is_idle_inhibited, is_suspend_inhibited);
 	cpm_idle_evaluate (idle);
@@ -373,7 +373,7 @@ cpm_idle_session_inhibited_changed_cb (GpmSession *session, gboolean is_idle_inh
  * We're idle, something timed out
  **/
 static void
-cpm_idle_idletime_alarm_expired_cb (EggIdletime *idletime, guint alarm_id, GpmIdle *idle)
+cpm_idle_idletime_alarm_expired_cb (EggIdletime *idletime, guint alarm_id, CpmIdle *idle)
 {
 	egg_debug ("idletime alarm: %i", alarm_id);
 
@@ -388,7 +388,7 @@ cpm_idle_idletime_alarm_expired_cb (EggIdletime *idletime, guint alarm_id, GpmId
  * We're no longer idle, the user moved
  **/
 static void
-cpm_idle_idletime_reset_cb (EggIdletime *idletime, GpmIdle *idle)
+cpm_idle_idletime_reset_cb (EggIdletime *idletime, CpmIdle *idle)
 {
 	egg_debug ("idletime reset");
 
@@ -403,7 +403,7 @@ cpm_idle_idletime_reset_cb (EggIdletime *idletime, GpmIdle *idle)
 static void
 cpm_idle_finalize (GObject *object)
 {
-	GpmIdle *idle;
+	CpmIdle *idle;
 
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (CPM_IS_IDLE (object));
@@ -436,7 +436,7 @@ cpm_idle_finalize (GObject *object)
  * @klass: This class instance
  **/
 static void
-cpm_idle_class_init (GpmIdleClass *klass)
+cpm_idle_class_init (CpmIdleClass *klass)
 {
 	GObjectClass   *object_class = G_OBJECT_CLASS (klass);
 
@@ -446,7 +446,7 @@ cpm_idle_class_init (GpmIdleClass *klass)
 		g_signal_new ("idle-changed",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmIdleClass, idle_changed),
+			      G_STRUCT_OFFSET (CpmIdleClass, idle_changed),
 			      NULL, NULL, g_cclosure_marshal_VOID__INT,
 			      G_TYPE_NONE, 1, G_TYPE_INT);
 }
@@ -459,7 +459,7 @@ cpm_idle_class_init (GpmIdleClass *klass)
  *
  **/
 static void
-cpm_idle_init (GpmIdle *idle)
+cpm_idle_init (CpmIdle *idle)
 {
 	idle->priv = cpm_idle_get_instance_private (idle);
 
@@ -483,9 +483,9 @@ cpm_idle_init (GpmIdle *idle)
 
 /**
  * cpm_idle_new:
- * Return value: A new GpmIdle instance.
+ * Return value: A new CpmIdle instance.
  **/
-GpmIdle *
+CpmIdle *
 cpm_idle_new (void)
 {
 	if (cpm_idle_object != NULL) {
@@ -504,10 +504,10 @@ cpm_idle_new (void)
 #include "egg-test.h"
 #include "cpm-dpms.h"
 
-static GpmIdleMode _mode = 0;
+static CpmIdleMode _mode = 0;
 
 static void
-cpm_idle_test_idle_changed_cb (GpmIdle *idle, GpmIdleMode mode, EggTest *test)
+cpm_idle_test_idle_changed_cb (CpmIdle *idle, CpmIdleMode mode, EggTest *test)
 {
 	_mode = mode;
 	egg_debug ("idle-changed %s", cpm_idle_mode_to_string (mode));
@@ -525,13 +525,13 @@ cpm_idle_test_delay_cb (EggTest *test)
 void
 cpm_idle_test (gpointer data)
 {
-	GpmIdle *idle;
+	CpmIdle *idle;
 	gboolean ret;
 	EggTest *test = (EggTest *) data;
-	GpmIdleMode mode;
-	GpmDpms *dpms;
+	CpmIdleMode mode;
+	CpmDpms *dpms;
 
-	if (!egg_test_start (test, "GpmIdle"))
+	if (!egg_test_start (test, "CpmIdle"))
 		return;
 
 	/************************************************************/

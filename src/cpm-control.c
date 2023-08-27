@@ -51,7 +51,7 @@
 #include "cpm-control.h"
 #include "cpm-networkmanager.h"
 
-struct GpmControlPrivate
+struct CpmControlPrivate
 {
 	GSettings		*settings;
 };
@@ -65,7 +65,7 @@ enum {
 static guint signals [LAST_SIGNAL] = { 0 };
 static gpointer cpm_control_object = NULL;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmControl, cpm_control, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (CpmControl, cpm_control, G_TYPE_OBJECT)
 
 /**
  * cpm_control_error_quark:
@@ -133,7 +133,7 @@ cpm_control_systemd_shutdown (void) {
  * Shuts down the computer
  **/
 gboolean
-cpm_control_shutdown (GpmControl *control, GError **error)
+cpm_control_shutdown (CpmControl *control, GError **error)
 {
 	gboolean ret;
 	EggConsoleKit *console;
@@ -160,7 +160,7 @@ cpm_control_shutdown (GpmControl *control, GError **error)
  * Return value: TRUE if we should lock.
  **/
 gboolean
-cpm_control_get_lock_policy (GpmControl *control, const gchar *policy)
+cpm_control_get_lock_policy (CpmControl *control, const gchar *policy)
 {
 	gboolean do_lock;
 	gboolean use_ss_setting;
@@ -202,14 +202,14 @@ cpm_control_get_lock_policy (GpmControl *control, const gchar *policy)
  * cpm_control_suspend:
  **/
 gboolean
-cpm_control_suspend (GpmControl *control, GError **error)
+cpm_control_suspend (CpmControl *control, GError **error)
 {
 	gboolean allowed = FALSE;
 	gboolean ret = FALSE;
 	gboolean do_lock;
 	gboolean nm_sleep;
 	EggConsoleKit *console;
-	GpmScreensaver *screensaver;
+	CpmScreensaver *screensaver;
 	guint32 throttle_cookie = 0;
 #ifdef WITH_KEYRING
 	gboolean lock_gnome_keyring;
@@ -320,14 +320,14 @@ out:
  * cpm_control_hibernate:
  **/
 gboolean
-cpm_control_hibernate (GpmControl *control, GError **error)
+cpm_control_hibernate (CpmControl *control, GError **error)
 {
 	gboolean allowed = FALSE;
 	gboolean ret = FALSE;
 	gboolean do_lock;
 	gboolean nm_sleep;
 	EggConsoleKit *console;
-	GpmScreensaver *screensaver;
+	CpmScreensaver *screensaver;
 	guint32 throttle_cookie = 0;
 #ifdef WITH_KEYRING
 	gboolean lock_gnome_keyring;
@@ -439,7 +439,7 @@ out:
 static void
 cpm_control_finalize (GObject *object)
 {
-	GpmControl *control;
+	CpmControl *control;
 
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (CPM_IS_CONTROL (object));
@@ -455,7 +455,7 @@ cpm_control_finalize (GObject *object)
  * cpm_control_class_init:
  **/
 static void
-cpm_control_class_init (GpmControlClass *klass)
+cpm_control_class_init (CpmControlClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = cpm_control_finalize;
@@ -464,7 +464,7 @@ cpm_control_class_init (GpmControlClass *klass)
 		g_signal_new ("resume",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmControlClass, resume),
+			      G_STRUCT_OFFSET (CpmControlClass, resume),
 			      NULL,
 			      NULL,
 			      g_cclosure_marshal_VOID__INT,
@@ -473,7 +473,7 @@ cpm_control_class_init (GpmControlClass *klass)
 		g_signal_new ("sleep",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmControlClass, sleep),
+			      G_STRUCT_OFFSET (CpmControlClass, sleep),
 			      NULL,
 			      NULL,
 			      g_cclosure_marshal_VOID__INT,
@@ -485,7 +485,7 @@ cpm_control_class_init (GpmControlClass *klass)
  * @control: This control class instance
  **/
 static void
-cpm_control_init (GpmControl *control)
+cpm_control_init (CpmControl *control)
 {
 	control->priv = cpm_control_get_instance_private (control);
 
@@ -496,7 +496,7 @@ cpm_control_init (GpmControl *control)
  * cpm_control_new:
  * Return value: A new control class instance.
  **/
-GpmControl *
+CpmControl *
 cpm_control_new (void)
 {
 	if (cpm_control_object != NULL) {

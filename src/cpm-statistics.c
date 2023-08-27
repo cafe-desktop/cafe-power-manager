@@ -175,8 +175,8 @@ static GPtrArray *
 cpm_stats_update_smooth_data (GPtrArray *list)
 {
 	guint i;
-	GpmPointObj *point;
-	GpmPointObj *point_new;
+	CpmPointObj *point;
+	CpmPointObj *point_new;
 	GPtrArray *new;
 	EggArrayFloat *raw;
 	EggArrayFloat *convolved;
@@ -186,7 +186,7 @@ cpm_stats_update_smooth_data (GPtrArray *list)
 	/* convert the y data to a EggArrayFloat array */
 	raw = egg_array_float_new (list->len);
 	for (i=0; i<list->len; i++) {
-		point = (GpmPointObj *) g_ptr_array_index (list, i);
+		point = (CpmPointObj *) g_ptr_array_index (list, i);
 		egg_array_float_set (raw, i, point->y);
 	}
 
@@ -200,8 +200,8 @@ cpm_stats_update_smooth_data (GPtrArray *list)
 	/* add the smoothed data back into a new array */
 	new = g_ptr_array_new_with_free_func ((GDestroyNotify) cpm_point_obj_free);
 	for (i=0; i<list->len; i++) {
-		point = (GpmPointObj *) g_ptr_array_index (list, i);
-		point_new = g_new0 (GpmPointObj, 1);
+		point = (CpmPointObj *) g_ptr_array_index (list, i);
+		point_new = g_new0 (CpmPointObj, 1);
 		point_new->color = point->color;
 		point_new->x = point->x;
 		point_new->y = egg_array_float_get (convolved, i);
@@ -501,7 +501,7 @@ cpm_stats_update_info_page_history (UpDevice *device)
 	CtkWidget *widget;
 	gboolean checked;
 	gboolean points;
-	GpmPointObj *point;
+	CpmPointObj *point;
 	GPtrArray *new;
 	gint32 offset = 0;
 	GTimeVal timeval;
@@ -609,7 +609,7 @@ cpm_stats_update_info_page_stats (UpDevice *device)
 	CtkWidget *widget;
 	gboolean checked;
 	gboolean points;
-	GpmPointObj *point;
+	CpmPointObj *point;
 	GPtrArray *new;
 	gboolean use_data = FALSE;
 	const gchar *type = NULL;

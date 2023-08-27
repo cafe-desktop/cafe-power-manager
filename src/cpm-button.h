@@ -27,13 +27,13 @@
 G_BEGIN_DECLS
 
 #define CPM_TYPE_BUTTON		(cpm_button_get_type ())
-#define CPM_BUTTON(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_BUTTON, GpmButton))
-#define CPM_BUTTON_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_BUTTON, GpmButtonClass))
+#define CPM_BUTTON(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_BUTTON, CpmButton))
+#define CPM_BUTTON_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_BUTTON, CpmButtonClass))
 #define CPM_IS_BUTTON(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_BUTTON))
 #define CPM_IS_BUTTON_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_BUTTON))
-#define CPM_BUTTON_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_BUTTON, GpmButtonClass))
+#define CPM_BUTTON_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_BUTTON, CpmButtonClass))
 
-typedef struct GpmButtonPrivate GpmButtonPrivate;
+typedef struct CpmButtonPrivate CpmButtonPrivate;
 
 #define CPM_BUTTON_POWER		"power"
 #define CPM_BUTTON_SLEEP		"sleep"
@@ -53,20 +53,20 @@ typedef struct GpmButtonPrivate GpmButtonPrivate;
 typedef struct
 {
 	GObject		 parent;
-	GpmButtonPrivate *priv;
-} GpmButton;
+	CpmButtonPrivate *priv;
+} CpmButton;
 
 typedef struct
 {
 	GObjectClass	parent_class;
-	void		(* button_pressed)	(GpmButton	*button,
+	void		(* button_pressed)	(CpmButton	*button,
 						 const gchar	*type);
-} GpmButtonClass;
+} CpmButtonClass;
 
 GType		 cpm_button_get_type		(void);
-GpmButton	*cpm_button_new			(void);
-gboolean	 cpm_button_is_lid_closed	(GpmButton *button);
-gboolean	 cpm_button_reset_time		(GpmButton *button);
+CpmButton	*cpm_button_new			(void);
+gboolean	 cpm_button_is_lid_closed	(CpmButton *button);
+gboolean	 cpm_button_reset_time		(CpmButton *button);
 
 G_END_DECLS
 

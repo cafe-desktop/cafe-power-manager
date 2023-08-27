@@ -38,11 +38,11 @@
 #include "cpm-common.h"
 
 #define CPM_TYPE_INHIBIT_APPLET		(cpm_inhibit_applet_get_type ())
-#define CPM_INHIBIT_APPLET(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_INHIBIT_APPLET, GpmInhibitApplet))
-#define CPM_INHIBIT_APPLET_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_INHIBIT_APPLET, GpmInhibitAppletClass))
+#define CPM_INHIBIT_APPLET(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_INHIBIT_APPLET, CpmInhibitApplet))
+#define CPM_INHIBIT_APPLET_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_INHIBIT_APPLET, CpmInhibitAppletClass))
 #define CPM_IS_INHIBIT_APPLET(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_INHIBIT_APPLET))
 #define CPM_IS_INHIBIT_APPLET_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_INHIBIT_APPLET))
-#define CPM_INHIBIT_APPLET_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_INHIBIT_APPLET, GpmInhibitAppletClass))
+#define CPM_INHIBIT_APPLET_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_INHIBIT_APPLET, CpmInhibitAppletClass))
 
 typedef struct{
 	CafePanelApplet parent;
@@ -57,11 +57,11 @@ typedef struct{
 	guint level;
 	/* a cache for panel size */
 	gint size;
-} GpmInhibitApplet;
+} CpmInhibitApplet;
 
 typedef struct{
 	CafePanelAppletClass	parent_class;
-} GpmInhibitAppletClass;
+} CpmInhibitAppletClass;
 
 GType                cpm_inhibit_applet_get_type  (void);
 
@@ -69,12 +69,12 @@ GType                cpm_inhibit_applet_get_type  (void);
 #define GS_DBUS_PATH		"/org/gnome/SessionManager"
 #define GS_DBUS_INTERFACE	"org.gnome.SessionManager"
 
-G_DEFINE_TYPE (GpmInhibitApplet, cpm_inhibit_applet, PANEL_TYPE_APPLET)
+G_DEFINE_TYPE (CpmInhibitApplet, cpm_inhibit_applet, PANEL_TYPE_APPLET)
 
-static void	cpm_applet_update_icon		(GpmInhibitApplet *applet);
+static void	cpm_applet_update_icon		(CpmInhibitApplet *applet);
 static void	cpm_applet_size_allocate_cb     (CtkWidget *widget, CdkRectangle *allocation);;
-static void	cpm_applet_update_tooltip	(GpmInhibitApplet *applet);
-static gboolean	cpm_applet_click_cb		(GpmInhibitApplet *applet, CdkEventButton *event);
+static void	cpm_applet_update_tooltip	(CpmInhibitApplet *applet);
+static gboolean	cpm_applet_click_cb		(CpmInhibitApplet *applet, CdkEventButton *event);
 static void	cpm_applet_dialog_about_cb	(CtkAction *action, gpointer data);
 static gboolean	cpm_applet_cb		        (CafePanelApplet *_applet, const gchar *iid, gpointer data);
 static void	cpm_applet_destroy_cb		(CtkWidget *widget);
@@ -92,7 +92,7 @@ static void	cpm_applet_destroy_cb		(CtkWidget *widget);
 
 /** cookie is returned as an unsigned integer */
 static gboolean
-cpm_applet_inhibit (GpmInhibitApplet *applet,
+cpm_applet_inhibit (CpmInhibitApplet *applet,
 		    const gchar     *appname,
 		    const gchar     *reason,
 		    guint           *cookie)
@@ -129,7 +129,7 @@ cpm_applet_inhibit (GpmInhibitApplet *applet,
 }
 
 static gboolean
-cpm_applet_uninhibit (GpmInhibitApplet *applet,
+cpm_applet_uninhibit (CpmInhibitApplet *applet,
 		      guint            cookie)
 {
 	GError *error = NULL;
@@ -163,7 +163,7 @@ cpm_applet_uninhibit (GpmInhibitApplet *applet,
  * sets an icon from stock
  **/
 static void
-cpm_applet_update_icon (GpmInhibitApplet *applet)
+cpm_applet_update_icon (CpmInhibitApplet *applet)
 {
 	const gchar *icon;
 
@@ -190,7 +190,7 @@ static void
 cpm_applet_size_allocate_cb (CtkWidget    *widget,
                              CdkRectangle *allocation)
 {
-	GpmInhibitApplet *applet = CPM_INHIBIT_APPLET (widget);
+	CpmInhibitApplet *applet = CPM_INHIBIT_APPLET (widget);
 	int               size = 0;
 
 	switch (cafe_panel_applet_get_orient (CAFE_PANEL_APPLET (applet))) {
@@ -218,7 +218,7 @@ cpm_applet_size_allocate_cb (CtkWidget    *widget,
  * sets tooltip's content (percentage or disabled)
  **/
 static void
-cpm_applet_update_tooltip (GpmInhibitApplet *applet)
+cpm_applet_update_tooltip (CpmInhibitApplet *applet)
 {
 	const gchar *buf;
 	if (applet->proxy == NULL) {
@@ -240,7 +240,7 @@ cpm_applet_update_tooltip (GpmInhibitApplet *applet)
  * pops and unpops
  **/
 static gboolean
-cpm_applet_click_cb (GpmInhibitApplet *applet, CdkEventButton *event)
+cpm_applet_click_cb (CpmInhibitApplet *applet, CdkEventButton *event)
 {
 	/* react only to left mouse button */
 	if (event->button != 1) {
@@ -342,7 +342,7 @@ cpm_applet_help_cb (CtkAction *action, gpointer data)
 static void
 cpm_applet_destroy_cb (CtkWidget *widget)
 {
-	GpmInhibitApplet *applet = CPM_INHIBIT_APPLET(widget);
+	CpmInhibitApplet *applet = CPM_INHIBIT_APPLET(widget);
 
 	g_bus_unwatch_name (applet->bus_watch_id);
 }
@@ -352,7 +352,7 @@ cpm_applet_destroy_cb (CtkWidget *widget)
  * @klass: Class instance
  **/
 static void
-cpm_inhibit_applet_class_init (GpmInhibitAppletClass *class)
+cpm_inhibit_applet_class_init (CpmInhibitAppletClass *class)
 {
 	/* nothing to do here */
 }
@@ -362,7 +362,7 @@ cpm_inhibit_applet_class_init (GpmInhibitAppletClass *class)
  * cpm_inhibit_applet_dbus_connect:
  **/
 gboolean
-cpm_inhibit_applet_dbus_connect (GpmInhibitApplet *applet)
+cpm_inhibit_applet_dbus_connect (CpmInhibitApplet *applet)
 {
 	GError *error = NULL;
 
@@ -399,7 +399,7 @@ cpm_inhibit_applet_dbus_connect (GpmInhibitApplet *applet)
  * cpm_inhibit_applet_dbus_disconnect:
  **/
 gboolean
-cpm_inhibit_applet_dbus_disconnect (GpmInhibitApplet *applet)
+cpm_inhibit_applet_dbus_disconnect (CpmInhibitApplet *applet)
 {
 	if (applet->proxy != NULL) {
 		egg_debug ("removing proxy\n");
@@ -418,7 +418,7 @@ static void
 cpm_inhibit_applet_name_appeared_cb (GDBusConnection *connection,
 				     const gchar *name,
 				     const gchar *name_owner,
-				     GpmInhibitApplet *applet)
+				     CpmInhibitApplet *applet)
 {
 	cpm_inhibit_applet_dbus_connect (applet);
 	cpm_applet_update_tooltip (applet);
@@ -431,7 +431,7 @@ cpm_inhibit_applet_name_appeared_cb (GDBusConnection *connection,
 void
 cpm_inhibit_applet_name_vanished_cb (GDBusConnection *connection,
 				     const gchar *name,
-				     GpmInhibitApplet *applet)
+				     CpmInhibitApplet *applet)
 {
 	cpm_inhibit_applet_dbus_disconnect (applet);
 	cpm_applet_update_tooltip (applet);
@@ -443,7 +443,7 @@ cpm_inhibit_applet_name_vanished_cb (GDBusConnection *connection,
  * @applet: Inhibit applet instance
  **/
 static void
-cpm_inhibit_applet_init (GpmInhibitApplet *applet)
+cpm_inhibit_applet_init (CpmInhibitApplet *applet)
 {
 	DBusGConnection *connection;
 
@@ -490,7 +490,7 @@ cpm_inhibit_applet_init (GpmInhibitApplet *applet)
 
 /**
  * cpm_applet_cb:
- * @_applet: GpmInhibitApplet instance created by the applet factory
+ * @_applet: CpmInhibitApplet instance created by the applet factory
  * @iid: Applet id
  *
  * the function called by libcafe-panel-applet factory after creation
@@ -498,7 +498,7 @@ cpm_inhibit_applet_init (GpmInhibitApplet *applet)
 static gboolean
 cpm_applet_cb (CafePanelApplet *_applet, const gchar *iid, gpointer data)
 {
-	GpmInhibitApplet *applet = CPM_INHIBIT_APPLET(_applet);
+	CpmInhibitApplet *applet = CPM_INHIBIT_APPLET(_applet);
 	CtkActionGroup *action_group;
 	gchar *ui_path;
 

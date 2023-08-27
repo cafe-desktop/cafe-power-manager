@@ -54,16 +54,16 @@
 #include "cpm-icon-names.h"
 #include "egg-console-kit.h"
 
-struct GpmBacklightPrivate
+struct CpmBacklightPrivate
 {
 	UpClient		*client;
-	GpmBrightness		*brightness;
-	GpmButton		*button;
+	CpmBrightness		*brightness;
+	CpmButton		*button;
 	GSettings		*settings;
 	CtkWidget		*popup;
-	GpmControl		*control;
-	GpmDpms			*dpms;
-	GpmIdle			*idle;
+	CpmControl		*control;
+	CpmDpms			*dpms;
+	CpmIdle			*idle;
 	EggConsoleKit		*console;
 	gboolean		 can_dim;
 	gboolean		 system_is_idle;
@@ -79,7 +79,7 @@ enum {
 
 static guint signals [LAST_SIGNAL] = { 0 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmBacklight, cpm_backlight, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (CpmBacklight, cpm_backlight, G_TYPE_OBJECT)
 
 /**
  * cpm_backlight_error_quark:
@@ -98,7 +98,7 @@ cpm_backlight_error_quark (void)
  * cpm_backlight_get_brightness:
  **/
 gboolean
-cpm_backlight_get_brightness (GpmBacklight *backlight, guint *brightness, GError **error)
+cpm_backlight_get_brightness (CpmBacklight *backlight, guint *brightness, GError **error)
 {
 	guint level;
 	gboolean ret;
@@ -130,7 +130,7 @@ cpm_backlight_get_brightness (GpmBacklight *backlight, guint *brightness, GError
  * cpm_backlight_set_brightness:
  **/
 gboolean
-cpm_backlight_set_brightness (GpmBacklight *backlight, guint percentage, GError **error)
+cpm_backlight_set_brightness (CpmBacklight *backlight, guint percentage, GError **error)
 {
 	gboolean ret;
 	gboolean hw_changed;
@@ -170,7 +170,7 @@ cpm_backlight_set_brightness (GpmBacklight *backlight, guint percentage, GError 
  * Initialises the popup, and makes sure that it matches the compositing of the screen.
  **/
 static void
-cpm_backlight_dialog_init (GpmBacklight *backlight)
+cpm_backlight_dialog_init (CpmBacklight *backlight)
 {
 	if (backlight->priv->popup != NULL
 	    && !msd_osd_window_is_valid (MSD_OSD_WINDOW (backlight->priv->popup))) {
@@ -193,7 +193,7 @@ cpm_backlight_dialog_init (GpmBacklight *backlight)
  * Show the brightness popup, and place it nicely on the screen.
  **/
 static void
-cpm_backlight_dialog_show (GpmBacklight *backlight)
+cpm_backlight_dialog_show (CpmBacklight *backlight)
 {
 	int            orig_w;
 	int            orig_h;
@@ -271,7 +271,7 @@ cpm_common_sum_scale (gfloat value1, gfloat value2, gfloat factor)
  * cpm_backlight_brightness_evaluate_and_set:
  **/
 static gboolean
-cpm_backlight_brightness_evaluate_and_set (GpmBacklight *backlight, gboolean interactive, gboolean use_initial)
+cpm_backlight_brightness_evaluate_and_set (CpmBacklight *backlight, gboolean interactive, gboolean use_initial)
 {
 	gfloat brightness;
 	gfloat scale;
@@ -373,7 +373,7 @@ cpm_backlight_brightness_evaluate_and_set (GpmBacklight *backlight, gboolean int
  * We might have to do things when the keys change; do them here.
  **/
 static void
-cpm_settings_key_changed_cb (GSettings *settings, const gchar *key, GpmBacklight *backlight)
+cpm_settings_key_changed_cb (GSettings *settings, const gchar *key, CpmBacklight *backlight)
 {
 	gboolean on_battery;
 
@@ -412,7 +412,7 @@ cpm_settings_key_changed_cb (GSettings *settings, const gchar *key, GpmBacklight
  * Does the actions when the ac power source is inserted/removed.
  **/
 static void
-cpm_backlight_client_changed_cb (UpClient *client, GParamSpec *pspec, GpmBacklight *backlight)
+cpm_backlight_client_changed_cb (UpClient *client, GParamSpec *pspec, CpmBacklight *backlight)
 {
 	cpm_backlight_brightness_evaluate_and_set (backlight, FALSE, TRUE);
 }
@@ -425,7 +425,7 @@ cpm_backlight_client_changed_cb (UpClient *client, GParamSpec *pspec, GpmBacklig
  * @brightness: This class instance
  **/
 static void
-cpm_backlight_button_pressed_cb (GpmButton *button, const gchar *type, GpmBacklight *backlight)
+cpm_backlight_button_pressed_cb (CpmButton *button, const gchar *type, CpmBacklight *backlight)
 {
 	gboolean ret;
 	GError *error = NULL;
@@ -503,7 +503,7 @@ cpm_backlight_button_pressed_cb (GpmButton *button, const gchar *type, GpmBackli
  * cpm_backlight_notify_system_idle_changed:
  **/
 static gboolean
-cpm_backlight_notify_system_idle_changed (GpmBacklight *backlight, gboolean is_idle)
+cpm_backlight_notify_system_idle_changed (CpmBacklight *backlight, gboolean is_idle)
 {
 	gdouble elapsed;
 
@@ -560,12 +560,12 @@ cpm_backlight_notify_system_idle_changed (GpmBacklight *backlight, gboolean is_i
  * session timeout has elapsed for the idle action.
  **/
 static void
-idle_changed_cb (GpmIdle *idle, GpmIdleMode mode, GpmBacklight *backlight)
+idle_changed_cb (CpmIdle *idle, CpmIdleMode mode, CpmBacklight *backlight)
 {
 	gboolean ret;
 	GError *error = NULL;
 	gboolean on_battery;
-	GpmDpmsMode dpms_mode;
+	CpmDpmsMode dpms_mode;
 
 	/* don't dim or undim the screen when the lid is closed */
 	if (cpm_button_is_lid_closed (backlight->priv->button))
@@ -635,14 +635,14 @@ idle_changed_cb (GpmIdle *idle, GpmIdleMode mode, GpmBacklight *backlight)
 
 /**
  * brightness_changed_cb:
- * @brightness: The GpmBrightness class instance
+ * @brightness: The CpmBrightness class instance
  * @percentage: The new percentage brightness
  * @brightness: This class instance
  *
  * This callback is called when the brightness value changes.
  **/
 static void
-brightness_changed_cb (GpmBrightness *brightness, guint percentage, GpmBacklight *backlight)
+brightness_changed_cb (CpmBrightness *brightness, guint percentage, CpmBacklight *backlight)
 {
 	/* save the new percentage */
 	backlight->priv->master_percentage = percentage;
@@ -660,7 +660,7 @@ brightness_changed_cb (GpmBrightness *brightness, guint percentage, GpmBacklight
  * We have to update the caches on resume
  **/
 static void
-control_resume_cb (GpmControl *control, GpmControlAction action, GpmBacklight *backlight)
+control_resume_cb (CpmControl *control, CpmControlAction action, CpmBacklight *backlight)
 {
 	gboolean ret;
 	GError *error = NULL;
@@ -679,7 +679,7 @@ control_resume_cb (GpmControl *control, GpmControlAction action, GpmBacklight *b
 static void
 cpm_backlight_finalize (GObject *object)
 {
-	GpmBacklight *backlight;
+	CpmBacklight *backlight;
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (CPM_IS_BACKLIGHT (object));
 	backlight = CPM_BACKLIGHT (object);
@@ -704,7 +704,7 @@ cpm_backlight_finalize (GObject *object)
  * cpm_backlight_class_init:
  **/
 static void
-cpm_backlight_class_init (GpmBacklightClass *klass)
+cpm_backlight_class_init (CpmBacklightClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize	   = cpm_backlight_finalize;
@@ -713,7 +713,7 @@ cpm_backlight_class_init (GpmBacklightClass *klass)
 		g_signal_new ("brightness-changed",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmBacklightClass, brightness_changed),
+			      G_STRUCT_OFFSET (CpmBacklightClass, brightness_changed),
 			      NULL, NULL,
 			      g_cclosure_marshal_VOID__UINT,
 			      G_TYPE_NONE, 1, G_TYPE_UINT);
@@ -728,7 +728,7 @@ cpm_backlight_class_init (GpmBacklightClass *klass)
  * We only control the first laptop_panel object if there are more than one.
  **/
 static void
-cpm_backlight_init (GpmBacklight *backlight)
+cpm_backlight_init (CpmBacklight *backlight)
 {
 	backlight->priv = cpm_backlight_get_instance_private (backlight);
 
@@ -797,10 +797,10 @@ cpm_backlight_init (GpmBacklight *backlight)
  * cpm_backlight_new:
  * Return value: A new brightness class instance.
  **/
-GpmBacklight *
+CpmBacklight *
 cpm_backlight_new (void)
 {
-	GpmBacklight *backlight = g_object_new (CPM_TYPE_BACKLIGHT, NULL);
+	CpmBacklight *backlight = g_object_new (CPM_TYPE_BACKLIGHT, NULL);
 	return backlight;
 }
 

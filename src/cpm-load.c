@@ -47,7 +47,7 @@
 
 static void     cpm_load_finalize   (GObject	  *object);
 
-struct GpmLoadPrivate
+struct CpmLoadPrivate
 {
 	long unsigned	 old_idle;
 	long unsigned	 old_total;
@@ -55,14 +55,14 @@ struct GpmLoadPrivate
 
 static gpointer cpm_load_object = NULL;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmLoad, cpm_load, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (CpmLoad, cpm_load, G_TYPE_OBJECT)
 
 /**
  * cpm_load_class_init:
  * @klass: This class instance
  **/
 static void
-cpm_load_class_init (GpmLoadClass *klass)
+cpm_load_class_init (CpmLoadClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = cpm_load_finalize;
@@ -201,7 +201,7 @@ out:
  * Return value: The CPU idle load
  **/
 gdouble
-cpm_load_get_current (GpmLoad *load)
+cpm_load_get_current (CpmLoad *load)
 {
 	double percentage_load;
 	long unsigned cpu_idle;
@@ -234,7 +234,7 @@ cpm_load_get_current (GpmLoad *load)
  * cpm_load_init:
  */
 static void
-cpm_load_init (GpmLoad *load)
+cpm_load_init (CpmLoad *load)
 {
 	load->priv = cpm_load_get_instance_private (load);
 
@@ -253,7 +253,7 @@ cpm_load_init (GpmLoad *load)
 static void
 cpm_load_finalize (GObject *object)
 {
-	GpmLoad *load;
+	CpmLoad *load;
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (CPM_IS_LOAD (object));
 	load = CPM_LOAD (object);
@@ -263,9 +263,9 @@ cpm_load_finalize (GObject *object)
 
 /**
  * cpm_load_new:
- * Return value: new GpmLoad instance.
+ * Return value: new CpmLoad instance.
  **/
-GpmLoad *
+CpmLoad *
 cpm_load_new (void)
 {
 	if (cpm_load_object != NULL) {

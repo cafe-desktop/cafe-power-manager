@@ -47,16 +47,16 @@ typedef enum {
 	CPM_SESSION_STATUS_ENUM_BUSY,
 	CPM_SESSION_STATUS_ENUM_IDLE,
 	CPM_SESSION_STATUS_ENUM_UNKNOWN
-} GpmSessionStatusEnum;
+} CpmSessionStatusEnum;
 
 typedef enum {
 	CPM_SESSION_INHIBIT_MASK_LOGOUT = 1,
 	CPM_SESSION_INHIBIT_MASK_SWITCH = 2,
 	CPM_SESSION_INHIBIT_MASK_SUSPEND = 4,
 	CPM_SESSION_INHIBIT_MASK_IDLE = 8
-} GpmSessionInhibitMask;
+} CpmSessionInhibitMask;
 
-struct GpmSessionPrivate
+struct CpmSessionPrivate
 {
 	DBusGProxy		*proxy;
 	DBusGProxy		*proxy_presence;
@@ -80,13 +80,13 @@ enum {
 static guint signals [LAST_SIGNAL] = { 0 };
 static gpointer cpm_session_object = NULL;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmSession, cpm_session, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (CpmSession, cpm_session, G_TYPE_OBJECT)
 
 /**
  * cpm_session_logout:
  **/
 gboolean
-cpm_session_logout (GpmSession *session)
+cpm_session_logout (CpmSession *session)
 {
 	g_return_val_if_fail (CPM_IS_SESSION (session), FALSE);
 
@@ -105,7 +105,7 @@ cpm_session_logout (GpmSession *session)
  * cpm_session_get_idle:
  **/
 gboolean
-cpm_session_get_idle (GpmSession *session)
+cpm_session_get_idle (CpmSession *session)
 {
 	g_return_val_if_fail (CPM_IS_SESSION (session), FALSE);
 	return session->priv->is_idle_old;
@@ -115,7 +115,7 @@ cpm_session_get_idle (GpmSession *session)
  * cpm_session_get_idle_inhibited:
  **/
 gboolean
-cpm_session_get_idle_inhibited (GpmSession *session)
+cpm_session_get_idle_inhibited (CpmSession *session)
 {
 	g_return_val_if_fail (CPM_IS_SESSION (session), FALSE);
 	return session->priv->is_idle_inhibited_old;
@@ -125,7 +125,7 @@ cpm_session_get_idle_inhibited (GpmSession *session)
  * cpm_session_get_suspend_inhibited:
  **/
 gboolean
-cpm_session_get_suspend_inhibited (GpmSession *session)
+cpm_session_get_suspend_inhibited (CpmSession *session)
 {
 	g_return_val_if_fail (CPM_IS_SESSION (session), FALSE);
 	return session->priv->is_suspend_inhibited_old;
@@ -135,7 +135,7 @@ cpm_session_get_suspend_inhibited (GpmSession *session)
  * cpm_session_presence_status_changed_cb:
  **/
 static void
-cpm_session_presence_status_changed_cb (DBusGProxy *proxy, guint status, GpmSession *session)
+cpm_session_presence_status_changed_cb (DBusGProxy *proxy, guint status, CpmSession *session)
 {
 	gboolean is_idle;
 	is_idle = (status == CPM_SESSION_STATUS_ENUM_IDLE);
@@ -150,7 +150,7 @@ cpm_session_presence_status_changed_cb (DBusGProxy *proxy, guint status, GpmSess
  * cpm_session_is_idle:
  **/
 static gboolean
-cpm_session_is_idle (GpmSession *session)
+cpm_session_is_idle (CpmSession *session)
 {
 	gboolean ret;
 	gboolean is_idle = FALSE;
@@ -187,7 +187,7 @@ out:
  * cpm_session_is_idle_inhibited:
  **/
 static gboolean
-cpm_session_is_idle_inhibited (GpmSession *session)
+cpm_session_is_idle_inhibited (CpmSession *session)
 {
 	gboolean ret;
 	gboolean is_inhibited = FALSE;
@@ -218,7 +218,7 @@ out:
  * cpm_session_is_suspend_inhibited:
  **/
 static gboolean
-cpm_session_is_suspend_inhibited (GpmSession *session)
+cpm_session_is_suspend_inhibited (CpmSession *session)
 {
 	gboolean ret;
 	gboolean is_inhibited = FALSE;
@@ -249,7 +249,7 @@ out:
  * cpm_session_stop_cb:
  **/
 static void
-cpm_session_stop_cb (DBusGProxy *proxy, GpmSession *session)
+cpm_session_stop_cb (DBusGProxy *proxy, CpmSession *session)
 {
 	egg_debug ("emitting ::stop()");
 	g_signal_emit (session, signals [STOP], 0);
@@ -259,7 +259,7 @@ cpm_session_stop_cb (DBusGProxy *proxy, GpmSession *session)
  * cpm_session_query_end_session_cb:
  **/
 static void
-cpm_session_query_end_session_cb (DBusGProxy *proxy, guint flags, GpmSession *session)
+cpm_session_query_end_session_cb (DBusGProxy *proxy, guint flags, CpmSession *session)
 {
 	egg_debug ("emitting ::query-end-session(%i)", flags);
 	g_signal_emit (session, signals [QUERY_END_SESSION], 0, flags);
@@ -269,7 +269,7 @@ cpm_session_query_end_session_cb (DBusGProxy *proxy, guint flags, GpmSession *se
  * cpm_session_end_session_cb:
  **/
 static void
-cpm_session_end_session_cb (DBusGProxy *proxy, guint flags, GpmSession *session)
+cpm_session_end_session_cb (DBusGProxy *proxy, guint flags, CpmSession *session)
 {
 	egg_debug ("emitting ::end-session(%i)", flags);
 	g_signal_emit (session, signals [END_SESSION], 0, flags);
@@ -279,7 +279,7 @@ cpm_session_end_session_cb (DBusGProxy *proxy, guint flags, GpmSession *session)
  * cpm_session_end_session_response:
  **/
 gboolean
-cpm_session_end_session_response (GpmSession *session, gboolean is_okay, const gchar *reason)
+cpm_session_end_session_response (CpmSession *session, gboolean is_okay, const gchar *reason)
 {
 	gboolean ret = FALSE;
 	GError *error = NULL;
@@ -312,7 +312,7 @@ out:
  * cpm_session_register_client:
  **/
 gboolean
-cpm_session_register_client (GpmSession *session, const gchar *app_id, const gchar *client_startup_id)
+cpm_session_register_client (CpmSession *session, const gchar *app_id, const gchar *client_startup_id)
 {
 	gboolean ret = FALSE;
 	gchar *client_id = NULL;
@@ -372,7 +372,7 @@ out:
  * cpm_session_inhibit_changed_cb:
  **/
 static void
-cpm_session_inhibit_changed_cb (DBusGProxy *proxy, const gchar *id, GpmSession *session)
+cpm_session_inhibit_changed_cb (DBusGProxy *proxy, const gchar *id, CpmSession *session)
 {
 	gboolean is_idle_inhibited;
 	gboolean is_suspend_inhibited;
@@ -392,7 +392,7 @@ cpm_session_inhibit_changed_cb (DBusGProxy *proxy, const gchar *id, GpmSession *
  * @klass: This class instance
  **/
 static void
-cpm_session_class_init (GpmSessionClass *klass)
+cpm_session_class_init (CpmSessionClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = cpm_session_finalize;
@@ -401,42 +401,42 @@ cpm_session_class_init (GpmSessionClass *klass)
 		g_signal_new ("idle-changed",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmSessionClass, idle_changed),
+			      G_STRUCT_OFFSET (CpmSessionClass, idle_changed),
 			      NULL, NULL, g_cclosure_marshal_VOID__BOOLEAN,
 			      G_TYPE_NONE, 1, G_TYPE_BOOLEAN);
 	signals [INHIBITED_CHANGED] =
 		g_signal_new ("inhibited-changed",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmSessionClass, inhibited_changed),
+			      G_STRUCT_OFFSET (CpmSessionClass, inhibited_changed),
 			      NULL, NULL, cpm_marshal_VOID__BOOLEAN_BOOLEAN,
 			      G_TYPE_NONE, 2, G_TYPE_BOOLEAN, G_TYPE_BOOLEAN);
 	signals [STOP] =
 		g_signal_new ("stop",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmSessionClass, stop),
+			      G_STRUCT_OFFSET (CpmSessionClass, stop),
 			      NULL, NULL, g_cclosure_marshal_VOID__VOID,
 			      G_TYPE_NONE, 0);
 	signals [QUERY_END_SESSION] =
 		g_signal_new ("query-end-session",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmSessionClass, query_end_session),
+			      G_STRUCT_OFFSET (CpmSessionClass, query_end_session),
 			      NULL, NULL, g_cclosure_marshal_VOID__UINT,
 			      G_TYPE_NONE, 1, G_TYPE_UINT);
 	signals [END_SESSION] =
 		g_signal_new ("end-session",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmSessionClass, end_session),
+			      G_STRUCT_OFFSET (CpmSessionClass, end_session),
 			      NULL, NULL, g_cclosure_marshal_VOID__UINT,
 			      G_TYPE_NONE, 1, G_TYPE_UINT);
 	signals [CANCEL_END_SESSION] =
 		g_signal_new ("cancel-end-session",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmSessionClass, cancel_end_session),
+			      G_STRUCT_OFFSET (CpmSessionClass, cancel_end_session),
 			      NULL, NULL, g_cclosure_marshal_VOID__VOID,
 			      G_TYPE_NONE, 0);
 }
@@ -446,7 +446,7 @@ cpm_session_class_init (GpmSessionClass *klass)
  * @session: This class instance
  **/
 static void
-cpm_session_init (GpmSession *session)
+cpm_session_init (CpmSession *session)
 {
 	DBusGConnection *connection;
 	GError *error = NULL;
@@ -515,7 +515,7 @@ cpm_session_init (GpmSession *session)
 static void
 cpm_session_finalize (GObject *object)
 {
-	GpmSession *session;
+	CpmSession *session;
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (CPM_IS_SESSION (object));
 
@@ -533,9 +533,9 @@ cpm_session_finalize (GObject *object)
 
 /**
  * cpm_session_new:
- * Return value: new GpmSession instance.
+ * Return value: new CpmSession instance.
  **/
-GpmSession *
+CpmSession *
 cpm_session_new (void)
 {
 	if (cpm_session_object != NULL) {

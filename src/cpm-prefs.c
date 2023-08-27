@@ -41,7 +41,7 @@
  * What to do when help is requested
  **/
 static void
-cpm_prefs_help_cb (GpmPrefs *prefs)
+cpm_prefs_help_cb (CpmPrefs *prefs)
 {
 	cpm_help_display ("preferences");
 }
@@ -53,7 +53,7 @@ cpm_prefs_help_cb (GpmPrefs *prefs)
  * We have been asked to show the window
  **/
 static void
-cpm_prefs_activated_cb (CtkApplication *app, GpmPrefs *prefs)
+cpm_prefs_activated_cb (CtkApplication *app, CpmPrefs *prefs)
 {
 	cpm_prefs_activate_window (app, prefs);
 }
@@ -66,7 +66,7 @@ main (int argc, char **argv)
 {
 	gboolean verbose = FALSE;
 	GOptionContext *context;
-	GpmPrefs *prefs = NULL;
+	CpmPrefs *prefs = NULL;
 	gboolean ret;
 	CtkApplication *app;
 	CtkWidget *window;

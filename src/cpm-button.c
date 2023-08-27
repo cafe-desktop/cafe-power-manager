@@ -38,7 +38,7 @@
 
 static void     cpm_button_finalize   (GObject	      *object);
 
-struct GpmButtonPrivate
+struct CpmButtonPrivate
 {
 	CdkScreen		*screen;
 	CdkWindow		*window;
@@ -57,7 +57,7 @@ enum {
 static guint signals [LAST_SIGNAL] = { 0 };
 static gpointer cpm_button_object = NULL;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmButton, cpm_button, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (CpmButton, cpm_button, G_TYPE_OBJECT)
 
 #define CPM_BUTTON_DUPLICATE_TIMEOUT	0.125f
 
@@ -65,7 +65,7 @@ G_DEFINE_TYPE_WITH_PRIVATE (GpmButton, cpm_button, G_TYPE_OBJECT)
  * cpm_button_emit_type:
  **/
 static gboolean
-cpm_button_emit_type (GpmButton *button, const gchar *type)
+cpm_button_emit_type (CpmButton *button, const gchar *type)
 {
 	g_return_val_if_fail (CPM_IS_BUTTON (button), FALSE);
 
@@ -93,7 +93,7 @@ cpm_button_emit_type (GpmButton *button, const gchar *type)
 static CdkFilterReturn
 cpm_button_filter_x_events (CdkXEvent *xevent, CdkEvent *event, gpointer data)
 {
-	GpmButton *button = (GpmButton *) data;
+	CpmButton *button = (CpmButton *) data;
 	XEvent *xev = (XEvent *) xevent;
 	guint keycode;
 	const gchar *key;
@@ -135,7 +135,7 @@ cpm_button_filter_x_events (CdkXEvent *xevent, CdkEvent *event, gpointer data)
  * Return value: TRUE if we parsed and grabbed okay
  **/
 static gboolean
-cpm_button_grab_keystring (GpmButton *button, guint64 keycode)
+cpm_button_grab_keystring (CpmButton *button, guint64 keycode)
 {
 	guint modmask = AnyModifier;
 	Display *display;
@@ -190,7 +190,7 @@ cpm_button_grab_keystring (GpmButton *button, guint64 keycode)
  * Return value: TRUE if we parsed and grabbed okay
  **/
 static gboolean
-cpm_button_xevent_key (GpmButton *button, guint keysym, const gchar *key_name)
+cpm_button_xevent_key (CpmButton *button, guint keysym, const gchar *key_name)
 {
 	gchar *key = NULL;
 	gboolean ret;
@@ -233,7 +233,7 @@ cpm_button_xevent_key (GpmButton *button, guint keysym, const gchar *key_name)
  * @button: This class instance
  **/
 static void
-cpm_button_class_init (GpmButtonClass *klass)
+cpm_button_class_init (CpmButtonClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = cpm_button_finalize;
@@ -242,7 +242,7 @@ cpm_button_class_init (GpmButtonClass *klass)
 		g_signal_new ("button-pressed",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmButtonClass, button_pressed),
+			      G_STRUCT_OFFSET (CpmButtonClass, button_pressed),
 			      NULL, NULL,
 			      g_cclosure_marshal_VOID__STRING,
 			      G_TYPE_NONE, 1, G_TYPE_STRING);
@@ -252,7 +252,7 @@ cpm_button_class_init (GpmButtonClass *klass)
  * cpm_button_is_lid_closed:
  **/
 gboolean
-cpm_button_is_lid_closed (GpmButton *button)
+cpm_button_is_lid_closed (CpmButton *button)
 {
 	GDBusProxy *proxy;
 	GVariant *res, *inner;
@@ -312,7 +312,7 @@ cpm_button_is_lid_closed (GpmButton *button)
  * properly when the time is significant when we suspend.
  **/
 gboolean
-cpm_button_reset_time (GpmButton *button)
+cpm_button_reset_time (CpmButton *button)
 {
 	g_return_val_if_fail (CPM_IS_BUTTON (button), FALSE);
 	g_timer_reset (button->priv->timer);
@@ -323,7 +323,7 @@ cpm_button_reset_time (GpmButton *button)
  * cpm_button_client_changed_cb
  **/
 static void
-cpm_button_client_changed_cb (UpClient *client, GParamSpec *pspec, GpmButton *button)
+cpm_button_client_changed_cb (UpClient *client, GParamSpec *pspec, CpmButton *button)
 {
 	gboolean lid_is_closed;
 
@@ -349,7 +349,7 @@ cpm_button_client_changed_cb (UpClient *client, GParamSpec *pspec, GpmButton *bu
  * @button: This class instance
  **/
 static void
-cpm_button_init (GpmButton *button)
+cpm_button_init (CpmButton *button)
 {
 	button->priv = cpm_button_get_instance_private (button);
 
@@ -394,7 +394,7 @@ cpm_button_init (GpmButton *button)
 static void
 cpm_button_finalize (GObject *object)
 {
-	GpmButton *button;
+	CpmButton *button;
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (CPM_IS_BUTTON (object));
 
@@ -414,7 +414,7 @@ cpm_button_finalize (GObject *object)
  * cpm_button_new:
  * Return value: new class instance.
  **/
-GpmButton *
+CpmButton *
 cpm_button_new (void)
 {
 	if (cpm_button_object != NULL) {

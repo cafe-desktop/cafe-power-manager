@@ -29,47 +29,47 @@
 G_BEGIN_DECLS
 
 #define CPM_TYPE_KBD_BACKLIGHT     (cpm_kbd_backlight_get_type ())
-#define CPM_KBD_BACKLIGHT(o)       (G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_KBD_BACKLIGHT, GpmKbdBacklight))
-#define CPM_KBD_BACKLIGHT_CLASS(k) (G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_KBD_BACKLIGHT, GpmKbdBacklightClass))
+#define CPM_KBD_BACKLIGHT(o)       (G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_KBD_BACKLIGHT, CpmKbdBacklight))
+#define CPM_KBD_BACKLIGHT_CLASS(k) (G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_KBD_BACKLIGHT, CpmKbdBacklightClass))
 #define CPM_IS_KBD_BACKLIGHT(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_KBD_BACKLIGHT))
 #define CPM_IS_KBD_BACKLIGHT_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_KBD_BACKLIGHT))
-#define CPM_KBD_BACKLIGHT_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_KBD_BACKLIGHT, GpmKbdBacklightClass))
+#define CPM_KBD_BACKLIGHT_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_KBD_BACKLIGHT, CpmKbdBacklightClass))
 
 #define CPM_KBD_BACKLIGHT_DIM_INTERVAL 5 /* ms */
 #define CPM_KBD_BACKLIGHT_STEP 10 /* change by 10% each step */
 
-typedef struct GpmKbdBacklightPrivate GpmKbdBacklightPrivate;
+typedef struct CpmKbdBacklightPrivate CpmKbdBacklightPrivate;
 
 typedef struct
 {
    GObject         parent;
-   GpmKbdBacklightPrivate *priv;
-} GpmKbdBacklight;
+   CpmKbdBacklightPrivate *priv;
+} CpmKbdBacklight;
 
 typedef struct
 {
    GObjectClass parent_class;
-   void         (* brightness_changed) (GpmKbdBacklight *backlight,
+   void         (* brightness_changed) (CpmKbdBacklight *backlight,
                         gint         brightness);
-} GpmKbdBacklightClass;
+} CpmKbdBacklightClass;
 
 typedef enum
 {
     CPM_KBD_BACKLIGHT_ERROR_GENERAL,
     CPM_KBD_BACKLIGHT_ERROR_DATA_NOT_AVAILABLE,
     CPM_KBD_BACKLIGHT_ERROR_HARDWARE_NOT_PRESENT
-} GpmKbdBacklightError;
+} CpmKbdBacklightError;
 
 GType          cpm_kbd_backlight_get_type      (void);
 GQuark         cpm_kbd_backlight_error_quark       (void);
-GpmKbdBacklight           *cpm_kbd_backlight_new           (void);
-gboolean       cpm_kbd_backlight_get_brightness    (GpmKbdBacklight *backlight,
+CpmKbdBacklight           *cpm_kbd_backlight_new           (void);
+gboolean       cpm_kbd_backlight_get_brightness    (CpmKbdBacklight *backlight,
                                 guint *brightness,
                                 GError **error);
-gboolean       cpm_kbd_backlight_set_brightness    (GpmKbdBacklight *backlight,
+gboolean       cpm_kbd_backlight_set_brightness    (CpmKbdBacklight *backlight,
                                 guint brightness,
                                 GError **error);
-void           cpm_kbd_backlight_register_dbus     (GpmKbdBacklight *backlight,
+void           cpm_kbd_backlight_register_dbus     (CpmKbdBacklight *backlight,
                                 GDBusConnection *connection,
                                 GError **error);
 

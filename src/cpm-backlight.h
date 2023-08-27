@@ -28,42 +28,42 @@
 G_BEGIN_DECLS
 
 #define CPM_TYPE_BACKLIGHT		(cpm_backlight_get_type ())
-#define CPM_BACKLIGHT(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_BACKLIGHT, GpmBacklight))
-#define CPM_BACKLIGHT_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_BACKLIGHT, GpmBacklightClass))
+#define CPM_BACKLIGHT(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_BACKLIGHT, CpmBacklight))
+#define CPM_BACKLIGHT_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_BACKLIGHT, CpmBacklightClass))
 #define CPM_IS_BACKLIGHT(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_BACKLIGHT))
 #define CPM_IS_BACKLIGHT_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_BACKLIGHT))
-#define CPM_BACKLIGHT_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_BACKLIGHT, GpmBacklightClass))
+#define CPM_BACKLIGHT_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_BACKLIGHT, CpmBacklightClass))
 
-typedef struct GpmBacklightPrivate GpmBacklightPrivate;
+typedef struct CpmBacklightPrivate CpmBacklightPrivate;
 
 typedef struct
 {
 	GObject		         parent;
-	GpmBacklightPrivate *priv;
-} GpmBacklight;
+	CpmBacklightPrivate *priv;
+} CpmBacklight;
 
 typedef struct
 {
 	GObjectClass	parent_class;
-	void		(* brightness_changed)		(GpmBacklight	*backlight,
+	void		(* brightness_changed)		(CpmBacklight	*backlight,
 							 gint		 brightness);
-} GpmBacklightClass;
+} CpmBacklightClass;
 
 typedef enum
 {
 	 CPM_BACKLIGHT_ERROR_GENERAL,
 	 CPM_BACKLIGHT_ERROR_DATA_NOT_AVAILABLE,
 	 CPM_BACKLIGHT_ERROR_HARDWARE_NOT_PRESENT
-} GpmBacklightError;
+} CpmBacklightError;
 
 GType		 cpm_backlight_get_type			(void);
 GQuark		 cpm_backlight_error_quark		(void);
-GpmBacklight	*cpm_backlight_new			(void);
+CpmBacklight	*cpm_backlight_new			(void);
 
-gboolean	 cpm_backlight_get_brightness		(GpmBacklight	*backlight,
+gboolean	 cpm_backlight_get_brightness		(CpmBacklight	*backlight,
 							 guint		*brightness,
 							 GError		**error);
-gboolean	 cpm_backlight_set_brightness		(GpmBacklight	*backlight,
+gboolean	 cpm_backlight_set_brightness		(CpmBacklight	*backlight,
 							 guint		 brightness,
 							 GError		**error);
 

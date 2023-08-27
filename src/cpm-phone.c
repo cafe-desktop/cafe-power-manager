@@ -33,7 +33,7 @@
 
 static void     cpm_phone_finalize   (GObject	    *object);
 
-struct GpmPhonePrivate
+struct CpmPhonePrivate
 {
 	DBusGProxy		*proxy;
 	DBusGConnection		*connection;
@@ -53,14 +53,14 @@ enum {
 static guint signals [LAST_SIGNAL] = { 0 };
 static gpointer cpm_phone_object = NULL;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmPhone, cpm_phone, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (CpmPhone, cpm_phone, G_TYPE_OBJECT)
 
 /**
  * cpm_phone_coldplug:
  * Return value: Success value, or zero for failure
  **/
 gboolean
-cpm_phone_coldplug (GpmPhone *phone)
+cpm_phone_coldplug (CpmPhone *phone)
 {
 	GError  *error = NULL;
 	gboolean ret;
@@ -88,7 +88,7 @@ cpm_phone_coldplug (GpmPhone *phone)
  * Return value: if present
  **/
 gboolean
-cpm_phone_get_present (GpmPhone	*phone, guint idx)
+cpm_phone_get_present (CpmPhone	*phone, guint idx)
 {
 	g_return_val_if_fail (phone != NULL, FALSE);
 	g_return_val_if_fail (CPM_IS_PHONE (phone), FALSE);
@@ -100,7 +100,7 @@ cpm_phone_get_present (GpmPhone	*phone, guint idx)
  * Return value: if present
  **/
 guint
-cpm_phone_get_percentage (GpmPhone *phone, guint idx)
+cpm_phone_get_percentage (CpmPhone *phone, guint idx)
 {
 	g_return_val_if_fail (phone != NULL, 0);
 	g_return_val_if_fail (CPM_IS_PHONE (phone), 0);
@@ -112,7 +112,7 @@ cpm_phone_get_percentage (GpmPhone *phone, guint idx)
  * Return value: if present
  **/
 gboolean
-cpm_phone_get_on_ac (GpmPhone *phone, guint idx)
+cpm_phone_get_on_ac (CpmPhone *phone, guint idx)
 {
 	g_return_val_if_fail (phone != NULL, FALSE);
 	g_return_val_if_fail (CPM_IS_PHONE (phone), FALSE);
@@ -124,7 +124,7 @@ cpm_phone_get_on_ac (GpmPhone *phone, guint idx)
  * Return value: number of phone batteries monitored
  **/
 guint
-cpm_phone_get_num_batteries (GpmPhone *phone)
+cpm_phone_get_num_batteries (CpmPhone *phone)
 {
 	g_return_val_if_fail (phone != NULL, 0);
 	g_return_val_if_fail (CPM_IS_PHONE (phone), 0);
@@ -137,7 +137,7 @@ cpm_phone_get_num_batteries (GpmPhone *phone)
 /** Invoked when we get the BatteryStateChanged
  */
 static void
-cpm_phone_battery_state_changed (DBusGProxy *proxy, guint idx, guint percentage, gboolean on_ac, GpmPhone *phone)
+cpm_phone_battery_state_changed (DBusGProxy *proxy, guint idx, guint percentage, gboolean on_ac, CpmPhone *phone)
 {
 	g_return_if_fail (CPM_IS_PHONE (phone));
 
@@ -152,7 +152,7 @@ cpm_phone_battery_state_changed (DBusGProxy *proxy, guint idx, guint percentage,
 /** Invoked when we get NumberBatteriesChanged
  */
 static void
-cpm_phone_num_batteries_changed (DBusGProxy *proxy, guint number, GpmPhone *phone)
+cpm_phone_num_batteries_changed (DBusGProxy *proxy, guint number, CpmPhone *phone)
 {
 	g_return_if_fail (CPM_IS_PHONE (phone));
 
@@ -190,7 +190,7 @@ cpm_phone_num_batteries_changed (DBusGProxy *proxy, guint number, GpmPhone *phon
  * @klass: This class instance
  **/
 static void
-cpm_phone_class_init (GpmPhoneClass *klass)
+cpm_phone_class_init (CpmPhoneClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = cpm_phone_finalize;
@@ -199,7 +199,7 @@ cpm_phone_class_init (GpmPhoneClass *klass)
 		g_signal_new ("device-added",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmPhoneClass, device_added),
+			      G_STRUCT_OFFSET (CpmPhoneClass, device_added),
 			      NULL, NULL, g_cclosure_marshal_VOID__UINT,
 			      G_TYPE_NONE, 1, G_TYPE_UINT);
 
@@ -207,7 +207,7 @@ cpm_phone_class_init (GpmPhoneClass *klass)
 		g_signal_new ("device-removed",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmPhoneClass, device_removed),
+			      G_STRUCT_OFFSET (CpmPhoneClass, device_removed),
 			      NULL, NULL, g_cclosure_marshal_VOID__UINT,
 			      G_TYPE_NONE, 1, G_TYPE_UINT);
 
@@ -215,7 +215,7 @@ cpm_phone_class_init (GpmPhoneClass *klass)
 		g_signal_new ("device-refresh",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmPhoneClass, device_refresh),
+			      G_STRUCT_OFFSET (CpmPhoneClass, device_refresh),
 			      NULL, NULL, g_cclosure_marshal_VOID__UINT,
 			      G_TYPE_NONE, 1, G_TYPE_UINT);
 }
@@ -226,7 +226,7 @@ cpm_phone_class_init (GpmPhoneClass *klass)
 static void
 cpm_phone_service_appeared_cb (GDBusConnection *connection,
 			       const gchar *name, const gchar *name_owner,
-			       GpmPhone *phone)
+			       CpmPhone *phone)
 {
 	GError *error = NULL;
 
@@ -286,7 +286,7 @@ cpm_phone_service_appeared_cb (GDBusConnection *connection,
 static void
 cpm_phone_service_vanished_cb (GDBusConnection *connection,
 			        const gchar *name,
-			        GpmPhone *phone)
+			        CpmPhone *phone)
 {
 	g_return_if_fail (CPM_IS_PHONE (phone));
 
@@ -309,7 +309,7 @@ cpm_phone_service_vanished_cb (GDBusConnection *connection,
  * @phone: This class instance
  **/
 static void
-cpm_phone_init (GpmPhone *phone)
+cpm_phone_init (CpmPhone *phone)
 {
 	phone->priv = cpm_phone_get_instance_private (phone);
 
@@ -334,7 +334,7 @@ cpm_phone_init (GpmPhone *phone)
 static void
 cpm_phone_finalize (GObject *object)
 {
-	GpmPhone *phone;
+	CpmPhone *phone;
 	g_return_if_fail (CPM_IS_PHONE (object));
 
 	phone = CPM_PHONE (object);
@@ -349,9 +349,9 @@ cpm_phone_finalize (GObject *object)
 
 /**
  * cpm_phone_new:
- * Return value: new GpmPhone instance.
+ * Return value: new CpmPhone instance.
  **/
-GpmPhone *
+CpmPhone *
 cpm_phone_new (void)
 {
 	if (cpm_phone_object != NULL) {
@@ -381,7 +381,7 @@ egg_test_mainloop_wait (guint ms)
 }
 
 static void
-phone_device_refresh_cb (GpmPhone *phone, guint idx, gpointer *data)
+phone_device_refresh_cb (CpmPhone *phone, guint idx, gpointer *data)
 {
 	g_debug ("idx refresh = %i", idx);
 	if (idx == 0 && GPOINTER_TO_UINT (data) == 44)
@@ -391,21 +391,21 @@ phone_device_refresh_cb (GpmPhone *phone, guint idx, gpointer *data)
 void
 cpm_phone_test (gpointer data)
 {
-	GpmPhone *phone;
+	CpmPhone *phone;
 	guint value;
 	gboolean ret;
 	EggTest *test = (EggTest *) data;
 
-	if (egg_test_start (test, "GpmPhone") == FALSE)
+	if (egg_test_start (test, "CpmPhone") == FALSE)
 		return;
 
 	/************************************************************/
 	egg_test_title (test, "make sure we get a non null phone");
 	phone = cpm_phone_new ();
 	if (phone != NULL)
-		egg_test_success (test, "got GpmPhone");
+		egg_test_success (test, "got CpmPhone");
 	else
-		egg_test_failed (test, "could not get GpmPhone");
+		egg_test_failed (test, "could not get CpmPhone");
 
 	/* connect signals */
 	g_signal_connect (phone, "device-refresh",

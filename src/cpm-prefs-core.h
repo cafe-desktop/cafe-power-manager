@@ -27,31 +27,31 @@
 G_BEGIN_DECLS
 
 #define CPM_TYPE_PREFS		(cpm_prefs_get_type ())
-#define CPM_PREFS(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_PREFS, GpmPrefs))
-#define CPM_PREFS_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_PREFS, GpmPrefsClass))
+#define CPM_PREFS(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_PREFS, CpmPrefs))
+#define CPM_PREFS_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_PREFS, CpmPrefsClass))
 #define CPM_IS_PREFS(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_PREFS))
 #define CPM_IS_PREFS_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_PREFS))
-#define CPM_PREFS_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_PREFS, GpmPrefsClass))
+#define CPM_PREFS_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_PREFS, CpmPrefsClass))
 
-typedef struct GpmPrefsPrivate GpmPrefsPrivate;
+typedef struct CpmPrefsPrivate CpmPrefsPrivate;
 
 typedef struct
 {
 	GObject		 parent;
-	GpmPrefsPrivate *priv;
-} GpmPrefs;
+	CpmPrefsPrivate *priv;
+} CpmPrefs;
 
 typedef struct
 {
 	GObjectClass	parent_class;
-	void		(* action_help)			(GpmPrefs	*prefs);
-	void		(* action_close)		(GpmPrefs	*prefs);
-} GpmPrefsClass;
+	void		(* action_help)			(CpmPrefs	*prefs);
+	void		(* action_close)		(CpmPrefs	*prefs);
+} CpmPrefsClass;
 
 GType		 cpm_prefs_get_type			(void);
-GpmPrefs	*cpm_prefs_new				(void);
-CtkWidget	*cpm_window				(GpmPrefs	*prefs);
-void		 cpm_prefs_activate_window		(CtkApplication *app, GpmPrefs	*prefs);
+CpmPrefs	*cpm_prefs_new				(void);
+CtkWidget	*cpm_window				(CpmPrefs	*prefs);
+void		 cpm_prefs_activate_window		(CtkApplication *app, CpmPrefs	*prefs);
 
 G_END_DECLS
 
