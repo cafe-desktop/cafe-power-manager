@@ -607,7 +607,7 @@ prefs_setup_ups (GpmPrefs *prefs)
 
 	window = gpm_window (prefs);
 	notebook = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "notebook_preferences"));
-	ctk_widget_add_events (notebook, GDK_SCROLL_MASK);
+	ctk_widget_add_events (notebook, CDK_SCROLL_MASK);
 	g_signal_connect (CTK_NOTEBOOK (notebook), "scroll-event",
 			  G_CALLBACK (gpm_dialog_page_scroll_event_cb),
 			  window);

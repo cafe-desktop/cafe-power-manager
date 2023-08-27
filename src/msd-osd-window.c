@@ -361,7 +361,7 @@ msd_osd_window_constructor (GType                  type,
 
         g_object_set (object,
                       "type", CTK_WINDOW_POPUP,
-                      "type-hint", GDK_WINDOW_TYPE_HINT_NOTIFICATION,
+                      "type-hint", CDK_WINDOW_TYPE_HINT_NOTIFICATION,
                       "skip-taskbar-hint", TRUE,
                       "skip-pager-hint", TRUE,
                       "focus-on-map", FALSE,

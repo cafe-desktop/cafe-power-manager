@@ -244,14 +244,14 @@ egg_idletime_event_filter_cb (GdkXEvent *cdkxevent, GdkEvent *event, gpointer da
 
 	/* no point continuing */
 	if (xevent->type != idletime->priv->sync_event + XSyncAlarmNotify)
-		return GDK_FILTER_CONTINUE;
+		return CDK_FILTER_CONTINUE;
 
 	alarm_event = (XSyncAlarmNotifyEvent *) xevent;
 
 	/* did we match one of our alarms? */
 	alarm = egg_idletime_alarm_find_event (idletime, alarm_event);
 	if (alarm == NULL)
-		return GDK_FILTER_CONTINUE;
+		return CDK_FILTER_CONTINUE;
 
 	/* are we the reset alarm? */
 	if (alarm->id == 0) {
@@ -266,7 +266,7 @@ egg_idletime_event_filter_cb (GdkXEvent *cdkxevent, GdkEvent *event, gpointer da
 	egg_idletime_set_reset_alarm (idletime, alarm_event);
 out:
 	/* don't propagate */
-	return GDK_FILTER_REMOVE;
+	return CDK_FILTER_REMOVE;
 }
 
 /**
@@ -396,7 +396,7 @@ egg_idletime_init (EggIdletime *idletime)
 	idletime->priv->reset_set = FALSE;
 	idletime->priv->idle_counter = None;
 	idletime->priv->sync_event = 0;
-	idletime->priv->dpy = GDK_DISPLAY_XDISPLAY (cdk_display_get_default());
+	idletime->priv->dpy = CDK_DISPLAY_XDISPLAY (cdk_display_get_default());
 
 	/* get the sync event */
 	if (!XSyncQueryExtension (idletime->priv->dpy, &idletime->priv->sync_event, &sync_error)) {

@@ -100,8 +100,8 @@
   * Fix spelling and grammar mistakes
   * Use make functions for HELP_LINGUAS
   * add m-p-m user-guide to transifex config
-  * gpm-kbd-backlight: replace deprecated GDK_DEVICE_MANAGER
-  * gpm-backlight: replace deprecated GDK_DEVICE_MANAGER
+  * gpm-kbd-backlight: replace deprecated CDK_DEVICE_MANAGER
+  * gpm-backlight: replace deprecated CDK_DEVICE_MANAGER
   * gpm-button: replace deprecated Gdk functions
   * gpm-brightness: replace deprecated Gdk functions
 
