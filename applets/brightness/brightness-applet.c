@@ -830,7 +830,7 @@ cpm_applet_dialog_about_cb (CtkAction *action, gpointer data)
 /**
  * cpm_applet_help_cb:
  *
- * open gpm help
+ * open cpm help
  **/
 static void
 cpm_applet_help_cb (CtkAction *action, gpointer data)
