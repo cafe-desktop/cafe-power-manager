@@ -76,7 +76,7 @@ CAIRO_REQUIRED=1.0.0
 LIBPANEL_REQUIRED=1.17.0
 XRANDR_REQUIRED=1.3.0
 XPROTO_REQUIRED=7.0.15
-CANBERRA_REQUIRED=0.10
+KANBERRA_REQUIRED=0.10
 UPOWER_REQUIRED=0.99.8
 
 dnl ---------------------------------------------------------------------------
@@ -84,7 +84,7 @@ dnl - Check library dependencies
 dnl ---------------------------------------------------------------------------
 PKG_CHECK_MODULES(GLIB, glib-2.0 >= $GLIB_REQUIRED gobject-2.0 gio-2.0 >= $GIO_REQUIRED gio-unix-2.0)
 
-PKG_CHECK_MODULES(CANBERRA, libkanberra-ctk3 >= $CANBERRA_REQUIRED)
+PKG_CHECK_MODULES(KANBERRA, libkanberra-ctk3 >= $KANBERRA_REQUIRED)
 
 PKG_CHECK_MODULES(DBUS,[
  dbus-glib-1 >= $DBUS_GLIB_REQUIRED
