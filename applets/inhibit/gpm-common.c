@@ -45,7 +45,7 @@ gpm_help_display (const gchar *link_id)
 	else
 		uri = g_strdup ("help:cafe-power-manager");
 
-	ctk_show_uri_on_window (NULL, uri, GDK_CURRENT_TIME, &error);
+	ctk_show_uri_on_window (NULL, uri, CDK_CURRENT_TIME, &error);
 
 	if (error != NULL) {
 		CtkWidget *d;

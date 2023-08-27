@@ -145,7 +145,7 @@ gpm_help_display (const gchar *link_id)
 	else
 		uri = g_strdup ("help:cafe-power-manager");
 
-	ctk_show_uri_on_window (NULL, uri, GDK_CURRENT_TIME, &error);
+	ctk_show_uri_on_window (NULL, uri, CDK_CURRENT_TIME, &error);
 
 	if (error != NULL) {
 		CtkWidget *d;
@@ -186,15 +186,15 @@ gpm_dialog_page_scroll_event_cb (CtkWidget *widget, GdkEventScroll *event, CtkWi
                 return FALSE;
 
         switch (event->direction) {
-        case GDK_SCROLL_RIGHT:
-        case GDK_SCROLL_DOWN:
+        case CDK_SCROLL_RIGHT:
+        case CDK_SCROLL_DOWN:
                 ctk_notebook_next_page (notebook);
                 break;
-        case GDK_SCROLL_LEFT:
-        case GDK_SCROLL_UP:
+        case CDK_SCROLL_LEFT:
+        case CDK_SCROLL_UP:
                 ctk_notebook_prev_page (notebook);
                 break;
-        case GDK_SCROLL_SMOOTH:
+        case CDK_SCROLL_SMOOTH:
                 switch (ctk_notebook_get_tab_pos (notebook)) {
                 case CTK_POS_LEFT:
                 case CTK_POS_RIGHT:

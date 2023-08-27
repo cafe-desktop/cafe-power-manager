@@ -1312,7 +1312,7 @@ main (int argc, char *argv[])
 
 	widget = CTK_WIDGET (ctk_builder_get_object (builder, "notebook1"));
 
-	ctk_widget_add_events (widget, GDK_SCROLL_MASK);
+	ctk_widget_add_events (widget, CDK_SCROLL_MASK);
 	g_signal_connect (widget, "scroll-event",
 	                  G_CALLBACK (gpm_dialog_page_scroll_event_cb),
 	                  window);

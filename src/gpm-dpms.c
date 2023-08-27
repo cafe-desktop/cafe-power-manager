@@ -294,7 +294,7 @@ gpm_dpms_init (GpmDpms *dpms)
 	dpms->priv = gpm_dpms_get_instance_private (dpms);
 
 	/* DPMSCapable() can never change for a given display */
-	dpms->priv->display = GDK_DISPLAY_XDISPLAY (cdk_display_get_default());
+	dpms->priv->display = CDK_DISPLAY_XDISPLAY (cdk_display_get_default());
 	dpms->priv->dpms_capable = DPMSCapable (dpms->priv->display);
 	dpms->priv->timer_id = g_timeout_add_seconds (GPM_DPMS_POLL_TIME, (GSourceFunc)gpm_dpms_poll_mode_cb, dpms);
 	g_source_set_name_by_id (dpms->priv->timer_id, "[GpmDpms] poll");

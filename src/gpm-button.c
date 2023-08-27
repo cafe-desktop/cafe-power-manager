@@ -100,7 +100,7 @@ gpm_button_filter_x_events (GdkXEvent *xevent, GdkEvent *event, gpointer data)
 	gchar *keycode_str;
 
 	if (xev->type != KeyPress)
-		return GDK_FILTER_CONTINUE;
+		return CDK_FILTER_CONTINUE;
 
 	keycode = xev->xkey.keycode;
 
@@ -113,13 +113,13 @@ gpm_button_filter_x_events (GdkXEvent *xevent, GdkEvent *event, gpointer data)
 	if (key == NULL) {
 		egg_debug ("Key %i not found in hash", keycode);
 		/* pass normal keypresses on, which might help with accessibility access */
-		return GDK_FILTER_CONTINUE;
+		return CDK_FILTER_CONTINUE;
 	}
 
 	egg_debug ("Key %i mapped to key %s", keycode, key);
 	gpm_button_emit_type (button, key);
 
-	return GDK_FILTER_REMOVE;
+	return CDK_FILTER_REMOVE;
 }
 
 /**
@@ -143,7 +143,7 @@ gpm_button_grab_keystring (GpmButton *button, guint64 keycode)
 	gint ret;
 
 	/* get the current X Display */
-	display = GDK_DISPLAY_XDISPLAY (cdk_display_get_default());
+	display = CDK_DISPLAY_XDISPLAY (cdk_display_get_default());
 
 	/* don't abort on error */
 	cdkdisplay = cdk_display_get_default ();
@@ -151,7 +151,7 @@ gpm_button_grab_keystring (GpmButton *button, guint64 keycode)
 
 	/* grab the key if possible */
 	ret = XGrabKey (display, keycode, modmask,
-			GDK_WINDOW_XID (button->priv->window), True,
+			CDK_WINDOW_XID (button->priv->window), True,
 			GrabModeAsync, GrabModeAsync);
 	if (ret == BadAccess) {
 		egg_warning ("Failed to grab modmask=%u, keycode=%li",
@@ -161,7 +161,7 @@ gpm_button_grab_keystring (GpmButton *button, guint64 keycode)
 
 	/* grab the lock key if possible */
 	ret = XGrabKey (display, keycode, LockMask | modmask,
-			GDK_WINDOW_XID (button->priv->window), True,
+			CDK_WINDOW_XID (button->priv->window), True,
 			GrabModeAsync, GrabModeAsync);
 	if (ret == BadAccess) {
 		egg_warning ("Failed to grab modmask=%u, keycode=%li",
@@ -198,7 +198,7 @@ gpm_button_xevent_key (GpmButton *button, guint keysym, const gchar *key_name)
 	guint keycode;
 
 	/* convert from keysym to keycode */
-	keycode = XKeysymToKeycode (GDK_DISPLAY_XDISPLAY (cdk_display_get_default()), keysym);
+	keycode = XKeysymToKeycode (CDK_DISPLAY_XDISPLAY (cdk_display_get_default()), keysym);
 	if (keycode == 0) {
 		egg_warning ("could not map keysym %x to keycode", keysym);
 		return FALSE;

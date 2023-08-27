@@ -66,7 +66,7 @@ dnl - Library dependencies
 dnl ----------------------------------------------------------------------------
 GLIB_REQUIRED=2.50.0
 GIO_REQUIRED=2.50.0
-GDK_REQUIRED=3.22.0
+CDK_REQUIRED=3.22.0
 CTK_REQUIRED=3.22.0
 GNOME_KEYRING_REQUIRED=3.0.0
 DBUS_REQUIRED=1.0
@@ -95,9 +95,9 @@ PKG_CHECK_MODULES(CAIRO, [
  ctk+-3.0 >= $CTK_REQUIRED
  cairo >= $CAIRO_REQUIRED])
 
-PKG_CHECK_MODULES(GDK, [
- cdk-3.0 >= $GDK_REQUIRED
- cdk-x11-3.0 >= $GDK_REQUIRED])
+PKG_CHECK_MODULES(CDK, [
+ cdk-3.0 >= $CDK_REQUIRED
+ cdk-x11-3.0 >= $CDK_REQUIRED])
 
 PKG_CHECK_MODULES(X11, [
  xrandr >= $XRANDR_REQUIRED

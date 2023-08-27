@@ -259,7 +259,7 @@ gpm_brightness_setup_display (GpmBrightness *brightness)
 	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
 
 	/* get the display */
-	brightness->priv->dpy = GDK_DISPLAY_XDISPLAY (cdk_display_get_default());
+	brightness->priv->dpy = CDK_DISPLAY_XDISPLAY (cdk_display_get_default());
 	if (!brightness->priv->dpy) {
 		egg_error ("Cannot open display");
 		return FALSE;
@@ -798,10 +798,10 @@ static GdkFilterReturn
 gpm_brightness_filter_xevents (GdkXEvent *xevent, GdkEvent *event, gpointer data)
 {
 	GpmBrightness *brightness = GPM_BRIGHTNESS (data);
-	if (event->type == GDK_NOTHING)
-		return GDK_FILTER_CONTINUE;
+	if (event->type == CDK_NOTHING)
+		return CDK_FILTER_CONTINUE;
 	gpm_brightness_may_have_changed (brightness);
-	return GDK_FILTER_CONTINUE;
+	return CDK_FILTER_CONTINUE;
 }
 
 
@@ -945,7 +945,7 @@ gpm_brightness_init (GpmBrightness *brightness)
 	display = cdk_display_get_default ();
 
 	/* as we a filtering by a window, we have to add an event type */
-	if (!XRRQueryExtension (GDK_DISPLAY_XDISPLAY (cdk_display_get_default()), &event_base, &ignore)) {
+	if (!XRRQueryExtension (CDK_DISPLAY_XDISPLAY (cdk_display_get_default()), &event_base, &ignore)) {
 		egg_warning ("can't get event_base for XRR");
 	}
 	cdk_x11_register_standard_event_type (display, event_base, RRNotify + 1);
@@ -954,8 +954,8 @@ gpm_brightness_init (GpmBrightness *brightness)
 
 	/* don't abort on error */
 	cdk_x11_display_error_trap_push (display);
-	XRRSelectInput (GDK_DISPLAY_XDISPLAY (cdk_display_get_default()),
-			GDK_WINDOW_XID (brightness->priv->root_window),
+	XRRSelectInput (CDK_DISPLAY_XDISPLAY (cdk_display_get_default()),
+			CDK_WINDOW_XID (brightness->priv->root_window),
 			RRScreenChangeNotifyMask |
 			RROutputPropertyNotifyMask); /* <--- the only one we need, but see rh:345551 */
 	cdk_display_flush (display);

@@ -463,13 +463,13 @@ gpm_applet_key_press_cb (CtkWidget *popup, GdkEventKey *event, GpmBrightnessAppl
 	int i;
 	
 	switch (event->keyval) {
-	case GDK_KEY_KP_Enter:
-	case GDK_KEY_ISO_Enter:
-	case GDK_KEY_3270_Enter:
-	case GDK_KEY_Return:
-	case GDK_KEY_space:
-	case GDK_KEY_KP_Space:
-	case GDK_KEY_Escape:
+	case CDK_KEY_KP_Enter:
+	case CDK_KEY_ISO_Enter:
+	case CDK_KEY_3270_Enter:
+	case CDK_KEY_Return:
+	case CDK_KEY_space:
+	case CDK_KEY_KP_Space:
+	case CDK_KEY_Escape:
 		/* if yet popped, hide */
 		if (applet->popped) {
 			ctk_widget_hide (applet->popup);
@@ -480,25 +480,25 @@ gpm_applet_key_press_cb (CtkWidget *popup, GdkEventKey *event, GpmBrightnessAppl
 			return FALSE;
 		}
 		break;
-	case GDK_KEY_Page_Up:
+	case CDK_KEY_Page_Up:
 		for (i = 0;i < 10;i++) {
 			gpm_applet_plus_cb (NULL, applet);
 		}
 		return TRUE;
 		break;
-	case GDK_KEY_Left:
-	case GDK_KEY_Up:
+	case CDK_KEY_Left:
+	case CDK_KEY_Up:
 		gpm_applet_plus_cb (NULL, applet);
 		return TRUE;
 		break;
-	case GDK_KEY_Page_Down:
+	case CDK_KEY_Page_Down:
 		for (i = 0;i < 10;i++) {
 			gpm_applet_minus_cb (NULL, applet);
 		}
 		return TRUE;
 		break;
-	case GDK_KEY_Right:
-	case GDK_KEY_Down:
+	case CDK_KEY_Right:
+	case CDK_KEY_Down:
 		gpm_applet_minus_cb (NULL, applet);
 		return TRUE;
 		break;
@@ -524,8 +524,8 @@ gpm_applet_scroll_cb (GpmBrightnessApplet *applet, GdkEventScroll *event)
 {
 	int i;
 
-	if (event->type == GDK_SCROLL) {
-		if (event->direction == GDK_SCROLL_UP) {
+	if (event->type == CDK_SCROLL) {
+		if (event->direction == CDK_SCROLL_UP) {
 			for (i = 0;i < 5;i++) {
 				gpm_applet_plus_cb (NULL, applet);
 			}
@@ -555,7 +555,7 @@ on_popup_button_press (CtkWidget      *widget,
 {
 	CtkWidget *event_widget;
 
-	if (event->type != GDK_BUTTON_PRESS) {
+	if (event->type != CDK_BUTTON_PRESS) {
 		return FALSE;
 	}
 	event_widget = ctk_get_event_widget ((GdkEvent *)event);
@@ -626,7 +626,7 @@ gpm_applet_create_popup (GpmBrightnessApplet *applet)
 
 	/* window */
 	applet->popup = ctk_window_new (CTK_WINDOW_POPUP);
-	ctk_window_set_type_hint (CTK_WINDOW(applet->popup), GDK_WINDOW_TYPE_HINT_UTILITY);
+	ctk_window_set_type_hint (CTK_WINDOW(applet->popup), CDK_WINDOW_TYPE_HINT_UTILITY);
 	ctk_container_add (CTK_CONTAINER(applet->popup), frame);
 
 	/* window events */
@@ -734,7 +734,7 @@ gpm_applet_popup_cb (GpmBrightnessApplet *applet, GdkEventButton *event)
 	seat = cdk_display_get_default_seat (display);
 	cdk_seat_grab (seat,
 	               window,
-	               GDK_SEAT_CAPABILITY_ALL,
+	               CDK_SEAT_CAPABILITY_ALL,
 	               TRUE,
 	               NULL,
 	               NULL,
@@ -764,7 +764,7 @@ gpm_applet_theme_change_cb (CtkIconTheme *icon_theme, gpointer data)
 static void
 gpm_applet_stop_scroll_events_cb (CtkWidget *widget, GdkEvent  *event)
 {
-	if (event->type == GDK_SCROLL)
+	if (event->type == CDK_SCROLL)
 		g_signal_stop_emission_by_name (widget, "event-after");
 }
 
@@ -993,7 +993,7 @@ gpm_brightness_applet_init (GpmBrightnessApplet *applet)
 
 	/* prepare */
 	cafe_panel_applet_set_flags (CAFE_PANEL_APPLET (applet), CAFE_PANEL_APPLET_EXPAND_MINOR);
-	ctk_widget_set_events (CTK_WIDGET (applet), GDK_SCROLL_MASK);
+	ctk_widget_set_events (CTK_WIDGET (applet), CDK_SCROLL_MASK);
 
 	/* show */
 	ctk_widget_show_all (CTK_WIDGET(applet));
