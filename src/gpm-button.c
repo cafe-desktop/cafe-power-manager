@@ -40,8 +40,8 @@ static void     gpm_button_finalize   (GObject	      *object);
 
 struct GpmButtonPrivate
 {
-	GdkScreen		*screen;
-	GdkWindow		*window;
+	CdkScreen		*screen;
+	CdkWindow		*window;
 	GHashTable		*keysym_to_name_hash;
 	gchar			*last_button;
 	GTimer			*timer;
@@ -90,8 +90,8 @@ gpm_button_emit_type (GpmButton *button, const gchar *type)
 /**
  * gpm_button_filter_x_events:
  **/
-static GdkFilterReturn
-gpm_button_filter_x_events (GdkXEvent *xevent, GdkEvent *event, gpointer data)
+static CdkFilterReturn
+gpm_button_filter_x_events (CdkXEvent *xevent, CdkEvent *event, gpointer data)
 {
 	GpmButton *button = (GpmButton *) data;
 	XEvent *xev = (XEvent *) xevent;
@@ -139,7 +139,7 @@ gpm_button_grab_keystring (GpmButton *button, guint64 keycode)
 {
 	guint modmask = AnyModifier;
 	Display *display;
-	GdkDisplay *cdkdisplay;
+	CdkDisplay *cdkdisplay;
 	gint ret;
 
 	/* get the current X Display */

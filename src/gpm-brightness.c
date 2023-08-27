@@ -57,7 +57,7 @@ struct GpmBrightnessPrivate
 	guint			 last_set_hw;
 	Atom			 backlight;
 	Display			*dpy;
-	GdkWindow		*root_window;
+	CdkWindow		*root_window;
 	guint			 shared_value;
 	gboolean		 has_extension;
 	gboolean		 hw_changed;
@@ -225,7 +225,7 @@ gpm_brightness_output_get_internal (GpmBrightness *brightness, RROutput output, 
 static gboolean
 gpm_brightness_output_set_internal (GpmBrightness *brightness, RROutput output, guint value)
 {
-	GdkDisplay *display;
+	CdkDisplay *display;
 
 	gboolean ret = TRUE;
 
@@ -794,8 +794,8 @@ gpm_brightness_may_have_changed (GpmBrightness *brightness)
 /**
  * gpm_brightness_filter_xevents:
  **/
-static GdkFilterReturn
-gpm_brightness_filter_xevents (GdkXEvent *xevent, GdkEvent *event, gpointer data)
+static CdkFilterReturn
+gpm_brightness_filter_xevents (CdkXEvent *xevent, CdkEvent *event, gpointer data)
 {
 	GpmBrightness *brightness = GPM_BRIGHTNESS (data);
 	if (event->type == CDK_NOTHING)
@@ -811,7 +811,7 @@ static void gpm_brightness_update_cache (GpmBrightness *brightness);
  * gpm_brightness_monitors_changed:
  **/
 static void
-gpm_brightness_monitors_changed (GdkScreen *screen, GpmBrightness *brightness)
+gpm_brightness_monitors_changed (CdkScreen *screen, GpmBrightness *brightness)
 {
 	g_return_if_fail (GPM_IS_BRIGHTNESS (brightness));
 	gpm_brightness_update_cache (brightness);
@@ -825,8 +825,8 @@ gpm_brightness_update_cache (GpmBrightness *brightness)
 {
 	guint length;
 	Window root;
-	GdkScreen *gscreen;
-	GdkDisplay *display;
+	CdkScreen *gscreen;
+	CdkDisplay *display;
 	XRRScreenResources *resource;
 
 	g_return_if_fail (GPM_IS_BRIGHTNESS (brightness));
@@ -921,8 +921,8 @@ gpm_brightness_class_init (GpmBrightnessClass *klass)
 static void
 gpm_brightness_init (GpmBrightness *brightness)
 {
-	GdkScreen *screen;
-	GdkDisplay *display;
+	CdkScreen *screen;
+	CdkDisplay *display;
 	int event_base;
 	int ignore;
 

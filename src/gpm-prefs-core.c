@@ -346,7 +346,7 @@ gpm_prefs_close_cb (CtkWidget *widget, GpmPrefs *prefs)
  * @prefs: This prefs class instance
  **/
 static gboolean
-gpm_prefs_delete_event_cb (CtkWidget *widget, GdkEvent *event, GpmPrefs *prefs)
+gpm_prefs_delete_event_cb (CtkWidget *widget, CdkEvent *event, GpmPrefs *prefs)
 {
 	gpm_prefs_close_cb (widget, prefs);
 	return FALSE;

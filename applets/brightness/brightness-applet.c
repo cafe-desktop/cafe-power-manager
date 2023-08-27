@@ -53,7 +53,7 @@ typedef struct{
 	/* the popup and its widgets */
 	CtkWidget *popup, *slider, *btn_plus, *btn_minus;
 	/* the icon and a cache for size*/
-	GdkPixbuf *icon;
+	CdkPixbuf *icon;
 	gint icon_width, icon_height;
 	/* connection to g-p-m */
 	DBusGProxy *proxy;
@@ -84,17 +84,17 @@ static void      gpm_applet_change_background_cb  (GpmBrightnessApplet *applet,
 						   CafePanelAppletBackgroundType arg1,
 						   cairo_pattern_t *arg2, gpointer data);
 static void      gpm_applet_theme_change_cb (CtkIconTheme *icon_theme, gpointer data);
-static void      gpm_applet_stop_scroll_events_cb (CtkWidget *widget, GdkEvent  *event);
+static void      gpm_applet_stop_scroll_events_cb (CtkWidget *widget, CdkEvent  *event);
 static gboolean  gpm_applet_destroy_popup_cb      (GpmBrightnessApplet *applet);
 static void      gpm_applet_update_tooltip        (GpmBrightnessApplet *applet);
 static void      gpm_applet_update_popup_level    (GpmBrightnessApplet *applet);
 static gboolean  gpm_applet_plus_cb               (CtkWidget *w, GpmBrightnessApplet *applet);
 static gboolean  gpm_applet_minus_cb              (CtkWidget *w, GpmBrightnessApplet *applet);
-static gboolean  gpm_applet_key_press_cb          (CtkWidget *popup, GdkEventKey *event, GpmBrightnessApplet *applet);
-static gboolean  gpm_applet_scroll_cb             (GpmBrightnessApplet *applet, GdkEventScroll *event);
+static gboolean  gpm_applet_key_press_cb          (CtkWidget *popup, CdkEventKey *event, GpmBrightnessApplet *applet);
+static gboolean  gpm_applet_scroll_cb             (GpmBrightnessApplet *applet, CdkEventScroll *event);
 static gboolean  gpm_applet_slide_cb              (CtkWidget *w, GpmBrightnessApplet *applet);
 static void      gpm_applet_create_popup          (GpmBrightnessApplet *applet);
-static gboolean  gpm_applet_popup_cb              (GpmBrightnessApplet *applet, GdkEventButton *event);
+static gboolean  gpm_applet_popup_cb              (GpmBrightnessApplet *applet, CdkEventButton *event);
 static void      gpm_applet_dialog_about_cb       (CtkAction *action, gpointer data);
 static gboolean  gpm_applet_cb                    (CafePanelApplet *_applet, const gchar *iid, gpointer data);
 static void      gpm_applet_destroy_cb            (CtkWidget *widget);
@@ -256,7 +256,7 @@ static gboolean
 gpm_applet_draw_cb (GpmBrightnessApplet *applet)
 {
 	gint w, h, bg_type;
-	GdkRGBA color;
+	CdkRGBA color;
 	cairo_t *cr;
 	cairo_pattern_t *pattern;
 	CtkStyleContext *context;
@@ -458,7 +458,7 @@ gpm_applet_slide_cb (CtkWidget *w, GpmBrightnessApplet *applet)
  * mainly escape to unpop and arrows to change brightness
  **/
 static gboolean
-gpm_applet_key_press_cb (CtkWidget *popup, GdkEventKey *event, GpmBrightnessApplet *applet)
+gpm_applet_key_press_cb (CtkWidget *popup, CdkEventKey *event, GpmBrightnessApplet *applet)
 {
 	int i;
 	
@@ -520,7 +520,7 @@ gpm_applet_key_press_cb (CtkWidget *popup, GdkEventKey *event, GpmBrightnessAppl
  * the applet is popped and no matter where the mouse is.
  **/
 static gboolean
-gpm_applet_scroll_cb (GpmBrightnessApplet *applet, GdkEventScroll *event)
+gpm_applet_scroll_cb (GpmBrightnessApplet *applet, CdkEventScroll *event)
 {
 	int i;
 
@@ -550,7 +550,7 @@ gpm_applet_scroll_cb (GpmBrightnessApplet *applet, GdkEventScroll *event)
  **/
 static gboolean
 on_popup_button_press (CtkWidget      *widget,
-                       GdkEventButton *event,
+                       CdkEventButton *event,
                        GpmBrightnessApplet *applet)
 {
 	CtkWidget *event_widget;
@@ -558,7 +558,7 @@ on_popup_button_press (CtkWidget      *widget,
 	if (event->type != CDK_BUTTON_PRESS) {
 		return FALSE;
 	}
-	event_widget = ctk_get_event_widget ((GdkEvent *)event);
+	event_widget = ctk_get_event_widget ((CdkEvent *)event);
 	g_debug ("Button press: %p dock=%p", event_widget, widget);
 	if (event_widget == widget) {
 		ctk_widget_hide (applet->popup);
@@ -642,8 +642,8 @@ gpm_applet_create_popup (GpmBrightnessApplet *applet)
 	context = ctk_widget_get_style_context (CTK_WIDGET(toplevel));
 	ctk_style_context_add_class(context,"cafe-panel-applet-slider");
 	/*Make transparency possible in ctk3 theme3 */
- 	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
-	GdkVisual *visual = cdk_screen_get_rgba_visual(screen);
+ 	CdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
+	CdkVisual *visual = cdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 }
 
@@ -654,13 +654,13 @@ gpm_applet_create_popup (GpmBrightnessApplet *applet)
  * pops and unpops
  **/
 static gboolean
-gpm_applet_popup_cb (GpmBrightnessApplet *applet, GdkEventButton *event)
+gpm_applet_popup_cb (GpmBrightnessApplet *applet, CdkEventButton *event)
 {
 	CtkAllocation allocation, popup_allocation;
 	gint orientation, x, y;
-	GdkWindow *window;
-	GdkDisplay *display;
-	GdkSeat *seat;
+	CdkWindow *window;
+	CdkDisplay *display;
+	CdkSeat *seat;
 
 	/* react only to left mouse button */
 	if (event->button != 1) {
@@ -762,7 +762,7 @@ gpm_applet_theme_change_cb (CtkIconTheme *icon_theme, gpointer data)
  * Prevents scroll events from reaching the tooltip
  **/
 static void
-gpm_applet_stop_scroll_events_cb (CtkWidget *widget, GdkEvent  *event)
+gpm_applet_stop_scroll_events_cb (CtkWidget *widget, CdkEvent  *event)
 {
 	if (event->type == CDK_SCROLL)
 		g_signal_stop_emission_by_name (widget, "event-after");

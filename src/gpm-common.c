@@ -162,7 +162,7 @@ gpm_help_display (const gchar *link_id)
  * gpm_dialog_page_scroll_event_cb:
  **/
 gboolean
-gpm_dialog_page_scroll_event_cb (CtkWidget *widget, GdkEventScroll *event, CtkWindow *window)
+gpm_dialog_page_scroll_event_cb (CtkWidget *widget, CdkEventScroll *event, CtkWindow *window)
 {
         CtkNotebook *notebook = CTK_NOTEBOOK (widget);
         CtkWidget *child, *event_widget, *action_widget;
@@ -171,7 +171,7 @@ gpm_dialog_page_scroll_event_cb (CtkWidget *widget, GdkEventScroll *event, CtkWi
         if (child == NULL)
                 return FALSE;
 
-        event_widget = ctk_get_event_widget ((GdkEvent *) event);
+        event_widget = ctk_get_event_widget ((CdkEvent *) event);
 
         /* Ignore scroll events from the content of the page */
         if (event_widget == NULL || event_widget == child || ctk_widget_is_ancestor (event_widget, child))

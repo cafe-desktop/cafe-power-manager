@@ -72,9 +72,9 @@ GType                gpm_inhibit_applet_get_type  (void);
 G_DEFINE_TYPE (GpmInhibitApplet, gpm_inhibit_applet, PANEL_TYPE_APPLET)
 
 static void	gpm_applet_update_icon		(GpmInhibitApplet *applet);
-static void	gpm_applet_size_allocate_cb     (CtkWidget *widget, GdkRectangle *allocation);;
+static void	gpm_applet_size_allocate_cb     (CtkWidget *widget, CdkRectangle *allocation);;
 static void	gpm_applet_update_tooltip	(GpmInhibitApplet *applet);
-static gboolean	gpm_applet_click_cb		(GpmInhibitApplet *applet, GdkEventButton *event);
+static gboolean	gpm_applet_click_cb		(GpmInhibitApplet *applet, CdkEventButton *event);
 static void	gpm_applet_dialog_about_cb	(CtkAction *action, gpointer data);
 static gboolean	gpm_applet_cb		        (CafePanelApplet *_applet, const gchar *iid, gpointer data);
 static void	gpm_applet_destroy_cb		(CtkWidget *widget);
@@ -188,7 +188,7 @@ gpm_applet_update_icon (GpmInhibitApplet *applet)
  **/
 static void
 gpm_applet_size_allocate_cb (CtkWidget    *widget,
-                             GdkRectangle *allocation)
+                             CdkRectangle *allocation)
 {
 	GpmInhibitApplet *applet = GPM_INHIBIT_APPLET (widget);
 	int               size = 0;
@@ -240,7 +240,7 @@ gpm_applet_update_tooltip (GpmInhibitApplet *applet)
  * pops and unpops
  **/
 static gboolean
-gpm_applet_click_cb (GpmInhibitApplet *applet, GdkEventButton *event)
+gpm_applet_click_cb (GpmInhibitApplet *applet, CdkEventButton *event)
 {
 	/* react only to left mouse button */
 	if (event->button != 1) {

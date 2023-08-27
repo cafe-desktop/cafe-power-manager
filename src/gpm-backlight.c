@@ -204,12 +204,12 @@ gpm_backlight_dialog_show (GpmBacklight *backlight)
 	int            pointer_x;
 	int            pointer_y;
 	CtkRequisition win_req;
-	GdkScreen     *pointer_screen;
-	GdkRectangle   geometry;
-	GdkMonitor    *monitor;
-	GdkDisplay    *display;
-	GdkSeat       *seat;
-	GdkDevice     *device;
+	CdkScreen     *pointer_screen;
+	CdkRectangle   geometry;
+	CdkMonitor    *monitor;
+	CdkDisplay    *display;
+	CdkSeat       *seat;
+	CdkDevice     *device;
 
 	/*
 	 * get the window size
