@@ -70,7 +70,7 @@ cpm_object_register (DBusGConnection *connection,
 					       DBUS_INTERFACE_DBUS);
 
 	ret = dbus_g_proxy_call (bus_proxy, "RequestName", &error,
-				 G_TYPE_STRING, GPM_DBUS_SERVICE,
+				 G_TYPE_STRING, CPM_DBUS_SERVICE,
 				 G_TYPE_UINT, 0,
 				 G_TYPE_INVALID,
 				 G_TYPE_UINT, &request_name_result,
@@ -93,9 +93,9 @@ cpm_object_register (DBusGConnection *connection,
 		return FALSE;
 	}
 
-	dbus_g_object_type_install_info (GPM_TYPE_MANAGER, &dbus_glib_cpm_manager_object_info);
-	dbus_g_error_domain_register (GPM_MANAGER_ERROR, NULL, GPM_MANAGER_TYPE_ERROR);
-	dbus_g_connection_register_g_object (connection, GPM_DBUS_PATH, object);
+	dbus_g_object_type_install_info (CPM_TYPE_MANAGER, &dbus_glib_cpm_manager_object_info);
+	dbus_g_error_domain_register (CPM_MANAGER_ERROR, NULL, CPM_MANAGER_TYPE_ERROR);
+	dbus_g_connection_register_g_object (connection, CPM_DBUS_PATH, object);
 
 	return TRUE;
 }
@@ -203,7 +203,7 @@ main (int argc, char *argv[])
 	ctk_init (&argc, &argv);
 	egg_debug_init (verbose);
 
-	egg_debug ("CAFE %s %s", GPM_NAME, VERSION);
+	egg_debug ("CAFE %s %s", CPM_NAME, VERSION);
 
 	/* check dbus connections, exit if not valid */
 	system_connection = dbus_g_bus_get (DBUS_BUS_SYSTEM, &error);
@@ -228,7 +228,7 @@ main (int argc, char *argv[])
 
 	/* add application specific icons to search path */
 	ctk_icon_theme_append_search_path (ctk_icon_theme_get_default (),
-                                           GPM_ICONS_DATA);
+                                           CPM_ICONS_DATA);
 
 	loop = g_main_loop_new (NULL, FALSE);
 
@@ -243,7 +243,7 @@ main (int argc, char *argv[])
 	manager = cpm_manager_new ();
 
 	if (!cpm_object_register (session_connection, G_OBJECT (manager))) {
-		egg_error ("%s is already running in this session.", GPM_NAME);
+		egg_error ("%s is already running in this session.", CPM_NAME);
 		goto unref_program;
 	}
 

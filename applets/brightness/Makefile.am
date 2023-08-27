@@ -14,12 +14,12 @@ AM_CPPFLAGS =							\
 	-DSYSCONFDIR=\""$(sysconfdir)"\" 			\
 	-DLIBDIR=\""$(libdir)"\" 				\
 	-DVERSION="\"$(VERSION)\"" 				\
-	-DGPM_ICONS_DATA=\"$(pkgdatadir)/icons\"		\
+	-DCPM_ICONS_DATA=\"$(pkgdatadir)/icons\"		\
 	-DBRIGHTNESS_MENU_UI_DIR=\""$(uidir)"\"			\
 	-DEGG_LOG_FILE=\""~/cafe-power-manager.log"\"		\
-	-DEGG_VERBOSE="\"GPM_VERBOSE\""				\
-	-DEGG_LOGGING="\"GPM_LOGGING\""				\
-	-DEGG_CONSOLE="\"GPM_CONSOLE\""				\
+	-DEGG_VERBOSE="\"CPM_VERBOSE\""				\
+	-DEGG_LOGGING="\"CPM_LOGGING\""				\
+	-DEGG_CONSOLE="\"CPM_CONSOLE\""				\
 	$(DISABLE_DEPRECATED)					\
 	$(WARN_CFLAGS)						\
 	$(NULL)

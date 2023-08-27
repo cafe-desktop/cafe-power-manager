@@ -136,7 +136,7 @@ cpm_prefs_icon_radio_cb (CtkWidget *widget, GpmPrefs *prefs)
 	gint policy;
 
 	policy = GPOINTER_TO_INT (g_object_get_data (G_OBJECT (widget), "policy"));
-	g_settings_set_enum (prefs->priv->settings, GPM_SETTINGS_ICON_POLICY, policy);
+	g_settings_set_enum (prefs->priv->settings, CPM_SETTINGS_ICON_POLICY, policy);
 }
 
 /**
@@ -232,28 +232,28 @@ cpm_prefs_setup_action_combo (GpmPrefs *prefs, const gchar *widget_name,
 
 	for (i=0; actions[i] != -1; i++) {
 		policy = actions[i];
-		if (policy == GPM_ACTION_POLICY_SHUTDOWN && !prefs->priv->can_shutdown) {
+		if (policy == CPM_ACTION_POLICY_SHUTDOWN && !prefs->priv->can_shutdown) {
 			egg_debug ("Cannot add option, as cannot shutdown.");
-		} else if (policy == GPM_ACTION_POLICY_SHUTDOWN && prefs->priv->can_shutdown) {
+		} else if (policy == CPM_ACTION_POLICY_SHUTDOWN && prefs->priv->can_shutdown) {
 			ctk_combo_box_text_append_text(CTK_COMBO_BOX_TEXT (widget), _("Shutdown"));
 			g_ptr_array_add(array, GINT_TO_POINTER (policy));
-		} else if (policy == GPM_ACTION_POLICY_SUSPEND && !prefs->priv->can_suspend) {
+		} else if (policy == CPM_ACTION_POLICY_SUSPEND && !prefs->priv->can_suspend) {
 			egg_debug ("Cannot add option, as cannot suspend.");
-		} else if (policy == GPM_ACTION_POLICY_HIBERNATE && !prefs->priv->can_hibernate) {
+		} else if (policy == CPM_ACTION_POLICY_HIBERNATE && !prefs->priv->can_hibernate) {
 			egg_debug ("Cannot add option, as cannot hibernate.");
-		} else if (policy == GPM_ACTION_POLICY_SUSPEND && prefs->priv->can_suspend) {
+		} else if (policy == CPM_ACTION_POLICY_SUSPEND && prefs->priv->can_suspend) {
 			ctk_combo_box_text_append_text(CTK_COMBO_BOX_TEXT (widget), _("Suspend"));
 			g_ptr_array_add (array, GINT_TO_POINTER (policy));
-		} else if (policy == GPM_ACTION_POLICY_HIBERNATE && prefs->priv->can_hibernate) {
+		} else if (policy == CPM_ACTION_POLICY_HIBERNATE && prefs->priv->can_hibernate) {
 			ctk_combo_box_text_append_text(CTK_COMBO_BOX_TEXT (widget), _("Hibernate"));
 			g_ptr_array_add(array, GINT_TO_POINTER (policy));
-		} else if (policy == GPM_ACTION_POLICY_BLANK) {
+		} else if (policy == CPM_ACTION_POLICY_BLANK) {
 			ctk_combo_box_text_append_text(CTK_COMBO_BOX_TEXT (widget), _("Blank screen"));
 			g_ptr_array_add (array, GINT_TO_POINTER (policy));
-		} else if (policy == GPM_ACTION_POLICY_INTERACTIVE) {
+		} else if (policy == CPM_ACTION_POLICY_INTERACTIVE) {
 			ctk_combo_box_text_append_text(CTK_COMBO_BOX_TEXT (widget), _("Ask me"));
 			g_ptr_array_add(array, GINT_TO_POINTER (policy));
-		} else if (policy == GPM_ACTION_POLICY_NOTHING) {
+		} else if (policy == CPM_ACTION_POLICY_NOTHING) {
 			ctk_combo_box_text_append_text(CTK_COMBO_BOX_TEXT (widget), _("Do nothing"));
 			g_ptr_array_add(array, GINT_TO_POINTER (policy));
 		} else {
@@ -364,7 +364,7 @@ prefs_setup_notification (GpmPrefs *prefs)
 	CtkWidget *radiobutton_icon_never;
 	gboolean is_writable;
 
-	icon_policy = g_settings_get_enum (prefs->priv->settings, GPM_SETTINGS_ICON_POLICY);
+	icon_policy = g_settings_get_enum (prefs->priv->settings, CPM_SETTINGS_ICON_POLICY);
 
 	radiobutton_icon_always = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder,
 						  "radiobutton_notification_always"));
@@ -377,7 +377,7 @@ prefs_setup_notification (GpmPrefs *prefs)
 	radiobutton_icon_never = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder,
 						 "radiobutton_notification_never"));
 
-	is_writable = g_settings_is_writable (prefs->priv->settings, GPM_SETTINGS_ICON_POLICY);
+	is_writable = g_settings_is_writable (prefs->priv->settings, CPM_SETTINGS_ICON_POLICY);
 	ctk_widget_set_sensitive (radiobutton_icon_always, is_writable);
 	ctk_widget_set_sensitive (radiobutton_icon_present, is_writable);
 	ctk_widget_set_sensitive (radiobutton_icon_charge, is_writable);
@@ -385,26 +385,26 @@ prefs_setup_notification (GpmPrefs *prefs)
 	ctk_widget_set_sensitive (radiobutton_icon_never, is_writable);
 
 	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (radiobutton_icon_always),
-					  icon_policy == GPM_ICON_POLICY_ALWAYS);
+					  icon_policy == CPM_ICON_POLICY_ALWAYS);
 	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (radiobutton_icon_present),
-					  icon_policy == GPM_ICON_POLICY_PRESENT);
+					  icon_policy == CPM_ICON_POLICY_PRESENT);
 	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (radiobutton_icon_charge),
-					  icon_policy == GPM_ICON_POLICY_CHARGE);
+					  icon_policy == CPM_ICON_POLICY_CHARGE);
 	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (radiobutton_icon_low),
-					  icon_policy == GPM_ICON_POLICY_LOW);
+					  icon_policy == CPM_ICON_POLICY_LOW);
 	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (radiobutton_icon_never),
-					  icon_policy == GPM_ICON_POLICY_NEVER);
+					  icon_policy == CPM_ICON_POLICY_NEVER);
 
 	g_object_set_data (G_OBJECT (radiobutton_icon_always), "policy",
-			   GINT_TO_POINTER (GPM_ICON_POLICY_ALWAYS));
+			   GINT_TO_POINTER (CPM_ICON_POLICY_ALWAYS));
 	g_object_set_data (G_OBJECT (radiobutton_icon_present), "policy",
-			   GINT_TO_POINTER (GPM_ICON_POLICY_PRESENT));
+			   GINT_TO_POINTER (CPM_ICON_POLICY_PRESENT));
 	g_object_set_data (G_OBJECT (radiobutton_icon_charge), "policy",
-			   GINT_TO_POINTER (GPM_ICON_POLICY_CHARGE));
+			   GINT_TO_POINTER (CPM_ICON_POLICY_CHARGE));
 	g_object_set_data (G_OBJECT (radiobutton_icon_low), "policy",
-			   GINT_TO_POINTER (GPM_ICON_POLICY_LOW));
+			   GINT_TO_POINTER (CPM_ICON_POLICY_LOW));
 	g_object_set_data (G_OBJECT (radiobutton_icon_never), "policy",
-			   GINT_TO_POINTER (GPM_ICON_POLICY_NEVER));
+			   GINT_TO_POINTER (CPM_ICON_POLICY_NEVER));
 
 	/* only connect the callbacks after we set the value, else the settings
 	 * keys gets written to (for a split second), and the icon flickers. */
@@ -425,11 +425,11 @@ prefs_setup_ac (GpmPrefs *prefs)
 {
 	CtkWidget *widget;
 	const GpmActionPolicy button_lid_actions[] =
-				{GPM_ACTION_POLICY_NOTHING,
-				 GPM_ACTION_POLICY_BLANK,
-				 GPM_ACTION_POLICY_SUSPEND,
-				 GPM_ACTION_POLICY_HIBERNATE,
-				 GPM_ACTION_POLICY_SHUTDOWN,
+				{CPM_ACTION_POLICY_NOTHING,
+				 CPM_ACTION_POLICY_BLANK,
+				 CPM_ACTION_POLICY_SUSPEND,
+				 CPM_ACTION_POLICY_HIBERNATE,
+				 CPM_ACTION_POLICY_SHUTDOWN,
 				 -1};
 
 	static const gint computer_times[] =
@@ -449,19 +449,19 @@ prefs_setup_ac (GpmPrefs *prefs)
 		 -1};
 
 	cpm_prefs_setup_time_combo (prefs, "combobox_ac_computer",
-					GPM_SETTINGS_SLEEP_COMPUTER_AC,
+					CPM_SETTINGS_SLEEP_COMPUTER_AC,
 					computer_times);
 	cpm_prefs_setup_time_combo (prefs, "combobox_ac_display",
-					GPM_SETTINGS_SLEEP_DISPLAY_AC,
+					CPM_SETTINGS_SLEEP_DISPLAY_AC,
 					display_times);
 
 	cpm_prefs_setup_action_combo (prefs, "combobox_ac_lid",
-					  GPM_SETTINGS_BUTTON_LID_AC,
+					  CPM_SETTINGS_BUTTON_LID_AC,
 					  button_lid_actions);
 
 	/* setup brightness slider */
 	widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "hscale_ac_brightness"));
-	g_settings_bind (prefs->priv->settings, GPM_SETTINGS_BRIGHTNESS_AC,
+	g_settings_bind (prefs->priv->settings, CPM_SETTINGS_BRIGHTNESS_AC,
 			 ctk_range_get_adjustment (CTK_RANGE (widget)), "value",
 			 G_SETTINGS_BIND_DEFAULT);
 	g_signal_connect (G_OBJECT (widget), "format-value",
@@ -469,7 +469,7 @@ prefs_setup_ac (GpmPrefs *prefs)
 
 	/* set up the checkboxes */
 	widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "checkbutton_ac_display_dim"));
-	g_settings_bind (prefs->priv->settings, GPM_SETTINGS_IDLE_DIM_AC,
+	g_settings_bind (prefs->priv->settings, CPM_SETTINGS_IDLE_DIM_AC,
 			 widget, "active",
 			 G_SETTINGS_BIND_DEFAULT);
 
@@ -496,17 +496,17 @@ prefs_setup_battery (GpmPrefs *prefs)
 	gint page;
 
 	const GpmActionPolicy button_lid_actions[] =
-				{GPM_ACTION_POLICY_NOTHING,
-				 GPM_ACTION_POLICY_BLANK,
-				 GPM_ACTION_POLICY_SUSPEND,
-				 GPM_ACTION_POLICY_HIBERNATE,
-				 GPM_ACTION_POLICY_SHUTDOWN,
+				{CPM_ACTION_POLICY_NOTHING,
+				 CPM_ACTION_POLICY_BLANK,
+				 CPM_ACTION_POLICY_SUSPEND,
+				 CPM_ACTION_POLICY_HIBERNATE,
+				 CPM_ACTION_POLICY_SHUTDOWN,
 				 -1};
 	const GpmActionPolicy battery_critical_actions[] =
-				{GPM_ACTION_POLICY_NOTHING,
-				 GPM_ACTION_POLICY_SUSPEND,
-				 GPM_ACTION_POLICY_HIBERNATE,
-				 GPM_ACTION_POLICY_SHUTDOWN,
+				{CPM_ACTION_POLICY_NOTHING,
+				 CPM_ACTION_POLICY_SUSPEND,
+				 CPM_ACTION_POLICY_HIBERNATE,
+				 CPM_ACTION_POLICY_SHUTDOWN,
 				 -1};
 
 	static const gint computer_times[] =
@@ -526,10 +526,10 @@ prefs_setup_battery (GpmPrefs *prefs)
 		 -1};
 
 	cpm_prefs_setup_time_combo (prefs, "combobox_battery_computer",
-					GPM_SETTINGS_SLEEP_COMPUTER_BATT,
+					CPM_SETTINGS_SLEEP_COMPUTER_BATT,
 					computer_times);
 	cpm_prefs_setup_time_combo (prefs, "combobox_battery_display",
-					GPM_SETTINGS_SLEEP_DISPLAY_BATT,
+					CPM_SETTINGS_SLEEP_DISPLAY_BATT,
 					display_times);
 
 	if (prefs->priv->has_batteries == FALSE) {
@@ -541,19 +541,19 @@ prefs_setup_battery (GpmPrefs *prefs)
 	}
 
 	cpm_prefs_setup_action_combo (prefs, "combobox_battery_lid",
-					  GPM_SETTINGS_BUTTON_LID_BATT,
+					  CPM_SETTINGS_BUTTON_LID_BATT,
 					  button_lid_actions);
 	cpm_prefs_setup_action_combo (prefs, "combobox_battery_critical",
-					  GPM_SETTINGS_ACTION_CRITICAL_BATT,
+					  CPM_SETTINGS_ACTION_CRITICAL_BATT,
 					  battery_critical_actions);
 
 	/* set up the checkboxes */
 	widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "checkbutton_battery_display_reduce"));
-	g_settings_bind (prefs->priv->settings, GPM_SETTINGS_BACKLIGHT_BATTERY_REDUCE,
+	g_settings_bind (prefs->priv->settings, CPM_SETTINGS_BACKLIGHT_BATTERY_REDUCE,
 			 widget, "active",
 			 G_SETTINGS_BIND_DEFAULT);
 	widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "checkbutton_battery_display_dim"));
-	g_settings_bind (prefs->priv->settings, GPM_SETTINGS_IDLE_DIM_BATT,
+	g_settings_bind (prefs->priv->settings, CPM_SETTINGS_IDLE_DIM_BATT,
 			 widget, "active",
 			 G_SETTINGS_BIND_DEFAULT);
 
@@ -577,9 +577,9 @@ prefs_setup_ups (GpmPrefs *prefs)
 	gint page;
 
 	const GpmActionPolicy ups_low_actions[] =
-				{GPM_ACTION_POLICY_NOTHING,
-				 GPM_ACTION_POLICY_HIBERNATE,
-				 GPM_ACTION_POLICY_SHUTDOWN,
+				{CPM_ACTION_POLICY_NOTHING,
+				 CPM_ACTION_POLICY_HIBERNATE,
+				 CPM_ACTION_POLICY_SHUTDOWN,
 				 -1};
 
 	static const gint computer_times[] =
@@ -599,10 +599,10 @@ prefs_setup_ups (GpmPrefs *prefs)
 		 -1};
 
 	cpm_prefs_setup_time_combo (prefs, "combobox_ups_computer",
-					GPM_SETTINGS_SLEEP_COMPUTER_UPS,
+					CPM_SETTINGS_SLEEP_COMPUTER_UPS,
 					computer_times);
 	cpm_prefs_setup_time_combo (prefs, "combobox_ups_display",
-					GPM_SETTINGS_SLEEP_DISPLAY_UPS,
+					CPM_SETTINGS_SLEEP_DISPLAY_UPS,
 					display_times);
 
 	window = cpm_window (prefs);
@@ -620,10 +620,10 @@ prefs_setup_ups (GpmPrefs *prefs)
 	}
 
 	cpm_prefs_setup_action_combo (prefs, "combobox_ups_low",
-					  GPM_SETTINGS_ACTION_LOW_UPS,
+					  CPM_SETTINGS_ACTION_LOW_UPS,
 					  ups_low_actions);
 	cpm_prefs_setup_action_combo (prefs, "combobox_ups_critical",
-					  GPM_SETTINGS_ACTION_CRITICAL_UPS,
+					  CPM_SETTINGS_ACTION_CRITICAL_UPS,
 					  ups_low_actions);
 }
 
@@ -632,23 +632,23 @@ prefs_setup_general (GpmPrefs *prefs)
 {
 	CtkWidget *widget;
 	const GpmActionPolicy power_button_actions[] =
-				{GPM_ACTION_POLICY_INTERACTIVE,
-				 GPM_ACTION_POLICY_SUSPEND,
-				 GPM_ACTION_POLICY_HIBERNATE,
-				 GPM_ACTION_POLICY_SHUTDOWN,
-				 GPM_ACTION_POLICY_NOTHING,
+				{CPM_ACTION_POLICY_INTERACTIVE,
+				 CPM_ACTION_POLICY_SUSPEND,
+				 CPM_ACTION_POLICY_HIBERNATE,
+				 CPM_ACTION_POLICY_SHUTDOWN,
+				 CPM_ACTION_POLICY_NOTHING,
 				 -1};
 	const GpmActionPolicy suspend_button_actions[] =
-				{GPM_ACTION_POLICY_NOTHING,
-				 GPM_ACTION_POLICY_SUSPEND,
-				 GPM_ACTION_POLICY_HIBERNATE,
+				{CPM_ACTION_POLICY_NOTHING,
+				 CPM_ACTION_POLICY_SUSPEND,
+				 CPM_ACTION_POLICY_HIBERNATE,
 				 -1};
 
 	cpm_prefs_setup_action_combo (prefs, "combobox_general_power",
-					  GPM_SETTINGS_BUTTON_POWER,
+					  CPM_SETTINGS_BUTTON_POWER,
 					  power_button_actions);
 	cpm_prefs_setup_action_combo (prefs, "combobox_general_suspend",
-					  GPM_SETTINGS_BUTTON_SUSPEND,
+					  CPM_SETTINGS_BUTTON_SUSPEND,
 					  suspend_button_actions);
 
 	if (prefs->priv->has_button_suspend == FALSE) {
@@ -683,7 +683,7 @@ cpm_prefs_init (GpmPrefs *prefs)
 
 	prefs->priv->client = up_client_new ();
 	prefs->priv->console = egg_console_kit_new ();
-	prefs->priv->settings = g_settings_new (GPM_SETTINGS_SCHEMA);
+	prefs->priv->settings = g_settings_new (CPM_SETTINGS_SCHEMA);
 
 	prefs->priv->can_shutdown = FALSE;
 	prefs->priv->can_suspend = FALSE;
@@ -832,7 +832,7 @@ cpm_prefs_init (GpmPrefs *prefs)
 
 	/* Hide window first so that the dialogue resizes itself without redrawing */
 	ctk_widget_hide (main_window);
-	ctk_window_set_default_icon_name (GPM_ICON_APP_ICON);
+	ctk_window_set_default_icon_name (CPM_ICON_APP_ICON);
 
 	/* Get the main window quit */
 	g_signal_connect (main_window, "delete_event",
@@ -865,9 +865,9 @@ cpm_prefs_finalize (GObject *object)
 {
 	GpmPrefs *prefs;
 	g_return_if_fail (object != NULL);
-	g_return_if_fail (GPM_IS_PREFS (object));
+	g_return_if_fail (CPM_IS_PREFS (object));
 
-	prefs = GPM_PREFS (object);
+	prefs = CPM_PREFS (object);
 	prefs->priv = cpm_prefs_get_instance_private (prefs);
 
 	g_object_unref (prefs->priv->settings);
@@ -886,8 +886,8 @@ GpmPrefs *
 cpm_prefs_new (void)
 {
 	GpmPrefs *prefs;
-	prefs = g_object_new (GPM_TYPE_PREFS, NULL);
-	return GPM_PREFS (prefs);
+	prefs = g_object_new (CPM_TYPE_PREFS, NULL);
+	return CPM_PREFS (prefs);
 }
 
 /**

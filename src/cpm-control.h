@@ -20,19 +20,19 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef __GPM_CONTROL_H
-#define __GPM_CONTROL_H
+#ifndef __CPM_CONTROL_H
+#define __CPM_CONTROL_H
 
 #include <glib-object.h>
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_CONTROL		(cpm_control_get_type ())
-#define GPM_CONTROL(o)			(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_CONTROL, GpmControl))
-#define GPM_CONTROL_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_CONTROL, GpmControlClass))
-#define GPM_IS_CONTROL(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_CONTROL))
-#define GPM_IS_CONTROL_CLASS(k)		(G_TYPE_CHECK_CLASS_TYPE ((k), GPM_TYPE_CONTROL))
-#define GPM_CONTROL_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), GPM_TYPE_CONTROL, GpmControlClass))
+#define CPM_TYPE_CONTROL		(cpm_control_get_type ())
+#define CPM_CONTROL(o)			(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_CONTROL, GpmControl))
+#define CPM_CONTROL_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_CONTROL, GpmControlClass))
+#define CPM_IS_CONTROL(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_CONTROL))
+#define CPM_IS_CONTROL_CLASS(k)		(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_CONTROL))
+#define CPM_CONTROL_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_CONTROL, GpmControlClass))
 
 typedef struct GpmControlPrivate GpmControlPrivate;
 
@@ -44,15 +44,15 @@ typedef struct
 
 typedef enum
 {
-	 GPM_CONTROL_ACTION_SUSPEND,
-	 GPM_CONTROL_ACTION_HIBERNATE,
-	 GPM_CONTROL_ACTION_LAST
+	 CPM_CONTROL_ACTION_SUSPEND,
+	 CPM_CONTROL_ACTION_HIBERNATE,
+	 CPM_CONTROL_ACTION_LAST
 } GpmControlAction;
 
 typedef enum
 {
-	 GPM_CONTROL_ERROR_GENERAL,
-	 GPM_CONTROL_ERROR_LAST
+	 CPM_CONTROL_ERROR_GENERAL,
+	 CPM_CONTROL_ERROR_LAST
 } GpmControlError;
 
 typedef struct
@@ -68,7 +68,7 @@ typedef struct
 							 const gchar	**type);
 } GpmControlClass;
 
-#define GPM_CONTROL_ERROR cpm_control_error_quark ()
+#define CPM_CONTROL_ERROR cpm_control_error_quark ()
 
 GQuark		 cpm_control_error_quark		(void);
 GType		 cpm_control_get_type			(void);
@@ -84,4 +84,4 @@ gboolean	 cpm_control_get_lock_policy		(GpmControl	*control,
 
 G_END_DECLS
 
-#endif /* __GPM_CONTROL_H */
+#endif /* __CPM_CONTROL_H */

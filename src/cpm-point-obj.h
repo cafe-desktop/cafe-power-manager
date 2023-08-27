@@ -18,8 +18,8 @@
  *
  */
 
-#ifndef __GPM_POINT_OBJ_H__
-#define __GPM_POINT_OBJ_H__
+#ifndef __CPM_POINT_OBJ_H__
+#define __CPM_POINT_OBJ_H__
 
 #include <glib.h>
 
@@ -38,5 +38,5 @@ void		 cpm_point_obj_free		(GpmPointObj		*obj);
 
 G_END_DECLS
 
-#endif /* __GPM_POINT_OBJ_H__ */
+#endif /* __CPM_POINT_OBJ_H__ */
 

@@ -29,13 +29,13 @@ AM_CPPFLAGS =						\
 	-DSYSCONFDIR=\""$(sysconfdir)"\" 		\
 	-DLIBDIR=\""$(libdir)"\" 			\
 	-DVERSION="\"$(VERSION)\"" 			\
-	-DGPM_ICONS_DATA=\"$(pkgdatadir)/icons\"	\
+	-DCPM_ICONS_DATA=\"$(pkgdatadir)/icons\"	\
 	-DCTKBUILDERDIR=\"$(pkgdatadir)\"		\
 	-DUP_DISABLE_DEPRECATED				\
 	-DEGG_LOG_FILE=\""/tmp/cpm.log"\"		\
-	-DEGG_VERBOSE="\"GPM_VERBOSE\""			\
-	-DEGG_LOGGING="\"GPM_LOGGING\""			\
-	-DEGG_CONSOLE="\"GPM_CONSOLE\""			\
+	-DEGG_VERBOSE="\"CPM_VERBOSE\""			\
+	-DEGG_LOGGING="\"CPM_LOGGING\""			\
+	-DEGG_CONSOLE="\"CPM_CONSOLE\""			\
 	-I$(top_srcdir)					\
 	$(DISABLE_DEPRECATED)
 
@@ -143,7 +143,7 @@ cafe_power_preferences_LDADD =				\
 	$(X11_LIBS)					\
 	$(CAIRO_LIBS)					\
 	$(DBUS_LIBS)					\
-	$(GPM_EXTRA_LIBS)				\
+	$(CPM_EXTRA_LIBS)				\
 	$(UPOWER_LIBS)					\
 	-lm
 
@@ -207,7 +207,7 @@ cafe_power_manager_LDADD =				\
 	$(X11_LIBS)					\
 	$(KANBERRA_LIBS)				\
 	$(LIBNOTIFY_LIBS)				\
-	$(GPM_EXTRA_LIBS)				\
+	$(CPM_EXTRA_LIBS)				\
 	$(UPOWER_LIBS)					\
 	-lm
 
@@ -272,7 +272,7 @@ cafe_power_self_test_LDADD =				\
 	$(DBUS_LIBS)					\
 	$(X11_LIBS)					\
 	$(LIBNOTIFY_LIBS)				\
-	$(GPM_EXTRA_LIBS)				\
+	$(CPM_EXTRA_LIBS)				\
 	-lm
 
 cafe_power_self_test_CFLAGS = 				\

@@ -184,7 +184,7 @@ cpm_control_get_lock_policy (GpmControl *control, const gchar *policy)
 	/* This allows us to over-ride the custom lock settings set
 	   with a system default set in cafe-screensaver.
 	   See bug #331164 for all the juicy details. :-) */
-	use_ss_setting = g_settings_get_boolean (control->priv->settings, GPM_SETTINGS_LOCK_USE_SCREENSAVER);
+	use_ss_setting = g_settings_get_boolean (control->priv->settings, CPM_SETTINGS_LOCK_USE_SCREENSAVER);
 	if (use_ss_setting && schema_exists) {
 		GSettings *settings_ss;
 		settings_ss = g_settings_new (GS_SETTINGS_SCHEMA);
@@ -229,14 +229,14 @@ cpm_control_suspend (GpmControl *control, GError **error)
 
 		if (!allowed) {
 			egg_debug ("cannot suspend as not allowed from policy");
-			g_set_error_literal (error, GPM_CONTROL_ERROR, GPM_CONTROL_ERROR_GENERAL, "Cannot suspend");
+			g_set_error_literal (error, CPM_CONTROL_ERROR, CPM_CONTROL_ERROR_GENERAL, "Cannot suspend");
 			goto out;
 		}
 	}
 
 #ifdef WITH_KEYRING
 	/* we should perhaps lock keyrings when sleeping #375681 */
-	lock_gnome_keyring = g_settings_get_boolean (control->priv->settings, GPM_SETTINGS_LOCK_KEYRING_SUSPEND);
+	lock_gnome_keyring = g_settings_get_boolean (control->priv->settings, CPM_SETTINGS_LOCK_KEYRING_SUSPEND);
 	if (lock_gnome_keyring) {
 		keyres = gnome_keyring_lock_all_sync ();
 		if (keyres != GNOME_KEYRING_RESULT_OK)
@@ -244,19 +244,19 @@ cpm_control_suspend (GpmControl *control, GError **error)
 	}
 #endif /* WITH_KEYRING */
 
-	do_lock = cpm_control_get_lock_policy (control, GPM_SETTINGS_LOCK_ON_SUSPEND);
+	do_lock = cpm_control_get_lock_policy (control, CPM_SETTINGS_LOCK_ON_SUSPEND);
 	if (do_lock) {
 		throttle_cookie = cpm_screensaver_add_throttle (screensaver, "suspend");
 		cpm_screensaver_lock (screensaver);
 	}
 
-	nm_sleep = g_settings_get_boolean (control->priv->settings, GPM_SETTINGS_NETWORKMANAGER_SLEEP);
+	nm_sleep = g_settings_get_boolean (control->priv->settings, CPM_SETTINGS_NETWORKMANAGER_SLEEP);
 	if (nm_sleep)
 		cpm_networkmanager_sleep ();
 
 	/* Do the suspend */
 	egg_debug ("emitting sleep");
-	g_signal_emit (control, signals [SLEEP], 0, GPM_CONTROL_ACTION_SUSPEND);
+	g_signal_emit (control, signals [SLEEP], 0, CPM_CONTROL_ACTION_SUSPEND);
 
 	if (LOGIND_RUNNING()) {
 		/* sleep via logind */
@@ -299,7 +299,7 @@ cpm_control_suspend (GpmControl *control, GError **error)
 	}
 
 	egg_debug ("emitting resume");
-	g_signal_emit (control, signals [RESUME], 0, GPM_CONTROL_ACTION_SUSPEND);
+	g_signal_emit (control, signals [RESUME], 0, CPM_CONTROL_ACTION_SUSPEND);
 
 	if (do_lock) {
 		cpm_screensaver_poke (screensaver);
@@ -307,7 +307,7 @@ cpm_control_suspend (GpmControl *control, GError **error)
 			cpm_screensaver_remove_throttle (screensaver, throttle_cookie);
 	}
 
-	nm_sleep = g_settings_get_boolean (control->priv->settings, GPM_SETTINGS_NETWORKMANAGER_SLEEP);
+	nm_sleep = g_settings_get_boolean (control->priv->settings, CPM_SETTINGS_NETWORKMANAGER_SLEEP);
 	if (nm_sleep)
 		cpm_networkmanager_wake ();
 
@@ -347,14 +347,14 @@ cpm_control_hibernate (GpmControl *control, GError **error)
 
 		if (!allowed) {
 			egg_debug ("cannot hibernate as not allowed from policy");
-			g_set_error_literal (error, GPM_CONTROL_ERROR, GPM_CONTROL_ERROR_GENERAL, "Cannot hibernate");
+			g_set_error_literal (error, CPM_CONTROL_ERROR, CPM_CONTROL_ERROR_GENERAL, "Cannot hibernate");
 			goto out;
 		}
 	}
 
 #ifdef WITH_KEYRING
 	/* we should perhaps lock keyrings when sleeping #375681 */
-	lock_gnome_keyring = g_settings_get_boolean (control->priv->settings, GPM_SETTINGS_LOCK_KEYRING_HIBERNATE);
+	lock_gnome_keyring = g_settings_get_boolean (control->priv->settings, CPM_SETTINGS_LOCK_KEYRING_HIBERNATE);
 	if (lock_gnome_keyring) {
 		keyres = gnome_keyring_lock_all_sync ();
 		if (keyres != GNOME_KEYRING_RESULT_OK) {
@@ -363,18 +363,18 @@ cpm_control_hibernate (GpmControl *control, GError **error)
 	}
 #endif /* WITH_KEYRING */
 
-	do_lock = cpm_control_get_lock_policy (control, GPM_SETTINGS_LOCK_ON_HIBERNATE);
+	do_lock = cpm_control_get_lock_policy (control, CPM_SETTINGS_LOCK_ON_HIBERNATE);
 	if (do_lock) {
 		throttle_cookie = cpm_screensaver_add_throttle (screensaver, "hibernate");
 		cpm_screensaver_lock (screensaver);
 	}
 
-	nm_sleep = g_settings_get_boolean (control->priv->settings, GPM_SETTINGS_NETWORKMANAGER_SLEEP);
+	nm_sleep = g_settings_get_boolean (control->priv->settings, CPM_SETTINGS_NETWORKMANAGER_SLEEP);
 	if (nm_sleep)
 		cpm_networkmanager_sleep ();
 
 	egg_debug ("emitting sleep");
-	g_signal_emit (control, signals [SLEEP], 0, GPM_CONTROL_ACTION_HIBERNATE);
+	g_signal_emit (control, signals [SLEEP], 0, CPM_CONTROL_ACTION_HIBERNATE);
 
 	if (LOGIND_RUNNING()) {
 		/* sleep via logind */
@@ -416,7 +416,7 @@ cpm_control_hibernate (GpmControl *control, GError **error)
 	}
 
 	egg_debug ("emitting resume");
-	g_signal_emit (control, signals [RESUME], 0, GPM_CONTROL_ACTION_HIBERNATE);
+	g_signal_emit (control, signals [RESUME], 0, CPM_CONTROL_ACTION_HIBERNATE);
 
 	if (do_lock) {
 		cpm_screensaver_poke (screensaver);
@@ -424,7 +424,7 @@ cpm_control_hibernate (GpmControl *control, GError **error)
 			cpm_screensaver_remove_throttle (screensaver, throttle_cookie);
 	}
 
-	nm_sleep = g_settings_get_boolean (control->priv->settings, GPM_SETTINGS_NETWORKMANAGER_SLEEP);
+	nm_sleep = g_settings_get_boolean (control->priv->settings, CPM_SETTINGS_NETWORKMANAGER_SLEEP);
 	if (nm_sleep)
 		cpm_networkmanager_wake ();
 
@@ -442,8 +442,8 @@ cpm_control_finalize (GObject *object)
 	GpmControl *control;
 
 	g_return_if_fail (object != NULL);
-	g_return_if_fail (GPM_IS_CONTROL (object));
-	control = GPM_CONTROL (object);
+	g_return_if_fail (CPM_IS_CONTROL (object));
+	control = CPM_CONTROL (object);
 
 	g_object_unref (control->priv->settings);
 
@@ -489,7 +489,7 @@ cpm_control_init (GpmControl *control)
 {
 	control->priv = cpm_control_get_instance_private (control);
 
-	control->priv->settings = g_settings_new (GPM_SETTINGS_SCHEMA);
+	control->priv->settings = g_settings_new (CPM_SETTINGS_SCHEMA);
 }
 
 /**
@@ -502,9 +502,9 @@ cpm_control_new (void)
 	if (cpm_control_object != NULL) {
 		g_object_ref (cpm_control_object);
 	} else {
-		cpm_control_object = g_object_new (GPM_TYPE_CONTROL, NULL);
+		cpm_control_object = g_object_new (CPM_TYPE_CONTROL, NULL);
 		g_object_add_weak_pointer (cpm_control_object, &cpm_control_object);
 	}
-	return GPM_CONTROL (cpm_control_object);
+	return CPM_CONTROL (cpm_control_object);
 }
 

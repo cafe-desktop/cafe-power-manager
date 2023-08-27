@@ -46,7 +46,7 @@
 static void   cpm_dpms_finalize  (GObject   *object);
 
 /* until we get a nice event-emitting DPMS extension, we have to poll... */
-#define GPM_DPMS_POLL_TIME	10
+#define CPM_DPMS_POLL_TIME	10
 
 struct GpmDpmsPrivate
 {
@@ -90,32 +90,32 @@ cpm_dpms_x11_get_mode (GpmDpms *dpms, GpmDpmsMode *mode, GError **error)
 
 	if (dpms->priv->dpms_capable == FALSE) {
 		/* Server or monitor can't DPMS -- assume the monitor is on. */
-		result = GPM_DPMS_MODE_ON;
+		result = CPM_DPMS_MODE_ON;
 		goto out;
 	}
 
 	DPMSInfo (dpms->priv->display, &state, &enabled);
 	if (!enabled) {
 		/* Server says DPMS is disabled -- so the monitor is on. */
-		result = GPM_DPMS_MODE_ON;
+		result = CPM_DPMS_MODE_ON;
 		goto out;
 	}
 
 	switch (state) {
 	case DPMSModeOn:
-		result = GPM_DPMS_MODE_ON;
+		result = CPM_DPMS_MODE_ON;
 		break;
 	case DPMSModeStandby:
-		result = GPM_DPMS_MODE_STANDBY;
+		result = CPM_DPMS_MODE_STANDBY;
 		break;
 	case DPMSModeSuspend:
-		result = GPM_DPMS_MODE_SUSPEND;
+		result = CPM_DPMS_MODE_SUSPEND;
 		break;
 	case DPMSModeOff:
-		result = GPM_DPMS_MODE_OFF;
+		result = CPM_DPMS_MODE_OFF;
 		break;
 	default:
-		result = GPM_DPMS_MODE_ON;
+		result = CPM_DPMS_MODE_ON;
 		break;
 	}
 out:
@@ -137,36 +137,36 @@ cpm_dpms_x11_set_mode (GpmDpms *dpms, GpmDpmsMode mode, GError **error)
 
 	if (!dpms->priv->dpms_capable) {
 		egg_debug ("not DPMS capable");
-		g_set_error (error, GPM_DPMS_ERROR, GPM_DPMS_ERROR_GENERAL,
+		g_set_error (error, CPM_DPMS_ERROR, CPM_DPMS_ERROR_GENERAL,
 			     "Display is not DPMS capable");
 		return FALSE;
 	}
 
 	if (!DPMSInfo (dpms->priv->display, &current_state, &current_enabled)) {
 		egg_debug ("couldn't get DPMS info");
-		g_set_error (error, GPM_DPMS_ERROR, GPM_DPMS_ERROR_GENERAL,
+		g_set_error (error, CPM_DPMS_ERROR, CPM_DPMS_ERROR_GENERAL,
 			     "Unable to get DPMS state");
 		return FALSE;
 	}
 
 	if (!current_enabled) {
 		egg_debug ("DPMS not enabled");
-		g_set_error (error, GPM_DPMS_ERROR, GPM_DPMS_ERROR_GENERAL,
+		g_set_error (error, CPM_DPMS_ERROR, CPM_DPMS_ERROR_GENERAL,
 			     "DPMS is not enabled");
 		return FALSE;
 	}
 
 	switch (mode) {
-	case GPM_DPMS_MODE_ON:
+	case CPM_DPMS_MODE_ON:
 		state = DPMSModeOn;
 		break;
-	case GPM_DPMS_MODE_STANDBY:
+	case CPM_DPMS_MODE_STANDBY:
 		state = DPMSModeStandby;
 		break;
-	case GPM_DPMS_MODE_SUSPEND:
+	case CPM_DPMS_MODE_SUSPEND:
 		state = DPMSModeSuspend;
 		break;
-	case GPM_DPMS_MODE_OFF:
+	case CPM_DPMS_MODE_OFF:
 		state = DPMSModeOff;
 		break;
 	default:
@@ -177,7 +177,7 @@ cpm_dpms_x11_set_mode (GpmDpms *dpms, GpmDpmsMode mode, GError **error)
 	cpm_dpms_x11_get_mode (dpms, &current_mode, NULL);
 	if (current_mode != mode) {
 		if (! DPMSForceLevel (dpms->priv->display, state)) {
-			g_set_error (error, GPM_DPMS_ERROR, GPM_DPMS_ERROR_GENERAL,
+			g_set_error (error, CPM_DPMS_ERROR, CPM_DPMS_ERROR_GENERAL,
 				     "Could not change DPMS mode");
 			return FALSE;
 		}
@@ -195,11 +195,11 @@ cpm_dpms_set_mode (GpmDpms *dpms, GpmDpmsMode mode, GError **error)
 {
 	gboolean ret;
 
-	g_return_val_if_fail (GPM_IS_DPMS (dpms), FALSE);
+	g_return_val_if_fail (CPM_IS_DPMS (dpms), FALSE);
 
-	if (mode == GPM_DPMS_MODE_UNKNOWN) {
+	if (mode == CPM_DPMS_MODE_UNKNOWN) {
 		egg_debug ("mode unknown");
-		g_set_error (error, GPM_DPMS_ERROR, GPM_DPMS_ERROR_GENERAL,
+		g_set_error (error, CPM_DPMS_ERROR, CPM_DPMS_ERROR_GENERAL,
 			     "Unknown DPMS mode");
 		return FALSE;
 	}
@@ -216,7 +216,7 @@ cpm_dpms_get_mode (GpmDpms *dpms, GpmDpmsMode *mode, GError **error)
 {
 	gboolean ret;
 	if (mode)
-		*mode = GPM_DPMS_MODE_UNKNOWN;
+		*mode = CPM_DPMS_MODE_UNKNOWN;
 	ret = cpm_dpms_x11_get_mode (dpms, mode, error);
 	return ret;
 }
@@ -296,7 +296,7 @@ cpm_dpms_init (GpmDpms *dpms)
 	/* DPMSCapable() can never change for a given display */
 	dpms->priv->display = CDK_DISPLAY_XDISPLAY (cdk_display_get_default());
 	dpms->priv->dpms_capable = DPMSCapable (dpms->priv->display);
-	dpms->priv->timer_id = g_timeout_add_seconds (GPM_DPMS_POLL_TIME, (GSourceFunc)cpm_dpms_poll_mode_cb, dpms);
+	dpms->priv->timer_id = g_timeout_add_seconds (CPM_DPMS_POLL_TIME, (GSourceFunc)cpm_dpms_poll_mode_cb, dpms);
 	g_source_set_name_by_id (dpms->priv->timer_id, "[GpmDpms] poll");
 
 	/* ensure we clear the default timeouts (Standby: 1200s, Suspend: 1800s, Off: 2400s) */
@@ -312,9 +312,9 @@ cpm_dpms_finalize (GObject *object)
 	GpmDpms *dpms;
 
 	g_return_if_fail (object != NULL);
-	g_return_if_fail (GPM_IS_DPMS (object));
+	g_return_if_fail (CPM_IS_DPMS (object));
 
-	dpms = GPM_DPMS (object);
+	dpms = CPM_DPMS (object);
 
 	g_return_if_fail (dpms->priv != NULL);
 
@@ -335,10 +335,10 @@ cpm_dpms_new (void)
 	if (cpm_dpms_object != NULL) {
 		g_object_ref (cpm_dpms_object);
 	} else {
-		cpm_dpms_object = g_object_new (GPM_TYPE_DPMS, NULL);
+		cpm_dpms_object = g_object_new (CPM_TYPE_DPMS, NULL);
 		g_object_add_weak_pointer (cpm_dpms_object, &cpm_dpms_object);
 	}
-	return GPM_DPMS (cpm_dpms_object);
+	return CPM_DPMS (cpm_dpms_object);
 }
 
 
@@ -369,7 +369,7 @@ cpm_dpms_test (gpointer data)
 
 	/************************************************************/
 	egg_test_title (test, "set on");
-	ret = cpm_dpms_set_mode (dpms, GPM_DPMS_MODE_ON, &error);
+	ret = cpm_dpms_set_mode (dpms, CPM_DPMS_MODE_ON, &error);
 	if (ret)
 		egg_test_success (test, NULL);
 	else
@@ -379,7 +379,7 @@ cpm_dpms_test (gpointer data)
 
 	/************************************************************/
 	egg_test_title (test, "set STANDBY");
-	ret = cpm_dpms_set_mode (dpms, GPM_DPMS_MODE_STANDBY, &error);
+	ret = cpm_dpms_set_mode (dpms, CPM_DPMS_MODE_STANDBY, &error);
 	if (ret)
 		egg_test_success (test, NULL);
 	else
@@ -389,7 +389,7 @@ cpm_dpms_test (gpointer data)
 
 	/************************************************************/
 	egg_test_title (test, "set SUSPEND");
-	ret = cpm_dpms_set_mode (dpms, GPM_DPMS_MODE_SUSPEND, &error);
+	ret = cpm_dpms_set_mode (dpms, CPM_DPMS_MODE_SUSPEND, &error);
 	if (ret)
 		egg_test_success (test, NULL);
 	else
@@ -399,7 +399,7 @@ cpm_dpms_test (gpointer data)
 
 	/************************************************************/
 	egg_test_title (test, "set OFF");
-	ret = cpm_dpms_set_mode (dpms, GPM_DPMS_MODE_OFF, &error);
+	ret = cpm_dpms_set_mode (dpms, CPM_DPMS_MODE_OFF, &error);
 	if (ret)
 		egg_test_success (test, NULL);
 	else
@@ -409,7 +409,7 @@ cpm_dpms_test (gpointer data)
 
 	/************************************************************/
 	egg_test_title (test, "set on");
-	ret = cpm_dpms_set_mode (dpms, GPM_DPMS_MODE_ON, &error);
+	ret = cpm_dpms_set_mode (dpms, CPM_DPMS_MODE_ON, &error);
 	if (ret)
 		egg_test_success (test, NULL);
 	else

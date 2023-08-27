@@ -52,51 +52,51 @@ static CtkWidget *graph_history = NULL;
 static CtkWidget *graph_statistics = NULL;
 
 enum {
-	GPM_INFO_COLUMN_TEXT,
-	GPM_INFO_COLUMN_VALUE,
-	GPM_INFO_COLUMN_LAST
+	CPM_INFO_COLUMN_TEXT,
+	CPM_INFO_COLUMN_VALUE,
+	CPM_INFO_COLUMN_LAST
 };
 
 enum {
-	GPM_DEVICES_COLUMN_ICON,
-	GPM_DEVICES_COLUMN_TEXT,
-	GPM_DEVICES_COLUMN_ID,
-	GPM_DEVICES_COLUMN_LAST
+	CPM_DEVICES_COLUMN_ICON,
+	CPM_DEVICES_COLUMN_TEXT,
+	CPM_DEVICES_COLUMN_ID,
+	CPM_DEVICES_COLUMN_LAST
 };
 
-#define GPM_HISTORY_RATE_TEXT			_("Rate")
-#define GPM_HISTORY_CHARGE_TEXT			_("Charge")
-#define GPM_HISTORY_TIME_FULL_TEXT		_("Time to full")
-#define GPM_HISTORY_TIME_EMPTY_TEXT		_("Time to empty")
+#define CPM_HISTORY_RATE_TEXT			_("Rate")
+#define CPM_HISTORY_CHARGE_TEXT			_("Charge")
+#define CPM_HISTORY_TIME_FULL_TEXT		_("Time to full")
+#define CPM_HISTORY_TIME_EMPTY_TEXT		_("Time to empty")
 
-#define GPM_HISTORY_RATE_VALUE			"rate"
-#define GPM_HISTORY_CHARGE_VALUE		"charge"
-#define GPM_HISTORY_TIME_FULL_VALUE		"time-full"
-#define GPM_HISTORY_TIME_EMPTY_VALUE		"time-empty"
+#define CPM_HISTORY_RATE_VALUE			"rate"
+#define CPM_HISTORY_CHARGE_VALUE		"charge"
+#define CPM_HISTORY_TIME_FULL_VALUE		"time-full"
+#define CPM_HISTORY_TIME_EMPTY_VALUE		"time-empty"
 
-#define GPM_HISTORY_MINUTE_TEXT			_("10 minutes")
-#define GPM_HISTORY_HOUR_TEXT			_("2 hours")
-#define GPM_HISTORY_HOURS_TEXT			_("6 hours")
-#define GPM_HISTORY_DAY_TEXT			_("1 day")
-#define GPM_HISTORY_WEEK_TEXT			_("1 week")
+#define CPM_HISTORY_MINUTE_TEXT			_("10 minutes")
+#define CPM_HISTORY_HOUR_TEXT			_("2 hours")
+#define CPM_HISTORY_HOURS_TEXT			_("6 hours")
+#define CPM_HISTORY_DAY_TEXT			_("1 day")
+#define CPM_HISTORY_WEEK_TEXT			_("1 week")
 
-#define GPM_HISTORY_MINUTE_VALUE		10*60
-#define GPM_HISTORY_HOUR_VALUE			2*60*60
-#define GPM_HISTORY_HOURS_VALUE			6*60*60
-#define GPM_HISTORY_DAY_VALUE			24*60*60
-#define GPM_HISTORY_WEEK_VALUE			7*24*60*60
+#define CPM_HISTORY_MINUTE_VALUE		10*60
+#define CPM_HISTORY_HOUR_VALUE			2*60*60
+#define CPM_HISTORY_HOURS_VALUE			6*60*60
+#define CPM_HISTORY_DAY_VALUE			24*60*60
+#define CPM_HISTORY_WEEK_VALUE			7*24*60*60
 
 /* TRANSLATORS: what we've observed about the device */
-#define GPM_STATS_CHARGE_DATA_TEXT		_("Charge profile")
-#define GPM_STATS_DISCHARGE_DATA_TEXT		_("Discharge profile")
+#define CPM_STATS_CHARGE_DATA_TEXT		_("Charge profile")
+#define CPM_STATS_DISCHARGE_DATA_TEXT		_("Discharge profile")
 /* TRANSLATORS: how accurately we can predict the time remaining of the battery */
-#define GPM_STATS_CHARGE_ACCURACY_TEXT		_("Charge accuracy")
-#define GPM_STATS_DISCHARGE_ACCURACY_TEXT	_("Discharge accuracy")
+#define CPM_STATS_CHARGE_ACCURACY_TEXT		_("Charge accuracy")
+#define CPM_STATS_DISCHARGE_ACCURACY_TEXT	_("Discharge accuracy")
 
-#define GPM_STATS_CHARGE_DATA_VALUE		"charge-data"
-#define GPM_STATS_CHARGE_ACCURACY_VALUE		"charge-accuracy"
-#define GPM_STATS_DISCHARGE_DATA_VALUE		"discharge-data"
-#define GPM_STATS_DISCHARGE_ACCURACY_VALUE	"discharge-accuracy"
+#define CPM_STATS_CHARGE_DATA_VALUE		"charge-data"
+#define CPM_STATS_CHARGE_ACCURACY_VALUE		"charge-accuracy"
+#define CPM_STATS_DISCHARGE_DATA_VALUE		"discharge-data"
+#define CPM_STATS_DISCHARGE_ACCURACY_VALUE	"discharge-accuracy"
 
 /**
  * cpm_stats_button_help_cb:
@@ -119,14 +119,14 @@ cpm_stats_add_info_columns (CtkTreeView *treeview)
 	/* image */
 	renderer = ctk_cell_renderer_text_new ();
 	column = ctk_tree_view_column_new_with_attributes (_("Attribute"), renderer,
-							   "markup", GPM_INFO_COLUMN_TEXT, NULL);
-	ctk_tree_view_column_set_sort_column_id (column, GPM_INFO_COLUMN_TEXT);
+							   "markup", CPM_INFO_COLUMN_TEXT, NULL);
+	ctk_tree_view_column_set_sort_column_id (column, CPM_INFO_COLUMN_TEXT);
 	ctk_tree_view_append_column (treeview, column);
 
 	/* column for text */
 	renderer = ctk_cell_renderer_text_new ();
 	column = ctk_tree_view_column_new_with_attributes (_("Value"), renderer,
-							   "markup", GPM_INFO_COLUMN_VALUE, NULL);
+							   "markup", CPM_INFO_COLUMN_VALUE, NULL);
 	ctk_tree_view_append_column (treeview, column);
 }
 
@@ -143,14 +143,14 @@ cpm_stats_add_devices_columns (CtkTreeView *treeview)
 	renderer = ctk_cell_renderer_pixbuf_new ();
 	g_object_set (renderer, "stock-size", CTK_ICON_SIZE_DIALOG, NULL);
 	column = ctk_tree_view_column_new_with_attributes (_("Image"), renderer,
-							   "icon-name", GPM_DEVICES_COLUMN_ICON, NULL);
+							   "icon-name", CPM_DEVICES_COLUMN_ICON, NULL);
 	ctk_tree_view_append_column (treeview, column);
 
 	/* column for text */
 	renderer = ctk_cell_renderer_text_new ();
 	column = ctk_tree_view_column_new_with_attributes (_("Description"), renderer,
-							   "markup", GPM_DEVICES_COLUMN_TEXT, NULL);
-	ctk_tree_view_column_set_sort_column_id (column, GPM_INFO_COLUMN_TEXT);
+							   "markup", CPM_DEVICES_COLUMN_TEXT, NULL);
+	ctk_tree_view_column_set_sort_column_id (column, CPM_INFO_COLUMN_TEXT);
 	ctk_tree_view_append_column (treeview, column);
 	ctk_tree_view_column_set_expand (column, TRUE);
 }
@@ -164,8 +164,8 @@ cpm_stats_add_info_data (const gchar *attr, const gchar *text)
 	CtkTreeIter iter;
 	ctk_list_store_append (list_store_info, &iter);
 	ctk_list_store_set (list_store_info, &iter,
-			    GPM_INFO_COLUMN_TEXT, attr,
-			    GPM_INFO_COLUMN_VALUE, text, -1);
+			    CPM_INFO_COLUMN_TEXT, attr,
+			    CPM_INFO_COLUMN_VALUE, text, -1);
 }
 
 /**
@@ -469,19 +469,19 @@ cpm_stats_set_graph_data (CtkWidget *widget, GPtrArray *data, gboolean use_smoot
 {
 	GPtrArray *smoothed;
 
-	cpm_graph_widget_data_clear (GPM_GRAPH_WIDGET (widget));
+	cpm_graph_widget_data_clear (CPM_GRAPH_WIDGET (widget));
 
 	/* add correct data */
 	if (!use_smoothed) {
 		if (use_points)
-			cpm_graph_widget_data_assign (GPM_GRAPH_WIDGET (widget), GPM_GRAPH_WIDGET_PLOT_BOTH, data);
+			cpm_graph_widget_data_assign (CPM_GRAPH_WIDGET (widget), CPM_GRAPH_WIDGET_PLOT_BOTH, data);
 		else
-			cpm_graph_widget_data_assign (GPM_GRAPH_WIDGET (widget), GPM_GRAPH_WIDGET_PLOT_LINE, data);
+			cpm_graph_widget_data_assign (CPM_GRAPH_WIDGET (widget), CPM_GRAPH_WIDGET_PLOT_LINE, data);
 	} else {
 		smoothed = cpm_stats_update_smooth_data (data);
 		if (use_points)
-			cpm_graph_widget_data_assign (GPM_GRAPH_WIDGET (widget), GPM_GRAPH_WIDGET_PLOT_POINTS, data);
-		cpm_graph_widget_data_assign (GPM_GRAPH_WIDGET (widget), GPM_GRAPH_WIDGET_PLOT_LINE, smoothed);
+			cpm_graph_widget_data_assign (CPM_GRAPH_WIDGET (widget), CPM_GRAPH_WIDGET_PLOT_POINTS, data);
+		cpm_graph_widget_data_assign (CPM_GRAPH_WIDGET (widget), CPM_GRAPH_WIDGET_PLOT_LINE, smoothed);
 		g_ptr_array_unref (smoothed);
 	}
 
@@ -507,10 +507,10 @@ cpm_stats_update_info_page_history (UpDevice *device)
 	GTimeVal timeval;
 
 	new = g_ptr_array_new_with_free_func ((GDestroyNotify) cpm_point_obj_free);
-	if (g_strcmp0 (history_type, GPM_HISTORY_CHARGE_VALUE) == 0) {
+	if (g_strcmp0 (history_type, CPM_HISTORY_CHARGE_VALUE) == 0) {
 		g_object_set (graph_history,
-			      "type-x", GPM_GRAPH_WIDGET_TYPE_TIME,
-			      "type-y", GPM_GRAPH_WIDGET_TYPE_PERCENTAGE,
+			      "type-x", CPM_GRAPH_WIDGET_TYPE_TIME,
+			      "type-y", CPM_GRAPH_WIDGET_TYPE_PERCENTAGE,
 			      "autorange-x", FALSE,
 			      "start-x", -history_time,
 			      "stop-x", 0,
@@ -518,10 +518,10 @@ cpm_stats_update_info_page_history (UpDevice *device)
 			      "start-y", 0,
 			      "stop-y", 100,
 			      NULL);
-	} else if (g_strcmp0 (history_type, GPM_HISTORY_RATE_VALUE) == 0) {
+	} else if (g_strcmp0 (history_type, CPM_HISTORY_RATE_VALUE) == 0) {
 		g_object_set (graph_history,
-			      "type-x", GPM_GRAPH_WIDGET_TYPE_TIME,
-			      "type-y", GPM_GRAPH_WIDGET_TYPE_POWER,
+			      "type-x", CPM_GRAPH_WIDGET_TYPE_TIME,
+			      "type-y", CPM_GRAPH_WIDGET_TYPE_POWER,
 			      "autorange-x", FALSE,
 			      "start-x", -history_time,
 			      "stop-x", 0,
@@ -529,8 +529,8 @@ cpm_stats_update_info_page_history (UpDevice *device)
 			      NULL);
 	} else {
 		g_object_set (graph_history,
-			      "type-x", GPM_GRAPH_WIDGET_TYPE_TIME,
-			      "type-y", GPM_GRAPH_WIDGET_TYPE_TIME,
+			      "type-x", CPM_GRAPH_WIDGET_TYPE_TIME,
+			      "type-y", CPM_GRAPH_WIDGET_TYPE_TIME,
 			      "autorange-x", FALSE,
 			      "start-x", -history_time,
 			      "stop-x", 0,
@@ -573,7 +573,7 @@ cpm_stats_update_info_page_history (UpDevice *device)
 		else if (up_history_item_get_state (item) == UP_DEVICE_STATE_PENDING_DISCHARGE)
 			point->color = egg_color_from_rgb (0, 0, 200);
 		else {
-			if (g_strcmp0 (history_type, GPM_HISTORY_RATE_VALUE) == 0)
+			if (g_strcmp0 (history_type, CPM_HISTORY_RATE_VALUE) == 0)
 				point->color = egg_color_from_rgb (255, 255, 255);
 			else
 				point->color = egg_color_from_rgb (0, 255, 0);
@@ -615,16 +615,16 @@ cpm_stats_update_info_page_stats (UpDevice *device)
 	const gchar *type = NULL;
 
 	new = g_ptr_array_new_with_free_func ((GDestroyNotify) cpm_point_obj_free);
-	if (g_strcmp0 (stats_type, GPM_STATS_CHARGE_DATA_VALUE) == 0) {
+	if (g_strcmp0 (stats_type, CPM_STATS_CHARGE_DATA_VALUE) == 0) {
 		type = "charging";
 		use_data = TRUE;
-	} else if (g_strcmp0 (stats_type, GPM_STATS_DISCHARGE_DATA_VALUE) == 0) {
+	} else if (g_strcmp0 (stats_type, CPM_STATS_DISCHARGE_DATA_VALUE) == 0) {
 		type = "discharging";
 		use_data = TRUE;
-	} else if (g_strcmp0 (stats_type, GPM_STATS_CHARGE_ACCURACY_VALUE) == 0) {
+	} else if (g_strcmp0 (stats_type, CPM_STATS_CHARGE_ACCURACY_VALUE) == 0) {
 		type = "charging";
 		use_data = FALSE;
-	} else if (g_strcmp0 (stats_type, GPM_STATS_DISCHARGE_ACCURACY_VALUE) == 0) {
+	} else if (g_strcmp0 (stats_type, CPM_STATS_DISCHARGE_ACCURACY_VALUE) == 0) {
 		type = "discharging";
 		use_data = FALSE;
 	} else {
@@ -633,15 +633,15 @@ cpm_stats_update_info_page_stats (UpDevice *device)
 
 	if (use_data) {
 		g_object_set (graph_statistics,
-			      "type-x", GPM_GRAPH_WIDGET_TYPE_PERCENTAGE,
-			      "type-y", GPM_GRAPH_WIDGET_TYPE_FACTOR,
+			      "type-x", CPM_GRAPH_WIDGET_TYPE_PERCENTAGE,
+			      "type-y", CPM_GRAPH_WIDGET_TYPE_FACTOR,
 			      "autorange-x", TRUE,
 			      "autorange-y", TRUE,
 			      NULL);
 	} else {
 		g_object_set (graph_statistics,
-			      "type-x", GPM_GRAPH_WIDGET_TYPE_PERCENTAGE,
-			      "type-y", GPM_GRAPH_WIDGET_TYPE_PERCENTAGE,
+			      "type-x", CPM_GRAPH_WIDGET_TYPE_PERCENTAGE,
+			      "type-y", CPM_GRAPH_WIDGET_TYPE_PERCENTAGE,
 			      "autorange-x", TRUE,
 			      "autorange-y", TRUE,
 			      NULL);
@@ -780,7 +780,7 @@ cpm_stats_notebook_changed_cb (CtkNotebook *notebook, gpointer page, gint page_n
 	cpm_stats_set_title (CTK_WINDOW (widget), page_num);
 
 	/* save page in gsettings */
-	g_settings_set_int (settings, GPM_SETTINGS_INFO_PAGE_NUMBER, page_num);
+	g_settings_set_int (settings, CPM_SETTINGS_INFO_PAGE_NUMBER, page_num);
 
 	if (current_device == NULL)
 		return;
@@ -822,10 +822,10 @@ cpm_stats_devices_treeview_clicked_cb (CtkTreeSelection *selection, gboolean dat
 	/* This will only work in single or browse selection mode! */
 	if (ctk_tree_selection_get_selected (selection, &model, &iter)) {
 		g_free (current_device);
-		ctk_tree_model_get (model, &iter, GPM_DEVICES_COLUMN_ID, &current_device, -1);
+		ctk_tree_model_get (model, &iter, CPM_DEVICES_COLUMN_ID, &current_device, -1);
 
 		/* save device in gsettings */
-		g_settings_set_string (settings, GPM_SETTINGS_INFO_LAST_DEVICE, current_device);
+		g_settings_set_string (settings, CPM_SETTINGS_INFO_LAST_DEVICE, current_device);
 
 		/* show transaction_id */
 		egg_debug ("selected row is: %s", current_device);
@@ -905,9 +905,9 @@ cpm_stats_add_device (UpDevice *device, GPtrArray *devices)
 
 	ctk_list_store_append (list_store_devices, &iter);
 	ctk_list_store_set (list_store_devices, &iter,
-			    GPM_DEVICES_COLUMN_ID, id,
-			    GPM_DEVICES_COLUMN_TEXT, label,
-			    GPM_DEVICES_COLUMN_ICON, icon, -1);
+			    CPM_DEVICES_COLUMN_ID, id,
+			    CPM_DEVICES_COLUMN_TEXT, label,
+			    CPM_DEVICES_COLUMN_ICON, icon, -1);
 	g_free (label);
 	g_free (vendor);
 	g_free (model);
@@ -954,7 +954,7 @@ cpm_stats_device_removed_cb (UpClient *client, const gchar *object_path, GPtrArr
 	/* search the list and remove the object path entry */
 	ret = ctk_tree_model_get_iter_first (CTK_TREE_MODEL (list_store_devices), &iter);
 	while (ret) {
-		ctk_tree_model_get (CTK_TREE_MODEL (list_store_devices), &iter, GPM_DEVICES_COLUMN_ID, &id, -1);
+		ctk_tree_model_get (CTK_TREE_MODEL (list_store_devices), &iter, CPM_DEVICES_COLUMN_ID, &id, -1);
 		if (g_strcmp0 (id, object_path) == 0) {
 			ctk_list_store_remove (list_store_devices, &iter);
 			break;
@@ -977,25 +977,25 @@ cpm_stats_history_type_combo_changed_cb (CtkWidget *widget, gpointer data)
 	active = ctk_combo_box_get_active (CTK_COMBO_BOX (widget));
 
 	if (active == 0) {
-		history_type = GPM_HISTORY_RATE_VALUE;
+		history_type = CPM_HISTORY_RATE_VALUE;
 		/* TRANSLATORS: this is the X axis on the graph */
 		axis_x = _("Time elapsed");
 		/* TRANSLATORS: this is the Y axis on the graph */
 		axis_y = _("Power");
 	} else if (active == 1) {
-		history_type = GPM_HISTORY_CHARGE_VALUE;
+		history_type = CPM_HISTORY_CHARGE_VALUE;
 		/* TRANSLATORS: this is the X axis on the graph */
 		axis_x = _("Time elapsed");
 		/* TRANSLATORS: this is the Y axis on the graph for the whole battery device */
 		axis_y = _("Cell charge");
 	} else if (active == 2) {
-		history_type = GPM_HISTORY_TIME_FULL_VALUE;
+		history_type = CPM_HISTORY_TIME_FULL_VALUE;
 		/* TRANSLATORS: this is the X axis on the graph */
 		axis_x = _("Time elapsed");
 		/* TRANSLATORS: this is the Y axis on the graph */
 		axis_y = _("Predicted time");
 	} else if (active == 3) {
-		history_type = GPM_HISTORY_TIME_EMPTY_VALUE;
+		history_type = CPM_HISTORY_TIME_EMPTY_VALUE;
 		/* TRANSLATORS: this is the X axis on the graph */
 		axis_x = _("Time elapsed");
 		/* TRANSLATORS: this is the Y axis on the graph */
@@ -1013,7 +1013,7 @@ cpm_stats_history_type_combo_changed_cb (CtkWidget *widget, gpointer data)
 	cpm_stats_button_update_ui ();
 
 	/* save to gsettings */
-	g_settings_set_string (settings, GPM_SETTINGS_INFO_HISTORY_TYPE, history_type);
+	g_settings_set_string (settings, CPM_SETTINGS_INFO_HISTORY_TYPE, history_type);
 }
 
 /**
@@ -1029,25 +1029,25 @@ cpm_stats_type_combo_changed_cb (CtkWidget *widget, gpointer data)
 	active = ctk_combo_box_get_active (CTK_COMBO_BOX (widget));
 
 	if (active == 0) {
-		stats_type = GPM_STATS_CHARGE_DATA_VALUE;
+		stats_type = CPM_STATS_CHARGE_DATA_VALUE;
 		/* TRANSLATORS: this is the X axis on the graph for the whole battery device */
 		axis_x = _("Cell charge");
 		/* TRANSLATORS: this is the Y axis on the graph */
 		axis_y = _("Correction factor");
 	} else if (active == 1) {
-		stats_type = GPM_STATS_CHARGE_ACCURACY_VALUE;
+		stats_type = CPM_STATS_CHARGE_ACCURACY_VALUE;
 		/* TRANSLATORS: this is the X axis on the graph for the whole battery device */
 		axis_x = _("Cell charge");
 		/* TRANSLATORS: this is the Y axis on the graph */
 		axis_y = _("Prediction accuracy");
 	} else if (active == 2) {
-		stats_type = GPM_STATS_DISCHARGE_DATA_VALUE;
+		stats_type = CPM_STATS_DISCHARGE_DATA_VALUE;
 		/* TRANSLATORS: this is the X axis on the graph for the whole battery device */
 		axis_x = _("Cell charge");
 		/* TRANSLATORS: this is the Y axis on the graph */
 		axis_y = _("Correction factor");
 	} else if (active == 3) {
-		stats_type = GPM_STATS_DISCHARGE_ACCURACY_VALUE;
+		stats_type = CPM_STATS_DISCHARGE_ACCURACY_VALUE;
 		/* TRANSLATORS: this is the X axis on the graph for the whole battery device */
 		axis_x = _("Cell charge");
 		/* TRANSLATORS: this is the Y axis on the graph */
@@ -1065,7 +1065,7 @@ cpm_stats_type_combo_changed_cb (CtkWidget *widget, gpointer data)
 	cpm_stats_button_update_ui ();
 
 	/* save to gsettings */
-	g_settings_set_string (settings, GPM_SETTINGS_INFO_STATS_TYPE, stats_type);
+	g_settings_set_string (settings, CPM_SETTINGS_INFO_STATS_TYPE, stats_type);
 }
 
 /**
@@ -1079,20 +1079,20 @@ cpm_stats_range_combo_changed (CtkWidget *widget, gpointer data)
 	active = ctk_combo_box_get_active (CTK_COMBO_BOX (widget));
 
 	if (active == 0)
-		history_time = GPM_HISTORY_MINUTE_VALUE;
+		history_time = CPM_HISTORY_MINUTE_VALUE;
 	else if (active == 1)
-		history_time = GPM_HISTORY_HOUR_VALUE;
+		history_time = CPM_HISTORY_HOUR_VALUE;
 	else if (active == 2)
-		history_time = GPM_HISTORY_HOURS_VALUE;
+		history_time = CPM_HISTORY_HOURS_VALUE;
 	else if (active == 3)
-		history_time = GPM_HISTORY_DAY_VALUE;
+		history_time = CPM_HISTORY_DAY_VALUE;
 	else if (active == 4)
-		history_time = GPM_HISTORY_WEEK_VALUE;
+		history_time = CPM_HISTORY_WEEK_VALUE;
 	else
 		g_assert (FALSE);
 
 	/* save to gsettings */
-	g_settings_set_int (settings, GPM_SETTINGS_INFO_HISTORY_TIME, history_time);
+	g_settings_set_int (settings, CPM_SETTINGS_INFO_HISTORY_TIME, history_time);
 
 	cpm_stats_button_update_ui ();
 }
@@ -1106,7 +1106,7 @@ cpm_stats_smooth_checkbox_history_cb (CtkWidget *widget, gpointer data)
 {
 	gboolean checked;
 	checked = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (widget));
-	g_settings_set_boolean (settings, GPM_SETTINGS_INFO_HISTORY_GRAPH_SMOOTH, checked);
+	g_settings_set_boolean (settings, CPM_SETTINGS_INFO_HISTORY_GRAPH_SMOOTH, checked);
 	cpm_stats_button_update_ui ();
 }
 
@@ -1119,7 +1119,7 @@ cpm_stats_smooth_checkbox_stats_cb (CtkWidget *widget, gpointer data)
 {
 	gboolean checked;
 	checked = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (widget));
-	g_settings_set_boolean (settings, GPM_SETTINGS_INFO_STATS_GRAPH_SMOOTH, checked);
+	g_settings_set_boolean (settings, CPM_SETTINGS_INFO_STATS_GRAPH_SMOOTH, checked);
 	cpm_stats_button_update_ui ();
 }
 
@@ -1132,7 +1132,7 @@ cpm_stats_points_checkbox_history_cb (CtkWidget *widget, gpointer data)
 {
 	gboolean checked;
 	checked = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (widget));
-	g_settings_set_boolean (settings, GPM_SETTINGS_INFO_HISTORY_GRAPH_POINTS, checked);
+	g_settings_set_boolean (settings, CPM_SETTINGS_INFO_HISTORY_GRAPH_POINTS, checked);
 	cpm_stats_button_update_ui ();
 }
 
@@ -1145,7 +1145,7 @@ cpm_stats_points_checkbox_stats_cb (CtkWidget *widget, gpointer data)
 {
 	gboolean checked;
 	checked = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (widget));
-	g_settings_set_boolean (settings, GPM_SETTINGS_INFO_STATS_GRAPH_POINTS, checked);
+	g_settings_set_boolean (settings, CPM_SETTINGS_INFO_STATS_GRAPH_POINTS, checked);
 	cpm_stats_button_update_ui ();
 }
 
@@ -1171,7 +1171,7 @@ cpm_stats_highlight_device (const gchar *object_path)
 	ret = ctk_tree_model_get_iter_first (CTK_TREE_MODEL (list_store_devices), &iter);
 	for (i=0; ret; i++) {
 		ctk_tree_model_get (CTK_TREE_MODEL (list_store_devices), &iter,
-				    GPM_DEVICES_COLUMN_ID, &id,
+				    CPM_DEVICES_COLUMN_ID, &id,
 				    -1);
 		if (g_strcmp0 (id, object_path) == 0) {
 			path_str = g_strdup_printf ("%i", i);
@@ -1245,10 +1245,10 @@ main (int argc, char *argv[])
 
 	/* add application specific icons to search path */
 	ctk_icon_theme_append_search_path (ctk_icon_theme_get_default (),
-                                           GPM_ICONS_DATA);
+                                           CPM_ICONS_DATA);
 
 	/* get data from the settings */
-	settings = g_settings_new (GPM_SETTINGS_SCHEMA);
+	settings = g_settings_new (CPM_SETTINGS_SCHEMA);
 
 	/* get UI */
 	builder = ctk_builder_new ();
@@ -1274,7 +1274,7 @@ main (int argc, char *argv[])
 
 	window = CTK_WIDGET (ctk_builder_get_object (builder, "dialog_stats"));
 	ctk_window_set_default_size (CTK_WINDOW(window), 800, 500);
-	ctk_window_set_default_icon_name (GPM_ICON_APP_ICON);
+	ctk_window_set_default_icon_name (CPM_ICON_APP_ICON);
 
 	/* Get the main window quit */
 	widget = CTK_WIDGET (ctk_builder_get_object (builder, "button_close"));
@@ -1287,25 +1287,25 @@ main (int argc, char *argv[])
 			  G_CALLBACK (cpm_stats_button_help_cb), NULL);
 
 	widget = CTK_WIDGET (ctk_builder_get_object (builder, "checkbutton_smooth_history"));
-	checked = g_settings_get_boolean (settings, GPM_SETTINGS_INFO_HISTORY_GRAPH_SMOOTH);
+	checked = g_settings_get_boolean (settings, CPM_SETTINGS_INFO_HISTORY_GRAPH_SMOOTH);
 	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (widget), checked);
 	g_signal_connect (widget, "clicked",
 			  G_CALLBACK (cpm_stats_smooth_checkbox_history_cb), NULL);
 
 	widget = CTK_WIDGET (ctk_builder_get_object (builder, "checkbutton_smooth_stats"));
-	checked = g_settings_get_boolean (settings, GPM_SETTINGS_INFO_STATS_GRAPH_SMOOTH);
+	checked = g_settings_get_boolean (settings, CPM_SETTINGS_INFO_STATS_GRAPH_SMOOTH);
 	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (widget), checked);
 	g_signal_connect (widget, "clicked",
 			  G_CALLBACK (cpm_stats_smooth_checkbox_stats_cb), NULL);
 
 	widget = CTK_WIDGET (ctk_builder_get_object (builder, "checkbutton_points_history"));
-	checked = g_settings_get_boolean (settings, GPM_SETTINGS_INFO_HISTORY_GRAPH_POINTS);
+	checked = g_settings_get_boolean (settings, CPM_SETTINGS_INFO_HISTORY_GRAPH_POINTS);
 	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (widget), checked);
 	g_signal_connect (widget, "clicked",
 			  G_CALLBACK (cpm_stats_points_checkbox_history_cb), NULL);
 
 	widget = CTK_WIDGET (ctk_builder_get_object (builder, "checkbutton_points_stats"));
-	checked = g_settings_get_boolean (settings, GPM_SETTINGS_INFO_STATS_GRAPH_POINTS);
+	checked = g_settings_get_boolean (settings, CPM_SETTINGS_INFO_STATS_GRAPH_POINTS);
 	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (widget), checked);
 	g_signal_connect (widget, "clicked",
 			  G_CALLBACK (cpm_stats_points_checkbox_stats_cb), NULL);
@@ -1317,14 +1317,14 @@ main (int argc, char *argv[])
 	                  G_CALLBACK (cpm_dialog_page_scroll_event_cb),
 	                  window);
 
-	page = g_settings_get_int (settings, GPM_SETTINGS_INFO_PAGE_NUMBER);
+	page = g_settings_get_int (settings, CPM_SETTINGS_INFO_PAGE_NUMBER);
 	ctk_notebook_set_current_page (CTK_NOTEBOOK (widget), page);
 	g_signal_connect (widget, "switch-page",
 			  G_CALLBACK (cpm_stats_notebook_changed_cb), NULL);
 
 	/* create list stores */
-	list_store_info = ctk_list_store_new (GPM_INFO_COLUMN_LAST, G_TYPE_STRING, G_TYPE_STRING);
-	list_store_devices = ctk_list_store_new (GPM_DEVICES_COLUMN_LAST, G_TYPE_STRING,
+	list_store_info = ctk_list_store_new (CPM_INFO_COLUMN_LAST, G_TYPE_STRING, G_TYPE_STRING);
+	list_store_devices = ctk_list_store_new (CPM_DEVICES_COLUMN_LAST, G_TYPE_STRING,
 						 G_TYPE_STRING, G_TYPE_STRING);
 
 	/* create transaction_id tree view */
@@ -1348,23 +1348,23 @@ main (int argc, char *argv[])
 	cpm_stats_add_devices_columns (CTK_TREE_VIEW (widget));
 	ctk_tree_view_columns_autosize (CTK_TREE_VIEW (widget)); /* show */
 
-	history_type = g_settings_get_string (settings, GPM_SETTINGS_INFO_HISTORY_TYPE);
-	history_time = g_settings_get_int (settings, GPM_SETTINGS_INFO_HISTORY_TIME);
+	history_type = g_settings_get_string (settings, CPM_SETTINGS_INFO_HISTORY_TYPE);
+	history_time = g_settings_get_int (settings, CPM_SETTINGS_INFO_HISTORY_TIME);
 	if (history_type == NULL)
-		history_type = GPM_HISTORY_CHARGE_VALUE;
+		history_type = CPM_HISTORY_CHARGE_VALUE;
 	if (history_time == 0)
-		history_time = GPM_HISTORY_HOUR_VALUE;
+		history_time = CPM_HISTORY_HOUR_VALUE;
 
-	stats_type = g_settings_get_string (settings, GPM_SETTINGS_INFO_STATS_TYPE);
+	stats_type = g_settings_get_string (settings, CPM_SETTINGS_INFO_STATS_TYPE);
 	if (stats_type == NULL)
-		stats_type = GPM_STATS_CHARGE_DATA_VALUE;
+		stats_type = CPM_STATS_CHARGE_DATA_VALUE;
 
 	widget = CTK_WIDGET (ctk_builder_get_object (builder, "combobox_history_type"));
-	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_RATE_TEXT);
-	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_CHARGE_TEXT);
-	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_TIME_FULL_TEXT);
-	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_TIME_EMPTY_TEXT);
-	if (g_strcmp0 (history_type, GPM_HISTORY_RATE_VALUE) == 0)
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), CPM_HISTORY_RATE_TEXT);
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), CPM_HISTORY_CHARGE_TEXT);
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), CPM_HISTORY_TIME_FULL_TEXT);
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), CPM_HISTORY_TIME_EMPTY_TEXT);
+	if (g_strcmp0 (history_type, CPM_HISTORY_RATE_VALUE) == 0)
 		ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 0);
 	else
 		ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 1);
@@ -1372,17 +1372,17 @@ main (int argc, char *argv[])
 			  G_CALLBACK (cpm_stats_history_type_combo_changed_cb), NULL);
 
 	widget = CTK_WIDGET (ctk_builder_get_object (builder, "combobox_stats_type"));
-	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_STATS_CHARGE_DATA_TEXT);
-	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_STATS_CHARGE_ACCURACY_TEXT);
-	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_STATS_DISCHARGE_DATA_TEXT);
-	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_STATS_DISCHARGE_ACCURACY_TEXT);
-	if (g_strcmp0 (stats_type, GPM_STATS_CHARGE_DATA_VALUE) == 0)
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), CPM_STATS_CHARGE_DATA_TEXT);
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), CPM_STATS_CHARGE_ACCURACY_TEXT);
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), CPM_STATS_DISCHARGE_DATA_TEXT);
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), CPM_STATS_DISCHARGE_ACCURACY_TEXT);
+	if (g_strcmp0 (stats_type, CPM_STATS_CHARGE_DATA_VALUE) == 0)
 		ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 0);
-	else if (g_strcmp0 (stats_type, GPM_STATS_CHARGE_DATA_VALUE) == 0)
+	else if (g_strcmp0 (stats_type, CPM_STATS_CHARGE_DATA_VALUE) == 0)
 		ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 1);
-	else if (g_strcmp0 (stats_type, GPM_STATS_CHARGE_DATA_VALUE) == 0)
+	else if (g_strcmp0 (stats_type, CPM_STATS_CHARGE_DATA_VALUE) == 0)
 		ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 2);
-	else if (g_strcmp0 (stats_type, GPM_STATS_CHARGE_DATA_VALUE) == 0)
+	else if (g_strcmp0 (stats_type, CPM_STATS_CHARGE_DATA_VALUE) == 0)
 		ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 0);
 	else
 		ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 3);
@@ -1390,15 +1390,15 @@ main (int argc, char *argv[])
 			  G_CALLBACK (cpm_stats_type_combo_changed_cb), NULL);
 
 	widget = CTK_WIDGET (ctk_builder_get_object (builder, "combobox_history_time"));
-	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_MINUTE_TEXT);
-	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_HOUR_TEXT);
-	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_HOURS_TEXT);
-	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_DAY_TEXT);
-	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_WEEK_TEXT);
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), CPM_HISTORY_MINUTE_TEXT);
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), CPM_HISTORY_HOUR_TEXT);
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), CPM_HISTORY_HOURS_TEXT);
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), CPM_HISTORY_DAY_TEXT);
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), CPM_HISTORY_WEEK_TEXT);
 	ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 1);
-	if (history_time == GPM_HISTORY_MINUTE_VALUE)
+	if (history_time == CPM_HISTORY_MINUTE_VALUE)
 		ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 0);
-	else if (history_time == GPM_HISTORY_HOUR_VALUE)
+	else if (history_time == CPM_HISTORY_HOUR_VALUE)
 		ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 1);
 	else
 		ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 2);
@@ -1432,7 +1432,7 @@ main (int argc, char *argv[])
 	}
 
 	if (last_device == NULL)
-		last_device = g_settings_get_string (settings, GPM_SETTINGS_INFO_LAST_DEVICE);
+		last_device = g_settings_get_string (settings, CPM_SETTINGS_INFO_LAST_DEVICE);
 
 	/* set the correct focus on the last device */
 	if (last_device != NULL)

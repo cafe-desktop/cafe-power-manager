@@ -19,19 +19,19 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef __GPMPHONE_H
-#define __GPMPHONE_H
+#ifndef __CPMPHONE_H
+#define __CPMPHONE_H
 
 #include <glib-object.h>
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_PHONE		(cpm_phone_get_type ())
-#define GPM_PHONE(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_PHONE, GpmPhone))
-#define GPM_PHONE_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_PHONE, GpmPhoneClass))
-#define GPM_IS_PHONE(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_PHONE))
-#define GPM_IS_PHONE_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), GPM_TYPE_PHONE))
-#define GPM_PHONE_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), GPM_TYPE_PHONE, GpmPhoneClass))
+#define CPM_TYPE_PHONE		(cpm_phone_get_type ())
+#define CPM_PHONE(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_PHONE, GpmPhone))
+#define CPM_PHONE_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_PHONE, GpmPhoneClass))
+#define CPM_IS_PHONE(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_PHONE))
+#define CPM_IS_PHONE_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_PHONE))
+#define CPM_PHONE_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_PHONE, GpmPhoneClass))
 
 #define CAFE_PHONE_MANAGER_DBUS_SERVICE	"org.gnome.phone"
 #define CAFE_PHONE_MANAGER_DBUS_PATH		"/org/gnome/phone/Manager"
@@ -73,4 +73,4 @@ void		 cpm_phone_test				(gpointer	 data);
 
 G_END_DECLS
 
-#endif	/* __GPMPHONE_H */
+#endif	/* __CPMPHONE_H */

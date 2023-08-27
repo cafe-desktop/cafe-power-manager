@@ -20,19 +20,19 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef __GPM_BACKLIGHT_H
-#define __GPM_BACKLIGHT_H
+#ifndef __CPM_BACKLIGHT_H
+#define __CPM_BACKLIGHT_H
 
 #include <glib-object.h>
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_BACKLIGHT		(cpm_backlight_get_type ())
-#define GPM_BACKLIGHT(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_BACKLIGHT, GpmBacklight))
-#define GPM_BACKLIGHT_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_BACKLIGHT, GpmBacklightClass))
-#define GPM_IS_BACKLIGHT(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_BACKLIGHT))
-#define GPM_IS_BACKLIGHT_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), GPM_TYPE_BACKLIGHT))
-#define GPM_BACKLIGHT_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), GPM_TYPE_BACKLIGHT, GpmBacklightClass))
+#define CPM_TYPE_BACKLIGHT		(cpm_backlight_get_type ())
+#define CPM_BACKLIGHT(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_BACKLIGHT, GpmBacklight))
+#define CPM_BACKLIGHT_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_BACKLIGHT, GpmBacklightClass))
+#define CPM_IS_BACKLIGHT(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_BACKLIGHT))
+#define CPM_IS_BACKLIGHT_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_BACKLIGHT))
+#define CPM_BACKLIGHT_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_BACKLIGHT, GpmBacklightClass))
 
 typedef struct GpmBacklightPrivate GpmBacklightPrivate;
 
@@ -51,9 +51,9 @@ typedef struct
 
 typedef enum
 {
-	 GPM_BACKLIGHT_ERROR_GENERAL,
-	 GPM_BACKLIGHT_ERROR_DATA_NOT_AVAILABLE,
-	 GPM_BACKLIGHT_ERROR_HARDWARE_NOT_PRESENT
+	 CPM_BACKLIGHT_ERROR_GENERAL,
+	 CPM_BACKLIGHT_ERROR_DATA_NOT_AVAILABLE,
+	 CPM_BACKLIGHT_ERROR_HARDWARE_NOT_PRESENT
 } GpmBacklightError;
 
 GType		 cpm_backlight_get_type			(void);
@@ -69,5 +69,5 @@ gboolean	 cpm_backlight_set_brightness		(GpmBacklight	*backlight,
 
 G_END_DECLS
 
-#endif /* __GPM_BACKLIGHT_H */
+#endif /* __CPM_BACKLIGHT_H */
 

@@ -19,8 +19,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef __GPM_DEVICEKIT_H
-#define __GPM_DEVICEKIT_H
+#ifndef __CPM_DEVICEKIT_H
+#define __CPM_DEVICEKIT_H
 
 #include <glib-object.h>
 #include <libupower-glib/upower.h>
@@ -38,4 +38,4 @@ gchar		*cpm_upower_get_device_description	(UpDevice *device);
 
 G_END_DECLS
 
-#endif	/* __GPM_DEVICEKIT_H */
+#endif	/* __CPM_DEVICEKIT_H */

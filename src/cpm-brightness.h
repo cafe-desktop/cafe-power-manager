@@ -19,21 +19,21 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef __GPM_BRIGHTNESS_H
-#define __GPM_BRIGHTNESS_H
+#ifndef __CPM_BRIGHTNESS_H
+#define __CPM_BRIGHTNESS_H
 
 #include <glib-object.h>
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_BRIGHTNESS		(cpm_brightness_get_type ())
-#define GPM_BRIGHTNESS(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_BRIGHTNESS, GpmBrightness))
-#define GPM_BRIGHTNESS_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_BRIGHTNESS, GpmBrightnessClass))
-#define GPM_IS_BRIGHTNESS(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_BRIGHTNESS))
-#define GPM_IS_BRIGHTNESS_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), GPM_TYPE_BRIGHTNESS))
-#define GPM_BRIGHTNESS_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), GPM_TYPE_BRIGHTNESS, GpmBrightnessClass))
+#define CPM_TYPE_BRIGHTNESS		(cpm_brightness_get_type ())
+#define CPM_BRIGHTNESS(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_BRIGHTNESS, GpmBrightness))
+#define CPM_BRIGHTNESS_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_BRIGHTNESS, GpmBrightnessClass))
+#define CPM_IS_BRIGHTNESS(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_BRIGHTNESS))
+#define CPM_IS_BRIGHTNESS_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_BRIGHTNESS))
+#define CPM_BRIGHTNESS_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_BRIGHTNESS, GpmBrightnessClass))
 
-#define GPM_BRIGHTNESS_DIM_INTERVAL	5 /* ms */
+#define CPM_BRIGHTNESS_DIM_INTERVAL	5 /* ms */
 
 typedef struct GpmBrightnessPrivate GpmBrightnessPrivate;
 
@@ -66,4 +66,4 @@ gboolean	 cpm_brightness_set		(GpmBrightness		*brightness,
 
 G_END_DECLS
 
-#endif /* __GPM_BRIGHTNESS_H */
+#endif /* __CPM_BRIGHTNESS_H */

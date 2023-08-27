@@ -34,7 +34,7 @@
 #include "egg-color.h"
 #include "egg-precision.h"
 
-#define GPM_GRAPH_WIDGET_FONT "Sans 8"
+#define CPM_GRAPH_WIDGET_FONT "Sans 8"
 
 struct GpmGraphWidgetPrivate
 {
@@ -97,7 +97,7 @@ cpm_graph_widget_key_data_clear (GpmGraphWidget *graph)
 	GpmGraphWidgetKeyData *keyitem;
 	guint i;
 
-	g_return_val_if_fail (GPM_IS_GRAPH_WIDGET (graph), FALSE);
+	g_return_val_if_fail (CPM_IS_GRAPH_WIDGET (graph), FALSE);
 
 	/* remove items in list and free */
 	for (i=0; i<g_slist_length (graph->priv->key_data); i++) {
@@ -119,7 +119,7 @@ cpm_graph_widget_key_data_add (GpmGraphWidget *graph, guint32 color, const gchar
 {
 	GpmGraphWidgetKeyData *keyitem;
 
-	g_return_val_if_fail (GPM_IS_GRAPH_WIDGET (graph), FALSE);
+	g_return_val_if_fail (CPM_IS_GRAPH_WIDGET (graph), FALSE);
 
 	egg_debug ("add to list %s", desc);
 	keyitem = g_new0 (GpmGraphWidgetKeyData, 1);
@@ -137,7 +137,7 @@ cpm_graph_widget_key_data_add (GpmGraphWidget *graph, guint32 color, const gchar
 static void
 up_graph_get_property (GObject *object, guint prop_id, GValue *value, GParamSpec *pspec)
 {
-	GpmGraphWidget *graph = GPM_GRAPH_WIDGET (object);
+	GpmGraphWidget *graph = CPM_GRAPH_WIDGET (object);
 	switch (prop_id) {
 	case PROP_USE_LEGEND:
 		g_value_set_boolean (value, graph->priv->use_legend);
@@ -181,7 +181,7 @@ up_graph_get_property (GObject *object, guint prop_id, GValue *value, GParamSpec
 static void
 up_graph_set_property (GObject *object, guint prop_id, const GValue *value, GParamSpec *pspec)
 {
-	GpmGraphWidget *graph = GPM_GRAPH_WIDGET (object);
+	GpmGraphWidget *graph = CPM_GRAPH_WIDGET (object);
 
 	switch (prop_id) {
 	case PROP_USE_LEGEND:
@@ -253,16 +253,16 @@ cpm_graph_widget_class_init (GpmGraphWidgetClass *class)
 	g_object_class_install_property (object_class,
 					 PROP_TYPE_X,
 					 g_param_spec_uint ("type-x", NULL, NULL,
-							    GPM_GRAPH_WIDGET_TYPE_INVALID,
-							    GPM_GRAPH_WIDGET_TYPE_UNKNOWN,
-							    GPM_GRAPH_WIDGET_TYPE_TIME,
+							    CPM_GRAPH_WIDGET_TYPE_INVALID,
+							    CPM_GRAPH_WIDGET_TYPE_UNKNOWN,
+							    CPM_GRAPH_WIDGET_TYPE_TIME,
 							    G_PARAM_READWRITE));
 	g_object_class_install_property (object_class,
 					 PROP_TYPE_Y,
 					 g_param_spec_uint ("type-y", NULL, NULL,
-							    GPM_GRAPH_WIDGET_TYPE_INVALID,
-							    GPM_GRAPH_WIDGET_TYPE_UNKNOWN,
-							    GPM_GRAPH_WIDGET_TYPE_PERCENTAGE,
+							    CPM_GRAPH_WIDGET_TYPE_INVALID,
+							    CPM_GRAPH_WIDGET_TYPE_UNKNOWN,
+							    CPM_GRAPH_WIDGET_TYPE_PERCENTAGE,
 							    G_PARAM_READWRITE));
 	g_object_class_install_property (object_class,
 					 PROP_AUTORANGE_X,
@@ -317,8 +317,8 @@ cpm_graph_widget_init (GpmGraphWidget *graph)
 	graph->priv->data_list = g_ptr_array_new_with_free_func ((GDestroyNotify) g_ptr_array_unref);
 	graph->priv->plot_list = g_ptr_array_new ();
 	graph->priv->key_data = NULL;
-	graph->priv->type_x = GPM_GRAPH_WIDGET_TYPE_TIME;
-	graph->priv->type_y = GPM_GRAPH_WIDGET_TYPE_PERCENTAGE;
+	graph->priv->type_x = CPM_GRAPH_WIDGET_TYPE_TIME;
+	graph->priv->type_y = CPM_GRAPH_WIDGET_TYPE_PERCENTAGE;
 
 	/* do pango stuff */
 	fontmap = pango_cairo_font_map_get_default ();
@@ -326,7 +326,7 @@ cpm_graph_widget_init (GpmGraphWidget *graph)
 	pango_context_set_base_gravity (context, PANGO_GRAVITY_AUTO);
 
 	graph->priv->layout = pango_layout_new (context);
-	desc = pango_font_description_from_string (GPM_GRAPH_WIDGET_FONT);
+	desc = pango_font_description_from_string (CPM_GRAPH_WIDGET_FONT);
 	pango_layout_set_font_description (graph->priv->layout, desc);
 	pango_font_description_free (desc);
 }
@@ -337,7 +337,7 @@ cpm_graph_widget_init (GpmGraphWidget *graph)
 gboolean
 cpm_graph_widget_data_clear (GpmGraphWidget *graph)
 {
-	g_return_val_if_fail (GPM_IS_GRAPH_WIDGET (graph), FALSE);
+	g_return_val_if_fail (CPM_IS_GRAPH_WIDGET (graph), FALSE);
 
 	g_ptr_array_set_size (graph->priv->data_list, 0);
 	g_ptr_array_set_size (graph->priv->plot_list, 0);
@@ -384,7 +384,7 @@ cpm_graph_widget_data_assign (GpmGraphWidget *graph, GpmGraphWidgetPlot plot, GP
 	guint i;
 
 	g_return_val_if_fail (data != NULL, FALSE);
-	g_return_val_if_fail (GPM_IS_GRAPH_WIDGET (graph), FALSE);
+	g_return_val_if_fail (CPM_IS_GRAPH_WIDGET (graph), FALSE);
 
 	/* make a deep copy */
 	copy = g_ptr_array_new_with_free_func ((GDestroyNotify) cpm_point_obj_free);
@@ -405,13 +405,13 @@ cpm_graph_widget_data_assign (GpmGraphWidget *graph, GpmGraphWidgetPlot plot, GP
 
 /**
  * cpm_get_axis_label:
- * @axis: The axis type, e.g. GPM_GRAPH_WIDGET_TYPE_TIME
+ * @axis: The axis type, e.g. CPM_GRAPH_WIDGET_TYPE_TIME
  * @value: The data value, e.g. 120
  *
  * Unit is:
- * GPM_GRAPH_WIDGET_TYPE_TIME:		seconds
- * GPM_GRAPH_WIDGET_TYPE_POWER: 	Wh (not Ah)
- * GPM_GRAPH_WIDGET_TYPE_PERCENTAGE:	%
+ * CPM_GRAPH_WIDGET_TYPE_TIME:		seconds
+ * CPM_GRAPH_WIDGET_TYPE_POWER: 	Wh (not Ah)
+ * CPM_GRAPH_WIDGET_TYPE_PERCENTAGE:	%
  *
  * Return value: a string value depending on the axis type and the value.
  **/
@@ -419,7 +419,7 @@ static gchar *
 cpm_get_axis_label (GpmGraphWidgetType axis, gfloat value)
 {
 	gchar *text = NULL;
-	if (axis == GPM_GRAPH_WIDGET_TYPE_TIME) {
+	if (axis == CPM_GRAPH_WIDGET_TYPE_TIME) {
 		gint time_s = abs((gint) value);
 		gint minutes = time_s / 60;
 		gint seconds = time_s - (minutes * 60);
@@ -455,15 +455,15 @@ cpm_get_axis_label (GpmGraphWidgetType axis, gfloat value)
 			/*Translators: This is %2i seconds*/
 			text = g_strdup_printf (_("%2is"), seconds);
 		}
-	} else if (axis == GPM_GRAPH_WIDGET_TYPE_PERCENTAGE) {
+	} else if (axis == CPM_GRAPH_WIDGET_TYPE_PERCENTAGE) {
 		/*Translators: This is %i Percentage*/
 		text = g_strdup_printf (_("%i%%"), (gint) value);
-	} else if (axis == GPM_GRAPH_WIDGET_TYPE_POWER) {
+	} else if (axis == CPM_GRAPH_WIDGET_TYPE_POWER) {
 		/*Translators: This is %.1f Watts*/
 		text = g_strdup_printf (_("%.1fW"), value);
-	} else if (axis == GPM_GRAPH_WIDGET_TYPE_FACTOR) {
+	} else if (axis == CPM_GRAPH_WIDGET_TYPE_FACTOR) {
 		text = g_strdup_printf ("%.1f", value);
-	} else if (axis == GPM_GRAPH_WIDGET_TYPE_VOLTAGE) {
+	} else if (axis == CPM_GRAPH_WIDGET_TYPE_VOLTAGE) {
 		/*Translators: This is %.1f Volts*/
 		text = g_strdup_printf (_("%.1fV"), value);
 	} else {
@@ -673,15 +673,15 @@ cpm_graph_widget_autorange_x (GpmGraphWidget *graph)
 		smallest_x--;
 	}
 
-	if (graph->priv->type_x == GPM_GRAPH_WIDGET_TYPE_PERCENTAGE) {
+	if (graph->priv->type_x == CPM_GRAPH_WIDGET_TYPE_PERCENTAGE) {
 		rounding_x = 10;
-	} else if (graph->priv->type_x == GPM_GRAPH_WIDGET_TYPE_FACTOR) {
+	} else if (graph->priv->type_x == CPM_GRAPH_WIDGET_TYPE_FACTOR) {
 		rounding_x = 1;
-	} else if (graph->priv->type_x == GPM_GRAPH_WIDGET_TYPE_POWER) {
+	} else if (graph->priv->type_x == CPM_GRAPH_WIDGET_TYPE_POWER) {
 		rounding_x = 10;
-	} else if (graph->priv->type_x == GPM_GRAPH_WIDGET_TYPE_VOLTAGE) {
+	} else if (graph->priv->type_x == CPM_GRAPH_WIDGET_TYPE_VOLTAGE) {
 		rounding_x = 1000;
-	} else if (graph->priv->type_x == GPM_GRAPH_WIDGET_TYPE_TIME) {
+	} else if (graph->priv->type_x == CPM_GRAPH_WIDGET_TYPE_TIME) {
 		if (biggest_x-smallest_x < 150)
 			rounding_x = 150;
 		else if (biggest_x-smallest_x < 5*60)
@@ -697,12 +697,12 @@ cpm_graph_widget_autorange_x (GpmGraphWidget *graph)
 		   graph->priv->start_x, graph->priv->stop_x);
 
 	/* if percentage, and close to the end points, then extend */
-	if (graph->priv->type_x == GPM_GRAPH_WIDGET_TYPE_PERCENTAGE) {
+	if (graph->priv->type_x == CPM_GRAPH_WIDGET_TYPE_PERCENTAGE) {
 		if (graph->priv->stop_x >= 90)
 			graph->priv->stop_x = 100;
 		if (graph->priv->start_x > 0 && graph->priv->start_x <= 10)
 			graph->priv->start_x = 0;
-	} else if (graph->priv->type_x == GPM_GRAPH_WIDGET_TYPE_TIME) {
+	} else if (graph->priv->type_x == CPM_GRAPH_WIDGET_TYPE_TIME) {
 		if (graph->priv->start_x > 0 && graph->priv->start_x <= 60*10)
 			graph->priv->start_x = 0;
 	}
@@ -767,15 +767,15 @@ cpm_graph_widget_autorange_y (GpmGraphWidget *graph)
 		smallest_y--;
 	}
 
-	if (graph->priv->type_y == GPM_GRAPH_WIDGET_TYPE_PERCENTAGE) {
+	if (graph->priv->type_y == CPM_GRAPH_WIDGET_TYPE_PERCENTAGE) {
 		rounding_y = 10;
-	} else if (graph->priv->type_y == GPM_GRAPH_WIDGET_TYPE_FACTOR) {
+	} else if (graph->priv->type_y == CPM_GRAPH_WIDGET_TYPE_FACTOR) {
 		rounding_y = 1;
-	} else if (graph->priv->type_y == GPM_GRAPH_WIDGET_TYPE_POWER) {
+	} else if (graph->priv->type_y == CPM_GRAPH_WIDGET_TYPE_POWER) {
 		rounding_y = 10;
-	} else if (graph->priv->type_y == GPM_GRAPH_WIDGET_TYPE_VOLTAGE) {
+	} else if (graph->priv->type_y == CPM_GRAPH_WIDGET_TYPE_VOLTAGE) {
 		rounding_y = 1000;
-	} else if (graph->priv->type_y == GPM_GRAPH_WIDGET_TYPE_TIME) {
+	} else if (graph->priv->type_y == CPM_GRAPH_WIDGET_TYPE_TIME) {
 		if (biggest_y-smallest_y < 150)
 			rounding_y = 150;
 		else if (biggest_y < 5*60)
@@ -788,7 +788,7 @@ cpm_graph_widget_autorange_y (GpmGraphWidget *graph)
 	graph->priv->stop_y = egg_precision_round_up (biggest_y, rounding_y);
 
 	/* a factor graph always is centered around zero */
-	if (graph->priv->type_y == GPM_GRAPH_WIDGET_TYPE_FACTOR) {
+	if (graph->priv->type_y == CPM_GRAPH_WIDGET_TYPE_FACTOR) {
 		if (abs (graph->priv->stop_y) > abs (graph->priv->start_y))
 			graph->priv->start_y = -graph->priv->stop_y;
 		else
@@ -798,12 +798,12 @@ cpm_graph_widget_autorange_y (GpmGraphWidget *graph)
 	egg_debug ("Processed(1) range is %i<y<%i",
 		   graph->priv->start_y, graph->priv->stop_y);
 
-	if (graph->priv->type_y == GPM_GRAPH_WIDGET_TYPE_PERCENTAGE) {
+	if (graph->priv->type_y == CPM_GRAPH_WIDGET_TYPE_PERCENTAGE) {
 		if (graph->priv->stop_y >= 90)
 			graph->priv->stop_y = 100;
 		if (graph->priv->start_y > 0 && graph->priv->start_y <= 10)
 			graph->priv->start_y = 0;
-	} else if (graph->priv->type_y == GPM_GRAPH_WIDGET_TYPE_TIME) {
+	} else if (graph->priv->type_y == CPM_GRAPH_WIDGET_TYPE_TIME) {
 		if (graph->priv->start_y <= 60*10)
 			graph->priv->start_y = 0;
 	}
@@ -922,7 +922,7 @@ cpm_graph_widget_draw_line (GpmGraphWidget *graph, cairo_t *cr)
 		oldx = 0;
 		oldy = 0;
 		cpm_graph_widget_get_pos_on_graph (graph, point->x, point->y, &oldx, &oldy);
-		if (plot == GPM_GRAPH_WIDGET_PLOT_POINTS || plot == GPM_GRAPH_WIDGET_PLOT_BOTH)
+		if (plot == CPM_GRAPH_WIDGET_PLOT_POINTS || plot == CPM_GRAPH_WIDGET_PLOT_BOTH)
 			cpm_graph_widget_draw_dot (cr, oldx, oldy, point->color);
 
 		for (i=1; i < data->len; i++) {
@@ -938,7 +938,7 @@ cpm_graph_widget_draw_line (GpmGraphWidget *graph, cairo_t *cr)
 			}
 
 			/* draw line */
-			if (plot == GPM_GRAPH_WIDGET_PLOT_LINE || plot == GPM_GRAPH_WIDGET_PLOT_BOTH) {
+			if (plot == CPM_GRAPH_WIDGET_PLOT_LINE || plot == CPM_GRAPH_WIDGET_PLOT_BOTH) {
 				cairo_move_to (cr, oldx, oldy);
 				cairo_line_to (cr, newx, newy);
 				cairo_set_line_width (cr, 1.5);
@@ -947,7 +947,7 @@ cpm_graph_widget_draw_line (GpmGraphWidget *graph, cairo_t *cr)
 			}
 
 			/* draw data dot */
-			if (plot == GPM_GRAPH_WIDGET_PLOT_POINTS || plot == GPM_GRAPH_WIDGET_PLOT_BOTH)
+			if (plot == CPM_GRAPH_WIDGET_PLOT_POINTS || plot == CPM_GRAPH_WIDGET_PLOT_BOTH)
 				cpm_graph_widget_draw_dot (cr, newx, newy, point->color);
 
 			/* save old */
@@ -1013,7 +1013,7 @@ cpm_graph_widget_draw_legend (GpmGraphWidget *graph, gint x, gint y, gint width,
 		cairo_set_source_rgb (cr, 0, 0, 0);
 		pango_layout_set_text (graph->priv->layout, keydataitem->desc, -1);
 		pango_cairo_show_layout (cr, graph->priv->layout);
-		y_count = y_count + GPM_GRAPH_WIDGET_LEGEND_SPACING;
+		y_count = y_count + CPM_GRAPH_WIDGET_LEGEND_SPACING;
 	}
 }
 
@@ -1035,7 +1035,7 @@ cpm_graph_widget_legend_calculate_size (GpmGraphWidget *graph, cairo_t *cr,
 	PangoRectangle ink_rect, logical_rect;
 	GpmGraphWidgetKeyData *keydataitem;
 
-	g_return_val_if_fail (GPM_IS_GRAPH_WIDGET (graph), FALSE);
+	g_return_val_if_fail (CPM_IS_GRAPH_WIDGET (graph), FALSE);
 
 	/* set defaults */
 	*width = 0;
@@ -1044,7 +1044,7 @@ cpm_graph_widget_legend_calculate_size (GpmGraphWidget *graph, cairo_t *cr,
 	/* add the line colors to the legend */
 	for (i=0; i<g_slist_length (graph->priv->key_data); i++) {
 		keydataitem = (GpmGraphWidgetKeyData *) g_slist_nth_data (graph->priv->key_data, i);
-		*height = *height + GPM_GRAPH_WIDGET_LEGEND_SPACING;
+		*height = *height + CPM_GRAPH_WIDGET_LEGEND_SPACING;
 		pango_layout_set_text (graph->priv->layout, keydataitem->desc, -1);
 		pango_layout_get_pixel_extents (graph->priv->layout, &ink_rect, &logical_rect);
 		if ((gint) *width < ink_rect.width)
@@ -1082,7 +1082,7 @@ cpm_graph_widget_draw (CtkWidget *widget, cairo_t *cr)
 
 	GpmGraphWidget *graph = (GpmGraphWidget*) widget;
 	g_return_val_if_fail (graph != NULL, FALSE);
-	g_return_val_if_fail (GPM_IS_GRAPH_WIDGET (graph), FALSE);
+	g_return_val_if_fail (CPM_IS_GRAPH_WIDGET (graph), FALSE);
 
 	cpm_graph_widget_legend_calculate_size (graph, cr, &legend_width, &legend_height);
 	cairo_save (cr);
@@ -1139,6 +1139,6 @@ cpm_graph_widget_draw (CtkWidget *widget, cairo_t *cr)
 CtkWidget *
 cpm_graph_widget_new (void)
 {
-	return g_object_new (GPM_TYPE_GRAPH_WIDGET, NULL);
+	return g_object_new (CPM_TYPE_GRAPH_WIDGET, NULL);
 }
 

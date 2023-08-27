@@ -103,13 +103,13 @@ cpm_backlight_get_brightness (GpmBacklight *backlight, guint *brightness, GError
 	guint level;
 	gboolean ret;
 	g_return_val_if_fail (backlight != NULL, FALSE);
-	g_return_val_if_fail (GPM_IS_BACKLIGHT (backlight), FALSE);
+	g_return_val_if_fail (CPM_IS_BACKLIGHT (backlight), FALSE);
 	g_return_val_if_fail (brightness != NULL, FALSE);
 
 	/* check if we have the hw */
 	if (backlight->priv->can_dim == FALSE) {
 		g_set_error_literal (error, cpm_backlight_error_quark (),
-				      GPM_BACKLIGHT_ERROR_HARDWARE_NOT_PRESENT,
+				      CPM_BACKLIGHT_ERROR_HARDWARE_NOT_PRESENT,
 				      "Dim capable hardware not present");
 		return FALSE;
 	}
@@ -120,7 +120,7 @@ cpm_backlight_get_brightness (GpmBacklight *backlight, guint *brightness, GError
 		*brightness = level;
 	} else {
 		g_set_error_literal (error, cpm_backlight_error_quark (),
-				      GPM_BACKLIGHT_ERROR_DATA_NOT_AVAILABLE,
+				      CPM_BACKLIGHT_ERROR_DATA_NOT_AVAILABLE,
 				      "Data not available");
 	}
 	return ret;
@@ -136,12 +136,12 @@ cpm_backlight_set_brightness (GpmBacklight *backlight, guint percentage, GError 
 	gboolean hw_changed;
 
 	g_return_val_if_fail (backlight != NULL, FALSE);
-	g_return_val_if_fail (GPM_IS_BACKLIGHT (backlight), FALSE);
+	g_return_val_if_fail (CPM_IS_BACKLIGHT (backlight), FALSE);
 
 	/* check if we have the hw */
 	if (backlight->priv->can_dim == FALSE) {
 		g_set_error_literal (error, cpm_backlight_error_quark (),
-				      GPM_BACKLIGHT_ERROR_HARDWARE_NOT_PRESENT,
+				      CPM_BACKLIGHT_ERROR_HARDWARE_NOT_PRESENT,
 				      "Dim capable hardware not present");
 		return FALSE;
 	}
@@ -153,7 +153,7 @@ cpm_backlight_set_brightness (GpmBacklight *backlight, guint percentage, GError 
 	ret = cpm_brightness_set (backlight->priv->brightness, percentage, &hw_changed);
 	if (!ret) {
 		g_set_error_literal (error, cpm_backlight_error_quark (),
-				      GPM_BACKLIGHT_ERROR_GENERAL,
+				      CPM_BACKLIGHT_ERROR_GENERAL,
 				      "Cannot set policy brightness");
 	}
 	/* we emit a signal for the brightness applet */
@@ -289,7 +289,7 @@ cpm_backlight_brightness_evaluate_and_set (GpmBacklight *backlight, gboolean int
 		return FALSE;
 	}
 
-	do_laptop_lcd = g_settings_get_boolean (backlight->priv->settings, GPM_SETTINGS_BACKLIGHT_ENABLE);
+	do_laptop_lcd = g_settings_get_boolean (backlight->priv->settings, CPM_SETTINGS_BACKLIGHT_ENABLE);
 	if (do_laptop_lcd == FALSE) {
 		egg_warning ("policy is no dimming");
 		return FALSE;
@@ -307,9 +307,9 @@ cpm_backlight_brightness_evaluate_and_set (GpmBacklight *backlight, gboolean int
 	/* reduce if on battery power if we should */
 	if (use_initial) {
 		egg_debug ("Setting initial brightness level");
-		battery_reduce = g_settings_get_boolean (backlight->priv->settings, GPM_SETTINGS_BACKLIGHT_BATTERY_REDUCE);
+		battery_reduce = g_settings_get_boolean (backlight->priv->settings, CPM_SETTINGS_BACKLIGHT_BATTERY_REDUCE);
 		if (on_battery && battery_reduce) {
-			value = g_settings_get_int (backlight->priv->settings, GPM_SETTINGS_BRIGHTNESS_DIM_BATT);
+			value = g_settings_get_int (backlight->priv->settings, CPM_SETTINGS_BRIGHTNESS_DIM_BATT);
 			if (value > 100) {
 				egg_warning ("cannot use battery brightness value %i, correcting to 50", value);
 				value = 50;
@@ -324,11 +324,11 @@ cpm_backlight_brightness_evaluate_and_set (GpmBacklight *backlight, gboolean int
 
 	/* reduce if system is momentarily idle */
 	if (!on_battery)
-		enable_action = g_settings_get_boolean (backlight->priv->settings, GPM_SETTINGS_IDLE_DIM_AC);
+		enable_action = g_settings_get_boolean (backlight->priv->settings, CPM_SETTINGS_IDLE_DIM_AC);
 	else
-		enable_action = g_settings_get_boolean (backlight->priv->settings, GPM_SETTINGS_IDLE_DIM_BATT);
+		enable_action = g_settings_get_boolean (backlight->priv->settings, CPM_SETTINGS_IDLE_DIM_BATT);
 	if (enable_action && backlight->priv->system_is_idle) {
-		value = g_settings_get_int (backlight->priv->settings, GPM_SETTINGS_IDLE_BRIGHTNESS);
+		value = g_settings_get_int (backlight->priv->settings, CPM_SETTINGS_IDLE_BRIGHTNESS);
 		if (value > 100) {
 			egg_warning ("cannot use idle brightness value %i, correcting to 50", value);
 			value = 50;
@@ -382,21 +382,21 @@ cpm_settings_key_changed_cb (GSettings *settings, const gchar *key, GpmBacklight
 		      "on-battery", &on_battery,
 		      NULL);
 
-	if (g_strcmp0 (key, GPM_SETTINGS_BRIGHTNESS_AC) == 0) {
+	if (g_strcmp0 (key, CPM_SETTINGS_BRIGHTNESS_AC) == 0) {
 		backlight->priv->master_percentage = g_settings_get_double (settings, key);
 		cpm_backlight_brightness_evaluate_and_set (backlight, FALSE, TRUE);
 
-	} else if (on_battery && g_strcmp0 (key, GPM_SETTINGS_BRIGHTNESS_DIM_BATT) == 0) {
+	} else if (on_battery && g_strcmp0 (key, CPM_SETTINGS_BRIGHTNESS_DIM_BATT) == 0) {
 		cpm_backlight_brightness_evaluate_and_set (backlight, FALSE, TRUE);
 
-	} else if (g_strcmp0 (key, GPM_SETTINGS_IDLE_DIM_AC) == 0 ||
-	           g_strcmp0 (key, GPM_SETTINGS_BACKLIGHT_ENABLE) == 0 ||
-	           g_strcmp0 (key, GPM_SETTINGS_SLEEP_DISPLAY_BATT) == 0 ||
-	           g_strcmp0 (key, GPM_SETTINGS_BACKLIGHT_BATTERY_REDUCE) == 0 ||
-	           g_strcmp0 (key, GPM_SETTINGS_IDLE_BRIGHTNESS) == 0) {
+	} else if (g_strcmp0 (key, CPM_SETTINGS_IDLE_DIM_AC) == 0 ||
+	           g_strcmp0 (key, CPM_SETTINGS_BACKLIGHT_ENABLE) == 0 ||
+	           g_strcmp0 (key, CPM_SETTINGS_SLEEP_DISPLAY_BATT) == 0 ||
+	           g_strcmp0 (key, CPM_SETTINGS_BACKLIGHT_BATTERY_REDUCE) == 0 ||
+	           g_strcmp0 (key, CPM_SETTINGS_IDLE_BRIGHTNESS) == 0) {
 		cpm_backlight_brightness_evaluate_and_set (backlight, FALSE, TRUE);
 
-	} else if (g_strcmp0 (key, GPM_SETTINGS_IDLE_DIM_TIME) == 0) {
+	} else if (g_strcmp0 (key, CPM_SETTINGS_IDLE_DIM_TIME) == 0) {
 		backlight->priv->idle_dim_timeout = g_settings_get_int (settings, key);
 		cpm_idle_set_timeout_dim (backlight->priv->idle, backlight->priv->idle_dim_timeout);
 	} else {
@@ -434,7 +434,7 @@ cpm_backlight_button_pressed_cb (GpmButton *button, const gchar *type, GpmBackli
 	gboolean on_battery;
 	egg_debug ("Button press event type=%s", type);
 
-	if (g_strcmp0 (type, GPM_BUTTON_BRIGHT_UP) == 0) {
+	if (g_strcmp0 (type, CPM_BUTTON_BRIGHT_UP) == 0) {
 		/* go up one step */
 		ret = cpm_brightness_up (backlight->priv->brightness, &hw_changed);
 
@@ -451,7 +451,7 @@ cpm_backlight_button_pressed_cb (GpmButton *button, const gchar *type, GpmBackli
 			g_object_get (backlight->priv->client, "on-battery", &on_battery, NULL);
 			if (!on_battery) {
 				egg_debug ("saving brightness for ac supply: %i", percentage);
-				g_settings_set_double (backlight->priv->settings, GPM_SETTINGS_BRIGHTNESS_AC,
+				g_settings_set_double (backlight->priv->settings, CPM_SETTINGS_BRIGHTNESS_AC,
 						       percentage*1.0);
 			}
 		}
@@ -460,7 +460,7 @@ cpm_backlight_button_pressed_cb (GpmButton *button, const gchar *type, GpmBackli
 			egg_debug ("emitting brightness-changed : %i", percentage);
 			g_signal_emit (backlight, signals [BRIGHTNESS_CHANGED], 0, percentage);
 		}
-	} else if (g_strcmp0 (type, GPM_BUTTON_BRIGHT_DOWN) == 0) {
+	} else if (g_strcmp0 (type, CPM_BUTTON_BRIGHT_DOWN) == 0) {
 		/* go up down step */
 		ret = cpm_brightness_down (backlight->priv->brightness, &hw_changed);
 
@@ -477,7 +477,7 @@ cpm_backlight_button_pressed_cb (GpmButton *button, const gchar *type, GpmBackli
 			g_object_get (backlight->priv->client, "on-battery", &on_battery, NULL);
 			if (!on_battery) {
 				egg_debug ("saving brightness for ac supply: %i", percentage);
-				g_settings_set_double (backlight->priv->settings, GPM_SETTINGS_BRIGHTNESS_AC,
+				g_settings_set_double (backlight->priv->settings, CPM_SETTINGS_BRIGHTNESS_AC,
 						       percentage*1.0);
 			}
 		}
@@ -486,12 +486,12 @@ cpm_backlight_button_pressed_cb (GpmButton *button, const gchar *type, GpmBackli
 			egg_debug ("emitting brightness-changed : %i", percentage);
 			g_signal_emit (backlight, signals [BRIGHTNESS_CHANGED], 0, percentage);
 		}
-	} else if (g_strcmp0 (type, GPM_BUTTON_LID_OPEN) == 0) {
+	} else if (g_strcmp0 (type, CPM_BUTTON_LID_OPEN) == 0) {
 		/* make sure we undim when we lift the lid */
 		cpm_backlight_brightness_evaluate_and_set (backlight, FALSE, TRUE);
 
 		/* ensure backlight is on */
-		ret = cpm_dpms_set_mode (backlight->priv->dpms, GPM_DPMS_MODE_ON, &error);
+		ret = cpm_dpms_set_mode (backlight->priv->dpms, CPM_DPMS_MODE_ON, &error);
 		if (!ret) {
 			egg_warning ("failed to turn on DPMS: %s", error->message);
 			g_error_free (error);
@@ -535,7 +535,7 @@ cpm_backlight_notify_system_idle_changed (GpmBacklight *backlight, gboolean is_i
 			/* reset back to our default dimming */
 			backlight->priv->idle_dim_timeout =
 				g_settings_get_int (backlight->priv->settings,
-					   GPM_SETTINGS_IDLE_DIM_TIME);
+					   CPM_SETTINGS_IDLE_DIM_TIME);
 			egg_debug ("resetting idle dim time to %is", backlight->priv->idle_dim_timeout);
 			cpm_idle_set_timeout_dim (backlight->priv->idle, backlight->priv->idle_dim_timeout);
 		}
@@ -551,12 +551,12 @@ cpm_backlight_notify_system_idle_changed (GpmBacklight *backlight, gboolean is_i
 /**
  * idle_changed_cb:
  * @idle: The idle class instance
- * @mode: The idle mode, e.g. GPM_IDLE_MODE_BLANK
+ * @mode: The idle mode, e.g. CPM_IDLE_MODE_BLANK
  * @manager: This class instance
  *
  * This callback is called when cafe-screensaver detects that the idle state
- * has changed. GPM_IDLE_MODE_BLANK is when the session has become inactive,
- * and GPM_IDLE_MODE_SLEEP is where the session has become inactive, AND the
+ * has changed. CPM_IDLE_MODE_BLANK is when the session has become inactive,
+ * and CPM_IDLE_MODE_SLEEP is where the session has become inactive, AND the
  * session timeout has elapsed for the idle action.
  **/
 static void
@@ -577,32 +577,32 @@ idle_changed_cb (GpmIdle *idle, GpmIdleMode mode, GpmBacklight *backlight)
 		return;
 	}
 
-	if (mode == GPM_IDLE_MODE_NORMAL) {
+	if (mode == CPM_IDLE_MODE_NORMAL) {
 		/* sync lcd brightness */
 		cpm_backlight_notify_system_idle_changed (backlight, FALSE);
 		cpm_backlight_brightness_evaluate_and_set (backlight, FALSE, TRUE);
 
 		/* ensure backlight is on */
-		ret = cpm_dpms_set_mode (backlight->priv->dpms, GPM_DPMS_MODE_ON, &error);
+		ret = cpm_dpms_set_mode (backlight->priv->dpms, CPM_DPMS_MODE_ON, &error);
 		if (!ret) {
 			egg_warning ("failed to turn on DPMS: %s", error->message);
 			g_error_free (error);
 		}
 
-	} else if (mode == GPM_IDLE_MODE_DIM) {
+	} else if (mode == CPM_IDLE_MODE_DIM) {
 
 		/* sync lcd brightness */
 		cpm_backlight_notify_system_idle_changed (backlight, TRUE);
 		cpm_backlight_brightness_evaluate_and_set (backlight, FALSE, TRUE);
 
 		/* ensure backlight is on */
-		ret = cpm_dpms_set_mode (backlight->priv->dpms, GPM_DPMS_MODE_ON, &error);
+		ret = cpm_dpms_set_mode (backlight->priv->dpms, CPM_DPMS_MODE_ON, &error);
 		if (!ret) {
 			egg_warning ("failed to turn on DPMS: %s", error->message);
 			g_error_free (error);
 		}
 
-	} else if (mode == GPM_IDLE_MODE_BLANK) {
+	} else if (mode == CPM_IDLE_MODE_BLANK) {
 
 		/* sync lcd brightness */
 		cpm_backlight_notify_system_idle_changed (backlight, TRUE);
@@ -613,14 +613,14 @@ idle_changed_cb (GpmIdle *idle, GpmIdleMode mode, GpmBacklight *backlight)
 			      "on-battery", &on_battery,
 			      NULL);
 		if (!on_battery)
-			dpms_mode = g_settings_get_enum (backlight->priv->settings, GPM_SETTINGS_DPMS_METHOD_AC);
+			dpms_mode = g_settings_get_enum (backlight->priv->settings, CPM_SETTINGS_DPMS_METHOD_AC);
 		else
-			dpms_mode = g_settings_get_enum (backlight->priv->settings, GPM_SETTINGS_DPMS_METHOD_BATT);
+			dpms_mode = g_settings_get_enum (backlight->priv->settings, CPM_SETTINGS_DPMS_METHOD_BATT);
 
 		/* check if method is valid */
-		if (dpms_mode == GPM_DPMS_MODE_UNKNOWN || dpms_mode == GPM_DPMS_MODE_ON) {
+		if (dpms_mode == CPM_DPMS_MODE_UNKNOWN || dpms_mode == CPM_DPMS_MODE_ON) {
 			egg_warning ("BACKLIGHT method %i unknown. Using OFF.", dpms_mode);
-			dpms_mode = GPM_DPMS_MODE_OFF;
+			dpms_mode = CPM_DPMS_MODE_OFF;
 		}
 
 		/* turn backlight off */
@@ -666,7 +666,7 @@ control_resume_cb (GpmControl *control, GpmControlAction action, GpmBacklight *b
 	GError *error = NULL;
 
 	/* ensure backlight is on */
-	ret = cpm_dpms_set_mode (backlight->priv->dpms, GPM_DPMS_MODE_ON, &error);
+	ret = cpm_dpms_set_mode (backlight->priv->dpms, CPM_DPMS_MODE_ON, &error);
 	if (!ret) {
 		egg_warning ("failed to turn on DPMS: %s", error->message);
 		g_error_free (error);
@@ -681,8 +681,8 @@ cpm_backlight_finalize (GObject *object)
 {
 	GpmBacklight *backlight;
 	g_return_if_fail (object != NULL);
-	g_return_if_fail (GPM_IS_BACKLIGHT (object));
-	backlight = GPM_BACKLIGHT (object);
+	g_return_if_fail (CPM_IS_BACKLIGHT (object));
+	backlight = CPM_BACKLIGHT (object);
 
 	g_timer_destroy (backlight->priv->idle_timer);
 	ctk_widget_destroy (backlight->priv->popup);
@@ -749,12 +749,12 @@ cpm_backlight_init (GpmBacklight *backlight)
 	backlight->priv->can_dim = cpm_brightness_has_hw (backlight->priv->brightness);
 
 	/* watch for dim value changes */
-	backlight->priv->settings = g_settings_new (GPM_SETTINGS_SCHEMA);
+	backlight->priv->settings = g_settings_new (CPM_SETTINGS_SCHEMA);
 	g_signal_connect (backlight->priv->settings, "changed", G_CALLBACK (cpm_settings_key_changed_cb), backlight);
 
 	/* set the main brightness, this is designed to be updated if the user changes the
 	 * brightness so we can undim to the 'correct' value */
-	backlight->priv->master_percentage = g_settings_get_double (backlight->priv->settings, GPM_SETTINGS_BRIGHTNESS_AC);
+	backlight->priv->master_percentage = g_settings_get_double (backlight->priv->settings, CPM_SETTINGS_BRIGHTNESS_AC);
 
 	/* watch for brightness up and down buttons and also check lid state */
 	backlight->priv->button = cpm_button_new ();
@@ -768,7 +768,7 @@ cpm_backlight_init (GpmBacklight *backlight)
 
 	/* assumption */
 	backlight->priv->system_is_idle = FALSE;
-	backlight->priv->idle_dim_timeout = g_settings_get_int (backlight->priv->settings, GPM_SETTINGS_IDLE_DIM_TIME);
+	backlight->priv->idle_dim_timeout = g_settings_get_int (backlight->priv->settings, CPM_SETTINGS_IDLE_DIM_TIME);
 	cpm_idle_set_timeout_dim (backlight->priv->idle, backlight->priv->idle_dim_timeout);
 
 	/* use a visual widget */
@@ -800,7 +800,7 @@ cpm_backlight_init (GpmBacklight *backlight)
 GpmBacklight *
 cpm_backlight_new (void)
 {
-	GpmBacklight *backlight = g_object_new (GPM_TYPE_BACKLIGHT, NULL);
+	GpmBacklight *backlight = g_object_new (CPM_TYPE_BACKLIGHT, NULL);
 	return backlight;
 }
 

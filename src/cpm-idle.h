@@ -20,25 +20,25 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef __GPM_IDLE_H
-#define __GPM_IDLE_H
+#ifndef __CPM_IDLE_H
+#define __CPM_IDLE_H
 
 #include <glib-object.h>
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_IDLE		(cpm_idle_get_type ())
-#define GPM_IDLE(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_IDLE, GpmIdle))
-#define GPM_IDLE_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_IDLE, GpmIdleClass))
-#define GPM_IS_IDLE(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_IDLE))
-#define GPM_IS_IDLE_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), GPM_TYPE_IDLE))
-#define GPM_IDLE_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), GPM_TYPE_IDLE, GpmIdleClass))
+#define CPM_TYPE_IDLE		(cpm_idle_get_type ())
+#define CPM_IDLE(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_IDLE, GpmIdle))
+#define CPM_IDLE_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_IDLE, GpmIdleClass))
+#define CPM_IS_IDLE(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_IDLE))
+#define CPM_IS_IDLE_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_IDLE))
+#define CPM_IDLE_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_IDLE, GpmIdleClass))
 
 typedef enum {
-	GPM_IDLE_MODE_NORMAL,
-	GPM_IDLE_MODE_DIM,
-	GPM_IDLE_MODE_BLANK,
-	GPM_IDLE_MODE_SLEEP
+	CPM_IDLE_MODE_NORMAL,
+	CPM_IDLE_MODE_DIM,
+	CPM_IDLE_MODE_BLANK,
+	CPM_IDLE_MODE_SLEEP
 } GpmIdleMode;
 
 typedef struct GpmIdlePrivate GpmIdlePrivate;
@@ -71,4 +71,4 @@ void		 cpm_idle_test				(gpointer	 data);
 
 G_END_DECLS
 
-#endif /* __GPM_IDLE_H */
+#endif /* __CPM_IDLE_H */

@@ -19,8 +19,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef __GPMCOMMON_H
-#define __GPMCOMMON_H
+#ifndef __CPMCOMMON_H
+#define __CPMCOMMON_H
 
 #include <glib.h>
 
@@ -33,4 +33,4 @@ void		 cpm_common_test				(gpointer	 data);
 
 G_END_DECLS
 
-#endif	/* __GPMCOMMON_H */
+#endif	/* __CPMCOMMON_H */

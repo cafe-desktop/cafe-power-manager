@@ -33,27 +33,27 @@
 
 static void     cpm_session_finalize   (GObject		*object);
 
-#define GPM_SESSION_MANAGER_SERVICE			"org.gnome.SessionManager"
-#define GPM_SESSION_MANAGER_PATH			"/org/gnome/SessionManager"
-#define GPM_SESSION_MANAGER_INTERFACE			"org.gnome.SessionManager"
-#define GPM_SESSION_MANAGER_PRESENCE_PATH		"/org/gnome/SessionManager/Presence"
-#define GPM_SESSION_MANAGER_PRESENCE_INTERFACE		"org.gnome.SessionManager.Presence"
-#define GPM_SESSION_MANAGER_CLIENT_PRIVATE_INTERFACE	"org.gnome.SessionManager.ClientPrivate"
-#define GPM_DBUS_PROPERTIES_INTERFACE			"org.freedesktop.DBus.Properties"
+#define CPM_SESSION_MANAGER_SERVICE			"org.gnome.SessionManager"
+#define CPM_SESSION_MANAGER_PATH			"/org/gnome/SessionManager"
+#define CPM_SESSION_MANAGER_INTERFACE			"org.gnome.SessionManager"
+#define CPM_SESSION_MANAGER_PRESENCE_PATH		"/org/gnome/SessionManager/Presence"
+#define CPM_SESSION_MANAGER_PRESENCE_INTERFACE		"org.gnome.SessionManager.Presence"
+#define CPM_SESSION_MANAGER_CLIENT_PRIVATE_INTERFACE	"org.gnome.SessionManager.ClientPrivate"
+#define CPM_DBUS_PROPERTIES_INTERFACE			"org.freedesktop.DBus.Properties"
 
 typedef enum {
-	GPM_SESSION_STATUS_ENUM_AVAILABLE = 0,
-	GPM_SESSION_STATUS_ENUM_INVISIBLE,
-	GPM_SESSION_STATUS_ENUM_BUSY,
-	GPM_SESSION_STATUS_ENUM_IDLE,
-	GPM_SESSION_STATUS_ENUM_UNKNOWN
+	CPM_SESSION_STATUS_ENUM_AVAILABLE = 0,
+	CPM_SESSION_STATUS_ENUM_INVISIBLE,
+	CPM_SESSION_STATUS_ENUM_BUSY,
+	CPM_SESSION_STATUS_ENUM_IDLE,
+	CPM_SESSION_STATUS_ENUM_UNKNOWN
 } GpmSessionStatusEnum;
 
 typedef enum {
-	GPM_SESSION_INHIBIT_MASK_LOGOUT = 1,
-	GPM_SESSION_INHIBIT_MASK_SWITCH = 2,
-	GPM_SESSION_INHIBIT_MASK_SUSPEND = 4,
-	GPM_SESSION_INHIBIT_MASK_IDLE = 8
+	CPM_SESSION_INHIBIT_MASK_LOGOUT = 1,
+	CPM_SESSION_INHIBIT_MASK_SWITCH = 2,
+	CPM_SESSION_INHIBIT_MASK_SUSPEND = 4,
+	CPM_SESSION_INHIBIT_MASK_IDLE = 8
 } GpmSessionInhibitMask;
 
 struct GpmSessionPrivate
@@ -88,7 +88,7 @@ G_DEFINE_TYPE_WITH_PRIVATE (GpmSession, cpm_session, G_TYPE_OBJECT)
 gboolean
 cpm_session_logout (GpmSession *session)
 {
-	g_return_val_if_fail (GPM_IS_SESSION (session), FALSE);
+	g_return_val_if_fail (CPM_IS_SESSION (session), FALSE);
 
 	/* no cafe-session */
 	if (session->priv->proxy == NULL) {
@@ -107,7 +107,7 @@ cpm_session_logout (GpmSession *session)
 gboolean
 cpm_session_get_idle (GpmSession *session)
 {
-	g_return_val_if_fail (GPM_IS_SESSION (session), FALSE);
+	g_return_val_if_fail (CPM_IS_SESSION (session), FALSE);
 	return session->priv->is_idle_old;
 }
 
@@ -117,7 +117,7 @@ cpm_session_get_idle (GpmSession *session)
 gboolean
 cpm_session_get_idle_inhibited (GpmSession *session)
 {
-	g_return_val_if_fail (GPM_IS_SESSION (session), FALSE);
+	g_return_val_if_fail (CPM_IS_SESSION (session), FALSE);
 	return session->priv->is_idle_inhibited_old;
 }
 
@@ -127,7 +127,7 @@ cpm_session_get_idle_inhibited (GpmSession *session)
 gboolean
 cpm_session_get_suspend_inhibited (GpmSession *session)
 {
-	g_return_val_if_fail (GPM_IS_SESSION (session), FALSE);
+	g_return_val_if_fail (CPM_IS_SESSION (session), FALSE);
 	return session->priv->is_suspend_inhibited_old;
 }
 
@@ -138,7 +138,7 @@ static void
 cpm_session_presence_status_changed_cb (DBusGProxy *proxy, guint status, GpmSession *session)
 {
 	gboolean is_idle;
-	is_idle = (status == GPM_SESSION_STATUS_ENUM_IDLE);
+	is_idle = (status == CPM_SESSION_STATUS_ENUM_IDLE);
 	if (is_idle != session->priv->is_idle_old) {
 		egg_debug ("emitting idle-changed : (%i)", is_idle);
 		session->priv->is_idle_old = is_idle;
@@ -166,7 +166,7 @@ cpm_session_is_idle (GpmSession *session)
 	value = g_new0(GValue, 1);
 	/* find out if this change altered the inhibited state */
 	ret = dbus_g_proxy_call (session->priv->proxy_prop, "Get", &error,
-				 G_TYPE_STRING, GPM_SESSION_MANAGER_PRESENCE_INTERFACE,
+				 G_TYPE_STRING, CPM_SESSION_MANAGER_PRESENCE_INTERFACE,
 				 G_TYPE_STRING, "status",
 				 G_TYPE_INVALID,
 				 G_TYPE_VALUE, value,
@@ -177,7 +177,7 @@ cpm_session_is_idle (GpmSession *session)
 		is_idle = FALSE;
 		goto out;
 	}
-	is_idle = (g_value_get_uint (value) == GPM_SESSION_STATUS_ENUM_IDLE);
+	is_idle = (g_value_get_uint (value) == CPM_SESSION_STATUS_ENUM_IDLE);
 	g_free (value);
 out:
 	return is_idle;
@@ -201,7 +201,7 @@ cpm_session_is_idle_inhibited (GpmSession *session)
 
 	/* find out if this change altered the inhibited state */
 	ret = dbus_g_proxy_call (session->priv->proxy, "IsInhibited", &error,
-				 G_TYPE_UINT, GPM_SESSION_INHIBIT_MASK_IDLE,
+				 G_TYPE_UINT, CPM_SESSION_INHIBIT_MASK_IDLE,
 				 G_TYPE_INVALID,
 				 G_TYPE_BOOLEAN, &is_inhibited,
 				 G_TYPE_INVALID);
@@ -232,7 +232,7 @@ cpm_session_is_suspend_inhibited (GpmSession *session)
 
 	/* find out if this change altered the inhibited state */
 	ret = dbus_g_proxy_call (session->priv->proxy, "IsInhibited", &error,
-				 G_TYPE_UINT, GPM_SESSION_INHIBIT_MASK_SUSPEND,
+				 G_TYPE_UINT, CPM_SESSION_INHIBIT_MASK_SUSPEND,
 				 G_TYPE_INVALID,
 				 G_TYPE_BOOLEAN, &is_inhibited,
 				 G_TYPE_INVALID);
@@ -284,7 +284,7 @@ cpm_session_end_session_response (GpmSession *session, gboolean is_okay, const g
 	gboolean ret = FALSE;
 	GError *error = NULL;
 
-	g_return_val_if_fail (GPM_IS_SESSION (session), FALSE);
+	g_return_val_if_fail (CPM_IS_SESSION (session), FALSE);
 	g_return_val_if_fail (session->priv->proxy_client_private != NULL, FALSE);
 
 	/* no cafe-session */
@@ -319,7 +319,7 @@ cpm_session_register_client (GpmSession *session, const gchar *app_id, const gch
 	GError *error = NULL;
 	DBusGConnection *connection;
 
-	g_return_val_if_fail (GPM_IS_SESSION (session), FALSE);
+	g_return_val_if_fail (CPM_IS_SESSION (session), FALSE);
 
 	/* no cafe-session */
 	if (session->priv->proxy == NULL) {
@@ -342,8 +342,8 @@ cpm_session_register_client (GpmSession *session, const gchar *app_id, const gch
 
 	/* get org.gnome.SessionManager.ClientPrivate interface */
 	connection = dbus_g_bus_get (DBUS_BUS_SESSION, NULL);
-	session->priv->proxy_client_private = dbus_g_proxy_new_for_name_owner (connection, GPM_SESSION_MANAGER_SERVICE,
-									       client_id, GPM_SESSION_MANAGER_CLIENT_PRIVATE_INTERFACE, &error);
+	session->priv->proxy_client_private = dbus_g_proxy_new_for_name_owner (connection, CPM_SESSION_MANAGER_SERVICE,
+									       client_id, CPM_SESSION_MANAGER_CLIENT_PRIVATE_INTERFACE, &error);
 	if (session->priv->proxy_client_private == NULL) {
 		egg_warning ("DBUS error: %s", error->message);
 		g_error_free (error);
@@ -460,9 +460,9 @@ cpm_session_init (GpmSession *session)
 	connection = dbus_g_bus_get (DBUS_BUS_SESSION, NULL);
 
 	/* get org.gnome.SessionManager interface */
-	session->priv->proxy = dbus_g_proxy_new_for_name_owner (connection, GPM_SESSION_MANAGER_SERVICE,
-								GPM_SESSION_MANAGER_PATH,
-								GPM_SESSION_MANAGER_INTERFACE, &error);
+	session->priv->proxy = dbus_g_proxy_new_for_name_owner (connection, CPM_SESSION_MANAGER_SERVICE,
+								CPM_SESSION_MANAGER_PATH,
+								CPM_SESSION_MANAGER_INTERFACE, &error);
 	if (session->priv->proxy == NULL) {
 		egg_warning ("DBUS error: %s", error->message);
 		g_error_free (error);
@@ -470,9 +470,9 @@ cpm_session_init (GpmSession *session)
 	}
 
 	/* get org.gnome.SessionManager.Presence interface */
-	session->priv->proxy_presence = dbus_g_proxy_new_for_name_owner (connection, GPM_SESSION_MANAGER_SERVICE,
-									 GPM_SESSION_MANAGER_PRESENCE_PATH,
-									 GPM_SESSION_MANAGER_PRESENCE_INTERFACE, &error);
+	session->priv->proxy_presence = dbus_g_proxy_new_for_name_owner (connection, CPM_SESSION_MANAGER_SERVICE,
+									 CPM_SESSION_MANAGER_PRESENCE_PATH,
+									 CPM_SESSION_MANAGER_PRESENCE_INTERFACE, &error);
 	if (session->priv->proxy_presence == NULL) {
 		egg_warning ("DBUS error: %s", error->message);
 		g_error_free (error);
@@ -480,9 +480,9 @@ cpm_session_init (GpmSession *session)
 	}
 
 	/* get properties interface */
-	session->priv->proxy_prop = dbus_g_proxy_new_for_name_owner (connection, GPM_SESSION_MANAGER_SERVICE,
-								     GPM_SESSION_MANAGER_PRESENCE_PATH,
-								     GPM_DBUS_PROPERTIES_INTERFACE, &error);
+	session->priv->proxy_prop = dbus_g_proxy_new_for_name_owner (connection, CPM_SESSION_MANAGER_SERVICE,
+								     CPM_SESSION_MANAGER_PRESENCE_PATH,
+								     CPM_DBUS_PROPERTIES_INTERFACE, &error);
 	if (session->priv->proxy_prop == NULL) {
 		egg_warning ("DBUS error: %s", error->message);
 		g_error_free (error);
@@ -517,9 +517,9 @@ cpm_session_finalize (GObject *object)
 {
 	GpmSession *session;
 	g_return_if_fail (object != NULL);
-	g_return_if_fail (GPM_IS_SESSION (object));
+	g_return_if_fail (CPM_IS_SESSION (object));
 
-	session = GPM_SESSION (object);
+	session = CPM_SESSION (object);
 	session->priv = cpm_session_get_instance_private (session);
 
 	g_object_unref (session->priv->proxy);
@@ -541,8 +541,8 @@ cpm_session_new (void)
 	if (cpm_session_object != NULL) {
 		g_object_ref (cpm_session_object);
 	} else {
-		cpm_session_object = g_object_new (GPM_TYPE_SESSION, NULL);
+		cpm_session_object = g_object_new (CPM_TYPE_SESSION, NULL);
 		g_object_add_weak_pointer (cpm_session_object, &cpm_session_object);
 	}
-	return GPM_SESSION (cpm_session_object);
+	return CPM_SESSION (cpm_session_object);
 }

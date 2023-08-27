@@ -19,8 +19,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef __GPM_KBD_BACKLIGHT_H
-#define __GPM_KBD_BACKLIGHT_H
+#ifndef __CPM_KBD_BACKLIGHT_H
+#define __CPM_KBD_BACKLIGHT_H
 
 #include <gio/gio.h>
 #include <glib.h>
@@ -28,15 +28,15 @@
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_KBD_BACKLIGHT     (cpm_kbd_backlight_get_type ())
-#define GPM_KBD_BACKLIGHT(o)       (G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_KBD_BACKLIGHT, GpmKbdBacklight))
-#define GPM_KBD_BACKLIGHT_CLASS(k) (G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_KBD_BACKLIGHT, GpmKbdBacklightClass))
-#define GPM_IS_KBD_BACKLIGHT(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_KBD_BACKLIGHT))
-#define GPM_IS_KBD_BACKLIGHT_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), GPM_TYPE_KBD_BACKLIGHT))
-#define GPM_KBD_BACKLIGHT_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), GPM_TYPE_KBD_BACKLIGHT, GpmKbdBacklightClass))
+#define CPM_TYPE_KBD_BACKLIGHT     (cpm_kbd_backlight_get_type ())
+#define CPM_KBD_BACKLIGHT(o)       (G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_KBD_BACKLIGHT, GpmKbdBacklight))
+#define CPM_KBD_BACKLIGHT_CLASS(k) (G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_KBD_BACKLIGHT, GpmKbdBacklightClass))
+#define CPM_IS_KBD_BACKLIGHT(o)        (G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_KBD_BACKLIGHT))
+#define CPM_IS_KBD_BACKLIGHT_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_KBD_BACKLIGHT))
+#define CPM_KBD_BACKLIGHT_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_KBD_BACKLIGHT, GpmKbdBacklightClass))
 
-#define GPM_KBD_BACKLIGHT_DIM_INTERVAL 5 /* ms */
-#define GPM_KBD_BACKLIGHT_STEP 10 /* change by 10% each step */
+#define CPM_KBD_BACKLIGHT_DIM_INTERVAL 5 /* ms */
+#define CPM_KBD_BACKLIGHT_STEP 10 /* change by 10% each step */
 
 typedef struct GpmKbdBacklightPrivate GpmKbdBacklightPrivate;
 
@@ -55,9 +55,9 @@ typedef struct
 
 typedef enum
 {
-    GPM_KBD_BACKLIGHT_ERROR_GENERAL,
-    GPM_KBD_BACKLIGHT_ERROR_DATA_NOT_AVAILABLE,
-    GPM_KBD_BACKLIGHT_ERROR_HARDWARE_NOT_PRESENT
+    CPM_KBD_BACKLIGHT_ERROR_GENERAL,
+    CPM_KBD_BACKLIGHT_ERROR_DATA_NOT_AVAILABLE,
+    CPM_KBD_BACKLIGHT_ERROR_HARDWARE_NOT_PRESENT
 } GpmKbdBacklightError;
 
 GType          cpm_kbd_backlight_get_type      (void);
@@ -75,5 +75,5 @@ void           cpm_kbd_backlight_register_dbus     (GpmKbdBacklight *backlight,
 
 G_END_DECLS
 
-#endif /* __GPM_KBD_BACKLIGHT_H */
+#endif /* __CPM_KBD_BACKLIGHT_H */
 

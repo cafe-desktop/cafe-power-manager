@@ -30,8 +30,8 @@
 #include "cpm-upower.h"
 #include "cpm-common.h"
 
-#define GPM_UP_TIME_PRECISION			5*60
-#define GPM_UP_TEXT_MIN_TIME			120
+#define CPM_UP_TIME_PRECISION			5*60
+#define CPM_UP_TEXT_MIN_TIME			120
 
 /**
  * cpm_upower_get_device_icon_index:
@@ -227,13 +227,13 @@ cpm_upower_get_device_summary (UpDevice *device)
 	}
 
 	/* precalculate so we don't get Unknown time remaining */
-	time_to_full_round = egg_precision_round_down (time_to_full, GPM_UP_TIME_PRECISION);
-	time_to_empty_round = egg_precision_round_down (time_to_empty, GPM_UP_TIME_PRECISION);
+	time_to_full_round = egg_precision_round_down (time_to_full, CPM_UP_TIME_PRECISION);
+	time_to_empty_round = egg_precision_round_down (time_to_empty, CPM_UP_TIME_PRECISION);
 
 	/* we always display "Laptop battery 16 minutes remaining" as we need to clarify what device we are refering to */
 	if (state == UP_DEVICE_STATE_FULLY_CHARGED) {
 
-		if (kind == UP_DEVICE_KIND_BATTERY && time_to_empty_round > GPM_UP_TEXT_MIN_TIME) {
+		if (kind == UP_DEVICE_KIND_BATTERY && time_to_empty_round > CPM_UP_TEXT_MIN_TIME) {
 			time_to_empty_str = cpm_get_timestring (time_to_empty_round);
 			/* TRANSLATORS: The laptop battery is fully charged, and we know a time */
 			description = g_strdup_printf (_("Battery is fully charged.\nProvides %s laptop runtime"),
@@ -246,7 +246,7 @@ cpm_upower_get_device_summary (UpDevice *device)
 
 	} else if (state == UP_DEVICE_STATE_DISCHARGING) {
 
-		if (time_to_empty_round > GPM_UP_TEXT_MIN_TIME) {
+		if (time_to_empty_round > CPM_UP_TEXT_MIN_TIME) {
 			time_to_empty_str = cpm_get_timestring (time_to_empty_round);
 			/* TRANSLATORS: the device is discharging, and we have a time remaining */
 			description = g_strdup_printf (_("%s %s remaining (%.1f%%)"),
@@ -260,8 +260,8 @@ cpm_upower_get_device_summary (UpDevice *device)
 
 	} else if (state == UP_DEVICE_STATE_CHARGING) {
 
-		if (time_to_full_round > GPM_UP_TEXT_MIN_TIME &&
-		    time_to_empty_round > GPM_UP_TEXT_MIN_TIME) {
+		if (time_to_full_round > CPM_UP_TEXT_MIN_TIME &&
+		    time_to_empty_round > CPM_UP_TEXT_MIN_TIME) {
 
 			/* display both discharge and charge time */
 			time_to_full_str = cpm_get_timestring (time_to_full_round);
@@ -273,7 +273,7 @@ cpm_upower_get_device_summary (UpDevice *device)
 			g_free (time_to_full_str);
 			g_free (time_to_empty_str);
 
-		} else if (time_to_full_round > GPM_UP_TEXT_MIN_TIME) {
+		} else if (time_to_full_round > CPM_UP_TEXT_MIN_TIME) {
 
 			/* display only charge time */
 			time_to_full_str = cpm_get_timestring (time_to_full_round);
