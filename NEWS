@@ -117,7 +117,7 @@
 ### cafe-power-manager 1.20.0
 
   * Translations update
-  * avoid deprecated GtkStock
+  * avoid deprecated CtkStock
   * require CTK+ 3.22 and GLib 2.50
   * inhibit: fix error that spammed logs from previous commit
   * inhibit applet: fix rendering of icon
@@ -179,12 +179,12 @@
 
 ### cafe-power-manager 1.16.0
 
-  * Use GtkAboutDialog instead of CafeAboutDialog
+  * Use CtkAboutDialog instead of CafeAboutDialog
   * Drop dependency on libcafe-desktop
   * Show the primary device time remaining as the first entry in
     the context menu
   * Do not issue a console warning when laptop batteries are empty
-  * CTK+3: port from libunique to GtkApplication
+  * CTK+3: port from libunique to CtkApplication
   * CTK+3: add css theming for OSD (MsdOsdWindow)
   * CTK+3: fix empty space in tray when system has no battery
   * CTK+3: fix lots of deprecations

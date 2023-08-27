@@ -51,7 +51,7 @@ typedef struct{
 	gboolean call_worked; /* g-p-m refusing action */
 	gboolean popped; /* the popup is shown */
 	/* the popup and its widgets */
-	GtkWidget *popup, *slider, *btn_plus, *btn_minus;
+	CtkWidget *popup, *slider, *btn_plus, *btn_minus;
 	/* the icon and a cache for size*/
 	GdkPixbuf *icon;
 	gint icon_width, icon_height;
@@ -83,21 +83,21 @@ static gboolean  gpm_applet_draw_cb               (GpmBrightnessApplet *applet);
 static void      gpm_applet_change_background_cb  (GpmBrightnessApplet *applet,
 						   CafePanelAppletBackgroundType arg1,
 						   cairo_pattern_t *arg2, gpointer data);
-static void      gpm_applet_theme_change_cb (GtkIconTheme *icon_theme, gpointer data);
-static void      gpm_applet_stop_scroll_events_cb (GtkWidget *widget, GdkEvent  *event);
+static void      gpm_applet_theme_change_cb (CtkIconTheme *icon_theme, gpointer data);
+static void      gpm_applet_stop_scroll_events_cb (CtkWidget *widget, GdkEvent  *event);
 static gboolean  gpm_applet_destroy_popup_cb      (GpmBrightnessApplet *applet);
 static void      gpm_applet_update_tooltip        (GpmBrightnessApplet *applet);
 static void      gpm_applet_update_popup_level    (GpmBrightnessApplet *applet);
-static gboolean  gpm_applet_plus_cb               (GtkWidget *w, GpmBrightnessApplet *applet);
-static gboolean  gpm_applet_minus_cb              (GtkWidget *w, GpmBrightnessApplet *applet);
-static gboolean  gpm_applet_key_press_cb          (GtkWidget *popup, GdkEventKey *event, GpmBrightnessApplet *applet);
+static gboolean  gpm_applet_plus_cb               (CtkWidget *w, GpmBrightnessApplet *applet);
+static gboolean  gpm_applet_minus_cb              (CtkWidget *w, GpmBrightnessApplet *applet);
+static gboolean  gpm_applet_key_press_cb          (CtkWidget *popup, GdkEventKey *event, GpmBrightnessApplet *applet);
 static gboolean  gpm_applet_scroll_cb             (GpmBrightnessApplet *applet, GdkEventScroll *event);
-static gboolean  gpm_applet_slide_cb              (GtkWidget *w, GpmBrightnessApplet *applet);
+static gboolean  gpm_applet_slide_cb              (CtkWidget *w, GpmBrightnessApplet *applet);
 static void      gpm_applet_create_popup          (GpmBrightnessApplet *applet);
 static gboolean  gpm_applet_popup_cb              (GpmBrightnessApplet *applet, GdkEventButton *event);
-static void      gpm_applet_dialog_about_cb       (GtkAction *action, gpointer data);
+static void      gpm_applet_dialog_about_cb       (CtkAction *action, gpointer data);
 static gboolean  gpm_applet_cb                    (CafePanelApplet *_applet, const gchar *iid, gpointer data);
-static void      gpm_applet_destroy_cb            (GtkWidget *widget);
+static void      gpm_applet_destroy_cb            (CtkWidget *widget);
 
 #define GPM_BRIGHTNESS_APPLET_ID		"BrightnessApplet"
 #define GPM_BRIGHTNESS_APPLET_FACTORY_ID	"BrightnessAppletFactory"
@@ -226,7 +226,7 @@ gpm_applet_get_icon (GpmBrightnessApplet *applet)
 static void
 gpm_applet_check_size (GpmBrightnessApplet *applet)
 {
-	GtkAllocation allocation;
+	CtkAllocation allocation;
 
 	/* we don't use the size function here, but the yet allocated size because the
 	   size value is false (kind of rounded) */
@@ -259,8 +259,8 @@ gpm_applet_draw_cb (GpmBrightnessApplet *applet)
 	GdkRGBA color;
 	cairo_t *cr;
 	cairo_pattern_t *pattern;
-	GtkStyleContext *context;
-	GtkAllocation allocation;
+	CtkStyleContext *context;
+	CtkAllocation allocation;
 
 	if (ctk_widget_get_window (CTK_WIDGET(applet)) == NULL) {
 		return FALSE;
@@ -405,7 +405,7 @@ gpm_applet_update_popup_level (GpmBrightnessApplet *applet)
  * callback for the plus button
  **/
 static gboolean
-gpm_applet_plus_cb (GtkWidget *w, GpmBrightnessApplet *applet)
+gpm_applet_plus_cb (CtkWidget *w, GpmBrightnessApplet *applet)
 {
 	if (applet->level < 100) {
 		applet->level++;
@@ -423,7 +423,7 @@ gpm_applet_plus_cb (GtkWidget *w, GpmBrightnessApplet *applet)
  * callback for the minus button
  **/
 static gboolean
-gpm_applet_minus_cb (GtkWidget *w, GpmBrightnessApplet *applet)
+gpm_applet_minus_cb (CtkWidget *w, GpmBrightnessApplet *applet)
 {
 	if (applet->level > 0) {
 		applet->level--;
@@ -441,7 +441,7 @@ gpm_applet_minus_cb (GtkWidget *w, GpmBrightnessApplet *applet)
  * callback for the slider
  **/
 static gboolean
-gpm_applet_slide_cb (GtkWidget *w, GpmBrightnessApplet *applet)
+gpm_applet_slide_cb (CtkWidget *w, GpmBrightnessApplet *applet)
 {
 	applet->level = ctk_range_get_value (CTK_RANGE(applet->slider));
 	applet->call_worked = gpm_applet_set_brightness (applet);
@@ -458,7 +458,7 @@ gpm_applet_slide_cb (GtkWidget *w, GpmBrightnessApplet *applet)
  * mainly escape to unpop and arrows to change brightness
  **/
 static gboolean
-gpm_applet_key_press_cb (GtkWidget *popup, GdkEventKey *event, GpmBrightnessApplet *applet)
+gpm_applet_key_press_cb (CtkWidget *popup, GdkEventKey *event, GpmBrightnessApplet *applet)
 {
 	int i;
 	
@@ -549,11 +549,11 @@ gpm_applet_scroll_cb (GpmBrightnessApplet *applet, GdkEventScroll *event)
  * hide popup on focus loss.
  **/
 static gboolean
-on_popup_button_press (GtkWidget      *widget,
+on_popup_button_press (CtkWidget      *widget,
                        GdkEventButton *event,
                        GpmBrightnessApplet *applet)
 {
-	GtkWidget *event_widget;
+	CtkWidget *event_widget;
 
 	if (event->type != GDK_BUTTON_PRESS) {
 		return FALSE;
@@ -579,7 +579,7 @@ on_popup_button_press (GtkWidget      *widget,
 static void
 gpm_applet_create_popup (GpmBrightnessApplet *applet)
 {
-	static GtkWidget *box, *frame;
+	static CtkWidget *box, *frame;
 	gint orientation = cafe_panel_applet_get_orient (CAFE_PANEL_APPLET (CAFE_PANEL_APPLET (applet)));
 
 	gpm_applet_destroy_popup_cb (applet);
@@ -637,8 +637,8 @@ gpm_applet_create_popup (GpmBrightnessApplet *applet)
 	                  G_CALLBACK(gpm_applet_key_press_cb), applet);
 
 	/* Set volume control frame, slider and toplevel window to follow panel volume control theme */
-	GtkWidget *toplevel = ctk_widget_get_toplevel (frame);
-	GtkStyleContext *context;
+	CtkWidget *toplevel = ctk_widget_get_toplevel (frame);
+	CtkStyleContext *context;
 	context = ctk_widget_get_style_context (CTK_WIDGET(toplevel));
 	ctk_style_context_add_class(context,"cafe-panel-applet-slider");
 	/*Make transparency possible in ctk3 theme3 */
@@ -656,7 +656,7 @@ gpm_applet_create_popup (GpmBrightnessApplet *applet)
 static gboolean
 gpm_applet_popup_cb (GpmBrightnessApplet *applet, GdkEventButton *event)
 {
-	GtkAllocation allocation, popup_allocation;
+	CtkAllocation allocation, popup_allocation;
 	gint orientation, x, y;
 	GdkWindow *window;
 	GdkDisplay *display;
@@ -750,7 +750,7 @@ gpm_applet_popup_cb (GpmBrightnessApplet *applet, GdkEventButton *event)
  * Updtes icon when theme changes
  **/
 static void
-gpm_applet_theme_change_cb (GtkIconTheme *icon_theme, gpointer data)
+gpm_applet_theme_change_cb (CtkIconTheme *icon_theme, gpointer data)
 {
 	GpmBrightnessApplet *applet = GPM_BRIGHTNESS_APPLET (data);
 	gpm_applet_get_icon (applet);
@@ -762,7 +762,7 @@ gpm_applet_theme_change_cb (GtkIconTheme *icon_theme, gpointer data)
  * Prevents scroll events from reaching the tooltip
  **/
 static void
-gpm_applet_stop_scroll_events_cb (GtkWidget *widget, GdkEvent  *event)
+gpm_applet_stop_scroll_events_cb (CtkWidget *widget, GdkEvent  *event)
 {
 	if (event->type == GDK_SCROLL)
 		g_signal_stop_emission_by_name (widget, "event-after");
@@ -774,7 +774,7 @@ gpm_applet_stop_scroll_events_cb (GtkWidget *widget, GdkEvent  *event)
  * displays about dialog
  **/
 static void
-gpm_applet_dialog_about_cb (GtkAction *action, gpointer data)
+gpm_applet_dialog_about_cb (CtkAction *action, gpointer data)
 {
 	static const gchar *authors[] = {
 		"Benjamin Canou <bookeldor@gmail.com>",
@@ -833,7 +833,7 @@ gpm_applet_dialog_about_cb (GtkAction *action, gpointer data)
  * open gpm help
  **/
 static void
-gpm_applet_help_cb (GtkAction *action, gpointer data)
+gpm_applet_help_cb (CtkAction *action, gpointer data)
 {
 	gpm_help_display ("applets-general#applets-brightness");
 }
@@ -843,7 +843,7 @@ gpm_applet_help_cb (GtkAction *action, gpointer data)
  * @widget: Class instance to destroy
  **/
 static void
-gpm_applet_destroy_cb (GtkWidget *widget)
+gpm_applet_destroy_cb (CtkWidget *widget)
 {
 	GpmBrightnessApplet *applet = GPM_BRIGHTNESS_APPLET(widget);
 
@@ -1043,10 +1043,10 @@ static gboolean
 gpm_applet_cb (CafePanelApplet *_applet, const gchar *iid, gpointer data)
 {
 	GpmBrightnessApplet *applet = GPM_BRIGHTNESS_APPLET(_applet);
-	GtkActionGroup *action_group;
+	CtkActionGroup *action_group;
 	gchar *ui_path;
 
-	static const GtkActionEntry menu_actions [] = {
+	static const CtkActionEntry menu_actions [] = {
 		{ "About", "help-about", N_("_About"),
 		  NULL, NULL,
 		  G_CALLBACK (gpm_applet_dialog_about_cb) },

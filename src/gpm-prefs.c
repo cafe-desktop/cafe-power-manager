@@ -53,7 +53,7 @@ gpm_prefs_help_cb (GpmPrefs *prefs)
  * We have been asked to show the window
  **/
 static void
-gpm_prefs_activated_cb (GtkApplication *app, GpmPrefs *prefs)
+gpm_prefs_activated_cb (CtkApplication *app, GpmPrefs *prefs)
 {
 	gpm_prefs_activate_window (app, prefs);
 }
@@ -68,8 +68,8 @@ main (int argc, char **argv)
 	GOptionContext *context;
 	GpmPrefs *prefs = NULL;
 	gboolean ret;
-	GtkApplication *app;
-	GtkWidget *window;
+	CtkApplication *app;
+	CtkWidget *window;
 	gint status;
 
 	const GOptionEntry options[] = {

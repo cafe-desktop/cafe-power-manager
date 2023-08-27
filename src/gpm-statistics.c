@@ -39,17 +39,17 @@
 #include "gpm-upower.h"
 #include "gpm-graph-widget.h"
 
-static GtkBuilder *builder = NULL;
-static GtkListStore *list_store_info = NULL;
-static GtkListStore *list_store_devices = NULL;
+static CtkBuilder *builder = NULL;
+static CtkListStore *list_store_info = NULL;
+static CtkListStore *list_store_devices = NULL;
 gchar *current_device = NULL;
 static const gchar *history_type;
 static const gchar *stats_type;
 static guint history_time;
 static GSettings *settings;
 static gfloat sigma_smoothing = 0.0f;
-static GtkWidget *graph_history = NULL;
-static GtkWidget *graph_statistics = NULL;
+static CtkWidget *graph_history = NULL;
+static CtkWidget *graph_statistics = NULL;
 
 enum {
 	GPM_INFO_COLUMN_TEXT,
@@ -102,7 +102,7 @@ enum {
  * gpm_stats_button_help_cb:
  **/
 static void
-gpm_stats_button_help_cb (GtkWidget *widget, gboolean data)
+gpm_stats_button_help_cb (CtkWidget *widget, gboolean data)
 {
 	gpm_help_display ("statistics");
 }
@@ -111,10 +111,10 @@ gpm_stats_button_help_cb (GtkWidget *widget, gboolean data)
  * gpm_stats_add_info_columns:
  **/
 static void
-gpm_stats_add_info_columns (GtkTreeView *treeview)
+gpm_stats_add_info_columns (CtkTreeView *treeview)
 {
-	GtkCellRenderer *renderer;
-	GtkTreeViewColumn *column;
+	CtkCellRenderer *renderer;
+	CtkTreeViewColumn *column;
 
 	/* image */
 	renderer = ctk_cell_renderer_text_new ();
@@ -134,10 +134,10 @@ gpm_stats_add_info_columns (GtkTreeView *treeview)
  * gpm_stats_add_devices_columns:
  **/
 static void
-gpm_stats_add_devices_columns (GtkTreeView *treeview)
+gpm_stats_add_devices_columns (CtkTreeView *treeview)
 {
-	GtkCellRenderer *renderer;
-	GtkTreeViewColumn *column;
+	CtkCellRenderer *renderer;
+	CtkTreeViewColumn *column;
 
 	/* image */
 	renderer = ctk_cell_renderer_pixbuf_new ();
@@ -161,7 +161,7 @@ gpm_stats_add_devices_columns (GtkTreeView *treeview)
 static void
 gpm_stats_add_info_data (const gchar *attr, const gchar *text)
 {
-	GtkTreeIter iter;
+	CtkTreeIter iter;
 	ctk_list_store_append (list_store_info, &iter);
 	ctk_list_store_set (list_store_info, &iter,
 			    GPM_INFO_COLUMN_TEXT, attr,
@@ -465,7 +465,7 @@ gpm_stats_update_info_page_details (UpDevice *device)
  * gpm_stats_set_graph_data:
  **/
 static void
-gpm_stats_set_graph_data (GtkWidget *widget, GPtrArray *data, gboolean use_smoothed, gboolean use_points)
+gpm_stats_set_graph_data (CtkWidget *widget, GPtrArray *data, gboolean use_smoothed, gboolean use_points)
 {
 	GPtrArray *smoothed;
 
@@ -498,7 +498,7 @@ gpm_stats_update_info_page_history (UpDevice *device)
 	GPtrArray *array;
 	guint i;
 	UpHistoryItem *item;
-	GtkWidget *widget;
+	CtkWidget *widget;
 	gboolean checked;
 	gboolean points;
 	GpmPointObj *point;
@@ -606,7 +606,7 @@ gpm_stats_update_info_page_stats (UpDevice *device)
 	GPtrArray *array;
 	guint i;
 	UpStatsItem *item;
-	GtkWidget *widget;
+	CtkWidget *widget;
 	gboolean checked;
 	gboolean points;
 	GpmPointObj *point;
@@ -709,8 +709,8 @@ static void
 gpm_stats_update_info_data (UpDevice *device)
 {
 	gint page;
-	GtkNotebook *notebook;
-	GtkWidget *page_widget;
+	CtkNotebook *notebook;
+	CtkWidget *page_widget;
 	gboolean has_history;
 	gboolean has_statistics;
 
@@ -748,7 +748,7 @@ gpm_stats_update_info_data (UpDevice *device)
 }
 
 static void
-gpm_stats_set_title (GtkWindow *window, gint page_num)
+gpm_stats_set_title (CtkWindow *window, gint page_num)
 {
 	gchar *title;
 	const gchar * const page_titles[] = {
@@ -770,10 +770,10 @@ gpm_stats_set_title (GtkWindow *window, gint page_num)
  * gpm_stats_notebook_changed_cb:
  **/
 static void
-gpm_stats_notebook_changed_cb (GtkNotebook *notebook, gpointer page, gint page_num, gpointer user_data)
+gpm_stats_notebook_changed_cb (CtkNotebook *notebook, gpointer page, gint page_num, gpointer user_data)
 {
 	UpDevice *device;
-	GtkWidget *widget;
+	CtkWidget *widget;
 
 	/* set the window title depending on the mode */
 	widget = CTK_WIDGET (ctk_builder_get_object (builder, "dialog_stats"));
@@ -813,10 +813,10 @@ gpm_stats_button_update_ui (void)
  * gpm_stats_devices_treeview_clicked_cb:
  **/
 static void
-gpm_stats_devices_treeview_clicked_cb (GtkTreeSelection *selection, gboolean data)
+gpm_stats_devices_treeview_clicked_cb (CtkTreeSelection *selection, gboolean data)
 {
-	GtkTreeModel *model;
-	GtkTreeIter iter;
+	CtkTreeModel *model;
+	CtkTreeIter iter;
 	UpDevice *device;
 
 	/* This will only work in single or browse selection mode! */
@@ -845,9 +845,9 @@ gpm_stats_devices_treeview_clicked_cb (GtkTreeSelection *selection, gboolean dat
  * gpm_stats_window_activated_cb
  **/
 static void
-gpm_stats_window_activated_cb (GtkApplication *app, gpointer data)
+gpm_stats_window_activated_cb (CtkApplication *app, gpointer data)
 {
-	GtkWidget *widget;
+	CtkWidget *widget;
 	widget = CTK_WIDGET (ctk_builder_get_object (builder, "dialog_stats"));
 	ctk_application_add_window (CTK_APPLICATION (app), CTK_WINDOW (widget));
 	ctk_window_present (CTK_WINDOW (widget));
@@ -875,7 +875,7 @@ static void
 gpm_stats_add_device (UpDevice *device, GPtrArray *devices)
 {
 	const gchar *id;
-	GtkTreeIter iter;
+	CtkTreeIter iter;
 	const gchar *text;
 	const gchar *icon;
 	UpDeviceKind kind;
@@ -932,7 +932,7 @@ gpm_stats_device_added_cb (UpClient *client, UpDevice *device, GPtrArray *device
 static void
 gpm_stats_device_removed_cb (UpClient *client, const gchar *object_path, GPtrArray *devices)
 {
-	GtkTreeIter iter;
+	CtkTreeIter iter;
 	gchar *id = NULL;
 	gboolean ret;
 
@@ -968,7 +968,7 @@ gpm_stats_device_removed_cb (UpClient *client, const gchar *object_path, GPtrArr
  * gpm_stats_history_type_combo_changed_cb:
  **/
 static void
-gpm_stats_history_type_combo_changed_cb (GtkWidget *widget, gpointer data)
+gpm_stats_history_type_combo_changed_cb (CtkWidget *widget, gpointer data)
 {
 	guint active;
 	const gchar *axis_x = NULL;
@@ -1020,7 +1020,7 @@ gpm_stats_history_type_combo_changed_cb (GtkWidget *widget, gpointer data)
  * gpm_stats_type_combo_changed_cb:
  **/
 static void
-gpm_stats_type_combo_changed_cb (GtkWidget *widget, gpointer data)
+gpm_stats_type_combo_changed_cb (CtkWidget *widget, gpointer data)
 {
 	guint active;
 	const gchar *axis_x = NULL;
@@ -1072,7 +1072,7 @@ gpm_stats_type_combo_changed_cb (GtkWidget *widget, gpointer data)
  * gpm_stats_range_combo_changed:
  **/
 static void
-gpm_stats_range_combo_changed (GtkWidget *widget, gpointer data)
+gpm_stats_range_combo_changed (CtkWidget *widget, gpointer data)
 {
 	guint active;
 
@@ -1099,10 +1099,10 @@ gpm_stats_range_combo_changed (GtkWidget *widget, gpointer data)
 
 /**
  * gpm_stats_smooth_checkbox_history_cb:
- * @widget: The GtkWidget object
+ * @widget: The CtkWidget object
  **/
 static void
-gpm_stats_smooth_checkbox_history_cb (GtkWidget *widget, gpointer data)
+gpm_stats_smooth_checkbox_history_cb (CtkWidget *widget, gpointer data)
 {
 	gboolean checked;
 	checked = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (widget));
@@ -1112,10 +1112,10 @@ gpm_stats_smooth_checkbox_history_cb (GtkWidget *widget, gpointer data)
 
 /**
  * gpm_stats_smooth_checkbox_stats_cb:
- * @widget: The GtkWidget object
+ * @widget: The CtkWidget object
  **/
 static void
-gpm_stats_smooth_checkbox_stats_cb (GtkWidget *widget, gpointer data)
+gpm_stats_smooth_checkbox_stats_cb (CtkWidget *widget, gpointer data)
 {
 	gboolean checked;
 	checked = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (widget));
@@ -1125,10 +1125,10 @@ gpm_stats_smooth_checkbox_stats_cb (GtkWidget *widget, gpointer data)
 
 /**
  * gpm_stats_points_checkbox_history_cb:
- * @widget: The GtkWidget object
+ * @widget: The CtkWidget object
  **/
 static void
-gpm_stats_points_checkbox_history_cb (GtkWidget *widget, gpointer data)
+gpm_stats_points_checkbox_history_cb (CtkWidget *widget, gpointer data)
 {
 	gboolean checked;
 	checked = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (widget));
@@ -1138,10 +1138,10 @@ gpm_stats_points_checkbox_history_cb (GtkWidget *widget, gpointer data)
 
 /**
  * gpm_stats_points_checkbox_stats_cb:
- * @widget: The GtkWidget object
+ * @widget: The CtkWidget object
  **/
 static void
-gpm_stats_points_checkbox_stats_cb (GtkWidget *widget, gpointer data)
+gpm_stats_points_checkbox_stats_cb (CtkWidget *widget, gpointer data)
 {
 	gboolean checked;
 	checked = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (widget));
@@ -1159,9 +1159,9 @@ gpm_stats_highlight_device (const gchar *object_path)
 	gchar *id = NULL;
 	gchar *path_str;
 	guint i;
-	GtkTreeIter iter;
-	GtkTreePath *path;
-	GtkWidget *widget;
+	CtkTreeIter iter;
+	CtkTreePath *path;
+	CtkWidget *widget;
 
 	/* check valid */
 	if (!g_str_has_prefix (object_path, "/"))
@@ -1194,10 +1194,10 @@ main (int argc, char *argv[])
 {
 	gboolean verbose = FALSE;
 	GOptionContext *context;
-	GtkBox *box;
-	GtkWidget *widget, *window;
-	GtkTreeSelection *selection;
-	GtkApplication *app;
+	CtkBox *box;
+	CtkWidget *widget, *window;
+	CtkTreeSelection *selection;
+	CtkApplication *app;
 	gint status;
 	UpClient *client;
 	GPtrArray *devices = NULL;

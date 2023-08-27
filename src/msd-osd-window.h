@@ -32,7 +32,7 @@
  * the desktop, such as to change the volume, switch your monitor's parameters,
  * etc.
  *
- * You can create a MsdOsdWindow and use it as a normal GtkWindow.  It will
+ * You can create a MsdOsdWindow and use it as a normal CtkWindow.  It will
  * automatically center itself, figure out if it needs to be composited, etc.
  * Just pack your widgets in it, sit back, and enjoy the ride.
  */
@@ -62,20 +62,20 @@ typedef struct MsdOsdWindowClass              MsdOsdWindowClass;
 typedef struct MsdOsdWindowPrivate            MsdOsdWindowPrivate;
 
 struct MsdOsdWindow {
-        GtkWindow                   parent;
+        CtkWindow                   parent;
 
         MsdOsdWindowPrivate  *priv;
 };
 
 struct MsdOsdWindowClass {
-        GtkWindowClass parent_class;
+        CtkWindowClass parent_class;
 
         void (* draw_when_composited) (MsdOsdWindow *window, cairo_t *cr);
 };
 
 GType                 msd_osd_window_get_type          (void);
 
-GtkWidget *           msd_osd_window_new               (void);
+CtkWidget *           msd_osd_window_new               (void);
 gboolean              msd_osd_window_is_composited     (MsdOsdWindow      *window);
 gboolean              msd_osd_window_is_valid          (MsdOsdWindow      *window);
 void                  msd_osd_window_update_and_hide   (MsdOsdWindow      *window);

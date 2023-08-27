@@ -43,8 +43,8 @@ struct MsdMediaKeysWindowPrivate
         guint                    volume_muted : 1;
         int                      volume_level;
 
-        GtkImage                *image;
-        GtkWidget               *progress;
+        CtkImage                *image;
+        CtkWidget               *progress;
 };
 
 G_DEFINE_TYPE_WITH_PRIVATE (MsdMediaKeysWindow, msd_media_keys_window, MSD_TYPE_OSD_WINDOW)
@@ -196,7 +196,7 @@ load_pixbuf (MsdMediaKeysWindow *window,
              const char         *name,
              int                 icon_size)
 {
-        GtkIconTheme *theme;
+        CtkIconTheme *theme;
         GdkPixbuf    *pixbuf;
 
         if (window != NULL && ctk_widget_has_screen (CTK_WIDGET (window))) {
@@ -402,7 +402,7 @@ draw_volume_boxes (MsdMediaKeysWindow *window,
                    double              height)
 {
         gdouble   x1;
-        GtkStyleContext *context;
+        CtkStyleContext *context;
 
         height = round (height) - 1;
         width = round (width) - 1;
@@ -655,9 +655,9 @@ msd_media_keys_window_init (MsdMediaKeysWindow *window)
         screen = ctk_widget_get_screen (CTK_WIDGET (window));
 
         if (!msd_osd_window_is_composited (MSD_OSD_WINDOW (window))) {
-                GtkBuilder *builder;
+                CtkBuilder *builder;
                 const gchar *objects[] = {"acme_box", NULL};
-                GtkWidget *box;
+                CtkWidget *box;
 
                 builder = ctk_builder_new ();
                 ctk_builder_add_objects_from_file (builder,
@@ -680,7 +680,7 @@ msd_media_keys_window_init (MsdMediaKeysWindow *window)
         }
 }
 
-GtkWidget *
+CtkWidget *
 msd_media_keys_window_new (void)
 {
         return g_object_new (MSD_TYPE_MEDIA_KEYS_WINDOW, NULL);

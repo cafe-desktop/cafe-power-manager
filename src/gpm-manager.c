@@ -93,7 +93,7 @@ struct GpmManagerPrivate
 	UpClient		*client;
 	gboolean		 on_battery;
 	gboolean		 just_resumed;
-	GtkStatusIcon		*status_icon;
+	CtkStatusIcon		*status_icon;
 	NotifyNotification	*notification_general;
 	NotifyNotification	*notification_warning_low;
 	NotifyNotification	*notification_discharging;
@@ -476,7 +476,7 @@ gpm_manager_notify (GpmManager *manager, NotifyNotification **notification_class
 	gboolean ret;
 	GError *error = NULL;
 	NotifyNotification *notification;
-	GtkWidget *dialog;
+	CtkWidget *dialog;
 
 	/* close any existing notification of this class */
 	gpm_manager_notify_close (manager, *notification_class);
@@ -525,9 +525,9 @@ out:
  * gpm_manager_sleep_failure_response_cb:
  **/
 static void
-gpm_manager_sleep_failure_response_cb (GtkDialog *dialog, gint response_id, GpmManager *manager)
+gpm_manager_sleep_failure_response_cb (CtkDialog *dialog, gint response_id, GpmManager *manager)
 {
-	GtkWidget *dialog_error;
+	CtkWidget *dialog_error;
 	GError *error = NULL;
 	gboolean ret;
 	gchar *uri = NULL;
@@ -559,7 +559,7 @@ gpm_manager_sleep_failure (GpmManager *manager, gboolean is_suspend, const gchar
 	const gchar *title;
 	gchar *uri = NULL;
 	const gchar *icon;
-	GtkWidget *dialog;
+	CtkWidget *dialog;
 
 	/* only show this if specified in settings */
 	show_sleep_failed = g_settings_get_boolean (manager->priv->settings, GPM_SETTINGS_NOTIFY_SLEEP_FAILED);
@@ -1792,7 +1792,7 @@ gpm_manager_systemd_inhibit (GDBusProxy *proxy) {
 }
 
 static void
-on_icon_theme_change (GtkSettings *settings,
+on_icon_theme_change (CtkSettings *settings,
                       GParamSpec  *pspec,
                       GpmManager  *manager)
 {
