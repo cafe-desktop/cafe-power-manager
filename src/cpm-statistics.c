@@ -34,10 +34,10 @@
 #include "egg-color.h"
 #include "egg-array-float.h"
 
-#include "gpm-common.h"
-#include "gpm-icon-names.h"
-#include "gpm-upower.h"
-#include "gpm-graph-widget.h"
+#include "cpm-common.h"
+#include "cpm-icon-names.h"
+#include "cpm-upower.h"
+#include "cpm-graph-widget.h"
 
 static CtkBuilder *builder = NULL;
 static CtkListStore *list_store_info = NULL;
@@ -1252,7 +1252,7 @@ main (int argc, char *argv[])
 
 	/* get UI */
 	builder = ctk_builder_new ();
-	retval = ctk_builder_add_from_resource (builder, "/org/cafe/powermanager/statistics/gpm-statistics.ui", &error);
+	retval = ctk_builder_add_from_resource (builder, "/org/cafe/powermanager/statistics/cpm-statistics.ui", &error);
 
 	if (error) {
 		egg_error ("failed to load ui: %s", error->message);

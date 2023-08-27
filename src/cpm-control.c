@@ -46,10 +46,10 @@
 #include "egg-debug.h"
 #include "egg-console-kit.h"
 
-#include "gpm-screensaver.h"
-#include "gpm-common.h"
-#include "gpm-control.h"
-#include "gpm-networkmanager.h"
+#include "cpm-screensaver.h"
+#include "cpm-common.h"
+#include "cpm-control.h"
+#include "cpm-networkmanager.h"
 
 struct GpmControlPrivate
 {

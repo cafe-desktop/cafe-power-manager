@@ -41,17 +41,17 @@
 #include <ctk/ctk.h>
 #include <libupower-glib/upower.h>
 
-#include "gpm-button.h"
-#include "gpm-backlight.h"
-#include "gpm-brightness.h"
-#include "gpm-control.h"
-#include "gpm-common.h"
+#include "cpm-button.h"
+#include "cpm-backlight.h"
+#include "cpm-brightness.h"
+#include "cpm-control.h"
+#include "cpm-common.h"
 #include "egg-debug.h"
 #include "gsd-media-keys-window.h"
-#include "gpm-dpms.h"
-#include "gpm-idle.h"
-#include "gpm-marshal.h"
-#include "gpm-icon-names.h"
+#include "cpm-dpms.h"
+#include "cpm-idle.h"
+#include "cpm-marshal.h"
+#include "cpm-icon-names.h"
 #include "egg-console-kit.h"
 
 struct GpmBacklightPrivate
@@ -181,7 +181,7 @@ gpm_backlight_dialog_init (GpmBacklight *backlight)
 	if (backlight->priv->popup == NULL) {
 		backlight->priv->popup= msd_media_keys_window_new ();
 		msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
-							 "gpm-brightness-lcd",
+							 "cpm-brightness-lcd",
 							 TRUE);
 		ctk_window_set_position (CTK_WINDOW (backlight->priv->popup), CTK_WIN_POS_NONE);
 	}
@@ -774,7 +774,7 @@ gpm_backlight_init (GpmBacklight *backlight)
 	/* use a visual widget */
 	backlight->priv->popup = msd_media_keys_window_new ();
 	msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
-						 "gpm-brightness-lcd",
+						 "cpm-brightness-lcd",
 						 TRUE);
         ctk_window_set_position (CTK_WINDOW (backlight->priv->popup), CTK_WIN_POS_NONE);
 

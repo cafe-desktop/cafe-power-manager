@@ -30,8 +30,8 @@ cafe_brightness_applet_SOURCES =				\
 	brightness-applet.c					\
 	egg-debug.c						\
 	egg-debug.h						\
-	gpm-common.c						\
-	gpm-common.h
+	cpm-common.c						\
+	cpm-common.h
 
 cafe_brightness_applet_LDADD =					\
 	$(DBUS_LIBS)						\

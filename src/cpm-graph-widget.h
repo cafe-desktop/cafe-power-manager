@@ -23,7 +23,7 @@
 #define __GPM_GRAPH_WIDGET_H__
 
 #include <ctk/ctk.h>
-#include "gpm-point-obj.h"
+#include "cpm-point-obj.h"
 
 G_BEGIN_DECLS
 

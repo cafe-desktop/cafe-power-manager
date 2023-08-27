@@ -44,8 +44,8 @@ EXTRA_DIST =							\
 	org.cafe.power-manager.manager.gresource.xml		\
 	org.cafe.power-manager.preferences.gresource.xml	\
 	org.cafe.power-manager.statistics.gresource.xml		\
-	gpm-prefs.ui						\
-	gpm-statistics.ui					\
+	cpm-prefs.ui						\
+	cpm-statistics.ui					\
 	cafe-power-manager.about
 
 clean-local :

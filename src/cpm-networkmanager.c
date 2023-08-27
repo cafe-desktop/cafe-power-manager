@@ -26,7 +26,7 @@
 #include <glib.h>
 #include <dbus/dbus-glib.h>
 
-#include "gpm-networkmanager.h"
+#include "cpm-networkmanager.h"
 #include "egg-debug.h"
 
 #define NM_LISTENER_SERVICE	"org.freedesktop.NetworkManager"

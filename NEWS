@@ -1,7 +1,7 @@
 ### cafe-power-manager 1.24.2
 
   * Translations update
-  * gpm-kbd-backlight: do not change keyboard back-light, when disabled
+  * cpm-kbd-backlight: do not change keyboard back-light, when disabled
   * build: silent build warnings for distcheck
   * build: do not override the default value for CAFE_COMPILE_WARNINGS
   * Remove unused entry from autostart
@@ -14,10 +14,10 @@
   * Use ctk_show_about_dialog to show about dialog
   * Remove the CPU wakeups feature
   * Update copyright year on about dialog
-  * generate missing gpm-* PNGs from new SVGs
-  * add missing gpm-phone SVGs
-  * add missing gpm-keboard SVGs
-  * add missing gpm-mouse SVGs
+  * generate missing cpm-* PNGs from new SVGs
+  * add missing cpm-phone SVGs
+  * add missing cpm-keboard SVGs
+  * add missing cpm-mouse SVGs
 
 ### cafe-power-manager 1.24.0
 
@@ -41,31 +41,31 @@
   * drop obsolete version checks for upower
   * require upower-0.99.8
   * Use up_client_get_devices2()
-  * Use gresources for gpm-prefs.ui and gpm-statistics.ui
+  * Use gresources for cpm-prefs.ui and cpm-statistics.ui
   * egg-console-kit: avoid 'g_type_class_add_private'
-  * gpm-engine: avoid 'g_type_class_add_private'
-  * gpm-phone: avoid 'g_type_class_add_private'
-  * gpm-prefs-core: avoid 'g_type_class_add_private'
-  * gpm-screensaver: avoid 'g_type_class_add_private'
+  * cpm-engine: avoid 'g_type_class_add_private'
+  * cpm-phone: avoid 'g_type_class_add_private'
+  * cpm-prefs-core: avoid 'g_type_class_add_private'
+  * cpm-screensaver: avoid 'g_type_class_add_private'
   * gsd-media-keys-window: avoid 'g_type_class_add_private'
-  * gpm-tray-icon: avoid 'g_type_class_add_private'
+  * cpm-tray-icon: avoid 'g_type_class_add_private'
   * msd-osd-window: avoid 'g_type_class_add_private'
-  * gpm-load: avoid 'g_type_class_add_private'
-  * gpm-brightness: avoid 'g_type_class_add_private'
-  * gpm-manager: avoid 'g_type_class_add_private'
-  * gpm-kbd-backlight: avoid 'g_type_class_add_private'
-  * gpm-dpms: avoid 'g_type_class_add_private'
-  * gpm-button: avoid 'g_type_class_add_private'
-  * gpm-backlight: avoid 'g_type_class_add_private'
+  * cpm-load: avoid 'g_type_class_add_private'
+  * cpm-brightness: avoid 'g_type_class_add_private'
+  * cpm-manager: avoid 'g_type_class_add_private'
+  * cpm-kbd-backlight: avoid 'g_type_class_add_private'
+  * cpm-dpms: avoid 'g_type_class_add_private'
+  * cpm-button: avoid 'g_type_class_add_private'
+  * cpm-backlight: avoid 'g_type_class_add_private'
   * egg-idletime: avoid 'g_type_class_add_private'
-  * gpm-graph-widget: avoid 'g_type_class_add_private'
-  * gpm-session: avoid 'g_type_class_add_private'
-  * gpm-idle: avoid 'g_type_class_add_private'
-  * gpm-control: avoid 'g_type_class_add_private'
+  * cpm-graph-widget: avoid 'g_type_class_add_private'
+  * cpm-session: avoid 'g_type_class_add_private'
+  * cpm-idle: avoid 'g_type_class_add_private'
+  * cpm-control: avoid 'g_type_class_add_private'
   * Simplify the installation process of the icons
   * Remove unused UI file
   * prefs: Fix mnemonic relationships
-  * gpm-upower: fix some build warnings
+  * cpm-upower: fix some build warnings
   * Add scroll interface tabs with mouse wheel
 
 ### cafe-power-manager 1.23.0
@@ -91,7 +91,7 @@
 
   * Translations update
   * disable deprecation warnings for distcheck
-  * gpm-control: avoid deprecated 'g_settings_list_schemas'
+  * cpm-control: avoid deprecated 'g_settings_list_schemas'
   * media-keys: always round the render coordinates for media icons
   * media-keys: Tweak the OSD's bright bar position
   * osd-window: make the window smaller
@@ -100,10 +100,10 @@
   * Fix spelling and grammar mistakes
   * Use make functions for HELP_LINGUAS
   * add m-p-m user-guide to transifex config
-  * gpm-kbd-backlight: replace deprecated CDK_DEVICE_MANAGER
-  * gpm-backlight: replace deprecated CDK_DEVICE_MANAGER
-  * gpm-button: replace deprecated Cdk functions
-  * gpm-brightness: replace deprecated Cdk functions
+  * cpm-kbd-backlight: replace deprecated CDK_DEVICE_MANAGER
+  * cpm-backlight: replace deprecated CDK_DEVICE_MANAGER
+  * cpm-button: replace deprecated Cdk functions
+  * cpm-brightness: replace deprecated Cdk functions
 
 ### cafe-power-manager 1.21.0
 

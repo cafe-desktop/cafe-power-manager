@@ -17,6 +17,6 @@
 -->
 <gresources>
   <gresource prefix="/org/cafe/powermanager/statistics/">
-    <file compressed="true">gpm-statistics.ui</file>
+    <file compressed="true">cpm-statistics.ui</file>
   </gresource>
 </gresources>

@@ -26,8 +26,8 @@
 #include <glib/gi18n.h>
 #include <dbus/dbus-glib.h>
 
-#include "gpm-screensaver.h"
-#include "gpm-common.h"
+#include "cpm-screensaver.h"
+#include "cpm-common.h"
 #include "egg-debug.h"
 
 static void     gpm_screensaver_finalize   (GObject		*object);

@@ -41,7 +41,7 @@
 #include <X11/extensions/dpms.h>
 
 #include "egg-debug.h"
-#include "gpm-dpms.h"
+#include "cpm-dpms.h"
 
 static void   gpm_dpms_finalize  (GObject   *object);
 

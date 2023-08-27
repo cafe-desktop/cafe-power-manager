@@ -5,16 +5,16 @@ HELP_FILES = index.docbook legal.xml
 HELP_MEDIA = \
 	figures/applet-brightness.png \
 	figures/applet-inhibit.png \
-	figures/gpm-cell-capacity.png \
-	figures/gpm-charged.png \
-	figures/gpm-critical.png \
-	figures/gpm-low.png \
-	figures/gpm-prefs-ac.png \
-	figures/gpm-prefs-battery.png \
-	figures/gpm-prefs-general.png \
-	figures/gpm-stats-graph.png \
-	figures/gpm-suspend-problem.png \
-	figures/gpm-unplugged.png \
+	figures/cpm-cell-capacity.png \
+	figures/cpm-charged.png \
+	figures/cpm-critical.png \
+	figures/cpm-low.png \
+	figures/cpm-prefs-ac.png \
+	figures/cpm-prefs-battery.png \
+	figures/cpm-prefs-general.png \
+	figures/cpm-stats-graph.png \
+	figures/cpm-suspend-problem.png \
+	figures/cpm-unplugged.png \
 	figures/gs-prefs.png
 
 # Add linguas to be ignored, e.g. IGNORE_HELP_LINGUAS = ca de es fr

@@ -35,7 +35,7 @@
 #include <dbus/dbus-glib.h>
 
 #include "egg-debug.h"
-#include "gpm-common.h"
+#include "cpm-common.h"
 
 #define GPM_TYPE_INHIBIT_APPLET		(gpm_inhibit_applet_get_type ())
 #define GPM_INHIBIT_APPLET(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_INHIBIT_APPLET, GpmInhibitApplet))
@@ -81,9 +81,9 @@ static void	gpm_applet_destroy_cb		(CtkWidget *widget);
 
 #define GPM_INHIBIT_APPLET_ID		        "InhibitApplet"
 #define GPM_INHIBIT_APPLET_FACTORY_ID	        "InhibitAppletFactory"
-#define GPM_INHIBIT_APPLET_ICON_INHIBIT		"gpm-inhibit"
-#define GPM_INHIBIT_APPLET_ICON_INVALID		"gpm-inhibit-invalid"
-#define GPM_INHIBIT_APPLET_ICON_UNINHIBIT	"gpm-hibernate"
+#define GPM_INHIBIT_APPLET_ICON_INHIBIT		"cpm-inhibit"
+#define GPM_INHIBIT_APPLET_ICON_INVALID		"cpm-inhibit-invalid"
+#define GPM_INHIBIT_APPLET_ICON_UNINHIBIT	"cpm-hibernate"
 #define GPM_INHIBIT_APPLET_NAME			_("Power Manager Inhibit Applet")
 #define GPM_INHIBIT_APPLET_DESC			_("Allows user to inhibit automatic power saving.")
 #define CAFE_PANEL_APPLET_VERTICAL(p)					\

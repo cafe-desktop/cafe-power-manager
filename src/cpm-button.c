@@ -31,8 +31,8 @@
 #include <X11/XF86keysym.h>
 #include <libupower-glib/upower.h>
 
-#include "gpm-common.h"
-#include "gpm-button.h"
+#include "cpm-common.h"
+#include "cpm-button.h"
 
 #include "egg-debug.h"
 

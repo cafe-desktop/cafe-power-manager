@@ -35,11 +35,11 @@
 #include "egg-debug.h"
 #include "egg-console-kit.h"
 
-#include "gpm-tray-icon.h"
-#include "gpm-common.h"
-#include "gpm-prefs-core.h"
-#include "gpm-icon-names.h"
-#include "gpm-brightness.h"
+#include "cpm-tray-icon.h"
+#include "cpm-common.h"
+#include "cpm-prefs-core.h"
+#include "cpm-icon-names.h"
+#include "cpm-brightness.h"
 
 static void gpm_prefs_finalize (GObject *object);
 
@@ -822,7 +822,7 @@ gpm_prefs_init (GpmPrefs *prefs)
 
 	error = NULL;
 	prefs->priv->builder = ctk_builder_new ();
-	retval = ctk_builder_add_from_resource (prefs->priv->builder, "/org/cafe/powermanager/preferences/gpm-prefs.ui", &error);
+	retval = ctk_builder_add_from_resource (prefs->priv->builder, "/org/cafe/powermanager/preferences/cpm-prefs.ui", &error);
 
 	if (error) {
 		egg_error ("failed to load ui: %s", error->message);

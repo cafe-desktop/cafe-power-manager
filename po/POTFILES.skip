@@ -3,5 +3,5 @@ applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.in
 data/cafe-power-manager.desktop.in
 data/cafe-power-preferences.desktop.in
 data/cafe-power-statistics.desktop.in
-applets/brightness/gpm-common.c
-applets/inhibit/gpm-common.c
+applets/brightness/cpm-common.c
+applets/inhibit/cpm-common.c

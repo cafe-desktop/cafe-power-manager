@@ -147,11 +147,11 @@ msgstr "금지 애플릿"
 msgid "cafe-inhibit-applet"
 msgstr ""
 
-#: data/cafe-power-manager.desktop.in.in:3 src/gpm-tray-icon.c:184
+#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:184
 msgid "Power Manager"
 msgstr "전원 관리자"
 
-#: data/cafe-power-manager.desktop.in.in:4 src/gpm-tray-icon.c:186
+#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:186
 msgid "Power management daemon"
 msgstr "전원 관리 데몬"
 
@@ -795,8 +795,8 @@ msgstr "전원 관리 설정"
 msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
-#: data/cafe-power-statistics.desktop.in.in:3 data/gpm-statistics.ui:7
-#: src/gpm-statistics.c:1090 src/gpm-statistics.c:1577
+#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:7
+#: src/cpm-statistics.c:1090 src/cpm-statistics.c:1577
 msgid "Power Statistics"
 msgstr "전원 통계"
 
@@ -810,551 +810,551 @@ msgstr "전원 관리 관찰"
 msgid "cafe-power-statistics"
 msgstr ""
 
-#: data/gpm-statistics.ui:113 src/gpm-statistics.c:208
+#: data/cpm-statistics.ui:113 src/cpm-statistics.c:208
 msgid "Details"
 msgstr "상세 정보"
 
-#: data/gpm-statistics.ui:139 data/gpm-statistics.ui:342
+#: data/cpm-statistics.ui:139 data/cpm-statistics.ui:342
 msgid "Graph type:"
 msgstr "그래프 종류:"
 
-#: data/gpm-statistics.ui:174
+#: data/cpm-statistics.ui:174
 msgid "Data length:"
 msgstr "데이터 크기:"
 
-#: data/gpm-statistics.ui:234 data/gpm-statistics.ui:395
+#: data/cpm-statistics.ui:234 data/cpm-statistics.ui:395
 msgid "There is no data to display."
 msgstr "표시할 데이터가 없습니다."
 
-#: data/gpm-statistics.ui:276 data/gpm-statistics.ui:438
+#: data/cpm-statistics.ui:276 data/cpm-statistics.ui:438
 msgid "Use smoothed line"
 msgstr "부드러운 선 사용"
 
-#: data/gpm-statistics.ui:291 data/gpm-statistics.ui:453
+#: data/cpm-statistics.ui:291 data/cpm-statistics.ui:453
 msgid "Show data points"
 msgstr "데이터 지점 표시"
 
-#: data/gpm-statistics.ui:320
+#: data/cpm-statistics.ui:320
 msgid "History"
 msgstr "기록"
 
-#: data/gpm-statistics.ui:482
+#: data/cpm-statistics.ui:482
 msgid "Statistics"
 msgstr "통계"
 
-#: data/gpm-statistics.ui:504
+#: data/cpm-statistics.ui:504
 msgid "Processor wakeups per second:"
 msgstr "초당 프로세서 깨어나는 회수:"
 
-#: data/gpm-statistics.ui:516
+#: data/cpm-statistics.ui:516
 msgid "0"
 msgstr "0"
 
-#: data/gpm-statistics.ui:563 src/gpm-statistics.c:194
+#: data/cpm-statistics.ui:563 src/cpm-statistics.c:194
 msgid "Wakeups"
 msgstr "깨어나기"
 
-#: data/gpm-prefs.ui:55
+#: data/cpm-prefs.ui:55
 msgid "Power Management Preferences"
 msgstr "전원 관리 기본 설정"
 
-#: data/gpm-prefs.ui:84 data/gpm-prefs.ui:327 data/gpm-prefs.ui:585
-#: data/gpm-prefs.ui:813
+#: data/cpm-prefs.ui:84 data/cpm-prefs.ui:327 data/cpm-prefs.ui:585
+#: data/cpm-prefs.ui:813
 msgid "<b>Actions</b>"
 msgstr "<b>동작</b>"
 
-#: data/gpm-prefs.ui:111 data/gpm-prefs.ui:354 data/gpm-prefs.ui:612
+#: data/cpm-prefs.ui:111 data/cpm-prefs.ui:354 data/cpm-prefs.ui:612
 msgid "Put computer to _sleep when inactive for:"
 msgstr "다음 시간동안 입력이 없을 때 컴퓨터를 절전(_S):"
 
-#: data/gpm-prefs.ui:144 data/gpm-prefs.ui:387
+#: data/cpm-prefs.ui:144 data/cpm-prefs.ui:387
 msgid "When laptop lid is cl_osed:"
 msgstr "노트북 덮개가 닫혔을 때(_O):"
 
-#: data/gpm-prefs.ui:189 data/gpm-prefs.ui:463 data/gpm-prefs.ui:721
+#: data/cpm-prefs.ui:189 data/cpm-prefs.ui:463 data/cpm-prefs.ui:721
 msgid "<b>Display</b>"
 msgstr "<b>표시</b>"
 
-#: data/gpm-prefs.ui:216 data/gpm-prefs.ui:490 data/gpm-prefs.ui:748
+#: data/cpm-prefs.ui:216 data/cpm-prefs.ui:490 data/cpm-prefs.ui:748
 msgid "Put _display to sleep when inactive for:"
 msgstr "다음 시간동안 입력이 없을 때 화면을 절전(_D):"
 
-#: data/gpm-prefs.ui:247
+#: data/cpm-prefs.ui:247
 msgid "Set display _brightness to:"
 msgstr "화면 밝기 값(_B):"
 
-#: data/gpm-prefs.ui:275 data/gpm-prefs.ui:529
+#: data/cpm-prefs.ui:275 data/cpm-prefs.ui:529
 msgid "Di_m display when idle"
 msgstr "입력이 없을 때 화면 어둡게(_M)"
 
-#: data/gpm-prefs.ui:306
+#: data/cpm-prefs.ui:306
 msgid "On AC Power"
 msgstr "교류 전원 사용"
 
-#: data/gpm-prefs.ui:418
+#: data/cpm-prefs.ui:418
 msgid "When battery po_wer is critically low:"
 msgstr "배터리 전원이 위험하게 적을 때(_W):"
 
-#: data/gpm-prefs.ui:514
+#: data/cpm-prefs.ui:514
 msgid "_Reduce backlight brightness"
 msgstr "백라이트 밝기 낮추기(_R)"
 
-#: data/gpm-prefs.ui:563
+#: data/cpm-prefs.ui:563
 msgid "On Battery Power"
 msgstr "배터리 전원 사용"
 
-#: data/gpm-prefs.ui:645
+#: data/cpm-prefs.ui:645
 msgid "When UPS power is l_ow:"
 msgstr "무정전 전원 장치 전원이 부족할 때(_O):"
 
-#: data/gpm-prefs.ui:676
+#: data/cpm-prefs.ui:676
 msgid "When UPS power is _critically low:"
 msgstr "무정전 전원 장치 전원이 매우 부족할 때(_C):"
 
-#: data/gpm-prefs.ui:791
+#: data/cpm-prefs.ui:791
 msgid "On UPS Power"
 msgstr "무정전 전원 장치 전원 사용"
 
-#: data/gpm-prefs.ui:840
+#: data/cpm-prefs.ui:840
 msgid "When the power _button is pressed:"
 msgstr "전원 단추를 눌렀을 때(_B):"
 
-#: data/gpm-prefs.ui:873
+#: data/cpm-prefs.ui:873
 msgid "When the _suspend button is pressed:"
 msgstr "절전 모드 단추를 눌렀을 때(_S):"
 
-#: data/gpm-prefs.ui:918
+#: data/cpm-prefs.ui:918
 msgid "<b>Notification Area</b>"
 msgstr "<b>알림 영역</b>"
 
-#: data/gpm-prefs.ui:938
+#: data/cpm-prefs.ui:938
 msgid "_Never display an icon"
 msgstr "아이콘 표시 안함(_N)"
 
-#: data/gpm-prefs.ui:953
+#: data/cpm-prefs.ui:953
 msgid "_Only display an icon when battery power is low"
 msgstr "배터리 전원이 매우 부족할 경우에만 아이콘 표시(_O)"
 
-#: data/gpm-prefs.ui:969
+#: data/cpm-prefs.ui:969
 msgid "Only display an icon when charging or _discharging"
 msgstr "충전 또는 방전 중일 때만 아이콘 표시(_D)"
 
-#: data/gpm-prefs.ui:985
+#: data/cpm-prefs.ui:985
 msgid "Only display an icon when a battery is p_resent"
 msgstr "배터리가 있을 때에만 아이콘 표시(_R)"
 
-#: data/gpm-prefs.ui:1001
+#: data/cpm-prefs.ui:1001
 msgid "_Always display an icon"
 msgstr "항상 아이콘 표시(_A)"
 
-#: data/gpm-prefs.ui:1036
+#: data/cpm-prefs.ui:1036
 msgid "General"
 msgstr "일반"
 
-#: data/gpm-prefs.ui:1060
+#: data/cpm-prefs.ui:1060
 msgid "Provides help about this program"
 msgstr "이 프로그램의 도움말을 표시합니다"
 
-#: data/gpm-prefs.ui:1072
+#: data/cpm-prefs.ui:1072
 msgid "Make Default"
 msgstr "기본값으로 설정"
 
-#: data/gpm-prefs.ui:1076
+#: data/cpm-prefs.ui:1076
 msgid "Sets this policy to be used by all users"
 msgstr "이 정책을 모든 사용자가 사용합니다"
 
-#: data/gpm-prefs.ui:1092
+#: data/cpm-prefs.ui:1092
 msgid "Closes the program"
 msgstr "이 프로그램을 닫습니다"
 
-#: src/gpm-backlight-helper.c:166
+#: src/cpm-backlight-helper.c:166
 msgid "Set the current brightness"
 msgstr "현제 밝기  설정"
 
-#: src/gpm-backlight-helper.c:169
+#: src/cpm-backlight-helper.c:169
 msgid "Get the current brightness"
 msgstr "현제 밝기 값 얻기"
 
-#: src/gpm-backlight-helper.c:172
+#: src/cpm-backlight-helper.c:172
 msgid "Get the number of brightness levels supported"
 msgstr "지원하는 밝기 값을 가져옵니다"
 
-#: src/gpm-backlight-helper.c:184
+#: src/cpm-backlight-helper.c:184
 msgid "CAFE Power Manager Backlight Helper"
 msgstr "마테 전원 관리자 백라이트 도우미"
 
-#: src/gpm-backlight-helper.c:192
+#: src/cpm-backlight-helper.c:192
 msgid "No valid option was specified"
 msgstr "올바른 옵션이 지정되지 않았습니다"
 
-#: src/gpm-backlight-helper.c:201
+#: src/cpm-backlight-helper.c:201
 msgid "No backlights were found on your system"
 msgstr "시스템에서 백라이트를 찾을 수 없습니다"
 
-#: src/gpm-backlight-helper.c:212
+#: src/cpm-backlight-helper.c:212
 msgid "Could not get the value of the backlight"
 msgstr "백라이트 값을 얻을 수 없습니다"
 
-#: src/gpm-backlight-helper.c:230
+#: src/cpm-backlight-helper.c:230
 msgid "Could not get the maximum value of the backlight"
 msgstr "백라이트 최대 값을 얻을 수 없습니다"
 
-#: src/gpm-backlight-helper.c:247
+#: src/cpm-backlight-helper.c:247
 msgid "This program can only be used by the root user"
 msgstr "이 프로그램은 루트 사용자만 사용할 수 있습니다"
 
-#: src/gpm-backlight-helper.c:256
+#: src/cpm-backlight-helper.c:256
 msgid "This program must only be run through pkexec"
 msgstr "이 프로그램은 반드시 pkexec로 실행해야 합니다."
 
-#: src/gpm-backlight-helper.c:267
+#: src/cpm-backlight-helper.c:267
 msgid "Could not set the value of the backlight"
 msgstr "백라이트 값을 설정할 수 없습니다."
 
-#: src/gpm-common.c:53
+#: src/cpm-common.c:53
 msgid "Unknown time"
 msgstr "알 수 없는 시간"
 
-#: src/gpm-common.c:58
+#: src/cpm-common.c:58
 #, c-format
 msgid "%i minute"
 msgid_plural "%i minutes"
 msgstr[0] ""
 
-#: src/gpm-common.c:69
+#: src/cpm-common.c:69
 #, c-format
 msgid "%i hour"
 msgid_plural "%i hours"
 msgstr[0] ""
 
-#: src/gpm-common.c:75
+#: src/cpm-common.c:75
 #, c-format
 msgid "%i %s %i %s"
 msgstr "%i%s %i%s"
 
-#: src/gpm-common.c:76
+#: src/cpm-common.c:76
 msgid "hour"
 msgid_plural "hours"
 msgstr[0] ""
 
-#: src/gpm-common.c:77
+#: src/cpm-common.c:77
 msgid "minute"
 msgid_plural "minutes"
 msgstr[0] ""
 
 #. Translators: This is %i days
-#: src/gpm-graph-widget.c:433
+#: src/cpm-graph-widget.c:433
 #, c-format
 msgid "%id"
 msgstr "%i일"
 
 #. Translators: This is %i days %02i hours
-#: src/gpm-graph-widget.c:436
+#: src/cpm-graph-widget.c:436
 #, c-format
 msgid "%id%02ih"
 msgstr "%i일%02i시간"
 
 #. Translators: This is %i hours
-#: src/gpm-graph-widget.c:441
+#: src/cpm-graph-widget.c:441
 #, c-format
 msgid "%ih"
 msgstr "%i시간"
 
 #. Translators: This is %i hours %02i minutes
-#: src/gpm-graph-widget.c:444
+#: src/cpm-graph-widget.c:444
 #, c-format
 msgid "%ih%02im"
 msgstr "%i시간%02i분"
 
 #. Translators: This is %2i minutes
-#: src/gpm-graph-widget.c:449
+#: src/cpm-graph-widget.c:449
 #, c-format
 msgid "%2im"
 msgstr "%2i분"
 
 #. Translators: This is %2i minutes %02i seconds
-#: src/gpm-graph-widget.c:452
+#: src/cpm-graph-widget.c:452
 #, c-format
 msgid "%2im%02i"
 msgstr "%2i분%02i"
 
 #. Translators: This is %2i seconds
-#: src/gpm-graph-widget.c:456
+#: src/cpm-graph-widget.c:456
 #, c-format
 msgid "%2is"
 msgstr "%2i초"
 
 #. Translators: This is %i Percentage
-#: src/gpm-graph-widget.c:460
+#: src/cpm-graph-widget.c:460
 #, c-format
 msgid "%i%%"
 msgstr "%i%%"
 
 #. Translators: This is %.1f Watts
-#: src/gpm-graph-widget.c:463
+#: src/cpm-graph-widget.c:463
 #, c-format
 msgid "%.1fW"
 msgstr "%.1fW"
 
 #. Translators: This is %.1f Volts
-#: src/gpm-graph-widget.c:468
+#: src/cpm-graph-widget.c:468
 #, c-format
 msgid "%.1fV"
 msgstr "%.1fV"
 
-#: src/gpm-main.c:172 src/gpm-prefs.c:77 src/gpm-statistics.c:1560
+#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1560
 msgid "Show extra debugging information"
 msgstr "추가 디버깅 정보 보기"
 
-#: src/gpm-main.c:174
+#: src/cpm-main.c:174
 msgid "Show version of installed program and exit"
 msgstr "설치한 프로그램의 버전을 표시하고 끝냅니다"
 
-#: src/gpm-main.c:176
+#: src/cpm-main.c:176
 msgid "Exit after a small delay (for debugging)"
 msgstr "약간 시간을 끈 뒤에 끝냅니다(디버깅용)"
 
-#: src/gpm-main.c:178
+#: src/cpm-main.c:178
 msgid "Exit after the manager has loaded (for debugging)"
 msgstr "전원 관리자가 시작한 다음 끝냅니다(디버깅용)"
 
-#: src/gpm-main.c:189 src/gpm-main.c:193
+#: src/cpm-main.c:189 src/cpm-main.c:193
 msgid "CAFE Power Manager"
 msgstr "마테 전원 관리자"
 
-#: src/gpm-manager.c:222 src/gpm-manager.c:294
+#: src/cpm-manager.c:222 src/cpm-manager.c:294
 msgid "Battery is very low"
 msgstr "배터리 전원이 매우 부족합니다"
 
-#: src/gpm-manager.c:274
+#: src/cpm-manager.c:274
 msgid "Power plugged in"
 msgstr "전원을 연결했습니다"
 
-#: src/gpm-manager.c:278
+#: src/cpm-manager.c:278
 msgid "Power unplugged"
 msgstr "교류 전원이 빠졌습니다"
 
-#: src/gpm-manager.c:282
+#: src/cpm-manager.c:282
 msgid "Lid has opened"
 msgstr "덮개를 열었습니다"
 
-#: src/gpm-manager.c:286
+#: src/cpm-manager.c:286
 msgid "Lid has closed"
 msgstr "덮개를 닫았습니다"
 
-#: src/gpm-manager.c:290
+#: src/cpm-manager.c:290
 msgid "Battery is low"
 msgstr "배터리 전원이 부족합니다"
 
-#: src/gpm-manager.c:298
+#: src/cpm-manager.c:298
 msgid "Battery is full"
 msgstr "배터리를 완전히 충전했습니다"
 
-#: src/gpm-manager.c:302
+#: src/cpm-manager.c:302
 msgid "Suspend started"
 msgstr "절전 시작"
 
-#: src/gpm-manager.c:306
+#: src/cpm-manager.c:306
 msgid "Resumed"
 msgstr "원상복귀"
 
-#: src/gpm-manager.c:310
+#: src/cpm-manager.c:310
 msgid "Suspend failed"
 msgstr "절전 실패"
 
-#: src/gpm-manager.c:578
+#: src/cpm-manager.c:578
 msgid "Computer failed to suspend."
 msgstr "컴퓨터가 절전에 실패했습니다."
 
-#: src/gpm-manager.c:580
+#: src/cpm-manager.c:580
 msgid "Failed to suspend"
 msgstr "절전 실패"
 
-#: src/gpm-manager.c:584
+#: src/cpm-manager.c:584
 msgid "Computer failed to hibernate."
 msgstr "컴퓨터가 최대 절전에 실패했습니다."
 
-#: src/gpm-manager.c:586
+#: src/cpm-manager.c:586
 msgid "Failed to hibernate"
 msgstr "최대 절전 실패"
 
-#: src/gpm-manager.c:591
+#: src/cpm-manager.c:591
 msgid "Failure was reported as:"
 msgstr "실패를 아래와 같이 보고합니다:"
 
-#: src/gpm-manager.c:604
+#: src/cpm-manager.c:604
 msgid "Visit help page"
 msgstr "도움말 페이지 보기"
 
-#: src/gpm-manager.c:850
+#: src/cpm-manager.c:850
 msgid "Display DPMS activated"
 msgstr "활성화환 DPMS 표시"
 
-#: src/gpm-manager.c:869
+#: src/cpm-manager.c:869
 msgid "On battery power"
 msgstr "배터리 전원 사용"
 
-#: src/gpm-manager.c:887
+#: src/cpm-manager.c:887
 msgid "Laptop lid is closed"
 msgstr "노트북 덮개를 닫았습니다"
 
-#: src/gpm-manager.c:925
+#: src/cpm-manager.c:925
 msgid "Power Information"
 msgstr "전원 정보"
 
-#: src/gpm-manager.c:1107
+#: src/cpm-manager.c:1107
 msgid "Battery may be broken"
 msgstr "배터리가 손상된 것 같습니다"
 
-#: src/gpm-manager.c:1110
+#: src/cpm-manager.c:1110
 #, c-format
 msgid ""
 "Battery has a very low capacity (%1.1f%%), which means that it may be old or"
 " broken."
 msgstr "배터리 용량이 매우 부족합니다(%1.1f%%). 배터리가 오래되었거나 손상되었음을 의미합니다."
 
-#: src/gpm-manager.c:1159
+#: src/cpm-manager.c:1159
 msgid "Battery Charged"
 msgid_plural "Batteries Charged"
 msgstr[0] ""
 
-#: src/gpm-manager.c:1205
+#: src/cpm-manager.c:1205
 msgid "Battery Discharging"
 msgstr "배터리 방전 중"
 
-#: src/gpm-manager.c:1209
+#: src/cpm-manager.c:1209
 #, c-format
 msgid "%s of battery power remaining (%.0f%%)"
 msgstr "%s의 배터리 전원 남은 용량(%.0f%%)"
 
-#: src/gpm-manager.c:1212 src/gpm-manager.c:1224
+#: src/cpm-manager.c:1212 src/cpm-manager.c:1224
 #, c-format
 msgid "%s discharging (%.0f%%)"
 msgstr "%s 방전중(%0.f%%)"
 
-#: src/gpm-manager.c:1217
+#: src/cpm-manager.c:1217
 msgid "UPS Discharging"
 msgstr "무정전 전원 장치 방전 중"
 
-#: src/gpm-manager.c:1221
+#: src/cpm-manager.c:1221
 #, c-format
 msgid "%s of UPS backup power remaining (%.0f%%)"
 msgstr "%s의 무정전 전원 장치 백업 전원 남은 용량(%.0f%%)"
 
-#: src/gpm-manager.c:1305
+#: src/cpm-manager.c:1305
 msgid "Battery low"
 msgstr "배터리 전원 부족"
 
-#: src/gpm-manager.c:1308
+#: src/cpm-manager.c:1308
 msgid "Laptop battery low"
 msgstr "노트북 배터리 전원 부족"
 
-#: src/gpm-manager.c:1314
+#: src/cpm-manager.c:1314
 #, c-format
 msgid "Approxicafely <b>%s</b> remaining (%.0f%%)"
 msgstr "평균 <b>%s</b> 남은 용량(%.0f%%)"
 
-#: src/gpm-manager.c:1318
+#: src/cpm-manager.c:1318
 msgid "UPS low"
 msgstr "UPS 전원 부족"
 
-#: src/gpm-manager.c:1322
+#: src/cpm-manager.c:1322
 #, c-format
 msgid "Approxicafely <b>%s</b> of remaining UPS backup power (%.0f%%)"
 msgstr "평균 무정전 전원 장치 백업 전원 <b>%s</b> 남은 용량(%.0f%%)"
 
-#: src/gpm-manager.c:1331 src/gpm-manager.c:1470
+#: src/cpm-manager.c:1331 src/cpm-manager.c:1470
 msgid "Mouse battery low"
 msgstr "마우스 배터리 전원 부족"
 
-#: src/gpm-manager.c:1334
+#: src/cpm-manager.c:1334
 #, c-format
 msgid "Wireless mouse is low in power (%.0f%%)"
 msgstr "무선 마우스 전원이 부족합니다(%.0f%%)"
 
-#: src/gpm-manager.c:1338 src/gpm-manager.c:1478
+#: src/cpm-manager.c:1338 src/cpm-manager.c:1478
 msgid "Keyboard battery low"
 msgstr "키보드 배터리 전원 부족"
 
-#: src/gpm-manager.c:1341
+#: src/cpm-manager.c:1341
 #, c-format
 msgid "Wireless keyboard is low in power (%.0f%%)"
 msgstr "무선 키보드 전원이 부족합니다(%.0f%%)"
 
-#: src/gpm-manager.c:1345 src/gpm-manager.c:1487
+#: src/cpm-manager.c:1345 src/cpm-manager.c:1487
 msgid "PDA battery low"
 msgstr "PDA 배터리 전원 부족"
 
-#: src/gpm-manager.c:1348
+#: src/cpm-manager.c:1348
 #, c-format
 msgid "PDA is low in power (%.0f%%)"
 msgstr "PDA 전원이 부족합니다(%.0f%%)"
 
-#: src/gpm-manager.c:1352 src/gpm-manager.c:1497 src/gpm-manager.c:1507
+#: src/cpm-manager.c:1352 src/cpm-manager.c:1497 src/cpm-manager.c:1507
 msgid "Cell phone battery low"
 msgstr "휴대전화 배터리 전원 부족"
 
-#: src/gpm-manager.c:1355
+#: src/cpm-manager.c:1355
 #, c-format
 msgid "Cell phone is low in power (%.0f%%)"
 msgstr "휴대전화 전원이 부족합니다(%.0f%%)"
 
-#: src/gpm-manager.c:1359
+#: src/cpm-manager.c:1359
 msgid "Media player battery low"
 msgstr "미디어 플레이어 배터리 전원 부족"
 
-#: src/gpm-manager.c:1362
+#: src/cpm-manager.c:1362
 #, c-format
 msgid "Media player is low in power (%.0f%%)"
 msgstr "미디어 플레이어 전원이 부족합니다(%.0f%%)"
 
-#: src/gpm-manager.c:1366 src/gpm-manager.c:1516
+#: src/cpm-manager.c:1366 src/cpm-manager.c:1516
 msgid "Tablet battery low"
 msgstr "태블릿 배터리 전원 부족"
 
-#: src/gpm-manager.c:1369
+#: src/cpm-manager.c:1369
 #, c-format
 msgid "Tablet is low in power (%.0f%%)"
 msgstr "태블릿 전원이 부족합니다(%.0f%%)"
 
-#: src/gpm-manager.c:1373 src/gpm-manager.c:1525
+#: src/cpm-manager.c:1373 src/cpm-manager.c:1525
 msgid "Attached computer battery low"
 msgstr "연결된 컴퓨터 배터리 잔량이 낮음"
 
-#: src/gpm-manager.c:1376
+#: src/cpm-manager.c:1376
 #, c-format
 msgid "Attached computer is low in power (%.0f%%)"
 msgstr "연결한 컴퓨터의 전원이 부족합니다(%.0f%%)"
 
-#: src/gpm-manager.c:1424
+#: src/cpm-manager.c:1424
 msgid "Battery critically low"
 msgstr "배터리 전원 매우 부족"
 
-#: src/gpm-manager.c:1427 src/gpm-manager.c:1585
+#: src/cpm-manager.c:1427 src/cpm-manager.c:1585
 msgid "Laptop battery critically low"
 msgstr "노트북 배터리 전원 매우 부족"
 
-#: src/gpm-manager.c:1436
+#: src/cpm-manager.c:1436
 msgid "Plug in your AC adapter to avoid losing data."
 msgstr "데이터를 잃어버리지 않으려면 교류 전원 어댑터를 연결하십시오."
 
-#: src/gpm-manager.c:1440
+#: src/cpm-manager.c:1440
 msgid "Computer will suspend very soon unless it is plugged in."
 msgstr "전원을 연결하지 않으면 곧 절전 상태가 됩니다."
 
-#: src/gpm-manager.c:1444
+#: src/cpm-manager.c:1444
 msgid "Computer will hibernate very soon unless it is plugged in."
 msgstr "전원을 연결하지 않으면 곧 최대 절전 상태가 됩니다."
 
-#: src/gpm-manager.c:1448
+#: src/cpm-manager.c:1448
 msgid "Computer will shutdown very soon unless it is plugged in."
 msgstr "전원을 연결하지 않으면 곧 컴퓨터를 끕니다."
 
-#: src/gpm-manager.c:1455 src/gpm-manager.c:1621
+#: src/cpm-manager.c:1455 src/cpm-manager.c:1621
 msgid "UPS critically low"
 msgstr "무정전 전원 장치 전원 매우 부족"
 
-#: src/gpm-manager.c:1459
+#: src/cpm-manager.c:1459
 #, c-format
 msgid ""
 "Approxicafely <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
@@ -1362,62 +1362,62 @@ msgid ""
 msgstr ""
 "평균적으로 <b>%s</b>의 남은 무정전 전원 장치 전원입니다(%.0f%%). 데이터 손실을 방지하려면 교류 전원 상태를 복원하십시오."
 
-#: src/gpm-manager.c:1473
+#: src/cpm-manager.c:1473
 #, c-format
 msgid ""
 "Wireless mouse is very low in power (%.0f%%). This device will soon stop "
 "functioning if not charged."
 msgstr "무선 마우스의 전원이 매우 부족합니다(%.0f%%). 충전하지 않으면 이 장치의 기능이 곧 멈춥니다."
 
-#: src/gpm-manager.c:1481
+#: src/cpm-manager.c:1481
 #, c-format
 msgid ""
 "Wireless keyboard is very low in power (%.0f%%). This device will soon stop "
 "functioning if not charged."
 msgstr "무선 키보드의 전원이 매우 부족합니다(%.0f%%). 충전하지 않으면 이 장치의 기능이 곧 멈춥니다."
 
-#: src/gpm-manager.c:1490
+#: src/cpm-manager.c:1490
 #, c-format
 msgid ""
 "PDA is very low in power (%.0f%%). This device will soon stop functioning if"
 " not charged."
 msgstr "PDA의 전원이 매우 부족합니다(%.0f%%). 충전하지 않으면 이 장치의 기능이 곧 멈춥니다."
 
-#: src/gpm-manager.c:1500
+#: src/cpm-manager.c:1500
 #, c-format
 msgid ""
 "Cell phone is very low in power (%.0f%%). This device will soon stop "
 "functioning if not charged."
 msgstr "휴대 전화의 전원이 매우 부족합니다(%.0f%%). 충전하지 않으면 이 장치의 기능이 곧 멈춥니다."
 
-#: src/gpm-manager.c:1510
+#: src/cpm-manager.c:1510
 #, c-format
 msgid ""
 "Media player is very low in power (%.0f%%). This device will soon stop "
 "functioning if not charged."
 msgstr "미디어 플레이어의 전원이 매우 부족합니다(%.0f%%). 충전하지 않으면 이 장치의 기능이 곧 멈춥니다."
 
-#: src/gpm-manager.c:1519
+#: src/cpm-manager.c:1519
 #, c-format
 msgid ""
 "Tablet is very low in power (%.0f%%). This device will soon stop functioning"
 " if not charged."
 msgstr "태블릿의 전원이 매우 부족합니다(%.0f%%). 충전하지 않으면 이 장치의 기능이 곧 멈춥니다."
 
-#: src/gpm-manager.c:1528
+#: src/cpm-manager.c:1528
 #, c-format
 msgid ""
 "Attached computer is very low in power (%.0f%%). The device will soon "
 "shutdown if not charged."
 msgstr "연결한 컴퓨터의 전원이 매우 부족합니다(%.0f%%). 충전하지 않으면 이 장치가 곧 꺼집니다."
 
-#: src/gpm-manager.c:1593
+#: src/cpm-manager.c:1593
 msgid ""
 "The battery is below the critical level and this computer will <b>power-"
 "off</b> when the battery becomes completely empty."
 msgstr "배터리가 위험한 수준보다 낮고 배터리가 완전히 방전되면 이 컴퓨터의 <b>전원이 꺼집니다</b>."
 
-#: src/gpm-manager.c:1599
+#: src/cpm-manager.c:1599
 msgid ""
 "The battery is below the critical level and this computer is about to "
 "suspend.<br><b>NOTE:</b> A small amount of power is required to keep your "
@@ -1426,406 +1426,406 @@ msgstr ""
 "배터리가 위험한 수준보다 낮고 이 컴퓨터는 절전 상태입니다. <br><b>주의:</b> 컴퓨터를 절전 상태로 유지하려면 약간의 전원이 "
 "필요합니다."
 
-#: src/gpm-manager.c:1606
+#: src/cpm-manager.c:1606
 msgid ""
 "The battery is below the critical level and this computer is about to "
 "hibernate."
 msgstr "배터리 전원이 위험 수준보다 부족하여 이 컴퓨터를 최대 절전으로 둡니다."
 
-#: src/gpm-manager.c:1611
+#: src/cpm-manager.c:1611
 msgid ""
 "The battery is below the critical level and this computer is about to "
 "shutdown."
 msgstr "배터리 전원이 위험 수준보다 부족하여 이 컴퓨터를 끕니다."
 
-#: src/gpm-manager.c:1629
+#: src/cpm-manager.c:1629
 msgid ""
 "The UPS is below the critical level and this computer will <b>power-off</b> "
 "when the UPS becomes completely empty."
 msgstr ""
 "무정전 전원 장치의 전원이 위험 수준보다 부족하여 무정전 전원 장치가 완전히 방전되면 이 컴퓨터의 <b>전원이 꺼집니다</b>."
 
-#: src/gpm-manager.c:1635
+#: src/cpm-manager.c:1635
 msgid ""
 "The UPS is below the critical level and this computer is about to hibernate."
 msgstr "배터리 전원이 위험 수준보다 부족하여 이 컴퓨터는 최대 절전 상태가 됩니다."
 
-#: src/gpm-manager.c:1640
+#: src/cpm-manager.c:1640
 msgid ""
 "The UPS is below the critical level and this computer is about to shutdown."
 msgstr "배터리 전원이 위험 수준보다 부족하여 이 컴퓨터를 끕니다."
 
-#: src/gpm-prefs.c:81
+#: src/cpm-prefs.c:81
 msgid "CAFE Power Preferences"
 msgstr "마테 전원 기본 설정"
 
-#: src/gpm-prefs-core.c:238
+#: src/cpm-prefs-core.c:238
 msgid "Shutdown"
 msgstr "시스템 종료"
 
-#: src/gpm-prefs-core.c:245
+#: src/cpm-prefs-core.c:245
 msgid "Suspend"
 msgstr "절전"
 
-#: src/gpm-prefs-core.c:248
+#: src/cpm-prefs-core.c:248
 msgid "Hibernate"
 msgstr "최대 절전"
 
-#: src/gpm-prefs-core.c:251
+#: src/cpm-prefs-core.c:251
 msgid "Blank screen"
 msgstr "빈 화면"
 
-#: src/gpm-prefs-core.c:254
+#: src/cpm-prefs-core.c:254
 msgid "Ask me"
 msgstr "확인 질문"
 
-#: src/gpm-prefs-core.c:257
+#: src/cpm-prefs-core.c:257
 msgid "Do nothing"
 msgstr "아무것도 안함"
 
-#: src/gpm-prefs-core.c:317
+#: src/cpm-prefs-core.c:317
 msgid "Never"
 msgstr "사용 안함"
 
-#: src/gpm-statistics.c:78 src/gpm-statistics.c:466
+#: src/cpm-statistics.c:78 src/cpm-statistics.c:466
 msgid "Rate"
 msgstr "Rate"
 
-#: src/gpm-statistics.c:79
+#: src/cpm-statistics.c:79
 msgid "Charge"
 msgstr "충전"
 
-#: src/gpm-statistics.c:80 src/gpm-statistics.c:480
+#: src/cpm-statistics.c:80 src/cpm-statistics.c:480
 msgid "Time to full"
 msgstr "완전 충전까지 시간"
 
-#: src/gpm-statistics.c:81 src/gpm-statistics.c:485
+#: src/cpm-statistics.c:81 src/cpm-statistics.c:485
 msgid "Time to empty"
 msgstr "완전 방전까지 시간"
 
-#: src/gpm-statistics.c:88
+#: src/cpm-statistics.c:88
 msgid "10 minutes"
 msgstr "10분"
 
-#: src/gpm-statistics.c:89
+#: src/cpm-statistics.c:89
 msgid "2 hours"
 msgstr "2시간"
 
-#: src/gpm-statistics.c:90
+#: src/cpm-statistics.c:90
 msgid "6 hours"
 msgstr "6 시간"
 
-#: src/gpm-statistics.c:91
+#: src/cpm-statistics.c:91
 msgid "1 day"
 msgstr "1일"
 
-#: src/gpm-statistics.c:92
+#: src/cpm-statistics.c:92
 msgid "1 week"
 msgstr "1주"
 
-#: src/gpm-statistics.c:101
+#: src/cpm-statistics.c:101
 msgid "Charge profile"
 msgstr "충전 프로파일"
 
-#: src/gpm-statistics.c:102
+#: src/cpm-statistics.c:102
 msgid "Discharge profile"
 msgstr "방전 프로파일"
 
-#: src/gpm-statistics.c:104
+#: src/cpm-statistics.c:104
 msgid "Charge accuracy"
 msgstr "충전 정확도"
 
-#: src/gpm-statistics.c:105
+#: src/cpm-statistics.c:105
 msgid "Discharge accuracy"
 msgstr "방전 정확도"
 
-#: src/gpm-statistics.c:132
+#: src/cpm-statistics.c:132
 msgid "Attribute"
 msgstr "속성"
 
-#: src/gpm-statistics.c:139
+#: src/cpm-statistics.c:139
 msgid "Value"
 msgstr "값"
 
-#: src/gpm-statistics.c:156
+#: src/cpm-statistics.c:156
 msgid "Image"
 msgstr "그림"
 
-#: src/gpm-statistics.c:162
+#: src/cpm-statistics.c:162
 msgid "Description"
 msgstr "설명"
 
-#: src/gpm-statistics.c:181 src/gpm-statistics.c:405
+#: src/cpm-statistics.c:181 src/cpm-statistics.c:405
 msgid "Type"
 msgstr "형식"
 
-#: src/gpm-statistics.c:187
+#: src/cpm-statistics.c:187
 msgid "ID"
 msgstr "ID"
 
-#: src/gpm-statistics.c:201
+#: src/cpm-statistics.c:201
 msgid "Command"
 msgstr "명령어"
 
-#: src/gpm-statistics.c:286
+#: src/cpm-statistics.c:286
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: src/gpm-statistics.c:290
+#: src/cpm-statistics.c:290
 #, c-format
 msgid "%.0f second"
 msgid_plural "%.0f seconds"
 msgstr[0] ""
 
-#: src/gpm-statistics.c:295
+#: src/cpm-statistics.c:295
 #, c-format
 msgid "%.1f minute"
 msgid_plural "%.1f minutes"
 msgstr[0] ""
 
-#: src/gpm-statistics.c:300
+#: src/cpm-statistics.c:300
 #, c-format
 msgid "%.1f hour"
 msgid_plural "%.1f hours"
 msgstr[0] ""
 
-#: src/gpm-statistics.c:304
+#: src/cpm-statistics.c:304
 #, c-format
 msgid "%.1f day"
 msgid_plural "%.1f days"
 msgstr[0] ""
 
-#: src/gpm-statistics.c:313
+#: src/cpm-statistics.c:313
 msgid "Yes"
 msgstr "예"
 
-#: src/gpm-statistics.c:313
+#: src/cpm-statistics.c:313
 msgid "No"
 msgstr "아니요"
 
-#: src/gpm-statistics.c:402
+#: src/cpm-statistics.c:402
 msgid "Device"
 msgstr "장치"
 
-#: src/gpm-statistics.c:407
+#: src/cpm-statistics.c:407
 msgid "Vendor"
 msgstr "제조사"
 
-#: src/gpm-statistics.c:409
+#: src/cpm-statistics.c:409
 msgid "Model"
 msgstr "모델"
 
-#: src/gpm-statistics.c:411
+#: src/cpm-statistics.c:411
 msgid "Serial number"
 msgstr "일련 번호"
 
-#: src/gpm-statistics.c:416
+#: src/cpm-statistics.c:416
 msgid "Supply"
 msgstr "공급"
 
-#: src/gpm-statistics.c:419
+#: src/cpm-statistics.c:419
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] ""
 
-#: src/gpm-statistics.c:423
+#: src/cpm-statistics.c:423
 msgid "Refreshed"
 msgstr "새로 고침"
 
-#: src/gpm-statistics.c:433
+#: src/cpm-statistics.c:433
 msgid "Present"
 msgstr "현재"
 
-#: src/gpm-statistics.c:440
+#: src/cpm-statistics.c:440
 msgid "Rechargeable"
 msgstr "충전 가능"
 
-#: src/gpm-statistics.c:446
+#: src/cpm-statistics.c:446
 msgid "State"
 msgstr "상태"
 
-#: src/gpm-statistics.c:450
+#: src/cpm-statistics.c:450
 msgid "Energy"
 msgstr "에너지"
 
-#: src/gpm-statistics.c:453
+#: src/cpm-statistics.c:453
 msgid "Energy when empty"
 msgstr "완전 방전 시 에너지"
 
-#: src/gpm-statistics.c:456
+#: src/cpm-statistics.c:456
 msgid "Energy when full"
 msgstr "완전 충전 시 에너지"
 
-#: src/gpm-statistics.c:459
+#: src/cpm-statistics.c:459
 msgid "Energy (design)"
 msgstr "에너지(설계)"
 
-#: src/gpm-statistics.c:473
+#: src/cpm-statistics.c:473
 msgid "Voltage"
 msgstr "전압"
 
-#: src/gpm-statistics.c:495
+#: src/cpm-statistics.c:495
 msgid "Percentage"
 msgstr "퍼센트"
 
-#: src/gpm-statistics.c:502
+#: src/cpm-statistics.c:502
 msgid "Capacity"
 msgstr "용량"
 
-#: src/gpm-statistics.c:507
+#: src/cpm-statistics.c:507
 msgid "Technology"
 msgstr "기술"
 
-#: src/gpm-statistics.c:512
+#: src/cpm-statistics.c:512
 msgid "Online"
 msgstr "연결"
 
-#: src/gpm-statistics.c:824
+#: src/cpm-statistics.c:824
 msgid "No data"
 msgstr "데이터 없음"
 
-#: src/gpm-statistics.c:831 src/gpm-statistics.c:836
+#: src/cpm-statistics.c:831 src/cpm-statistics.c:836
 msgid "Kernel module"
 msgstr "커널 모듈"
 
-#: src/gpm-statistics.c:841
+#: src/cpm-statistics.c:841
 msgid "Kernel core"
 msgstr "커널 코어"
 
-#: src/gpm-statistics.c:846
+#: src/cpm-statistics.c:846
 msgid "Interprocessor interrupt"
 msgstr "인터프로세서 인터럽트"
 
-#: src/gpm-statistics.c:851
+#: src/cpm-statistics.c:851
 msgid "Interrupt"
 msgstr "인터럽트"
 
-#: src/gpm-statistics.c:898
+#: src/cpm-statistics.c:898
 msgid "PS/2 keyboard/mouse/touchpad"
 msgstr "PS/2 키보드/마우스/터치패드"
 
-#: src/gpm-statistics.c:901
+#: src/cpm-statistics.c:901
 msgid "ACPI"
 msgstr "ACPI"
 
-#: src/gpm-statistics.c:904
+#: src/cpm-statistics.c:904
 msgid "Serial ATA"
 msgstr "시리얼 ATA"
 
-#: src/gpm-statistics.c:907
+#: src/cpm-statistics.c:907
 msgid "ATA host controller"
 msgstr "ATA 호스트 컨트롤러"
 
-#: src/gpm-statistics.c:910
+#: src/cpm-statistics.c:910
 msgid "Intel wireless adaptor"
 msgstr "인텔 무선 어댑터"
 
-#: src/gpm-statistics.c:917 src/gpm-statistics.c:922 src/gpm-statistics.c:927
-#: src/gpm-statistics.c:932 src/gpm-statistics.c:937
+#: src/cpm-statistics.c:917 src/cpm-statistics.c:922 src/cpm-statistics.c:927
+#: src/cpm-statistics.c:932 src/cpm-statistics.c:937
 #, c-format
 msgid "Timer %s"
 msgstr "%s 타이머"
 
-#: src/gpm-statistics.c:941
+#: src/cpm-statistics.c:941
 #, c-format
 msgid "Sleep %s"
 msgstr "%s 대기"
 
-#: src/gpm-statistics.c:944
+#: src/cpm-statistics.c:944
 #, c-format
 msgid "New task %s"
 msgstr "새 작업 %s"
 
-#: src/gpm-statistics.c:948
+#: src/cpm-statistics.c:948
 #, c-format
 msgid "Wait %s"
 msgstr "%s 대기"
 
-#: src/gpm-statistics.c:952 src/gpm-statistics.c:956
+#: src/cpm-statistics.c:952 src/cpm-statistics.c:956
 #, c-format
 msgid "Work queue %s"
 msgstr "대기 큐 %s"
 
-#: src/gpm-statistics.c:959
+#: src/cpm-statistics.c:959
 #, c-format
 msgid "Network route flush %s"
 msgstr "네트워크 라우팅 갱신 %s"
 
-#: src/gpm-statistics.c:962
+#: src/cpm-statistics.c:962
 #, c-format
 msgid "USB activity %s"
 msgstr "USB 동작 %s"
 
-#: src/gpm-statistics.c:965
+#: src/cpm-statistics.c:965
 #, c-format
 msgid "Wakeup %s"
 msgstr "%s 상태 복귀"
 
-#: src/gpm-statistics.c:968
+#: src/cpm-statistics.c:968
 msgid "Local interrupts"
 msgstr "로컬 인터럽트"
 
-#: src/gpm-statistics.c:971
+#: src/cpm-statistics.c:971
 msgid "Rescheduling interrupts"
 msgstr "인터럽트 다시 스케줄링"
 
-#: src/gpm-statistics.c:1080
+#: src/cpm-statistics.c:1080
 msgid "Device Information"
 msgstr "장치 정보"
 
-#: src/gpm-statistics.c:1082
+#: src/cpm-statistics.c:1082
 msgid "Device History"
 msgstr "장치 기록"
 
-#: src/gpm-statistics.c:1084
+#: src/cpm-statistics.c:1084
 msgid "Device Profile"
 msgstr "장치 프로파일"
 
-#: src/gpm-statistics.c:1086
+#: src/cpm-statistics.c:1086
 msgid "Processor Wakeups"
 msgstr "프로세서 상태 복귀"
 
-#: src/gpm-statistics.c:1325 src/gpm-statistics.c:1331
-#: src/gpm-statistics.c:1337 src/gpm-statistics.c:1343
+#: src/cpm-statistics.c:1325 src/cpm-statistics.c:1331
+#: src/cpm-statistics.c:1337 src/cpm-statistics.c:1343
 msgid "Time elapsed"
 msgstr "경과 시간"
 
-#: src/gpm-statistics.c:1327
+#: src/cpm-statistics.c:1327
 msgid "Power"
 msgstr "제곱"
 
-#: src/gpm-statistics.c:1333 src/gpm-statistics.c:1377
-#: src/gpm-statistics.c:1383 src/gpm-statistics.c:1389
-#: src/gpm-statistics.c:1395
+#: src/cpm-statistics.c:1333 src/cpm-statistics.c:1377
+#: src/cpm-statistics.c:1383 src/cpm-statistics.c:1389
+#: src/cpm-statistics.c:1395
 msgid "Cell charge"
 msgstr "충전량"
 
-#: src/gpm-statistics.c:1339 src/gpm-statistics.c:1345
+#: src/cpm-statistics.c:1339 src/cpm-statistics.c:1345
 msgid "Predicted time"
 msgstr "예상 시간"
 
-#: src/gpm-statistics.c:1379 src/gpm-statistics.c:1391
+#: src/cpm-statistics.c:1379 src/cpm-statistics.c:1391
 msgid "Correction factor"
 msgstr "보정 계수"
 
-#: src/gpm-statistics.c:1385 src/gpm-statistics.c:1397
+#: src/cpm-statistics.c:1385 src/cpm-statistics.c:1397
 msgid "Prediction accuracy"
 msgstr "예측 정확도"
 
-#: src/gpm-statistics.c:1563
+#: src/cpm-statistics.c:1563
 msgid "Select this device at startup"
 msgstr "시작할 때 이 장치 선택"
 
-#: src/gpm-statistics.c:1802
+#: src/cpm-statistics.c:1802
 msgid "Processor"
 msgstr "프로세서"
 
-#: src/gpm-tray-icon.c:187
+#: src/cpm-tray-icon.c:187
 msgid "Copyright © 2011-2018 CAFE developers"
 msgstr "Copyright © 2011-2018 CAFE developers"
 
-#: src/gpm-tray-icon.c:193
+#: src/cpm-tray-icon.c:193
 msgid "translator-credits"
 msgstr ""
 "Elex https://launchpad.net/~mysticzizone\n"
@@ -1835,26 +1835,26 @@ msgstr ""
 "Seong-ho Cho <darkcircle.0426@gmail.com>\n"
 "CAFE Desktop Environment Team <https://www.transifex.com/cafe/teams/13566/ko/>"
 
-#: src/gpm-tray-icon.c:295
+#: src/cpm-tray-icon.c:295
 #, c-format
 msgid "%s remaining"
 msgstr "%s 남음"
 
-#: src/gpm-tray-icon.c:349
+#: src/cpm-tray-icon.c:349
 msgid "_Preferences"
 msgstr "기본 설정(_P)"
 
-#: src/gpm-upower.c:211
+#: src/cpm-upower.c:211
 #, c-format
 msgid "%s not present"
 msgstr "%s 없음"
 
-#: src/gpm-upower.c:224 src/gpm-upower.c:288
+#: src/cpm-upower.c:224 src/cpm-upower.c:288
 #, c-format
 msgid "%s charging (%.1f%%)"
 msgstr "%s 방전 중 (%.1f%%)"
 
-#: src/gpm-upower.c:239
+#: src/cpm-upower.c:239
 #, c-format
 msgid ""
 "Battery is fully charged.\n"
@@ -1863,22 +1863,22 @@ msgstr ""
 "배터리 완전히 충전.\n"
 "노트북 동작 시간 %s"
 
-#: src/gpm-upower.c:244
+#: src/cpm-upower.c:244
 #, c-format
 msgid "%s is fully charged"
 msgstr "%s 완전히 충전"
 
-#: src/gpm-upower.c:252
+#: src/cpm-upower.c:252
 #, c-format
 msgid "%s %s remaining (%.1f%%)"
 msgstr "%s %s 남음 (%.1f%%)"
 
-#: src/gpm-upower.c:257
+#: src/cpm-upower.c:257
 #, c-format
 msgid "%s discharging (%.1f%%)"
 msgstr "%s 방전 중 (%.1f%%)"
 
-#: src/gpm-upower.c:271
+#: src/cpm-upower.c:271
 #, c-format
 msgid ""
 "%s %s until charged (%.1f%%)\n"
@@ -1887,210 +1887,210 @@ msgstr ""
 "%s 충전까지 %s (%.1f%%)\n"
 "배터리 지속 시간 %s"
 
-#: src/gpm-upower.c:282
+#: src/cpm-upower.c:282
 #, c-format
 msgid "%s %s until charged (%.1f%%)"
 msgstr "%s 충전까지 %s (%.1f%%)"
 
-#: src/gpm-upower.c:295
+#: src/cpm-upower.c:295
 #, c-format
 msgid "%s waiting to discharge (%.1f%%)"
 msgstr "%s 방전 대기 중 (%.1f%%)"
 
-#: src/gpm-upower.c:301
+#: src/cpm-upower.c:301
 #, c-format
 msgid "%s waiting to charge (%.1f%%)"
 msgstr "%s 충전 대기 중 (%.1f%%)"
 
-#: src/gpm-upower.c:306
+#: src/cpm-upower.c:306
 #, c-format
 msgid "%s empty"
 msgstr "%s 비어있음"
 
-#: src/gpm-upower.c:366
+#: src/cpm-upower.c:366
 msgid "Product:"
 msgstr "제품:"
 
-#: src/gpm-upower.c:370 src/gpm-upower.c:373 src/gpm-upower.c:376
-#: src/gpm-upower.c:379
+#: src/cpm-upower.c:370 src/cpm-upower.c:373 src/cpm-upower.c:376
+#: src/cpm-upower.c:379
 msgid "Status:"
 msgstr "상태:"
 
-#: src/gpm-upower.c:370
+#: src/cpm-upower.c:370
 msgid "Missing"
 msgstr "없음"
 
-#: src/gpm-upower.c:373 src/gpm-upower.c:650
+#: src/cpm-upower.c:373 src/cpm-upower.c:650
 msgid "Charged"
 msgstr "충전됨"
 
-#: src/gpm-upower.c:376 src/gpm-upower.c:638
+#: src/cpm-upower.c:376 src/cpm-upower.c:638
 msgid "Charging"
 msgstr "충전 중"
 
-#: src/gpm-upower.c:379 src/gpm-upower.c:642
+#: src/cpm-upower.c:379 src/cpm-upower.c:642
 msgid "Discharging"
 msgstr "방전 중"
 
-#: src/gpm-upower.c:384
+#: src/cpm-upower.c:384
 msgid "Percentage charge:"
 msgstr "충전 퍼센트:"
 
-#: src/gpm-upower.c:388
+#: src/cpm-upower.c:388
 msgid "Vendor:"
 msgstr "제조사:"
 
-#: src/gpm-upower.c:393
+#: src/cpm-upower.c:393
 msgid "Technology:"
 msgstr "기술:"
 
-#: src/gpm-upower.c:397
+#: src/cpm-upower.c:397
 msgid "Serial number:"
 msgstr "일련 번호:"
 
-#: src/gpm-upower.c:401
+#: src/cpm-upower.c:401
 msgid "Model:"
 msgstr "모델:"
 
-#: src/gpm-upower.c:406
+#: src/cpm-upower.c:406
 msgid "Charge time:"
 msgstr "충전 시간:"
 
-#: src/gpm-upower.c:412
+#: src/cpm-upower.c:412
 msgid "Discharge time:"
 msgstr "방전 시간:"
 
-#: src/gpm-upower.c:419
+#: src/cpm-upower.c:419
 msgid "Excellent"
 msgstr "매우 좋음"
 
-#: src/gpm-upower.c:421
+#: src/cpm-upower.c:421
 msgid "Good"
 msgstr "좋음"
 
-#: src/gpm-upower.c:423
+#: src/cpm-upower.c:423
 msgid "Fair"
 msgstr "괜찮음"
 
-#: src/gpm-upower.c:425
+#: src/cpm-upower.c:425
 msgid "Poor"
 msgstr "나쁨"
 
-#: src/gpm-upower.c:429
+#: src/cpm-upower.c:429
 msgid "Capacity:"
 msgstr "용량:"
 
-#: src/gpm-upower.c:435 src/gpm-upower.c:460
+#: src/cpm-upower.c:435 src/cpm-upower.c:460
 msgid "Current charge:"
 msgstr "현재 충전:"
 
-#: src/gpm-upower.c:441
+#: src/cpm-upower.c:441
 msgid "Last full charge:"
 msgstr "최근 완전 충전:"
 
-#: src/gpm-upower.c:447 src/gpm-upower.c:465
+#: src/cpm-upower.c:447 src/cpm-upower.c:465
 msgid "Design charge:"
 msgstr "설계 충전:"
 
-#: src/gpm-upower.c:452
+#: src/cpm-upower.c:452
 msgid "Charge rate:"
 msgstr "충전 속도:"
 
-#: src/gpm-upower.c:487
+#: src/cpm-upower.c:487
 msgid "AC adapter"
 msgid_plural "AC adapters"
 msgstr[0] ""
 
-#: src/gpm-upower.c:491
+#: src/cpm-upower.c:491
 msgid "Laptop battery"
 msgid_plural "Laptop batteries"
 msgstr[0] ""
 
-#: src/gpm-upower.c:495
+#: src/cpm-upower.c:495
 msgid "UPS"
 msgid_plural "UPSs"
 msgstr[0] ""
 
-#: src/gpm-upower.c:499
+#: src/cpm-upower.c:499
 msgid "Monitor"
 msgid_plural "Monitors"
 msgstr[0] ""
 
-#: src/gpm-upower.c:503
+#: src/cpm-upower.c:503
 msgid "Mouse"
 msgid_plural "Mice"
 msgstr[0] ""
 
-#: src/gpm-upower.c:507
+#: src/cpm-upower.c:507
 msgid "Keyboard"
 msgid_plural "Keyboards"
 msgstr[0] ""
 
-#: src/gpm-upower.c:511
+#: src/cpm-upower.c:511
 msgid "PDA"
 msgid_plural "PDAs"
 msgstr[0] ""
 
-#: src/gpm-upower.c:515
+#: src/cpm-upower.c:515
 msgid "Cell phone"
 msgid_plural "Cell phones"
 msgstr[0] ""
 
-#: src/gpm-upower.c:519
+#: src/cpm-upower.c:519
 msgid "Media player"
 msgid_plural "Media players"
 msgstr[0] ""
 
-#: src/gpm-upower.c:523
+#: src/cpm-upower.c:523
 msgid "Tablet"
 msgid_plural "Tablets"
 msgstr[0] ""
 
-#: src/gpm-upower.c:527
+#: src/cpm-upower.c:527
 msgid "Computer"
 msgid_plural "Computers"
 msgstr[0] ""
 
-#: src/gpm-upower.c:594
+#: src/cpm-upower.c:594
 msgid "Lithium Ion"
 msgstr "리튬이온"
 
-#: src/gpm-upower.c:598
+#: src/cpm-upower.c:598
 msgid "Lithium Polymer"
 msgstr "리튬폴리머"
 
-#: src/gpm-upower.c:602
+#: src/cpm-upower.c:602
 msgid "Lithium Iron Phosphate"
 msgstr "인산리튬이온"
 
-#: src/gpm-upower.c:606
+#: src/cpm-upower.c:606
 msgid "Lead acid"
 msgstr "납축전지"
 
-#: src/gpm-upower.c:610
+#: src/cpm-upower.c:610
 msgid "Nickel Cadmium"
 msgstr "니켈카드뮴"
 
-#: src/gpm-upower.c:614
+#: src/cpm-upower.c:614
 msgid "Nickel metal hydride"
 msgstr "니켈수소"
 
-#: src/gpm-upower.c:618
+#: src/cpm-upower.c:618
 msgid "Unknown technology"
 msgstr "방식을 알 수 없음"
 
-#: src/gpm-upower.c:646
+#: src/cpm-upower.c:646
 msgid "Empty"
 msgstr "비어있음"
 
-#: src/gpm-upower.c:654
+#: src/cpm-upower.c:654
 msgid "Waiting to charge"
 msgstr "충전 대기 중"
 
-#: src/gpm-upower.c:658
+#: src/cpm-upower.c:658
 msgid "Waiting to discharge"
 msgstr "방전 대기 중"
 
-#: src/gpm-upower.c:662
+#: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr "알 수 없음"

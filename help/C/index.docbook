@@ -171,7 +171,7 @@
       <screenshot>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="figures/gpm-unplugged.png" format="PNG"/>
+            <imagedata fileref="figures/cpm-unplugged.png" format="PNG"/>
           </imageobject>
         </mediaobject>
       </screenshot>
@@ -191,7 +191,7 @@
       <screenshot>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="figures/gpm-charged.png" format="PNG"/>
+            <imagedata fileref="figures/cpm-charged.png" format="PNG"/>
           </imageobject>
         </mediaobject>
       </screenshot>
@@ -223,7 +223,7 @@
       <screenshot>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="figures/gpm-low.png" format="PNG"/>
+            <imagedata fileref="figures/cpm-low.png" format="PNG"/>
           </imageobject>
         </mediaobject>
       </screenshot>
@@ -248,7 +248,7 @@
       <screenshot>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="figures/gpm-critical.png" format="PNG"/>
+            <imagedata fileref="figures/cpm-critical.png" format="PNG"/>
           </imageobject>
         </mediaobject>
       </screenshot>
@@ -267,7 +267,7 @@
       <screenshot>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="figures/gpm-suspend-problem.png" format="PNG"/>
+            <imagedata fileref="figures/cpm-suspend-problem.png" format="PNG"/>
           </imageobject>
         </mediaobject>
       </screenshot>
@@ -299,7 +299,7 @@
     <screenshot>
       <mediaobject>
         <imageobject>
-          <imagedata fileref="figures/gpm-stats-graph.png" format="PNG"/>
+          <imagedata fileref="figures/cpm-stats-graph.png" format="PNG"/>
         </imageobject>
       </mediaobject>
     </screenshot>
@@ -405,7 +405,7 @@
       <screenshot>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="figures/gpm-prefs-ac.png" format="PNG"/>
+            <imagedata fileref="figures/cpm-prefs-ac.png" format="PNG"/>
           </imageobject>
         </mediaobject>
       </screenshot>
@@ -419,7 +419,7 @@
       <screenshot>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="figures/gpm-prefs-battery.png" format="PNG"/>
+            <imagedata fileref="figures/cpm-prefs-battery.png" format="PNG"/>
           </imageobject>
         </mediaobject>
       </screenshot>
@@ -437,7 +437,7 @@
       <screenshot>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="figures/gpm-prefs-general.png" format="PNG"/>
+            <imagedata fileref="figures/cpm-prefs-general.png" format="PNG"/>
           </imageobject>
         </mediaobject>
       </screenshot>
@@ -633,7 +633,7 @@
       <screenshot>
         <mediaobject>
           <imageobject>
-            <imagedata fileref="figures/gpm-cell-capacity.png" format="PNG"/>
+            <imagedata fileref="figures/cpm-cell-capacity.png" format="PNG"/>
           </imageobject>
         </mediaobject>
       </screenshot>

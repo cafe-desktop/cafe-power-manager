@@ -21,7 +21,7 @@
 #include <glib.h>
 
 #include "egg-debug.h"
-#include "gpm-point-obj.h"
+#include "cpm-point-obj.h"
 
 /**
  * gpm_point_obj_copy:

@@ -205,10 +205,10 @@ msgstr "Pemberitahuan Pengurus Kuasa CAFE apabila penyesuai AC ditanggalkan"
 #: C/index.docbook:174
 msgctxt "_"
 msgid ""
-"external ref='figures/gpm-unplugged.png' "
+"external ref='figures/cpm-unplugged.png' "
 "md5='e9e38fa48737547a19b20af6a15d9e95'"
 msgstr ""
-"external ref='figures/gpm-unplugged.png' "
+"external ref='figures/cpm-unplugged.png' "
 "md5='e9e38fa48737547a19b20af6a15d9e95'"
 
 #. (itstool) path: note/para
@@ -241,10 +241,10 @@ msgstr ""
 #: C/index.docbook:194
 msgctxt "_"
 msgid ""
-"external ref='figures/gpm-charged.png' "
+"external ref='figures/cpm-charged.png' "
 "md5='cc83716555d07b13a3659683f96c531c'"
 msgstr ""
-"external ref='figures/gpm-charged.png' "
+"external ref='figures/cpm-charged.png' "
 "md5='cc83716555d07b13a3659683f96c531c'"
 
 #. (itstool) path: note/para
@@ -296,9 +296,9 @@ msgstr "Pemberitahuan Pengurus Kuasa CAFE apabila kuasa bateri rendah"
 #: C/index.docbook:226
 msgctxt "_"
 msgid ""
-"external ref='figures/gpm-low.png' md5='6cd86acf26f251d78060dd2ecb6b6506'"
+"external ref='figures/cpm-low.png' md5='6cd86acf26f251d78060dd2ecb6b6506'"
 msgstr ""
-"external ref='figures/gpm-low.png' md5='6cd86acf26f251d78060dd2ecb6b6506'"
+"external ref='figures/cpm-low.png' md5='6cd86acf26f251d78060dd2ecb6b6506'"
 
 #. (itstool) path: note/para
 #: C/index.docbook:232
@@ -340,10 +340,10 @@ msgstr ""
 #: C/index.docbook:251
 msgctxt "_"
 msgid ""
-"external ref='figures/gpm-critical.png' "
+"external ref='figures/cpm-critical.png' "
 "md5='77b0848ed3bd0510b65f89e0d07a2fed'"
 msgstr ""
-"external ref='figures/gpm-critical.png' "
+"external ref='figures/cpm-critical.png' "
 "md5='77b0848ed3bd0510b65f89e0d07a2fed'"
 
 #. (itstool) path: section/title
@@ -375,10 +375,10 @@ msgstr "Pemberitahuan Pengurus Kuasa CAFE apabila kegagalan tangguh berlaku"
 #: C/index.docbook:270
 msgctxt "_"
 msgid ""
-"external ref='figures/gpm-suspend-problem.png' "
+"external ref='figures/cpm-suspend-problem.png' "
 "md5='4e4c1fafda61c5ace02f957717ea7ce6'"
 msgstr ""
-"external ref='figures/gpm-suspend-problem.png' "
+"external ref='figures/cpm-suspend-problem.png' "
 "md5='4e4c1fafda61c5ace02f957717ea7ce6'"
 
 #. (itstool) path: note/para
@@ -429,10 +429,10 @@ msgstr "Sejarah Kuasa dari kuasa bateri ke AC"
 #: C/index.docbook:302
 msgctxt "_"
 msgid ""
-"external ref='figures/gpm-stats-graph.png' "
+"external ref='figures/cpm-stats-graph.png' "
 "md5='c7cfa37ad6e96041a1c312d85236e7f6'"
 msgstr ""
-"external ref='figures/gpm-stats-graph.png' "
+"external ref='figures/cpm-stats-graph.png' "
 "md5='c7cfa37ad6e96041a1c312d85236e7f6'"
 
 #. (itstool) path: note/para
@@ -582,10 +582,10 @@ msgstr "Tab AC Pengurus Kuasa CAFE"
 #: C/index.docbook:408
 msgctxt "_"
 msgid ""
-"external ref='figures/gpm-prefs-ac.png' "
+"external ref='figures/cpm-prefs-ac.png' "
 "md5='dc4409a63218146e52d3e670b26785bd'"
 msgstr ""
-"external ref='figures/gpm-prefs-ac.png' "
+"external ref='figures/cpm-prefs-ac.png' "
 "md5='dc4409a63218146e52d3e670b26785bd'"
 
 #. (itstool) path: section/title
@@ -606,10 +606,10 @@ msgstr "Tab bateri Pengurus Kuasa CAFE"
 #: C/index.docbook:422
 msgctxt "_"
 msgid ""
-"external ref='figures/gpm-prefs-battery.png' "
+"external ref='figures/cpm-prefs-battery.png' "
 "md5='89fe431e4f38073f7d58f38425ad1ee7'"
 msgstr ""
-"external ref='figures/gpm-prefs-battery.png' "
+"external ref='figures/cpm-prefs-battery.png' "
 "md5='89fe431e4f38073f7d58f38425ad1ee7'"
 
 #. (itstool) path: section/para
@@ -639,10 +639,10 @@ msgstr "Tab am Pengurus Kuasa CAFE"
 #: C/index.docbook:440
 msgctxt "_"
 msgid ""
-"external ref='figures/gpm-prefs-general.png' "
+"external ref='figures/cpm-prefs-general.png' "
 "md5='52b7d145bd085d8af6f3194ac632c547'"
 msgstr ""
-"external ref='figures/gpm-prefs-general.png' "
+"external ref='figures/cpm-prefs-general.png' "
 "md5='52b7d145bd085d8af6f3194ac632c547'"
 
 #. (itstool) path: section/title
@@ -949,10 +949,10 @@ msgstr ""
 #: C/index.docbook:636
 msgctxt "_"
 msgid ""
-"external ref='figures/gpm-cell-capacity.png' "
+"external ref='figures/cpm-cell-capacity.png' "
 "md5='7635c3b846f39faf7b16a921a6ebb55c'"
 msgstr ""
-"external ref='figures/gpm-cell-capacity.png' "
+"external ref='figures/cpm-cell-capacity.png' "
 "md5='7635c3b846f39faf7b16a921a6ebb55c'"
 
 #. (itstool) path: section/title

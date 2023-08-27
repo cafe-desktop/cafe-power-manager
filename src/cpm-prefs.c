@@ -30,9 +30,9 @@
 #include <glib/gi18n.h>
 #include <ctk/ctk.h>
 
-#include "gpm-common.h"
+#include "cpm-common.h"
 #include "egg-debug.h"
-#include "gpm-prefs-core.h"
+#include "cpm-prefs-core.h"
 
 /**
  * gpm_prefs_help_cb
