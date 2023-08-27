@@ -230,9 +230,9 @@ gpm_manager_play_loop_start (GpmManager *manager, GpmManagerSound action, gboole
 
 	ka_proplist_create (&(manager->priv->critical_alert_loop_props));
 	ka_proplist_sets (manager->priv->critical_alert_loop_props,
-			  CA_PROP_EVENT_ID, id);
+			  KA_PROP_EVENT_ID, id);
 	ka_proplist_sets (manager->priv->critical_alert_loop_props,
-			  CA_PROP_EVENT_DESCRIPTION, desc);
+			  KA_PROP_EVENT_DESCRIPTION, desc);
 
 	manager->priv->critical_alert_timeout_id = g_timeout_add_seconds (timeout,
 									  (GSourceFunc) gpm_manager_play_loop_timeout_cb,
@@ -243,8 +243,8 @@ gpm_manager_play_loop_start (GpmManager *manager, GpmManagerSound action, gboole
 	/* play the sound, using sounds from the naming spec */
 	context = ka_ctk_context_get_for_screen (cdk_screen_get_default ());
 	retval = ka_context_play (context, 0,
-				  CA_PROP_EVENT_ID, id,
-				  CA_PROP_EVENT_DESCRIPTION, desc, NULL);
+				  KA_PROP_EVENT_ID, id,
+				  KA_PROP_EVENT_DESCRIPTION, desc, NULL);
 	if (retval < 0)
 		egg_warning ("failed to play %s: %s", id, ka_strerror (retval));
 	return TRUE;
@@ -319,8 +319,8 @@ gpm_manager_play (GpmManager *manager, GpmManagerSound action, gboolean force)
 	/* play the sound, using sounds from the naming spec */
 	context = ka_ctk_context_get_for_screen (cdk_screen_get_default ());
 	retval = ka_context_play (context, 0,
-				  CA_PROP_EVENT_ID, id,
-				  CA_PROP_EVENT_DESCRIPTION, desc, NULL);
+				  KA_PROP_EVENT_ID, id,
+				  KA_PROP_EVENT_DESCRIPTION, desc, NULL);
 	if (retval < 0)
 		egg_warning ("failed to play %s: %s", id, ka_strerror (retval));
 	return TRUE;
