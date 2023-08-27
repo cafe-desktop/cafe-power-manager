@@ -39,7 +39,7 @@
 #include <ctk/ctk.h>
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
-#include <canberra-ctk.h>
+#include <kanberra-ctk.h>
 #include <libupower-glib/upower.h>
 #include <libnotify/notify.h>
 
