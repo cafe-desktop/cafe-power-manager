@@ -30,7 +30,7 @@
 #include <glib/gi18n.h>
 #include <ctk/ctk.h>
 
-#include "gsd-media-keys-window.h"
+#include "csd-media-keys-window.h"
 
 #define ICON_SCALE 0.55           /* size of the icon compared to the whole OSD */
 
