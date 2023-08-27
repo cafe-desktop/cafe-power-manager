@@ -32,7 +32,7 @@ AM_CPPFLAGS =						\
 	-DGPM_ICONS_DATA=\"$(pkgdatadir)/icons\"	\
 	-DCTKBUILDERDIR=\"$(pkgdatadir)\"		\
 	-DUP_DISABLE_DEPRECATED				\
-	-DEGG_LOG_FILE=\""/tmp/gpm.log"\"		\
+	-DEGG_LOG_FILE=\""/tmp/cpm.log"\"		\
 	-DEGG_VERBOSE="\"GPM_VERBOSE\""			\
 	-DEGG_LOGGING="\"GPM_LOGGING\""			\
 	-DEGG_CONSOLE="\"GPM_CONSOLE\""			\
@@ -56,8 +56,8 @@ check_PROGRAMS =					\
 	cafe-power-self-test
 endif
 
-noinst_LIBRARIES = libgpmshared.a
-libgpmshared_a_SOURCES =				\
+noinst_LIBRARIES = libcpmshared.a
+libcpmshared_a_SOURCES =				\
 	egg-color.c					\
 	egg-color.h					\
 	egg-debug.h					\
@@ -86,7 +86,7 @@ cafe_power_backlight_helper_SOURCES =			\
 	$(NULL)
 
 cafe_power_backlight_helper_LDADD =			\
-	libgpmshared.a					\
+	libcpmshared.a					\
 	$(GLIB_LIBS)					\
 	-lm
 
@@ -111,7 +111,7 @@ cafe_power_statistics_SOURCES =				\
 	$(NULL)
 
 cafe_power_statistics_LDADD =				\
-	libgpmshared.a					\
+	libcpmshared.a					\
 	$(GLIB_LIBS)					\
 	$(X11_LIBS)					\
 	$(UPOWER_LIBS)					\
@@ -138,7 +138,7 @@ cafe_power_preferences_SOURCES =			\
 	$(NULL)
 
 cafe_power_preferences_LDADD =				\
-	libgpmshared.a					\
+	libcpmshared.a					\
 	$(GLIB_LIBS)					\
 	$(X11_LIBS)					\
 	$(CAIRO_LIBS)					\
@@ -197,7 +197,7 @@ cafe_power_manager_SOURCES =				\
 	$(NULL)
 
 cafe_power_manager_LDADD =				\
-	libgpmshared.a					\
+	libcpmshared.a					\
 	$(GLIB_LIBS)					\
 	$(X11_LIBS)					\
 	$(GSTREAMER_LIBS)				\

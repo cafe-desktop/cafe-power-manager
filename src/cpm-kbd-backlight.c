@@ -785,7 +785,7 @@ noerr:
                                             "cpm-brightness-kbd", TRUE);
    ctk_window_set_position (CTK_WINDOW (backlight->priv->popup), CTK_WIN_POS_NONE);
 
-   /* since gpm is just starting we can pretty safely assume that we're not idle */
+   /* since cpm is just starting we can pretty safely assume that we're not idle */
    backlight->priv->system_is_idle = FALSE;
    backlight->priv->idle_dim_timeout = g_settings_get_int (backlight->priv->settings, GPM_SETTINGS_IDLE_DIM_TIME);
    cpm_idle_set_timeout_dim (backlight->priv->idle, backlight->priv->idle_dim_timeout);
