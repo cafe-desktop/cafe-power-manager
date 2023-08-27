@@ -20,22 +20,22 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef __GPM_MANAGER_H
-#define __GPM_MANAGER_H
+#ifndef __CPM_MANAGER_H
+#define __CPM_MANAGER_H
 
 #include <glib-object.h>
 #include <dbus/dbus-glib.h>
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_MANAGER	 (cpm_manager_get_type ())
-#define GPM_MANAGER(o)		 (G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_MANAGER, GpmManager))
-#define GPM_MANAGER_CLASS(k)	 (G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_MANAGER, GpmManagerClass))
-#define GPM_IS_MANAGER(o)	 (G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_MANAGER))
-#define GPM_IS_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), GPM_TYPE_MANAGER))
-#define GPM_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), GPM_TYPE_MANAGER, GpmManagerClass))
-#define GPM_MANAGER_ERROR	 (cpm_manager_error_quark ())
-#define GPM_MANAGER_TYPE_ERROR	 (cpm_manager_error_get_type ()) 
+#define CPM_TYPE_MANAGER	 (cpm_manager_get_type ())
+#define CPM_MANAGER(o)		 (G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_MANAGER, GpmManager))
+#define CPM_MANAGER_CLASS(k)	 (G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_MANAGER, GpmManagerClass))
+#define CPM_IS_MANAGER(o)	 (G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_MANAGER))
+#define CPM_IS_MANAGER_CLASS(k)  (G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_MANAGER))
+#define CPM_MANAGER_GET_CLASS(o) (G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_MANAGER, GpmManagerClass))
+#define CPM_MANAGER_ERROR	 (cpm_manager_error_quark ())
+#define CPM_MANAGER_TYPE_ERROR	 (cpm_manager_error_get_type ()) 
 
 typedef struct GpmManagerPrivate GpmManagerPrivate;
 
@@ -52,9 +52,9 @@ typedef struct
 
 typedef enum
 {
-	GPM_MANAGER_ERROR_DENIED,
-	GPM_MANAGER_ERROR_NO_HW,
-	GPM_MANAGER_ERROR_LAST
+	CPM_MANAGER_ERROR_DENIED,
+	CPM_MANAGER_ERROR_NO_HW,
+	CPM_MANAGER_ERROR_LAST
 } GpmManagerError;
 
 
@@ -76,4 +76,4 @@ gboolean	 cpm_manager_can_hibernate		(GpmManager	*manager,
 
 G_END_DECLS
 
-#endif /* __GPM_MANAGER_H */
+#endif /* __CPM_MANAGER_H */

@@ -38,12 +38,12 @@
 #include "egg-debug.h"
 #include "cpm-common.h"
 
-#define GPM_TYPE_BRIGHTNESS_APPLET		(cpm_brightness_applet_get_type ())
-#define GPM_BRIGHTNESS_APPLET(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_BRIGHTNESS_APPLET, GpmBrightnessApplet))
-#define GPM_BRIGHTNESS_APPLET_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_BRIGHTNESS_APPLET, GpmBrightnessAppletClass))
-#define GPM_IS_BRIGHTNESS_APPLET(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_BRIGHTNESS_APPLET))
-#define GPM_IS_BRIGHTNESS_APPLET_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), GPM_TYPE_BRIGHTNESS_APPLET))
-#define GPM_BRIGHTNESS_APPLET_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), GPM_TYPE_BRIGHTNESS_APPLET, GpmBrightnessAppletClass))
+#define CPM_TYPE_BRIGHTNESS_APPLET		(cpm_brightness_applet_get_type ())
+#define CPM_BRIGHTNESS_APPLET(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_BRIGHTNESS_APPLET, GpmBrightnessApplet))
+#define CPM_BRIGHTNESS_APPLET_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_BRIGHTNESS_APPLET, GpmBrightnessAppletClass))
+#define CPM_IS_BRIGHTNESS_APPLET(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_BRIGHTNESS_APPLET))
+#define CPM_IS_BRIGHTNESS_APPLET_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_BRIGHTNESS_APPLET))
+#define CPM_BRIGHTNESS_APPLET_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_BRIGHTNESS_APPLET, GpmBrightnessAppletClass))
 
 typedef struct{
 	CafePanelApplet parent;
@@ -71,9 +71,9 @@ typedef struct{
 GType                cpm_brightness_applet_get_type  (void);
 
 
-#define	GPM_DBUS_SERVICE		"org.cafe.PowerManager"
-#define	GPM_DBUS_PATH_BACKLIGHT		"/org/cafe/PowerManager/Backlight"
-#define	GPM_DBUS_INTERFACE_BACKLIGHT	"org.cafe.PowerManager.Backlight"
+#define	CPM_DBUS_SERVICE		"org.cafe.PowerManager"
+#define	CPM_DBUS_PATH_BACKLIGHT		"/org/cafe/PowerManager/Backlight"
+#define	CPM_DBUS_INTERFACE_BACKLIGHT	"org.cafe.PowerManager.Backlight"
 
 G_DEFINE_TYPE (GpmBrightnessApplet, cpm_brightness_applet, PANEL_TYPE_APPLET)
 
@@ -99,13 +99,13 @@ static void      cpm_applet_dialog_about_cb       (CtkAction *action, gpointer d
 static gboolean  cpm_applet_cb                    (CafePanelApplet *_applet, const gchar *iid, gpointer data);
 static void      cpm_applet_destroy_cb            (CtkWidget *widget);
 
-#define GPM_BRIGHTNESS_APPLET_ID		"BrightnessApplet"
-#define GPM_BRIGHTNESS_APPLET_FACTORY_ID	"BrightnessAppletFactory"
-#define GPM_BRIGHTNESS_APPLET_ICON		"cafe-brightness-applet"
-#define GPM_BRIGHTNESS_APPLET_ICON_DISABLED	"cpm-brightness-lcd-disabled"
-#define GPM_BRIGHTNESS_APPLET_ICON_INVALID	"cpm-brightness-lcd-invalid"
-#define GPM_BRIGHTNESS_APPLET_NAME		_("Power Manager Brightness Applet")
-#define GPM_BRIGHTNESS_APPLET_DESC		_("Adjusts laptop panel brightness.")
+#define CPM_BRIGHTNESS_APPLET_ID		"BrightnessApplet"
+#define CPM_BRIGHTNESS_APPLET_FACTORY_ID	"BrightnessAppletFactory"
+#define CPM_BRIGHTNESS_APPLET_ICON		"cafe-brightness-applet"
+#define CPM_BRIGHTNESS_APPLET_ICON_DISABLED	"cpm-brightness-lcd-disabled"
+#define CPM_BRIGHTNESS_APPLET_ICON_INVALID	"cpm-brightness-lcd-invalid"
+#define CPM_BRIGHTNESS_APPLET_NAME		_("Power Manager Brightness Applet")
+#define CPM_BRIGHTNESS_APPLET_DESC		_("Adjusts laptop panel brightness.")
 #define CAFE_PANEL_APPLET_VERTICAL(p)					\
 	 (((p) == CAFE_PANEL_APPLET_ORIENT_LEFT) || ((p) == CAFE_PANEL_APPLET_ORIENT_RIGHT))
 
@@ -197,11 +197,11 @@ cpm_applet_get_icon (GpmBrightnessApplet *applet)
 
 	/* get icon */
 	if (applet->proxy == NULL) {
-		icon = GPM_BRIGHTNESS_APPLET_ICON_INVALID;
+		icon = CPM_BRIGHTNESS_APPLET_ICON_INVALID;
 	} else if (applet->call_worked == FALSE) {
-		icon = GPM_BRIGHTNESS_APPLET_ICON_DISABLED;
+		icon = CPM_BRIGHTNESS_APPLET_ICON_DISABLED;
 	} else {
-		icon = GPM_BRIGHTNESS_APPLET_ICON;
+		icon = CPM_BRIGHTNESS_APPLET_ICON;
 	}
 
 	applet->icon = ctk_icon_theme_load_icon (ctk_icon_theme_get_default (),
@@ -752,7 +752,7 @@ cpm_applet_popup_cb (GpmBrightnessApplet *applet, CdkEventButton *event)
 static void
 cpm_applet_theme_change_cb (CtkIconTheme *icon_theme, gpointer data)
 {
-	GpmBrightnessApplet *applet = GPM_BRIGHTNESS_APPLET (data);
+	GpmBrightnessApplet *applet = CPM_BRIGHTNESS_APPLET (data);
 	cpm_applet_get_icon (applet);
 }
 
@@ -808,14 +808,14 @@ cpm_applet_dialog_about_cb (CtkAction *action, gpointer data)
 	license_trans = g_strjoin("\n\n", _(license[0]), _(license[1]), _(license[2]), NULL);
 
 	ctk_show_about_dialog (NULL,
-	                       "program-name", GPM_BRIGHTNESS_APPLET_NAME,
+	                       "program-name", CPM_BRIGHTNESS_APPLET_NAME,
 	                       "version", VERSION,
 	                       "title", _("About Power Manager Brightness Applet"),
-	                       "comments", GPM_BRIGHTNESS_APPLET_DESC,
+	                       "comments", CPM_BRIGHTNESS_APPLET_DESC,
 	                       "copyright", _("Copyright \xC2\xA9 2006 Benjamin Canou\n"
 	                                      "Copyright \xC2\xA9 2011-2020 CAFE developers"),
-	                       "icon-name", GPM_BRIGHTNESS_APPLET_ICON,
-	                       "logo-icon-name", GPM_BRIGHTNESS_APPLET_ICON,
+	                       "icon-name", CPM_BRIGHTNESS_APPLET_ICON,
+	                       "logo-icon-name", CPM_BRIGHTNESS_APPLET_ICON,
 	                       "license", license_trans,
 	                       "authors", authors,
 	                       "documenters", documenters,
@@ -845,7 +845,7 @@ cpm_applet_help_cb (CtkAction *action, gpointer data)
 static void
 cpm_applet_destroy_cb (CtkWidget *widget)
 {
-	GpmBrightnessApplet *applet = GPM_BRIGHTNESS_APPLET(widget);
+	GpmBrightnessApplet *applet = CPM_BRIGHTNESS_APPLET(widget);
 
 	g_bus_unwatch_name (applet->bus_watch_id);
 	if (applet->icon != NULL)
@@ -894,9 +894,9 @@ cpm_brightness_applet_dbus_connect (GpmBrightnessApplet *applet)
 		egg_debug ("get proxy\n");
 		g_clear_error (&error);
 		applet->proxy = dbus_g_proxy_new_for_name_owner (applet->connection,
-							 GPM_DBUS_SERVICE,
-							 GPM_DBUS_PATH_BACKLIGHT,
-							 GPM_DBUS_INTERFACE_BACKLIGHT,
+							 CPM_DBUS_SERVICE,
+							 CPM_DBUS_PATH_BACKLIGHT,
+							 CPM_DBUS_INTERFACE_BACKLIGHT,
 							 &error);
 		if (error != NULL) {
 			egg_warning ("Cannot connect, maybe the daemon is not running: %s\n", error->message);
@@ -976,12 +976,12 @@ cpm_brightness_applet_init (GpmBrightnessApplet *applet)
 
 	/* Add application specific icons to search path */
 	ctk_icon_theme_append_search_path (ctk_icon_theme_get_default (),
-	                                   GPM_ICONS_DATA);
+	                                   CPM_ICONS_DATA);
 
 	/* monitor the daemon */
 	applet->bus_watch_id =
 		g_bus_watch_name (G_BUS_TYPE_SESSION,
-				  GPM_DBUS_SERVICE,
+				  CPM_DBUS_SERVICE,
 				  G_BUS_NAME_WATCHER_FLAGS_NONE,
 				  (GBusNameAppearedCallback) cpm_brightness_applet_name_appeared_cb,
 				  (GBusNameVanishedCallback) cpm_brightness_applet_name_vanished_cb,
@@ -1042,7 +1042,7 @@ cpm_brightness_applet_init (GpmBrightnessApplet *applet)
 static gboolean
 cpm_applet_cb (CafePanelApplet *_applet, const gchar *iid, gpointer data)
 {
-	GpmBrightnessApplet *applet = GPM_BRIGHTNESS_APPLET(_applet);
+	GpmBrightnessApplet *applet = CPM_BRIGHTNESS_APPLET(_applet);
 	CtkActionGroup *action_group;
 	gchar *ui_path;
 
@@ -1055,7 +1055,7 @@ cpm_applet_cb (CafePanelApplet *_applet, const gchar *iid, gpointer data)
 		  G_CALLBACK (cpm_applet_help_cb) }
 	};
 
-	if (strcmp (iid, GPM_BRIGHTNESS_APPLET_ID) != 0) {
+	if (strcmp (iid, CPM_BRIGHTNESS_APPLET_ID) != 0) {
 		return FALSE;
 	}
 
@@ -1079,9 +1079,9 @@ cpm_applet_cb (CafePanelApplet *_applet, const gchar *iid, gpointer data)
  **/
 CAFE_PANEL_APPLET_OUT_PROCESS_FACTORY
  (/* the factory iid */
- GPM_BRIGHTNESS_APPLET_FACTORY_ID,
+ CPM_BRIGHTNESS_APPLET_FACTORY_ID,
  /* generates brighness applets instead of regular cafe applets  */
- GPM_TYPE_BRIGHTNESS_APPLET,
+ CPM_TYPE_BRIGHTNESS_APPLET,
  /* the applet name */
  "BrightnessApplet",
  /* our callback (with no user data) */

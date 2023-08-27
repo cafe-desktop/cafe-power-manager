@@ -21,21 +21,21 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef __GPM_ICON_NAMES_H
-#define __GPM_ICON_NAMES_H
+#ifndef __CPM_ICON_NAMES_H
+#define __CPM_ICON_NAMES_H
 
 G_BEGIN_DECLS
 
-#define GPM_ICON_APP_ICON			"cafe-power-manager"
-#define GPM_ICON_AC_ADAPTER			"cpm-ac-adapter"
-#define GPM_ICON_BATTERY_CHARGED		"cpm-primary-charged"
-#define GPM_ICON_SUSPEND			"cpm-suspend"
-#define GPM_ICON_HIBERNATE			"cpm-hibernate"
-#define GPM_ICON_STATISTICS			"cafe-power-statistics"
-#define GPM_ICON_BRIGHTNESS_LCD			"cpm-brightness-lcd"
-#define GPM_ICON_BRIGHTNESS_KBD			"cpm-brightness-kbd"
-#define GPM_ICON_INHIBIT			"cpm-inhibit"
+#define CPM_ICON_APP_ICON			"cafe-power-manager"
+#define CPM_ICON_AC_ADAPTER			"cpm-ac-adapter"
+#define CPM_ICON_BATTERY_CHARGED		"cpm-primary-charged"
+#define CPM_ICON_SUSPEND			"cpm-suspend"
+#define CPM_ICON_HIBERNATE			"cpm-hibernate"
+#define CPM_ICON_STATISTICS			"cafe-power-statistics"
+#define CPM_ICON_BRIGHTNESS_LCD			"cpm-brightness-lcd"
+#define CPM_ICON_BRIGHTNESS_KBD			"cpm-brightness-kbd"
+#define CPM_ICON_INHIBIT			"cpm-inhibit"
 
 G_END_DECLS
 
-#endif /* __GPM_ICON_NAMES_H */
+#endif /* __CPM_ICON_NAMES_H */

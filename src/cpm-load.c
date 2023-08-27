@@ -255,8 +255,8 @@ cpm_load_finalize (GObject *object)
 {
 	GpmLoad *load;
 	g_return_if_fail (object != NULL);
-	g_return_if_fail (GPM_IS_LOAD (object));
-	load = GPM_LOAD (object);
+	g_return_if_fail (CPM_IS_LOAD (object));
+	load = CPM_LOAD (object);
 	g_return_if_fail (load->priv != NULL);
 	G_OBJECT_CLASS (cpm_load_parent_class)->finalize (object);
 }
@@ -271,9 +271,9 @@ cpm_load_new (void)
 	if (cpm_load_object != NULL) {
 		g_object_ref (cpm_load_object);
 	} else {
-		cpm_load_object = g_object_new (GPM_TYPE_LOAD, NULL);
+		cpm_load_object = g_object_new (CPM_TYPE_LOAD, NULL);
 		g_object_add_weak_pointer (cpm_load_object, &cpm_load_object);
 	}
-	return GPM_LOAD (cpm_load_object);
+	return CPM_LOAD (cpm_load_object);
 }
 

@@ -59,7 +59,7 @@ static gpointer cpm_button_object = NULL;
 
 G_DEFINE_TYPE_WITH_PRIVATE (GpmButton, cpm_button, G_TYPE_OBJECT)
 
-#define GPM_BUTTON_DUPLICATE_TIMEOUT	0.125f
+#define CPM_BUTTON_DUPLICATE_TIMEOUT	0.125f
 
 /**
  * cpm_button_emit_type:
@@ -67,11 +67,11 @@ G_DEFINE_TYPE_WITH_PRIVATE (GpmButton, cpm_button, G_TYPE_OBJECT)
 static gboolean
 cpm_button_emit_type (GpmButton *button, const gchar *type)
 {
-	g_return_val_if_fail (GPM_IS_BUTTON (button), FALSE);
+	g_return_val_if_fail (CPM_IS_BUTTON (button), FALSE);
 
 	/* did we just have this button before the timeout? */
 	if (g_strcmp0 (type, button->priv->last_button) == 0 &&
-	    g_timer_elapsed (button->priv->timer, NULL) < GPM_BUTTON_DUPLICATE_TIMEOUT) {
+	    g_timer_elapsed (button->priv->timer, NULL) < CPM_BUTTON_DUPLICATE_TIMEOUT) {
 		egg_debug ("ignoring duplicate button %s", type);
 		return FALSE;
 	}
@@ -259,7 +259,7 @@ cpm_button_is_lid_closed (GpmButton *button)
 	gboolean lid;
 	GError *error = NULL;
 
-	g_return_val_if_fail (GPM_IS_BUTTON (button), FALSE);
+	g_return_val_if_fail (CPM_IS_BUTTON (button), FALSE);
 
 	if (LOGIND_RUNNING()) {
 		proxy = g_dbus_proxy_new_for_bus_sync (G_BUS_TYPE_SYSTEM,
@@ -314,7 +314,7 @@ cpm_button_is_lid_closed (GpmButton *button)
 gboolean
 cpm_button_reset_time (GpmButton *button)
 {
-	g_return_val_if_fail (GPM_IS_BUTTON (button), FALSE);
+	g_return_val_if_fail (CPM_IS_BUTTON (button), FALSE);
 	g_timer_reset (button->priv->timer);
 	return TRUE;
 }
@@ -339,9 +339,9 @@ cpm_button_client_changed_cb (UpClient *client, GParamSpec *pspec, GpmButton *bu
 
 	/* sent correct event */
 	if (lid_is_closed)
-		cpm_button_emit_type (button, GPM_BUTTON_LID_CLOSED);
+		cpm_button_emit_type (button, CPM_BUTTON_LID_CLOSED);
 	else
-		cpm_button_emit_type (button, GPM_BUTTON_LID_OPEN);
+		cpm_button_emit_type (button, CPM_BUTTON_LID_OPEN);
 }
 
 /**
@@ -365,22 +365,22 @@ cpm_button_init (GpmButton *button)
 	g_signal_connect (button->priv->client, "notify",
 			  G_CALLBACK (cpm_button_client_changed_cb), button);
 	/* register the brightness keys */
-	cpm_button_xevent_key (button, XF86XK_PowerOff, GPM_BUTTON_POWER);
+	cpm_button_xevent_key (button, XF86XK_PowerOff, CPM_BUTTON_POWER);
 
 	/* The kernel messes up suspend/hibernate in some places. One of
 	 * them is the key names. Unfortunately, they refuse to see the
 	 * errors of their way in the name of 'compatibility'. Meh
 	 */
-	cpm_button_xevent_key (button, XF86XK_Suspend, GPM_BUTTON_HIBERNATE);
-	cpm_button_xevent_key (button, XF86XK_Sleep, GPM_BUTTON_SUSPEND); /* should be configurable */
-	cpm_button_xevent_key (button, XF86XK_Hibernate, GPM_BUTTON_HIBERNATE);
-	cpm_button_xevent_key (button, XF86XK_MonBrightnessUp, GPM_BUTTON_BRIGHT_UP);
-	cpm_button_xevent_key (button, XF86XK_MonBrightnessDown, GPM_BUTTON_BRIGHT_DOWN);
-	cpm_button_xevent_key (button, XF86XK_ScreenSaver, GPM_BUTTON_LOCK);
-	cpm_button_xevent_key (button, XF86XK_Battery, GPM_BUTTON_BATTERY);
-	cpm_button_xevent_key (button, XF86XK_KbdBrightnessUp, GPM_BUTTON_KBD_BRIGHT_UP);
-	cpm_button_xevent_key (button, XF86XK_KbdBrightnessDown, GPM_BUTTON_KBD_BRIGHT_DOWN);
-	cpm_button_xevent_key (button, XF86XK_KbdLightOnOff, GPM_BUTTON_KBD_BRIGHT_TOGGLE);
+	cpm_button_xevent_key (button, XF86XK_Suspend, CPM_BUTTON_HIBERNATE);
+	cpm_button_xevent_key (button, XF86XK_Sleep, CPM_BUTTON_SUSPEND); /* should be configurable */
+	cpm_button_xevent_key (button, XF86XK_Hibernate, CPM_BUTTON_HIBERNATE);
+	cpm_button_xevent_key (button, XF86XK_MonBrightnessUp, CPM_BUTTON_BRIGHT_UP);
+	cpm_button_xevent_key (button, XF86XK_MonBrightnessDown, CPM_BUTTON_BRIGHT_DOWN);
+	cpm_button_xevent_key (button, XF86XK_ScreenSaver, CPM_BUTTON_LOCK);
+	cpm_button_xevent_key (button, XF86XK_Battery, CPM_BUTTON_BATTERY);
+	cpm_button_xevent_key (button, XF86XK_KbdBrightnessUp, CPM_BUTTON_KBD_BRIGHT_UP);
+	cpm_button_xevent_key (button, XF86XK_KbdBrightnessDown, CPM_BUTTON_KBD_BRIGHT_DOWN);
+	cpm_button_xevent_key (button, XF86XK_KbdLightOnOff, CPM_BUTTON_KBD_BRIGHT_TOGGLE);
 
 	/* use global filter */
 	cdk_window_add_filter (button->priv->window,
@@ -396,9 +396,9 @@ cpm_button_finalize (GObject *object)
 {
 	GpmButton *button;
 	g_return_if_fail (object != NULL);
-	g_return_if_fail (GPM_IS_BUTTON (object));
+	g_return_if_fail (CPM_IS_BUTTON (object));
 
-	button = GPM_BUTTON (object);
+	button = CPM_BUTTON (object);
 	button->priv = cpm_button_get_instance_private (button);
 
 	g_object_unref (button->priv->client);
@@ -420,8 +420,8 @@ cpm_button_new (void)
 	if (cpm_button_object != NULL) {
 		g_object_ref (cpm_button_object);
 	} else {
-		cpm_button_object = g_object_new (GPM_TYPE_BUTTON, NULL);
+		cpm_button_object = g_object_new (CPM_TYPE_BUTTON, NULL);
 		g_object_add_weak_pointer (cpm_button_object, &cpm_button_object);
 	}
-	return GPM_BUTTON (cpm_button_object);
+	return CPM_BUTTON (cpm_button_object);
 }

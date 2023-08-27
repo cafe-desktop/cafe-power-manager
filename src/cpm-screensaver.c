@@ -56,7 +56,7 @@ cpm_screensaver_lock (GpmScreensaver *screensaver)
 {
 	guint sleepcount = 0;
 
-	g_return_val_if_fail (GPM_IS_SCREENSAVER (screensaver), FALSE);
+	g_return_val_if_fail (CPM_IS_SCREENSAVER (screensaver), FALSE);
 
 	if (screensaver->priv->proxy == NULL) {
 		egg_warning ("not connected");
@@ -101,7 +101,7 @@ cpm_screensaver_add_throttle (GpmScreensaver *screensaver,
 	gboolean ret;
 	guint32  cookie;
 
-	g_return_val_if_fail (GPM_IS_SCREENSAVER (screensaver), 0);
+	g_return_val_if_fail (CPM_IS_SCREENSAVER (screensaver), 0);
 	g_return_val_if_fail (reason != NULL, 0);
 
 	if (screensaver->priv->proxy == NULL) {
@@ -139,7 +139,7 @@ cpm_screensaver_remove_throttle (GpmScreensaver *screensaver, guint cookie)
 	gboolean ret;
 	GError *error = NULL;
 
-	g_return_val_if_fail (GPM_IS_SCREENSAVER (screensaver), FALSE);
+	g_return_val_if_fail (CPM_IS_SCREENSAVER (screensaver), FALSE);
 
 	if (screensaver->priv->proxy == NULL) {
 		egg_warning ("not connected");
@@ -177,7 +177,7 @@ cpm_screensaver_check_running (GpmScreensaver *screensaver)
 	gboolean temp = TRUE;
 	GError *error = NULL;
 
-	g_return_val_if_fail (GPM_IS_SCREENSAVER (screensaver), FALSE);
+	g_return_val_if_fail (CPM_IS_SCREENSAVER (screensaver), FALSE);
 
 	if (screensaver->priv->proxy == NULL) {
 		egg_warning ("not connected");
@@ -208,7 +208,7 @@ cpm_screensaver_check_running (GpmScreensaver *screensaver)
 gboolean
 cpm_screensaver_poke (GpmScreensaver *screensaver)
 {
-	g_return_val_if_fail (GPM_IS_SCREENSAVER (screensaver), FALSE);
+	g_return_val_if_fail (CPM_IS_SCREENSAVER (screensaver), FALSE);
 
 	if (screensaver->priv->proxy == NULL) {
 		egg_warning ("not connected");
@@ -260,9 +260,9 @@ cpm_screensaver_finalize (GObject *object)
 {
 	GpmScreensaver *screensaver;
 	g_return_if_fail (object != NULL);
-	g_return_if_fail (GPM_IS_SCREENSAVER (object));
+	g_return_if_fail (CPM_IS_SCREENSAVER (object));
 
-	screensaver = GPM_SCREENSAVER (object);
+	screensaver = CPM_SCREENSAVER (object);
 	screensaver->priv = cpm_screensaver_get_instance_private (screensaver);
 
 	g_object_unref (screensaver->priv->proxy);
@@ -280,10 +280,10 @@ cpm_screensaver_new (void)
 	if (cpm_screensaver_object != NULL) {
 		g_object_ref (cpm_screensaver_object);
 	} else {
-		cpm_screensaver_object = g_object_new (GPM_TYPE_SCREENSAVER, NULL);
+		cpm_screensaver_object = g_object_new (CPM_TYPE_SCREENSAVER, NULL);
 		g_object_add_weak_pointer (cpm_screensaver_object, &cpm_screensaver_object);
 	}
-	return GPM_SCREENSAVER (cpm_screensaver_object);
+	return CPM_SCREENSAVER (cpm_screensaver_object);
 }
 /***************************************************************************
  ***                          MAKE CHECK TESTS                           ***

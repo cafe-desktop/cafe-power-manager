@@ -47,7 +47,7 @@
 #include "cpm-common.h"
 #include "cpm-marshal.h"
 
-#define GPM_SOLE_SETTER_USE_CACHE	TRUE	/* this may be insanity */
+#define CPM_SOLE_SETTER_USE_CACHE	TRUE	/* this may be insanity */
 
 struct GpmBrightnessPrivate
 {
@@ -199,7 +199,7 @@ cpm_brightness_output_get_internal (GpmBrightness *brightness, RROutput output, 
 	int actual_format;
 	gboolean ret = FALSE;
 
-	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
+	g_return_val_if_fail (CPM_IS_BRIGHTNESS (brightness), FALSE);
 
 	if (brightness->priv->backlight == None)
 		return FALSE;
@@ -229,7 +229,7 @@ cpm_brightness_output_set_internal (GpmBrightness *brightness, RROutput output, 
 
 	gboolean ret = TRUE;
 
-	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
+	g_return_val_if_fail (CPM_IS_BRIGHTNESS (brightness), FALSE);
 
 	/* don't abort on error */
 	display = cdk_display_get_default ();
@@ -256,7 +256,7 @@ cpm_brightness_setup_display (GpmBrightness *brightness)
 {
 	gint major, minor;
 
-	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
+	g_return_val_if_fail (CPM_IS_BRIGHTNESS (brightness), FALSE);
 
 	/* get the display */
 	brightness->priv->dpy = CDK_DISPLAY_XDISPLAY (cdk_display_get_default());
@@ -296,7 +296,7 @@ cpm_brightness_output_get_limits (GpmBrightness *brightness, RROutput output,
 	XRRPropertyInfo *info;
 	gboolean ret = TRUE;
 
-	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
+	g_return_val_if_fail (CPM_IS_BRIGHTNESS (brightness), FALSE);
 
 	info = XRRQueryOutputProperty (brightness->priv->dpy, output, brightness->priv->backlight);
 	if (info == NULL) {
@@ -326,7 +326,7 @@ cpm_brightness_output_get_percentage (GpmBrightness *brightness, RROutput output
 	guint min, max;
 	guint percentage;
 
-	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
+	g_return_val_if_fail (CPM_IS_BRIGHTNESS (brightness), FALSE);
 
 	ret = cpm_brightness_output_get_internal (brightness, output, &cur);
 	if (!ret)
@@ -352,7 +352,7 @@ cpm_brightness_output_down (GpmBrightness *brightness, RROutput output)
 	gboolean ret;
 	guint min, max;
 
-	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
+	g_return_val_if_fail (CPM_IS_BRIGHTNESS (brightness), FALSE);
 
 	ret = cpm_brightness_output_get_internal (brightness, output, &cur);
 	if (!ret)
@@ -386,7 +386,7 @@ cpm_brightness_output_up (GpmBrightness *brightness, RROutput output)
 	gboolean ret;
 	guint min, max;
 
-	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
+	g_return_val_if_fail (CPM_IS_BRIGHTNESS (brightness), FALSE);
 
 	ret = cpm_brightness_output_get_internal (brightness, output, &cur);
 	if (!ret)
@@ -421,7 +421,7 @@ cpm_brightness_output_set (GpmBrightness *brightness, RROutput output)
 	gint shared_value_abs;
 	guint step;
 
-	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
+	g_return_val_if_fail (CPM_IS_BRIGHTNESS (brightness), FALSE);
 
 	ret = cpm_brightness_output_get_internal (brightness, output, &cur);
 	if (!ret)
@@ -456,7 +456,7 @@ cpm_brightness_output_set (GpmBrightness *brightness, RROutput output)
 			if (!ret)
 				break;
 			if ((gint) cur != shared_value_abs)
-				g_usleep (1000 * GPM_BRIGHTNESS_DIM_INTERVAL);
+				g_usleep (1000 * CPM_BRIGHTNESS_DIM_INTERVAL);
 		}
 	} else {
 
@@ -470,7 +470,7 @@ cpm_brightness_output_set (GpmBrightness *brightness, RROutput output)
 			if (!ret)
 				break;
 			if ((gint) cur != shared_value_abs)
-				g_usleep (1000 * GPM_BRIGHTNESS_DIM_INTERVAL);
+				g_usleep (1000 * CPM_BRIGHTNESS_DIM_INTERVAL);
 		}
 	}
 	return TRUE;
@@ -487,7 +487,7 @@ cpm_brightness_foreach_resource (GpmBrightness *brightness, GpmXRandROp op, XRRS
 	gboolean success_any = FALSE;
 	RROutput output;
 
-	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
+	g_return_val_if_fail (CPM_IS_BRIGHTNESS (brightness), FALSE);
 
 	/* do for each output */
 	for (i=0; i<resources->noutput; i++) {
@@ -524,7 +524,7 @@ cpm_brightness_foreach_screen (GpmBrightness *brightness, GpmXRandROp op)
 	gboolean ret;
 	gboolean success_any = FALSE;
 
-	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
+	g_return_val_if_fail (CPM_IS_BRIGHTNESS (brightness), FALSE);
 
 	/* Return immediately if we can't use XRandR */
 	if (!brightness->priv->has_extension)
@@ -551,7 +551,7 @@ cpm_brightness_foreach_screen (GpmBrightness *brightness, GpmXRandROp op)
 static gboolean
 cpm_brightness_trust_cache (GpmBrightness *brightness)
 {
-	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
+	g_return_val_if_fail (CPM_IS_BRIGHTNESS (brightness), FALSE);
 	/* only return the cached value if the cache is trusted and we have change events */
 	if (brightness->priv->cache_trusted && brightness->priv->has_changed_events) {
 		egg_debug ("using cache for value %u (okay)", brightness->priv->cache_percentage);
@@ -561,7 +561,7 @@ cpm_brightness_trust_cache (GpmBrightness *brightness)
 	/* can we trust that if we set a value 5 minutes ago, will it still be valid now?
 	 * if we have multiple things setting policy on the workstation, e.g. fast user switching
 	 * or kpowersave, then this will be invalid -- this logic may be insane */
-	if (GPM_SOLE_SETTER_USE_CACHE && brightness->priv->cache_trusted) {
+	if (CPM_SOLE_SETTER_USE_CACHE && brightness->priv->cache_trusted) {
 		egg_warning ("using cache for value %u (probably okay)", brightness->priv->cache_percentage);
 		return TRUE;
 	}
@@ -581,7 +581,7 @@ cpm_brightness_set (GpmBrightness *brightness, guint percentage, gboolean *hw_ch
 	gboolean ret = FALSE;
 	gboolean trust_cache;
 
-	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
+	g_return_val_if_fail (CPM_IS_BRIGHTNESS (brightness), FALSE);
 
 	/* can we check the new value with the cache? */
 	trust_cache = cpm_brightness_trust_cache (brightness);
@@ -631,7 +631,7 @@ cpm_brightness_get (GpmBrightness *brightness, guint *percentage)
 	gboolean trust_cache;
 	guint percentage_local;
 
-	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
+	g_return_val_if_fail (CPM_IS_BRIGHTNESS (brightness), FALSE);
 	g_return_val_if_fail (percentage != NULL, FALSE);
 
 	/* can we use the cache? */
@@ -685,7 +685,7 @@ cpm_brightness_up (GpmBrightness *brightness, gboolean *hw_changed)
 	gboolean ret = FALSE;
 	guint step;
 
-	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
+	g_return_val_if_fail (CPM_IS_BRIGHTNESS (brightness), FALSE);
 
 	/* reset to not-changed */
 	brightness->priv->hw_changed = FALSE;
@@ -736,7 +736,7 @@ cpm_brightness_down (GpmBrightness *brightness, gboolean *hw_changed)
 	gboolean ret = FALSE;
 	guint step;
 
-	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
+	g_return_val_if_fail (CPM_IS_BRIGHTNESS (brightness), FALSE);
 
 	/* reset to not-changed */
 	brightness->priv->hw_changed = FALSE;
@@ -797,7 +797,7 @@ cpm_brightness_may_have_changed (GpmBrightness *brightness)
 static CdkFilterReturn
 cpm_brightness_filter_xevents (CdkXEvent *xevent, CdkEvent *event, gpointer data)
 {
-	GpmBrightness *brightness = GPM_BRIGHTNESS (data);
+	GpmBrightness *brightness = CPM_BRIGHTNESS (data);
 	if (event->type == CDK_NOTHING)
 		return CDK_FILTER_CONTINUE;
 	cpm_brightness_may_have_changed (brightness);
@@ -813,7 +813,7 @@ static void cpm_brightness_update_cache (GpmBrightness *brightness);
 static void
 cpm_brightness_monitors_changed (CdkScreen *screen, GpmBrightness *brightness)
 {
-	g_return_if_fail (GPM_IS_BRIGHTNESS (brightness));
+	g_return_if_fail (CPM_IS_BRIGHTNESS (brightness));
 	cpm_brightness_update_cache (brightness);
 }
 
@@ -829,7 +829,7 @@ cpm_brightness_update_cache (GpmBrightness *brightness)
 	CdkDisplay *display;
 	XRRScreenResources *resource;
 
-	g_return_if_fail (GPM_IS_BRIGHTNESS (brightness));
+	g_return_if_fail (CPM_IS_BRIGHTNESS (brightness));
 
 	/* invalidate and remove all the previous entries */
 	length = brightness->priv->resources->len;
@@ -867,7 +867,7 @@ cpm_brightness_update_cache (GpmBrightness *brightness)
 gboolean
 cpm_brightness_has_hw (GpmBrightness *brightness)
 {
-	g_return_val_if_fail (GPM_IS_BRIGHTNESS (brightness), FALSE);
+	g_return_val_if_fail (CPM_IS_BRIGHTNESS (brightness), FALSE);
 
 	/* use XRandR first */
 	if (brightness->priv->has_extension)
@@ -889,8 +889,8 @@ cpm_brightness_finalize (GObject *object)
 {
 	GpmBrightness *brightness;
 	g_return_if_fail (object != NULL);
-	g_return_if_fail (GPM_IS_BRIGHTNESS (object));
-	brightness = GPM_BRIGHTNESS (object);
+	g_return_if_fail (CPM_IS_BRIGHTNESS (object));
+	brightness = CPM_BRIGHTNESS (object);
 	g_ptr_array_unref (brightness->priv->resources);
 	cdk_window_remove_filter (brightness->priv->root_window,
 				  cpm_brightness_filter_xevents, brightness);
@@ -977,9 +977,9 @@ cpm_brightness_new (void)
 	if (cpm_brightness_object != NULL) {
 		g_object_ref (cpm_brightness_object);
 	} else {
-		cpm_brightness_object = g_object_new (GPM_TYPE_BRIGHTNESS, NULL);
+		cpm_brightness_object = g_object_new (CPM_TYPE_BRIGHTNESS, NULL);
 		g_object_add_weak_pointer (cpm_brightness_object, &cpm_brightness_object);
 	}
-	return GPM_BRIGHTNESS (cpm_brightness_object);
+	return CPM_BRIGHTNESS (cpm_brightness_object);
 }
 

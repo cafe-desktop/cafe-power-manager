@@ -186,9 +186,9 @@ AC_MSG_CHECKING(for Solaris kstat)
 AC_CHECK_LIB(kstat, kstat_open,
 	     [
 	       AC_DEFINE(HAVE_KSTAT, 1, [Define if Solaris kstat is support])
-	       GPM_EXTRA_LIBS="$GPM_EXTRA_LIBS -lkstat"
+	       CPM_EXTRA_LIBS="$CPM_EXTRA_LIBS -lkstat"
 	     ])
-AC_SUBST(GPM_EXTRA_LIBS)
+AC_SUBST(CPM_EXTRA_LIBS)
 
 dnl ---------------------------------------------------------------------------
 dnl - Makefiles, etc.

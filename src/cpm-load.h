@@ -19,19 +19,19 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef __GPM_LOAD_H
-#define __GPM_LOAD_H
+#ifndef __CPM_LOAD_H
+#define __CPM_LOAD_H
 
 #include <glib-object.h>
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_LOAD		(cpm_load_get_type ())
-#define GPM_LOAD(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_LOAD, GpmLoad))
-#define GPM_LOAD_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_LOAD, GpmLoadClass))
-#define GPM_IS_LOAD(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_LOAD))
-#define GPM_IS_LOAD_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), GPM_TYPE_LOAD))
-#define GPM_LOAD_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), GPM_TYPE_LOAD, GpmLoadClass))
+#define CPM_TYPE_LOAD		(cpm_load_get_type ())
+#define CPM_LOAD(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_LOAD, GpmLoad))
+#define CPM_LOAD_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_LOAD, GpmLoadClass))
+#define CPM_IS_LOAD(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_LOAD))
+#define CPM_IS_LOAD_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_LOAD))
+#define CPM_LOAD_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_LOAD, GpmLoadClass))
 
 typedef struct GpmLoadPrivate GpmLoadPrivate;
 
@@ -53,4 +53,4 @@ gdouble		 cpm_load_get_current		(GpmLoad	*load);
 
 G_END_DECLS
 
-#endif /* __GPM_LOAD_H */
+#endif /* __CPM_LOAD_H */

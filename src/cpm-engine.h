@@ -19,20 +19,20 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef __GPM_ENGINE_H
-#define __GPM_ENGINE_H
+#ifndef __CPM_ENGINE_H
+#define __CPM_ENGINE_H
 
 #include <glib-object.h>
 #include <libupower-glib/upower.h>
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_ENGINE		(cpm_engine_get_type ())
-#define GPM_ENGINE(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_ENGINE, GpmEngine))
-#define GPM_ENGINE_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_ENGINE, GpmEngineClass))
-#define GPM_IS_ENGINE(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_ENGINE))
-#define GPM_IS_ENGINE_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), GPM_TYPE_ENGINE))
-#define GPM_ENGINE_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), GPM_TYPE_ENGINE, GpmEngineClass))
+#define CPM_TYPE_ENGINE		(cpm_engine_get_type ())
+#define CPM_ENGINE(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_ENGINE, GpmEngine))
+#define CPM_ENGINE_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_ENGINE, GpmEngineClass))
+#define CPM_IS_ENGINE(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_ENGINE))
+#define CPM_IS_ENGINE_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_ENGINE))
+#define CPM_ENGINE_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_ENGINE, GpmEngineClass))
 
 typedef struct GpmEnginePrivate GpmEnginePrivate;
 
@@ -73,5 +73,5 @@ UpDevice	*cpm_engine_get_primary_device	(GpmEngine	*engine);
 
 G_END_DECLS
 
-#endif	/* __GPM_ENGINE_H */
+#endif	/* __CPM_ENGINE_H */
 

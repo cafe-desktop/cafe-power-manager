@@ -37,8 +37,8 @@
 
 static void     cpm_engine_finalize   (GObject	  *object);
 
-#define GPM_ENGINE_RESUME_DELAY		2*1000
-#define GPM_ENGINE_WARN_ACCURACY	20
+#define CPM_ENGINE_RESUME_DELAY		2*1000
+#define CPM_ENGINE_WARN_ACCURACY	20
 
 struct GpmEnginePrivate
 {
@@ -84,11 +84,11 @@ static UpDevice *cpm_engine_get_composite_device (GpmEngine *engine, UpDevice *o
 static UpDevice *cpm_engine_update_composite_device (GpmEngine *engine, UpDevice *original_device);
 static void cpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, GpmEngine *engine);
 
-#define GPM_ENGINE_WARNING_NONE UP_DEVICE_LEVEL_NONE
-#define GPM_ENGINE_WARNING_DISCHARGING UP_DEVICE_LEVEL_DISCHARGING
-#define GPM_ENGINE_WARNING_LOW UP_DEVICE_LEVEL_LOW
-#define GPM_ENGINE_WARNING_CRITICAL UP_DEVICE_LEVEL_CRITICAL
-#define GPM_ENGINE_WARNING_ACTION UP_DEVICE_LEVEL_ACTION
+#define CPM_ENGINE_WARNING_NONE UP_DEVICE_LEVEL_NONE
+#define CPM_ENGINE_WARNING_DISCHARGING UP_DEVICE_LEVEL_DISCHARGING
+#define CPM_ENGINE_WARNING_LOW UP_DEVICE_LEVEL_LOW
+#define CPM_ENGINE_WARNING_CRITICAL UP_DEVICE_LEVEL_CRITICAL
+#define CPM_ENGINE_WARNING_ACTION UP_DEVICE_LEVEL_ACTION
 
 /**
  * cpm_engine_get_warning:
@@ -96,7 +96,7 @@ static void cpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, G
  * This gets the possible engine state for the device according to the
  * policy, which could be per-percent, or per-time.
  *
- * Return value: A GpmEngine state, e.g. GPM_ENGINE_WARNING_DISCHARGING
+ * Return value: A GpmEngine state, e.g. CPM_ENGINE_WARNING_DISCHARGING
  **/
 static UpDeviceLevel
 cpm_engine_get_warning (GpmEngine *engine, UpDevice *device)
@@ -124,7 +124,7 @@ cpm_engine_get_summary (GpmEngine *engine)
 	gchar *part;
 	gboolean is_present;
 
-	g_return_val_if_fail (GPM_IS_ENGINE (engine), NULL);
+	g_return_val_if_fail (CPM_IS_ENGINE (engine), NULL);
 
 	/* need to get AC state */
 	tooltip = g_string_new ("");
@@ -189,7 +189,7 @@ cpm_engine_get_icon_priv (GpmEngine *engine, UpDeviceKind device_kind, UpDeviceL
 
 		warning_temp = GPOINTER_TO_INT(g_object_get_data (G_OBJECT(device), "engine-warning-old"));
 		if (kind == device_kind && is_present) {
-			if (warning != GPM_ENGINE_WARNING_NONE) {
+			if (warning != CPM_ENGINE_WARNING_NONE) {
 				if (warning_temp == warning)
 					return cpm_upower_get_device_icon (device);
 				continue;
@@ -215,85 +215,85 @@ cpm_engine_get_icon (GpmEngine *engine)
 {
 	gchar *icon = NULL;
 
-	g_return_val_if_fail (GPM_IS_ENGINE (engine), NULL);
+	g_return_val_if_fail (CPM_IS_ENGINE (engine), NULL);
 
 	/* policy */
-	if (engine->priv->icon_policy == GPM_ICON_POLICY_NEVER) {
+	if (engine->priv->icon_policy == CPM_ICON_POLICY_NEVER) {
 		egg_debug ("no icon allowed, so no icon will be displayed.");
 		return NULL;
 	}
 
 	/* we try CRITICAL: BATTERY, UPS, MOUSE, KEYBOARD */
-	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_BATTERY, GPM_ENGINE_WARNING_CRITICAL, FALSE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_BATTERY, CPM_ENGINE_WARNING_CRITICAL, FALSE);
 	if (icon != NULL)
 		return icon;
-	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_UPS, GPM_ENGINE_WARNING_CRITICAL, FALSE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_UPS, CPM_ENGINE_WARNING_CRITICAL, FALSE);
 	if (icon != NULL)
 		return icon;
-	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_MOUSE, GPM_ENGINE_WARNING_CRITICAL, FALSE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_MOUSE, CPM_ENGINE_WARNING_CRITICAL, FALSE);
 	if (icon != NULL)
 		return icon;
-	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_KEYBOARD, GPM_ENGINE_WARNING_CRITICAL, FALSE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_KEYBOARD, CPM_ENGINE_WARNING_CRITICAL, FALSE);
 	if (icon != NULL)
 		return icon;
 
 	/* policy */
-	if (engine->priv->icon_policy == GPM_ICON_POLICY_CRITICAL) {
+	if (engine->priv->icon_policy == CPM_ICON_POLICY_CRITICAL) {
 		egg_debug ("no devices critical, so no icon will be displayed.");
 		return NULL;
 	}
 
 	/* we try CRITICAL: BATTERY, UPS, MOUSE, KEYBOARD */
-	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_BATTERY, GPM_ENGINE_WARNING_LOW, FALSE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_BATTERY, CPM_ENGINE_WARNING_LOW, FALSE);
 	if (icon != NULL)
 		return icon;
-	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_UPS, GPM_ENGINE_WARNING_LOW, FALSE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_UPS, CPM_ENGINE_WARNING_LOW, FALSE);
 	if (icon != NULL)
 		return icon;
-	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_MOUSE, GPM_ENGINE_WARNING_LOW, FALSE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_MOUSE, CPM_ENGINE_WARNING_LOW, FALSE);
 	if (icon != NULL)
 		return icon;
-	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_KEYBOARD, GPM_ENGINE_WARNING_LOW, FALSE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_KEYBOARD, CPM_ENGINE_WARNING_LOW, FALSE);
 	if (icon != NULL)
 		return icon;
 
 	/* policy */
-	if (engine->priv->icon_policy == GPM_ICON_POLICY_LOW) {
+	if (engine->priv->icon_policy == CPM_ICON_POLICY_LOW) {
 		egg_debug ("no devices low, so no icon will be displayed.");
 		return NULL;
 	}
 
 	/* we try (DIS)CHARGING: BATTERY, UPS */
-	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_BATTERY, GPM_ENGINE_WARNING_NONE, TRUE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_BATTERY, CPM_ENGINE_WARNING_NONE, TRUE);
 	if (icon != NULL)
 		return icon;
-	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_UPS, GPM_ENGINE_WARNING_NONE, TRUE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_UPS, CPM_ENGINE_WARNING_NONE, TRUE);
 	if (icon != NULL)
 		return icon;
 
 	/* policy */
-	if (engine->priv->icon_policy == GPM_ICON_POLICY_CHARGE) {
+	if (engine->priv->icon_policy == CPM_ICON_POLICY_CHARGE) {
 		egg_debug ("no devices (dis)charging, so no icon will be displayed.");
 		return NULL;
 	}
 
 	/* we try PRESENT: BATTERY, UPS */
-	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_BATTERY, GPM_ENGINE_WARNING_NONE, FALSE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_BATTERY, CPM_ENGINE_WARNING_NONE, FALSE);
 	if (icon != NULL)
 		return icon;
-	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_UPS, GPM_ENGINE_WARNING_NONE, FALSE);
+	icon = cpm_engine_get_icon_priv (engine, UP_DEVICE_KIND_UPS, CPM_ENGINE_WARNING_NONE, FALSE);
 	if (icon != NULL)
 		return icon;
 
 	/* policy */
-	if (engine->priv->icon_policy == GPM_ICON_POLICY_PRESENT) {
+	if (engine->priv->icon_policy == CPM_ICON_POLICY_PRESENT) {
 		egg_debug ("no devices present, so no icon will be displayed.");
 		return NULL;
 	}
 
 	/* we fallback to the ac_adapter icon */
 	egg_debug ("Using fallback");
-	return g_strdup (GPM_ICON_AC_ADAPTER);
+	return g_strdup (CPM_ICON_AC_ADAPTER);
 }
 
 /**
@@ -305,7 +305,7 @@ cpm_engine_recalculate_state_icon (GpmEngine *engine)
 	gchar *icon;
 
 	g_return_val_if_fail (engine != NULL, FALSE);
-	g_return_val_if_fail (GPM_IS_ENGINE (engine), FALSE);
+	g_return_val_if_fail (CPM_IS_ENGINE (engine), FALSE);
 
 	/* show a different icon if we are disconnected */
 	icon = cpm_engine_get_icon (engine);
@@ -382,7 +382,7 @@ cpm_engine_recalculate_state (GpmEngine *engine)
 {
 
 	g_return_if_fail (engine != NULL);
-	g_return_if_fail (GPM_IS_ENGINE (engine));
+	g_return_if_fail (CPM_IS_ENGINE (engine));
 
 	cpm_engine_recalculate_state_icon (engine);
 	cpm_engine_recalculate_state_summary (engine);
@@ -397,10 +397,10 @@ static void
 cpm_engine_settings_key_changed_cb (GSettings *settings, const gchar *key, GpmEngine *engine)
 {
 
-	if (g_strcmp0 (key, GPM_SETTINGS_USE_TIME_POLICY) == 0) {
+	if (g_strcmp0 (key, CPM_SETTINGS_USE_TIME_POLICY) == 0) {
 		engine->priv->use_time_primary = g_settings_get_boolean (settings, key);
 
-	} else if (g_strcmp0 (key, GPM_SETTINGS_ICON_POLICY) == 0) {
+	} else if (g_strcmp0 (key, CPM_SETTINGS_ICON_POLICY) == 0) {
 
 		/* do we want to display the icon in the tray */
 		engine->priv->icon_policy = g_settings_get_enum (settings, key);
@@ -439,7 +439,7 @@ cpm_engine_device_check_capacity (GpmEngine *engine, UpDevice *device)
 		return FALSE;
 
 	/* only emit this if specified in the settings */
-	ret = g_settings_get_boolean (engine->priv->settings, GPM_SETTINGS_NOTIFY_LOW_CAPACITY);
+	ret = g_settings_get_boolean (engine->priv->settings, CPM_SETTINGS_NOTIFY_LOW_CAPACITY);
 	if (ret) {
 		egg_debug ("** EMIT: low-capacity");
 		g_signal_emit (engine, signals [LOW_CAPACITY], 0, device);
@@ -529,7 +529,7 @@ cpm_engine_coldplug_idle_cb (GpmEngine *engine)
 	UpDevice *device;
 
 	g_return_val_if_fail (engine != NULL, FALSE);
-	g_return_val_if_fail (GPM_IS_ENGINE (engine), FALSE);
+	g_return_val_if_fail (CPM_IS_ENGINE (engine), FALSE);
 	/* connected mobile phones */
 	cpm_phone_coldplug (engine->priv->phone);
 
@@ -624,13 +624,13 @@ cpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, GpmEngine *en
 	warning_old = GPOINTER_TO_INT(g_object_get_data (G_OBJECT(device), "engine-warning-old"));
 	warning = cpm_engine_get_warning (engine, device);
 	if (warning != warning_old) {
-		if (warning == GPM_ENGINE_WARNING_LOW) {
+		if (warning == CPM_ENGINE_WARNING_LOW) {
 			egg_debug ("** EMIT: charge-low");
 			g_signal_emit (engine, signals [CHARGE_LOW], 0, device);
-		} else if (warning == GPM_ENGINE_WARNING_CRITICAL) {
+		} else if (warning == CPM_ENGINE_WARNING_CRITICAL) {
 			egg_debug ("** EMIT: charge-critical");
 			g_signal_emit (engine, signals [CHARGE_CRITICAL], 0, device);
-		} else if (warning == GPM_ENGINE_WARNING_ACTION) {
+		} else if (warning == CPM_ENGINE_WARNING_ACTION) {
 			egg_debug ("** EMIT: charge-action");
 			g_signal_emit (engine, signals [CHARGE_ACTION], 0, device);
 		}
@@ -808,7 +808,7 @@ cpm_engine_init (GpmEngine *engine)
 	g_signal_connect (engine->priv->client, "device-removed",
 			  G_CALLBACK (cpm_engine_device_removed_cb), engine);
 
-	engine->priv->settings = g_settings_new (GPM_SETTINGS_SCHEMA);
+	engine->priv->settings = g_settings_new (CPM_SETTINGS_SCHEMA);
 	g_signal_connect (engine->priv->settings, "changed",
 			  G_CALLBACK (cpm_engine_settings_key_changed_cb), engine);
 
@@ -829,20 +829,20 @@ cpm_engine_init (GpmEngine *engine)
 	engine->priv->previous_summary = NULL;
 
 	/* do we want to display the icon in the tray */
-	engine->priv->icon_policy = g_settings_get_enum (engine->priv->settings, GPM_SETTINGS_ICON_POLICY);
+	engine->priv->icon_policy = g_settings_get_enum (engine->priv->settings, CPM_SETTINGS_ICON_POLICY);
 
 	/* get percentage policy */
-	engine->priv->low_percentage = g_settings_get_int (engine->priv->settings, GPM_SETTINGS_PERCENTAGE_LOW);
-	engine->priv->critical_percentage = g_settings_get_int (engine->priv->settings, GPM_SETTINGS_PERCENTAGE_CRITICAL);
-	engine->priv->action_percentage = g_settings_get_int (engine->priv->settings, GPM_SETTINGS_PERCENTAGE_ACTION);
+	engine->priv->low_percentage = g_settings_get_int (engine->priv->settings, CPM_SETTINGS_PERCENTAGE_LOW);
+	engine->priv->critical_percentage = g_settings_get_int (engine->priv->settings, CPM_SETTINGS_PERCENTAGE_CRITICAL);
+	engine->priv->action_percentage = g_settings_get_int (engine->priv->settings, CPM_SETTINGS_PERCENTAGE_ACTION);
 
 	/* get time policy */
-	engine->priv->low_time = g_settings_get_int (engine->priv->settings, GPM_SETTINGS_TIME_LOW);
-	engine->priv->critical_time = g_settings_get_int (engine->priv->settings, GPM_SETTINGS_TIME_CRITICAL);
-	engine->priv->action_time = g_settings_get_int (engine->priv->settings, GPM_SETTINGS_TIME_ACTION);
+	engine->priv->low_time = g_settings_get_int (engine->priv->settings, CPM_SETTINGS_TIME_LOW);
+	engine->priv->critical_time = g_settings_get_int (engine->priv->settings, CPM_SETTINGS_TIME_CRITICAL);
+	engine->priv->action_time = g_settings_get_int (engine->priv->settings, CPM_SETTINGS_TIME_ACTION);
 
 	/* we can disable this if the time remaining is inaccurate or just plain wrong */
-	engine->priv->use_time_primary = g_settings_get_boolean (engine->priv->settings, GPM_SETTINGS_USE_TIME_POLICY);
+	engine->priv->use_time_primary = g_settings_get_boolean (engine->priv->settings, CPM_SETTINGS_USE_TIME_POLICY);
 	if (engine->priv->use_time_primary)
 		egg_debug ("Using per-time notification policy");
 	else
@@ -937,9 +937,9 @@ cpm_engine_finalize (GObject *object)
 	GpmEngine *engine;
 
 	g_return_if_fail (object != NULL);
-	g_return_if_fail (GPM_IS_ENGINE (object));
+	g_return_if_fail (CPM_IS_ENGINE (object));
 
-	engine = GPM_ENGINE (object);
+	engine = CPM_ENGINE (object);
 	engine->priv = cpm_engine_get_instance_private (engine);
 
 	g_ptr_array_unref (engine->priv->array);
@@ -963,10 +963,10 @@ cpm_engine_new (void)
 	if (cpm_engine_object != NULL) {
 		g_object_ref (cpm_engine_object);
 	} else {
-		cpm_engine_object = g_object_new (GPM_TYPE_ENGINE, NULL);
+		cpm_engine_object = g_object_new (CPM_TYPE_ENGINE, NULL);
 		g_object_add_weak_pointer (cpm_engine_object, &cpm_engine_object);
 	}
-	return GPM_ENGINE (cpm_engine_object);
+	return CPM_ENGINE (cpm_engine_object);
 
 }
 

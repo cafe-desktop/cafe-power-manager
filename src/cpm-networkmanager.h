@@ -19,8 +19,8 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef __GPM_NETWORKMANAGER_H
-#define __GPM_NETWORKMANAGER_H
+#ifndef __CPM_NETWORKMANAGER_H
+#define __CPM_NETWORKMANAGER_H
 
 #include <glib.h>
 
@@ -31,4 +31,4 @@ gboolean	cpm_networkmanager_wake			(void);
 
 G_END_DECLS
 
-#endif	/* __GPM_NETWORKMANAGER_H */
+#endif	/* __CPM_NETWORKMANAGER_H */

@@ -89,12 +89,12 @@ cpm_kbd_backlight_get_brightness (GpmKbdBacklight *backlight,
                  GError **error)
 {
    g_return_val_if_fail (backlight != NULL, FALSE);
-   g_return_val_if_fail (GPM_IS_KBD_BACKLIGHT (backlight), FALSE);
+   g_return_val_if_fail (CPM_IS_KBD_BACKLIGHT (backlight), FALSE);
    g_return_val_if_fail (brightness != NULL, FALSE);
 
    if (backlight->priv->can_dim == FALSE) {
        g_set_error_literal (error, cpm_kbd_backlight_error_quark (),
-                    GPM_KBD_BACKLIGHT_ERROR_HARDWARE_NOT_PRESENT,
+                    CPM_KBD_BACKLIGHT_ERROR_HARDWARE_NOT_PRESENT,
                     "Dim capable hardware not present");
        return FALSE;
    }
@@ -110,7 +110,7 @@ cpm_kbd_backlight_set (GpmKbdBacklight *backlight,
    gint scale;
    guint goal;
 
-   g_return_val_if_fail (GPM_IS_KBD_BACKLIGHT (backlight), FALSE);
+   g_return_val_if_fail (CPM_IS_KBD_BACKLIGHT (backlight), FALSE);
    /* avoid warnings if no keyboard brightness is available */
    if (backlight->priv->max_brightness < 1)
        return FALSE;
@@ -239,7 +239,7 @@ cpm_kbd_backlight_brightness_up (GpmKbdBacklight *backlight)
 {
    guint new;
 
-   new = MIN (backlight->priv->brightness_percent + GPM_KBD_BACKLIGHT_STEP, 100u);
+   new = MIN (backlight->priv->brightness_percent + CPM_KBD_BACKLIGHT_STEP, 100u);
    return cpm_kbd_backlight_set (backlight, new);
 }
 
@@ -252,7 +252,7 @@ cpm_kbd_backlight_brightness_down (GpmKbdBacklight *backlight)
    guint new;
 
    // we can possibly go below 0 here, so by converting to a gint we avoid underflow errors.
-   new = MAX ((gint) backlight->priv->brightness_percent - GPM_KBD_BACKLIGHT_STEP, 0);
+   new = MAX ((gint) backlight->priv->brightness_percent - CPM_KBD_BACKLIGHT_STEP, 0);
    return cpm_kbd_backlight_set (backlight, new);
 }
 
@@ -272,11 +272,11 @@ cpm_kbd_backlight_set_brightness (GpmKbdBacklight *backlight,
    gboolean ret;
 
    g_return_val_if_fail (backlight != NULL, FALSE);
-   g_return_val_if_fail (GPM_IS_KBD_BACKLIGHT (backlight), FALSE);
+   g_return_val_if_fail (CPM_IS_KBD_BACKLIGHT (backlight), FALSE);
 
    if (backlight->priv->can_dim == FALSE) {
        g_set_error_literal (error, cpm_kbd_backlight_error_quark (),
-                    GPM_KBD_BACKLIGHT_ERROR_HARDWARE_NOT_PRESENT,
+                    CPM_KBD_BACKLIGHT_ERROR_HARDWARE_NOT_PRESENT,
                     "Dim capable hardware not present");
        return FALSE;
    }
@@ -286,7 +286,7 @@ cpm_kbd_backlight_set_brightness (GpmKbdBacklight *backlight,
    ret = cpm_kbd_backlight_set (backlight, percentage);
    if (!ret) {
        g_set_error_literal (error, cpm_kbd_backlight_error_quark (),
-                    GPM_KBD_BACKLIGHT_ERROR_GENERAL,
+                    CPM_KBD_BACKLIGHT_ERROR_GENERAL,
                     "Cannot set keyboard backlight brightness");
    }
 
@@ -314,7 +314,7 @@ cpm_kbd_backlight_on_dbus_signal (GDBusProxy *proxy,
                  gpointer    user_data)
 {
    guint value;
-   GpmKbdBacklight *backlight = GPM_KBD_BACKLIGHT (user_data);
+   GpmKbdBacklight *backlight = CPM_KBD_BACKLIGHT (user_data);
 
    if (g_strcmp0 (signal_name, "BrightnessChanged") == 0) {
        g_variant_get (parameters, "(i)", &value);
@@ -348,7 +348,7 @@ cpm_kbd_backlight_dbus_method_call (GDBusConnection *connection,
    guint value;
    gboolean ret;
    GError *error = NULL;
-   GpmKbdBacklight *backlight = GPM_KBD_BACKLIGHT (user_data);
+   GpmKbdBacklight *backlight = CPM_KBD_BACKLIGHT (user_data);
 
    if (g_strcmp0 (method_name, "GetBrightness") == 0) {
        ret = cpm_kbd_backlight_get_brightness (backlight, &value, &error);
@@ -442,11 +442,11 @@ cpm_kbd_backlight_evaluate_power_source_and_set (GpmKbdBacklight *backlight)
              &on_battery,
              NULL);
 
-   battery_reduce = g_settings_get_boolean (backlight->priv->settings, GPM_SETTINGS_KBD_BACKLIGHT_BATT_REDUCE);
+   battery_reduce = g_settings_get_boolean (backlight->priv->settings, CPM_SETTINGS_KBD_BACKLIGHT_BATT_REDUCE);
 
    if (on_battery) {
       if (battery_reduce) {
-         value = g_settings_get_int (backlight->priv->settings, GPM_SETTINGS_KBD_BRIGHTNESS_DIM_BY_ON_BATT);
+         value = g_settings_get_int (backlight->priv->settings, CPM_SETTINGS_KBD_BRIGHTNESS_DIM_BY_ON_BATT);
 
          if (value > 100) {
             g_warning ("Cannot scale brightness down by more than 100%%. Scaling by 50%%");
@@ -464,7 +464,7 @@ cpm_kbd_backlight_evaluate_power_source_and_set (GpmKbdBacklight *backlight)
       }
 
    } else {
-       value = g_settings_get_int (backlight->priv->settings, GPM_SETTINGS_KBD_BRIGHTNESS_ON_AC);
+       value = g_settings_get_int (backlight->priv->settings, CPM_SETTINGS_KBD_BRIGHTNESS_ON_AC);
    }
 
    ret = cpm_kbd_backlight_set (backlight, value);
@@ -521,7 +521,7 @@ cpm_kbd_backlight_button_pressed_cb (GpmButton *button,
 
    saved_brightness = backlight->priv->master_percentage;
 
-   if (g_strcmp0 (type, GPM_BUTTON_KBD_BRIGHT_UP) == 0) {
+   if (g_strcmp0 (type, CPM_BUTTON_KBD_BRIGHT_UP) == 0) {
        ret = cpm_kbd_backlight_brightness_up (backlight);
         
         if (ret) {
@@ -531,7 +531,7 @@ cpm_kbd_backlight_button_pressed_cb (GpmButton *button,
             cpm_kbd_backlight_dialog_show (backlight);
         }
 
-   } else if (g_strcmp0 (type, GPM_BUTTON_KBD_BRIGHT_DOWN) == 0) {
+   } else if (g_strcmp0 (type, CPM_BUTTON_KBD_BRIGHT_DOWN) == 0) {
        ret = cpm_kbd_backlight_brightness_down (backlight);
 
         if (ret) {
@@ -541,7 +541,7 @@ cpm_kbd_backlight_button_pressed_cb (GpmButton *button,
             cpm_kbd_backlight_dialog_show (backlight);
         }
         
-   } else if (g_strcmp0 (type, GPM_BUTTON_KBD_BRIGHT_TOGGLE) == 0) {
+   } else if (g_strcmp0 (type, CPM_BUTTON_KBD_BRIGHT_TOGGLE) == 0) {
        if (backlight->priv->master_percentage == 0) {
            /* backlight is off turn it back on */
            cpm_kbd_backlight_set (backlight, saved_brightness);
@@ -556,12 +556,12 @@ cpm_kbd_backlight_button_pressed_cb (GpmButton *button,
 /**
  * cpm_kbd_backlight_idle_changed_cb:
  * @idle: The idle class instance
- * @mode: The idle mode, e.g. GPM_IDLE_MODE_BLANK
+ * @mode: The idle mode, e.g. CPM_IDLE_MODE_BLANK
  * @backlight: This class instance
  *
  * This callback is called when cafe-screensaver detects that the idle state
- * has changed. GPM_IDLE_MODE_BLANK is when the session has become inactive,
- * and GPM_IDLE_MODE_SLEEP is where the session has become inactive, AND the
+ * has changed. CPM_IDLE_MODE_BLANK is when the session has become inactive,
+ * and CPM_IDLE_MODE_SLEEP is where the session has become inactive, AND the
  * session timeout has elapsed for the idle action.
  **/
 static void
@@ -589,21 +589,21 @@ cpm_kbd_backlight_idle_changed_cb (GpmIdle *idle,
                  NULL);
 
    enable_action = on_battery
-       ? g_settings_get_boolean (backlight->priv->settings, GPM_SETTINGS_IDLE_DIM_BATT)
-         && g_settings_get_boolean (backlight->priv->settings, GPM_SETTINGS_KBD_BACKLIGHT_BATT_REDUCE)
-       : g_settings_get_boolean (backlight->priv->settings, GPM_SETTINGS_IDLE_DIM_AC);
+       ? g_settings_get_boolean (backlight->priv->settings, CPM_SETTINGS_IDLE_DIM_BATT)
+         && g_settings_get_boolean (backlight->priv->settings, CPM_SETTINGS_KBD_BACKLIGHT_BATT_REDUCE)
+       : g_settings_get_boolean (backlight->priv->settings, CPM_SETTINGS_IDLE_DIM_AC);
 
    if (!enable_action)
        return;
 
-   if (mode == GPM_IDLE_MODE_NORMAL) {
-        egg_debug("GPM_IDLE_MODE_NORMAL");
+   if (mode == CPM_IDLE_MODE_NORMAL) {
+        egg_debug("CPM_IDLE_MODE_NORMAL");
        backlight->priv->master_percentage = 100;
        cpm_kbd_backlight_evaluate_power_source_and_set (backlight);
-   } else if (mode == GPM_IDLE_MODE_DIM) {
-       egg_debug("GPM_IDLE_MODE_DIM");
+   } else if (mode == CPM_IDLE_MODE_DIM) {
+       egg_debug("CPM_IDLE_MODE_DIM");
        brightness = backlight->priv->master_percentage;
-       value = g_settings_get_int (backlight->priv->settings, GPM_SETTINGS_KBD_BRIGHTNESS_DIM_BY_ON_IDLE);
+       value = g_settings_get_int (backlight->priv->settings, CPM_SETTINGS_KBD_BRIGHTNESS_DIM_BY_ON_IDLE);
 
        if (value > 100) {
            egg_warning ("Cannot scale brightness down by more than 100%%. Scaling by 50%%");
@@ -615,7 +615,7 @@ cpm_kbd_backlight_idle_changed_cb (GpmIdle *idle,
 
        value = (guint) brightness;
        cpm_kbd_backlight_set (backlight, value);
-   } else if (mode == GPM_IDLE_MODE_BLANK) {
+   } else if (mode == CPM_IDLE_MODE_BLANK) {
        cpm_kbd_backlight_set (backlight, 0u);
    }
 }
@@ -630,9 +630,9 @@ cpm_kbd_backlight_finalize (GObject *object)
    GpmKbdBacklight *backlight;
 
    g_return_if_fail (object != NULL);
-   g_return_if_fail (GPM_IS_KBD_BACKLIGHT (object));
+   g_return_if_fail (CPM_IS_KBD_BACKLIGHT (object));
 
-   backlight = GPM_KBD_BACKLIGHT (object);
+   backlight = CPM_KBD_BACKLIGHT (object);
 
    if (backlight->priv->upower_proxy != NULL) {
        g_object_unref (backlight->priv->upower_proxy);
@@ -768,7 +768,7 @@ noerr:
    g_signal_connect (backlight->priv->client, "notify",
              G_CALLBACK (cpm_kbd_backlight_client_changed_cb), backlight);
 
-   backlight->priv->settings = g_settings_new (GPM_SETTINGS_SCHEMA);
+   backlight->priv->settings = g_settings_new (CPM_SETTINGS_SCHEMA);
 
    /* watch for kbd brightness up and down button presses */
    backlight->priv->button = cpm_button_new ();
@@ -787,7 +787,7 @@ noerr:
 
    /* since cpm is just starting we can pretty safely assume that we're not idle */
    backlight->priv->system_is_idle = FALSE;
-   backlight->priv->idle_dim_timeout = g_settings_get_int (backlight->priv->settings, GPM_SETTINGS_IDLE_DIM_TIME);
+   backlight->priv->idle_dim_timeout = g_settings_get_int (backlight->priv->settings, CPM_SETTINGS_IDLE_DIM_TIME);
    cpm_idle_set_timeout_dim (backlight->priv->idle, backlight->priv->idle_dim_timeout);
 
    /* make sure we turn the keyboard backlight back on after resuming */
@@ -806,7 +806,7 @@ noerr:
 GpmKbdBacklight *
 cpm_kbd_backlight_new (void)
 {
-   GpmKbdBacklight *backlight = g_object_new (GPM_TYPE_KBD_BACKLIGHT, NULL);
+   GpmKbdBacklight *backlight = g_object_new (CPM_TYPE_KBD_BACKLIGHT, NULL);
    return backlight;
 }
 

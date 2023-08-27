@@ -66,7 +66,7 @@ G_DEFINE_TYPE_WITH_PRIVATE (GpmTrayIcon, cpm_tray_icon, G_TYPE_OBJECT)
 static void
 cpm_tray_icon_enable_actions (GpmTrayIcon *icon, gboolean enabled)
 {
-	g_return_if_fail (GPM_IS_TRAY_ICON (icon));
+	g_return_if_fail (CPM_IS_TRAY_ICON (icon));
 	icon->priv->show_actions = enabled;
 }
 
@@ -77,7 +77,7 @@ cpm_tray_icon_enable_actions (GpmTrayIcon *icon, gboolean enabled)
 static void
 cpm_tray_icon_show (GpmTrayIcon *icon, gboolean enabled)
 {
-	g_return_if_fail (GPM_IS_TRAY_ICON (icon));
+	g_return_if_fail (CPM_IS_TRAY_ICON (icon));
 	ctk_status_icon_set_visible (icon->priv->status_icon, enabled);
 }
 
@@ -89,7 +89,7 @@ gboolean
 cpm_tray_icon_set_tooltip (GpmTrayIcon *icon, const gchar *tooltip)
 {
 	g_return_val_if_fail (icon != NULL, FALSE);
-	g_return_val_if_fail (GPM_IS_TRAY_ICON (icon), FALSE);
+	g_return_val_if_fail (CPM_IS_TRAY_ICON (icon), FALSE);
 	g_return_val_if_fail (tooltip != NULL, FALSE);
 
 	ctk_status_icon_set_tooltip_text (icon->priv->status_icon, tooltip);
@@ -103,13 +103,13 @@ cpm_tray_icon_set_tooltip (GpmTrayIcon *icon, const gchar *tooltip)
 CtkStatusIcon *
 cpm_tray_icon_get_status_icon (GpmTrayIcon *icon)
 {
-	g_return_val_if_fail (GPM_IS_TRAY_ICON (icon), NULL);
+	g_return_val_if_fail (CPM_IS_TRAY_ICON (icon), NULL);
 	return g_object_ref (icon->priv->status_icon);
 }
 
 /**
  * cpm_tray_icon_set_icon:
- * @icon_name: The icon name, e.g. GPM_ICON_APP_ICON, or NULL to remove.
+ * @icon_name: The icon name, e.g. CPM_ICON_APP_ICON, or NULL to remove.
  *
  * Loads a pixmap from disk, and sets as the tooltip icon.
  **/
@@ -117,7 +117,7 @@ gboolean
 cpm_tray_icon_set_icon (GpmTrayIcon *icon, const gchar *icon_name)
 {
 	g_return_val_if_fail (icon != NULL, FALSE);
-	g_return_val_if_fail (GPM_IS_TRAY_ICON (icon), FALSE);
+	g_return_val_if_fail (CPM_IS_TRAY_ICON (icon), FALSE);
 
 	if (icon_name != NULL) {
 		egg_debug ("Setting icon to %s", icon_name);
@@ -408,7 +408,7 @@ skip_prefs:
 static void
 cpm_tray_icon_popup_cleared_cd (CtkWidget *widget, GpmTrayIcon *icon)
 {
-	g_return_if_fail (GPM_IS_TRAY_ICON (icon));
+	g_return_if_fail (CPM_IS_TRAY_ICON (icon));
 	egg_debug ("clear tray");
 	g_object_ref_sink (widget);
 	g_object_unref (widget);
@@ -472,7 +472,7 @@ cpm_tray_icon_settings_changed_cb (GSettings *settings, const gchar *key, GpmTra
 {
 	gboolean allowed_in_menu;
 
-	if (g_strcmp0 (key, GPM_SETTINGS_SHOW_ACTIONS) == 0) {
+	if (g_strcmp0 (key, CPM_SETTINGS_SHOW_ACTIONS) == 0) {
 		allowed_in_menu = g_settings_get_boolean (settings, key);
 		cpm_tray_icon_enable_actions (icon, allowed_in_menu);
 	}
@@ -492,7 +492,7 @@ cpm_tray_icon_init (GpmTrayIcon *icon)
 
 	icon->priv->engine = cpm_engine_new ();
 
-	icon->priv->settings = g_settings_new (GPM_SETTINGS_SCHEMA);
+	icon->priv->settings = g_settings_new (CPM_SETTINGS_SCHEMA);
 	g_signal_connect (icon->priv->settings, "changed",
 			  G_CALLBACK (cpm_tray_icon_settings_changed_cb), icon);
 
@@ -507,7 +507,7 @@ cpm_tray_icon_init (GpmTrayIcon *icon)
 				 G_CALLBACK (cpm_tray_icon_activate_cb),
 				 icon, 0);
 
-	allowed_in_menu = g_settings_get_boolean (icon->priv->settings, GPM_SETTINGS_SHOW_ACTIONS);
+	allowed_in_menu = g_settings_get_boolean (icon->priv->settings, CPM_SETTINGS_SHOW_ACTIONS);
 	cpm_tray_icon_enable_actions (icon, allowed_in_menu);
 }
 
@@ -521,9 +521,9 @@ cpm_tray_icon_finalize (GObject *object)
 	GpmTrayIcon *tray_icon;
 
 	g_return_if_fail (object != NULL);
-	g_return_if_fail (GPM_IS_TRAY_ICON (object));
+	g_return_if_fail (CPM_IS_TRAY_ICON (object));
 
-	tray_icon = GPM_TRAY_ICON (object);
+	tray_icon = CPM_TRAY_ICON (object);
 
 	g_object_unref (tray_icon->priv->status_icon);
 	g_object_unref (tray_icon->priv->engine);
@@ -540,7 +540,7 @@ GpmTrayIcon *
 cpm_tray_icon_new (void)
 {
 	GpmTrayIcon *tray_icon;
-	tray_icon = g_object_new (GPM_TYPE_TRAY_ICON, NULL);
-	return GPM_TRAY_ICON (tray_icon);
+	tray_icon = g_object_new (CPM_TYPE_TRAY_ICON, NULL);
+	return CPM_TRAY_ICON (tray_icon);
 }
 

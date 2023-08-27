@@ -19,19 +19,19 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef __GPMPREFS_H
-#define __GPMPREFS_H
+#ifndef __CPMPREFS_H
+#define __CPMPREFS_H
 
 #include <glib-object.h>
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_PREFS		(cpm_prefs_get_type ())
-#define GPM_PREFS(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_PREFS, GpmPrefs))
-#define GPM_PREFS_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_PREFS, GpmPrefsClass))
-#define GPM_IS_PREFS(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_PREFS))
-#define GPM_IS_PREFS_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), GPM_TYPE_PREFS))
-#define GPM_PREFS_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), GPM_TYPE_PREFS, GpmPrefsClass))
+#define CPM_TYPE_PREFS		(cpm_prefs_get_type ())
+#define CPM_PREFS(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_PREFS, GpmPrefs))
+#define CPM_PREFS_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_PREFS, GpmPrefsClass))
+#define CPM_IS_PREFS(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_PREFS))
+#define CPM_IS_PREFS_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_PREFS))
+#define CPM_PREFS_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_PREFS, GpmPrefsClass))
 
 typedef struct GpmPrefsPrivate GpmPrefsPrivate;
 
@@ -55,4 +55,4 @@ void		 cpm_prefs_activate_window		(CtkApplication *app, GpmPrefs	*prefs);
 
 G_END_DECLS
 
-#endif	/* __GPMPREFS_H */
+#endif	/* __CPMPREFS_H */

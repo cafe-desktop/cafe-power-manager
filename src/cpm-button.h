@@ -19,36 +19,36 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef __GPMBUTTON_H
-#define __GPMBUTTON_H
+#ifndef __CPMBUTTON_H
+#define __CPMBUTTON_H
 
 #include <glib-object.h>
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_BUTTON		(cpm_button_get_type ())
-#define GPM_BUTTON(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_BUTTON, GpmButton))
-#define GPM_BUTTON_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_BUTTON, GpmButtonClass))
-#define GPM_IS_BUTTON(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_BUTTON))
-#define GPM_IS_BUTTON_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), GPM_TYPE_BUTTON))
-#define GPM_BUTTON_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), GPM_TYPE_BUTTON, GpmButtonClass))
+#define CPM_TYPE_BUTTON		(cpm_button_get_type ())
+#define CPM_BUTTON(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_BUTTON, GpmButton))
+#define CPM_BUTTON_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_BUTTON, GpmButtonClass))
+#define CPM_IS_BUTTON(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_BUTTON))
+#define CPM_IS_BUTTON_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_BUTTON))
+#define CPM_BUTTON_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_BUTTON, GpmButtonClass))
 
 typedef struct GpmButtonPrivate GpmButtonPrivate;
 
-#define GPM_BUTTON_POWER		"power"
-#define GPM_BUTTON_SLEEP		"sleep"
-#define GPM_BUTTON_SUSPEND		"suspend"
-#define GPM_BUTTON_HIBERNATE		"hibernate"
-#define GPM_BUTTON_LID_DEP		"lid"		/* Remove when HAL drops input support */
-#define GPM_BUTTON_LID_OPEN		"lid-up"
-#define GPM_BUTTON_LID_CLOSED		"lid-down"
-#define GPM_BUTTON_BRIGHT_UP		"brightness-up"
-#define GPM_BUTTON_BRIGHT_DOWN		"brightness-down"
-#define GPM_BUTTON_KBD_BRIGHT_UP	"kbd-illum-up"
-#define GPM_BUTTON_KBD_BRIGHT_DOWN	"kbd-illum-down"
-#define GPM_BUTTON_KBD_BRIGHT_TOGGLE	"kbd-illum-toggle"
-#define GPM_BUTTON_LOCK			"lock"
-#define GPM_BUTTON_BATTERY		"battery"
+#define CPM_BUTTON_POWER		"power"
+#define CPM_BUTTON_SLEEP		"sleep"
+#define CPM_BUTTON_SUSPEND		"suspend"
+#define CPM_BUTTON_HIBERNATE		"hibernate"
+#define CPM_BUTTON_LID_DEP		"lid"		/* Remove when HAL drops input support */
+#define CPM_BUTTON_LID_OPEN		"lid-up"
+#define CPM_BUTTON_LID_CLOSED		"lid-down"
+#define CPM_BUTTON_BRIGHT_UP		"brightness-up"
+#define CPM_BUTTON_BRIGHT_DOWN		"brightness-down"
+#define CPM_BUTTON_KBD_BRIGHT_UP	"kbd-illum-up"
+#define CPM_BUTTON_KBD_BRIGHT_DOWN	"kbd-illum-down"
+#define CPM_BUTTON_KBD_BRIGHT_TOGGLE	"kbd-illum-toggle"
+#define CPM_BUTTON_LOCK			"lock"
+#define CPM_BUTTON_BATTERY		"battery"
 
 typedef struct
 {
@@ -70,4 +70,4 @@ gboolean	 cpm_button_reset_time		(GpmButton *button);
 
 G_END_DECLS
 
-#endif	/* __GPMBUTTON_H */
+#endif	/* __CPMBUTTON_H */

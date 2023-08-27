@@ -37,12 +37,12 @@
 #include "egg-debug.h"
 #include "cpm-common.h"
 
-#define GPM_TYPE_INHIBIT_APPLET		(cpm_inhibit_applet_get_type ())
-#define GPM_INHIBIT_APPLET(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_INHIBIT_APPLET, GpmInhibitApplet))
-#define GPM_INHIBIT_APPLET_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_INHIBIT_APPLET, GpmInhibitAppletClass))
-#define GPM_IS_INHIBIT_APPLET(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_INHIBIT_APPLET))
-#define GPM_IS_INHIBIT_APPLET_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), GPM_TYPE_INHIBIT_APPLET))
-#define GPM_INHIBIT_APPLET_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), GPM_TYPE_INHIBIT_APPLET, GpmInhibitAppletClass))
+#define CPM_TYPE_INHIBIT_APPLET		(cpm_inhibit_applet_get_type ())
+#define CPM_INHIBIT_APPLET(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_INHIBIT_APPLET, GpmInhibitApplet))
+#define CPM_INHIBIT_APPLET_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_INHIBIT_APPLET, GpmInhibitAppletClass))
+#define CPM_IS_INHIBIT_APPLET(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_INHIBIT_APPLET))
+#define CPM_IS_INHIBIT_APPLET_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_INHIBIT_APPLET))
+#define CPM_INHIBIT_APPLET_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_INHIBIT_APPLET, GpmInhibitAppletClass))
 
 typedef struct{
 	CafePanelApplet parent;
@@ -79,13 +79,13 @@ static void	cpm_applet_dialog_about_cb	(CtkAction *action, gpointer data);
 static gboolean	cpm_applet_cb		        (CafePanelApplet *_applet, const gchar *iid, gpointer data);
 static void	cpm_applet_destroy_cb		(CtkWidget *widget);
 
-#define GPM_INHIBIT_APPLET_ID		        "InhibitApplet"
-#define GPM_INHIBIT_APPLET_FACTORY_ID	        "InhibitAppletFactory"
-#define GPM_INHIBIT_APPLET_ICON_INHIBIT		"cpm-inhibit"
-#define GPM_INHIBIT_APPLET_ICON_INVALID		"cpm-inhibit-invalid"
-#define GPM_INHIBIT_APPLET_ICON_UNINHIBIT	"cpm-hibernate"
-#define GPM_INHIBIT_APPLET_NAME			_("Power Manager Inhibit Applet")
-#define GPM_INHIBIT_APPLET_DESC			_("Allows user to inhibit automatic power saving.")
+#define CPM_INHIBIT_APPLET_ID		        "InhibitApplet"
+#define CPM_INHIBIT_APPLET_FACTORY_ID	        "InhibitAppletFactory"
+#define CPM_INHIBIT_APPLET_ICON_INHIBIT		"cpm-inhibit"
+#define CPM_INHIBIT_APPLET_ICON_INVALID		"cpm-inhibit-invalid"
+#define CPM_INHIBIT_APPLET_ICON_UNINHIBIT	"cpm-hibernate"
+#define CPM_INHIBIT_APPLET_NAME			_("Power Manager Inhibit Applet")
+#define CPM_INHIBIT_APPLET_DESC			_("Allows user to inhibit automatic power saving.")
 #define CAFE_PANEL_APPLET_VERTICAL(p)					\
 	 (((p) == CAFE_PANEL_APPLET_ORIENT_LEFT) || ((p) == CAFE_PANEL_APPLET_ORIENT_RIGHT))
 
@@ -169,11 +169,11 @@ cpm_applet_update_icon (GpmInhibitApplet *applet)
 
 	/* get icon */
 	if (applet->proxy == NULL) {
-		icon = GPM_INHIBIT_APPLET_ICON_INVALID;
+		icon = CPM_INHIBIT_APPLET_ICON_INVALID;
 	} else if (applet->cookie > 0) {
-		icon = GPM_INHIBIT_APPLET_ICON_INHIBIT;
+		icon = CPM_INHIBIT_APPLET_ICON_INHIBIT;
 	} else {
-		icon = GPM_INHIBIT_APPLET_ICON_UNINHIBIT;
+		icon = CPM_INHIBIT_APPLET_ICON_UNINHIBIT;
 	}
 	ctk_image_set_from_icon_name (CTK_IMAGE(applet->image),
 				      icon,
@@ -190,7 +190,7 @@ static void
 cpm_applet_size_allocate_cb (CtkWidget    *widget,
                              CdkRectangle *allocation)
 {
-	GpmInhibitApplet *applet = GPM_INHIBIT_APPLET (widget);
+	GpmInhibitApplet *applet = CPM_INHIBIT_APPLET (widget);
 	int               size = 0;
 
 	switch (cafe_panel_applet_get_orient (CAFE_PANEL_APPLET (applet))) {
@@ -254,7 +254,7 @@ cpm_applet_click_cb (GpmInhibitApplet *applet, CdkEventButton *event)
 	} else {
 		g_debug ("inhibiting");
 		cpm_applet_inhibit (applet,
-					  GPM_INHIBIT_APPLET_NAME,
+					  CPM_INHIBIT_APPLET_NAME,
 					  _("Manual inhibit"),
 					  &(applet->cookie));
 	}
@@ -305,14 +305,14 @@ cpm_applet_dialog_about_cb (CtkAction *action, gpointer data)
 	license_trans = g_strjoin("\n\n", _(license[0]), _(license[1]), _(license[2]), NULL);
 
 	ctk_show_about_dialog (NULL,
-	                       "program-name", GPM_INHIBIT_APPLET_NAME,
+	                       "program-name", CPM_INHIBIT_APPLET_NAME,
 	                       "version", VERSION,
 	                       "title", _("About Power Manager Inhibit Applet"),
-	                       "comments", GPM_INHIBIT_APPLET_DESC,
+	                       "comments", CPM_INHIBIT_APPLET_DESC,
 	                       "copyright", _("Copyright \xC2\xA9 2006-2007 Richard Hughes\n"
 	                                      "Copyright \xC2\xA9 2011-2020 CAFE developers"),
-	                       "icon-name", GPM_INHIBIT_APPLET_ICON_INHIBIT,
-	                       "logo-icon-name", GPM_INHIBIT_APPLET_ICON_INHIBIT,
+	                       "icon-name", CPM_INHIBIT_APPLET_ICON_INHIBIT,
+	                       "logo-icon-name", CPM_INHIBIT_APPLET_ICON_INHIBIT,
 	                       "license", license_trans,
 	                       "authors", authors,
 	                       "documenters", documenters,
@@ -342,7 +342,7 @@ cpm_applet_help_cb (CtkAction *action, gpointer data)
 static void
 cpm_applet_destroy_cb (CtkWidget *widget)
 {
-	GpmInhibitApplet *applet = GPM_INHIBIT_APPLET(widget);
+	GpmInhibitApplet *applet = CPM_INHIBIT_APPLET(widget);
 
 	g_bus_unwatch_name (applet->bus_watch_id);
 }
@@ -455,7 +455,7 @@ cpm_inhibit_applet_init (GpmInhibitApplet *applet)
 
 	/* Add application specific icons to search path */
 	ctk_icon_theme_append_search_path (ctk_icon_theme_get_default (),
-                                           GPM_ICONS_DATA);
+                                           CPM_ICONS_DATA);
 
 	/* monitor the daemon */
 	applet->bus_watch_id =
@@ -498,7 +498,7 @@ cpm_inhibit_applet_init (GpmInhibitApplet *applet)
 static gboolean
 cpm_applet_cb (CafePanelApplet *_applet, const gchar *iid, gpointer data)
 {
-	GpmInhibitApplet *applet = GPM_INHIBIT_APPLET(_applet);
+	GpmInhibitApplet *applet = CPM_INHIBIT_APPLET(_applet);
 	CtkActionGroup *action_group;
 	gchar *ui_path;
 
@@ -511,7 +511,7 @@ cpm_applet_cb (CafePanelApplet *_applet, const gchar *iid, gpointer data)
 		  G_CALLBACK (cpm_applet_help_cb) }
 	};
 
-	if (strcmp (iid, GPM_INHIBIT_APPLET_ID) != 0) {
+	if (strcmp (iid, CPM_INHIBIT_APPLET_ID) != 0) {
 		return FALSE;
 	}
 
@@ -534,9 +534,9 @@ cpm_applet_cb (CafePanelApplet *_applet, const gchar *iid, gpointer data)
  **/
 CAFE_PANEL_APPLET_OUT_PROCESS_FACTORY
  (/* the factory iid */
- GPM_INHIBIT_APPLET_FACTORY_ID,
+ CPM_INHIBIT_APPLET_FACTORY_ID,
  /* generates brighness applets instead of regular cafe applets  */
- GPM_TYPE_INHIBIT_APPLET,
+ CPM_TYPE_INHIBIT_APPLET,
  /* the applet name */
  "InhibitApplet",
  /* our callback (with no user data) */

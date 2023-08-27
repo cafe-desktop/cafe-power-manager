@@ -20,24 +20,24 @@
  * Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef __GPM_DPMS_H
-#define __GPM_DPMS_H
+#ifndef __CPM_DPMS_H
+#define __CPM_DPMS_H
 
 G_BEGIN_DECLS
 
-#define GPM_TYPE_DPMS		(cpm_dpms_get_type ())
-#define GPM_DPMS(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_DPMS, GpmDpms))
-#define GPM_DPMS_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), GPM_TYPE_DPMS, GpmDpmsClass))
-#define GPM_IS_DPMS(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), GPM_TYPE_DPMS))
-#define GPM_IS_DPMS_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), GPM_TYPE_DPMS))
-#define GPM_DPMS_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), GPM_TYPE_DPMS, GpmDpmsClass))
+#define CPM_TYPE_DPMS		(cpm_dpms_get_type ())
+#define CPM_DPMS(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_DPMS, GpmDpms))
+#define CPM_DPMS_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_DPMS, GpmDpmsClass))
+#define CPM_IS_DPMS(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_DPMS))
+#define CPM_IS_DPMS_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_DPMS))
+#define CPM_DPMS_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_DPMS, GpmDpmsClass))
 
 typedef enum {
-	GPM_DPMS_MODE_ON,
-	GPM_DPMS_MODE_STANDBY,
-	GPM_DPMS_MODE_SUSPEND,
-	GPM_DPMS_MODE_OFF,
-	GPM_DPMS_MODE_UNKNOWN
+	CPM_DPMS_MODE_ON,
+	CPM_DPMS_MODE_STANDBY,
+	CPM_DPMS_MODE_SUSPEND,
+	CPM_DPMS_MODE_OFF,
+	CPM_DPMS_MODE_UNKNOWN
 } GpmDpmsMode;
 
 typedef struct GpmDpmsPrivate GpmDpmsPrivate;
@@ -57,10 +57,10 @@ typedef struct
 
 typedef enum
 {
-	GPM_DPMS_ERROR_GENERAL
+	CPM_DPMS_ERROR_GENERAL
 } GpmDpmsError;
 
-#define GPM_DPMS_ERROR cpm_dpms_error_quark ()
+#define CPM_DPMS_ERROR cpm_dpms_error_quark ()
 
 GQuark		 cpm_dpms_error_quark		(void);
 GType		 cpm_dpms_get_type		(void);
@@ -75,4 +75,4 @@ void		 cpm_dpms_test			(gpointer	 data);
 
 G_END_DECLS
 
-#endif /* __GPM_DPMS_H */
+#endif /* __CPM_DPMS_H */
