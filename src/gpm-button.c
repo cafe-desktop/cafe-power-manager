@@ -26,7 +26,7 @@
 #include <glib/gi18n.h>
 
 #include <X11/X.h>
-#include <gdk/gdkx.h>
+#include <cdk/cdkx.h>
 #include <ctk/ctk.h>
 #include <X11/XF86keysym.h>
 #include <libupower-glib/upower.h>
@@ -139,15 +139,15 @@ gpm_button_grab_keystring (GpmButton *button, guint64 keycode)
 {
 	guint modmask = AnyModifier;
 	Display *display;
-	GdkDisplay *gdkdisplay;
+	GdkDisplay *cdkdisplay;
 	gint ret;
 
 	/* get the current X Display */
-	display = GDK_DISPLAY_XDISPLAY (gdk_display_get_default());
+	display = GDK_DISPLAY_XDISPLAY (cdk_display_get_default());
 
 	/* don't abort on error */
-	gdkdisplay = gdk_display_get_default ();
-	gdk_x11_display_error_trap_push (gdkdisplay);
+	cdkdisplay = cdk_display_get_default ();
+	cdk_x11_display_error_trap_push (cdkdisplay);
 
 	/* grab the key if possible */
 	ret = XGrabKey (display, keycode, modmask,
@@ -170,8 +170,8 @@ gpm_button_grab_keystring (GpmButton *button, guint64 keycode)
 	}
 
 	/* we are not processing the error */
-	gdk_display_flush (gdkdisplay);
-	gdk_x11_display_error_trap_pop_ignored (gdkdisplay);
+	cdk_display_flush (cdkdisplay);
+	cdk_x11_display_error_trap_pop_ignored (cdkdisplay);
 
 	egg_debug ("Grabbed modmask=%x, keycode=%li", modmask, (long int) keycode);
 	return TRUE;
@@ -198,7 +198,7 @@ gpm_button_xevent_key (GpmButton *button, guint keysym, const gchar *key_name)
 	guint keycode;
 
 	/* convert from keysym to keycode */
-	keycode = XKeysymToKeycode (GDK_DISPLAY_XDISPLAY (gdk_display_get_default()), keysym);
+	keycode = XKeysymToKeycode (GDK_DISPLAY_XDISPLAY (cdk_display_get_default()), keysym);
 	if (keycode == 0) {
 		egg_warning ("could not map keysym %x to keycode", keysym);
 		return FALSE;
@@ -353,8 +353,8 @@ gpm_button_init (GpmButton *button)
 {
 	button->priv = gpm_button_get_instance_private (button);
 
-	button->priv->screen = gdk_screen_get_default ();
-	button->priv->window = gdk_screen_get_root_window (button->priv->screen);
+	button->priv->screen = cdk_screen_get_default ();
+	button->priv->window = cdk_screen_get_root_window (button->priv->screen);
 
 	button->priv->keysym_to_name_hash = g_hash_table_new_full (g_str_hash, g_str_equal, g_free, g_free);
 	button->priv->last_button = NULL;
@@ -383,7 +383,7 @@ gpm_button_init (GpmButton *button)
 	gpm_button_xevent_key (button, XF86XK_KbdLightOnOff, GPM_BUTTON_KBD_BRIGHT_TOGGLE);
 
 	/* use global filter */
-	gdk_window_add_filter (button->priv->window,
+	cdk_window_add_filter (button->priv->window,
 			       gpm_button_filter_x_events, (gpointer) button);
 }
 

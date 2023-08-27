@@ -159,7 +159,7 @@ static gboolean
 gpm_manager_play_loop_timeout_cb (GpmManager *manager)
 {
 	ca_context *context;
-	context = ca_ctk_context_get_for_screen (gdk_screen_get_default ());
+	context = ca_ctk_context_get_for_screen (cdk_screen_get_default ());
 	ca_context_play_full (context, 0,
 			      manager->priv->critical_alert_loop_props,
 			      NULL,
@@ -241,7 +241,7 @@ gpm_manager_play_loop_start (GpmManager *manager, GpmManagerSound action, gboole
 	g_source_set_name_by_id (manager->priv->critical_alert_timeout_id, "[GpmManager] play-loop");
 
 	/* play the sound, using sounds from the naming spec */
-	context = ca_ctk_context_get_for_screen (gdk_screen_get_default ());
+	context = ca_ctk_context_get_for_screen (cdk_screen_get_default ());
 	retval = ca_context_play (context, 0,
 				  CA_PROP_EVENT_ID, id,
 				  CA_PROP_EVENT_DESCRIPTION, desc, NULL);
@@ -317,7 +317,7 @@ gpm_manager_play (GpmManager *manager, GpmManagerSound action, gboolean force)
 	}
 
 	/* play the sound, using sounds from the naming spec */
-	context = ca_ctk_context_get_for_screen (gdk_screen_get_default ());
+	context = ca_ctk_context_get_for_screen (cdk_screen_get_default ());
 	retval = ca_context_play (context, 0,
 				  CA_PROP_EVENT_ID, id,
 				  CA_PROP_EVENT_DESCRIPTION, desc, NULL);

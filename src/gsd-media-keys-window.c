@@ -384,7 +384,7 @@ render_speaker (MsdMediaKeysWindow *window,
                 return FALSE;
         }
 
-        gdk_cairo_set_source_pixbuf (cr, pixbuf, _x0, _y0);
+        cdk_cairo_set_source_pixbuf (cr, pixbuf, _x0, _y0);
         cairo_paint_with_alpha (cr, MSD_OSD_WINDOW_FG_ALPHA);
 
         g_object_unref (pixbuf);
@@ -547,7 +547,7 @@ render_custom (MsdMediaKeysWindow *window,
                         return FALSE;
         }
 
-        gdk_cairo_set_source_pixbuf (cr, pixbuf, _x0, _y0);
+        cdk_cairo_set_source_pixbuf (cr, pixbuf, _x0, _y0);
         cairo_paint_with_alpha (cr, MSD_OSD_WINDOW_FG_ALPHA);
 
         g_object_unref (pixbuf);

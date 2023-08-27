@@ -26,8 +26,8 @@
 #include <glib.h>
 #include <X11/Xlib.h>
 #include <X11/extensions/sync.h>
-#include <gdk/gdkx.h>
-#include <gdk/gdk.h>
+#include <cdk/cdkx.h>
+#include <cdk/cdk.h>
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -235,10 +235,10 @@ egg_idletime_alarm_find_event (EggIdletime *idletime, XSyncAlarmNotifyEvent *ala
  * egg_idletime_event_filter_cb:
  */
 static GdkFilterReturn
-egg_idletime_event_filter_cb (GdkXEvent *gdkxevent, GdkEvent *event, gpointer data)
+egg_idletime_event_filter_cb (GdkXEvent *cdkxevent, GdkEvent *event, gpointer data)
 {
 	EggIdletimeAlarm *alarm;
-	XEvent *xevent = (XEvent *) gdkxevent;
+	XEvent *xevent = (XEvent *) cdkxevent;
 	EggIdletime *idletime = (EggIdletime *) data;
 	XSyncAlarmNotifyEvent *alarm_event;
 
@@ -396,7 +396,7 @@ egg_idletime_init (EggIdletime *idletime)
 	idletime->priv->reset_set = FALSE;
 	idletime->priv->idle_counter = None;
 	idletime->priv->sync_event = 0;
-	idletime->priv->dpy = GDK_DISPLAY_XDISPLAY (gdk_display_get_default());
+	idletime->priv->dpy = GDK_DISPLAY_XDISPLAY (cdk_display_get_default());
 
 	/* get the sync event */
 	if (!XSyncQueryExtension (idletime->priv->dpy, &idletime->priv->sync_event, &sync_error)) {
@@ -419,7 +419,7 @@ egg_idletime_init (EggIdletime *idletime)
 	}
 
 	/* catch the timer alarm */
-	gdk_window_add_filter (NULL, egg_idletime_event_filter_cb, idletime);
+	cdk_window_add_filter (NULL, egg_idletime_event_filter_cb, idletime);
 
 	/* create a reset alarm */
 	alarm = egg_idletime_alarm_new (idletime, 0);
@@ -531,7 +531,7 @@ egg_idletime_test (gpointer data)
 		return;
 
 	timer = g_timer_new ();
-	gdk_init (NULL, NULL);
+	cdk_init (NULL, NULL);
 
 	/* warn */
 
