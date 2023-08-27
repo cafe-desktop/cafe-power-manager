@@ -29,7 +29,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <cafe-panel-applet.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <glib-object.h>
 #include <glib/gi18n.h>
 #include <dbus/dbus-glib.h>
@@ -175,7 +175,7 @@ gpm_applet_update_icon (GpmInhibitApplet *applet)
 	} else {
 		icon = GPM_INHIBIT_APPLET_ICON_UNINHIBIT;
 	}
-	gtk_image_set_from_icon_name (GTK_IMAGE(applet->image),
+	ctk_image_set_from_icon_name (GTK_IMAGE(applet->image),
 				      icon,
 				      GTK_ICON_SIZE_BUTTON);
 }
@@ -207,7 +207,7 @@ gpm_applet_size_allocate_cb (GtkWidget    *widget,
 
 	/* Scale to the actual size of the applet, don't quantize to original icon size */
 	/* GtkImage already contains a check to do nothing if it's the same */
-	gtk_image_set_pixel_size (GTK_IMAGE(applet->image), size);
+	ctk_image_set_pixel_size (GTK_IMAGE(applet->image), size);
 }
 
 
@@ -230,7 +230,7 @@ gpm_applet_update_tooltip (GpmInhibitApplet *applet)
 			buf = _("Automatic sleep enabled");
 		}
 	}
-	gtk_widget_set_tooltip_text (GTK_WIDGET(applet), buf);
+	ctk_widget_set_tooltip_text (GTK_WIDGET(applet), buf);
 }
 
 /**
@@ -304,7 +304,7 @@ gpm_applet_dialog_about_cb (GtkAction *action, gpointer data)
 
 	license_trans = g_strjoin("\n\n", _(license[0]), _(license[1]), _(license[2]), NULL);
 
-	gtk_show_about_dialog (NULL,
+	ctk_show_about_dialog (NULL,
 	                       "program-name", GPM_INHIBIT_APPLET_NAME,
 	                       "version", VERSION,
 	                       "title", _("About Power Manager Inhibit Applet"),
@@ -454,7 +454,7 @@ gpm_inhibit_applet_init (GpmInhibitApplet *applet)
 	applet->proxy = NULL;
 
 	/* Add application specific icons to search path */
-	gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
+	ctk_icon_theme_append_search_path (ctk_icon_theme_get_default (),
                                            GPM_ICONS_DATA);
 
 	/* monitor the daemon */
@@ -468,14 +468,14 @@ gpm_inhibit_applet_init (GpmInhibitApplet *applet)
 
 	/* prepare */
 	cafe_panel_applet_set_flags (CAFE_PANEL_APPLET (applet), CAFE_PANEL_APPLET_EXPAND_MINOR);
-	applet->image = gtk_image_new();
-	gtk_container_add (GTK_CONTAINER (applet), applet->image);
+	applet->image = ctk_image_new();
+	ctk_container_add (GTK_CONTAINER (applet), applet->image);
 
 	/* set appropriate size and load icon accordingly */
-	gtk_widget_queue_draw (GTK_WIDGET (applet));
+	ctk_widget_queue_draw (GTK_WIDGET (applet));
 
 	/* show */
-	gtk_widget_show_all (GTK_WIDGET(applet));
+	ctk_widget_show_all (GTK_WIDGET(applet));
 
 	/* connect */
 	g_signal_connect (G_OBJECT(applet), "button-press-event",
@@ -515,9 +515,9 @@ gpm_applet_cb (CafePanelApplet *_applet, const gchar *iid, gpointer data)
 		return FALSE;
 	}
 
-	action_group = gtk_action_group_new ("Inhibit Applet Actions");
-	gtk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
-	gtk_action_group_add_actions (action_group,
+	action_group = ctk_action_group_new ("Inhibit Applet Actions");
+	ctk_action_group_set_translation_domain (action_group, GETTEXT_PACKAGE);
+	ctk_action_group_add_actions (action_group,
 				      menu_actions,
 				      G_N_ELEMENTS (menu_actions),
 				      applet);

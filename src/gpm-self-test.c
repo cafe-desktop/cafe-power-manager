@@ -23,7 +23,7 @@
 
 #include <glib.h>
 #include <glib-object.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "egg-test.h"
 #include "egg-debug.h"
 
@@ -55,7 +55,7 @@ main (int argc, char **argv)
 	egg_debug_init (TRUE);
 
 	/* needed for DPMS checks */
-	gtk_init (&argc, &argv);
+	ctk_init (&argc, &argv);
 
 	/* tests go here */
 	egg_precision_test (test);

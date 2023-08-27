@@ -22,7 +22,7 @@
 #ifndef __GPM_GRAPH_WIDGET_H__
 #define __GPM_GRAPH_WIDGET_H__
 
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include "gpm-point-obj.h"
 
 G_BEGIN_DECLS

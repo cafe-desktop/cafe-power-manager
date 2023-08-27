@@ -576,7 +576,7 @@ gpm_device_kind_to_icon (UpDeviceKind kind)
 		break;
 	default:
 		egg_warning ("enum unrecognised: %i", kind);
-		icon = "gtk-help";
+		icon = "ctk-help";
 	}
 	return icon;
 }

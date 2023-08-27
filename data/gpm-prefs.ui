@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <interface>
-  <requires lib="gtk+" version="2.16"/>
+  <requires lib="ctk+" version="2.16"/>
   <!-- interface-naming-policy toplevel-contextual -->
   <object class="GtkAdjustment" id="adjustment1">
     <property name="value">1</property>
@@ -1052,7 +1052,7 @@
             <property name="layout_style">end</property>
             <child>
               <object class="GtkButton" id="button_help">
-                <property name="label">gtk-help</property>
+                <property name="label">ctk-help</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
@@ -1083,7 +1083,7 @@
             </child>
             <child>
               <object class="GtkButton" id="button_close">
-                <property name="label">gtk-close</property>
+                <property name="label">ctk-close</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="has_focus">True</property>

@@ -28,7 +28,7 @@
 #include <stdlib.h>
 #include <glib.h>
 #include <glib/gi18n.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "gpm-common.h"
 #include "egg-debug.h"
@@ -86,13 +86,13 @@ main (int argc, char **argv)
 
 	g_option_context_set_translation_domain(context, GETTEXT_PACKAGE);
 	g_option_context_add_main_entries (context, options, GETTEXT_PACKAGE);
-	g_option_context_add_group (context, gtk_get_option_group (FALSE));
+	g_option_context_add_group (context, ctk_get_option_group (FALSE));
 	g_option_context_parse (context, &argc, &argv, NULL);
 
 	egg_debug_init (verbose);
 
 	gdk_init (&argc, &argv);
-	app = gtk_application_new("org.cafe.PowerManager.Preferences", 0);
+	app = ctk_application_new("org.cafe.PowerManager.Preferences", 0);
 
 	prefs = gpm_prefs_new ();
 
@@ -102,7 +102,7 @@ main (int argc, char **argv)
 	g_signal_connect (prefs, "action-help",
 			  G_CALLBACK (gpm_prefs_help_cb), prefs);
 	g_signal_connect_swapped (prefs, "action-close",
-			  G_CALLBACK (gtk_widget_destroy), window);
+			  G_CALLBACK (ctk_widget_destroy), window);
 
 	status = g_application_run (G_APPLICATION (app), argc, argv);
 	g_object_unref (prefs);

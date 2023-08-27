@@ -20,7 +20,7 @@
  */
 
 #include "config.h"
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <pango/pangocairo.h>
 #include <glib/gi18n.h>
 #include <stdlib.h>
@@ -220,8 +220,8 @@ up_graph_set_property (GObject *object, guint prop_id, const GValue *value, GPar
 	}
 
 	/* refresh widget */
-	gtk_widget_hide (GTK_WIDGET (graph));
-	gtk_widget_show (GTK_WIDGET (graph));
+	ctk_widget_hide (GTK_WIDGET (graph));
+	ctk_widget_show (GTK_WIDGET (graph));
 }
 
 /**
@@ -398,7 +398,7 @@ gpm_graph_widget_data_assign (GpmGraphWidget *graph, GpmGraphWidgetPlot plot, GP
 	g_ptr_array_add (graph->priv->plot_list, GUINT_TO_POINTER(plot));
 
 	/* refresh */
-	gtk_widget_queue_draw (GTK_WIDGET (graph));
+	ctk_widget_queue_draw (GTK_WIDGET (graph));
 
 	return TRUE;
 }
@@ -1096,7 +1096,7 @@ gpm_graph_widget_draw (GtkWidget *widget, cairo_t *cr)
 	graph->priv->box_x = gpm_graph_widget_get_y_label_max_width (graph, cr) + 10;
 	graph->priv->box_y = 5;
 
-	gtk_widget_get_allocation (widget, &allocation);
+	ctk_widget_get_allocation (widget, &allocation);
 	graph->priv->box_height = allocation.height - (20 + graph->priv->box_y);
 
 	/* make size adjustment for legend */

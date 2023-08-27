@@ -25,7 +25,7 @@
 #include <string.h>
 #include <glib/gi18n.h>
 #include <gdk/gdk.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "egg-debug.h"
 #include "gpm-common.h"
@@ -145,14 +145,14 @@ gpm_help_display (const gchar *link_id)
 	else
 		uri = g_strdup ("help:cafe-power-manager");
 
-	gtk_show_uri_on_window (NULL, uri, GDK_CURRENT_TIME, &error);
+	ctk_show_uri_on_window (NULL, uri, GDK_CURRENT_TIME, &error);
 
 	if (error != NULL) {
 		GtkWidget *d;
-		d = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+		d = ctk_message_dialog_new (NULL, GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
 					    GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, "%s", error->message);
-		gtk_dialog_run (GTK_DIALOG(d));
-		gtk_widget_destroy (d);
+		ctk_dialog_run (GTK_DIALOG(d));
+		ctk_widget_destroy (d);
 		g_error_free (error);
 	}
 	g_free (uri);
@@ -167,48 +167,48 @@ gpm_dialog_page_scroll_event_cb (GtkWidget *widget, GdkEventScroll *event, GtkWi
         GtkNotebook *notebook = GTK_NOTEBOOK (widget);
         GtkWidget *child, *event_widget, *action_widget;
 
-        child = gtk_notebook_get_nth_page (notebook, gtk_notebook_get_current_page (notebook));
+        child = ctk_notebook_get_nth_page (notebook, ctk_notebook_get_current_page (notebook));
         if (child == NULL)
                 return FALSE;
 
-        event_widget = gtk_get_event_widget ((GdkEvent *) event);
+        event_widget = ctk_get_event_widget ((GdkEvent *) event);
 
         /* Ignore scroll events from the content of the page */
-        if (event_widget == NULL || event_widget == child || gtk_widget_is_ancestor (event_widget, child))
+        if (event_widget == NULL || event_widget == child || ctk_widget_is_ancestor (event_widget, child))
                 return FALSE;
 
         /* And also from the action widgets */
-        action_widget = gtk_notebook_get_action_widget (notebook, GTK_PACK_START);
-        if (event_widget == action_widget || (action_widget != NULL && gtk_widget_is_ancestor (event_widget, action_widget)))
+        action_widget = ctk_notebook_get_action_widget (notebook, GTK_PACK_START);
+        if (event_widget == action_widget || (action_widget != NULL && ctk_widget_is_ancestor (event_widget, action_widget)))
                 return FALSE;
-        action_widget = gtk_notebook_get_action_widget (notebook, GTK_PACK_END);
-        if (event_widget == action_widget || (action_widget != NULL && gtk_widget_is_ancestor (event_widget, action_widget)))
+        action_widget = ctk_notebook_get_action_widget (notebook, GTK_PACK_END);
+        if (event_widget == action_widget || (action_widget != NULL && ctk_widget_is_ancestor (event_widget, action_widget)))
                 return FALSE;
 
         switch (event->direction) {
         case GDK_SCROLL_RIGHT:
         case GDK_SCROLL_DOWN:
-                gtk_notebook_next_page (notebook);
+                ctk_notebook_next_page (notebook);
                 break;
         case GDK_SCROLL_LEFT:
         case GDK_SCROLL_UP:
-                gtk_notebook_prev_page (notebook);
+                ctk_notebook_prev_page (notebook);
                 break;
         case GDK_SCROLL_SMOOTH:
-                switch (gtk_notebook_get_tab_pos (notebook)) {
+                switch (ctk_notebook_get_tab_pos (notebook)) {
                 case GTK_POS_LEFT:
                 case GTK_POS_RIGHT:
                         if (event->delta_y > 0)
-                                gtk_notebook_next_page (notebook);
+                                ctk_notebook_next_page (notebook);
                         else if (event->delta_y < 0)
-                                gtk_notebook_prev_page (notebook);
+                                ctk_notebook_prev_page (notebook);
                         break;
                 case GTK_POS_TOP:
                 case GTK_POS_BOTTOM:
                         if (event->delta_x > 0)
-                                gtk_notebook_next_page (notebook);
+                                ctk_notebook_next_page (notebook);
                         else if (event->delta_x < 0)
-                                gtk_notebook_prev_page (notebook);
+                                ctk_notebook_prev_page (notebook);
                         break;
                 }
                 break;

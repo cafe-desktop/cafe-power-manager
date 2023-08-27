@@ -11,7 +11,7 @@
   * Translations update
   * glib-genmarshal: replace deprecated tokens NONE and BOOL
   * Read authors (updated) from cafe-power-manager.about
-  * Use gtk_show_about_dialog to show about dialog
+  * Use ctk_show_about_dialog to show about dialog
   * Remove the CPU wakeups feature
   * Update copyright year on about dialog
   * generate missing gpm-* PNGs from new SVGs
@@ -134,11 +134,11 @@
 
   * Translations update
   * update copyright year
-  * gtk 3.22: avoid deprecated gdk_screen_get_monitor... functions:
+  * ctk 3.22: avoid deprecated gdk_screen_get_monitor... functions:
   * don't abort on unknown DBus signal name
   * avoid deprecated gdk_screen_get_width/height
   * avoid deprecated gdk_display_get_screen
-  * don't use deprecated gtk_show_uri
+  * don't use deprecated ctk_show_uri
   * refresh tray icon on icon theme change
   * Restore Polish translation credits from GNOME
   * actually check the $XPROTO_REQUIRED variable's value
@@ -151,7 +151,7 @@
   * Build: require xproto >= 7.0.15
   * Build: require cafe-panel >= 1.17
   * Move to GTK+3 (require GTK+ >= 3.14), drop GTK+2 code and
-    --with-gtk build option
+    --with-ctk build option
   * Replace deprecated upower suspend/hibernate functions with
     ConsoleKit2 equivalents
   * Use manpages as is instead of generating them from sgml (and

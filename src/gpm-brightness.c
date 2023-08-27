@@ -32,7 +32,7 @@
 #include <X11/Xlib.h>
 #include <X11/extensions/Xrandr.h>
 #include <gdk/gdkx.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <string.h>
 #include <sys/time.h>
 #include <sys/types.h>

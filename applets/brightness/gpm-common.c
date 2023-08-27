@@ -25,7 +25,7 @@
 #include <string.h>
 #include <glib/gi18n.h>
 #include <gdk/gdk.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "egg-debug.h"
 #include "gpm-common.h"
@@ -45,14 +45,14 @@ gpm_help_display (const gchar *link_id)
 	else
 		uri = g_strdup ("help:cafe-power-manager");
 
-	gtk_show_uri_on_window (NULL, uri, GDK_CURRENT_TIME, &error);
+	ctk_show_uri_on_window (NULL, uri, GDK_CURRENT_TIME, &error);
 
 	if (error != NULL) {
 		GtkWidget *d;
-		d = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
+		d = ctk_message_dialog_new (NULL, GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
 					    GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, "%s", error->message);
-		gtk_dialog_run (GTK_DIALOG(d));
-		gtk_widget_destroy (d);
+		ctk_dialog_run (GTK_DIALOG(d));
+		ctk_widget_destroy (d);
 		g_error_free (error);
 	}
 	g_free (uri);
