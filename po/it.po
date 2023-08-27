@@ -1015,7 +1015,7 @@ msgstr "Alimentazione da rete elettrica"
 
 #: data/gpm-prefs.ui:418
 msgid "When battery po_wer is critically low:"
-msgstr "Quando la ca_rica della batteria è critica:"
+msgstr "Quando la ka_rica della batteria è critica:"
 
 #: data/gpm-prefs.ui:514
 msgid "_Reduce backlight brightness"
