@@ -212,8 +212,8 @@ gpm_applet_get_icon (GpmBrightnessApplet *applet)
 	} else {
 		egg_debug ("got icon %s!\n", icon);
 		/* update size cache */
-		applet->icon_height = cdk_pixbuf_get_height (applet->icon);
-		applet->icon_width = cdk_pixbuf_get_width (applet->icon);
+		applet->icon_height = gdk_pixbuf_get_height (applet->icon);
+		applet->icon_width = gdk_pixbuf_get_width (applet->icon);
 	}
 }
 
