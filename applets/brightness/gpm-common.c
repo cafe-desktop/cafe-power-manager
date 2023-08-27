@@ -48,7 +48,7 @@ gpm_help_display (const gchar *link_id)
 	ctk_show_uri_on_window (NULL, uri, GDK_CURRENT_TIME, &error);
 
 	if (error != NULL) {
-		GtkWidget *d;
+		CtkWidget *d;
 		d = ctk_message_dialog_new (NULL, CTK_DIALOG_MODAL | CTK_DIALOG_DESTROY_WITH_PARENT,
 					    CTK_MESSAGE_ERROR, CTK_BUTTONS_OK, "%s", error->message);
 		ctk_dialog_run (CTK_DIALOG(d));

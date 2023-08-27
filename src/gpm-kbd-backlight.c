@@ -50,7 +50,7 @@ struct GpmKbdBacklightPrivate
     GDBusProxy      *upower_proxy;
     GDBusConnection     *bus_connection;
     guint            bus_object_id;
-    GtkWidget		*popup;
+    CtkWidget		*popup;
 };
 
 enum {
@@ -180,7 +180,7 @@ gpm_kbd_backlight_dialog_show (GpmKbdBacklight *backlight)
 	int            y;
 	int            pointer_x;
 	int            pointer_y;
-	GtkRequisition win_req;
+	CtkRequisition win_req;
 	GdkScreen     *pointer_screen;
 	GdkRectangle   geometry;
 	GdkMonitor    *monitor;

@@ -49,7 +49,7 @@ typedef struct{
 	/* applet state */
 	guint cookie;
 	/* the icon */
-	GtkWidget *image;
+	CtkWidget *image;
 	/* connection to g-p-m */
 	DBusGProxy *proxy;
 	DBusGConnection *connection;
@@ -72,12 +72,12 @@ GType                gpm_inhibit_applet_get_type  (void);
 G_DEFINE_TYPE (GpmInhibitApplet, gpm_inhibit_applet, PANEL_TYPE_APPLET)
 
 static void	gpm_applet_update_icon		(GpmInhibitApplet *applet);
-static void	gpm_applet_size_allocate_cb     (GtkWidget *widget, GdkRectangle *allocation);;
+static void	gpm_applet_size_allocate_cb     (CtkWidget *widget, GdkRectangle *allocation);;
 static void	gpm_applet_update_tooltip	(GpmInhibitApplet *applet);
 static gboolean	gpm_applet_click_cb		(GpmInhibitApplet *applet, GdkEventButton *event);
-static void	gpm_applet_dialog_about_cb	(GtkAction *action, gpointer data);
+static void	gpm_applet_dialog_about_cb	(CtkAction *action, gpointer data);
 static gboolean	gpm_applet_cb		        (CafePanelApplet *_applet, const gchar *iid, gpointer data);
-static void	gpm_applet_destroy_cb		(GtkWidget *widget);
+static void	gpm_applet_destroy_cb		(CtkWidget *widget);
 
 #define GPM_INHIBIT_APPLET_ID		        "InhibitApplet"
 #define GPM_INHIBIT_APPLET_FACTORY_ID	        "InhibitAppletFactory"
@@ -187,7 +187,7 @@ gpm_applet_update_icon (GpmInhibitApplet *applet)
  * resize icon when panel size changed
  **/
 static void
-gpm_applet_size_allocate_cb (GtkWidget    *widget,
+gpm_applet_size_allocate_cb (CtkWidget    *widget,
                              GdkRectangle *allocation)
 {
 	GpmInhibitApplet *applet = GPM_INHIBIT_APPLET (widget);
@@ -206,7 +206,7 @@ gpm_applet_size_allocate_cb (GtkWidget    *widget,
 	}
 
 	/* Scale to the actual size of the applet, don't quantize to original icon size */
-	/* GtkImage already contains a check to do nothing if it's the same */
+	/* CtkImage already contains a check to do nothing if it's the same */
 	ctk_image_set_pixel_size (CTK_IMAGE(applet->image), size);
 }
 
@@ -271,7 +271,7 @@ gpm_applet_click_cb (GpmInhibitApplet *applet, GdkEventButton *event)
  * displays about dialog
  **/
 static void
-gpm_applet_dialog_about_cb (GtkAction *action, gpointer data)
+gpm_applet_dialog_about_cb (CtkAction *action, gpointer data)
 {
 	static const gchar *authors[] = {
 		"Benjamin Canou <bookeldor@gmail.com>",
@@ -330,7 +330,7 @@ gpm_applet_dialog_about_cb (GtkAction *action, gpointer data)
  * open gpm help
  **/
 static void
-gpm_applet_help_cb (GtkAction *action, gpointer data)
+gpm_applet_help_cb (CtkAction *action, gpointer data)
 {
 	gpm_help_display ("applets-general#applets-inhibit");
 }
@@ -340,7 +340,7 @@ gpm_applet_help_cb (GtkAction *action, gpointer data)
  * @widget: Class instance to destroy
  **/
 static void
-gpm_applet_destroy_cb (GtkWidget *widget)
+gpm_applet_destroy_cb (CtkWidget *widget)
 {
 	GpmInhibitApplet *applet = GPM_INHIBIT_APPLET(widget);
 
@@ -499,10 +499,10 @@ static gboolean
 gpm_applet_cb (CafePanelApplet *_applet, const gchar *iid, gpointer data)
 {
 	GpmInhibitApplet *applet = GPM_INHIBIT_APPLET(_applet);
-	GtkActionGroup *action_group;
+	CtkActionGroup *action_group;
 	gchar *ui_path;
 
-	static const GtkActionEntry menu_actions [] = {
+	static const CtkActionEntry menu_actions [] = {
 		{ "About", "help-about", N_("_About"),
 		  NULL, NULL,
 		  G_CALLBACK (gpm_applet_dialog_about_cb) },

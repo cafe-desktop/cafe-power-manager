@@ -59,7 +59,7 @@ typedef enum {
 
 GType                 msd_media_keys_window_get_type          (void);
 
-GtkWidget *           msd_media_keys_window_new               (void);
+CtkWidget *           msd_media_keys_window_new               (void);
 void                  msd_media_keys_window_set_action        (MsdMediaKeysWindow      *window,
                                                                MsdMediaKeysWindowAction action);
 void                  msd_media_keys_window_set_action_custom (MsdMediaKeysWindow      *window,

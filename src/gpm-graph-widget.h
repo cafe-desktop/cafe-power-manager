@@ -64,17 +64,17 @@ typedef struct {
 
 struct GpmGraphWidget
 {
-	GtkDrawingArea		 parent;
+	CtkDrawingArea		 parent;
 	GpmGraphWidgetPrivate	*priv;
 };
 
 struct GpmGraphWidgetClass
 {
-	GtkDrawingAreaClass parent_class;
+	CtkDrawingAreaClass parent_class;
 };
 
 GType		 gpm_graph_widget_get_type		(void);
-GtkWidget	*gpm_graph_widget_new			(void);
+CtkWidget	*gpm_graph_widget_new			(void);
 
 gboolean	 gpm_graph_widget_data_clear		(GpmGraphWidget		*graph);
 gboolean	 gpm_graph_widget_data_assign		(GpmGraphWidget		*graph,

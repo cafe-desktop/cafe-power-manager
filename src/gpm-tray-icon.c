@@ -54,7 +54,7 @@ struct GpmTrayIconPrivate
 {
 	GSettings		*settings;
 	GpmEngine		*engine;
-	GtkStatusIcon		*status_icon;
+	CtkStatusIcon		*status_icon;
 	gboolean		 show_actions;
 };
 
@@ -100,7 +100,7 @@ gpm_tray_icon_set_tooltip (GpmTrayIcon *icon, const gchar *tooltip)
 /**
  * gpm_tray_icon_get_status_icon:
  **/
-GtkStatusIcon *
+CtkStatusIcon *
 gpm_tray_icon_get_status_icon (GpmTrayIcon *icon)
 {
 	g_return_val_if_fail (GPM_IS_TRAY_ICON (icon), NULL);
@@ -140,7 +140,7 @@ gpm_tray_icon_set_icon (GpmTrayIcon *icon, const gchar *icon_name)
  * gpm_tray_icon_show_info_cb:
  **/
 static void
-gpm_tray_icon_show_info_cb (GtkMenuItem *item, gpointer data)
+gpm_tray_icon_show_info_cb (CtkMenuItem *item, gpointer data)
 {
 	gchar *path;
 	const gchar *object_path;
@@ -154,10 +154,10 @@ gpm_tray_icon_show_info_cb (GtkMenuItem *item, gpointer data)
 
 /**
  * gpm_tray_icon_show_preferences_cb:
- * @action: A valid GtkAction
+ * @action: A valid CtkAction
  **/
 static void
-gpm_tray_icon_show_preferences_cb (GtkMenuItem *item, gpointer data)
+gpm_tray_icon_show_preferences_cb (CtkMenuItem *item, gpointer data)
 {
 	const gchar *command = "cafe-power-preferences";
 
@@ -170,10 +170,10 @@ gpm_tray_icon_show_preferences_cb (GtkMenuItem *item, gpointer data)
 
 /**
  * gpm_tray_icon_show_about_cb:
- * @action: A valid GtkAction
+ * @action: A valid CtkAction
  **/
 static void
-gpm_tray_icon_show_about_cb (GtkMenuItem *item, gpointer data)
+gpm_tray_icon_show_about_cb (CtkMenuItem *item, gpointer data)
 {
 	GKeyFile *key_file;
 	GBytes *bytes;
@@ -234,14 +234,14 @@ gpm_tray_icon_class_init (GpmTrayIconClass *klass)
  * gpm_tray_icon_add_device:
  **/
 static guint
-gpm_tray_icon_add_device (GpmTrayIcon *icon, GtkMenu *menu, const GPtrArray *array, UpDeviceKind kind)
+gpm_tray_icon_add_device (GpmTrayIcon *icon, CtkMenu *menu, const GPtrArray *array, UpDeviceKind kind)
 {
 	guint i;
 	guint added = 0;
 	gchar *icon_name;
 	gchar *label, *vendor, *model;
-	GtkWidget *item;
-	GtkWidget *image;
+	CtkWidget *item;
+	CtkWidget *image;
 	const gchar *object_path;
 	UpDevice *device;
 	UpDeviceKind kind_tmp;
@@ -298,9 +298,9 @@ gpm_tray_icon_add_device (GpmTrayIcon *icon, GtkMenu *menu, const GPtrArray *arr
  * gpm_tray_icon_add_primary_device:
  **/
 static void
-gpm_tray_icon_add_primary_device (GpmTrayIcon *icon, GtkMenu *menu, UpDevice *device)
+gpm_tray_icon_add_primary_device (GpmTrayIcon *icon, CtkMenu *menu, UpDevice *device)
 {
-	GtkWidget *item;
+	CtkWidget *item;
 	gchar *time_str;
 	gchar *string;
 	gint64 time_to_empty = 0;
@@ -326,12 +326,12 @@ gpm_tray_icon_add_primary_device (GpmTrayIcon *icon, GtkMenu *menu, UpDevice *de
  *
  * Create the popup menu.
  **/
-static GtkMenu *
+static CtkMenu *
 gpm_tray_icon_create_menu (GpmTrayIcon *icon)
 {
-	GtkMenu *menu = (GtkMenu*) ctk_menu_new ();
-	GtkWidget *item;
-	GtkWidget *image;
+	CtkMenu *menu = (CtkMenu*) ctk_menu_new ();
+	CtkWidget *item;
+	CtkWidget *image;
 	guint dev_cnt = 0;
 	GPtrArray *array;
 	UpDevice *device = NULL;
@@ -376,13 +376,13 @@ gpm_tray_icon_create_menu (GpmTrayIcon *icon)
 	ctk_menu_shell_append (CTK_MENU_SHELL (menu), item);
 	
 	/*Set up custom panel menu theme support-ctk3 only */
-	GtkWidget *toplevel = ctk_widget_get_toplevel (CTK_WIDGET (menu));
+	CtkWidget *toplevel = ctk_widget_get_toplevel (CTK_WIDGET (menu));
 	/* Fix any failures of compiz/other wm's to communicate with ctk for transparency in menu theme */
 	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
 	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
 	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 	/* Set menu and its toplevel window to follow panel theme */
-	GtkStyleContext *context;
+	CtkStyleContext *context;
 	context = ctk_widget_get_style_context (CTK_WIDGET(toplevel));
 	ctk_style_context_add_class(context,"gnome-panel-menu-bar");
 	ctk_style_context_add_class(context,"cafe-panel-menu-bar");
@@ -401,12 +401,12 @@ skip_prefs:
 
 /**
  * gpm_tray_icon_popup_cleared_cd:
- * @widget: The popup Gtkwidget
+ * @widget: The popup Ctkwidget
  *
  * We have to re-enable the tooltip when the popup is removed
  **/
 static void
-gpm_tray_icon_popup_cleared_cd (GtkWidget *widget, GpmTrayIcon *icon)
+gpm_tray_icon_popup_cleared_cd (CtkWidget *widget, GpmTrayIcon *icon)
 {
 	g_return_if_fail (GPM_IS_TRAY_ICON (icon));
 	egg_debug ("clear tray");
@@ -422,7 +422,7 @@ gpm_tray_icon_popup_cleared_cd (GtkWidget *widget, GpmTrayIcon *icon)
 static void
 gpm_tray_icon_popup_menu (GpmTrayIcon *icon, guint32 timestamp)
 {
-	GtkMenu *menu;
+	CtkMenu *menu;
 
 	menu = gpm_tray_icon_create_menu (icon);
 
@@ -442,7 +442,7 @@ gpm_tray_icon_popup_menu (GpmTrayIcon *icon, guint32 timestamp)
  * Display the popup menu.
  **/
 static void
-gpm_tray_icon_popup_menu_cb (GtkStatusIcon *status_icon, guint button, guint32 timestamp, GpmTrayIcon *icon)
+gpm_tray_icon_popup_menu_cb (CtkStatusIcon *status_icon, guint button, guint32 timestamp, GpmTrayIcon *icon)
 {
 	egg_debug ("icon right clicked");
 	gpm_tray_icon_popup_menu (icon, timestamp);
@@ -456,7 +456,7 @@ gpm_tray_icon_popup_menu_cb (GtkStatusIcon *status_icon, guint button, guint32 t
  * Callback when the icon is clicked
  **/
 static void
-gpm_tray_icon_activate_cb (GtkStatusIcon *status_icon, GpmTrayIcon *icon)
+gpm_tray_icon_activate_cb (CtkStatusIcon *status_icon, GpmTrayIcon *icon)
 {
 	egg_debug ("icon left clicked");
 	gpm_tray_icon_popup_menu (icon, ctk_get_current_event_time());

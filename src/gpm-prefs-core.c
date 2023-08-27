@@ -46,7 +46,7 @@ static void gpm_prefs_finalize (GObject *object);
 struct GpmPrefsPrivate
 {
 	UpClient		*client;
-	GtkBuilder		*builder;
+	CtkBuilder		*builder;
 	gboolean		 has_batteries;
 	gboolean		 has_lcd;
 	gboolean		 has_ups;
@@ -106,9 +106,9 @@ gpm_prefs_class_init (GpmPrefsClass *klass)
  * Activates (shows) the window.
  **/
 void
-gpm_prefs_activate_window (GtkApplication *app, GpmPrefs *prefs)
+gpm_prefs_activate_window (CtkApplication *app, GpmPrefs *prefs)
 {
-	GtkWindow *window;
+	CtkWindow *window;
 	window = CTK_WINDOW (ctk_builder_get_object (prefs->priv->builder, "dialog_preferences"));
 	ctk_application_add_window (CTK_APPLICATION (app), window);
 	ctk_window_present (window);
@@ -116,11 +116,11 @@ gpm_prefs_activate_window (GtkApplication *app, GpmPrefs *prefs)
 
 /**
  * gpm_prefs_help_cb:
- * @widget: The GtkWidget object
+ * @widget: The CtkWidget object
  * @prefs: This prefs class instance
  **/
 static void
-gpm_prefs_help_cb (GtkWidget *widget, GpmPrefs *prefs)
+gpm_prefs_help_cb (CtkWidget *widget, GpmPrefs *prefs)
 {
 	egg_debug ("emitting action-help");
 	g_signal_emit (prefs, signals [ACTION_HELP], 0);
@@ -128,10 +128,10 @@ gpm_prefs_help_cb (GtkWidget *widget, GpmPrefs *prefs)
 
 /**
  * gpm_prefs_icon_radio_cb:
- * @widget: The GtkWidget object
+ * @widget: The CtkWidget object
  **/
 static void
-gpm_prefs_icon_radio_cb (GtkWidget *widget, GpmPrefs *prefs)
+gpm_prefs_icon_radio_cb (CtkWidget *widget, GpmPrefs *prefs)
 {
 	gint policy;
 
@@ -141,11 +141,11 @@ gpm_prefs_icon_radio_cb (GtkWidget *widget, GpmPrefs *prefs)
 
 /**
  * gpm_prefs_format_percentage_cb:
- * @scale: The GtkScale object
+ * @scale: The CtkScale object
  * @value: The value in %.
  **/
 static gchar *
-gpm_prefs_format_percentage_cb (GtkScale *scale, gdouble value)
+gpm_prefs_format_percentage_cb (CtkScale *scale, gdouble value)
 {
 	return g_strdup_printf ("%.0f%%", value);
 }
@@ -154,7 +154,7 @@ gpm_prefs_format_percentage_cb (GtkScale *scale, gdouble value)
  * gpm_prefs_action_combo_changed_cb:
  **/
 static void
-gpm_prefs_action_combo_changed_cb (GtkWidget *widget, GpmPrefs *prefs)
+gpm_prefs_action_combo_changed_cb (CtkWidget *widget, GpmPrefs *prefs)
 {
 	GpmActionPolicy policy;
 	const GpmActionPolicy *actions;
@@ -173,7 +173,7 @@ gpm_prefs_action_combo_changed_cb (GtkWidget *widget, GpmPrefs *prefs)
  * gpm_prefs_action_time_changed_cb:
  **/
 static void
-gpm_prefs_action_time_changed_cb (GtkWidget *widget, GpmPrefs *prefs)
+gpm_prefs_action_time_changed_cb (CtkWidget *widget, GpmPrefs *prefs)
 {
 	guint value;
 	const gint *values;
@@ -202,7 +202,7 @@ gpm_prefs_actions_destroy_cb (GpmActionPolicy *array)
 /**
  * gpm_prefs_setup_action_combo:
  * @prefs: This prefs class instance
- * @widget_name: The GtkWidget name
+ * @widget_name: The CtkWidget name
  * @gpm_pref_key: The settings key for this preference setting.
  * @actions: The actions to associate in an array.
  **/
@@ -212,7 +212,7 @@ gpm_prefs_setup_action_combo (GpmPrefs *prefs, const gchar *widget_name,
 {
 	gint i;
 	gboolean is_writable;
-	GtkWidget *widget;
+	CtkWidget *widget;
 	GpmActionPolicy policy;
 	GpmActionPolicy	value;
 	GPtrArray *array;
@@ -282,7 +282,7 @@ gpm_prefs_setup_action_combo (GpmPrefs *prefs, const gchar *widget_name,
 /**
  * gpm_prefs_setup_time_combo:
  * @prefs: This prefs class instance
- * @widget_name: The GtkWidget name
+ * @widget_name: The CtkWidget name
  * @gpm_pref_key: The settings key for this preference setting.
  * @actions: The actions to associate in an array.
  **/
@@ -294,7 +294,7 @@ gpm_prefs_setup_time_combo (GpmPrefs *prefs, const gchar *widget_name,
 	gchar *text;
 	guint i;
 	gboolean is_writable;
-	GtkWidget *widget;
+	CtkWidget *widget;
 
 	widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, widget_name));
 
@@ -329,11 +329,11 @@ gpm_prefs_setup_time_combo (GpmPrefs *prefs, const gchar *widget_name,
 
 /**
  * gpm_prefs_close_cb:
- * @widget: The GtkWidget object
+ * @widget: The CtkWidget object
  * @prefs: This prefs class instance
  **/
 static void
-gpm_prefs_close_cb (GtkWidget *widget, GpmPrefs *prefs)
+gpm_prefs_close_cb (CtkWidget *widget, GpmPrefs *prefs)
 {
 	egg_debug ("emitting action-close");
 	g_signal_emit (prefs, signals [ACTION_CLOSE], 0);
@@ -341,12 +341,12 @@ gpm_prefs_close_cb (GtkWidget *widget, GpmPrefs *prefs)
 
 /**
  * gpm_prefs_delete_event_cb:
- * @widget: The GtkWidget object
+ * @widget: The CtkWidget object
  * @event: The event type, unused.
  * @prefs: This prefs class instance
  **/
 static gboolean
-gpm_prefs_delete_event_cb (GtkWidget *widget, GdkEvent *event, GpmPrefs *prefs)
+gpm_prefs_delete_event_cb (CtkWidget *widget, GdkEvent *event, GpmPrefs *prefs)
 {
 	gpm_prefs_close_cb (widget, prefs);
 	return FALSE;
@@ -357,11 +357,11 @@ static void
 prefs_setup_notification (GpmPrefs *prefs)
 {
 	gint icon_policy;
-	GtkWidget *radiobutton_icon_always;
-	GtkWidget *radiobutton_icon_present;
-	GtkWidget *radiobutton_icon_charge;
-	GtkWidget *radiobutton_icon_low;
-	GtkWidget *radiobutton_icon_never;
+	CtkWidget *radiobutton_icon_always;
+	CtkWidget *radiobutton_icon_present;
+	CtkWidget *radiobutton_icon_charge;
+	CtkWidget *radiobutton_icon_low;
+	CtkWidget *radiobutton_icon_never;
 	gboolean is_writable;
 
 	icon_policy = g_settings_get_enum (prefs->priv->settings, GPM_SETTINGS_ICON_POLICY);
@@ -423,7 +423,7 @@ prefs_setup_notification (GpmPrefs *prefs)
 static void
 prefs_setup_ac (GpmPrefs *prefs)
 {
-	GtkWidget *widget;
+	CtkWidget *widget;
 	const GpmActionPolicy button_lid_actions[] =
 				{GPM_ACTION_POLICY_NOTHING,
 				 GPM_ACTION_POLICY_BLANK,
@@ -491,8 +491,8 @@ prefs_setup_ac (GpmPrefs *prefs)
 static void
 prefs_setup_battery (GpmPrefs *prefs)
 {
-	GtkWidget *widget;
-	GtkNotebook *notebook;
+	CtkWidget *widget;
+	CtkNotebook *notebook;
 	gint page;
 
 	const GpmActionPolicy button_lid_actions[] =
@@ -571,9 +571,9 @@ prefs_setup_battery (GpmPrefs *prefs)
 static void
 prefs_setup_ups (GpmPrefs *prefs)
 {
-	GtkWidget *widget;
-	GtkWidget *notebook;
-	GtkWidget *window;
+	CtkWidget *widget;
+	CtkWidget *notebook;
+	CtkWidget *window;
 	gint page;
 
 	const GpmActionPolicy ups_low_actions[] =
@@ -630,7 +630,7 @@ prefs_setup_ups (GpmPrefs *prefs)
 static void
 prefs_setup_general (GpmPrefs *prefs)
 {
-	GtkWidget *widget;
+	CtkWidget *widget;
 	const GpmActionPolicy power_button_actions[] =
 				{GPM_ACTION_POLICY_INTERACTIVE,
 				 GPM_ACTION_POLICY_SUSPEND,
@@ -665,8 +665,8 @@ prefs_setup_general (GpmPrefs *prefs)
 static void
 gpm_prefs_init (GpmPrefs *prefs)
 {
-	GtkWidget *main_window;
-	GtkWidget *widget;
+	CtkWidget *main_window;
+	CtkWidget *widget;
 	guint retval;
 	GError *error = NULL;
 	GPtrArray *devices = NULL;
@@ -894,7 +894,7 @@ gpm_prefs_new (void)
  * gpm_window:
  * Return value: Prefs window widget.
  **/
-GtkWidget *
+CtkWidget *
 gpm_window (GpmPrefs *prefs)
 {
 	return CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "dialog_preferences"));

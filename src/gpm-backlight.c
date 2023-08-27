@@ -60,7 +60,7 @@ struct GpmBacklightPrivate
 	GpmBrightness		*brightness;
 	GpmButton		*button;
 	GSettings		*settings;
-	GtkWidget		*popup;
+	CtkWidget		*popup;
 	GpmControl		*control;
 	GpmDpms			*dpms;
 	GpmIdle			*idle;
@@ -203,7 +203,7 @@ gpm_backlight_dialog_show (GpmBacklight *backlight)
 	int            y;
 	int            pointer_x;
 	int            pointer_y;
-	GtkRequisition win_req;
+	CtkRequisition win_req;
 	GdkScreen     *pointer_screen;
 	GdkRectangle   geometry;
 	GdkMonitor    *monitor;

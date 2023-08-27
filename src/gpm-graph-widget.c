@@ -70,7 +70,7 @@ struct GpmGraphWidgetPrivate
 
 G_DEFINE_TYPE_WITH_PRIVATE (GpmGraphWidget, gpm_graph_widget, CTK_TYPE_DRAWING_AREA);
 
-static gboolean gpm_graph_widget_draw (GtkWidget *graph, cairo_t *cr);
+static gboolean gpm_graph_widget_draw (CtkWidget *graph, cairo_t *cr);
 static void	gpm_graph_widget_finalize (GObject *object);
 
 enum
@@ -231,7 +231,7 @@ up_graph_set_property (GObject *object, guint prop_id, const GValue *value, GPar
 static void
 gpm_graph_widget_class_init (GpmGraphWidgetClass *class)
 {
-	GtkWidgetClass *widget_class = CTK_WIDGET_CLASS (class);
+	CtkWidgetClass *widget_class = CTK_WIDGET_CLASS (class);
 	GObjectClass *object_class = G_OBJECT_CLASS (class);
 
 	widget_class->draw = gpm_graph_widget_draw;
@@ -1070,9 +1070,9 @@ gpm_graph_widget_legend_calculate_size (GpmGraphWidget *graph, cairo_t *cr,
  * Just repaint the entire graph widget on expose.
  **/
 static gboolean
-gpm_graph_widget_draw (GtkWidget *widget, cairo_t *cr)
+gpm_graph_widget_draw (CtkWidget *widget, cairo_t *cr)
 {
-	GtkAllocation allocation;
+	CtkAllocation allocation;
 	gint legend_x = 0;
 	gint legend_y = 0;
 	guint legend_height = 0;
@@ -1136,7 +1136,7 @@ gpm_graph_widget_draw (GtkWidget *widget, cairo_t *cr)
  * gpm_graph_widget_new:
  * Return value: A new GpmGraphWidget object.
  **/
-GtkWidget *
+CtkWidget *
 gpm_graph_widget_new (void)
 {
 	return g_object_new (GPM_TYPE_GRAPH_WIDGET, NULL);
