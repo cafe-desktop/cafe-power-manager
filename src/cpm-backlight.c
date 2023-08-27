@@ -47,7 +47,7 @@
 #include "cpm-control.h"
 #include "cpm-common.h"
 #include "egg-debug.h"
-#include "gsd-media-keys-window.h"
+#include "csd-media-keys-window.h"
 #include "cpm-dpms.h"
 #include "cpm-idle.h"
 #include "cpm-marshal.h"

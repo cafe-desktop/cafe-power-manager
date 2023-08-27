@@ -30,7 +30,7 @@
 #include "cpm-control.h"
 #include "cpm-idle.h"
 #include "cpm-kbd-backlight.h"
-#include "gsd-media-keys-window.h"
+#include "csd-media-keys-window.h"
 
 struct CpmKbdBacklightPrivate
 {
