@@ -109,8 +109,8 @@ void
 gpm_prefs_activate_window (GtkApplication *app, GpmPrefs *prefs)
 {
 	GtkWindow *window;
-	window = GTK_WINDOW (ctk_builder_get_object (prefs->priv->builder, "dialog_preferences"));
-	ctk_application_add_window (GTK_APPLICATION (app), window);
+	window = CTK_WINDOW (ctk_builder_get_object (prefs->priv->builder, "dialog_preferences"));
+	ctk_application_add_window (CTK_APPLICATION (app), window);
 	ctk_window_present (window);
 }
 
@@ -164,7 +164,7 @@ gpm_prefs_action_combo_changed_cb (GtkWidget *widget, GpmPrefs *prefs)
 	actions = (const GpmActionPolicy *) g_object_get_data (G_OBJECT (widget), "actions");
 	gpm_pref_key = (const gchar *) g_object_get_data (G_OBJECT (widget), "settings_key");
 
-	active = ctk_combo_box_get_active (GTK_COMBO_BOX (widget));
+	active = ctk_combo_box_get_active (CTK_COMBO_BOX (widget));
 	policy = actions[active];
 	g_settings_set_enum (prefs->priv->settings, gpm_pref_key, policy);
 }
@@ -183,7 +183,7 @@ gpm_prefs_action_time_changed_cb (GtkWidget *widget, GpmPrefs *prefs)
 	values = (const gint *) g_object_get_data (G_OBJECT (widget), "values");
 	gpm_pref_key = (const gchar *) g_object_get_data (G_OBJECT (widget), "settings_key");
 
-	active = ctk_combo_box_get_active (GTK_COMBO_BOX (widget));
+	active = ctk_combo_box_get_active (CTK_COMBO_BOX (widget));
 	value = values[active];
 
 	egg_debug ("Changing %s to %i", gpm_pref_key, value);
@@ -218,7 +218,7 @@ gpm_prefs_setup_action_combo (GpmPrefs *prefs, const gchar *widget_name,
 	GPtrArray *array;
 	GpmActionPolicy *actions_added;
 
-	widget = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, widget_name));
+	widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, widget_name));
 
 	value = g_settings_get_enum (prefs->priv->settings, gpm_pref_key);
 	is_writable = g_settings_is_writable (prefs->priv->settings, gpm_pref_key);
@@ -235,26 +235,26 @@ gpm_prefs_setup_action_combo (GpmPrefs *prefs, const gchar *widget_name,
 		if (policy == GPM_ACTION_POLICY_SHUTDOWN && !prefs->priv->can_shutdown) {
 			egg_debug ("Cannot add option, as cannot shutdown.");
 		} else if (policy == GPM_ACTION_POLICY_SHUTDOWN && prefs->priv->can_shutdown) {
-			ctk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT (widget), _("Shutdown"));
+			ctk_combo_box_text_append_text(CTK_COMBO_BOX_TEXT (widget), _("Shutdown"));
 			g_ptr_array_add(array, GINT_TO_POINTER (policy));
 		} else if (policy == GPM_ACTION_POLICY_SUSPEND && !prefs->priv->can_suspend) {
 			egg_debug ("Cannot add option, as cannot suspend.");
 		} else if (policy == GPM_ACTION_POLICY_HIBERNATE && !prefs->priv->can_hibernate) {
 			egg_debug ("Cannot add option, as cannot hibernate.");
 		} else if (policy == GPM_ACTION_POLICY_SUSPEND && prefs->priv->can_suspend) {
-			ctk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT (widget), _("Suspend"));
+			ctk_combo_box_text_append_text(CTK_COMBO_BOX_TEXT (widget), _("Suspend"));
 			g_ptr_array_add (array, GINT_TO_POINTER (policy));
 		} else if (policy == GPM_ACTION_POLICY_HIBERNATE && prefs->priv->can_hibernate) {
-			ctk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT (widget), _("Hibernate"));
+			ctk_combo_box_text_append_text(CTK_COMBO_BOX_TEXT (widget), _("Hibernate"));
 			g_ptr_array_add(array, GINT_TO_POINTER (policy));
 		} else if (policy == GPM_ACTION_POLICY_BLANK) {
-			ctk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT (widget), _("Blank screen"));
+			ctk_combo_box_text_append_text(CTK_COMBO_BOX_TEXT (widget), _("Blank screen"));
 			g_ptr_array_add (array, GINT_TO_POINTER (policy));
 		} else if (policy == GPM_ACTION_POLICY_INTERACTIVE) {
-			ctk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT (widget), _("Ask me"));
+			ctk_combo_box_text_append_text(CTK_COMBO_BOX_TEXT (widget), _("Ask me"));
 			g_ptr_array_add(array, GINT_TO_POINTER (policy));
 		} else if (policy == GPM_ACTION_POLICY_NOTHING) {
-			ctk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT (widget), _("Do nothing"));
+			ctk_combo_box_text_append_text(CTK_COMBO_BOX_TEXT (widget), _("Do nothing"));
 			g_ptr_array_add(array, GINT_TO_POINTER (policy));
 		} else {
 			egg_warning ("Unknown action read from settings: %i", policy);
@@ -273,7 +273,7 @@ gpm_prefs_setup_action_combo (GpmPrefs *prefs, const gchar *widget_name,
 	for (i=0; actions_added[i] != -1; i++) {
 		policy = actions_added[i];
 		if (value == policy)
-			 ctk_combo_box_set_active (GTK_COMBO_BOX (widget), i);
+			 ctk_combo_box_set_active (CTK_COMBO_BOX (widget), i);
 	}
 
 	g_ptr_array_unref (array);
@@ -296,7 +296,7 @@ gpm_prefs_setup_time_combo (GpmPrefs *prefs, const gchar *widget_name,
 	gboolean is_writable;
 	GtkWidget *widget;
 
-	widget = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, widget_name));
+	widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, widget_name));
 
 	value = g_settings_get_int (prefs->priv->settings, gpm_pref_key);
 	is_writable = g_settings_is_writable (prefs->priv->settings, gpm_pref_key);
@@ -311,15 +311,15 @@ gpm_prefs_setup_time_combo (GpmPrefs *prefs, const gchar *widget_name,
 		/* get translation for number of seconds */
 		if (values[i] != 0) {
 			text = gpm_get_timestring (values[i]);
-			ctk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT (widget), text);
+			ctk_combo_box_text_append_text(CTK_COMBO_BOX_TEXT (widget), text);
 			g_free (text);
 		} else {
-			ctk_combo_box_text_append_text(GTK_COMBO_BOX_TEXT (widget), _("Never"));
+			ctk_combo_box_text_append_text(CTK_COMBO_BOX_TEXT (widget), _("Never"));
 		}
 
 		/* matches, so set default */
 		if (value == values[i])
-			 ctk_combo_box_set_active (GTK_COMBO_BOX (widget), i);
+			 ctk_combo_box_set_active (CTK_COMBO_BOX (widget), i);
 	}
 
 	/* connect after set */
@@ -366,15 +366,15 @@ prefs_setup_notification (GpmPrefs *prefs)
 
 	icon_policy = g_settings_get_enum (prefs->priv->settings, GPM_SETTINGS_ICON_POLICY);
 
-	radiobutton_icon_always = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder,
+	radiobutton_icon_always = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder,
 						  "radiobutton_notification_always"));
-	radiobutton_icon_present = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder,
+	radiobutton_icon_present = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder,
 						   "radiobutton_notification_present"));
-	radiobutton_icon_charge = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder,
+	radiobutton_icon_charge = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder,
 						  "radiobutton_notification_charge"));
-	radiobutton_icon_low = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder,
+	radiobutton_icon_low = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder,
 					   "radiobutton_notification_low"));
-	radiobutton_icon_never = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder,
+	radiobutton_icon_never = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder,
 						 "radiobutton_notification_never"));
 
 	is_writable = g_settings_is_writable (prefs->priv->settings, GPM_SETTINGS_ICON_POLICY);
@@ -384,15 +384,15 @@ prefs_setup_notification (GpmPrefs *prefs)
 	ctk_widget_set_sensitive (radiobutton_icon_low, is_writable);
 	ctk_widget_set_sensitive (radiobutton_icon_never, is_writable);
 
-	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radiobutton_icon_always),
+	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (radiobutton_icon_always),
 					  icon_policy == GPM_ICON_POLICY_ALWAYS);
-	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radiobutton_icon_present),
+	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (radiobutton_icon_present),
 					  icon_policy == GPM_ICON_POLICY_PRESENT);
-	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radiobutton_icon_charge),
+	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (radiobutton_icon_charge),
 					  icon_policy == GPM_ICON_POLICY_CHARGE);
-	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radiobutton_icon_low),
+	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (radiobutton_icon_low),
 					  icon_policy == GPM_ICON_POLICY_LOW);
-	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (radiobutton_icon_never),
+	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (radiobutton_icon_never),
 					  icon_policy == GPM_ICON_POLICY_NEVER);
 
 	g_object_set_data (G_OBJECT (radiobutton_icon_always), "policy",
@@ -460,29 +460,29 @@ prefs_setup_ac (GpmPrefs *prefs)
 					  button_lid_actions);
 
 	/* setup brightness slider */
-	widget = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "hscale_ac_brightness"));
+	widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "hscale_ac_brightness"));
 	g_settings_bind (prefs->priv->settings, GPM_SETTINGS_BRIGHTNESS_AC,
-			 ctk_range_get_adjustment (GTK_RANGE (widget)), "value",
+			 ctk_range_get_adjustment (CTK_RANGE (widget)), "value",
 			 G_SETTINGS_BIND_DEFAULT);
 	g_signal_connect (G_OBJECT (widget), "format-value",
 			  G_CALLBACK (gpm_prefs_format_percentage_cb), NULL);
 
 	/* set up the checkboxes */
-	widget = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "checkbutton_ac_display_dim"));
+	widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "checkbutton_ac_display_dim"));
 	g_settings_bind (prefs->priv->settings, GPM_SETTINGS_IDLE_DIM_AC,
 			 widget, "active",
 			 G_SETTINGS_BIND_DEFAULT);
 
 	if (prefs->priv->has_button_lid == FALSE) {
-		widget = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "hbox_ac_lid"));
+		widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "hbox_ac_lid"));
 		ctk_widget_hide(widget);
 	}
 	if (prefs->priv->has_lcd == FALSE) {
-		widget = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "hbox_ac_brightness"));
+		widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "hbox_ac_brightness"));
 
 		ctk_widget_hide(widget);
 
-		widget = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "checkbutton_ac_display_dim"));
+		widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "checkbutton_ac_display_dim"));
 
 		ctk_widget_hide(widget);
 	}
@@ -533,9 +533,9 @@ prefs_setup_battery (GpmPrefs *prefs)
 					display_times);
 
 	if (prefs->priv->has_batteries == FALSE) {
-		notebook = GTK_NOTEBOOK (ctk_builder_get_object (prefs->priv->builder, "notebook_preferences"));
-		widget = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "vbox_battery"));
-		page = ctk_notebook_page_num (notebook, GTK_WIDGET (widget));
+		notebook = CTK_NOTEBOOK (ctk_builder_get_object (prefs->priv->builder, "notebook_preferences"));
+		widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "vbox_battery"));
+		page = ctk_notebook_page_num (notebook, CTK_WIDGET (widget));
 		ctk_notebook_remove_page (notebook, page);
 		return;
 	}
@@ -548,22 +548,22 @@ prefs_setup_battery (GpmPrefs *prefs)
 					  battery_critical_actions);
 
 	/* set up the checkboxes */
-	widget = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "checkbutton_battery_display_reduce"));
+	widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "checkbutton_battery_display_reduce"));
 	g_settings_bind (prefs->priv->settings, GPM_SETTINGS_BACKLIGHT_BATTERY_REDUCE,
 			 widget, "active",
 			 G_SETTINGS_BIND_DEFAULT);
-	widget = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "checkbutton_battery_display_dim"));
+	widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "checkbutton_battery_display_dim"));
 	g_settings_bind (prefs->priv->settings, GPM_SETTINGS_IDLE_DIM_BATT,
 			 widget, "active",
 			 G_SETTINGS_BIND_DEFAULT);
 
 	if (prefs->priv->has_button_lid == FALSE) {
-		widget = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "hbox_battery_lid"));
+		widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "hbox_battery_lid"));
 
 		ctk_widget_hide(widget);
 	}
 	if (prefs->priv->has_lcd == FALSE) {
-		widget = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "checkbutton_battery_display_dim"));
+		widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "checkbutton_battery_display_dim"));
 		ctk_widget_hide(widget);
 	}
 }
@@ -606,16 +606,16 @@ prefs_setup_ups (GpmPrefs *prefs)
 					display_times);
 
 	window = gpm_window (prefs);
-	notebook = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "notebook_preferences"));
+	notebook = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "notebook_preferences"));
 	ctk_widget_add_events (notebook, GDK_SCROLL_MASK);
-	g_signal_connect (GTK_NOTEBOOK (notebook), "scroll-event",
+	g_signal_connect (CTK_NOTEBOOK (notebook), "scroll-event",
 			  G_CALLBACK (gpm_dialog_page_scroll_event_cb),
 			  window);
 
 	if (prefs->priv->has_ups == FALSE) {
-		widget = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "vbox_ups"));
-		page = ctk_notebook_page_num (GTK_NOTEBOOK (notebook), GTK_WIDGET (widget));
-		ctk_notebook_remove_page (GTK_NOTEBOOK (notebook), page);
+		widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "vbox_ups"));
+		page = ctk_notebook_page_num (CTK_NOTEBOOK (notebook), CTK_WIDGET (widget));
+		ctk_notebook_remove_page (CTK_NOTEBOOK (notebook), page);
 		return;
 	}
 
@@ -652,7 +652,7 @@ prefs_setup_general (GpmPrefs *prefs)
 					  suspend_button_actions);
 
 	if (prefs->priv->has_button_suspend == FALSE) {
-		widget = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "hbox_general_suspend"));
+		widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "hbox_general_suspend"));
 
 		ctk_widget_hide(widget);
 	}
@@ -828,7 +828,7 @@ gpm_prefs_init (GpmPrefs *prefs)
 		egg_error ("failed to load ui: %s", error->message);
 	}
 
-	main_window = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "dialog_preferences"));
+	main_window = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "dialog_preferences"));
 
 	/* Hide window first so that the dialogue resizes itself without redrawing */
 	ctk_widget_hide (main_window);
@@ -838,15 +838,15 @@ gpm_prefs_init (GpmPrefs *prefs)
 	g_signal_connect (main_window, "delete_event",
 			  G_CALLBACK (gpm_prefs_delete_event_cb), prefs);
 
-	widget = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "button_close"));
+	widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "button_close"));
 	g_signal_connect (widget, "clicked",
 			  G_CALLBACK (gpm_prefs_close_cb), prefs);
 
-	widget = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "button_help"));
+	widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "button_help"));
 	g_signal_connect (widget, "clicked",
 			  G_CALLBACK (gpm_prefs_help_cb), prefs);
 
-	widget = GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "button_defaults"));
+	widget = CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "button_defaults"));
 	ctk_widget_hide (widget);
 
 	prefs_setup_ac (prefs);
@@ -897,5 +897,5 @@ gpm_prefs_new (void)
 GtkWidget *
 gpm_window (GpmPrefs *prefs)
 {
-	return GTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "dialog_preferences"));
+	return CTK_WIDGET (ctk_builder_get_object (prefs->priv->builder, "dialog_preferences"));
 }

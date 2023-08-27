@@ -277,14 +277,14 @@ gpm_tray_icon_add_device (GpmTrayIcon *icon, GtkMenu *menu, const GPtrArray *arr
 
 		/* generate the image */
 		icon_name = gpm_upower_get_device_icon (device);
-		image = ctk_image_new_from_icon_name (icon_name, GTK_ICON_SIZE_MENU);
-		ctk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item), image);
-		ctk_image_menu_item_set_always_show_image (GTK_IMAGE_MENU_ITEM (item), TRUE);
+		image = ctk_image_new_from_icon_name (icon_name, CTK_ICON_SIZE_MENU);
+		ctk_image_menu_item_set_image (CTK_IMAGE_MENU_ITEM (item), image);
+		ctk_image_menu_item_set_always_show_image (CTK_IMAGE_MENU_ITEM (item), TRUE);
 
 		/* set callback and add the menu */
 		g_signal_connect (G_OBJECT (item), "activate", G_CALLBACK (gpm_tray_icon_show_info_cb), icon);
 		g_object_set_data (G_OBJECT (item), "object-path", (gpointer) object_path);
-		ctk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+		ctk_menu_shell_append (CTK_MENU_SHELL (menu), item);
 
 		g_free (icon_name);
 		g_free (label);
@@ -316,7 +316,7 @@ gpm_tray_icon_add_primary_device (GpmTrayIcon *icon, GtkMenu *menu, UpDevice *de
 	/* TRANSLATORS: % is a timestring, e.g. "6 hours 10 minutes" */
 	string = g_strdup_printf (_("%s remaining"), time_str);
 	item = ctk_image_menu_item_new_with_label (string);
-	ctk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+	ctk_menu_shell_append (CTK_MENU_SHELL (menu), item);
 	g_free (time_str);
 	g_free (string);
 }
@@ -341,7 +341,7 @@ gpm_tray_icon_create_menu (GpmTrayIcon *icon)
 	if (device != NULL) {
 		gpm_tray_icon_add_primary_device (icon, menu, device);
 		item = ctk_separator_menu_item_new ();
-		ctk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+		ctk_menu_shell_append (CTK_MENU_SHELL (menu), item);
 	}
 
 	/* add all device types to the drop down menu */
@@ -364,26 +364,26 @@ gpm_tray_icon_create_menu (GpmTrayIcon *icon)
 	/* only do the separator if we have at least one device */
 	if (dev_cnt != 0) {
 		item = ctk_separator_menu_item_new ();
-		ctk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+		ctk_menu_shell_append (CTK_MENU_SHELL (menu), item);
 	}
 
 	/* preferences */
 	item = ctk_image_menu_item_new_with_mnemonic (_("_Preferences"));
-	image = ctk_image_new_from_icon_name ("preferences-system", GTK_ICON_SIZE_MENU);
-	ctk_image_menu_item_set_image (GTK_IMAGE_MENU_ITEM (item), image);
+	image = ctk_image_new_from_icon_name ("preferences-system", CTK_ICON_SIZE_MENU);
+	ctk_image_menu_item_set_image (CTK_IMAGE_MENU_ITEM (item), image);
 	g_signal_connect (G_OBJECT (item), "activate",
 			  G_CALLBACK (gpm_tray_icon_show_preferences_cb), icon);
-	ctk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+	ctk_menu_shell_append (CTK_MENU_SHELL (menu), item);
 	
 	/*Set up custom panel menu theme support-ctk3 only */
-	GtkWidget *toplevel = ctk_widget_get_toplevel (GTK_WIDGET (menu));
+	GtkWidget *toplevel = ctk_widget_get_toplevel (CTK_WIDGET (menu));
 	/* Fix any failures of compiz/other wm's to communicate with ctk for transparency in menu theme */
-	GdkScreen *screen = ctk_widget_get_screen(GTK_WIDGET(toplevel));
+	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
 	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
-	ctk_widget_set_visual(GTK_WIDGET(toplevel), visual);
+	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 	/* Set menu and its toplevel window to follow panel theme */
 	GtkStyleContext *context;
-	context = ctk_widget_get_style_context (GTK_WIDGET(toplevel));
+	context = ctk_widget_get_style_context (CTK_WIDGET(toplevel));
 	ctk_style_context_add_class(context,"gnome-panel-menu-bar");
 	ctk_style_context_add_class(context,"cafe-panel-menu-bar");
 
@@ -391,7 +391,7 @@ gpm_tray_icon_create_menu (GpmTrayIcon *icon)
 	item = ctk_image_menu_item_new_from_stock ("ctk-about", NULL);
 	g_signal_connect (G_OBJECT (item), "activate",
 			  G_CALLBACK (gpm_tray_icon_show_about_cb), icon);
-	ctk_menu_shell_append (GTK_MENU_SHELL (menu), item);
+	ctk_menu_shell_append (CTK_MENU_SHELL (menu), item);
 
 skip_prefs:
 	if (device != NULL)
@@ -427,12 +427,12 @@ gpm_tray_icon_popup_menu (GpmTrayIcon *icon, guint32 timestamp)
 	menu = gpm_tray_icon_create_menu (icon);
 
 	/* show the menu */
-	ctk_widget_show_all (GTK_WIDGET (menu));
-	ctk_menu_popup (GTK_MENU (menu), NULL, NULL,
+	ctk_widget_show_all (CTK_WIDGET (menu));
+	ctk_menu_popup (CTK_MENU (menu), NULL, NULL,
 			ctk_status_icon_position_menu, icon->priv->status_icon,
 			1, timestamp);
 
-	g_signal_connect (GTK_WIDGET (menu), "hide",
+	g_signal_connect (CTK_WIDGET (menu), "hide",
 			  G_CALLBACK (gpm_tray_icon_popup_cleared_cd), icon);
 }
 

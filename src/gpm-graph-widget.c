@@ -68,7 +68,7 @@ struct GpmGraphWidgetPrivate
 	GPtrArray		*plot_list;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmGraphWidget, gpm_graph_widget, GTK_TYPE_DRAWING_AREA);
+G_DEFINE_TYPE_WITH_PRIVATE (GpmGraphWidget, gpm_graph_widget, CTK_TYPE_DRAWING_AREA);
 
 static gboolean gpm_graph_widget_draw (GtkWidget *graph, cairo_t *cr);
 static void	gpm_graph_widget_finalize (GObject *object);
@@ -220,8 +220,8 @@ up_graph_set_property (GObject *object, guint prop_id, const GValue *value, GPar
 	}
 
 	/* refresh widget */
-	ctk_widget_hide (GTK_WIDGET (graph));
-	ctk_widget_show (GTK_WIDGET (graph));
+	ctk_widget_hide (CTK_WIDGET (graph));
+	ctk_widget_show (CTK_WIDGET (graph));
 }
 
 /**
@@ -231,7 +231,7 @@ up_graph_set_property (GObject *object, guint prop_id, const GValue *value, GPar
 static void
 gpm_graph_widget_class_init (GpmGraphWidgetClass *class)
 {
-	GtkWidgetClass *widget_class = GTK_WIDGET_CLASS (class);
+	GtkWidgetClass *widget_class = CTK_WIDGET_CLASS (class);
 	GObjectClass *object_class = G_OBJECT_CLASS (class);
 
 	widget_class->draw = gpm_graph_widget_draw;
@@ -398,7 +398,7 @@ gpm_graph_widget_data_assign (GpmGraphWidget *graph, GpmGraphWidgetPlot plot, GP
 	g_ptr_array_add (graph->priv->plot_list, GUINT_TO_POINTER(plot));
 
 	/* refresh */
-	ctk_widget_queue_draw (GTK_WIDGET (graph));
+	ctk_widget_queue_draw (CTK_WIDGET (graph));
 
 	return TRUE;
 }

@@ -49,9 +49,9 @@ gpm_help_display (const gchar *link_id)
 
 	if (error != NULL) {
 		GtkWidget *d;
-		d = ctk_message_dialog_new (NULL, GTK_DIALOG_MODAL | GTK_DIALOG_DESTROY_WITH_PARENT,
-					    GTK_MESSAGE_ERROR, GTK_BUTTONS_OK, "%s", error->message);
-		ctk_dialog_run (GTK_DIALOG(d));
+		d = ctk_message_dialog_new (NULL, CTK_DIALOG_MODAL | CTK_DIALOG_DESTROY_WITH_PARENT,
+					    CTK_MESSAGE_ERROR, CTK_BUTTONS_OK, "%s", error->message);
+		ctk_dialog_run (CTK_DIALOG(d));
 		ctk_widget_destroy (d);
 		g_error_free (error);
 	}

@@ -175,9 +175,9 @@ gpm_applet_update_icon (GpmInhibitApplet *applet)
 	} else {
 		icon = GPM_INHIBIT_APPLET_ICON_UNINHIBIT;
 	}
-	ctk_image_set_from_icon_name (GTK_IMAGE(applet->image),
+	ctk_image_set_from_icon_name (CTK_IMAGE(applet->image),
 				      icon,
-				      GTK_ICON_SIZE_BUTTON);
+				      CTK_ICON_SIZE_BUTTON);
 }
 
 /**
@@ -207,7 +207,7 @@ gpm_applet_size_allocate_cb (GtkWidget    *widget,
 
 	/* Scale to the actual size of the applet, don't quantize to original icon size */
 	/* GtkImage already contains a check to do nothing if it's the same */
-	ctk_image_set_pixel_size (GTK_IMAGE(applet->image), size);
+	ctk_image_set_pixel_size (CTK_IMAGE(applet->image), size);
 }
 
 
@@ -230,7 +230,7 @@ gpm_applet_update_tooltip (GpmInhibitApplet *applet)
 			buf = _("Automatic sleep enabled");
 		}
 	}
-	ctk_widget_set_tooltip_text (GTK_WIDGET(applet), buf);
+	ctk_widget_set_tooltip_text (CTK_WIDGET(applet), buf);
 }
 
 /**
@@ -469,13 +469,13 @@ gpm_inhibit_applet_init (GpmInhibitApplet *applet)
 	/* prepare */
 	cafe_panel_applet_set_flags (CAFE_PANEL_APPLET (applet), CAFE_PANEL_APPLET_EXPAND_MINOR);
 	applet->image = ctk_image_new();
-	ctk_container_add (GTK_CONTAINER (applet), applet->image);
+	ctk_container_add (CTK_CONTAINER (applet), applet->image);
 
 	/* set appropriate size and load icon accordingly */
-	ctk_widget_queue_draw (GTK_WIDGET (applet));
+	ctk_widget_queue_draw (CTK_WIDGET (applet));
 
 	/* show */
-	ctk_widget_show_all (GTK_WIDGET(applet));
+	ctk_widget_show_all (CTK_WIDGET(applet));
 
 	/* connect */
 	g_signal_connect (G_OBJECT(applet), "button-press-event",

@@ -30,7 +30,7 @@ AM_CPPFLAGS =						\
 	-DLIBDIR=\""$(libdir)"\" 			\
 	-DVERSION="\"$(VERSION)\"" 			\
 	-DGPM_ICONS_DATA=\"$(pkgdatadir)/icons\"	\
-	-DGTKBUILDERDIR=\"$(pkgdatadir)\"		\
+	-DCTKBUILDERDIR=\"$(pkgdatadir)\"		\
 	-DUP_DISABLE_DEPRECATED				\
 	-DEGG_LOG_FILE=\""/tmp/gpm.log"\"		\
 	-DEGG_VERBOSE="\"GPM_VERBOSE\""			\

@@ -141,7 +141,7 @@ gpm_stats_add_devices_columns (GtkTreeView *treeview)
 
 	/* image */
 	renderer = ctk_cell_renderer_pixbuf_new ();
-	g_object_set (renderer, "stock-size", GTK_ICON_SIZE_DIALOG, NULL);
+	g_object_set (renderer, "stock-size", CTK_ICON_SIZE_DIALOG, NULL);
 	column = ctk_tree_view_column_new_with_attributes (_("Image"), renderer,
 							   "icon-name", GPM_DEVICES_COLUMN_ICON, NULL);
 	ctk_tree_view_append_column (treeview, column);
@@ -538,7 +538,7 @@ gpm_stats_update_info_page_history (UpDevice *device)
 			      NULL);
 	}
 
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "label_history_nodata"));
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "label_history_nodata"));
 	array = up_device_get_history_sync (device, history_type, history_time, 150, NULL, NULL);
 	if (array == NULL) {
 		/* show no data label and hide graph */
@@ -583,10 +583,10 @@ gpm_stats_update_info_page_history (UpDevice *device)
 
 	/* render */
 	sigma_smoothing = 2.0;
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "checkbutton_smooth_history"));
-	checked = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "checkbutton_points_history"));
-	points = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "checkbutton_smooth_history"));
+	checked = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (widget));
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "checkbutton_points_history"));
+	points = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (widget));
 
 	/* present data to graph */
 	gpm_stats_set_graph_data (graph_history, new, checked, points);
@@ -647,7 +647,7 @@ gpm_stats_update_info_page_stats (UpDevice *device)
 			      NULL);
 	}
 
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "label_stats_nodata"));
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "label_stats_nodata"));
 	array = up_device_get_statistics_sync (device, type, NULL, NULL);
 	if (array == NULL) {
 		/* show no data label and hide graph */
@@ -674,10 +674,10 @@ gpm_stats_update_info_page_stats (UpDevice *device)
 
 	/* render */
 	sigma_smoothing = 1.1;
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "checkbutton_smooth_stats"));
-	checked = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "checkbutton_points_stats"));
-	points = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "checkbutton_smooth_stats"));
+	checked = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (widget));
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "checkbutton_points_stats"));
+	points = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (widget));
 
 	/* present data to graph */
 	gpm_stats_set_graph_data (graph_statistics, new, checked, points);
@@ -721,7 +721,7 @@ gpm_stats_update_info_data (UpDevice *device)
 		      NULL);
 
 
-	notebook = GTK_NOTEBOOK (ctk_builder_get_object (builder, "notebook1"));
+	notebook = CTK_NOTEBOOK (ctk_builder_get_object (builder, "notebook1"));
 
 	/* show info page */
 	page_widget = ctk_notebook_get_nth_page (notebook, 0);
@@ -776,8 +776,8 @@ gpm_stats_notebook_changed_cb (GtkNotebook *notebook, gpointer page, gint page_n
 	GtkWidget *widget;
 
 	/* set the window title depending on the mode */
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "dialog_stats"));
-	gpm_stats_set_title (GTK_WINDOW (widget), page_num);
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "dialog_stats"));
+	gpm_stats_set_title (CTK_WINDOW (widget), page_num);
 
 	/* save page in gsettings */
 	g_settings_set_int (settings, GPM_SETTINGS_INFO_PAGE_NUMBER, page_num);
@@ -848,9 +848,9 @@ static void
 gpm_stats_window_activated_cb (GtkApplication *app, gpointer data)
 {
 	GtkWidget *widget;
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "dialog_stats"));
-	ctk_application_add_window (GTK_APPLICATION (app), GTK_WINDOW (widget));
-	ctk_window_present (GTK_WINDOW (widget));
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "dialog_stats"));
+	ctk_application_add_window (CTK_APPLICATION (app), CTK_WINDOW (widget));
+	ctk_window_present (CTK_WINDOW (widget));
 }
 
 /**
@@ -952,15 +952,15 @@ gpm_stats_device_removed_cb (UpClient *client, const gchar *object_path, GPtrArr
 	}
 
 	/* search the list and remove the object path entry */
-	ret = ctk_tree_model_get_iter_first (GTK_TREE_MODEL (list_store_devices), &iter);
+	ret = ctk_tree_model_get_iter_first (CTK_TREE_MODEL (list_store_devices), &iter);
 	while (ret) {
-		ctk_tree_model_get (GTK_TREE_MODEL (list_store_devices), &iter, GPM_DEVICES_COLUMN_ID, &id, -1);
+		ctk_tree_model_get (CTK_TREE_MODEL (list_store_devices), &iter, GPM_DEVICES_COLUMN_ID, &id, -1);
 		if (g_strcmp0 (id, object_path) == 0) {
 			ctk_list_store_remove (list_store_devices, &iter);
 			break;
 		}
 		g_free (id);
-		ret = ctk_tree_model_iter_next (GTK_TREE_MODEL (list_store_devices), &iter);
+		ret = ctk_tree_model_iter_next (CTK_TREE_MODEL (list_store_devices), &iter);
 	};
 }
 
@@ -974,7 +974,7 @@ gpm_stats_history_type_combo_changed_cb (GtkWidget *widget, gpointer data)
 	const gchar *axis_x = NULL;
 	const gchar *axis_y = NULL;
 
-	active = ctk_combo_box_get_active (GTK_COMBO_BOX (widget));
+	active = ctk_combo_box_get_active (CTK_COMBO_BOX (widget));
 
 	if (active == 0) {
 		history_type = GPM_HISTORY_RATE_VALUE;
@@ -1005,10 +1005,10 @@ gpm_stats_history_type_combo_changed_cb (GtkWidget *widget, gpointer data)
 	}
 
 	/* set axis */
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "label_axis_history_x"));
-	ctk_label_set_label (GTK_LABEL(widget), axis_x);
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "label_axis_history_y"));
-	ctk_label_set_label (GTK_LABEL(widget), axis_y);
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "label_axis_history_x"));
+	ctk_label_set_label (CTK_LABEL(widget), axis_x);
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "label_axis_history_y"));
+	ctk_label_set_label (CTK_LABEL(widget), axis_y);
 
 	gpm_stats_button_update_ui ();
 
@@ -1026,7 +1026,7 @@ gpm_stats_type_combo_changed_cb (GtkWidget *widget, gpointer data)
 	const gchar *axis_x = NULL;
 	const gchar *axis_y = NULL;
 
-	active = ctk_combo_box_get_active (GTK_COMBO_BOX (widget));
+	active = ctk_combo_box_get_active (CTK_COMBO_BOX (widget));
 
 	if (active == 0) {
 		stats_type = GPM_STATS_CHARGE_DATA_VALUE;
@@ -1057,10 +1057,10 @@ gpm_stats_type_combo_changed_cb (GtkWidget *widget, gpointer data)
 	}
 
 	/* set axis */
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "label_axis_stats_x"));
-	ctk_label_set_label (GTK_LABEL(widget), axis_x);
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "label_axis_stats_y"));
-	ctk_label_set_label (GTK_LABEL(widget), axis_y);
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "label_axis_stats_x"));
+	ctk_label_set_label (CTK_LABEL(widget), axis_x);
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "label_axis_stats_y"));
+	ctk_label_set_label (CTK_LABEL(widget), axis_y);
 
 	gpm_stats_button_update_ui ();
 
@@ -1076,7 +1076,7 @@ gpm_stats_range_combo_changed (GtkWidget *widget, gpointer data)
 {
 	guint active;
 
-	active = ctk_combo_box_get_active (GTK_COMBO_BOX (widget));
+	active = ctk_combo_box_get_active (CTK_COMBO_BOX (widget));
 
 	if (active == 0)
 		history_time = GPM_HISTORY_MINUTE_VALUE;
@@ -1105,7 +1105,7 @@ static void
 gpm_stats_smooth_checkbox_history_cb (GtkWidget *widget, gpointer data)
 {
 	gboolean checked;
-	checked = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
+	checked = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (widget));
 	g_settings_set_boolean (settings, GPM_SETTINGS_INFO_HISTORY_GRAPH_SMOOTH, checked);
 	gpm_stats_button_update_ui ();
 }
@@ -1118,7 +1118,7 @@ static void
 gpm_stats_smooth_checkbox_stats_cb (GtkWidget *widget, gpointer data)
 {
 	gboolean checked;
-	checked = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
+	checked = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (widget));
 	g_settings_set_boolean (settings, GPM_SETTINGS_INFO_STATS_GRAPH_SMOOTH, checked);
 	gpm_stats_button_update_ui ();
 }
@@ -1131,7 +1131,7 @@ static void
 gpm_stats_points_checkbox_history_cb (GtkWidget *widget, gpointer data)
 {
 	gboolean checked;
-	checked = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
+	checked = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (widget));
 	g_settings_set_boolean (settings, GPM_SETTINGS_INFO_HISTORY_GRAPH_POINTS, checked);
 	gpm_stats_button_update_ui ();
 }
@@ -1144,7 +1144,7 @@ static void
 gpm_stats_points_checkbox_stats_cb (GtkWidget *widget, gpointer data)
 {
 	gboolean checked;
-	checked = ctk_toggle_button_get_active (GTK_TOGGLE_BUTTON (widget));
+	checked = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (widget));
 	g_settings_set_boolean (settings, GPM_SETTINGS_INFO_STATS_GRAPH_POINTS, checked);
 	gpm_stats_button_update_ui ();
 }
@@ -1168,21 +1168,21 @@ gpm_stats_highlight_device (const gchar *object_path)
 		return;
 
 	/* we have to reuse the treeview data as it may be sorted */
-	ret = ctk_tree_model_get_iter_first (GTK_TREE_MODEL (list_store_devices), &iter);
+	ret = ctk_tree_model_get_iter_first (CTK_TREE_MODEL (list_store_devices), &iter);
 	for (i=0; ret; i++) {
-		ctk_tree_model_get (GTK_TREE_MODEL (list_store_devices), &iter,
+		ctk_tree_model_get (CTK_TREE_MODEL (list_store_devices), &iter,
 				    GPM_DEVICES_COLUMN_ID, &id,
 				    -1);
 		if (g_strcmp0 (id, object_path) == 0) {
 			path_str = g_strdup_printf ("%i", i);
 			path = ctk_tree_path_new_from_string (path_str);
-			widget = GTK_WIDGET (ctk_builder_get_object (builder, "treeview_devices"));
-			ctk_tree_view_set_cursor_on_cell (GTK_TREE_VIEW (widget), path, NULL, NULL, FALSE);
+			widget = CTK_WIDGET (ctk_builder_get_object (builder, "treeview_devices"));
+			ctk_tree_view_set_cursor_on_cell (CTK_TREE_VIEW (widget), path, NULL, NULL, FALSE);
 			g_free (path_str);
 			ctk_tree_path_free (path);
 		}
 		g_free (id);
-		ret = ctk_tree_model_iter_next (GTK_TREE_MODEL (list_store_devices), &iter);
+		ret = ctk_tree_model_iter_next (CTK_TREE_MODEL (list_store_devices), &iter);
 	}
 }
 
@@ -1259,58 +1259,58 @@ main (int argc, char *argv[])
 	}
 
 	/* add history graph */
-	box = GTK_BOX (ctk_builder_get_object (builder, "hbox_history"));
+	box = CTK_BOX (ctk_builder_get_object (builder, "hbox_history"));
 	graph_history = gpm_graph_widget_new ();
 	ctk_box_pack_start (box, graph_history, TRUE, TRUE, 0);
 	ctk_widget_set_size_request (graph_history, 400, 250);
 	ctk_widget_show (graph_history);
 
 	/* add statistics graph */
-	box = GTK_BOX (ctk_builder_get_object (builder, "hbox_statistics"));
+	box = CTK_BOX (ctk_builder_get_object (builder, "hbox_statistics"));
 	graph_statistics = gpm_graph_widget_new ();
 	ctk_box_pack_start (box, graph_statistics, TRUE, TRUE, 0);
 	ctk_widget_set_size_request (graph_statistics, 400, 250);
 	ctk_widget_show (graph_statistics);
 
-	window = GTK_WIDGET (ctk_builder_get_object (builder, "dialog_stats"));
-	ctk_window_set_default_size (GTK_WINDOW(window), 800, 500);
+	window = CTK_WIDGET (ctk_builder_get_object (builder, "dialog_stats"));
+	ctk_window_set_default_size (CTK_WINDOW(window), 800, 500);
 	ctk_window_set_default_icon_name (GPM_ICON_APP_ICON);
 
 	/* Get the main window quit */
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "button_close"));
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "button_close"));
 	g_signal_connect_swapped (window, "delete_event", G_CALLBACK (ctk_widget_destroy), window);
 	g_signal_connect_swapped (widget, "clicked", G_CALLBACK (ctk_widget_destroy), window);
 	ctk_widget_grab_default (widget);
 
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "button_help"));
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "button_help"));
 	g_signal_connect (widget, "clicked",
 			  G_CALLBACK (gpm_stats_button_help_cb), NULL);
 
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "checkbutton_smooth_history"));
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "checkbutton_smooth_history"));
 	checked = g_settings_get_boolean (settings, GPM_SETTINGS_INFO_HISTORY_GRAPH_SMOOTH);
-	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), checked);
+	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (widget), checked);
 	g_signal_connect (widget, "clicked",
 			  G_CALLBACK (gpm_stats_smooth_checkbox_history_cb), NULL);
 
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "checkbutton_smooth_stats"));
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "checkbutton_smooth_stats"));
 	checked = g_settings_get_boolean (settings, GPM_SETTINGS_INFO_STATS_GRAPH_SMOOTH);
-	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), checked);
+	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (widget), checked);
 	g_signal_connect (widget, "clicked",
 			  G_CALLBACK (gpm_stats_smooth_checkbox_stats_cb), NULL);
 
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "checkbutton_points_history"));
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "checkbutton_points_history"));
 	checked = g_settings_get_boolean (settings, GPM_SETTINGS_INFO_HISTORY_GRAPH_POINTS);
-	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), checked);
+	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (widget), checked);
 	g_signal_connect (widget, "clicked",
 			  G_CALLBACK (gpm_stats_points_checkbox_history_cb), NULL);
 
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "checkbutton_points_stats"));
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "checkbutton_points_stats"));
 	checked = g_settings_get_boolean (settings, GPM_SETTINGS_INFO_STATS_GRAPH_POINTS);
-	ctk_toggle_button_set_active (GTK_TOGGLE_BUTTON (widget), checked);
+	ctk_toggle_button_set_active (CTK_TOGGLE_BUTTON (widget), checked);
 	g_signal_connect (widget, "clicked",
 			  G_CALLBACK (gpm_stats_points_checkbox_stats_cb), NULL);
 
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "notebook1"));
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "notebook1"));
 
 	ctk_widget_add_events (widget, GDK_SCROLL_MASK);
 	g_signal_connect (widget, "scroll-event",
@@ -1318,7 +1318,7 @@ main (int argc, char *argv[])
 	                  window);
 
 	page = g_settings_get_int (settings, GPM_SETTINGS_INFO_PAGE_NUMBER);
-	ctk_notebook_set_current_page (GTK_NOTEBOOK (widget), page);
+	ctk_notebook_set_current_page (CTK_NOTEBOOK (widget), page);
 	g_signal_connect (widget, "switch-page",
 			  G_CALLBACK (gpm_stats_notebook_changed_cb), NULL);
 
@@ -1328,25 +1328,25 @@ main (int argc, char *argv[])
 						 G_TYPE_STRING, G_TYPE_STRING);
 
 	/* create transaction_id tree view */
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "treeview_info"));
-	ctk_tree_view_set_model (GTK_TREE_VIEW (widget),
-				 GTK_TREE_MODEL (list_store_info));
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "treeview_info"));
+	ctk_tree_view_set_model (CTK_TREE_VIEW (widget),
+				 CTK_TREE_MODEL (list_store_info));
 
 	/* add columns to the tree view */
-	gpm_stats_add_info_columns (GTK_TREE_VIEW (widget));
-	ctk_tree_view_columns_autosize (GTK_TREE_VIEW (widget)); /* show */
+	gpm_stats_add_info_columns (CTK_TREE_VIEW (widget));
+	ctk_tree_view_columns_autosize (CTK_TREE_VIEW (widget)); /* show */
 
 	/* create transaction_id tree view */
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "treeview_devices"));
-	ctk_tree_view_set_model (GTK_TREE_VIEW (widget),
-				 GTK_TREE_MODEL (list_store_devices));
-	selection = ctk_tree_view_get_selection (GTK_TREE_VIEW (widget));
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "treeview_devices"));
+	ctk_tree_view_set_model (CTK_TREE_VIEW (widget),
+				 CTK_TREE_MODEL (list_store_devices));
+	selection = ctk_tree_view_get_selection (CTK_TREE_VIEW (widget));
 	g_signal_connect (selection, "changed",
 			  G_CALLBACK (gpm_stats_devices_treeview_clicked_cb), NULL);
 
 	/* add columns to the tree view */
-	gpm_stats_add_devices_columns (GTK_TREE_VIEW (widget));
-	ctk_tree_view_columns_autosize (GTK_TREE_VIEW (widget)); /* show */
+	gpm_stats_add_devices_columns (CTK_TREE_VIEW (widget));
+	ctk_tree_view_columns_autosize (CTK_TREE_VIEW (widget)); /* show */
 
 	history_type = g_settings_get_string (settings, GPM_SETTINGS_INFO_HISTORY_TYPE);
 	history_time = g_settings_get_int (settings, GPM_SETTINGS_INFO_HISTORY_TIME);
@@ -1359,49 +1359,49 @@ main (int argc, char *argv[])
 	if (stats_type == NULL)
 		stats_type = GPM_STATS_CHARGE_DATA_VALUE;
 
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "combobox_history_type"));
-	ctk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_RATE_TEXT);
-	ctk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_CHARGE_TEXT);
-	ctk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_TIME_FULL_TEXT);
-	ctk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_TIME_EMPTY_TEXT);
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "combobox_history_type"));
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_RATE_TEXT);
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_CHARGE_TEXT);
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_TIME_FULL_TEXT);
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_TIME_EMPTY_TEXT);
 	if (g_strcmp0 (history_type, GPM_HISTORY_RATE_VALUE) == 0)
-		ctk_combo_box_set_active (GTK_COMBO_BOX (widget), 0);
+		ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 0);
 	else
-		ctk_combo_box_set_active (GTK_COMBO_BOX (widget), 1);
+		ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 1);
 	g_signal_connect (G_OBJECT (widget), "changed",
 			  G_CALLBACK (gpm_stats_history_type_combo_changed_cb), NULL);
 
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "combobox_stats_type"));
-	ctk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (widget), GPM_STATS_CHARGE_DATA_TEXT);
-	ctk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (widget), GPM_STATS_CHARGE_ACCURACY_TEXT);
-	ctk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (widget), GPM_STATS_DISCHARGE_DATA_TEXT);
-	ctk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (widget), GPM_STATS_DISCHARGE_ACCURACY_TEXT);
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "combobox_stats_type"));
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_STATS_CHARGE_DATA_TEXT);
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_STATS_CHARGE_ACCURACY_TEXT);
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_STATS_DISCHARGE_DATA_TEXT);
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_STATS_DISCHARGE_ACCURACY_TEXT);
 	if (g_strcmp0 (stats_type, GPM_STATS_CHARGE_DATA_VALUE) == 0)
-		ctk_combo_box_set_active (GTK_COMBO_BOX (widget), 0);
+		ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 0);
 	else if (g_strcmp0 (stats_type, GPM_STATS_CHARGE_DATA_VALUE) == 0)
-		ctk_combo_box_set_active (GTK_COMBO_BOX (widget), 1);
+		ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 1);
 	else if (g_strcmp0 (stats_type, GPM_STATS_CHARGE_DATA_VALUE) == 0)
-		ctk_combo_box_set_active (GTK_COMBO_BOX (widget), 2);
+		ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 2);
 	else if (g_strcmp0 (stats_type, GPM_STATS_CHARGE_DATA_VALUE) == 0)
-		ctk_combo_box_set_active (GTK_COMBO_BOX (widget), 0);
+		ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 0);
 	else
-		ctk_combo_box_set_active (GTK_COMBO_BOX (widget), 3);
+		ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 3);
 	g_signal_connect (G_OBJECT (widget), "changed",
 			  G_CALLBACK (gpm_stats_type_combo_changed_cb), NULL);
 
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "combobox_history_time"));
-	ctk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_MINUTE_TEXT);
-	ctk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_HOUR_TEXT);
-	ctk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_HOURS_TEXT);
-	ctk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_DAY_TEXT);
-	ctk_combo_box_text_append_text (GTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_WEEK_TEXT);
-	ctk_combo_box_set_active (GTK_COMBO_BOX (widget), 1);
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "combobox_history_time"));
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_MINUTE_TEXT);
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_HOUR_TEXT);
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_HOURS_TEXT);
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_DAY_TEXT);
+	ctk_combo_box_text_append_text (CTK_COMBO_BOX_TEXT (widget), GPM_HISTORY_WEEK_TEXT);
+	ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 1);
 	if (history_time == GPM_HISTORY_MINUTE_VALUE)
-		ctk_combo_box_set_active (GTK_COMBO_BOX (widget), 0);
+		ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 0);
 	else if (history_time == GPM_HISTORY_HOUR_VALUE)
-		ctk_combo_box_set_active (GTK_COMBO_BOX (widget), 1);
+		ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 1);
 	else
-		ctk_combo_box_set_active (GTK_COMBO_BOX (widget), 2);
+		ctk_combo_box_set_active (CTK_COMBO_BOX (widget), 2);
 	g_signal_connect (G_OBJECT (widget), "changed",
 			  G_CALLBACK (gpm_stats_range_combo_changed), NULL);
 
@@ -1439,12 +1439,12 @@ main (int argc, char *argv[])
 		gpm_stats_highlight_device (last_device);
 
 	/* set axis */
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "combobox_history_type"));
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "combobox_history_type"));
 	gpm_stats_history_type_combo_changed_cb (widget, NULL);
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "combobox_stats_type"));
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "combobox_stats_type"));
 	gpm_stats_type_combo_changed_cb (widget, NULL);
 
-	widget = GTK_WIDGET (ctk_builder_get_object (builder, "dialog_stats"));
+	widget = CTK_WIDGET (ctk_builder_get_object (builder, "dialog_stats"));
 
 	status = g_application_run (G_APPLICATION (app), argc, argv);
 	if (devices != NULL)
