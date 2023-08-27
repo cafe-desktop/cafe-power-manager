@@ -17,6 +17,6 @@
 -->
 <gresources>
   <gresource prefix="/org/cafe/powermanager/preferences/">
-    <file compressed="true">gpm-prefs.ui</file>
+    <file compressed="true">cpm-prefs.ui</file>
   </gresource>
 </gresources>

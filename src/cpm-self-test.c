@@ -27,7 +27,7 @@
 #include "egg-test.h"
 #include "egg-debug.h"
 
-#include "gpm-screensaver.h"
+#include "cpm-screensaver.h"
 
 /* prototypes */
 void egg_precision_test (EggTest *test);

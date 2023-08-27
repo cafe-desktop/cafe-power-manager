@@ -42,11 +42,11 @@
 
 #include "egg-debug.h"
 
-#include "gpm-upower.h"
-#include "gpm-engine.h"
-#include "gpm-common.h"
-#include "gpm-icon-names.h"
-#include "gpm-tray-icon.h"
+#include "cpm-upower.h"
+#include "cpm-engine.h"
+#include "cpm-common.h"
+#include "cpm-icon-names.h"
+#include "cpm-tray-icon.h"
 
 static void     gpm_tray_icon_finalize   (GObject	   *object);
 

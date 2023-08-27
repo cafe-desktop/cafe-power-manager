@@ -40,9 +40,9 @@
 #include "egg-debug.h"
 #include "egg-idletime.h"
 
-#include "gpm-idle.h"
-#include "gpm-load.h"
-#include "gpm-session.h"
+#include "cpm-idle.h"
+#include "cpm-load.h"
+#include "cpm-session.h"
 
 /* Sets the idle percent limit, i.e. how hard the computer can work
    while considered "at idle" */
@@ -502,7 +502,7 @@ gpm_idle_new (void)
  ***************************************************************************/
 #ifdef EGG_TEST
 #include "egg-test.h"
-#include "gpm-dpms.h"
+#include "cpm-dpms.h"
 
 static GpmIdleMode _mode = 0;
 

@@ -28,7 +28,7 @@
 #include <ctk/ctk.h>
 
 #include "egg-debug.h"
-#include "gpm-common.h"
+#include "cpm-common.h"
 
 /**
  * gpm_get_timestring:

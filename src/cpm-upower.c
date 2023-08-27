@@ -27,8 +27,8 @@
 #include "egg-debug.h"
 #include "egg-precision.h"
 
-#include "gpm-upower.h"
-#include "gpm-common.h"
+#include "cpm-upower.h"
+#include "cpm-common.h"
 
 #define GPM_UP_TIME_PRECISION			5*60
 #define GPM_UP_TEXT_MIN_TIME			120
@@ -98,54 +98,54 @@ gpm_upower_get_device_icon (UpDevice *device)
 
 	/* get the icon from some simple rules */
 	if (kind == UP_DEVICE_KIND_LINE_POWER) {
-		filename = g_strdup ("gpm-ac-adapter");
+		filename = g_strdup ("cpm-ac-adapter");
 	} else if (kind == UP_DEVICE_KIND_MONITOR) {
-		filename = g_strdup ("gpm-monitor");
+		filename = g_strdup ("cpm-monitor");
 	} else if (kind == UP_DEVICE_KIND_UPS) {
 		if (!is_present) {
 			/* battery missing */
-			filename = g_strdup_printf ("gpm-%s-missing", prefix);
+			filename = g_strdup_printf ("cpm-%s-missing", prefix);
 
 		} else if (state == UP_DEVICE_STATE_FULLY_CHARGED) {
-			filename = g_strdup_printf ("gpm-%s-100", prefix);
+			filename = g_strdup_printf ("cpm-%s-100", prefix);
 
 		} else if (state == UP_DEVICE_STATE_CHARGING) {
 			index_str = gpm_upower_get_device_icon_index (device);
-			filename = g_strdup_printf ("gpm-%s-%s-charging", prefix, index_str);
+			filename = g_strdup_printf ("cpm-%s-%s-charging", prefix, index_str);
 
 		} else if (state == UP_DEVICE_STATE_DISCHARGING) {
 			index_str = gpm_upower_get_device_icon_index (device);
-			filename = g_strdup_printf ("gpm-%s-%s", prefix, index_str);
+			filename = g_strdup_printf ("cpm-%s-%s", prefix, index_str);
 		}
 	} else if (kind == UP_DEVICE_KIND_BATTERY) {
 		if (!is_present) {
 			/* battery missing */
-			filename = g_strdup_printf ("gpm-%s-missing", prefix);
+			filename = g_strdup_printf ("cpm-%s-missing", prefix);
 
 		} else if (state == UP_DEVICE_STATE_EMPTY) {
-			filename = g_strdup_printf ("gpm-%s-empty", prefix);
+			filename = g_strdup_printf ("cpm-%s-empty", prefix);
 
 		} else if (state == UP_DEVICE_STATE_FULLY_CHARGED) {
-			filename = g_strdup_printf ("gpm-%s-charged", prefix);
+			filename = g_strdup_printf ("cpm-%s-charged", prefix);
 
 		} else if (state == UP_DEVICE_STATE_CHARGING) {
 			index_str = gpm_upower_get_device_icon_index (device);
-			filename = g_strdup_printf ("gpm-%s-%s-charging", prefix, index_str);
+			filename = g_strdup_printf ("cpm-%s-%s-charging", prefix, index_str);
 
 		} else if (state == UP_DEVICE_STATE_DISCHARGING) {
 			index_str = gpm_upower_get_device_icon_index (device);
-			filename = g_strdup_printf ("gpm-%s-%s", prefix, index_str);
+			filename = g_strdup_printf ("cpm-%s-%s", prefix, index_str);
 
 		} else if (state == UP_DEVICE_STATE_PENDING_CHARGE) {
 			index_str = gpm_upower_get_device_icon_index (device);
 			/* FIXME: do new grey icons */
-			filename = g_strdup_printf ("gpm-%s-%s-charging", prefix, index_str);
+			filename = g_strdup_printf ("cpm-%s-%s-charging", prefix, index_str);
 
 		} else if (state == UP_DEVICE_STATE_PENDING_DISCHARGE) {
 			index_str = gpm_upower_get_device_icon_index (device);
-			filename = g_strdup_printf ("gpm-%s-%s", prefix, index_str);
+			filename = g_strdup_printf ("cpm-%s-%s", prefix, index_str);
 		} else {
-			filename = g_strdup ("gpm-battery-missing");
+			filename = g_strdup ("cpm-battery-missing");
 		}
 
 	} else if (kind == UP_DEVICE_KIND_MOUSE ||
@@ -153,14 +153,14 @@ gpm_upower_get_device_icon (UpDevice *device)
 		   kind == UP_DEVICE_KIND_PHONE) {
 		if (!is_present) {
 			/* battery missing */
-			filename = g_strdup_printf ("gpm-%s-000", prefix);
+			filename = g_strdup_printf ("cpm-%s-000", prefix);
 
 		} else if (state == UP_DEVICE_STATE_FULLY_CHARGED) {
-			filename = g_strdup_printf ("gpm-%s-100", prefix);
+			filename = g_strdup_printf ("cpm-%s-100", prefix);
 
 		} else if (state == UP_DEVICE_STATE_DISCHARGING) {
 			index_str = gpm_upower_get_device_icon_index (device);
-			filename = g_strdup_printf ("gpm-%s-%s", prefix, index_str);
+			filename = g_strdup_printf ("cpm-%s-%s", prefix, index_str);
 		}
 	}
 
@@ -542,7 +542,7 @@ gpm_device_kind_to_icon (UpDeviceKind kind)
 	const gchar *icon = NULL;
 	switch (kind) {
 	case UP_DEVICE_KIND_LINE_POWER:
-		icon = "gpm-ac-adapter";
+		icon = "cpm-ac-adapter";
 		break;
 	case UP_DEVICE_KIND_BATTERY:
 		icon = "battery";

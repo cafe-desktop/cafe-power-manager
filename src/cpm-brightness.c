@@ -43,9 +43,9 @@
 #include "egg-discrete.h"
 #include "egg-debug.h"
 
-#include "gpm-brightness.h"
-#include "gpm-common.h"
-#include "gpm-marshal.h"
+#include "cpm-brightness.h"
+#include "cpm-common.h"
+#include "cpm-marshal.h"
 
 #define GPM_SOLE_SETTER_USE_CACHE	TRUE	/* this may be insanity */
 

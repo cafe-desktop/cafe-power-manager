@@ -27,9 +27,9 @@
 #include <gio/gio.h>
 #include <dbus/dbus-glib.h>
 
-#include "gpm-phone.h"
+#include "cpm-phone.h"
 #include "egg-debug.h"
-#include "gpm-marshal.h"
+#include "cpm-marshal.h"
 
 static void     gpm_phone_finalize   (GObject	    *object);
 

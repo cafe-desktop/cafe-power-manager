@@ -36,10 +36,10 @@
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
 
-#include "gpm-icon-names.h"
-#include "gpm-common.h"
-#include "gpm-manager.h"
-#include "gpm-session.h"
+#include "cpm-icon-names.h"
+#include "cpm-common.h"
+#include "cpm-manager.h"
+#include "cpm-session.h"
 
 #include "org.cafe.PowerManager.h"
 

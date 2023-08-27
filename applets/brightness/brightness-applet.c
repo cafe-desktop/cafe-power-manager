@@ -36,7 +36,7 @@
 #include <dbus/dbus-glib.h>
 
 #include "egg-debug.h"
-#include "gpm-common.h"
+#include "cpm-common.h"
 
 #define GPM_TYPE_BRIGHTNESS_APPLET		(gpm_brightness_applet_get_type ())
 #define GPM_BRIGHTNESS_APPLET(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), GPM_TYPE_BRIGHTNESS_APPLET, GpmBrightnessApplet))
@@ -102,8 +102,8 @@ static void      gpm_applet_destroy_cb            (CtkWidget *widget);
 #define GPM_BRIGHTNESS_APPLET_ID		"BrightnessApplet"
 #define GPM_BRIGHTNESS_APPLET_FACTORY_ID	"BrightnessAppletFactory"
 #define GPM_BRIGHTNESS_APPLET_ICON		"cafe-brightness-applet"
-#define GPM_BRIGHTNESS_APPLET_ICON_DISABLED	"gpm-brightness-lcd-disabled"
-#define GPM_BRIGHTNESS_APPLET_ICON_INVALID	"gpm-brightness-lcd-invalid"
+#define GPM_BRIGHTNESS_APPLET_ICON_DISABLED	"cpm-brightness-lcd-disabled"
+#define GPM_BRIGHTNESS_APPLET_ICON_INVALID	"cpm-brightness-lcd-invalid"
 #define GPM_BRIGHTNESS_APPLET_NAME		_("Power Manager Brightness Applet")
 #define GPM_BRIGHTNESS_APPLET_DESC		_("Adjusts laptop panel brightness.")
 #define CAFE_PANEL_APPLET_VERTICAL(p)					\

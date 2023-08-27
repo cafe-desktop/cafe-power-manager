@@ -7,7 +7,7 @@ EXTRA_DIST =						\
 	org.cafe.PowerManager.xml			\
 	org.cafe.PowerManager.Backlight.xml		\
 	org.cafe.PowerManager.KbdBacklight.xml		\
-	gpm-marshal.list				\
+	cpm-marshal.list				\
 	$(NULL)
 
 AM_CPPFLAGS =						\
@@ -72,17 +72,17 @@ libgpmshared_a_SOURCES =				\
 	egg-discrete.c					\
 	egg-console-kit.h				\
 	egg-console-kit.c				\
-	gpm-common.h					\
-	gpm-common.c					\
-	gpm-brightness.h				\
-	gpm-brightness.c				\
-	gpm-marshal.h					\
-	gpm-marshal.c					\
-	gpm-upower.c					\
-	gpm-upower.h
+	cpm-common.h					\
+	cpm-common.c					\
+	cpm-brightness.h				\
+	cpm-brightness.c				\
+	cpm-marshal.h					\
+	cpm-marshal.c					\
+	cpm-upower.c					\
+	cpm-upower.h
 
 cafe_power_backlight_helper_SOURCES =			\
-	gpm-backlight-helper.c				\
+	cpm-backlight-helper.c				\
 	$(NULL)
 
 cafe_power_backlight_helper_LDADD =			\
@@ -103,11 +103,11 @@ nodist_cafe_power_statistics_SOURCES =			\
 	$(NULL)
 
 cafe_power_statistics_SOURCES =				\
-	gpm-statistics.c				\
-	gpm-point-obj.c					\
-	gpm-point-obj.h					\
-	gpm-graph-widget.h				\
-	gpm-graph-widget.c				\
+	cpm-statistics.c				\
+	cpm-point-obj.c					\
+	cpm-point-obj.h					\
+	cpm-graph-widget.h				\
+	cpm-graph-widget.c				\
 	$(NULL)
 
 cafe_power_statistics_LDADD =				\
@@ -132,9 +132,9 @@ nodist_cafe_power_preferences_SOURCES =			\
 	$(NULL)
 
 cafe_power_preferences_SOURCES =			\
-	gpm-prefs.c					\
-	gpm-prefs-core.h				\
-	gpm-prefs-core.c				\
+	cpm-prefs.c					\
+	cpm-prefs-core.h				\
+	cpm-prefs-core.c				\
 	$(NULL)
 
 cafe_power_preferences_LDADD =				\
@@ -160,40 +160,40 @@ nodist_cafe_power_manager_SOURCES =			\
 	$(NULL)
 
 cafe_power_manager_SOURCES =				\
-	gpm-dpms.h					\
-	gpm-dpms.c					\
-	gpm-phone.h					\
-	gpm-phone.c					\
-	gpm-backlight.h					\
-	gpm-backlight.c					\
-	gpm-idle.h					\
-	gpm-idle.c					\
-	gpm-load.h					\
-	gpm-load.c					\
-	gpm-control.h					\
-	gpm-control.c					\
-	gpm-button.h					\
-	gpm-button.c					\
-	gpm-kbd-backlight.h				\
-	gpm-kbd-backlight.c				\
-	gpm-main.c					\
-	gpm-manager.h					\
-	gpm-manager.c					\
-	gpm-tray-icon.h					\
-	gpm-tray-icon.c					\
-	gpm-screensaver.h				\
-	gpm-screensaver.c				\
-	gpm-session.h					\
-	gpm-session.c					\
-	gpm-networkmanager.h				\
-	gpm-networkmanager.c				\
-	gpm-icon-names.h				\
+	cpm-dpms.h					\
+	cpm-dpms.c					\
+	cpm-phone.h					\
+	cpm-phone.c					\
+	cpm-backlight.h					\
+	cpm-backlight.c					\
+	cpm-idle.h					\
+	cpm-idle.c					\
+	cpm-load.h					\
+	cpm-load.c					\
+	cpm-control.h					\
+	cpm-control.c					\
+	cpm-button.h					\
+	cpm-button.c					\
+	cpm-kbd-backlight.h				\
+	cpm-kbd-backlight.c				\
+	cpm-main.c					\
+	cpm-manager.h					\
+	cpm-manager.c					\
+	cpm-tray-icon.h					\
+	cpm-tray-icon.c					\
+	cpm-screensaver.h				\
+	cpm-screensaver.c				\
+	cpm-session.h					\
+	cpm-session.c					\
+	cpm-networkmanager.h				\
+	cpm-networkmanager.c				\
+	cpm-icon-names.h				\
 	gsd-media-keys-window.h				\
 	gsd-media-keys-window.c				\
 	msd-osd-window.h				\
 	msd-osd-window.c				\
-	gpm-engine.h					\
-	gpm-engine.c					\
+	cpm-engine.h					\
+	cpm-engine.c					\
 	$(NULL)
 
 cafe_power_manager_LDADD =				\
@@ -217,7 +217,7 @@ cafe_power_manager_CFLAGS =				\
 
 if HAVE_TESTS
 cafe_power_self_test_SOURCES =				\
-	gpm-self-test.c					\
+	cpm-self-test.c					\
 	egg-color.h					\
 	egg-color.c					\
 	egg-test.h					\
@@ -234,32 +234,32 @@ cafe_power_self_test_SOURCES =				\
 	egg-array-float.c				\
 	egg-console-kit.h				\
 	egg-console-kit.c				\
-	gpm-control.h					\
-	gpm-control.c					\
-	gpm-networkmanager.h				\
-	gpm-networkmanager.c				\
-	gpm-dpms.h					\
-	gpm-dpms.c					\
-	gpm-button.h					\
-	gpm-button.c					\
-	gpm-screensaver.h				\
-	gpm-screensaver.c				\
-	gpm-engine.h					\
-	gpm-engine.c					\
-	gpm-phone.h					\
-	gpm-phone.c					\
-	gpm-idle.h					\
-	gpm-idle.c					\
-	gpm-session.h					\
-	gpm-session.c					\
-	gpm-load.h					\
-	gpm-load.c					\
-	gpm-marshal.h					\
-	gpm-marshal.c					\
-	gpm-common.h					\
-	gpm-common.c					\
-	gpm-upower.h					\
-	gpm-upower.c					\
+	cpm-control.h					\
+	cpm-control.c					\
+	cpm-networkmanager.h				\
+	cpm-networkmanager.c				\
+	cpm-dpms.h					\
+	cpm-dpms.c					\
+	cpm-button.h					\
+	cpm-button.c					\
+	cpm-screensaver.h				\
+	cpm-screensaver.c				\
+	cpm-engine.h					\
+	cpm-engine.c					\
+	cpm-phone.h					\
+	cpm-phone.c					\
+	cpm-idle.h					\
+	cpm-idle.c					\
+	cpm-session.h					\
+	cpm-session.c					\
+	cpm-load.h					\
+	cpm-load.c					\
+	cpm-marshal.h					\
+	cpm-marshal.c					\
+	cpm-common.h					\
+	cpm-common.c					\
+	cpm-upower.h					\
+	cpm-upower.c					\
 	$(NULL)
 
 cafe_power_self_test_LDADD =				\
@@ -286,15 +286,15 @@ BUILT_SOURCES = 					\
 	org.cafe.PowerManager.h				\
 	org.cafe.PowerManager.Backlight.h		\
 	org.cafe.PowerManager.KbdBacklight.h		\
-	gpm-marshal.c					\
-	gpm-marshal.h					\
+	cpm-marshal.c					\
+	cpm-marshal.h					\
 	$(NULL)
 
-gpm-marshal.c: gpm-marshal.list
-	echo "#include \"gpm-marshal.h\"" > $@ && \
+cpm-marshal.c: cpm-marshal.list
+	echo "#include \"cpm-marshal.h\"" > $@ && \
 	@GLIB_GENMARSHAL@ $< --prefix=gpm_marshal --body >> $@
 
-gpm-marshal.h: gpm-marshal.list
+cpm-marshal.h: cpm-marshal.list
 	@GLIB_GENMARSHAL@ $< --prefix=gpm_marshal --header > $@
 
 org.cafe.PowerManager.h: org.cafe.PowerManager.xml
@@ -320,7 +320,7 @@ org.cafe.PowerManager.KbdBacklight.h: org.cafe.PowerManager.KbdBacklight.xml
 
 clean-local:
 	rm -f *~
-	rm -f gpm-marshal.c gpm-marshal.h
+	rm -f cpm-marshal.c cpm-marshal.h
 
 CLEANFILES = \
 	$(BUILT_SOURCES)				\

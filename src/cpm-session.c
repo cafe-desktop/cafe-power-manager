@@ -26,10 +26,10 @@
 #include <glib/gi18n.h>
 #include <dbus/dbus-glib.h>
 
-#include "gpm-session.h"
-#include "gpm-common.h"
+#include "cpm-session.h"
+#include "cpm-common.h"
 #include "egg-debug.h"
-#include "gpm-marshal.h"
+#include "cpm-marshal.h"
 
 static void     gpm_session_finalize   (GObject		*object);
 

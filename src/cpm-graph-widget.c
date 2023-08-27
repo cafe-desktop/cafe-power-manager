@@ -26,9 +26,9 @@
 #include <stdlib.h>
 #include <math.h>
 
-#include "gpm-common.h"
-#include "gpm-point-obj.h"
-#include "gpm-graph-widget.h"
+#include "cpm-common.h"
+#include "cpm-point-obj.h"
+#include "cpm-graph-widget.h"
 
 #include "egg-debug.h"
 #include "egg-color.h"

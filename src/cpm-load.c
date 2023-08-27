@@ -39,11 +39,11 @@
 
 #include <glib/gi18n.h>
 
-#include "gpm-common.h"
-#include "gpm-marshal.h"
+#include "cpm-common.h"
+#include "cpm-marshal.h"
 #include "egg-debug.h"
 
-#include "gpm-load.h"
+#include "cpm-load.h"
 
 static void     gpm_load_finalize   (GObject	  *object);
 

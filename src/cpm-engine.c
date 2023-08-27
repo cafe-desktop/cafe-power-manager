@@ -28,12 +28,12 @@
 
 #include "egg-debug.h"
 
-#include "gpm-common.h"
-#include "gpm-upower.h"
-#include "gpm-marshal.h"
-#include "gpm-engine.h"
-#include "gpm-icon-names.h"
-#include "gpm-phone.h"
+#include "cpm-common.h"
+#include "cpm-upower.h"
+#include "cpm-marshal.h"
+#include "cpm-engine.h"
+#include "cpm-icon-names.h"
+#include "cpm-phone.h"
 
 static void     gpm_engine_finalize   (GObject	  *object);
 

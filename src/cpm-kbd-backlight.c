@@ -25,11 +25,11 @@
 #include <ctk/ctk.h>
 
 #include "egg-debug.h"
-#include "gpm-button.h"
-#include "gpm-common.h"
-#include "gpm-control.h"
-#include "gpm-idle.h"
-#include "gpm-kbd-backlight.h"
+#include "cpm-button.h"
+#include "cpm-common.h"
+#include "cpm-control.h"
+#include "cpm-idle.h"
+#include "cpm-kbd-backlight.h"
 #include "gsd-media-keys-window.h"
 
 struct GpmKbdBacklightPrivate
@@ -158,7 +158,7 @@ gpm_kbd_backlight_dialog_init (GpmKbdBacklight *backlight)
 	if (backlight->priv->popup == NULL) {
 		backlight->priv->popup= msd_media_keys_window_new ();
 		msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
-							 "gpm-brightness-kbd",
+							 "cpm-brightness-kbd",
 							 TRUE);
 		ctk_window_set_position (CTK_WINDOW (backlight->priv->popup), CTK_WIN_POS_NONE);
 
@@ -782,7 +782,7 @@ noerr:
     /* use a visual widget */
    backlight->priv->popup = msd_media_keys_window_new ();
    msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
-                                            "gpm-brightness-kbd", TRUE);
+                                            "cpm-brightness-kbd", TRUE);
    ctk_window_set_position (CTK_WINDOW (backlight->priv->popup), CTK_WIN_POS_NONE);
 
    /* since gpm is just starting we can pretty safely assume that we're not idle */
