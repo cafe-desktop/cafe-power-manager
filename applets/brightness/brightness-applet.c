@@ -230,18 +230,18 @@ gpm_applet_check_size (GpmBrightnessApplet *applet)
 
 	/* we don't use the size function here, but the yet allocated size because the
 	   size value is false (kind of rounded) */
-	ctk_widget_get_allocation (GTK_WIDGET (applet), &allocation);
+	ctk_widget_get_allocation (CTK_WIDGET (applet), &allocation);
 	if (CAFE_PANEL_APPLET_VERTICAL(cafe_panel_applet_get_orient (CAFE_PANEL_APPLET (applet)))) {
 		if (applet->size != allocation.width) {
 			applet->size = allocation.width;
 			gpm_applet_get_icon (applet);
-			ctk_widget_set_size_request (GTK_WIDGET(applet), applet->size, applet->icon_height + 2);
+			ctk_widget_set_size_request (CTK_WIDGET(applet), applet->size, applet->icon_height + 2);
 		}
 	} else {
 		if (applet->size != allocation.height) {
 			applet->size = allocation.height;
 			gpm_applet_get_icon (applet);
-			ctk_widget_set_size_request (GTK_WIDGET(applet), applet->icon_width + 2, applet->size);
+			ctk_widget_set_size_request (CTK_WIDGET(applet), applet->icon_width + 2, applet->size);
 		}
 	}
 }
@@ -262,7 +262,7 @@ gpm_applet_draw_cb (GpmBrightnessApplet *applet)
 	GtkStyleContext *context;
 	GtkAllocation allocation;
 
-	if (ctk_widget_get_window (GTK_WIDGET(applet)) == NULL) {
+	if (ctk_widget_get_window (CTK_WIDGET(applet)) == NULL) {
 		return FALSE;
 	}
 
@@ -278,11 +278,11 @@ gpm_applet_draw_cb (GpmBrightnessApplet *applet)
 		return FALSE;
 	}
 
-	ctk_widget_get_allocation (GTK_WIDGET (applet), &allocation);
+	ctk_widget_get_allocation (CTK_WIDGET (applet), &allocation);
 	w = allocation.width;
 	h = allocation.height;
 
-	cr = gdk_cairo_create (ctk_widget_get_window (GTK_WIDGET(applet)));
+	cr = gdk_cairo_create (ctk_widget_get_window (CTK_WIDGET(applet)));
 
 	/* draw pixmap background */
 	bg_type = cafe_panel_applet_get_background (CAFE_PANEL_APPLET (applet), &color, &pattern);
@@ -302,8 +302,8 @@ gpm_applet_draw_cb (GpmBrightnessApplet *applet)
 
 	/* fill with selected color if popped */
 	if (applet->popped) {
-		context = ctk_widget_get_style_context (GTK_WIDGET(applet));
-		ctk_style_context_get_color (context, GTK_STATE_FLAG_SELECTED, &color);
+		context = ctk_widget_get_style_context (CTK_WIDGET(applet));
+		ctk_style_context_get_color (context, CTK_STATE_FLAG_SELECTED, &color);
 		gdk_cairo_set_source_rgba (cr, &color);
 		cairo_rectangle (cr, 0, 0, w, h);
 		cairo_fill (cr);
@@ -328,7 +328,7 @@ gpm_applet_change_background_cb (GpmBrightnessApplet *applet,
 				 CafePanelAppletBackgroundType arg1,
 				 cairo_pattern_t *arg2, gpointer data)
 {
-	ctk_widget_queue_draw (GTK_WIDGET (applet));
+	ctk_widget_queue_draw (CTK_WIDGET (applet));
 }
 
 /**
@@ -367,9 +367,9 @@ gpm_applet_update_tooltip (GpmBrightnessApplet *applet)
 		} else {
 			buf = g_strdup_printf (_("LCD brightness : %d%%"), applet->level);
 		}
-		ctk_widget_set_tooltip_text (GTK_WIDGET(applet), buf);
+		ctk_widget_set_tooltip_text (CTK_WIDGET(applet), buf);
 	} else {
-		ctk_widget_set_tooltip_text (GTK_WIDGET(applet), NULL);
+		ctk_widget_set_tooltip_text (CTK_WIDGET(applet), NULL);
 	}
 	g_free (buf);
 }
@@ -392,7 +392,7 @@ gpm_applet_update_popup_level (GpmBrightnessApplet *applet)
 	if (applet->popup != NULL) {
 		ctk_widget_set_sensitive (applet->btn_plus, applet->level < 100);
 		ctk_widget_set_sensitive (applet->btn_minus, applet->level > 0);
-		ctk_range_set_value (GTK_RANGE(applet->slider), (guint) applet->level);
+		ctk_range_set_value (CTK_RANGE(applet->slider), (guint) applet->level);
 	}
 	gpm_applet_update_tooltip (applet);
 }
@@ -443,7 +443,7 @@ gpm_applet_minus_cb (GtkWidget *w, GpmBrightnessApplet *applet)
 static gboolean
 gpm_applet_slide_cb (GtkWidget *w, GpmBrightnessApplet *applet)
 {
-	applet->level = ctk_range_get_value (GTK_RANGE(applet->slider));
+	applet->level = ctk_range_get_value (CTK_RANGE(applet->slider));
 	applet->call_worked = gpm_applet_set_brightness (applet);
 	gpm_applet_update_popup_level (applet);
 	return TRUE;
@@ -586,48 +586,48 @@ gpm_applet_create_popup (GpmBrightnessApplet *applet)
 
 	/* slider */
 	if (CAFE_PANEL_APPLET_VERTICAL(orientation)) {
-		applet->slider = ctk_scale_new_with_range (GTK_ORIENTATION_HORIZONTAL, 0, 100, 1);
+		applet->slider = ctk_scale_new_with_range (CTK_ORIENTATION_HORIZONTAL, 0, 100, 1);
 		ctk_widget_set_size_request (applet->slider, 100, -1);
 	} else {
-		applet->slider = ctk_scale_new_with_range (GTK_ORIENTATION_VERTICAL, 0, 100, 1);
+		applet->slider = ctk_scale_new_with_range (CTK_ORIENTATION_VERTICAL, 0, 100, 1);
 		ctk_widget_set_size_request (applet->slider, -1, 100);
 	}
-	ctk_range_set_inverted (GTK_RANGE(applet->slider), TRUE);
-	ctk_scale_set_draw_value (GTK_SCALE(applet->slider), FALSE);
-	ctk_range_set_value (GTK_RANGE(applet->slider), applet->level);
+	ctk_range_set_inverted (CTK_RANGE(applet->slider), TRUE);
+	ctk_scale_set_draw_value (CTK_SCALE(applet->slider), FALSE);
+	ctk_range_set_value (CTK_RANGE(applet->slider), applet->level);
 	g_signal_connect (G_OBJECT(applet->slider), "value-changed", G_CALLBACK(gpm_applet_slide_cb), applet);
 
 	/* minus button */
 	applet->btn_minus = ctk_button_new_with_label ("\342\210\222"); /* U+2212 MINUS SIGN */
-	ctk_button_set_relief (GTK_BUTTON(applet->btn_minus), GTK_RELIEF_NONE);
+	ctk_button_set_relief (CTK_BUTTON(applet->btn_minus), CTK_RELIEF_NONE);
 	ctk_widget_set_can_focus (applet->btn_minus, FALSE);
 	g_signal_connect (G_OBJECT(applet->btn_minus), "pressed", G_CALLBACK(gpm_applet_minus_cb), applet);
 
 	/* plus button */
 	applet->btn_plus = ctk_button_new_with_label ("+");
-	ctk_button_set_relief (GTK_BUTTON(applet->btn_plus), GTK_RELIEF_NONE);
+	ctk_button_set_relief (CTK_BUTTON(applet->btn_plus), CTK_RELIEF_NONE);
 	ctk_widget_set_can_focus (applet->btn_plus, FALSE);
 	g_signal_connect (G_OBJECT(applet->btn_plus), "pressed", G_CALLBACK(gpm_applet_plus_cb), applet);
 
 	/* box */
 	if (CAFE_PANEL_APPLET_VERTICAL(orientation)) {
-		box = ctk_box_new (GTK_ORIENTATION_HORIZONTAL, 1);
+		box = ctk_box_new (CTK_ORIENTATION_HORIZONTAL, 1);
 	} else {
-		box = ctk_box_new (GTK_ORIENTATION_VERTICAL, 1);
+		box = ctk_box_new (CTK_ORIENTATION_VERTICAL, 1);
 	}
-	ctk_box_pack_start (GTK_BOX(box), applet->btn_plus, FALSE, FALSE, 0);
-	ctk_box_pack_start (GTK_BOX(box), applet->slider, TRUE, TRUE, 0);
-	ctk_box_pack_start (GTK_BOX(box), applet->btn_minus, FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX(box), applet->btn_plus, FALSE, FALSE, 0);
+	ctk_box_pack_start (CTK_BOX(box), applet->slider, TRUE, TRUE, 0);
+	ctk_box_pack_start (CTK_BOX(box), applet->btn_minus, FALSE, FALSE, 0);
 
 	/* frame */
 	frame = ctk_frame_new (NULL);
-	ctk_frame_set_shadow_type (GTK_FRAME(frame), GTK_SHADOW_OUT);
-	ctk_container_add (GTK_CONTAINER(frame), box);
+	ctk_frame_set_shadow_type (CTK_FRAME(frame), CTK_SHADOW_OUT);
+	ctk_container_add (CTK_CONTAINER(frame), box);
 
 	/* window */
-	applet->popup = ctk_window_new (GTK_WINDOW_POPUP);
-	ctk_window_set_type_hint (GTK_WINDOW(applet->popup), GDK_WINDOW_TYPE_HINT_UTILITY);
-	ctk_container_add (GTK_CONTAINER(applet->popup), frame);
+	applet->popup = ctk_window_new (CTK_WINDOW_POPUP);
+	ctk_window_set_type_hint (CTK_WINDOW(applet->popup), GDK_WINDOW_TYPE_HINT_UTILITY);
+	ctk_container_add (CTK_CONTAINER(applet->popup), frame);
 
 	/* window events */
 	g_signal_connect (G_OBJECT(applet->popup), "button-press-event",
@@ -639,12 +639,12 @@ gpm_applet_create_popup (GpmBrightnessApplet *applet)
 	/* Set volume control frame, slider and toplevel window to follow panel volume control theme */
 	GtkWidget *toplevel = ctk_widget_get_toplevel (frame);
 	GtkStyleContext *context;
-	context = ctk_widget_get_style_context (GTK_WIDGET(toplevel));
+	context = ctk_widget_get_style_context (CTK_WIDGET(toplevel));
 	ctk_style_context_add_class(context,"cafe-panel-applet-slider");
 	/*Make transparency possible in ctk3 theme3 */
- 	GdkScreen *screen = ctk_widget_get_screen(GTK_WIDGET(toplevel));
+ 	GdkScreen *screen = ctk_widget_get_screen(CTK_WIDGET(toplevel));
 	GdkVisual *visual = gdk_screen_get_rgba_visual(screen);
-	ctk_widget_set_visual(GTK_WIDGET(toplevel), visual);
+	ctk_widget_set_visual(CTK_WIDGET(toplevel), visual);
 }
 
 /**
@@ -695,10 +695,10 @@ gpm_applet_popup_cb (GpmBrightnessApplet *applet, GdkEventButton *event)
 
 	/* retrieve geometry parameters and move window appropriately */
 	orientation = cafe_panel_applet_get_orient (CAFE_PANEL_APPLET (CAFE_PANEL_APPLET (applet)));
-	gdk_window_get_origin (ctk_widget_get_window (GTK_WIDGET(applet)), &x, &y);
+	gdk_window_get_origin (ctk_widget_get_window (CTK_WIDGET(applet)), &x, &y);
 
-	ctk_widget_get_allocation (GTK_WIDGET (applet), &allocation);
-	ctk_widget_get_allocation (GTK_WIDGET (applet->popup), &popup_allocation);
+	ctk_widget_get_allocation (CTK_WIDGET (applet), &allocation);
+	ctk_widget_get_allocation (CTK_WIDGET (applet->popup), &popup_allocation);
 	switch (orientation) {
 	case CAFE_PANEL_APPLET_ORIENT_DOWN:
 		x += allocation.x + allocation.width/2;
@@ -726,10 +726,10 @@ gpm_applet_popup_cb (GpmBrightnessApplet *applet, GdkEventButton *event)
 		g_assert_not_reached ();
 	}
 
-	ctk_window_move (GTK_WINDOW (applet->popup), x, y);
+	ctk_window_move (CTK_WINDOW (applet->popup), x, y);
 
 	/* grab input */
-	window = ctk_widget_get_window (GTK_WIDGET (applet->popup));
+	window = ctk_widget_get_window (CTK_WIDGET (applet->popup));
 	display = gdk_window_get_display (window);
 	seat = gdk_display_get_default_seat (display);
 	gdk_seat_grab (seat,
@@ -993,10 +993,10 @@ gpm_brightness_applet_init (GpmBrightnessApplet *applet)
 
 	/* prepare */
 	cafe_panel_applet_set_flags (CAFE_PANEL_APPLET (applet), CAFE_PANEL_APPLET_EXPAND_MINOR);
-	ctk_widget_set_events (GTK_WIDGET (applet), GDK_SCROLL_MASK);
+	ctk_widget_set_events (CTK_WIDGET (applet), GDK_SCROLL_MASK);
 
 	/* show */
-	ctk_widget_show_all (GTK_WIDGET(applet));
+	ctk_widget_show_all (CTK_WIDGET(applet));
 
 	/* set appropriate size and load icon accordingly */
 	gpm_applet_draw_cb (applet);

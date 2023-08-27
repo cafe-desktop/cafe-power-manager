@@ -14,7 +14,7 @@ CAFE Power Manager comes in three main parts:
 To build, CAFE Power Manager requires
 
 	- Glib (2.36.0 or later)
-	- GTK+3 (3.14.0 or later)
+	- CTK+3 (3.14.0 or later)
 	- GNOME Keyring (3.0.0 or later)
 	- DBus (0.70 or later)
 	- libnotify (0.7.0 or later)

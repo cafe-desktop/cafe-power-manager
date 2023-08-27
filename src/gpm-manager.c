@@ -500,10 +500,10 @@ gpm_manager_notify (GpmManager *manager, NotifyNotification **notification_class
 		g_error_free (error);
 
 		/* show modal dialog as libcafenotify failed */
-		dialog = ctk_message_dialog_new_with_markup (NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
-							     GTK_MESSAGE_INFO, GTK_BUTTONS_CLOSE,
+		dialog = ctk_message_dialog_new_with_markup (NULL, CTK_DIALOG_DESTROY_WITH_PARENT,
+							     CTK_MESSAGE_INFO, CTK_BUTTONS_CLOSE,
 							     "<span size='larger'><b>%s</b></span>", title);
-		ctk_message_dialog_format_secondary_markup (GTK_MESSAGE_DIALOG (dialog), "%s", message);
+		ctk_message_dialog_format_secondary_markup (CTK_MESSAGE_DIALOG (dialog), "%s", message);
 
 		/* wait async for close */
 		ctk_widget_show (dialog);
@@ -533,18 +533,18 @@ gpm_manager_sleep_failure_response_cb (GtkDialog *dialog, gint response_id, GpmM
 	gchar *uri = NULL;
 
 	/* user clicked the help button */
-	if (response_id == GTK_RESPONSE_HELP) {
+	if (response_id == CTK_RESPONSE_HELP) {
 		uri = g_settings_get_string (manager->priv->settings, GPM_SETTINGS_NOTIFY_SLEEP_FAILED_URI);
-		ret = ctk_show_uri_on_window (GTK_WINDOW (dialog), uri, ctk_get_current_event_time (), &error);
+		ret = ctk_show_uri_on_window (CTK_WINDOW (dialog), uri, ctk_get_current_event_time (), &error);
 		if (!ret) {
-			dialog_error = ctk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_INFO, GTK_BUTTONS_OK,
+			dialog_error = ctk_message_dialog_new (NULL, CTK_DIALOG_MODAL, CTK_MESSAGE_INFO, CTK_BUTTONS_OK,
 							       "Failed to show uri %s", error->message);
-			ctk_dialog_run (GTK_DIALOG (dialog_error));
+			ctk_dialog_run (CTK_DIALOG (dialog_error));
 			g_error_free (error);
 		}
 	}
 
-	ctk_widget_destroy (GTK_WIDGET (dialog));
+	ctk_widget_destroy (CTK_WIDGET (dialog));
 	g_free (uri);
 }
 
@@ -591,17 +591,17 @@ gpm_manager_sleep_failure (GpmManager *manager, gboolean is_suspend, const gchar
 	g_string_append_printf (string, "\n\n%s %s", _("Failure was reported as:"), detail);
 
 	/* show modal dialog */
-	dialog = ctk_message_dialog_new_with_markup (NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
-						     GTK_MESSAGE_INFO, GTK_BUTTONS_CLOSE,
+	dialog = ctk_message_dialog_new_with_markup (NULL, CTK_DIALOG_DESTROY_WITH_PARENT,
+						     CTK_MESSAGE_INFO, CTK_BUTTONS_CLOSE,
 						     "<span size='larger'><b>%s</b></span>", title);
-	ctk_message_dialog_format_secondary_markup (GTK_MESSAGE_DIALOG (dialog), "%s", string->str);
-	ctk_window_set_icon_name (GTK_WINDOW(dialog), icon);
+	ctk_message_dialog_format_secondary_markup (CTK_MESSAGE_DIALOG (dialog), "%s", string->str);
+	ctk_window_set_icon_name (CTK_WINDOW(dialog), icon);
 
 	/* show a button? */
 	uri = g_settings_get_string (manager->priv->settings, GPM_SETTINGS_NOTIFY_SLEEP_FAILED_URI);
 	if (uri != NULL && uri[0] != '\0') {
 		/* TRANSLATORS: button text, visit the suspend help website */
-		ctk_dialog_add_button (GTK_DIALOG (dialog), _("Visit help page"), GTK_RESPONSE_HELP);
+		ctk_dialog_add_button (CTK_DIALOG (dialog), _("Visit help page"), CTK_RESPONSE_HELP);
 	}
 
 	/* wait async for close */

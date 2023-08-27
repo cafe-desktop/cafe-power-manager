@@ -183,7 +183,7 @@ gpm_backlight_dialog_init (GpmBacklight *backlight)
 		msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
 							 "gpm-brightness-lcd",
 							 TRUE);
-		ctk_window_set_position (GTK_WINDOW (backlight->priv->popup), GTK_WIN_POS_NONE);
+		ctk_window_set_position (CTK_WINDOW (backlight->priv->popup), CTK_WIN_POS_NONE);
 	}
 }
 
@@ -216,7 +216,7 @@ gpm_backlight_dialog_show (GpmBacklight *backlight)
 	 * if the window hasn't been mapped, it doesn't necessarily
 	 * know its true size, yet, so we need to jump through hoops
 	 */
-	ctk_window_get_default_size (GTK_WINDOW (backlight->priv->popup), &orig_w, &orig_h);
+	ctk_window_get_default_size (CTK_WINDOW (backlight->priv->popup), &orig_w, &orig_h);
 	ctk_widget_get_preferred_size (backlight->priv->popup, NULL, &win_req);
 
 	if (win_req.width > orig_w) {
@@ -247,7 +247,7 @@ gpm_backlight_dialog_show (GpmBacklight *backlight)
 	x = ((screen_w - orig_w) / 2) + geometry.x;
 	y = geometry.y + (screen_h / 2) + (screen_h / 2 - orig_h) / 2;
 
-	ctk_window_move (GTK_WINDOW (backlight->priv->popup), x, y);
+	ctk_window_move (CTK_WINDOW (backlight->priv->popup), x, y);
 
 	ctk_widget_show (backlight->priv->popup);
 
@@ -776,7 +776,7 @@ gpm_backlight_init (GpmBacklight *backlight)
 	msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
 						 "gpm-brightness-lcd",
 						 TRUE);
-        ctk_window_set_position (GTK_WINDOW (backlight->priv->popup), GTK_WIN_POS_NONE);
+        ctk_window_set_position (CTK_WINDOW (backlight->priv->popup), CTK_WIN_POS_NONE);
 
 	/* DPMS mode poll class */
 	backlight->priv->dpms = gpm_dpms_new ();
