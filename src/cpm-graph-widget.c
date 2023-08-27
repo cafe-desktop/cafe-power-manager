@@ -36,7 +36,7 @@
 
 #define CPM_GRAPH_WIDGET_FONT "Sans 8"
 
-struct GpmGraphWidgetPrivate
+struct CpmGraphWidgetPrivate
 {
 	gboolean		 use_grid;
 	gboolean		 use_legend;
@@ -57,8 +57,8 @@ struct GpmGraphWidgetPrivate
 	gfloat			 unit_x; /* 10th width of graph */
 	gfloat			 unit_y; /* 10th width of graph */
 
-	GpmGraphWidgetType	 type_x;
-	GpmGraphWidgetType	 type_y;
+	CpmGraphWidgetType	 type_x;
+	CpmGraphWidgetType	 type_y;
 	gchar			*title;
 
 	cairo_t			*cr;
@@ -68,7 +68,7 @@ struct GpmGraphWidgetPrivate
 	GPtrArray		*plot_list;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmGraphWidget, cpm_graph_widget, CTK_TYPE_DRAWING_AREA);
+G_DEFINE_TYPE_WITH_PRIVATE (CpmGraphWidget, cpm_graph_widget, CTK_TYPE_DRAWING_AREA);
 
 static gboolean cpm_graph_widget_draw (CtkWidget *graph, cairo_t *cr);
 static void	cpm_graph_widget_finalize (GObject *object);
@@ -92,16 +92,16 @@ enum
  * cpm_graph_widget_key_data_clear:
  **/
 static gboolean
-cpm_graph_widget_key_data_clear (GpmGraphWidget *graph)
+cpm_graph_widget_key_data_clear (CpmGraphWidget *graph)
 {
-	GpmGraphWidgetKeyData *keyitem;
+	CpmGraphWidgetKeyData *keyitem;
 	guint i;
 
 	g_return_val_if_fail (CPM_IS_GRAPH_WIDGET (graph), FALSE);
 
 	/* remove items in list and free */
 	for (i=0; i<g_slist_length (graph->priv->key_data); i++) {
-		keyitem = (GpmGraphWidgetKeyData *) g_slist_nth_data (graph->priv->key_data, i);
+		keyitem = (CpmGraphWidgetKeyData *) g_slist_nth_data (graph->priv->key_data, i);
 		g_free (keyitem->desc);
 		g_free (keyitem);
 	}
@@ -115,14 +115,14 @@ cpm_graph_widget_key_data_clear (GpmGraphWidget *graph)
  * cpm_graph_widget_key_data_add:
  **/
 gboolean
-cpm_graph_widget_key_data_add (GpmGraphWidget *graph, guint32 color, const gchar *desc)
+cpm_graph_widget_key_data_add (CpmGraphWidget *graph, guint32 color, const gchar *desc)
 {
-	GpmGraphWidgetKeyData *keyitem;
+	CpmGraphWidgetKeyData *keyitem;
 
 	g_return_val_if_fail (CPM_IS_GRAPH_WIDGET (graph), FALSE);
 
 	egg_debug ("add to list %s", desc);
-	keyitem = g_new0 (GpmGraphWidgetKeyData, 1);
+	keyitem = g_new0 (CpmGraphWidgetKeyData, 1);
 
 	keyitem->color = color;
 	keyitem->desc = g_strdup (desc);
@@ -137,7 +137,7 @@ cpm_graph_widget_key_data_add (GpmGraphWidget *graph, guint32 color, const gchar
 static void
 up_graph_get_property (GObject *object, guint prop_id, GValue *value, GParamSpec *pspec)
 {
-	GpmGraphWidget *graph = CPM_GRAPH_WIDGET (object);
+	CpmGraphWidget *graph = CPM_GRAPH_WIDGET (object);
 	switch (prop_id) {
 	case PROP_USE_LEGEND:
 		g_value_set_boolean (value, graph->priv->use_legend);
@@ -181,7 +181,7 @@ up_graph_get_property (GObject *object, guint prop_id, GValue *value, GParamSpec
 static void
 up_graph_set_property (GObject *object, guint prop_id, const GValue *value, GParamSpec *pspec)
 {
-	GpmGraphWidget *graph = CPM_GRAPH_WIDGET (object);
+	CpmGraphWidget *graph = CPM_GRAPH_WIDGET (object);
 
 	switch (prop_id) {
 	case PROP_USE_LEGEND:
@@ -229,7 +229,7 @@ up_graph_set_property (GObject *object, guint prop_id, const GValue *value, GPar
  * @class: This graph class instance
  **/
 static void
-cpm_graph_widget_class_init (GpmGraphWidgetClass *class)
+cpm_graph_widget_class_init (CpmGraphWidgetClass *class)
 {
 	CtkWidgetClass *widget_class = CTK_WIDGET_CLASS (class);
 	GObjectClass *object_class = G_OBJECT_CLASS (class);
@@ -301,7 +301,7 @@ cpm_graph_widget_class_init (GpmGraphWidgetClass *class)
  * @graph: This class instance
  **/
 static void
-cpm_graph_widget_init (GpmGraphWidget *graph)
+cpm_graph_widget_init (CpmGraphWidget *graph)
 {
 	PangoFontMap *fontmap;
 	PangoContext *context;
@@ -335,7 +335,7 @@ cpm_graph_widget_init (GpmGraphWidget *graph)
  * cpm_graph_widget_data_clear:
  **/
 gboolean
-cpm_graph_widget_data_clear (GpmGraphWidget *graph)
+cpm_graph_widget_data_clear (CpmGraphWidget *graph)
 {
 	g_return_val_if_fail (CPM_IS_GRAPH_WIDGET (graph), FALSE);
 
@@ -353,7 +353,7 @@ static void
 cpm_graph_widget_finalize (GObject *object)
 {
 	PangoContext *context;
-	GpmGraphWidget *graph = (GpmGraphWidget*) object;
+	CpmGraphWidget *graph = (CpmGraphWidget*) object;
 
 	/* clear key and data */
 	cpm_graph_widget_key_data_clear (graph);
@@ -372,15 +372,15 @@ cpm_graph_widget_finalize (GObject *object)
 /**
  * cpm_graph_widget_data_assign:
  * @graph: This class instance
- * @data: an array of GpmPointObj's
+ * @data: an array of CpmPointObj's
  *
  * Sets the data for the graph
  **/
 gboolean
-cpm_graph_widget_data_assign (GpmGraphWidget *graph, GpmGraphWidgetPlot plot, GPtrArray *data)
+cpm_graph_widget_data_assign (CpmGraphWidget *graph, CpmGraphWidgetPlot plot, GPtrArray *data)
 {
 	GPtrArray *copy;
-	GpmPointObj *obj;
+	CpmPointObj *obj;
 	guint i;
 
 	g_return_val_if_fail (data != NULL, FALSE);
@@ -416,7 +416,7 @@ cpm_graph_widget_data_assign (GpmGraphWidget *graph, GpmGraphWidgetPlot plot, GP
  * Return value: a string value depending on the axis type and the value.
  **/
 static gchar *
-cpm_get_axis_label (GpmGraphWidgetType axis, gfloat value)
+cpm_get_axis_label (CpmGraphWidgetType axis, gfloat value)
 {
 	gchar *text = NULL;
 	if (axis == CPM_GRAPH_WIDGET_TYPE_TIME) {
@@ -480,7 +480,7 @@ cpm_get_axis_label (GpmGraphWidgetType axis, gfloat value)
  * Draw the 10x10 dotted grid onto the graph.
  **/
 static void
-cpm_graph_widget_draw_grid (GpmGraphWidget *graph, cairo_t *cr)
+cpm_graph_widget_draw_grid (CpmGraphWidget *graph, cairo_t *cr)
 {
 	guint i;
 	gfloat b;
@@ -521,7 +521,7 @@ cpm_graph_widget_draw_grid (GpmGraphWidget *graph, cairo_t *cr)
  * Draw the X and the Y labels onto the graph.
  **/
 static void
-cpm_graph_widget_draw_labels (GpmGraphWidget *graph, cairo_t *cr)
+cpm_graph_widget_draw_labels (CpmGraphWidget *graph, cairo_t *cr)
 {
 	guint i;
 	gfloat b;
@@ -595,7 +595,7 @@ cpm_graph_widget_draw_labels (GpmGraphWidget *graph, cairo_t *cr)
  * Draw the X and the Y labels onto the graph.
  **/
 static guint
-cpm_graph_widget_get_y_label_max_width (GpmGraphWidget *graph, cairo_t *cr)
+cpm_graph_widget_get_y_label_max_width (CpmGraphWidget *graph, cairo_t *cr)
 {
 	guint i;
 	gchar *text;
@@ -626,13 +626,13 @@ cpm_graph_widget_get_y_label_max_width (GpmGraphWidget *graph, cairo_t *cr)
  * resolution but also a number that scales "well" to a 10x10 grid.
  **/
 static void
-cpm_graph_widget_autorange_x (GpmGraphWidget *graph)
+cpm_graph_widget_autorange_x (CpmGraphWidget *graph)
 {
 	gfloat biggest_x = G_MINFLOAT;
 	gfloat smallest_x = G_MAXFLOAT;
 	guint rounding_x = 1;
 	GPtrArray *data;
-	GpmPointObj *point;
+	CpmPointObj *point;
 	guint i, j;
 	guint len = 0;
 	GPtrArray *array;
@@ -659,7 +659,7 @@ cpm_graph_widget_autorange_x (GpmGraphWidget *graph)
 	for (j=0; j<array->len; j++) {
 		data = g_ptr_array_index (array, j);
 		for (i=0; i < data->len; i++) {
-			point = (GpmPointObj *) g_ptr_array_index (data, i);
+			point = (CpmPointObj *) g_ptr_array_index (data, i);
 			if (point->x > biggest_x)
 				biggest_x = point->x;
 			if (point->x < smallest_x)
@@ -720,13 +720,13 @@ cpm_graph_widget_autorange_x (GpmGraphWidget *graph)
  * resolution but also a number that scales "well" to a 10x10 grid.
  **/
 static void
-cpm_graph_widget_autorange_y (GpmGraphWidget *graph)
+cpm_graph_widget_autorange_y (CpmGraphWidget *graph)
 {
 	gfloat biggest_y = G_MINFLOAT;
 	gfloat smallest_y = G_MAXFLOAT;
 	guint rounding_y = 1;
 	GPtrArray *data;
-	GpmPointObj *point;
+	CpmPointObj *point;
 	guint i, j;
 	guint len = 0;
 	GPtrArray *array;
@@ -753,7 +753,7 @@ cpm_graph_widget_autorange_y (GpmGraphWidget *graph)
 	for (j=0; j<array->len; j++) {
 		data = g_ptr_array_index (array, j);
 		for (i=0; i < data->len; i++) {
-			point = (GpmPointObj *) g_ptr_array_index (data, i);
+			point = (CpmPointObj *) g_ptr_array_index (data, i);
 			if (point->y > biggest_y)
 				biggest_y = point->y;
 			if (point->y < smallest_y)
@@ -859,7 +859,7 @@ cpm_graph_widget_draw_legend_line (cairo_t *cr, gfloat x, gfloat y, guint32 colo
  * @y: The returned Y position on the cairo surface
  **/
 static void
-cpm_graph_widget_get_pos_on_graph (GpmGraphWidget *graph, gfloat data_x, gfloat data_y, float *x, float *y)
+cpm_graph_widget_get_pos_on_graph (CpmGraphWidget *graph, gfloat data_x, gfloat data_y, float *x, float *y)
 {
 	*x = graph->priv->box_x + (graph->priv->unit_x * (data_x - graph->priv->start_x)) + 1;
 	*y = graph->priv->box_y + (graph->priv->unit_y * (gfloat)(graph->priv->stop_y - data_y)) + 1.5;
@@ -892,14 +892,14 @@ cpm_graph_widget_draw_dot (cairo_t *cr, gfloat x, gfloat y, guint32 color)
  * limit the data to < ~100 values, so this shouldn't take too long.
  **/
 static void
-cpm_graph_widget_draw_line (GpmGraphWidget *graph, cairo_t *cr)
+cpm_graph_widget_draw_line (CpmGraphWidget *graph, cairo_t *cr)
 {
 	gfloat oldx, oldy;
 	gfloat newx, newy;
 	GPtrArray *data;
 	GPtrArray *array;
-	GpmGraphWidgetPlot plot;
-	GpmPointObj *point;
+	CpmGraphWidgetPlot plot;
+	CpmPointObj *point;
 	guint i, j;
 
 	if (graph->priv->data_list->len == 0) {
@@ -918,7 +918,7 @@ cpm_graph_widget_draw_line (GpmGraphWidget *graph, cairo_t *cr)
 		plot = GPOINTER_TO_UINT (g_ptr_array_index (graph->priv->plot_list, j));
 
 		/* get the very first point so we can work out the old */
-		point = (GpmPointObj *) g_ptr_array_index (data, 0);
+		point = (CpmPointObj *) g_ptr_array_index (data, 0);
 		oldx = 0;
 		oldy = 0;
 		cpm_graph_widget_get_pos_on_graph (graph, point->x, point->y, &oldx, &oldy);
@@ -926,7 +926,7 @@ cpm_graph_widget_draw_line (GpmGraphWidget *graph, cairo_t *cr)
 			cpm_graph_widget_draw_dot (cr, oldx, oldy, point->color);
 
 		for (i=1; i < data->len; i++) {
-			point = (GpmPointObj *) g_ptr_array_index (data, i);
+			point = (CpmPointObj *) g_ptr_array_index (data, i);
 
 			cpm_graph_widget_get_pos_on_graph (graph, point->x, point->y, &newx, &newy);
 
@@ -990,19 +990,19 @@ cpm_graph_widget_draw_bounding_box (cairo_t *cr, gint x, gint y, gint width, gin
  * @height: The item height
  **/
 static void
-cpm_graph_widget_draw_legend (GpmGraphWidget *graph, gint x, gint y, gint width, gint height)
+cpm_graph_widget_draw_legend (CpmGraphWidget *graph, gint x, gint y, gint width, gint height)
 {
 	cairo_t *cr = graph->priv->cr;
 	gint y_count;
 	guint i;
-	GpmGraphWidgetKeyData *keydataitem;
+	CpmGraphWidgetKeyData *keydataitem;
 
 	cpm_graph_widget_draw_bounding_box (cr, x, y, width, height);
 	y_count = y + 10;
 
 	/* add the line colors to the legend */
 	for (i=0; i<g_slist_length (graph->priv->key_data); i++) {
-		keydataitem = (GpmGraphWidgetKeyData *) g_slist_nth_data (graph->priv->key_data, i);
+		keydataitem = (CpmGraphWidgetKeyData *) g_slist_nth_data (graph->priv->key_data, i);
 		if (keydataitem == NULL) {
 			/* this shouldn't ever happen */
 			egg_warning ("keydataitem NULL!");
@@ -1028,12 +1028,12 @@ cpm_graph_widget_draw_legend (GpmGraphWidget *graph, gint x, gint y, gint width,
  * from machine to machine.
  **/
 static gboolean
-cpm_graph_widget_legend_calculate_size (GpmGraphWidget *graph, cairo_t *cr,
+cpm_graph_widget_legend_calculate_size (CpmGraphWidget *graph, cairo_t *cr,
 					guint *width, guint *height)
 {
 	guint i;
 	PangoRectangle ink_rect, logical_rect;
-	GpmGraphWidgetKeyData *keydataitem;
+	CpmGraphWidgetKeyData *keydataitem;
 
 	g_return_val_if_fail (CPM_IS_GRAPH_WIDGET (graph), FALSE);
 
@@ -1043,7 +1043,7 @@ cpm_graph_widget_legend_calculate_size (GpmGraphWidget *graph, cairo_t *cr,
 
 	/* add the line colors to the legend */
 	for (i=0; i<g_slist_length (graph->priv->key_data); i++) {
-		keydataitem = (GpmGraphWidgetKeyData *) g_slist_nth_data (graph->priv->key_data, i);
+		keydataitem = (CpmGraphWidgetKeyData *) g_slist_nth_data (graph->priv->key_data, i);
 		*height = *height + CPM_GRAPH_WIDGET_LEGEND_SPACING;
 		pango_layout_set_text (graph->priv->layout, keydataitem->desc, -1);
 		pango_layout_get_pixel_extents (graph->priv->layout, &ink_rect, &logical_rect);
@@ -1080,7 +1080,7 @@ cpm_graph_widget_draw (CtkWidget *widget, cairo_t *cr)
 	gfloat data_x;
 	gfloat data_y;
 
-	GpmGraphWidget *graph = (GpmGraphWidget*) widget;
+	CpmGraphWidget *graph = (CpmGraphWidget*) widget;
 	g_return_val_if_fail (graph != NULL, FALSE);
 	g_return_val_if_fail (CPM_IS_GRAPH_WIDGET (graph), FALSE);
 
@@ -1134,7 +1134,7 @@ cpm_graph_widget_draw (CtkWidget *widget, cairo_t *cr)
 
 /**
  * cpm_graph_widget_new:
- * Return value: A new GpmGraphWidget object.
+ * Return value: A new CpmGraphWidget object.
  **/
 CtkWidget *
 cpm_graph_widget_new (void)

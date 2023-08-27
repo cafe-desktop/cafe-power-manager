@@ -30,11 +30,11 @@ typedef struct
 	gfloat		 x;
 	gfloat		 y;
 	guint32		 color;
-} GpmPointObj;
+} CpmPointObj;
 
-GpmPointObj	*cpm_point_obj_new		(void);
-GpmPointObj	*cpm_point_obj_copy		(const GpmPointObj	*cobj);
-void		 cpm_point_obj_free		(GpmPointObj		*obj);
+CpmPointObj	*cpm_point_obj_new		(void);
+CpmPointObj	*cpm_point_obj_copy		(const CpmPointObj	*cobj);
+void		 cpm_point_obj_free		(CpmPointObj		*obj);
 
 G_END_DECLS
 

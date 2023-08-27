@@ -49,7 +49,7 @@
 
 #define CPM_SOLE_SETTER_USE_CACHE	TRUE	/* this may be insanity */
 
-struct GpmBrightnessPrivate
+struct CpmBrightnessPrivate
 {
 	gboolean		 has_changed_events;
 	gboolean		 cache_trusted;
@@ -77,9 +77,9 @@ typedef enum {
 	ACTION_BACKLIGHT_SET,
 	ACTION_BACKLIGHT_INC,
 	ACTION_BACKLIGHT_DEC
-} GpmXRandROp;
+} CpmXRandROp;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmBrightness, cpm_brightness, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (CpmBrightness, cpm_brightness, G_TYPE_OBJECT)
 
 static guint signals [LAST_SIGNAL] = { 0 };
 static gpointer cpm_brightness_object = NULL;
@@ -190,7 +190,7 @@ cpm_brightness_get_step (guint levels)
  * cpm_brightness_output_get_internal:
  **/
 static gboolean
-cpm_brightness_output_get_internal (GpmBrightness *brightness, RROutput output, guint *cur)
+cpm_brightness_output_get_internal (CpmBrightness *brightness, RROutput output, guint *cur)
 {
 	unsigned long nitems;
 	unsigned long bytes_after;
@@ -223,7 +223,7 @@ cpm_brightness_output_get_internal (GpmBrightness *brightness, RROutput output, 
  * cpm_brightness_output_set_internal:
  **/
 static gboolean
-cpm_brightness_output_set_internal (GpmBrightness *brightness, RROutput output, guint value)
+cpm_brightness_output_set_internal (CpmBrightness *brightness, RROutput output, guint value)
 {
 	CdkDisplay *display;
 
@@ -252,7 +252,7 @@ cpm_brightness_output_set_internal (GpmBrightness *brightness, RROutput output, 
  * cpm_brightness_setup_display:
  **/
 static gboolean
-cpm_brightness_setup_display (GpmBrightness *brightness)
+cpm_brightness_setup_display (CpmBrightness *brightness)
 {
 	gint major, minor;
 
@@ -290,7 +290,7 @@ cpm_brightness_setup_display (GpmBrightness *brightness)
  * cpm_brightness_output_get_limits:
  **/
 static gboolean
-cpm_brightness_output_get_limits (GpmBrightness *brightness, RROutput output,
+cpm_brightness_output_get_limits (CpmBrightness *brightness, RROutput output,
 					 guint *min, guint *max)
 {
 	XRRPropertyInfo *info;
@@ -319,7 +319,7 @@ out:
  * cpm_brightness_output_get_percentage:
  **/
 static gboolean
-cpm_brightness_output_get_percentage (GpmBrightness *brightness, RROutput output)
+cpm_brightness_output_get_percentage (CpmBrightness *brightness, RROutput output)
 {
 	guint cur;
 	gboolean ret;
@@ -345,7 +345,7 @@ cpm_brightness_output_get_percentage (GpmBrightness *brightness, RROutput output
  * cpm_brightness_output_down:
  **/
 static gboolean
-cpm_brightness_output_down (GpmBrightness *brightness, RROutput output)
+cpm_brightness_output_down (CpmBrightness *brightness, RROutput output)
 {
 	guint cur;
 	guint step;
@@ -380,7 +380,7 @@ cpm_brightness_output_down (GpmBrightness *brightness, RROutput output)
  * cpm_brightness_output_up:
  **/
 static gboolean
-cpm_brightness_output_up (GpmBrightness *brightness, RROutput output)
+cpm_brightness_output_up (CpmBrightness *brightness, RROutput output)
 {
 	guint cur;
 	gboolean ret;
@@ -412,7 +412,7 @@ cpm_brightness_output_up (GpmBrightness *brightness, RROutput output)
  * cpm_brightness_output_set:
  **/
 static gboolean
-cpm_brightness_output_set (GpmBrightness *brightness, RROutput output)
+cpm_brightness_output_set (CpmBrightness *brightness, RROutput output)
 {
 	guint cur;
 	gboolean ret;
@@ -480,7 +480,7 @@ cpm_brightness_output_set (GpmBrightness *brightness, RROutput output)
  * cpm_brightness_foreach_resource:
  **/
 static gboolean
-cpm_brightness_foreach_resource (GpmBrightness *brightness, GpmXRandROp op, XRRScreenResources *resources)
+cpm_brightness_foreach_resource (CpmBrightness *brightness, CpmXRandROp op, XRRScreenResources *resources)
 {
 	gint i;
 	gboolean ret;
@@ -516,7 +516,7 @@ cpm_brightness_foreach_resource (GpmBrightness *brightness, GpmXRandROp op, XRRS
  * cpm_brightness_foreach_screen:
  **/
 static gboolean
-cpm_brightness_foreach_screen (GpmBrightness *brightness, GpmXRandROp op)
+cpm_brightness_foreach_screen (CpmBrightness *brightness, CpmXRandROp op)
 {
 	guint i;
 	guint length;
@@ -549,7 +549,7 @@ cpm_brightness_foreach_screen (GpmBrightness *brightness, GpmXRandROp op)
  * Return value: if we can trust the cache
  **/
 static gboolean
-cpm_brightness_trust_cache (GpmBrightness *brightness)
+cpm_brightness_trust_cache (CpmBrightness *brightness)
 {
 	g_return_val_if_fail (CPM_IS_BRIGHTNESS (brightness), FALSE);
 	/* only return the cached value if the cache is trusted and we have change events */
@@ -576,7 +576,7 @@ cpm_brightness_trust_cache (GpmBrightness *brightness)
  * Return value: %TRUE if success, %FALSE if there was an error
  **/
 gboolean
-cpm_brightness_set (GpmBrightness *brightness, guint percentage, gboolean *hw_changed)
+cpm_brightness_set (CpmBrightness *brightness, guint percentage, gboolean *hw_changed)
 {
 	gboolean ret = FALSE;
 	gboolean trust_cache;
@@ -625,7 +625,7 @@ cpm_brightness_set (GpmBrightness *brightness, guint percentage, gboolean *hw_ch
  * brightness. This is quick as no HAL inquiry is done.
  **/
 gboolean
-cpm_brightness_get (GpmBrightness *brightness, guint *percentage)
+cpm_brightness_get (CpmBrightness *brightness, guint *percentage)
 {
 	gboolean ret = FALSE;
 	gboolean trust_cache;
@@ -680,7 +680,7 @@ cpm_brightness_get (GpmBrightness *brightness, guint *percentage)
  * If possible, put the brightness of the LCD up one unit.
  **/
 gboolean
-cpm_brightness_up (GpmBrightness *brightness, gboolean *hw_changed)
+cpm_brightness_up (CpmBrightness *brightness, gboolean *hw_changed)
 {
 	gboolean ret = FALSE;
 	guint step;
@@ -731,7 +731,7 @@ out:
  * If possible, put the brightness of the LCD down one unit.
  **/
 gboolean
-cpm_brightness_down (GpmBrightness *brightness, gboolean *hw_changed)
+cpm_brightness_down (CpmBrightness *brightness, gboolean *hw_changed)
 {
 	gboolean ret = FALSE;
 	guint step;
@@ -778,7 +778,7 @@ out:
  * cpm_brightness_may_have_changed:
  **/
 static void
-cpm_brightness_may_have_changed (GpmBrightness *brightness)
+cpm_brightness_may_have_changed (CpmBrightness *brightness)
 {
 	gboolean ret;
 	guint percentage;
@@ -797,7 +797,7 @@ cpm_brightness_may_have_changed (GpmBrightness *brightness)
 static CdkFilterReturn
 cpm_brightness_filter_xevents (CdkXEvent *xevent, CdkEvent *event, gpointer data)
 {
-	GpmBrightness *brightness = CPM_BRIGHTNESS (data);
+	CpmBrightness *brightness = CPM_BRIGHTNESS (data);
 	if (event->type == CDK_NOTHING)
 		return CDK_FILTER_CONTINUE;
 	cpm_brightness_may_have_changed (brightness);
@@ -805,13 +805,13 @@ cpm_brightness_filter_xevents (CdkXEvent *xevent, CdkEvent *event, gpointer data
 }
 
 
-static void cpm_brightness_update_cache (GpmBrightness *brightness);
+static void cpm_brightness_update_cache (CpmBrightness *brightness);
 
 /**
  * cpm_brightness_monitors_changed:
  **/
 static void
-cpm_brightness_monitors_changed (CdkScreen *screen, GpmBrightness *brightness)
+cpm_brightness_monitors_changed (CdkScreen *screen, CpmBrightness *brightness)
 {
 	g_return_if_fail (CPM_IS_BRIGHTNESS (brightness));
 	cpm_brightness_update_cache (brightness);
@@ -821,7 +821,7 @@ cpm_brightness_monitors_changed (CdkScreen *screen, GpmBrightness *brightness)
  * cpm_brightness_update_cache:
  **/
 static void
-cpm_brightness_update_cache (GpmBrightness *brightness)
+cpm_brightness_update_cache (CpmBrightness *brightness)
 {
 	guint length;
 	Window root;
@@ -865,7 +865,7 @@ cpm_brightness_update_cache (GpmBrightness *brightness)
  * cpm_brightness_has_hw:
  **/
 gboolean
-cpm_brightness_has_hw (GpmBrightness *brightness)
+cpm_brightness_has_hw (CpmBrightness *brightness)
 {
 	g_return_val_if_fail (CPM_IS_BRIGHTNESS (brightness), FALSE);
 
@@ -887,7 +887,7 @@ cpm_brightness_has_hw (GpmBrightness *brightness)
 static void
 cpm_brightness_finalize (GObject *object)
 {
-	GpmBrightness *brightness;
+	CpmBrightness *brightness;
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (CPM_IS_BRIGHTNESS (object));
 	brightness = CPM_BRIGHTNESS (object);
@@ -901,7 +901,7 @@ cpm_brightness_finalize (GObject *object)
  * cpm_brightness_class_init:
  **/
 static void
-cpm_brightness_class_init (GpmBrightnessClass *klass)
+cpm_brightness_class_init (CpmBrightnessClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = cpm_brightness_finalize;
@@ -909,7 +909,7 @@ cpm_brightness_class_init (GpmBrightnessClass *klass)
 	signals [BRIGHTNESS_CHANGED] =
 		g_signal_new ("brightness-changed",
 			      G_TYPE_FROM_CLASS (object_class), G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmBrightnessClass, brightness_changed),
+			      G_STRUCT_OFFSET (CpmBrightnessClass, brightness_changed),
 			      NULL, NULL, g_cclosure_marshal_VOID__UINT,
 			      G_TYPE_NONE, 1, G_TYPE_UINT);
 }
@@ -919,7 +919,7 @@ cpm_brightness_class_init (GpmBrightnessClass *klass)
  * @brightness: This brightness class instance
  **/
 static void
-cpm_brightness_init (GpmBrightness *brightness)
+cpm_brightness_init (CpmBrightness *brightness)
 {
 	CdkScreen *screen;
 	CdkDisplay *display;
@@ -971,7 +971,7 @@ cpm_brightness_init (GpmBrightness *brightness)
  * Return value: A new brightness class instance.
  * Can return NULL if no suitable hardware is found.
  **/
-GpmBrightness *
+CpmBrightness *
 cpm_brightness_new (void)
 {
 	if (cpm_brightness_object != NULL) {

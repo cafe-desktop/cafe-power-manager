@@ -27,40 +27,40 @@
 G_BEGIN_DECLS
 
 #define CPM_TYPE_BRIGHTNESS		(cpm_brightness_get_type ())
-#define CPM_BRIGHTNESS(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_BRIGHTNESS, GpmBrightness))
-#define CPM_BRIGHTNESS_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_BRIGHTNESS, GpmBrightnessClass))
+#define CPM_BRIGHTNESS(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_BRIGHTNESS, CpmBrightness))
+#define CPM_BRIGHTNESS_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_BRIGHTNESS, CpmBrightnessClass))
 #define CPM_IS_BRIGHTNESS(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_BRIGHTNESS))
 #define CPM_IS_BRIGHTNESS_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_BRIGHTNESS))
-#define CPM_BRIGHTNESS_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_BRIGHTNESS, GpmBrightnessClass))
+#define CPM_BRIGHTNESS_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_BRIGHTNESS, CpmBrightnessClass))
 
 #define CPM_BRIGHTNESS_DIM_INTERVAL	5 /* ms */
 
-typedef struct GpmBrightnessPrivate GpmBrightnessPrivate;
+typedef struct CpmBrightnessPrivate CpmBrightnessPrivate;
 
 typedef struct
 {
 	GObject		         parent;
-	GpmBrightnessPrivate	*priv;
-} GpmBrightness;
+	CpmBrightnessPrivate	*priv;
+} CpmBrightness;
 
 typedef struct
 {
 	GObjectClass	parent_class;
-	void		(* brightness_changed)	(GpmBrightness		*brightness,
+	void		(* brightness_changed)	(CpmBrightness		*brightness,
 						 guint			 percentage);
-} GpmBrightnessClass;
+} CpmBrightnessClass;
 
 GType		 cpm_brightness_get_type	(void);
-GpmBrightness	*cpm_brightness_new		(void);
+CpmBrightness	*cpm_brightness_new		(void);
 
-gboolean	 cpm_brightness_has_hw		(GpmBrightness		*brightness);
-gboolean	 cpm_brightness_up		(GpmBrightness		*brightness,
+gboolean	 cpm_brightness_has_hw		(CpmBrightness		*brightness);
+gboolean	 cpm_brightness_up		(CpmBrightness		*brightness,
 						 gboolean		*hw_changed);
-gboolean	 cpm_brightness_down		(GpmBrightness		*brightness,
+gboolean	 cpm_brightness_down		(CpmBrightness		*brightness,
 						 gboolean		*hw_changed);
-gboolean	 cpm_brightness_get		(GpmBrightness		*brightness,
+gboolean	 cpm_brightness_get		(CpmBrightness		*brightness,
 						 guint			*percentage);
-gboolean	 cpm_brightness_set		(GpmBrightness		*brightness,
+gboolean	 cpm_brightness_set		(CpmBrightness		*brightness,
 						 guint			 percentage,
 						 gboolean		*hw_changed);
 

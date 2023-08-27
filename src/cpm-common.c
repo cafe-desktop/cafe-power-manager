@@ -227,7 +227,7 @@ void
 cpm_common_test (gpointer data)
 {
 	EggTest *test = (EggTest *) data;
-	if (egg_test_start (test, "GpmCommon") == FALSE)
+	if (egg_test_start (test, "CpmCommon") == FALSE)
 		return;
 
 	egg_test_end (test);

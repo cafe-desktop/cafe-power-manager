@@ -36,7 +36,7 @@ static void     cpm_screensaver_finalize   (GObject		*object);
 #define GS_LISTENER_PATH	"/"
 #define GS_LISTENER_INTERFACE	"org.cafe.ScreenSaver"
 
-struct GpmScreensaverPrivate
+struct CpmScreensaverPrivate
 {
 	DBusGProxy		*proxy;
 };
@@ -44,7 +44,7 @@ struct GpmScreensaverPrivate
 
 static gpointer cpm_screensaver_object = NULL;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmScreensaver, cpm_screensaver, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (CpmScreensaver, cpm_screensaver, G_TYPE_OBJECT)
 
 /**
  * cpm_screensaver_lock
@@ -52,7 +52,7 @@ G_DEFINE_TYPE_WITH_PRIVATE (GpmScreensaver, cpm_screensaver, G_TYPE_OBJECT)
  * Return value: Success value
  **/
 gboolean
-cpm_screensaver_lock (GpmScreensaver *screensaver)
+cpm_screensaver_lock (CpmScreensaver *screensaver)
 {
 	guint sleepcount = 0;
 
@@ -94,7 +94,7 @@ cpm_screensaver_lock (GpmScreensaver *screensaver)
  * Return value: Success value, or zero for failure
  **/
 guint
-cpm_screensaver_add_throttle (GpmScreensaver *screensaver,
+cpm_screensaver_add_throttle (CpmScreensaver *screensaver,
 			      const char     *reason)
 {
 	GError  *error = NULL;
@@ -134,7 +134,7 @@ cpm_screensaver_add_throttle (GpmScreensaver *screensaver,
  * cpm_screensaver_remove_throttle:
  **/
 gboolean
-cpm_screensaver_remove_throttle (GpmScreensaver *screensaver, guint cookie)
+cpm_screensaver_remove_throttle (CpmScreensaver *screensaver, guint cookie)
 {
 	gboolean ret;
 	GError *error = NULL;
@@ -171,7 +171,7 @@ cpm_screensaver_remove_throttle (GpmScreensaver *screensaver, guint cookie)
  * Return value: TRUE if cafe-screensaver is running
  **/
 gboolean
-cpm_screensaver_check_running (GpmScreensaver *screensaver)
+cpm_screensaver_check_running (CpmScreensaver *screensaver)
 {
 	gboolean ret;
 	gboolean temp = TRUE;
@@ -206,7 +206,7 @@ cpm_screensaver_check_running (GpmScreensaver *screensaver)
  * any key before the window comes up.
  **/
 gboolean
-cpm_screensaver_poke (GpmScreensaver *screensaver)
+cpm_screensaver_poke (CpmScreensaver *screensaver)
 {
 	g_return_val_if_fail (CPM_IS_SCREENSAVER (screensaver), FALSE);
 
@@ -227,7 +227,7 @@ cpm_screensaver_poke (GpmScreensaver *screensaver)
  * @klass: This class instance
  **/
 static void
-cpm_screensaver_class_init (GpmScreensaverClass *klass)
+cpm_screensaver_class_init (CpmScreensaverClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = cpm_screensaver_finalize;
@@ -238,7 +238,7 @@ cpm_screensaver_class_init (GpmScreensaverClass *klass)
  * @screensaver: This class instance
  **/
 static void
-cpm_screensaver_init (GpmScreensaver *screensaver)
+cpm_screensaver_init (CpmScreensaver *screensaver)
 {
 	DBusGConnection *connection;
 
@@ -258,7 +258,7 @@ cpm_screensaver_init (GpmScreensaver *screensaver)
 static void
 cpm_screensaver_finalize (GObject *object)
 {
-	GpmScreensaver *screensaver;
+	CpmScreensaver *screensaver;
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (CPM_IS_SCREENSAVER (object));
 
@@ -272,9 +272,9 @@ cpm_screensaver_finalize (GObject *object)
 
 /**
  * cpm_screensaver_new:
- * Return value: new GpmScreensaver instance.
+ * Return value: new CpmScreensaver instance.
  **/
-GpmScreensaver *
+CpmScreensaver *
 cpm_screensaver_new (void)
 {
 	if (cpm_screensaver_object != NULL) {
@@ -294,12 +294,12 @@ cpm_screensaver_new (void)
 void
 cpm_screensaver_test (gpointer data)
 {
-	GpmScreensaver *screensaver;
+	CpmScreensaver *screensaver;
 //	guint value;
 	gboolean ret;
 	EggTest *test = (EggTest *) data;
 
-	if (egg_test_start (test, "GpmScreensaver") == FALSE)
+	if (egg_test_start (test, "CpmScreensaver") == FALSE)
 		return;
 
 	/************************************************************/

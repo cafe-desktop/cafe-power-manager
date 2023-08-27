@@ -27,29 +27,29 @@
 G_BEGIN_DECLS
 
 #define CPM_TYPE_LOAD		(cpm_load_get_type ())
-#define CPM_LOAD(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_LOAD, GpmLoad))
-#define CPM_LOAD_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_LOAD, GpmLoadClass))
+#define CPM_LOAD(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_LOAD, CpmLoad))
+#define CPM_LOAD_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_LOAD, CpmLoadClass))
 #define CPM_IS_LOAD(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_LOAD))
 #define CPM_IS_LOAD_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_LOAD))
-#define CPM_LOAD_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_LOAD, GpmLoadClass))
+#define CPM_LOAD_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_LOAD, CpmLoadClass))
 
-typedef struct GpmLoadPrivate GpmLoadPrivate;
+typedef struct CpmLoadPrivate CpmLoadPrivate;
 
 typedef struct
 {
 	GObject		 parent;
-	GpmLoadPrivate	*priv;
-} GpmLoad;
+	CpmLoadPrivate	*priv;
+} CpmLoad;
 
 typedef struct
 {
 	GObjectClass	parent_class;
-} GpmLoadClass;
+} CpmLoadClass;
 
 GType		 cpm_load_get_type		(void);
-GpmLoad		*cpm_load_new			(void);
+CpmLoad		*cpm_load_new			(void);
 
-gdouble		 cpm_load_get_current		(GpmLoad	*load);
+gdouble		 cpm_load_get_current		(CpmLoad	*load);
 
 G_END_DECLS
 

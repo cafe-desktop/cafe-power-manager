@@ -50,21 +50,21 @@
 
 static void     cpm_tray_icon_finalize   (GObject	   *object);
 
-struct GpmTrayIconPrivate
+struct CpmTrayIconPrivate
 {
 	GSettings		*settings;
-	GpmEngine		*engine;
+	CpmEngine		*engine;
 	CtkStatusIcon		*status_icon;
 	gboolean		 show_actions;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmTrayIcon, cpm_tray_icon, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (CpmTrayIcon, cpm_tray_icon, G_TYPE_OBJECT)
 
 /**
  * cpm_tray_icon_enable_actions:
  **/
 static void
-cpm_tray_icon_enable_actions (GpmTrayIcon *icon, gboolean enabled)
+cpm_tray_icon_enable_actions (CpmTrayIcon *icon, gboolean enabled)
 {
 	g_return_if_fail (CPM_IS_TRAY_ICON (icon));
 	icon->priv->show_actions = enabled;
@@ -75,7 +75,7 @@ cpm_tray_icon_enable_actions (GpmTrayIcon *icon, gboolean enabled)
  * @enabled: If we should show the tray
  **/
 static void
-cpm_tray_icon_show (GpmTrayIcon *icon, gboolean enabled)
+cpm_tray_icon_show (CpmTrayIcon *icon, gboolean enabled)
 {
 	g_return_if_fail (CPM_IS_TRAY_ICON (icon));
 	ctk_status_icon_set_visible (icon->priv->status_icon, enabled);
@@ -86,7 +86,7 @@ cpm_tray_icon_show (GpmTrayIcon *icon, gboolean enabled)
  * @tooltip: The tooltip text, e.g. "Batteries charged"
  **/
 gboolean
-cpm_tray_icon_set_tooltip (GpmTrayIcon *icon, const gchar *tooltip)
+cpm_tray_icon_set_tooltip (CpmTrayIcon *icon, const gchar *tooltip)
 {
 	g_return_val_if_fail (icon != NULL, FALSE);
 	g_return_val_if_fail (CPM_IS_TRAY_ICON (icon), FALSE);
@@ -101,7 +101,7 @@ cpm_tray_icon_set_tooltip (GpmTrayIcon *icon, const gchar *tooltip)
  * cpm_tray_icon_get_status_icon:
  **/
 CtkStatusIcon *
-cpm_tray_icon_get_status_icon (GpmTrayIcon *icon)
+cpm_tray_icon_get_status_icon (CpmTrayIcon *icon)
 {
 	g_return_val_if_fail (CPM_IS_TRAY_ICON (icon), NULL);
 	return g_object_ref (icon->priv->status_icon);
@@ -114,7 +114,7 @@ cpm_tray_icon_get_status_icon (GpmTrayIcon *icon)
  * Loads a pixmap from disk, and sets as the tooltip icon.
  **/
 gboolean
-cpm_tray_icon_set_icon (GpmTrayIcon *icon, const gchar *icon_name)
+cpm_tray_icon_set_icon (CpmTrayIcon *icon, const gchar *icon_name)
 {
 	g_return_val_if_fail (icon != NULL, FALSE);
 	g_return_val_if_fail (CPM_IS_TRAY_ICON (icon), FALSE);
@@ -223,7 +223,7 @@ cpm_tray_icon_show_about_cb (CtkMenuItem *item, gpointer data)
  * cpm_tray_icon_class_init:
  **/
 static void
-cpm_tray_icon_class_init (GpmTrayIconClass *klass)
+cpm_tray_icon_class_init (CpmTrayIconClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
@@ -234,7 +234,7 @@ cpm_tray_icon_class_init (GpmTrayIconClass *klass)
  * cpm_tray_icon_add_device:
  **/
 static guint
-cpm_tray_icon_add_device (GpmTrayIcon *icon, CtkMenu *menu, const GPtrArray *array, UpDeviceKind kind)
+cpm_tray_icon_add_device (CpmTrayIcon *icon, CtkMenu *menu, const GPtrArray *array, UpDeviceKind kind)
 {
 	guint i;
 	guint added = 0;
@@ -298,7 +298,7 @@ cpm_tray_icon_add_device (GpmTrayIcon *icon, CtkMenu *menu, const GPtrArray *arr
  * cpm_tray_icon_add_primary_device:
  **/
 static void
-cpm_tray_icon_add_primary_device (GpmTrayIcon *icon, CtkMenu *menu, UpDevice *device)
+cpm_tray_icon_add_primary_device (CpmTrayIcon *icon, CtkMenu *menu, UpDevice *device)
 {
 	CtkWidget *item;
 	gchar *time_str;
@@ -327,7 +327,7 @@ cpm_tray_icon_add_primary_device (GpmTrayIcon *icon, CtkMenu *menu, UpDevice *de
  * Create the popup menu.
  **/
 static CtkMenu *
-cpm_tray_icon_create_menu (GpmTrayIcon *icon)
+cpm_tray_icon_create_menu (CpmTrayIcon *icon)
 {
 	CtkMenu *menu = (CtkMenu*) ctk_menu_new ();
 	CtkWidget *item;
@@ -406,7 +406,7 @@ skip_prefs:
  * We have to re-enable the tooltip when the popup is removed
  **/
 static void
-cpm_tray_icon_popup_cleared_cd (CtkWidget *widget, GpmTrayIcon *icon)
+cpm_tray_icon_popup_cleared_cd (CtkWidget *widget, CpmTrayIcon *icon)
 {
 	g_return_if_fail (CPM_IS_TRAY_ICON (icon));
 	egg_debug ("clear tray");
@@ -420,7 +420,7 @@ cpm_tray_icon_popup_cleared_cd (CtkWidget *widget, GpmTrayIcon *icon)
  * Display the popup menu.
  **/
 static void
-cpm_tray_icon_popup_menu (GpmTrayIcon *icon, guint32 timestamp)
+cpm_tray_icon_popup_menu (CpmTrayIcon *icon, guint32 timestamp)
 {
 	CtkMenu *menu;
 
@@ -442,7 +442,7 @@ cpm_tray_icon_popup_menu (GpmTrayIcon *icon, guint32 timestamp)
  * Display the popup menu.
  **/
 static void
-cpm_tray_icon_popup_menu_cb (CtkStatusIcon *status_icon, guint button, guint32 timestamp, GpmTrayIcon *icon)
+cpm_tray_icon_popup_menu_cb (CtkStatusIcon *status_icon, guint button, guint32 timestamp, CpmTrayIcon *icon)
 {
 	egg_debug ("icon right clicked");
 	cpm_tray_icon_popup_menu (icon, timestamp);
@@ -456,7 +456,7 @@ cpm_tray_icon_popup_menu_cb (CtkStatusIcon *status_icon, guint button, guint32 t
  * Callback when the icon is clicked
  **/
 static void
-cpm_tray_icon_activate_cb (CtkStatusIcon *status_icon, GpmTrayIcon *icon)
+cpm_tray_icon_activate_cb (CtkStatusIcon *status_icon, CpmTrayIcon *icon)
 {
 	egg_debug ("icon left clicked");
 	cpm_tray_icon_popup_menu (icon, ctk_get_current_event_time());
@@ -468,7 +468,7 @@ cpm_tray_icon_activate_cb (CtkStatusIcon *status_icon, GpmTrayIcon *icon)
  * We might have to do things when the settings change; do them here.
  **/
 static void
-cpm_tray_icon_settings_changed_cb (GSettings *settings, const gchar *key, GpmTrayIcon *icon)
+cpm_tray_icon_settings_changed_cb (GSettings *settings, const gchar *key, CpmTrayIcon *icon)
 {
 	gboolean allowed_in_menu;
 
@@ -484,7 +484,7 @@ cpm_tray_icon_settings_changed_cb (GSettings *settings, const gchar *key, GpmTra
  * Initialise the tray object
  **/
 static void
-cpm_tray_icon_init (GpmTrayIcon *icon)
+cpm_tray_icon_init (CpmTrayIcon *icon)
 {
 	gboolean allowed_in_menu;
 
@@ -518,7 +518,7 @@ cpm_tray_icon_init (GpmTrayIcon *icon)
 static void
 cpm_tray_icon_finalize (GObject *object)
 {
-	GpmTrayIcon *tray_icon;
+	CpmTrayIcon *tray_icon;
 
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (CPM_IS_TRAY_ICON (object));
@@ -536,10 +536,10 @@ cpm_tray_icon_finalize (GObject *object)
  * cpm_tray_icon_new:
  * Return value: A new TrayIcon object.
  **/
-GpmTrayIcon *
+CpmTrayIcon *
 cpm_tray_icon_new (void)
 {
-	GpmTrayIcon *tray_icon;
+	CpmTrayIcon *tray_icon;
 	tray_icon = g_object_new (CPM_TYPE_TRAY_ICON, NULL);
 	return CPM_TRAY_ICON (tray_icon);
 }

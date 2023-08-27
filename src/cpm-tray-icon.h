@@ -28,35 +28,35 @@
 G_BEGIN_DECLS
 
 #define CPM_TYPE_TRAY_ICON		(cpm_tray_icon_get_type ())
-#define CPM_TRAY_ICON(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_TRAY_ICON, GpmTrayIcon))
-#define CPM_TRAY_ICON_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_TRAY_ICON, GpmTrayIconClass))
+#define CPM_TRAY_ICON(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_TRAY_ICON, CpmTrayIcon))
+#define CPM_TRAY_ICON_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_TRAY_ICON, CpmTrayIconClass))
 #define CPM_IS_TRAY_ICON(o)	 	(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_TRAY_ICON))
 #define CPM_IS_TRAY_ICON_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_TRAY_ICON))
-#define CPM_TRAY_ICON_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_TRAY_ICON, GpmTrayIconClass))
+#define CPM_TRAY_ICON_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_TRAY_ICON, CpmTrayIconClass))
 
-typedef struct GpmTrayIconPrivate GpmTrayIconPrivate;
+typedef struct CpmTrayIconPrivate CpmTrayIconPrivate;
 
 typedef struct
 {
 	GObject		    parent;
-	GpmTrayIconPrivate *priv;
-} GpmTrayIcon;
+	CpmTrayIconPrivate *priv;
+} CpmTrayIcon;
 
 typedef struct
 {
 	GObjectClass	parent_class;
-	void	(* suspend)				(GpmTrayIcon	*tray_icon);
-	void	(* hibernate)				(GpmTrayIcon	*tray_icon);
-} GpmTrayIconClass;
+	void	(* suspend)				(CpmTrayIcon	*tray_icon);
+	void	(* hibernate)				(CpmTrayIcon	*tray_icon);
+} CpmTrayIconClass;
 
 GType		 cpm_tray_icon_get_type			(void);
-GpmTrayIcon	*cpm_tray_icon_new			(void);
+CpmTrayIcon	*cpm_tray_icon_new			(void);
 
-gboolean	 cpm_tray_icon_set_tooltip		(GpmTrayIcon	*icon,
+gboolean	 cpm_tray_icon_set_tooltip		(CpmTrayIcon	*icon,
 							 const gchar	*tooltip);
-gboolean	 cpm_tray_icon_set_icon			(GpmTrayIcon	*icon,
+gboolean	 cpm_tray_icon_set_icon			(CpmTrayIcon	*icon,
 							 const gchar	*icon_name);
-CtkStatusIcon	*cpm_tray_icon_get_status_icon		(GpmTrayIcon	*icon);
+CtkStatusIcon	*cpm_tray_icon_get_status_icon		(CpmTrayIcon	*icon);
 
 G_END_DECLS
 

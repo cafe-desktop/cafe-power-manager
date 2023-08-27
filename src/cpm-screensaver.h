@@ -27,36 +27,36 @@
 G_BEGIN_DECLS
 
 #define CPM_TYPE_SCREENSAVER		(cpm_screensaver_get_type ())
-#define CPM_SCREENSAVER(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_SCREENSAVER, GpmScreensaver))
-#define CPM_SCREENSAVER_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_SCREENSAVER, GpmScreensaverClass))
+#define CPM_SCREENSAVER(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_SCREENSAVER, CpmScreensaver))
+#define CPM_SCREENSAVER_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_SCREENSAVER, CpmScreensaverClass))
 #define CPM_IS_SCREENSAVER(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_SCREENSAVER))
 #define CPM_IS_SCREENSAVER_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_SCREENSAVER))
-#define CPM_SCREENSAVER_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_SCREENSAVER, GpmScreensaverClass))
+#define CPM_SCREENSAVER_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_SCREENSAVER, CpmScreensaverClass))
 
-typedef struct GpmScreensaverPrivate GpmScreensaverPrivate;
+typedef struct CpmScreensaverPrivate CpmScreensaverPrivate;
 
 typedef struct
 {
 	GObject		       parent;
-	GpmScreensaverPrivate *priv;
-} GpmScreensaver;
+	CpmScreensaverPrivate *priv;
+} CpmScreensaver;
 
 typedef struct
 {
 	GObjectClass	parent_class;
-} GpmScreensaverClass;
+} CpmScreensaverClass;
 
 GType		 cpm_screensaver_get_type		(void);
-GpmScreensaver	*cpm_screensaver_new			(void);
+CpmScreensaver	*cpm_screensaver_new			(void);
 void		 cpm_screensaver_test			(gpointer	 data);
 
-gboolean	 cpm_screensaver_lock			(GpmScreensaver	*screensaver);
-guint32 	 cpm_screensaver_add_throttle    	(GpmScreensaver	*screensaver,
+gboolean	 cpm_screensaver_lock			(CpmScreensaver	*screensaver);
+guint32 	 cpm_screensaver_add_throttle    	(CpmScreensaver	*screensaver,
 							 const gchar	*reason);
-gboolean 	 cpm_screensaver_remove_throttle    	(GpmScreensaver	*screensaver,
+gboolean 	 cpm_screensaver_remove_throttle    	(CpmScreensaver	*screensaver,
 							 guint32         cookie);
-gboolean	 cpm_screensaver_check_running		(GpmScreensaver	*screensaver);
-gboolean	 cpm_screensaver_poke			(GpmScreensaver	*screensaver);
+gboolean	 cpm_screensaver_check_running		(CpmScreensaver	*screensaver);
+gboolean	 cpm_screensaver_poke			(CpmScreensaver	*screensaver);
 
 G_END_DECLS
 

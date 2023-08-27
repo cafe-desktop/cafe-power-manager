@@ -32,13 +32,13 @@
 #include "cpm-kbd-backlight.h"
 #include "gsd-media-keys-window.h"
 
-struct GpmKbdBacklightPrivate
+struct CpmKbdBacklightPrivate
 {
     UpClient        *client;
-    GpmButton       *button;
+    CpmButton       *button;
     GSettings       *settings;
-    GpmControl      *control;
-    GpmIdle         *idle;
+    CpmControl      *control;
+    CpmIdle         *idle;
     gboolean         can_dim;
     gboolean         system_is_idle;
     GTimer          *idle_timer;
@@ -60,7 +60,7 @@ enum {
 
 static guint signals [LAST_SIGNAL] = { 0 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmKbdBacklight, cpm_kbd_backlight, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (CpmKbdBacklight, cpm_kbd_backlight, G_TYPE_OBJECT)
 
 /**
  * cpm_kbd_backlight_error_quark:
@@ -84,7 +84,7 @@ cpm_kbd_backlight_error_quark (void)
  * Return value:
  */
 gboolean
-cpm_kbd_backlight_get_brightness (GpmKbdBacklight *backlight,
+cpm_kbd_backlight_get_brightness (CpmKbdBacklight *backlight,
                  guint *brightness,
                  GError **error)
 {
@@ -104,7 +104,7 @@ cpm_kbd_backlight_get_brightness (GpmKbdBacklight *backlight,
 }
 
 static gboolean
-cpm_kbd_backlight_set (GpmKbdBacklight *backlight,
+cpm_kbd_backlight_set (CpmKbdBacklight *backlight,
               guint percentage)
 {
    gint scale;
@@ -147,7 +147,7 @@ cpm_kbd_backlight_set (GpmKbdBacklight *backlight,
  * cpm_kbd_backlight_dialog_init
  **/
 static void
-cpm_kbd_backlight_dialog_init (GpmKbdBacklight *backlight) 
+cpm_kbd_backlight_dialog_init (CpmKbdBacklight *backlight) 
 {  
     if (backlight->priv->popup != NULL
 	    && !msd_osd_window_is_valid (MSD_OSD_WINDOW (backlight->priv->popup))) {
@@ -170,7 +170,7 @@ cpm_kbd_backlight_dialog_init (GpmKbdBacklight *backlight)
  * Show the brightness popup, and place it nicely on the screen.
  **/
 static void
-cpm_kbd_backlight_dialog_show (GpmKbdBacklight *backlight)
+cpm_kbd_backlight_dialog_show (CpmKbdBacklight *backlight)
 {
 	int            orig_w;
 	int            orig_h;
@@ -235,7 +235,7 @@ cpm_kbd_backlight_dialog_show (GpmKbdBacklight *backlight)
  * cpm_kbd_backlight_brightness_up:
  **/
 static gboolean
-cpm_kbd_backlight_brightness_up (GpmKbdBacklight *backlight)
+cpm_kbd_backlight_brightness_up (CpmKbdBacklight *backlight)
 {
    guint new;
 
@@ -247,7 +247,7 @@ cpm_kbd_backlight_brightness_up (GpmKbdBacklight *backlight)
  * cpm_kbd_backlight_brightness_down:
  **/
 static gboolean
-cpm_kbd_backlight_brightness_down (GpmKbdBacklight *backlight)
+cpm_kbd_backlight_brightness_down (CpmKbdBacklight *backlight)
 {
    guint new;
 
@@ -265,7 +265,7 @@ cpm_kbd_backlight_brightness_down (GpmKbdBacklight *backlight)
  * Return value:
  **/
 gboolean
-cpm_kbd_backlight_set_brightness (GpmKbdBacklight *backlight,
+cpm_kbd_backlight_set_brightness (CpmKbdBacklight *backlight,
                  guint percentage,
                  GError **error)
 {
@@ -294,7 +294,7 @@ cpm_kbd_backlight_set_brightness (GpmKbdBacklight *backlight,
 }
 
 static void
-cpm_kbd_backlight_on_brightness_changed (GpmKbdBacklight *backlight,
+cpm_kbd_backlight_on_brightness_changed (CpmKbdBacklight *backlight,
                     guint value)
 {
    backlight->priv->brightness = value;
@@ -314,7 +314,7 @@ cpm_kbd_backlight_on_dbus_signal (GDBusProxy *proxy,
                  gpointer    user_data)
 {
    guint value;
-   GpmKbdBacklight *backlight = CPM_KBD_BACKLIGHT (user_data);
+   CpmKbdBacklight *backlight = CPM_KBD_BACKLIGHT (user_data);
 
    if (g_strcmp0 (signal_name, "BrightnessChanged") == 0) {
        g_variant_get (parameters, "(i)", &value);
@@ -348,7 +348,7 @@ cpm_kbd_backlight_dbus_method_call (GDBusConnection *connection,
    guint value;
    gboolean ret;
    GError *error = NULL;
-   GpmKbdBacklight *backlight = CPM_KBD_BACKLIGHT (user_data);
+   CpmKbdBacklight *backlight = CPM_KBD_BACKLIGHT (user_data);
 
    if (g_strcmp0 (method_name, "GetBrightness") == 0) {
        ret = cpm_kbd_backlight_get_brightness (backlight, &value, &error);
@@ -426,7 +426,7 @@ cpm_kbd_backlight_dbus_property_set (GDBusConnection *connection,
 }
 
 static gboolean
-cpm_kbd_backlight_evaluate_power_source_and_set (GpmKbdBacklight *backlight)
+cpm_kbd_backlight_evaluate_power_source_and_set (CpmKbdBacklight *backlight)
 {
    gfloat brightness;
    gfloat scale;
@@ -479,9 +479,9 @@ cpm_kbd_backlight_evaluate_power_source_and_set (GpmKbdBacklight *backlight)
  * Just make sure that the backlight is back on
  **/
 static void
-cpm_kbd_backlight_control_resume_cb (GpmControl *control,
-                    GpmControlAction action,
-                    GpmKbdBacklight *backlight)
+cpm_kbd_backlight_control_resume_cb (CpmControl *control,
+                    CpmControlAction action,
+                    CpmKbdBacklight *backlight)
 {
    gboolean ret;
 
@@ -500,7 +500,7 @@ cpm_kbd_backlight_control_resume_cb (GpmControl *control,
 static void
 cpm_kbd_backlight_client_changed_cb (UpClient *client,
                                      GParamSpec *pspec,
-                                     GpmKbdBacklight *backlight)
+                                     CpmKbdBacklight *backlight)
 {
    cpm_kbd_backlight_evaluate_power_source_and_set (backlight);
 }
@@ -512,9 +512,9 @@ cpm_kbd_backlight_client_changed_cb (UpClient *client,
  * @backlight: This class instance
  **/
 static void
-cpm_kbd_backlight_button_pressed_cb (GpmButton *button,
+cpm_kbd_backlight_button_pressed_cb (CpmButton *button,
                     const gchar *type,
-                    GpmKbdBacklight *backlight)
+                    CpmKbdBacklight *backlight)
 {
    static guint saved_brightness;
    gboolean ret;
@@ -565,9 +565,9 @@ cpm_kbd_backlight_button_pressed_cb (GpmButton *button,
  * session timeout has elapsed for the idle action.
  **/
 static void
-cpm_kbd_backlight_idle_changed_cb (GpmIdle *idle,
-                  GpmIdleMode mode,
-                  GpmKbdBacklight *backlight)
+cpm_kbd_backlight_idle_changed_cb (CpmIdle *idle,
+                  CpmIdleMode mode,
+                  CpmKbdBacklight *backlight)
 {
    gfloat brightness;
    gfloat scale;
@@ -627,7 +627,7 @@ cpm_kbd_backlight_idle_changed_cb (GpmIdle *idle,
 static void
 cpm_kbd_backlight_finalize (GObject *object)
 {
-   GpmKbdBacklight *backlight;
+   CpmKbdBacklight *backlight;
 
    g_return_if_fail (object != NULL);
    g_return_if_fail (CPM_IS_KBD_BACKLIGHT (object));
@@ -660,7 +660,7 @@ cpm_kbd_backlight_finalize (GObject *object)
  * @klass:
  **/
 static void
-cpm_kbd_backlight_class_init (GpmKbdBacklightClass *klass)
+cpm_kbd_backlight_class_init (CpmKbdBacklightClass *klass)
 {
    GObjectClass *object_class = G_OBJECT_CLASS (klass);
    object_class->finalize = cpm_kbd_backlight_finalize;
@@ -669,7 +669,7 @@ cpm_kbd_backlight_class_init (GpmKbdBacklightClass *klass)
        g_signal_new ("brightness-changed",
                   G_TYPE_FROM_CLASS (object_class),
                   G_SIGNAL_RUN_LAST,
-                  G_STRUCT_OFFSET (GpmKbdBacklightClass, brightness_changed),
+                  G_STRUCT_OFFSET (CpmKbdBacklightClass, brightness_changed),
                   NULL,
                   NULL,
                   g_cclosure_marshal_VOID__UINT,
@@ -685,7 +685,7 @@ cpm_kbd_backlight_class_init (GpmKbdBacklightClass *klass)
  * Initializes the KbdBacklight class.
  **/
 static void
-cpm_kbd_backlight_init (GpmKbdBacklight *backlight)
+cpm_kbd_backlight_init (CpmKbdBacklight *backlight)
 {
    GVariant *u_brightness;
    GVariant *u_max_brightness;
@@ -801,12 +801,12 @@ noerr:
 
 /**
  * cpm_kbd_backlight_new:
- * Return value: A new GpmKbdBacklight class instance.
+ * Return value: A new CpmKbdBacklight class instance.
  **/
-GpmKbdBacklight *
+CpmKbdBacklight *
 cpm_kbd_backlight_new (void)
 {
-   GpmKbdBacklight *backlight = g_object_new (CPM_TYPE_KBD_BACKLIGHT, NULL);
+   CpmKbdBacklight *backlight = g_object_new (CPM_TYPE_KBD_BACKLIGHT, NULL);
    return backlight;
 }
 

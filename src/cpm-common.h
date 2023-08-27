@@ -144,7 +144,7 @@ typedef enum {
 	CPM_ICON_POLICY_LOW,
 	CPM_ICON_POLICY_CRITICAL,
 	CPM_ICON_POLICY_NEVER
-} GpmIconPolicy;
+} CpmIconPolicy;
 
 typedef enum {
 	CPM_ACTION_POLICY_BLANK,
@@ -153,7 +153,7 @@ typedef enum {
 	CPM_ACTION_POLICY_HIBERNATE,
 	CPM_ACTION_POLICY_INTERACTIVE,
 	CPM_ACTION_POLICY_NOTHING
-} GpmActionPolicy;
+} CpmActionPolicy;
 
 gchar        *cpm_get_timestring                (guint time);
 guint        cpm_discrete_from_percent          (guint percentage,

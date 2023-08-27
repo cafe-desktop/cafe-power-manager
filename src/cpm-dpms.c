@@ -48,10 +48,10 @@ static void   cpm_dpms_finalize  (GObject   *object);
 /* until we get a nice event-emitting DPMS extension, we have to poll... */
 #define CPM_DPMS_POLL_TIME	10
 
-struct GpmDpmsPrivate
+struct CpmDpmsPrivate
 {
 	gboolean		 dpms_capable;
-	GpmDpmsMode		 mode;
+	CpmDpmsMode		 mode;
 	guint			 timer_id;
 	Display			*display;
 };
@@ -64,7 +64,7 @@ enum {
 static guint signals [LAST_SIGNAL] = { 0 };
 static gpointer cpm_dpms_object = NULL;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmDpms, cpm_dpms, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (CpmDpms, cpm_dpms, G_TYPE_OBJECT)
 
 /**
  * cpm_dpms_error_quark:
@@ -82,9 +82,9 @@ cpm_dpms_error_quark (void)
  * cpm_dpms_x11_get_mode:
  **/
 static gboolean
-cpm_dpms_x11_get_mode (GpmDpms *dpms, GpmDpmsMode *mode, GError **error)
+cpm_dpms_x11_get_mode (CpmDpms *dpms, CpmDpmsMode *mode, GError **error)
 {
-	GpmDpmsMode result;
+	CpmDpmsMode result;
 	BOOL enabled = FALSE;
 	CARD16 state;
 
@@ -128,9 +128,9 @@ out:
  * cpm_dpms_x11_set_mode:
  **/
 static gboolean
-cpm_dpms_x11_set_mode (GpmDpms *dpms, GpmDpmsMode mode, GError **error)
+cpm_dpms_x11_set_mode (CpmDpms *dpms, CpmDpmsMode mode, GError **error)
 {
-	GpmDpmsMode current_mode;
+	CpmDpmsMode current_mode;
 	CARD16 state;
 	CARD16 current_state;
 	BOOL current_enabled;
@@ -191,7 +191,7 @@ cpm_dpms_x11_set_mode (GpmDpms *dpms, GpmDpmsMode mode, GError **error)
  * cpm_dpms_set_mode:
  **/
 gboolean
-cpm_dpms_set_mode (GpmDpms *dpms, GpmDpmsMode mode, GError **error)
+cpm_dpms_set_mode (CpmDpms *dpms, CpmDpmsMode mode, GError **error)
 {
 	gboolean ret;
 
@@ -212,7 +212,7 @@ cpm_dpms_set_mode (GpmDpms *dpms, GpmDpmsMode mode, GError **error)
  * cpm_dpms_get_mode:
  **/
 gboolean
-cpm_dpms_get_mode (GpmDpms *dpms, GpmDpmsMode *mode, GError **error)
+cpm_dpms_get_mode (CpmDpms *dpms, CpmDpmsMode *mode, GError **error)
 {
 	gboolean ret;
 	if (mode)
@@ -225,10 +225,10 @@ cpm_dpms_get_mode (GpmDpms *dpms, GpmDpmsMode *mode, GError **error)
  * cpm_dpms_poll_mode_cb:
  **/
 static gboolean
-cpm_dpms_poll_mode_cb (GpmDpms *dpms)
+cpm_dpms_poll_mode_cb (CpmDpms *dpms)
 {
 	gboolean ret;
-	GpmDpmsMode mode;
+	CpmDpmsMode mode;
 	GError *error = NULL;
 
 	/* Try again */
@@ -250,7 +250,7 @@ cpm_dpms_poll_mode_cb (GpmDpms *dpms)
  * cpm_dpms_clear_timeouts:
  **/
 static gboolean
-cpm_dpms_clear_timeouts (GpmDpms *dpms)
+cpm_dpms_clear_timeouts (CpmDpms *dpms)
 {
 	gboolean ret = FALSE;
 
@@ -271,7 +271,7 @@ out:
  * cpm_dpms_class_init:
  **/
 static void
-cpm_dpms_class_init (GpmDpmsClass *klass)
+cpm_dpms_class_init (CpmDpmsClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 
@@ -280,7 +280,7 @@ cpm_dpms_class_init (GpmDpmsClass *klass)
 	signals [MODE_CHANGED] =
 		g_signal_new ("mode-changed",
 			      G_TYPE_FROM_CLASS (object_class), G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmDpmsClass, mode_changed),
+			      G_STRUCT_OFFSET (CpmDpmsClass, mode_changed),
 			      NULL, NULL, g_cclosure_marshal_VOID__UINT,
 			      G_TYPE_NONE, 1, G_TYPE_UINT);
 }
@@ -289,7 +289,7 @@ cpm_dpms_class_init (GpmDpmsClass *klass)
  * cpm_dpms_init:
  **/
 static void
-cpm_dpms_init (GpmDpms *dpms)
+cpm_dpms_init (CpmDpms *dpms)
 {
 	dpms->priv = cpm_dpms_get_instance_private (dpms);
 
@@ -297,7 +297,7 @@ cpm_dpms_init (GpmDpms *dpms)
 	dpms->priv->display = CDK_DISPLAY_XDISPLAY (cdk_display_get_default());
 	dpms->priv->dpms_capable = DPMSCapable (dpms->priv->display);
 	dpms->priv->timer_id = g_timeout_add_seconds (CPM_DPMS_POLL_TIME, (GSourceFunc)cpm_dpms_poll_mode_cb, dpms);
-	g_source_set_name_by_id (dpms->priv->timer_id, "[GpmDpms] poll");
+	g_source_set_name_by_id (dpms->priv->timer_id, "[CpmDpms] poll");
 
 	/* ensure we clear the default timeouts (Standby: 1200s, Suspend: 1800s, Off: 2400s) */
 	cpm_dpms_clear_timeouts (dpms);
@@ -309,7 +309,7 @@ cpm_dpms_init (GpmDpms *dpms)
 static void
 cpm_dpms_finalize (GObject *object)
 {
-	GpmDpms *dpms;
+	CpmDpms *dpms;
 
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (CPM_IS_DPMS (object));
@@ -329,7 +329,7 @@ cpm_dpms_finalize (GObject *object)
 /**
  * cpm_dpms_new:
  **/
-GpmDpms *
+CpmDpms *
 cpm_dpms_new (void)
 {
 	if (cpm_dpms_object != NULL) {
@@ -351,12 +351,12 @@ cpm_dpms_new (void)
 void
 cpm_dpms_test (gpointer data)
 {
-	GpmDpms *dpms;
+	CpmDpms *dpms;
 	gboolean ret;
 	GError *error = NULL;
 	EggTest *test = (EggTest *) data;
 
-	if (!egg_test_start (test, "GpmDpms"))
+	if (!egg_test_start (test, "CpmDpms"))
 		return;
 
 	/************************************************************/

@@ -28,48 +28,48 @@
 G_BEGIN_DECLS
 
 #define CPM_TYPE_ENGINE		(cpm_engine_get_type ())
-#define CPM_ENGINE(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_ENGINE, GpmEngine))
-#define CPM_ENGINE_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_ENGINE, GpmEngineClass))
+#define CPM_ENGINE(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_ENGINE, CpmEngine))
+#define CPM_ENGINE_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_ENGINE, CpmEngineClass))
 #define CPM_IS_ENGINE(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_ENGINE))
 #define CPM_IS_ENGINE_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_ENGINE))
-#define CPM_ENGINE_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_ENGINE, GpmEngineClass))
+#define CPM_ENGINE_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_ENGINE, CpmEngineClass))
 
-typedef struct GpmEnginePrivate GpmEnginePrivate;
+typedef struct CpmEnginePrivate CpmEnginePrivate;
 
 typedef struct
 {
 	GObject		 parent;
-	GpmEnginePrivate *priv;
-} GpmEngine;
+	CpmEnginePrivate *priv;
+} CpmEngine;
 
 typedef struct
 {
 	GObjectClass	parent_class;
-	void		(* icon_changed)	(GpmEngine	*engine,
+	void		(* icon_changed)	(CpmEngine	*engine,
 						 gchar		*icon);
-	void		(* summary_changed)	(GpmEngine	*engine,
+	void		(* summary_changed)	(CpmEngine	*engine,
 						 gchar		*status);
-	void		(* low_capacity)	(GpmEngine	*engine,
+	void		(* low_capacity)	(CpmEngine	*engine,
 						 UpDevice	*device);
-	void		(* charge_low)		(GpmEngine	*engine,
+	void		(* charge_low)		(CpmEngine	*engine,
 						 UpDevice	*device);
-	void		(* charge_critical)	(GpmEngine	*engine,
+	void		(* charge_critical)	(CpmEngine	*engine,
 						 UpDevice	*device);
-	void		(* charge_action)	(GpmEngine	*engine,
+	void		(* charge_action)	(CpmEngine	*engine,
 						 UpDevice	*device);
-	void		(* fully_charged)	(GpmEngine	*engine,
+	void		(* fully_charged)	(CpmEngine	*engine,
 						 UpDevice	*device);
-	void		(* discharging)		(GpmEngine	*engine,
+	void		(* discharging)		(CpmEngine	*engine,
 						 UpDevice	*device);
-	void		(* devices_changed)	(GpmEngine	*engine);
-} GpmEngineClass;
+	void		(* devices_changed)	(CpmEngine	*engine);
+} CpmEngineClass;
 
 GType		 cpm_engine_get_type		(void);
-GpmEngine	*cpm_engine_new			(void);
-gchar		*cpm_engine_get_icon		(GpmEngine	*engine);
-gchar		*cpm_engine_get_summary		(GpmEngine	*engine);
-GPtrArray	*cpm_engine_get_devices		(GpmEngine	*engine);
-UpDevice	*cpm_engine_get_primary_device	(GpmEngine	*engine);
+CpmEngine	*cpm_engine_new			(void);
+gchar		*cpm_engine_get_icon		(CpmEngine	*engine);
+gchar		*cpm_engine_get_summary		(CpmEngine	*engine);
+GPtrArray	*cpm_engine_get_devices		(CpmEngine	*engine);
+UpDevice	*cpm_engine_get_primary_device	(CpmEngine	*engine);
 
 G_END_DECLS
 

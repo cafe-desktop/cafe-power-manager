@@ -26,11 +26,11 @@
 G_BEGIN_DECLS
 
 #define CPM_TYPE_DPMS		(cpm_dpms_get_type ())
-#define CPM_DPMS(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_DPMS, GpmDpms))
-#define CPM_DPMS_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_DPMS, GpmDpmsClass))
+#define CPM_DPMS(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_DPMS, CpmDpms))
+#define CPM_DPMS_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_DPMS, CpmDpmsClass))
 #define CPM_IS_DPMS(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_DPMS))
 #define CPM_IS_DPMS_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_DPMS))
-#define CPM_DPMS_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_DPMS, GpmDpmsClass))
+#define CPM_DPMS_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_DPMS, CpmDpmsClass))
 
 typedef enum {
 	CPM_DPMS_MODE_ON,
@@ -38,38 +38,38 @@ typedef enum {
 	CPM_DPMS_MODE_SUSPEND,
 	CPM_DPMS_MODE_OFF,
 	CPM_DPMS_MODE_UNKNOWN
-} GpmDpmsMode;
+} CpmDpmsMode;
 
-typedef struct GpmDpmsPrivate GpmDpmsPrivate;
+typedef struct CpmDpmsPrivate CpmDpmsPrivate;
 
 typedef struct
 {
 	GObject	 	parent;
-	GpmDpmsPrivate *priv;
-} GpmDpms;
+	CpmDpmsPrivate *priv;
+} CpmDpms;
 
 typedef struct
 {
 	GObjectClass	parent_class;
-	void		(* mode_changed)	(GpmDpms 	*dpms,
-						 GpmDpmsMode	 mode);
-} GpmDpmsClass;
+	void		(* mode_changed)	(CpmDpms 	*dpms,
+						 CpmDpmsMode	 mode);
+} CpmDpmsClass;
 
 typedef enum
 {
 	CPM_DPMS_ERROR_GENERAL
-} GpmDpmsError;
+} CpmDpmsError;
 
 #define CPM_DPMS_ERROR cpm_dpms_error_quark ()
 
 GQuark		 cpm_dpms_error_quark		(void);
 GType		 cpm_dpms_get_type		(void);
-GpmDpms		*cpm_dpms_new			(void);
-gboolean	 cpm_dpms_get_mode	 	(GpmDpms	*dpms,
-						 GpmDpmsMode	*mode,
+CpmDpms		*cpm_dpms_new			(void);
+gboolean	 cpm_dpms_get_mode	 	(CpmDpms	*dpms,
+						 CpmDpmsMode	*mode,
 						 GError		**error);
-gboolean	 cpm_dpms_set_mode	 	(GpmDpms	*dpms,
-						 GpmDpmsMode	 mode,
+gboolean	 cpm_dpms_set_mode	 	(CpmDpms	*dpms,
+						 CpmDpmsMode	 mode,
 						 GError		**error);
 void		 cpm_dpms_test			(gpointer	 data);
 

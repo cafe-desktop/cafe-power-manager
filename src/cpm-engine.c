@@ -40,14 +40,14 @@ static void     cpm_engine_finalize   (GObject	  *object);
 #define CPM_ENGINE_RESUME_DELAY		2*1000
 #define CPM_ENGINE_WARN_ACCURACY	20
 
-struct GpmEnginePrivate
+struct CpmEnginePrivate
 {
 	GSettings		*settings;
 	UpClient		*client;
 	UpDevice		*battery_composite;
 	GPtrArray		*array;
-	GpmPhone		*phone;
-	GpmIconPolicy		 icon_policy;
+	CpmPhone		*phone;
+	CpmIconPolicy		 icon_policy;
 	gchar			*previous_icon;
 	gchar			*previous_summary;
 
@@ -78,11 +78,11 @@ enum {
 static guint signals [LAST_SIGNAL] = { 0 };
 static gpointer cpm_engine_object = NULL;
 
-G_DEFINE_TYPE_WITH_PRIVATE (GpmEngine, cpm_engine, G_TYPE_OBJECT)
+G_DEFINE_TYPE_WITH_PRIVATE (CpmEngine, cpm_engine, G_TYPE_OBJECT)
 
-static UpDevice *cpm_engine_get_composite_device (GpmEngine *engine, UpDevice *original_device);
-static UpDevice *cpm_engine_update_composite_device (GpmEngine *engine, UpDevice *original_device);
-static void cpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, GpmEngine *engine);
+static UpDevice *cpm_engine_get_composite_device (CpmEngine *engine, UpDevice *original_device);
+static UpDevice *cpm_engine_update_composite_device (CpmEngine *engine, UpDevice *original_device);
+static void cpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, CpmEngine *engine);
 
 #define CPM_ENGINE_WARNING_NONE UP_DEVICE_LEVEL_NONE
 #define CPM_ENGINE_WARNING_DISCHARGING UP_DEVICE_LEVEL_DISCHARGING
@@ -96,10 +96,10 @@ static void cpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, G
  * This gets the possible engine state for the device according to the
  * policy, which could be per-percent, or per-time.
  *
- * Return value: A GpmEngine state, e.g. CPM_ENGINE_WARNING_DISCHARGING
+ * Return value: A CpmEngine state, e.g. CPM_ENGINE_WARNING_DISCHARGING
  **/
 static UpDeviceLevel
-cpm_engine_get_warning (GpmEngine *engine, UpDevice *device)
+cpm_engine_get_warning (CpmEngine *engine, UpDevice *device)
 {
 	UpDeviceLevel warning;
 	g_object_get (device, "warning-level", &warning, NULL);
@@ -114,7 +114,7 @@ cpm_engine_get_warning (GpmEngine *engine, UpDevice *device)
  * Returns the complete tooltip ready for display
  **/
 gchar *
-cpm_engine_get_summary (GpmEngine *engine)
+cpm_engine_get_summary (CpmEngine *engine)
 {
 	guint i;
 	GPtrArray *array;
@@ -161,7 +161,7 @@ cpm_engine_get_summary (GpmEngine *engine)
  * Returns the icon
  **/
 static gchar *
-cpm_engine_get_icon_priv (GpmEngine *engine, UpDeviceKind device_kind, UpDeviceLevel warning, gboolean use_state)
+cpm_engine_get_icon_priv (CpmEngine *engine, UpDeviceKind device_kind, UpDeviceLevel warning, gboolean use_state)
 {
 	guint i;
 	GPtrArray *array;
@@ -211,7 +211,7 @@ cpm_engine_get_icon_priv (GpmEngine *engine, UpDeviceKind device_kind, UpDeviceL
  * Returns the icon
  **/
 gchar *
-cpm_engine_get_icon (GpmEngine *engine)
+cpm_engine_get_icon (CpmEngine *engine)
 {
 	gchar *icon = NULL;
 
@@ -300,7 +300,7 @@ cpm_engine_get_icon (GpmEngine *engine)
  * cpm_engine_recalculate_state_icon:
  */
 static gboolean
-cpm_engine_recalculate_state_icon (GpmEngine *engine)
+cpm_engine_recalculate_state_icon (CpmEngine *engine)
 {
 	gchar *icon;
 
@@ -349,7 +349,7 @@ cpm_engine_recalculate_state_icon (GpmEngine *engine)
  * cpm_engine_recalculate_state_summary:
  */
 static gboolean
-cpm_engine_recalculate_state_summary (GpmEngine *engine)
+cpm_engine_recalculate_state_summary (CpmEngine *engine)
 {
 	gchar *summary;
 
@@ -378,7 +378,7 @@ cpm_engine_recalculate_state_summary (GpmEngine *engine)
  * cpm_engine_recalculate_state:
  */
 static void
-cpm_engine_recalculate_state (GpmEngine *engine)
+cpm_engine_recalculate_state (CpmEngine *engine)
 {
 
 	g_return_if_fail (engine != NULL);
@@ -394,7 +394,7 @@ cpm_engine_recalculate_state (GpmEngine *engine)
  * cpm_engine_settings_key_changed_cb:
  **/
 static void
-cpm_engine_settings_key_changed_cb (GSettings *settings, const gchar *key, GpmEngine *engine)
+cpm_engine_settings_key_changed_cb (GSettings *settings, const gchar *key, CpmEngine *engine)
 {
 
 	if (g_strcmp0 (key, CPM_SETTINGS_USE_TIME_POLICY) == 0) {
@@ -414,7 +414,7 @@ cpm_engine_settings_key_changed_cb (GSettings *settings, const gchar *key, GpmEn
  * cpm_engine_device_check_capacity:
  **/
 static gboolean
-cpm_engine_device_check_capacity (GpmEngine *engine, UpDevice *device)
+cpm_engine_device_check_capacity (CpmEngine *engine, UpDevice *device)
 {
 	gboolean ret;
 	UpDeviceKind kind;
@@ -451,7 +451,7 @@ cpm_engine_device_check_capacity (GpmEngine *engine, UpDevice *device)
  * cpm_engine_get_composite_device:
  **/
 static UpDevice *
-cpm_engine_get_composite_device (GpmEngine *engine, UpDevice *original_device)
+cpm_engine_get_composite_device (CpmEngine *engine, UpDevice *original_device)
 {
 	return engine->priv->battery_composite;
 }
@@ -460,7 +460,7 @@ cpm_engine_get_composite_device (GpmEngine *engine, UpDevice *original_device)
  * cpm_engine_update_composite_device:
  **/
 static UpDevice *
-cpm_engine_update_composite_device (GpmEngine *engine, UpDevice *original_device)
+cpm_engine_update_composite_device (CpmEngine *engine, UpDevice *original_device)
 {
 	gchar *text;
 
@@ -478,7 +478,7 @@ cpm_engine_update_composite_device (GpmEngine *engine, UpDevice *original_device
  * cpm_engine_device_add:
  **/
 static void
-cpm_engine_device_add (GpmEngine *engine, UpDevice *device)
+cpm_engine_device_add (CpmEngine *engine, UpDevice *device)
 {
 	UpDeviceLevel warning;
 	UpDeviceState state;
@@ -522,7 +522,7 @@ cpm_engine_device_add (GpmEngine *engine, UpDevice *device)
  * cpm_engine_coldplug_idle_cb:
  **/
 static gboolean
-cpm_engine_coldplug_idle_cb (GpmEngine *engine)
+cpm_engine_coldplug_idle_cb (CpmEngine *engine)
 {
 	guint i;
 	GPtrArray *array = NULL;
@@ -551,7 +551,7 @@ cpm_engine_coldplug_idle_cb (GpmEngine *engine)
  * cpm_engine_device_added_cb:
  **/
 static void
-cpm_engine_device_added_cb (UpClient *client, UpDevice *device, GpmEngine *engine)
+cpm_engine_device_added_cb (UpClient *client, UpDevice *device, CpmEngine *engine)
 {
 	cpm_engine_device_add (engine, device);
 }
@@ -560,7 +560,7 @@ cpm_engine_device_added_cb (UpClient *client, UpDevice *device, GpmEngine *engin
  * cpm_engine_device_removed_cb:
  **/
 static void
-cpm_engine_device_removed_cb (UpClient *client, const char *object_path, GpmEngine *engine)
+cpm_engine_device_removed_cb (UpClient *client, const char *object_path, CpmEngine *engine)
 {
 	guint i;
 
@@ -579,7 +579,7 @@ cpm_engine_device_removed_cb (UpClient *client, const char *object_path, GpmEngi
  * cpm_engine_device_changed_cb:
  **/
 static void
-cpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, GpmEngine *engine)
+cpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, CpmEngine *engine)
 {
 	UpDeviceKind kind;
 	UpDeviceState state;
@@ -647,7 +647,7 @@ cpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, GpmEngine *en
  * Return value: the UpDevice array, free with g_ptr_array_unref()
  **/
 GPtrArray *
-cpm_engine_get_devices (GpmEngine *engine)
+cpm_engine_get_devices (CpmEngine *engine)
 {
 	return g_ptr_array_ref (engine->priv->array);
 }
@@ -658,7 +658,7 @@ cpm_engine_get_devices (GpmEngine *engine)
  * Return value: the #UpDevice, free with g_object_unref()
  **/
 UpDevice *
-cpm_engine_get_primary_device (GpmEngine *engine)
+cpm_engine_get_primary_device (CpmEngine *engine)
 {
 	guint i;
 	UpDevice *device = NULL;
@@ -700,7 +700,7 @@ cpm_engine_get_primary_device (GpmEngine *engine)
  * phone_device_added_cb:
  **/
 static void
-phone_device_added_cb (GpmPhone *phone, guint idx, GpmEngine *engine)
+phone_device_added_cb (CpmPhone *phone, guint idx, CpmEngine *engine)
 {
 	UpDevice *device;
 	device = up_device_new ();
@@ -725,7 +725,7 @@ phone_device_added_cb (GpmPhone *phone, guint idx, GpmEngine *engine)
  * phone_device_removed_cb:
  **/
 static void
-phone_device_removed_cb (GpmPhone *phone, guint idx, GpmEngine *engine)
+phone_device_removed_cb (CpmPhone *phone, guint idx, CpmEngine *engine)
 {
 	guint i;
 	UpDevice *device;
@@ -755,7 +755,7 @@ phone_device_removed_cb (GpmPhone *phone, guint idx, GpmEngine *engine)
  * phone_device_refresh_cb:
  **/
 static void
-phone_device_refresh_cb (GpmPhone *phone, guint idx, GpmEngine *engine)
+phone_device_refresh_cb (CpmPhone *phone, guint idx, CpmEngine *engine)
 {
 	guint i;
 	UpDevice *device;
@@ -794,7 +794,7 @@ phone_device_refresh_cb (GpmPhone *phone, guint idx, GpmEngine *engine)
  * @engine: This class instance
  **/
 static void
-cpm_engine_init (GpmEngine *engine)
+cpm_engine_init (CpmEngine *engine)
 {
 	GPtrArray *array = NULL;
 	guint i;
@@ -849,7 +849,7 @@ cpm_engine_init (GpmEngine *engine)
 		egg_debug ("Using percentage notification policy");
 
 	idle_id = g_idle_add ((GSourceFunc) cpm_engine_coldplug_idle_cb, engine);
-	g_source_set_name_by_id (idle_id, "[GpmEngine] coldplug");
+	g_source_set_name_by_id (idle_id, "[CpmEngine] coldplug");
 }
 
 /**
@@ -857,7 +857,7 @@ cpm_engine_init (GpmEngine *engine)
  * @engine: This class instance
  **/
 static void
-cpm_engine_class_init (GpmEngineClass *klass)
+cpm_engine_class_init (CpmEngineClass *klass)
 {
 	GObjectClass *object_class = G_OBJECT_CLASS (klass);
 	object_class->finalize = cpm_engine_finalize;
@@ -866,63 +866,63 @@ cpm_engine_class_init (GpmEngineClass *klass)
 		g_signal_new ("icon-changed",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmEngineClass, icon_changed),
+			      G_STRUCT_OFFSET (CpmEngineClass, icon_changed),
 			      NULL, NULL, g_cclosure_marshal_VOID__STRING,
 			      G_TYPE_NONE, 1, G_TYPE_STRING);
 	signals [SUMMARY_CHANGED] =
 		g_signal_new ("summary-changed",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmEngineClass, summary_changed),
+			      G_STRUCT_OFFSET (CpmEngineClass, summary_changed),
 			      NULL, NULL, g_cclosure_marshal_VOID__STRING,
 			      G_TYPE_NONE, 1, G_TYPE_STRING);
 	signals [LOW_CAPACITY] =
 		g_signal_new ("low-capacity",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmEngineClass, low_capacity),
+			      G_STRUCT_OFFSET (CpmEngineClass, low_capacity),
 			      NULL, NULL, g_cclosure_marshal_VOID__POINTER,
 			      G_TYPE_NONE, 1, G_TYPE_POINTER);
 	signals [FULLY_CHARGED] =
 		g_signal_new ("fully-charged",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmEngineClass, fully_charged),
+			      G_STRUCT_OFFSET (CpmEngineClass, fully_charged),
 			      NULL, NULL, g_cclosure_marshal_VOID__POINTER,
 			      G_TYPE_NONE, 1, G_TYPE_POINTER);
 	signals [DISCHARGING] =
 		g_signal_new ("discharging",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmEngineClass, discharging),
+			      G_STRUCT_OFFSET (CpmEngineClass, discharging),
 			      NULL, NULL, g_cclosure_marshal_VOID__POINTER,
 			      G_TYPE_NONE, 1, G_TYPE_POINTER);
 	signals [CHARGE_ACTION] =
 		g_signal_new ("charge-action",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmEngineClass, charge_action),
+			      G_STRUCT_OFFSET (CpmEngineClass, charge_action),
 			      NULL, NULL, g_cclosure_marshal_VOID__POINTER,
 			      G_TYPE_NONE, 1, G_TYPE_POINTER);
 	signals [CHARGE_LOW] =
 		g_signal_new ("charge-low",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmEngineClass, charge_low),
+			      G_STRUCT_OFFSET (CpmEngineClass, charge_low),
 			      NULL, NULL, g_cclosure_marshal_VOID__POINTER,
 			      G_TYPE_NONE, 1, G_TYPE_POINTER);
 	signals [CHARGE_CRITICAL] =
 		g_signal_new ("charge-critical",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmEngineClass, charge_critical),
+			      G_STRUCT_OFFSET (CpmEngineClass, charge_critical),
 			      NULL, NULL, g_cclosure_marshal_VOID__POINTER,
 			      G_TYPE_NONE, 1, G_TYPE_POINTER);
 	signals [DEVICES_CHANGED] =
 		g_signal_new ("devices-changed",
 			      G_TYPE_FROM_CLASS (object_class),
 			      G_SIGNAL_RUN_LAST,
-			      G_STRUCT_OFFSET (GpmEngineClass, devices_changed),
+			      G_STRUCT_OFFSET (CpmEngineClass, devices_changed),
 			      NULL, NULL, g_cclosure_marshal_VOID__VOID,
 			      G_TYPE_NONE, 0);
 }
@@ -934,7 +934,7 @@ cpm_engine_class_init (GpmEngineClass *klass)
 static void
 cpm_engine_finalize (GObject *object)
 {
-	GpmEngine *engine;
+	CpmEngine *engine;
 
 	g_return_if_fail (object != NULL);
 	g_return_if_fail (CPM_IS_ENGINE (object));
@@ -957,7 +957,7 @@ cpm_engine_finalize (GObject *object)
  * cpm_engine_new:
  * Return value: new class instance.
  **/
-GpmEngine *
+CpmEngine *
 cpm_engine_new (void)
 {
 	if (cpm_engine_object != NULL) {

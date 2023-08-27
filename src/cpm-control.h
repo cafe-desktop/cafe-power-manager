@@ -28,58 +28,58 @@
 G_BEGIN_DECLS
 
 #define CPM_TYPE_CONTROL		(cpm_control_get_type ())
-#define CPM_CONTROL(o)			(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_CONTROL, GpmControl))
-#define CPM_CONTROL_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_CONTROL, GpmControlClass))
+#define CPM_CONTROL(o)			(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_CONTROL, CpmControl))
+#define CPM_CONTROL_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_CONTROL, CpmControlClass))
 #define CPM_IS_CONTROL(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_CONTROL))
 #define CPM_IS_CONTROL_CLASS(k)		(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_CONTROL))
-#define CPM_CONTROL_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_CONTROL, GpmControlClass))
+#define CPM_CONTROL_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_CONTROL, CpmControlClass))
 
-typedef struct GpmControlPrivate GpmControlPrivate;
+typedef struct CpmControlPrivate CpmControlPrivate;
 
 typedef struct
 {
 	GObject		      parent;
-	GpmControlPrivate *priv;
-} GpmControl;
+	CpmControlPrivate *priv;
+} CpmControl;
 
 typedef enum
 {
 	 CPM_CONTROL_ACTION_SUSPEND,
 	 CPM_CONTROL_ACTION_HIBERNATE,
 	 CPM_CONTROL_ACTION_LAST
-} GpmControlAction;
+} CpmControlAction;
 
 typedef enum
 {
 	 CPM_CONTROL_ERROR_GENERAL,
 	 CPM_CONTROL_ERROR_LAST
-} GpmControlError;
+} CpmControlError;
 
 typedef struct
 {
 	GObjectClass	parent_class;
-	void		(* resume)			(GpmControl	*control,
-							 GpmControlAction action);
-	void		(* sleep)			(GpmControl	*control,
-							 GpmControlAction action);
-	void		(* sleep_failure)		(GpmControl	*control,
-							 GpmControlAction action);
-	void		(* request)			(GpmControl	*control,
+	void		(* resume)			(CpmControl	*control,
+							 CpmControlAction action);
+	void		(* sleep)			(CpmControl	*control,
+							 CpmControlAction action);
+	void		(* sleep_failure)		(CpmControl	*control,
+							 CpmControlAction action);
+	void		(* request)			(CpmControl	*control,
 							 const gchar	**type);
-} GpmControlClass;
+} CpmControlClass;
 
 #define CPM_CONTROL_ERROR cpm_control_error_quark ()
 
 GQuark		 cpm_control_error_quark		(void);
 GType		 cpm_control_get_type			(void);
-GpmControl	*cpm_control_new			(void);
-gboolean	 cpm_control_suspend			(GpmControl	*control,
+CpmControl	*cpm_control_new			(void);
+gboolean	 cpm_control_suspend			(CpmControl	*control,
 							 GError		**error);
-gboolean	 cpm_control_hibernate			(GpmControl	*control,
+gboolean	 cpm_control_hibernate			(CpmControl	*control,
 							 GError		**error);
-gboolean	 cpm_control_shutdown			(GpmControl	*control,
+gboolean	 cpm_control_shutdown			(CpmControl	*control,
 						 	 GError		**error);
-gboolean	 cpm_control_get_lock_policy		(GpmControl	*control,
+gboolean	 cpm_control_get_lock_policy		(CpmControl	*control,
 							 const gchar	*policy);
 
 G_END_DECLS

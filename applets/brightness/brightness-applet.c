@@ -39,11 +39,11 @@
 #include "cpm-common.h"
 
 #define CPM_TYPE_BRIGHTNESS_APPLET		(cpm_brightness_applet_get_type ())
-#define CPM_BRIGHTNESS_APPLET(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_BRIGHTNESS_APPLET, GpmBrightnessApplet))
-#define CPM_BRIGHTNESS_APPLET_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_BRIGHTNESS_APPLET, GpmBrightnessAppletClass))
+#define CPM_BRIGHTNESS_APPLET(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_BRIGHTNESS_APPLET, CpmBrightnessApplet))
+#define CPM_BRIGHTNESS_APPLET_CLASS(k)		(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_BRIGHTNESS_APPLET, CpmBrightnessAppletClass))
 #define CPM_IS_BRIGHTNESS_APPLET(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_BRIGHTNESS_APPLET))
 #define CPM_IS_BRIGHTNESS_APPLET_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_BRIGHTNESS_APPLET))
-#define CPM_BRIGHTNESS_APPLET_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_BRIGHTNESS_APPLET, GpmBrightnessAppletClass))
+#define CPM_BRIGHTNESS_APPLET_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_BRIGHTNESS_APPLET, CpmBrightnessAppletClass))
 
 typedef struct{
 	CafePanelApplet parent;
@@ -62,11 +62,11 @@ typedef struct{
 	guint level;
 	/* a cache for panel size */
 	gint size;
-} GpmBrightnessApplet;
+} CpmBrightnessApplet;
 
 typedef struct{
 	CafePanelAppletClass	parent_class;
-} GpmBrightnessAppletClass;
+} CpmBrightnessAppletClass;
 
 GType                cpm_brightness_applet_get_type  (void);
 
@@ -75,26 +75,26 @@ GType                cpm_brightness_applet_get_type  (void);
 #define	CPM_DBUS_PATH_BACKLIGHT		"/org/cafe/PowerManager/Backlight"
 #define	CPM_DBUS_INTERFACE_BACKLIGHT	"org.cafe.PowerManager.Backlight"
 
-G_DEFINE_TYPE (GpmBrightnessApplet, cpm_brightness_applet, PANEL_TYPE_APPLET)
+G_DEFINE_TYPE (CpmBrightnessApplet, cpm_brightness_applet, PANEL_TYPE_APPLET)
 
-static void      cpm_applet_get_icon              (GpmBrightnessApplet *applet);
-static void      cpm_applet_check_size            (GpmBrightnessApplet *applet);
-static gboolean  cpm_applet_draw_cb               (GpmBrightnessApplet *applet);
-static void      cpm_applet_change_background_cb  (GpmBrightnessApplet *applet,
+static void      cpm_applet_get_icon              (CpmBrightnessApplet *applet);
+static void      cpm_applet_check_size            (CpmBrightnessApplet *applet);
+static gboolean  cpm_applet_draw_cb               (CpmBrightnessApplet *applet);
+static void      cpm_applet_change_background_cb  (CpmBrightnessApplet *applet,
 						   CafePanelAppletBackgroundType arg1,
 						   cairo_pattern_t *arg2, gpointer data);
 static void      cpm_applet_theme_change_cb (CtkIconTheme *icon_theme, gpointer data);
 static void      cpm_applet_stop_scroll_events_cb (CtkWidget *widget, CdkEvent  *event);
-static gboolean  cpm_applet_destroy_popup_cb      (GpmBrightnessApplet *applet);
-static void      cpm_applet_update_tooltip        (GpmBrightnessApplet *applet);
-static void      cpm_applet_update_popup_level    (GpmBrightnessApplet *applet);
-static gboolean  cpm_applet_plus_cb               (CtkWidget *w, GpmBrightnessApplet *applet);
-static gboolean  cpm_applet_minus_cb              (CtkWidget *w, GpmBrightnessApplet *applet);
-static gboolean  cpm_applet_key_press_cb          (CtkWidget *popup, CdkEventKey *event, GpmBrightnessApplet *applet);
-static gboolean  cpm_applet_scroll_cb             (GpmBrightnessApplet *applet, CdkEventScroll *event);
-static gboolean  cpm_applet_slide_cb              (CtkWidget *w, GpmBrightnessApplet *applet);
-static void      cpm_applet_create_popup          (GpmBrightnessApplet *applet);
-static gboolean  cpm_applet_popup_cb              (GpmBrightnessApplet *applet, CdkEventButton *event);
+static gboolean  cpm_applet_destroy_popup_cb      (CpmBrightnessApplet *applet);
+static void      cpm_applet_update_tooltip        (CpmBrightnessApplet *applet);
+static void      cpm_applet_update_popup_level    (CpmBrightnessApplet *applet);
+static gboolean  cpm_applet_plus_cb               (CtkWidget *w, CpmBrightnessApplet *applet);
+static gboolean  cpm_applet_minus_cb              (CtkWidget *w, CpmBrightnessApplet *applet);
+static gboolean  cpm_applet_key_press_cb          (CtkWidget *popup, CdkEventKey *event, CpmBrightnessApplet *applet);
+static gboolean  cpm_applet_scroll_cb             (CpmBrightnessApplet *applet, CdkEventScroll *event);
+static gboolean  cpm_applet_slide_cb              (CtkWidget *w, CpmBrightnessApplet *applet);
+static void      cpm_applet_create_popup          (CpmBrightnessApplet *applet);
+static gboolean  cpm_applet_popup_cb              (CpmBrightnessApplet *applet, CdkEventButton *event);
 static void      cpm_applet_dialog_about_cb       (CtkAction *action, gpointer data);
 static gboolean  cpm_applet_cb                    (CafePanelApplet *_applet, const gchar *iid, gpointer data);
 static void      cpm_applet_destroy_cb            (CtkWidget *widget);
@@ -114,7 +114,7 @@ static void      cpm_applet_destroy_cb            (CtkWidget *widget);
  * Return value: Success value, or zero for failure
  **/
 static gboolean
-cpm_applet_get_brightness (GpmBrightnessApplet *applet)
+cpm_applet_get_brightness (CpmBrightnessApplet *applet)
 {
 	GError  *error = NULL;
 	gboolean ret;
@@ -148,7 +148,7 @@ cpm_applet_get_brightness (GpmBrightnessApplet *applet)
  * Return value: Success value, or zero for failure
  **/
 static gboolean
-cpm_applet_set_brightness (GpmBrightnessApplet *applet)
+cpm_applet_set_brightness (CpmBrightnessApplet *applet)
 {
 	GError  *error = NULL;
 	gboolean ret;
@@ -181,7 +181,7 @@ cpm_applet_set_brightness (GpmBrightnessApplet *applet)
  * retrieve an icon from stock with a size adapted to panel
  **/
 static void
-cpm_applet_get_icon (GpmBrightnessApplet *applet)
+cpm_applet_get_icon (CpmBrightnessApplet *applet)
 {
 	const gchar *icon;
 
@@ -224,7 +224,7 @@ cpm_applet_get_icon (GpmBrightnessApplet *applet)
  * check if panel size has changed and applet adapt size
  **/
 static void
-cpm_applet_check_size (GpmBrightnessApplet *applet)
+cpm_applet_check_size (CpmBrightnessApplet *applet)
 {
 	CtkAllocation allocation;
 
@@ -253,7 +253,7 @@ cpm_applet_check_size (GpmBrightnessApplet *applet)
  * draws applet content (background + icon)
  **/
 static gboolean
-cpm_applet_draw_cb (GpmBrightnessApplet *applet)
+cpm_applet_draw_cb (CpmBrightnessApplet *applet)
 {
 	gint w, h, bg_type;
 	CdkRGBA color;
@@ -324,7 +324,7 @@ cpm_applet_draw_cb (GpmBrightnessApplet *applet)
  * Enqueues an expose event (don't know why it's not the default behaviour)
  **/
 static void
-cpm_applet_change_background_cb (GpmBrightnessApplet *applet,
+cpm_applet_change_background_cb (CpmBrightnessApplet *applet,
 				 CafePanelAppletBackgroundType arg1,
 				 cairo_pattern_t *arg2, gpointer data)
 {
@@ -338,7 +338,7 @@ cpm_applet_change_background_cb (GpmBrightnessApplet *applet,
  * destroys the popup (called if orientation has changed)
  **/
 static gboolean
-cpm_applet_destroy_popup_cb (GpmBrightnessApplet *applet)
+cpm_applet_destroy_popup_cb (CpmBrightnessApplet *applet)
 {
 	if (applet->popup != NULL) {
 		ctk_widget_destroy (applet->popup);
@@ -356,7 +356,7 @@ cpm_applet_destroy_popup_cb (GpmBrightnessApplet *applet)
  * sets tooltip's content (percentage or disabled)
  **/
 static void
-cpm_applet_update_tooltip (GpmBrightnessApplet *applet)
+cpm_applet_update_tooltip (CpmBrightnessApplet *applet)
 {
 	gchar *buf = NULL;
 	if (applet->popped == FALSE) {
@@ -387,7 +387,7 @@ cpm_applet_update_tooltip (GpmBrightnessApplet *applet)
  * FALSE TRUE  -> set HW from UI value
  **/
 static void
-cpm_applet_update_popup_level (GpmBrightnessApplet *applet)
+cpm_applet_update_popup_level (CpmBrightnessApplet *applet)
 {
 	if (applet->popup != NULL) {
 		ctk_widget_set_sensitive (applet->btn_plus, applet->level < 100);
@@ -405,7 +405,7 @@ cpm_applet_update_popup_level (GpmBrightnessApplet *applet)
  * callback for the plus button
  **/
 static gboolean
-cpm_applet_plus_cb (CtkWidget *w, GpmBrightnessApplet *applet)
+cpm_applet_plus_cb (CtkWidget *w, CpmBrightnessApplet *applet)
 {
 	if (applet->level < 100) {
 		applet->level++;
@@ -423,7 +423,7 @@ cpm_applet_plus_cb (CtkWidget *w, GpmBrightnessApplet *applet)
  * callback for the minus button
  **/
 static gboolean
-cpm_applet_minus_cb (CtkWidget *w, GpmBrightnessApplet *applet)
+cpm_applet_minus_cb (CtkWidget *w, CpmBrightnessApplet *applet)
 {
 	if (applet->level > 0) {
 		applet->level--;
@@ -441,7 +441,7 @@ cpm_applet_minus_cb (CtkWidget *w, GpmBrightnessApplet *applet)
  * callback for the slider
  **/
 static gboolean
-cpm_applet_slide_cb (CtkWidget *w, GpmBrightnessApplet *applet)
+cpm_applet_slide_cb (CtkWidget *w, CpmBrightnessApplet *applet)
 {
 	applet->level = ctk_range_get_value (CTK_RANGE(applet->slider));
 	applet->call_worked = cpm_applet_set_brightness (applet);
@@ -458,7 +458,7 @@ cpm_applet_slide_cb (CtkWidget *w, GpmBrightnessApplet *applet)
  * mainly escape to unpop and arrows to change brightness
  **/
 static gboolean
-cpm_applet_key_press_cb (CtkWidget *popup, CdkEventKey *event, GpmBrightnessApplet *applet)
+cpm_applet_key_press_cb (CtkWidget *popup, CdkEventKey *event, CpmBrightnessApplet *applet)
 {
 	int i;
 	
@@ -520,7 +520,7 @@ cpm_applet_key_press_cb (CtkWidget *popup, CdkEventKey *event, GpmBrightnessAppl
  * the applet is popped and no matter where the mouse is.
  **/
 static gboolean
-cpm_applet_scroll_cb (GpmBrightnessApplet *applet, CdkEventScroll *event)
+cpm_applet_scroll_cb (CpmBrightnessApplet *applet, CdkEventScroll *event)
 {
 	int i;
 
@@ -551,7 +551,7 @@ cpm_applet_scroll_cb (GpmBrightnessApplet *applet, CdkEventScroll *event)
 static gboolean
 on_popup_button_press (CtkWidget      *widget,
                        CdkEventButton *event,
-                       GpmBrightnessApplet *applet)
+                       CpmBrightnessApplet *applet)
 {
 	CtkWidget *event_widget;
 
@@ -577,7 +577,7 @@ on_popup_button_press (CtkWidget      *widget,
  * cretes a new popup according to orientation of panel
  **/
 static void
-cpm_applet_create_popup (GpmBrightnessApplet *applet)
+cpm_applet_create_popup (CpmBrightnessApplet *applet)
 {
 	static CtkWidget *box, *frame;
 	gint orientation = cafe_panel_applet_get_orient (CAFE_PANEL_APPLET (CAFE_PANEL_APPLET (applet)));
@@ -654,7 +654,7 @@ cpm_applet_create_popup (GpmBrightnessApplet *applet)
  * pops and unpops
  **/
 static gboolean
-cpm_applet_popup_cb (GpmBrightnessApplet *applet, CdkEventButton *event)
+cpm_applet_popup_cb (CpmBrightnessApplet *applet, CdkEventButton *event)
 {
 	CtkAllocation allocation, popup_allocation;
 	gint orientation, x, y;
@@ -752,7 +752,7 @@ cpm_applet_popup_cb (GpmBrightnessApplet *applet, CdkEventButton *event)
 static void
 cpm_applet_theme_change_cb (CtkIconTheme *icon_theme, gpointer data)
 {
-	GpmBrightnessApplet *applet = CPM_BRIGHTNESS_APPLET (data);
+	CpmBrightnessApplet *applet = CPM_BRIGHTNESS_APPLET (data);
 	cpm_applet_get_icon (applet);
 }
 
@@ -845,7 +845,7 @@ cpm_applet_help_cb (CtkAction *action, gpointer data)
 static void
 cpm_applet_destroy_cb (CtkWidget *widget)
 {
-	GpmBrightnessApplet *applet = CPM_BRIGHTNESS_APPLET(widget);
+	CpmBrightnessApplet *applet = CPM_BRIGHTNESS_APPLET(widget);
 
 	g_bus_unwatch_name (applet->bus_watch_id);
 	if (applet->icon != NULL)
@@ -857,7 +857,7 @@ cpm_applet_destroy_cb (CtkWidget *widget)
  * @klass: Class instance
  **/
 static void
-cpm_brightness_applet_class_init (GpmBrightnessAppletClass *class)
+cpm_brightness_applet_class_init (CpmBrightnessAppletClass *class)
 {
 	/* nothing to do here */
 }
@@ -865,7 +865,7 @@ cpm_brightness_applet_class_init (GpmBrightnessAppletClass *class)
 static void
 brightness_changed_cb (DBusGProxy          *proxy,
 		       guint	            brightness,
-		       GpmBrightnessApplet *applet)
+		       CpmBrightnessApplet *applet)
 {
 	egg_debug ("BrightnessChanged detected: %i\n", brightness);
 	applet->level = brightness;
@@ -875,7 +875,7 @@ brightness_changed_cb (DBusGProxy          *proxy,
  * cpm_brightness_applet_dbus_connect:
  **/
 gboolean
-cpm_brightness_applet_dbus_connect (GpmBrightnessApplet *applet)
+cpm_brightness_applet_dbus_connect (CpmBrightnessApplet *applet)
 {
 	GError *error = NULL;
 
@@ -919,7 +919,7 @@ cpm_brightness_applet_dbus_connect (GpmBrightnessApplet *applet)
  * cpm_brightness_applet_dbus_disconnect:
  **/
 gboolean
-cpm_brightness_applet_dbus_disconnect (GpmBrightnessApplet *applet)
+cpm_brightness_applet_dbus_disconnect (CpmBrightnessApplet *applet)
 {
 	if (applet->proxy != NULL) {
 		egg_debug ("removing proxy\n");
@@ -936,7 +936,7 @@ static void
 cpm_brightness_applet_name_appeared_cb (GDBusConnection *connection,
 					const gchar *name,
 					const gchar *name_owner,
-					GpmBrightnessApplet *applet)
+					CpmBrightnessApplet *applet)
 {
 	cpm_brightness_applet_dbus_connect (applet);
 	cpm_applet_update_tooltip (applet);
@@ -949,7 +949,7 @@ cpm_brightness_applet_name_appeared_cb (GDBusConnection *connection,
 void
 cpm_brightness_applet_name_vanished_cb (GDBusConnection *connection,
 					 const gchar *name,
-					 GpmBrightnessApplet *applet)
+					 CpmBrightnessApplet *applet)
 {
 	cpm_brightness_applet_dbus_disconnect (applet);
 	cpm_applet_update_tooltip (applet);
@@ -961,7 +961,7 @@ cpm_brightness_applet_name_vanished_cb (GDBusConnection *connection,
  * @applet: Brightness applet instance
  **/
 static void
-cpm_brightness_applet_init (GpmBrightnessApplet *applet)
+cpm_brightness_applet_init (CpmBrightnessApplet *applet)
 {
 	DBusGConnection *connection;
 
@@ -1034,7 +1034,7 @@ cpm_brightness_applet_init (GpmBrightnessApplet *applet)
 
 /**
  * cpm_applet_cb:
- * @_applet: GpmBrightnessApplet instance created by the applet factory
+ * @_applet: CpmBrightnessApplet instance created by the applet factory
  * @iid: Applet id
  *
  * the function called by libcafe-panel-applet factory after creation
@@ -1042,7 +1042,7 @@ cpm_brightness_applet_init (GpmBrightnessApplet *applet)
 static gboolean
 cpm_applet_cb (CafePanelApplet *_applet, const gchar *iid, gpointer data)
 {
-	GpmBrightnessApplet *applet = CPM_BRIGHTNESS_APPLET(_applet);
+	CpmBrightnessApplet *applet = CPM_BRIGHTNESS_APPLET(_applet);
 	CtkActionGroup *action_group;
 	gchar *ui_path;
 

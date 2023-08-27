@@ -119,7 +119,7 @@ timed_exit_cb (GMainLoop *loop)
  * cpm_main_stop_cb:
  **/
 static void
-cpm_main_stop_cb (GpmSession *session, GMainLoop *loop)
+cpm_main_stop_cb (CpmSession *session, GMainLoop *loop)
 {
 	g_main_loop_quit (loop);
 }
@@ -128,7 +128,7 @@ cpm_main_stop_cb (GpmSession *session, GMainLoop *loop)
  * cpm_main_query_end_session_cb:
  **/
 static void
-cpm_main_query_end_session_cb (GpmSession *session, guint flags, GMainLoop *loop)
+cpm_main_query_end_session_cb (CpmSession *session, guint flags, GMainLoop *loop)
 {
 	/* just send response */
 	cpm_session_end_session_response (session, TRUE, NULL);
@@ -138,7 +138,7 @@ cpm_main_query_end_session_cb (GpmSession *session, guint flags, GMainLoop *loop
  * cpm_main_end_session_cb:
  **/
 static void
-cpm_main_end_session_cb (GpmSession *session, guint flags, GMainLoop *loop)
+cpm_main_end_session_cb (CpmSession *session, guint flags, GMainLoop *loop)
 {
 	/* send response */
 	cpm_session_end_session_response (session, TRUE, NULL);
@@ -160,8 +160,8 @@ main (int argc, char *argv[])
 	gboolean version = FALSE;
 	gboolean timed_exit = FALSE;
 	gboolean immediate_exit = FALSE;
-	GpmSession *session = NULL;
-	GpmManager *manager = NULL;
+	CpmSession *session = NULL;
+	CpmManager *manager = NULL;
 	GError *error = NULL;
 	GOptionContext *context;
 	gint ret;
@@ -266,7 +266,7 @@ main (int argc, char *argv[])
 	 * on the command line */
 	if (timed_exit) {
 		timer_id = g_timeout_add_seconds (20, (GSourceFunc) timed_exit_cb, loop);
-		g_source_set_name_by_id (timer_id, "[GpmMain] timed-exit");
+		g_source_set_name_by_id (timer_id, "[CpmMain] timed-exit");
 	}
 
 	if (immediate_exit == FALSE) {

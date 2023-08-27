@@ -28,44 +28,44 @@
 G_BEGIN_DECLS
 
 #define CPM_TYPE_IDLE		(cpm_idle_get_type ())
-#define CPM_IDLE(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_IDLE, GpmIdle))
-#define CPM_IDLE_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_IDLE, GpmIdleClass))
+#define CPM_IDLE(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_IDLE, CpmIdle))
+#define CPM_IDLE_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_IDLE, CpmIdleClass))
 #define CPM_IS_IDLE(o)		(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_IDLE))
 #define CPM_IS_IDLE_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_IDLE))
-#define CPM_IDLE_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_IDLE, GpmIdleClass))
+#define CPM_IDLE_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_IDLE, CpmIdleClass))
 
 typedef enum {
 	CPM_IDLE_MODE_NORMAL,
 	CPM_IDLE_MODE_DIM,
 	CPM_IDLE_MODE_BLANK,
 	CPM_IDLE_MODE_SLEEP
-} GpmIdleMode;
+} CpmIdleMode;
 
-typedef struct GpmIdlePrivate GpmIdlePrivate;
+typedef struct CpmIdlePrivate CpmIdlePrivate;
 
 typedef struct
 {
 	GObject		parent;
-	GpmIdlePrivate *priv;
-} GpmIdle;
+	CpmIdlePrivate *priv;
+} CpmIdle;
 
 typedef struct
 {
 	GObjectClass	parent_class;
-	void		(* idle_changed)		(GpmIdle	*idle,
-							 GpmIdleMode	 mode);
-} GpmIdleClass;
+	void		(* idle_changed)		(CpmIdle	*idle,
+							 CpmIdleMode	 mode);
+} CpmIdleClass;
 
 GType		 cpm_idle_get_type			(void);
-GpmIdle		*cpm_idle_new				(void);
-GpmIdleMode	 cpm_idle_get_mode			(GpmIdle	*idle);
-void		 cpm_idle_set_check_cpu			(GpmIdle	*idle,
+CpmIdle		*cpm_idle_new				(void);
+CpmIdleMode	 cpm_idle_get_mode			(CpmIdle	*idle);
+void		 cpm_idle_set_check_cpu			(CpmIdle	*idle,
 							 gboolean	 check_type_cpu);
-gboolean	 cpm_idle_set_timeout_dim		(GpmIdle	*idle,
+gboolean	 cpm_idle_set_timeout_dim		(CpmIdle	*idle,
 							 guint		 timeout);
-gboolean	 cpm_idle_set_timeout_blank		(GpmIdle	*idle,
+gboolean	 cpm_idle_set_timeout_blank		(CpmIdle	*idle,
 							 guint		 timeout);
-gboolean	 cpm_idle_set_timeout_sleep		(GpmIdle	*idle,
+gboolean	 cpm_idle_set_timeout_sleep		(CpmIdle	*idle,
 							 guint		 timeout);
 void		 cpm_idle_test				(gpointer	 data);
 
