@@ -35,7 +35,7 @@
 ### cafe-power-manager 1.23.1
 
   * Translations update
-  * brightness-applet: use GdkSeat operations
+  * brightness-applet: use CdkSeat operations
   * Set compiler debug flags using CAFE_DEBUG_CHECK
   * Use WARN_CFLAGS which are only set with -enable-compiler-warnings
   * drop obsolete version checks for upower
@@ -102,8 +102,8 @@
   * add m-p-m user-guide to transifex config
   * gpm-kbd-backlight: replace deprecated CDK_DEVICE_MANAGER
   * gpm-backlight: replace deprecated CDK_DEVICE_MANAGER
-  * gpm-button: replace deprecated Gdk functions
-  * gpm-brightness: replace deprecated Gdk functions
+  * gpm-button: replace deprecated Cdk functions
+  * gpm-brightness: replace deprecated Cdk functions
 
 ### cafe-power-manager 1.21.0
 

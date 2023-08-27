@@ -234,8 +234,8 @@ egg_idletime_alarm_find_event (EggIdletime *idletime, XSyncAlarmNotifyEvent *ala
 /**
  * egg_idletime_event_filter_cb:
  */
-static GdkFilterReturn
-egg_idletime_event_filter_cb (GdkXEvent *cdkxevent, GdkEvent *event, gpointer data)
+static CdkFilterReturn
+egg_idletime_event_filter_cb (CdkXEvent *cdkxevent, CdkEvent *event, gpointer data)
 {
 	EggIdletimeAlarm *alarm;
 	XEvent *xevent = (XEvent *) cdkxevent;

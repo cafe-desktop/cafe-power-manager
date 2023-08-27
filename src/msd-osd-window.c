@@ -75,7 +75,7 @@ fade_timeout (MsdOsdWindow *window)
 
                 return FALSE;
         } else {
-                GdkRectangle rect;
+                CdkRectangle rect;
                 CtkWidget *win = CTK_WIDGET (window);
                 CtkAllocation allocation;
 
@@ -271,8 +271,8 @@ msd_osd_window_real_hide (CtkWidget *widget)
 static void
 msd_osd_window_real_realize (CtkWidget *widget)
 {
-        GdkScreen *screen;
-        GdkVisual *visual;
+        CdkScreen *screen;
+        CdkVisual *visual;
         cairo_region_t *region;
 
         screen = ctk_widget_get_screen (widget);
@@ -425,7 +425,7 @@ msd_osd_window_is_composited (MsdOsdWindow *window)
 gboolean
 msd_osd_window_is_valid (MsdOsdWindow *window)
 {
-        GdkScreen *screen = ctk_widget_get_screen (CTK_WIDGET (window));
+        CdkScreen *screen = ctk_widget_get_screen (CTK_WIDGET (window));
         gint scale_factor = ctk_widget_get_scale_factor (CTK_WIDGET (window));
         return cdk_screen_is_composited (screen) == window->priv->is_composited
             && scale_factor == window->priv->scale_factor;
@@ -434,7 +434,7 @@ msd_osd_window_is_valid (MsdOsdWindow *window)
 static void
 msd_osd_window_init (MsdOsdWindow *window)
 {
-        GdkScreen *screen;
+        CdkScreen *screen;
 
         window->priv = msd_osd_window_get_instance_private (window);
 

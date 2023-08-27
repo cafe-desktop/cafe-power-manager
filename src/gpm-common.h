@@ -162,7 +162,7 @@ guint        gpm_discrete_to_percent            (guint discrete,
                                                  guint levels);
 void         gpm_help_display                   (const gchar    *link_id);
 gboolean     gpm_dialog_page_scroll_event_cb    (CtkWidget      *widget,
-                                                 GdkEventScroll *event,
+                                                 CdkEventScroll *event,
                                                  CtkWindow      *window);
 #ifdef EGG_TEST
 void         gpm_common_test                     (gpointer data);

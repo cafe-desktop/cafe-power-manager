@@ -191,13 +191,13 @@ msd_media_keys_window_set_volume_level (MsdMediaKeysWindow *window,
         }
 }
 
-static GdkPixbuf *
+static CdkPixbuf *
 load_pixbuf (MsdMediaKeysWindow *window,
              const char         *name,
              int                 icon_size)
 {
         CtkIconTheme *theme;
-        GdkPixbuf    *pixbuf;
+        CdkPixbuf    *pixbuf;
 
         if (window != NULL && ctk_widget_has_screen (CTK_WIDGET (window))) {
                 theme = ctk_icon_theme_get_for_screen (ctk_widget_get_screen (CTK_WIDGET (window)));
@@ -353,7 +353,7 @@ render_speaker (MsdMediaKeysWindow *window,
                 double              width,
                 double              height)
 {
-        GdkPixbuf         *pixbuf;
+        CdkPixbuf         *pixbuf;
         int                icon_size;
         int                n;
         static const char *icon_names[] = {
@@ -528,7 +528,7 @@ render_custom (MsdMediaKeysWindow *window,
                double              width,
                double              height)
 {
-        GdkPixbuf         *pixbuf;
+        CdkPixbuf         *pixbuf;
         int                icon_size;
 
         icon_size = (int)width;
@@ -648,7 +648,7 @@ msd_media_keys_window_class_init (MsdMediaKeysWindowClass *klass)
 static void
 msd_media_keys_window_init (MsdMediaKeysWindow *window)
 {
-        GdkScreen *screen;
+        CdkScreen *screen;
 
         window->priv = msd_media_keys_window_get_instance_private (window);
 
