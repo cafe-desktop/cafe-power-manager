@@ -53,7 +53,7 @@ typedef struct{
 	/* the popup and its widgets */
 	CtkWidget *popup, *slider, *btn_plus, *btn_minus;
 	/* the icon and a cache for size*/
-	CdkPixbuf *icon;
+	GdkPixbuf *icon;
 	gint icon_width, icon_height;
 	/* connection to g-p-m */
 	DBusGProxy *proxy;
