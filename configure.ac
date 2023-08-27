@@ -84,7 +84,7 @@ dnl - Check library dependencies
 dnl ---------------------------------------------------------------------------
 PKG_CHECK_MODULES(GLIB, glib-2.0 >= $GLIB_REQUIRED gobject-2.0 gio-2.0 >= $GIO_REQUIRED gio-unix-2.0)
 
-PKG_CHECK_MODULES(CANBERRA, libcanberra-gtk3 >= $CANBERRA_REQUIRED)
+PKG_CHECK_MODULES(CANBERRA, libcanberra-ctk3 >= $CANBERRA_REQUIRED)
 
 PKG_CHECK_MODULES(DBUS,[
  dbus-glib-1 >= $DBUS_GLIB_REQUIRED
@@ -92,7 +92,7 @@ PKG_CHECK_MODULES(DBUS,[
  gthread-2.0])
 
 PKG_CHECK_MODULES(CAIRO, [
- gtk+-3.0 >= $GTK_REQUIRED
+ ctk+-3.0 >= $GTK_REQUIRED
  cairo >= $CAIRO_REQUIRED])
 
 PKG_CHECK_MODULES(GDK, [

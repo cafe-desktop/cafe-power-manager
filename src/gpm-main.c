@@ -32,7 +32,7 @@
 #include <locale.h>
 #include <glib.h>
 #include <glib/gi18n.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
 
@@ -200,7 +200,7 @@ main (int argc, char *argv[])
 
 	dbus_g_thread_init ();
 
-	gtk_init (&argc, &argv);
+	ctk_init (&argc, &argv);
 	egg_debug_init (verbose);
 
 	egg_debug ("CAFE %s %s", GPM_NAME, VERSION);
@@ -227,7 +227,7 @@ main (int argc, char *argv[])
 	}
 
 	/* add application specific icons to search path */
-	gtk_icon_theme_append_search_path (gtk_icon_theme_get_default (),
+	ctk_icon_theme_append_search_path (ctk_icon_theme_get_default (),
                                            GPM_ICONS_DATA);
 
 	loop = g_main_loop_new (NULL, FALSE);

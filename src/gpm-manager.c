@@ -36,10 +36,10 @@
 
 #include <glib/gi18n.h>
 #include <gio/gunixfdlist.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <dbus/dbus-glib.h>
 #include <dbus/dbus-glib-lowlevel.h>
-#include <canberra-gtk.h>
+#include <canberra-ctk.h>
 #include <libupower-glib/upower.h>
 #include <libnotify/notify.h>
 
@@ -159,7 +159,7 @@ static gboolean
 gpm_manager_play_loop_timeout_cb (GpmManager *manager)
 {
 	ca_context *context;
-	context = ca_gtk_context_get_for_screen (gdk_screen_get_default ());
+	context = ca_ctk_context_get_for_screen (gdk_screen_get_default ());
 	ca_context_play_full (context, 0,
 			      manager->priv->critical_alert_loop_props,
 			      NULL,
@@ -241,7 +241,7 @@ gpm_manager_play_loop_start (GpmManager *manager, GpmManagerSound action, gboole
 	g_source_set_name_by_id (manager->priv->critical_alert_timeout_id, "[GpmManager] play-loop");
 
 	/* play the sound, using sounds from the naming spec */
-	context = ca_gtk_context_get_for_screen (gdk_screen_get_default ());
+	context = ca_ctk_context_get_for_screen (gdk_screen_get_default ());
 	retval = ca_context_play (context, 0,
 				  CA_PROP_EVENT_ID, id,
 				  CA_PROP_EVENT_DESCRIPTION, desc, NULL);
@@ -317,7 +317,7 @@ gpm_manager_play (GpmManager *manager, GpmManagerSound action, gboolean force)
 	}
 
 	/* play the sound, using sounds from the naming spec */
-	context = ca_gtk_context_get_for_screen (gdk_screen_get_default ());
+	context = ca_ctk_context_get_for_screen (gdk_screen_get_default ());
 	retval = ca_context_play (context, 0,
 				  CA_PROP_EVENT_ID, id,
 				  CA_PROP_EVENT_DESCRIPTION, desc, NULL);
@@ -483,8 +483,8 @@ gpm_manager_notify (GpmManager *manager, NotifyNotification **notification_class
 
 	/* if the status icon is hidden, don't point at it */
 	if (manager->priv->status_icon != NULL &&
-	    gtk_status_icon_is_embedded (manager->priv->status_icon))
-		notification = notify_notification_new (title, message, gtk_status_icon_get_icon_name(manager->priv->status_icon));
+	    ctk_status_icon_is_embedded (manager->priv->status_icon))
+		notification = notify_notification_new (title, message, ctk_status_icon_get_icon_name(manager->priv->status_icon));
 	else
 		notification = notify_notification_new (title, message, icon);
 	notify_notification_set_timeout (notification, timeout);
@@ -500,14 +500,14 @@ gpm_manager_notify (GpmManager *manager, NotifyNotification **notification_class
 		g_error_free (error);
 
 		/* show modal dialog as libcafenotify failed */
-		dialog = gtk_message_dialog_new_with_markup (NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
+		dialog = ctk_message_dialog_new_with_markup (NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
 							     GTK_MESSAGE_INFO, GTK_BUTTONS_CLOSE,
 							     "<span size='larger'><b>%s</b></span>", title);
-		gtk_message_dialog_format_secondary_markup (GTK_MESSAGE_DIALOG (dialog), "%s", message);
+		ctk_message_dialog_format_secondary_markup (GTK_MESSAGE_DIALOG (dialog), "%s", message);
 
 		/* wait async for close */
-		gtk_widget_show (dialog);
-		g_signal_connect_swapped (dialog, "response", G_CALLBACK (gtk_widget_destroy), dialog);
+		ctk_widget_show (dialog);
+		g_signal_connect_swapped (dialog, "response", G_CALLBACK (ctk_widget_destroy), dialog);
 
 		g_object_unref (notification);
 		goto out;
@@ -535,16 +535,16 @@ gpm_manager_sleep_failure_response_cb (GtkDialog *dialog, gint response_id, GpmM
 	/* user clicked the help button */
 	if (response_id == GTK_RESPONSE_HELP) {
 		uri = g_settings_get_string (manager->priv->settings, GPM_SETTINGS_NOTIFY_SLEEP_FAILED_URI);
-		ret = gtk_show_uri_on_window (GTK_WINDOW (dialog), uri, gtk_get_current_event_time (), &error);
+		ret = ctk_show_uri_on_window (GTK_WINDOW (dialog), uri, ctk_get_current_event_time (), &error);
 		if (!ret) {
-			dialog_error = gtk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_INFO, GTK_BUTTONS_OK,
+			dialog_error = ctk_message_dialog_new (NULL, GTK_DIALOG_MODAL, GTK_MESSAGE_INFO, GTK_BUTTONS_OK,
 							       "Failed to show uri %s", error->message);
-			gtk_dialog_run (GTK_DIALOG (dialog_error));
+			ctk_dialog_run (GTK_DIALOG (dialog_error));
 			g_error_free (error);
 		}
 	}
 
-	gtk_widget_destroy (GTK_WIDGET (dialog));
+	ctk_widget_destroy (GTK_WIDGET (dialog));
 	g_free (uri);
 }
 
@@ -591,21 +591,21 @@ gpm_manager_sleep_failure (GpmManager *manager, gboolean is_suspend, const gchar
 	g_string_append_printf (string, "\n\n%s %s", _("Failure was reported as:"), detail);
 
 	/* show modal dialog */
-	dialog = gtk_message_dialog_new_with_markup (NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
+	dialog = ctk_message_dialog_new_with_markup (NULL, GTK_DIALOG_DESTROY_WITH_PARENT,
 						     GTK_MESSAGE_INFO, GTK_BUTTONS_CLOSE,
 						     "<span size='larger'><b>%s</b></span>", title);
-	gtk_message_dialog_format_secondary_markup (GTK_MESSAGE_DIALOG (dialog), "%s", string->str);
-	gtk_window_set_icon_name (GTK_WINDOW(dialog), icon);
+	ctk_message_dialog_format_secondary_markup (GTK_MESSAGE_DIALOG (dialog), "%s", string->str);
+	ctk_window_set_icon_name (GTK_WINDOW(dialog), icon);
 
 	/* show a button? */
 	uri = g_settings_get_string (manager->priv->settings, GPM_SETTINGS_NOTIFY_SLEEP_FAILED_URI);
 	if (uri != NULL && uri[0] != '\0') {
 		/* TRANSLATORS: button text, visit the suspend help website */
-		gtk_dialog_add_button (GTK_DIALOG (dialog), _("Visit help page"), GTK_RESPONSE_HELP);
+		ctk_dialog_add_button (GTK_DIALOG (dialog), _("Visit help page"), GTK_RESPONSE_HELP);
 	}
 
 	/* wait async for close */
-	gtk_widget_show (dialog);
+	ctk_widget_show (dialog);
 	g_signal_connect (dialog, "response", G_CALLBACK (gpm_manager_sleep_failure_response_cb), manager);
 out:
 	g_free (uri);
@@ -1931,8 +1931,8 @@ gpm_manager_init (GpmManager *manager)
 	g_signal_connect (manager->priv->engine, "charge-action",
 			  G_CALLBACK (gpm_manager_engine_charge_action_cb), manager);
 
-	g_signal_connect (gtk_settings_get_default (),
-	                  "notify::gtk-icon-theme-name",
+	g_signal_connect (ctk_settings_get_default (),
+	                  "notify::ctk-icon-theme-name",
 	                  G_CALLBACK (on_icon_theme_change),
 	                  manager);
 
@@ -1973,7 +1973,7 @@ gpm_manager_finalize (GObject *object)
 		manager->priv->critical_alert_timeout_id = 0;
 	}
 
-	g_signal_handlers_disconnect_by_func (gtk_settings_get_default (),
+	g_signal_handlers_disconnect_by_func (ctk_settings_get_default (),
 	                                      on_icon_theme_change,
 	                                      manager);
 

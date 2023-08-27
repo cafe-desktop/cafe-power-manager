@@ -24,7 +24,7 @@
 #define MSD_MEDIA_KEYS_WINDOW_H
 
 #include <glib-object.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "msd-osd-window.h"
 

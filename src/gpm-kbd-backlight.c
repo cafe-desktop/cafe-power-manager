@@ -22,7 +22,7 @@
 #include <gio/gio.h>
 #include <glib.h>
 #include <libupower-glib/upower.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 
 #include "egg-debug.h"
 #include "gpm-button.h"
@@ -151,7 +151,7 @@ gpm_kbd_backlight_dialog_init (GpmKbdBacklight *backlight)
 {  
     if (backlight->priv->popup != NULL
 	    && !msd_osd_window_is_valid (MSD_OSD_WINDOW (backlight->priv->popup))) {
-		gtk_widget_destroy (backlight->priv->popup);
+		ctk_widget_destroy (backlight->priv->popup);
 		backlight->priv->popup = NULL;
 	}
 
@@ -160,7 +160,7 @@ gpm_kbd_backlight_dialog_init (GpmKbdBacklight *backlight)
 		msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
 							 "gpm-brightness-kbd",
 							 TRUE);
-		gtk_window_set_position (GTK_WINDOW (backlight->priv->popup), GTK_WIN_POS_NONE);
+		ctk_window_set_position (GTK_WINDOW (backlight->priv->popup), GTK_WIN_POS_NONE);
 
     }
 }
@@ -193,8 +193,8 @@ gpm_kbd_backlight_dialog_show (GpmKbdBacklight *backlight)
 	 * if the window hasn't been mapped, it doesn't necessarily
 	 * know its true size, yet, so we need to jump through hoops
 	 */
-	gtk_window_get_default_size (GTK_WINDOW (backlight->priv->popup), &orig_w, &orig_h);
-	gtk_widget_get_preferred_size (backlight->priv->popup, NULL, &win_req);
+	ctk_window_get_default_size (GTK_WINDOW (backlight->priv->popup), &orig_w, &orig_h);
+	ctk_widget_get_preferred_size (backlight->priv->popup, NULL, &win_req);
 
 	if (win_req.width > orig_w) {
 		orig_w = win_req.width;
@@ -204,7 +204,7 @@ gpm_kbd_backlight_dialog_show (GpmKbdBacklight *backlight)
 	}
 
 	pointer_screen = NULL;
-	display = gtk_widget_get_display (backlight->priv->popup);
+	display = ctk_widget_get_display (backlight->priv->popup);
 	seat = gdk_display_get_default_seat (display);
 	device = gdk_seat_get_pointer (seat);
 	gdk_device_get_position (device,
@@ -224,11 +224,11 @@ gpm_kbd_backlight_dialog_show (GpmKbdBacklight *backlight)
 	x = ((screen_w - orig_w) / 2) + geometry.x;
 	y = geometry.y + (screen_h / 2) + (screen_h / 2 - orig_h) / 2;
 
-	gtk_window_move (GTK_WINDOW (backlight->priv->popup), x, y);
+	ctk_window_move (GTK_WINDOW (backlight->priv->popup), x, y);
 
-	gtk_widget_show (backlight->priv->popup);
+	ctk_widget_show (backlight->priv->popup);
 
-	gdk_display_sync (gtk_widget_get_display (backlight->priv->popup));
+	gdk_display_sync (ctk_widget_get_display (backlight->priv->popup));
 }
 
 /**
@@ -783,7 +783,7 @@ noerr:
    backlight->priv->popup = msd_media_keys_window_new ();
    msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
                                             "gpm-brightness-kbd", TRUE);
-   gtk_window_set_position (GTK_WINDOW (backlight->priv->popup), GTK_WIN_POS_NONE);
+   ctk_window_set_position (GTK_WINDOW (backlight->priv->popup), GTK_WIN_POS_NONE);
 
    /* since gpm is just starting we can pretty safely assume that we're not idle */
    backlight->priv->system_is_idle = FALSE;

@@ -34,7 +34,7 @@
 #include <math.h>
 #include <glib.h>
 #include <glib/gi18n.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <gdk/gdkx.h>
 
 #include "msd-osd-window.h"
@@ -67,7 +67,7 @@ static gboolean
 fade_timeout (MsdOsdWindow *window)
 {
         if (window->priv->fade_out_alpha <= 0.0) {
-                gtk_widget_hide (GTK_WIDGET (window));
+                ctk_widget_hide (GTK_WIDGET (window));
 
                 /* Reset it for the next time */
                 window->priv->fade_out_alpha = 1.0;
@@ -83,12 +83,12 @@ fade_timeout (MsdOsdWindow *window)
 
                 rect.x = 0;
                 rect.y = 0;
-                gtk_widget_get_allocation (win, &allocation);
+                ctk_widget_get_allocation (win, &allocation);
                 rect.width = allocation.width;
                 rect.height = allocation.height;
 
-                gtk_widget_realize (win);
-                gdk_window_invalidate_rect (gtk_widget_get_window (win), &rect, FALSE);
+                ctk_widget_realize (win);
+                gdk_window_invalidate_rect (ctk_widget_get_window (win), &rect, FALSE);
         }
 
         return TRUE;
@@ -103,7 +103,7 @@ hide_timeout (MsdOsdWindow *window)
                                                                (GSourceFunc) fade_timeout,
                                                                window);
         } else {
-                gtk_widget_hide (GTK_WIDGET (window));
+                ctk_widget_hide (GTK_WIDGET (window));
         }
 
         return FALSE;
@@ -155,9 +155,9 @@ draw_when_composited (GtkWidget *widget, cairo_t *orig_cr)
 
         window = MSD_OSD_WINDOW (widget);
 
-        context = gtk_widget_get_style_context (widget);
+        context = ctk_widget_get_style_context (widget);
         cairo_set_operator (orig_cr, CAIRO_OPERATOR_SOURCE);
-        gtk_window_get_size (GTK_WINDOW (widget), &width, &height);
+        ctk_window_get_size (GTK_WINDOW (widget), &width, &height);
 
         surface = cairo_surface_create_similar (cairo_get_target (orig_cr),
                                                 CAIRO_CONTENT_COLOR_ALPHA,
@@ -173,8 +173,8 @@ draw_when_composited (GtkWidget *widget, cairo_t *orig_cr)
                 goto done;
         }
 
-        gtk_render_background (context, cr, 0, 0, width, height);
-        gtk_render_frame (context, cr, 0, 0, width, height);
+        ctk_render_background (context, cr, 0, 0, width, height);
+        ctk_render_frame (context, cr, 0, 0, width, height);
 
         g_signal_emit (window, signals[DRAW_WHEN_COMPOSITED], 0, cr);
 
@@ -207,12 +207,12 @@ draw_when_not_composited (GtkWidget *widget, cairo_t *cr)
         int width;
         int height;
 
-        gtk_window_get_size (GTK_WINDOW (widget), &width, &height);
-        context = gtk_widget_get_style_context (widget);
+        ctk_window_get_size (GTK_WINDOW (widget), &width, &height);
+        context = ctk_widget_get_style_context (widget);
 
-        gtk_style_context_set_state (context, GTK_STATE_FLAG_ACTIVE);
-        gtk_style_context_add_class(context,"msd-osd-window-solid");
-        gtk_render_frame (context,
+        ctk_style_context_set_state (context, GTK_STATE_FLAG_ACTIVE);
+        ctk_style_context_add_class(context,"msd-osd-window-solid");
+        ctk_render_frame (context,
                           cr,
                           0,
                           0,
@@ -234,9 +234,9 @@ msd_osd_window_draw (GtkWidget *widget,
 	else
 		draw_when_not_composited (widget, cr);
 
-	child = gtk_bin_get_child (GTK_BIN (window));
+	child = ctk_bin_get_child (GTK_BIN (window));
 	if (child)
-		gtk_container_propagate_draw (GTK_CONTAINER (window), child, cr);
+		ctk_container_propagate_draw (GTK_CONTAINER (window), child, cr);
 
 	return FALSE;
 }
@@ -275,14 +275,14 @@ msd_osd_window_real_realize (GtkWidget *widget)
         GdkVisual *visual;
         cairo_region_t *region;
 
-        screen = gtk_widget_get_screen (widget);
+        screen = ctk_widget_get_screen (widget);
         visual = gdk_screen_get_rgba_visual (screen);
 
         if (visual == NULL) {
                 visual = gdk_screen_get_system_visual (screen);
         }
 
-        gtk_widget_set_visual (widget, visual);
+        ctk_widget_set_visual (widget, visual);
 
         if (GTK_WIDGET_CLASS (msd_osd_window_parent_class)->realize) {
                 GTK_WIDGET_CLASS (msd_osd_window_parent_class)->realize (widget);
@@ -290,7 +290,7 @@ msd_osd_window_real_realize (GtkWidget *widget)
 
         /* make the whole window ignore events */
         region = cairo_region_create ();
-        gtk_widget_input_shape_combine_region (widget, region);
+        ctk_widget_input_shape_combine_region (widget, region);
         cairo_region_destroy (region);
 }
 
@@ -307,9 +307,9 @@ msd_osd_window_style_updated (GtkWidget *widget)
          * make our child be 12 pixels away from the frame.
          */
 
-        context = gtk_widget_get_style_context (widget);
-        gtk_style_context_get_padding (context, GTK_STATE_FLAG_NORMAL, &padding);
-        gtk_container_set_border_width (GTK_CONTAINER (widget), 12 + MAX (padding.left, padding.top));
+        context = ctk_widget_get_style_context (widget);
+        ctk_style_context_get_padding (context, GTK_STATE_FLAG_NORMAL, &padding);
+        ctk_container_set_border_width (GTK_CONTAINER (widget), 12 + MAX (padding.left, padding.top));
 }
 
 static void
@@ -324,8 +324,8 @@ msd_osd_window_get_preferred_width (GtkWidget *widget,
 
         /* See the comment in msd_osd_window_style_updated() for why we add the padding here */
 
-        context = gtk_widget_get_style_context (widget);
-        gtk_style_context_get_padding (context, GTK_STATE_FLAG_NORMAL, &padding);
+        context = ctk_widget_get_style_context (widget);
+        ctk_style_context_get_padding (context, GTK_STATE_FLAG_NORMAL, &padding);
 
         *minimum += padding.left;
         *natural += padding.left;
@@ -343,8 +343,8 @@ msd_osd_window_get_preferred_height (GtkWidget *widget,
 
         /* See the comment in msd_osd_window_style_updated() for why we add the padding here */
 
-        context = gtk_widget_get_style_context (widget);
-        gtk_style_context_get_padding (context, GTK_STATE_FLAG_NORMAL, &padding);
+        context = ctk_widget_get_style_context (widget);
+        ctk_style_context_get_padding (context, GTK_STATE_FLAG_NORMAL, &padding);
 
         *minimum += padding.top;
         *natural += padding.top;
@@ -368,8 +368,8 @@ msd_osd_window_constructor (GType                  type,
                       NULL);
 
         GtkWidget *widget = GTK_WIDGET (object);
-        GtkStyleContext *style_context = gtk_widget_get_style_context (widget);
-        gtk_style_context_add_class (style_context, "osd");
+        GtkStyleContext *style_context = ctk_widget_get_style_context (widget);
+        ctk_style_context_add_class (style_context, "osd");
 
         return object;
 }
@@ -399,7 +399,7 @@ msd_osd_window_class_init (MsdOsdWindowClass *klass)
                                                         G_TYPE_NONE, 1,
                                                         G_TYPE_POINTER);
 
-        gtk_widget_class_set_css_name (widget_class, "MsdOsdWindow");
+        ctk_widget_class_set_css_name (widget_class, "MsdOsdWindow");
 }
 
 /**
@@ -425,8 +425,8 @@ msd_osd_window_is_composited (MsdOsdWindow *window)
 gboolean
 msd_osd_window_is_valid (MsdOsdWindow *window)
 {
-        GdkScreen *screen = gtk_widget_get_screen (GTK_WIDGET (window));
-        gint scale_factor = gtk_widget_get_scale_factor (GTK_WIDGET (window));
+        GdkScreen *screen = ctk_widget_get_screen (GTK_WIDGET (window));
+        gint scale_factor = ctk_widget_get_scale_factor (GTK_WIDGET (window));
         return gdk_screen_is_composited (screen) == window->priv->is_composited
             && scale_factor == window->priv->scale_factor;
 }
@@ -438,20 +438,20 @@ msd_osd_window_init (MsdOsdWindow *window)
 
         window->priv = msd_osd_window_get_instance_private (window);
 
-        screen = gtk_widget_get_screen (GTK_WIDGET (window));
+        screen = ctk_widget_get_screen (GTK_WIDGET (window));
 
         window->priv->is_composited = gdk_screen_is_composited (screen);
-        window->priv->scale_factor = gtk_widget_get_scale_factor (GTK_WIDGET (window));
+        window->priv->scale_factor = ctk_widget_get_scale_factor (GTK_WIDGET (window));
 
         if (window->priv->is_composited) {
                 gdouble scalew, scaleh, scale;
                 gint size;
 
-                gtk_window_set_decorated (GTK_WINDOW (window), FALSE);
-                gtk_widget_set_app_paintable (GTK_WIDGET (window), TRUE);
+                ctk_window_set_decorated (GTK_WINDOW (window), FALSE);
+                ctk_widget_set_app_paintable (GTK_WIDGET (window), TRUE);
 
-                GtkStyleContext *style = gtk_widget_get_style_context (GTK_WIDGET (window));
-                gtk_style_context_add_class (style, "window-frame");
+                GtkStyleContext *style = ctk_widget_get_style_context (GTK_WIDGET (window));
+                ctk_style_context_add_class (style, "window-frame");
 
                 /* assume 110x110 on a 640x480 display and scale from there */
                 scalew = WidthOfScreen (gdk_x11_screen_get_xscreen (screen)) / (640.0 * window->priv->scale_factor);
@@ -459,11 +459,11 @@ msd_osd_window_init (MsdOsdWindow *window)
                 scale = MIN (scalew, scaleh);
                 size = 110 * MAX (1, scale);
 
-                gtk_window_set_default_size (GTK_WINDOW (window), size, size);
+                ctk_window_set_default_size (GTK_WINDOW (window), size, size);
 
                 window->priv->fade_out_alpha = 1.0;
         } else {
-                gtk_container_set_border_width (GTK_CONTAINER (window), 12);
+                ctk_container_set_border_width (GTK_CONTAINER (window), 12);
         }
 }
 
@@ -486,6 +486,6 @@ msd_osd_window_update_and_hide (MsdOsdWindow *window)
         add_hide_timeout (window);
 
         if (window->priv->is_composited) {
-                gtk_widget_queue_draw (GTK_WIDGET (window));
+                ctk_widget_queue_draw (GTK_WIDGET (window));
         }
 }

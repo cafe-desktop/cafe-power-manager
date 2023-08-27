@@ -27,7 +27,7 @@
 
 #include <X11/X.h>
 #include <gdk/gdkx.h>
-#include <gtk/gtk.h>
+#include <ctk/ctk.h>
 #include <X11/XF86keysym.h>
 #include <libupower-glib/upower.h>
 
