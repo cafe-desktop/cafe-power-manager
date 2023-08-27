@@ -17,7 +17,7 @@ AM_CPPFLAGS =						\
 	$(KEYRING_CFLAGS)				\
 	$(X11_CFLAGS)					\
 	$(LIBNOTIFY_CFLAGS)				\
-	$(CANBERRA_CFLAGS)				\
+	$(KANBERRA_CFLAGS)				\
 	$(GSTREAMER_CFLAGS)				\
 	-DI_KNOW_THE_DEVICEKIT_POWER_API_IS_SUBJECT_TO_CHANGE \
 	$(UPOWER_CFLAGS)				\
@@ -205,7 +205,7 @@ cafe_power_manager_LDADD =				\
 	$(KEYRING_LIBS)					\
 	$(DBUS_LIBS)					\
 	$(X11_LIBS)					\
-	$(CANBERRA_LIBS)				\
+	$(KANBERRA_LIBS)				\
 	$(LIBNOTIFY_LIBS)				\
 	$(GPM_EXTRA_LIBS)				\
 	$(UPOWER_LIBS)					\
