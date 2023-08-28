@@ -34,9 +34,9 @@
 
 #define ICON_SCALE 0.55           /* size of the icon compared to the whole OSD */
 
-struct MsdMediaKeysWindowPrivate
+struct CsdMediaKeysWindowPrivate
 {
-        MsdMediaKeysWindowAction action;
+        CsdMediaKeysWindowAction action;
         char                    *icon_name;
         gboolean                 show_level;
 
@@ -47,10 +47,10 @@ struct MsdMediaKeysWindowPrivate
         CtkWidget               *progress;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (MsdMediaKeysWindow, csd_media_keys_window, CSD_TYPE_OSD_WINDOW)
+G_DEFINE_TYPE_WITH_PRIVATE (CsdMediaKeysWindow, csd_media_keys_window, CSD_TYPE_OSD_WINDOW)
 
 static void
-volume_controls_set_visible (MsdMediaKeysWindow *window,
+volume_controls_set_visible (CsdMediaKeysWindow *window,
                              gboolean            visible)
 {
         if (window->priv->progress == NULL)
@@ -64,7 +64,7 @@ volume_controls_set_visible (MsdMediaKeysWindow *window,
 }
 
 static void
-window_set_icon_name (MsdMediaKeysWindow *window,
+window_set_icon_name (CsdMediaKeysWindow *window,
                       const char         *name)
 {
         if (window->priv->image == NULL)
@@ -75,7 +75,7 @@ window_set_icon_name (MsdMediaKeysWindow *window,
 }
 
 static void
-action_changed (MsdMediaKeysWindow *window)
+action_changed (CsdMediaKeysWindow *window)
 {
         if (!csd_osd_window_is_composited (CSD_OSD_WINDOW (window))) {
                 switch (window->priv->action) {
@@ -103,7 +103,7 @@ action_changed (MsdMediaKeysWindow *window)
 }
 
 static void
-volume_level_changed (MsdMediaKeysWindow *window)
+volume_level_changed (CsdMediaKeysWindow *window)
 {
         csd_osd_window_update_and_hide (CSD_OSD_WINDOW (window));
 
@@ -118,7 +118,7 @@ volume_level_changed (MsdMediaKeysWindow *window)
 }
 
 static void
-volume_muted_changed (MsdMediaKeysWindow *window)
+volume_muted_changed (CsdMediaKeysWindow *window)
 {
         csd_osd_window_update_and_hide (CSD_OSD_WINDOW (window));
 
@@ -132,8 +132,8 @@ volume_muted_changed (MsdMediaKeysWindow *window)
 }
 
 void
-csd_media_keys_window_set_action (MsdMediaKeysWindow      *window,
-                                  MsdMediaKeysWindowAction action)
+csd_media_keys_window_set_action (CsdMediaKeysWindow      *window,
+                                  CsdMediaKeysWindowAction action)
 {
         g_return_if_fail (CSD_IS_MEDIA_KEYS_WINDOW (window));
         g_return_if_fail (action == CSD_MEDIA_KEYS_WINDOW_ACTION_VOLUME);
@@ -147,7 +147,7 @@ csd_media_keys_window_set_action (MsdMediaKeysWindow      *window,
 }
 
 void
-csd_media_keys_window_set_action_custom (MsdMediaKeysWindow      *window,
+csd_media_keys_window_set_action_custom (CsdMediaKeysWindow      *window,
                                          const char              *icon_name,
                                          gboolean                 show_level)
 {
@@ -168,7 +168,7 @@ csd_media_keys_window_set_action_custom (MsdMediaKeysWindow      *window,
 }
 
 void
-csd_media_keys_window_set_volume_muted (MsdMediaKeysWindow *window,
+csd_media_keys_window_set_volume_muted (CsdMediaKeysWindow *window,
                                         gboolean            muted)
 {
         g_return_if_fail (CSD_IS_MEDIA_KEYS_WINDOW (window));
@@ -180,7 +180,7 @@ csd_media_keys_window_set_volume_muted (MsdMediaKeysWindow *window,
 }
 
 void
-csd_media_keys_window_set_volume_level (MsdMediaKeysWindow *window,
+csd_media_keys_window_set_volume_level (CsdMediaKeysWindow *window,
                                         int                 level)
 {
         g_return_if_fail (CSD_IS_MEDIA_KEYS_WINDOW (window));
@@ -192,7 +192,7 @@ csd_media_keys_window_set_volume_level (MsdMediaKeysWindow *window,
 }
 
 static GdkPixbuf *
-load_pixbuf (MsdMediaKeysWindow *window,
+load_pixbuf (CsdMediaKeysWindow *window,
              const char         *name,
              int                 icon_size)
 {
@@ -346,7 +346,7 @@ draw_speaker (cairo_t *cr,
 }
 
 static gboolean
-render_speaker (MsdMediaKeysWindow *window,
+render_speaker (CsdMediaKeysWindow *window,
                 cairo_t            *cr,
                 double              _x0,
                 double              _y0,
@@ -393,7 +393,7 @@ render_speaker (MsdMediaKeysWindow *window,
 }
 
 static void
-draw_volume_boxes (MsdMediaKeysWindow *window,
+draw_volume_boxes (CsdMediaKeysWindow *window,
                    cairo_t            *cr,
                    double              percentage,
                    double              _x0,
@@ -432,7 +432,7 @@ draw_volume_boxes (MsdMediaKeysWindow *window,
 }
 
 static void
-draw_action_volume (MsdMediaKeysWindow *window,
+draw_action_volume (CsdMediaKeysWindow *window,
                     cairo_t            *cr)
 {
         int window_width;
@@ -521,7 +521,7 @@ draw_action_volume (MsdMediaKeysWindow *window,
 }
 
 static gboolean
-render_custom (MsdMediaKeysWindow *window,
+render_custom (CsdMediaKeysWindow *window,
                cairo_t            *cr,
                double              _x0,
                double              _y0,
@@ -556,7 +556,7 @@ render_custom (MsdMediaKeysWindow *window,
 }
 
 static void
-draw_action_custom (MsdMediaKeysWindow *window,
+draw_action_custom (CsdMediaKeysWindow *window,
                     cairo_t            *cr)
 {
         int window_width;
@@ -620,10 +620,10 @@ draw_action_custom (MsdMediaKeysWindow *window,
 }
 
 static void
-csd_media_keys_window_draw_when_composited (MsdOsdWindow *osd_window,
+csd_media_keys_window_draw_when_composited (CsdOsdWindow *osd_window,
                                               cairo_t      *cr)
 {
-        MsdMediaKeysWindow *window = CSD_MEDIA_KEYS_WINDOW (osd_window);
+        CsdMediaKeysWindow *window = CSD_MEDIA_KEYS_WINDOW (osd_window);
 
         switch (window->priv->action) {
         case CSD_MEDIA_KEYS_WINDOW_ACTION_VOLUME:
@@ -638,15 +638,15 @@ csd_media_keys_window_draw_when_composited (MsdOsdWindow *osd_window,
 }
 
 static void
-csd_media_keys_window_class_init (MsdMediaKeysWindowClass *klass)
+csd_media_keys_window_class_init (CsdMediaKeysWindowClass *klass)
 {
-        MsdOsdWindowClass *osd_window_class = CSD_OSD_WINDOW_CLASS (klass);
+        CsdOsdWindowClass *osd_window_class = CSD_OSD_WINDOW_CLASS (klass);
 
         osd_window_class->draw_when_composited = csd_media_keys_window_draw_when_composited;
 }
 
 static void
-csd_media_keys_window_init (MsdMediaKeysWindow *window)
+csd_media_keys_window_init (CsdMediaKeysWindow *window)
 {
         CdkScreen *screen;
 
