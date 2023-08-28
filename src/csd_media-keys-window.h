@@ -26,7 +26,7 @@
 #include <glib-object.h>
 #include <ctk/ctk.h>
 
-#include "csd-osd-window.h"
+#include "csd_osd-window.h"
 
 #ifdef __cplusplus
 extern "C" {

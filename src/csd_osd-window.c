@@ -37,7 +37,7 @@
 #include <ctk/ctk.h>
 #include <cdk/cdkx.h>
 
-#include "csd-osd-window.h"
+#include "csd_osd-window.h"
 
 #define DIALOG_TIMEOUT 2000     /* dialog timeout in ms */
 #define DIALOG_FADE_TIMEOUT 1500 /* timeout before fade starts */
@@ -211,7 +211,7 @@ draw_when_not_composited (CtkWidget *widget, cairo_t *cr)
         context = ctk_widget_get_style_context (widget);
 
         ctk_style_context_set_state (context, CTK_STATE_FLAG_ACTIVE);
-        ctk_style_context_add_class(context,"csd-osd-window-solid");
+        ctk_style_context_add_class(context,"csd_osd-window-solid");
         ctk_render_frame (context,
                           cr,
                           0,
