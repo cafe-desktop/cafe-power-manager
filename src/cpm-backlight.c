@@ -173,14 +173,14 @@ static void
 cpm_backlight_dialog_init (CpmBacklight *backlight)
 {
 	if (backlight->priv->popup != NULL
-	    && !msd_osd_window_is_valid (MSD_OSD_WINDOW (backlight->priv->popup))) {
+	    && !csd_osd_window_is_valid (MSD_OSD_WINDOW (backlight->priv->popup))) {
 		ctk_widget_destroy (backlight->priv->popup);
 		backlight->priv->popup = NULL;
 	}
 
 	if (backlight->priv->popup == NULL) {
-		backlight->priv->popup= msd_media_keys_window_new ();
-		msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
+		backlight->priv->popup= csd_media_keys_window_new ();
+		csd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
 							 "cpm-brightness-lcd",
 							 TRUE);
 		ctk_window_set_position (CTK_WINDOW (backlight->priv->popup), CTK_WIN_POS_NONE);
@@ -353,7 +353,7 @@ cpm_backlight_brightness_evaluate_and_set (CpmBacklight *backlight, gboolean int
 	/* only show dialog if interactive */
 	if (interactive) {
 		cpm_backlight_dialog_init (backlight);
-		msd_media_keys_window_set_volume_level (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
+		csd_media_keys_window_set_volume_level (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
 							round (brightness));
 		cpm_backlight_dialog_show (backlight);
 	}
@@ -442,7 +442,7 @@ cpm_backlight_button_pressed_cb (CpmButton *button, const gchar *type, CpmBackli
 		if (ret) {
 			cpm_brightness_get (backlight->priv->brightness, &percentage);
 			cpm_backlight_dialog_init (backlight);
-			msd_media_keys_window_set_volume_level (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
+			csd_media_keys_window_set_volume_level (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
 								percentage);
 			cpm_backlight_dialog_show (backlight);
 			/* save the new percentage */
@@ -468,7 +468,7 @@ cpm_backlight_button_pressed_cb (CpmButton *button, const gchar *type, CpmBackli
 		if (ret) {
 			cpm_brightness_get (backlight->priv->brightness, &percentage);
 			cpm_backlight_dialog_init (backlight);
-			msd_media_keys_window_set_volume_level (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
+			csd_media_keys_window_set_volume_level (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
 								percentage);
 			cpm_backlight_dialog_show (backlight);
 			/* save the new percentage */
@@ -772,8 +772,8 @@ cpm_backlight_init (CpmBacklight *backlight)
 	cpm_idle_set_timeout_dim (backlight->priv->idle, backlight->priv->idle_dim_timeout);
 
 	/* use a visual widget */
-	backlight->priv->popup = msd_media_keys_window_new ();
-	msd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
+	backlight->priv->popup = csd_media_keys_window_new ();
+	csd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
 						 "cpm-brightness-lcd",
 						 TRUE);
         ctk_window_set_position (CTK_WINDOW (backlight->priv->popup), CTK_WIN_POS_NONE);

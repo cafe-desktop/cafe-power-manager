@@ -61,7 +61,7 @@ enum {
 
 static guint signals[LAST_SIGNAL] = { 0 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (MsdOsdWindow, msd_osd_window, CTK_TYPE_WINDOW)
+G_DEFINE_TYPE_WITH_PRIVATE (MsdOsdWindow, csd_osd_window, CTK_TYPE_WINDOW)
 
 static gboolean
 fade_timeout (MsdOsdWindow *window)
@@ -221,7 +221,7 @@ draw_when_not_composited (CtkWidget *widget, cairo_t *cr)
 }
 
 static gboolean
-msd_osd_window_draw (CtkWidget *widget,
+csd_osd_window_draw (CtkWidget *widget,
                      cairo_t   *cr)
 {
 	MsdOsdWindow *window;
@@ -242,12 +242,12 @@ msd_osd_window_draw (CtkWidget *widget,
 }
 
 static void
-msd_osd_window_real_show (CtkWidget *widget)
+csd_osd_window_real_show (CtkWidget *widget)
 {
         MsdOsdWindow *window;
 
-        if (CTK_WIDGET_CLASS (msd_osd_window_parent_class)->show) {
-                CTK_WIDGET_CLASS (msd_osd_window_parent_class)->show (widget);
+        if (CTK_WIDGET_CLASS (csd_osd_window_parent_class)->show) {
+                CTK_WIDGET_CLASS (csd_osd_window_parent_class)->show (widget);
         }
 
         window = MSD_OSD_WINDOW (widget);
@@ -256,12 +256,12 @@ msd_osd_window_real_show (CtkWidget *widget)
 }
 
 static void
-msd_osd_window_real_hide (CtkWidget *widget)
+csd_osd_window_real_hide (CtkWidget *widget)
 {
         MsdOsdWindow *window;
 
-        if (CTK_WIDGET_CLASS (msd_osd_window_parent_class)->hide) {
-                CTK_WIDGET_CLASS (msd_osd_window_parent_class)->hide (widget);
+        if (CTK_WIDGET_CLASS (csd_osd_window_parent_class)->hide) {
+                CTK_WIDGET_CLASS (csd_osd_window_parent_class)->hide (widget);
         }
 
         window = MSD_OSD_WINDOW (widget);
@@ -269,7 +269,7 @@ msd_osd_window_real_hide (CtkWidget *widget)
 }
 
 static void
-msd_osd_window_real_realize (CtkWidget *widget)
+csd_osd_window_real_realize (CtkWidget *widget)
 {
         CdkScreen *screen;
         CdkVisual *visual;
@@ -284,8 +284,8 @@ msd_osd_window_real_realize (CtkWidget *widget)
 
         ctk_widget_set_visual (widget, visual);
 
-        if (CTK_WIDGET_CLASS (msd_osd_window_parent_class)->realize) {
-                CTK_WIDGET_CLASS (msd_osd_window_parent_class)->realize (widget);
+        if (CTK_WIDGET_CLASS (csd_osd_window_parent_class)->realize) {
+                CTK_WIDGET_CLASS (csd_osd_window_parent_class)->realize (widget);
         }
 
         /* make the whole window ignore events */
@@ -295,12 +295,12 @@ msd_osd_window_real_realize (CtkWidget *widget)
 }
 
 static void
-msd_osd_window_style_updated (CtkWidget *widget)
+csd_osd_window_style_updated (CtkWidget *widget)
 {
         CtkStyleContext *context;
         CtkBorder padding;
 
-        CTK_WIDGET_CLASS (msd_osd_window_parent_class)->style_updated (widget);
+        CTK_WIDGET_CLASS (csd_osd_window_parent_class)->style_updated (widget);
 
         /* We set our border width to 12 (per the CAFE standard), plus the
          * padding of the frame that we draw in our expose handler.  This will
@@ -313,16 +313,16 @@ msd_osd_window_style_updated (CtkWidget *widget)
 }
 
 static void
-msd_osd_window_get_preferred_width (CtkWidget *widget,
+csd_osd_window_get_preferred_width (CtkWidget *widget,
                                     gint      *minimum,
                                     gint      *natural)
 {
         CtkStyleContext *context;
         CtkBorder padding;
 
-        CTK_WIDGET_CLASS (msd_osd_window_parent_class)->get_preferred_width (widget, minimum, natural);
+        CTK_WIDGET_CLASS (csd_osd_window_parent_class)->get_preferred_width (widget, minimum, natural);
 
-        /* See the comment in msd_osd_window_style_updated() for why we add the padding here */
+        /* See the comment in csd_osd_window_style_updated() for why we add the padding here */
 
         context = ctk_widget_get_style_context (widget);
         ctk_style_context_get_padding (context, CTK_STATE_FLAG_NORMAL, &padding);
@@ -332,16 +332,16 @@ msd_osd_window_get_preferred_width (CtkWidget *widget,
 }
 
 static void
-msd_osd_window_get_preferred_height (CtkWidget *widget,
+csd_osd_window_get_preferred_height (CtkWidget *widget,
                                      gint      *minimum,
                                      gint      *natural)
 {
         CtkStyleContext *context;
         CtkBorder padding;
 
-        CTK_WIDGET_CLASS (msd_osd_window_parent_class)->get_preferred_height (widget, minimum, natural);
+        CTK_WIDGET_CLASS (csd_osd_window_parent_class)->get_preferred_height (widget, minimum, natural);
 
-        /* See the comment in msd_osd_window_style_updated() for why we add the padding here */
+        /* See the comment in csd_osd_window_style_updated() for why we add the padding here */
 
         context = ctk_widget_get_style_context (widget);
         ctk_style_context_get_padding (context, CTK_STATE_FLAG_NORMAL, &padding);
@@ -351,13 +351,13 @@ msd_osd_window_get_preferred_height (CtkWidget *widget,
 }
 
 static GObject *
-msd_osd_window_constructor (GType                  type,
+csd_osd_window_constructor (GType                  type,
                             guint                  n_construct_properties,
                             GObjectConstructParam *construct_params)
 {
         GObject *object;
 
-        object = G_OBJECT_CLASS (msd_osd_window_parent_class)->constructor (type, n_construct_properties, construct_params);
+        object = G_OBJECT_CLASS (csd_osd_window_parent_class)->constructor (type, n_construct_properties, construct_params);
 
         g_object_set (object,
                       "type", CTK_WINDOW_POPUP,
@@ -375,20 +375,20 @@ msd_osd_window_constructor (GType                  type,
 }
 
 static void
-msd_osd_window_class_init (MsdOsdWindowClass *klass)
+csd_osd_window_class_init (MsdOsdWindowClass *klass)
 {
         GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
         CtkWidgetClass *widget_class = CTK_WIDGET_CLASS (klass);
 
-        gobject_class->constructor = msd_osd_window_constructor;
+        gobject_class->constructor = csd_osd_window_constructor;
 
-        widget_class->show = msd_osd_window_real_show;
-        widget_class->hide = msd_osd_window_real_hide;
-        widget_class->realize = msd_osd_window_real_realize;
-        widget_class->style_updated = msd_osd_window_style_updated;
-        widget_class->get_preferred_width = msd_osd_window_get_preferred_width;
-        widget_class->get_preferred_height = msd_osd_window_get_preferred_height;
-        widget_class->draw = msd_osd_window_draw;
+        widget_class->show = csd_osd_window_real_show;
+        widget_class->hide = csd_osd_window_real_hide;
+        widget_class->realize = csd_osd_window_real_realize;
+        widget_class->style_updated = csd_osd_window_style_updated;
+        widget_class->get_preferred_width = csd_osd_window_get_preferred_width;
+        widget_class->get_preferred_height = csd_osd_window_get_preferred_height;
+        widget_class->draw = csd_osd_window_draw;
 
         signals[DRAW_WHEN_COMPOSITED] = g_signal_new ("draw-when-composited",
                                                         G_TYPE_FROM_CLASS (gobject_class),
@@ -403,19 +403,19 @@ msd_osd_window_class_init (MsdOsdWindowClass *klass)
 }
 
 /**
- * msd_osd_window_is_composited:
+ * csd_osd_window_is_composited:
  * @window: a #MsdOsdWindow
  *
  * Return value: whether the window was created on a composited screen.
  */
 gboolean
-msd_osd_window_is_composited (MsdOsdWindow *window)
+csd_osd_window_is_composited (MsdOsdWindow *window)
 {
         return window->priv->is_composited;
 }
 
 /**
- * msd_osd_window_is_valid:
+ * csd_osd_window_is_valid:
  * @window: a #MsdOsdWindow
  *
  * Return value: TRUE if the @window's idea of being composited matches whether
@@ -423,7 +423,7 @@ msd_osd_window_is_composited (MsdOsdWindow *window)
  * not changed since last draw.
  */
 gboolean
-msd_osd_window_is_valid (MsdOsdWindow *window)
+csd_osd_window_is_valid (MsdOsdWindow *window)
 {
         CdkScreen *screen = ctk_widget_get_screen (CTK_WIDGET (window));
         gint scale_factor = ctk_widget_get_scale_factor (CTK_WIDGET (window));
@@ -432,11 +432,11 @@ msd_osd_window_is_valid (MsdOsdWindow *window)
 }
 
 static void
-msd_osd_window_init (MsdOsdWindow *window)
+csd_osd_window_init (MsdOsdWindow *window)
 {
         CdkScreen *screen;
 
-        window->priv = msd_osd_window_get_instance_private (window);
+        window->priv = csd_osd_window_get_instance_private (window);
 
         screen = ctk_widget_get_screen (CTK_WIDGET (window));
 
@@ -468,19 +468,19 @@ msd_osd_window_init (MsdOsdWindow *window)
 }
 
 CtkWidget *
-msd_osd_window_new (void)
+csd_osd_window_new (void)
 {
         return g_object_new (MSD_TYPE_OSD_WINDOW, NULL);
 }
 
 /**
- * msd_osd_window_update_and_hide:
+ * csd_osd_window_update_and_hide:
  * @window: a #MsdOsdWindow
  *
  * Queues the @window for immediate drawing, and queues a timer to hide the window.
  */
 void
-msd_osd_window_update_and_hide (MsdOsdWindow *window)
+csd_osd_window_update_and_hide (MsdOsdWindow *window)
 {
         remove_hide_timeout (window);
         add_hide_timeout (window);

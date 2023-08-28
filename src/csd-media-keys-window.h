@@ -32,7 +32,7 @@
 extern "C" {
 #endif
 
-#define MSD_TYPE_MEDIA_KEYS_WINDOW            (msd_media_keys_window_get_type ())
+#define MSD_TYPE_MEDIA_KEYS_WINDOW            (csd_media_keys_window_get_type ())
 #define MSD_MEDIA_KEYS_WINDOW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj),  MSD_TYPE_MEDIA_KEYS_WINDOW, MsdMediaKeysWindow))
 #define MSD_MEDIA_KEYS_WINDOW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),   MSD_TYPE_MEDIA_KEYS_WINDOW, MsdMediaKeysWindowClass))
 #define MSD_IS_MEDIA_KEYS_WINDOW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj),  MSD_TYPE_MEDIA_KEYS_WINDOW))
@@ -57,19 +57,19 @@ typedef enum {
         MSD_MEDIA_KEYS_WINDOW_ACTION_CUSTOM
 } MsdMediaKeysWindowAction;
 
-GType                 msd_media_keys_window_get_type          (void);
+GType                 csd_media_keys_window_get_type          (void);
 
-CtkWidget *           msd_media_keys_window_new               (void);
-void                  msd_media_keys_window_set_action        (MsdMediaKeysWindow      *window,
+CtkWidget *           csd_media_keys_window_new               (void);
+void                  csd_media_keys_window_set_action        (MsdMediaKeysWindow      *window,
                                                                MsdMediaKeysWindowAction action);
-void                  msd_media_keys_window_set_action_custom (MsdMediaKeysWindow      *window,
+void                  csd_media_keys_window_set_action_custom (MsdMediaKeysWindow      *window,
                                                                const char              *icon_name,
                                                                gboolean                 show_level);
-void                  msd_media_keys_window_set_volume_muted  (MsdMediaKeysWindow      *window,
+void                  csd_media_keys_window_set_volume_muted  (MsdMediaKeysWindow      *window,
                                                                gboolean                 muted);
-void                  msd_media_keys_window_set_volume_level  (MsdMediaKeysWindow      *window,
+void                  csd_media_keys_window_set_volume_level  (MsdMediaKeysWindow      *window,
                                                                int                      level);
-gboolean              msd_media_keys_window_is_valid          (MsdMediaKeysWindow      *window);
+gboolean              csd_media_keys_window_is_valid          (MsdMediaKeysWindow      *window);
 
 #ifdef __cplusplus
 }

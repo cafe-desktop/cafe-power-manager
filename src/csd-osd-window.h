@@ -50,7 +50,7 @@ extern "C" {
 /* Alpha value to be used for foreground objects drawn in an OSD window */
 #define MSD_OSD_WINDOW_FG_ALPHA 1.0
 
-#define MSD_TYPE_OSD_WINDOW            (msd_osd_window_get_type ())
+#define MSD_TYPE_OSD_WINDOW            (csd_osd_window_get_type ())
 #define MSD_OSD_WINDOW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj),  MSD_TYPE_OSD_WINDOW, MsdOsdWindow))
 #define MSD_OSD_WINDOW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),   MSD_TYPE_OSD_WINDOW, MsdOsdWindowClass))
 #define MSD_IS_OSD_WINDOW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj),  MSD_TYPE_OSD_WINDOW))
@@ -73,12 +73,12 @@ struct MsdOsdWindowClass {
         void (* draw_when_composited) (MsdOsdWindow *window, cairo_t *cr);
 };
 
-GType                 msd_osd_window_get_type          (void);
+GType                 csd_osd_window_get_type          (void);
 
-CtkWidget *           msd_osd_window_new               (void);
-gboolean              msd_osd_window_is_composited     (MsdOsdWindow      *window);
-gboolean              msd_osd_window_is_valid          (MsdOsdWindow      *window);
-void                  msd_osd_window_update_and_hide   (MsdOsdWindow      *window);
+CtkWidget *           csd_osd_window_new               (void);
+gboolean              csd_osd_window_is_composited     (MsdOsdWindow      *window);
+gboolean              csd_osd_window_is_valid          (MsdOsdWindow      *window);
+void                  csd_osd_window_update_and_hide   (MsdOsdWindow      *window);
 
 #ifdef __cplusplus
 }
