@@ -185,7 +185,7 @@
     the context menu
   * Do not issue a console warning when laptop batteries are empty
   * CTK+3: port from libunique to CtkApplication
-  * CTK+3: add css theming for OSD (MsdOsdWindow)
+  * CTK+3: add css theming for OSD (CsdOsdWindow)
   * CTK+3: fix empty space in tray when system has no battery
   * CTK+3: fix lots of deprecations
   * Some more fixes and cleanups

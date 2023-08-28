@@ -27,12 +27,12 @@
  *
  */
 
-/* MsdOsdWindow is an "on-screen-display" window (OSD).  It is the cute,
+/* CsdOsdWindow is an "on-screen-display" window (OSD).  It is the cute,
  * semi-transparent, curved popup that appears when you press a hotkey global to
  * the desktop, such as to change the volume, switch your monitor's parameters,
  * etc.
  *
- * You can create a MsdOsdWindow and use it as a normal CtkWindow.  It will
+ * You can create a CsdOsdWindow and use it as a normal CtkWindow.  It will
  * automatically center itself, figure out if it needs to be composited, etc.
  * Just pack your widgets in it, sit back, and enjoy the ride.
  */
@@ -51,34 +51,34 @@ extern "C" {
 #define CSD_OSD_WINDOW_FG_ALPHA 1.0
 
 #define CSD_TYPE_OSD_WINDOW            (csd_osd_window_get_type ())
-#define CSD_OSD_WINDOW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj),  CSD_TYPE_OSD_WINDOW, MsdOsdWindow))
-#define CSD_OSD_WINDOW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),   CSD_TYPE_OSD_WINDOW, MsdOsdWindowClass))
+#define CSD_OSD_WINDOW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj),  CSD_TYPE_OSD_WINDOW, CsdOsdWindow))
+#define CSD_OSD_WINDOW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),   CSD_TYPE_OSD_WINDOW, CsdOsdWindowClass))
 #define CSD_IS_OSD_WINDOW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj),  CSD_TYPE_OSD_WINDOW))
 #define CSD_IS_OSD_WINDOW_CLASS(klass) (G_TYPE_INSTANCE_GET_CLASS ((klass), CSD_TYPE_OSD_WINDOW))
-#define CSD_OSD_WINDOW_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), CSD_TYPE_OSD_WINDOW, MsdOsdWindowClass))
+#define CSD_OSD_WINDOW_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), CSD_TYPE_OSD_WINDOW, CsdOsdWindowClass))
 
-typedef struct MsdOsdWindow                   MsdOsdWindow;
-typedef struct MsdOsdWindowClass              MsdOsdWindowClass;
-typedef struct MsdOsdWindowPrivate            MsdOsdWindowPrivate;
+typedef struct CsdOsdWindow                   CsdOsdWindow;
+typedef struct CsdOsdWindowClass              CsdOsdWindowClass;
+typedef struct CsdOsdWindowPrivate            CsdOsdWindowPrivate;
 
-struct MsdOsdWindow {
+struct CsdOsdWindow {
         CtkWindow                   parent;
 
-        MsdOsdWindowPrivate  *priv;
+        CsdOsdWindowPrivate  *priv;
 };
 
-struct MsdOsdWindowClass {
+struct CsdOsdWindowClass {
         CtkWindowClass parent_class;
 
-        void (* draw_when_composited) (MsdOsdWindow *window, cairo_t *cr);
+        void (* draw_when_composited) (CsdOsdWindow *window, cairo_t *cr);
 };
 
 GType                 csd_osd_window_get_type          (void);
 
 CtkWidget *           csd_osd_window_new               (void);
-gboolean              csd_osd_window_is_composited     (MsdOsdWindow      *window);
-gboolean              csd_osd_window_is_valid          (MsdOsdWindow      *window);
-void                  csd_osd_window_update_and_hide   (MsdOsdWindow      *window);
+gboolean              csd_osd_window_is_composited     (CsdOsdWindow      *window);
+gboolean              csd_osd_window_is_valid          (CsdOsdWindow      *window);
+void                  csd_osd_window_update_and_hide   (CsdOsdWindow      *window);
 
 #ifdef __cplusplus
 }

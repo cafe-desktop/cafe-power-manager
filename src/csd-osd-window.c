@@ -45,7 +45,7 @@
 
 #define BG_ALPHA 0.75
 
-struct MsdOsdWindowPrivate
+struct CsdOsdWindowPrivate
 {
         guint                    is_composited : 1;
         guint                    hide_timeout_id;
@@ -61,10 +61,10 @@ enum {
 
 static guint signals[LAST_SIGNAL] = { 0 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (MsdOsdWindow, csd_osd_window, CTK_TYPE_WINDOW)
+G_DEFINE_TYPE_WITH_PRIVATE (CsdOsdWindow, csd_osd_window, CTK_TYPE_WINDOW)
 
 static gboolean
-fade_timeout (MsdOsdWindow *window)
+fade_timeout (CsdOsdWindow *window)
 {
         if (window->priv->fade_out_alpha <= 0.0) {
                 ctk_widget_hide (CTK_WIDGET (window));
@@ -95,7 +95,7 @@ fade_timeout (MsdOsdWindow *window)
 }
 
 static gboolean
-hide_timeout (MsdOsdWindow *window)
+hide_timeout (CsdOsdWindow *window)
 {
         if (window->priv->is_composited) {
                 window->priv->hide_timeout_id = 0;
@@ -110,7 +110,7 @@ hide_timeout (MsdOsdWindow *window)
 }
 
 static void
-remove_hide_timeout (MsdOsdWindow *window)
+remove_hide_timeout (CsdOsdWindow *window)
 {
         if (window->priv->hide_timeout_id != 0) {
                 g_source_remove (window->priv->hide_timeout_id);
@@ -125,7 +125,7 @@ remove_hide_timeout (MsdOsdWindow *window)
 }
 
 static void
-add_hide_timeout (MsdOsdWindow *window)
+add_hide_timeout (CsdOsdWindow *window)
 {
         int timeout;
 
@@ -146,7 +146,7 @@ add_hide_timeout (MsdOsdWindow *window)
 static void
 draw_when_composited (CtkWidget *widget, cairo_t *orig_cr)
 {
-        MsdOsdWindow    *window;
+        CsdOsdWindow    *window;
         cairo_t         *cr;
         cairo_surface_t *surface;
         int              width;
@@ -224,7 +224,7 @@ static gboolean
 csd_osd_window_draw (CtkWidget *widget,
                      cairo_t   *cr)
 {
-	MsdOsdWindow *window;
+	CsdOsdWindow *window;
 	CtkWidget *child;
 
 	window = CSD_OSD_WINDOW (widget);
@@ -244,7 +244,7 @@ csd_osd_window_draw (CtkWidget *widget,
 static void
 csd_osd_window_real_show (CtkWidget *widget)
 {
-        MsdOsdWindow *window;
+        CsdOsdWindow *window;
 
         if (CTK_WIDGET_CLASS (csd_osd_window_parent_class)->show) {
                 CTK_WIDGET_CLASS (csd_osd_window_parent_class)->show (widget);
@@ -258,7 +258,7 @@ csd_osd_window_real_show (CtkWidget *widget)
 static void
 csd_osd_window_real_hide (CtkWidget *widget)
 {
-        MsdOsdWindow *window;
+        CsdOsdWindow *window;
 
         if (CTK_WIDGET_CLASS (csd_osd_window_parent_class)->hide) {
                 CTK_WIDGET_CLASS (csd_osd_window_parent_class)->hide (widget);
@@ -375,7 +375,7 @@ csd_osd_window_constructor (GType                  type,
 }
 
 static void
-csd_osd_window_class_init (MsdOsdWindowClass *klass)
+csd_osd_window_class_init (CsdOsdWindowClass *klass)
 {
         GObjectClass *gobject_class = G_OBJECT_CLASS (klass);
         CtkWidgetClass *widget_class = CTK_WIDGET_CLASS (klass);
@@ -393,37 +393,37 @@ csd_osd_window_class_init (MsdOsdWindowClass *klass)
         signals[DRAW_WHEN_COMPOSITED] = g_signal_new ("draw-when-composited",
                                                         G_TYPE_FROM_CLASS (gobject_class),
                                                         G_SIGNAL_RUN_FIRST,
-                                                        G_STRUCT_OFFSET (MsdOsdWindowClass, draw_when_composited),
+                                                        G_STRUCT_OFFSET (CsdOsdWindowClass, draw_when_composited),
                                                         NULL, NULL,
                                                         g_cclosure_marshal_VOID__POINTER,
                                                         G_TYPE_NONE, 1,
                                                         G_TYPE_POINTER);
 
-        ctk_widget_class_set_css_name (widget_class, "MsdOsdWindow");
+        ctk_widget_class_set_css_name (widget_class, "CsdOsdWindow");
 }
 
 /**
  * csd_osd_window_is_composited:
- * @window: a #MsdOsdWindow
+ * @window: a #CsdOsdWindow
  *
  * Return value: whether the window was created on a composited screen.
  */
 gboolean
-csd_osd_window_is_composited (MsdOsdWindow *window)
+csd_osd_window_is_composited (CsdOsdWindow *window)
 {
         return window->priv->is_composited;
 }
 
 /**
  * csd_osd_window_is_valid:
- * @window: a #MsdOsdWindow
+ * @window: a #CsdOsdWindow
  *
  * Return value: TRUE if the @window's idea of being composited matches whether
  * its current screen is actually composited and whether the scale factor has
  * not changed since last draw.
  */
 gboolean
-csd_osd_window_is_valid (MsdOsdWindow *window)
+csd_osd_window_is_valid (CsdOsdWindow *window)
 {
         CdkScreen *screen = ctk_widget_get_screen (CTK_WIDGET (window));
         gint scale_factor = ctk_widget_get_scale_factor (CTK_WIDGET (window));
@@ -432,7 +432,7 @@ csd_osd_window_is_valid (MsdOsdWindow *window)
 }
 
 static void
-csd_osd_window_init (MsdOsdWindow *window)
+csd_osd_window_init (CsdOsdWindow *window)
 {
         CdkScreen *screen;
 
@@ -475,12 +475,12 @@ csd_osd_window_new (void)
 
 /**
  * csd_osd_window_update_and_hide:
- * @window: a #MsdOsdWindow
+ * @window: a #CsdOsdWindow
  *
  * Queues the @window for immediate drawing, and queues a timer to hide the window.
  */
 void
-csd_osd_window_update_and_hide (MsdOsdWindow *window)
+csd_osd_window_update_and_hide (CsdOsdWindow *window)
 {
         remove_hide_timeout (window);
         add_hide_timeout (window);
