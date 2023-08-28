@@ -49,7 +49,7 @@
   * cpm-screensaver: avoid 'g_type_class_add_private'
   * csd-media-keys-window: avoid 'g_type_class_add_private'
   * cpm-tray-icon: avoid 'g_type_class_add_private'
-  * msd-osd-window: avoid 'g_type_class_add_private'
+  * csd-osd-window: avoid 'g_type_class_add_private'
   * cpm-load: avoid 'g_type_class_add_private'
   * cpm-brightness: avoid 'g_type_class_add_private'
   * cpm-manager: avoid 'g_type_class_add_private'

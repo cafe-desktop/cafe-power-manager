@@ -190,8 +190,8 @@ cafe_power_manager_SOURCES =				\
 	cpm-icon-names.h				\
 	csd-media-keys-window.h				\
 	csd-media-keys-window.c				\
-	msd-osd-window.h				\
-	msd-osd-window.c				\
+	csd-osd-window.h				\
+	csd-osd-window.c				\
 	cpm-engine.h					\
 	cpm-engine.c					\
 	$(NULL)
