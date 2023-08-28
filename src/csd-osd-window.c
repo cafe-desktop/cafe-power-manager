@@ -153,7 +153,7 @@ draw_when_composited (CtkWidget *widget, cairo_t *orig_cr)
         int              height;
         CtkStyleContext *context;
 
-        window = MSD_OSD_WINDOW (widget);
+        window = CSD_OSD_WINDOW (widget);
 
         context = ctk_widget_get_style_context (widget);
         cairo_set_operator (orig_cr, CAIRO_OPERATOR_SOURCE);
@@ -227,7 +227,7 @@ csd_osd_window_draw (CtkWidget *widget,
 	MsdOsdWindow *window;
 	CtkWidget *child;
 
-	window = MSD_OSD_WINDOW (widget);
+	window = CSD_OSD_WINDOW (widget);
 
 	if (window->priv->is_composited)
 		draw_when_composited (widget, cr);
@@ -250,7 +250,7 @@ csd_osd_window_real_show (CtkWidget *widget)
                 CTK_WIDGET_CLASS (csd_osd_window_parent_class)->show (widget);
         }
 
-        window = MSD_OSD_WINDOW (widget);
+        window = CSD_OSD_WINDOW (widget);
         remove_hide_timeout (window);
         add_hide_timeout (window);
 }
@@ -264,7 +264,7 @@ csd_osd_window_real_hide (CtkWidget *widget)
                 CTK_WIDGET_CLASS (csd_osd_window_parent_class)->hide (widget);
         }
 
-        window = MSD_OSD_WINDOW (widget);
+        window = CSD_OSD_WINDOW (widget);
         remove_hide_timeout (window);
 }
 
@@ -470,7 +470,7 @@ csd_osd_window_init (MsdOsdWindow *window)
 CtkWidget *
 csd_osd_window_new (void)
 {
-        return g_object_new (MSD_TYPE_OSD_WINDOW, NULL);
+        return g_object_new (CSD_TYPE_OSD_WINDOW, NULL);
 }
 
 /**
