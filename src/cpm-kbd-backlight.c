@@ -150,14 +150,14 @@ static void
 cpm_kbd_backlight_dialog_init (CpmKbdBacklight *backlight) 
 {  
     if (backlight->priv->popup != NULL
-	    && !csd_osd_window_is_valid (MSD_OSD_WINDOW (backlight->priv->popup))) {
+	    && !csd_osd_window_is_valid (CSD_OSD_WINDOW (backlight->priv->popup))) {
 		ctk_widget_destroy (backlight->priv->popup);
 		backlight->priv->popup = NULL;
 	}
 
 	if (backlight->priv->popup == NULL) {
 		backlight->priv->popup= csd_media_keys_window_new ();
-		csd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
+		csd_media_keys_window_set_action_custom (CSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
 							 "cpm-brightness-kbd",
 							 TRUE);
 		ctk_window_set_position (CTK_WINDOW (backlight->priv->popup), CTK_WIN_POS_NONE);
@@ -527,7 +527,7 @@ cpm_kbd_backlight_button_pressed_cb (CpmButton *button,
         if (ret) {
             egg_debug("Going to display OSD");
             cpm_kbd_backlight_dialog_init (backlight);
-			csd_media_keys_window_set_volume_level (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup), backlight->priv->brightness_percent);
+			csd_media_keys_window_set_volume_level (CSD_MEDIA_KEYS_WINDOW (backlight->priv->popup), backlight->priv->brightness_percent);
             cpm_kbd_backlight_dialog_show (backlight);
         }
 
@@ -537,7 +537,7 @@ cpm_kbd_backlight_button_pressed_cb (CpmButton *button,
         if (ret) {
             egg_debug("Going to display OSD");
             cpm_kbd_backlight_dialog_init (backlight);
-			csd_media_keys_window_set_volume_level (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup), backlight->priv->brightness_percent);
+			csd_media_keys_window_set_volume_level (CSD_MEDIA_KEYS_WINDOW (backlight->priv->popup), backlight->priv->brightness_percent);
             cpm_kbd_backlight_dialog_show (backlight);
         }
         
@@ -781,7 +781,7 @@ noerr:
 
     /* use a visual widget */
    backlight->priv->popup = csd_media_keys_window_new ();
-   csd_media_keys_window_set_action_custom (MSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
+   csd_media_keys_window_set_action_custom (CSD_MEDIA_KEYS_WINDOW (backlight->priv->popup),
                                             "cpm-brightness-kbd", TRUE);
    ctk_window_set_position (CTK_WINDOW (backlight->priv->popup), CTK_WIN_POS_NONE);
 

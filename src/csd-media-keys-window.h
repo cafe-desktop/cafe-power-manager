@@ -20,8 +20,8 @@
  *
  */
 
-#ifndef MSD_MEDIA_KEYS_WINDOW_H
-#define MSD_MEDIA_KEYS_WINDOW_H
+#ifndef CSD_MEDIA_KEYS_WINDOW_H
+#define CSD_MEDIA_KEYS_WINDOW_H
 
 #include <glib-object.h>
 #include <ctk/ctk.h>
@@ -32,11 +32,11 @@
 extern "C" {
 #endif
 
-#define MSD_TYPE_MEDIA_KEYS_WINDOW            (csd_media_keys_window_get_type ())
-#define MSD_MEDIA_KEYS_WINDOW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj),  MSD_TYPE_MEDIA_KEYS_WINDOW, MsdMediaKeysWindow))
-#define MSD_MEDIA_KEYS_WINDOW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),   MSD_TYPE_MEDIA_KEYS_WINDOW, MsdMediaKeysWindowClass))
-#define MSD_IS_MEDIA_KEYS_WINDOW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj),  MSD_TYPE_MEDIA_KEYS_WINDOW))
-#define MSD_IS_MEDIA_KEYS_WINDOW_CLASS(klass) (G_TYPE_INSTANCE_GET_CLASS ((klass), MSD_TYPE_MEDIA_KEYS_WINDOW))
+#define CSD_TYPE_MEDIA_KEYS_WINDOW            (csd_media_keys_window_get_type ())
+#define CSD_MEDIA_KEYS_WINDOW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj),  CSD_TYPE_MEDIA_KEYS_WINDOW, MsdMediaKeysWindow))
+#define CSD_MEDIA_KEYS_WINDOW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),   CSD_TYPE_MEDIA_KEYS_WINDOW, MsdMediaKeysWindowClass))
+#define CSD_IS_MEDIA_KEYS_WINDOW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj),  CSD_TYPE_MEDIA_KEYS_WINDOW))
+#define CSD_IS_MEDIA_KEYS_WINDOW_CLASS(klass) (G_TYPE_INSTANCE_GET_CLASS ((klass), CSD_TYPE_MEDIA_KEYS_WINDOW))
 
 typedef struct MsdMediaKeysWindow                   MsdMediaKeysWindow;
 typedef struct MsdMediaKeysWindowClass              MsdMediaKeysWindowClass;
@@ -53,8 +53,8 @@ struct MsdMediaKeysWindowClass {
 };
 
 typedef enum {
-        MSD_MEDIA_KEYS_WINDOW_ACTION_VOLUME,
-        MSD_MEDIA_KEYS_WINDOW_ACTION_CUSTOM
+        CSD_MEDIA_KEYS_WINDOW_ACTION_VOLUME,
+        CSD_MEDIA_KEYS_WINDOW_ACTION_CUSTOM
 } MsdMediaKeysWindowAction;
 
 GType                 csd_media_keys_window_get_type          (void);

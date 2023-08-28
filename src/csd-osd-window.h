@@ -37,8 +37,8 @@
  * Just pack your widgets in it, sit back, and enjoy the ride.
  */
 
-#ifndef MSD_OSD_WINDOW_H
-#define MSD_OSD_WINDOW_H
+#ifndef CSD_OSD_WINDOW_H
+#define CSD_OSD_WINDOW_H
 
 #include <glib-object.h>
 #include <ctk/ctk.h>
@@ -48,14 +48,14 @@ extern "C" {
 #endif
 
 /* Alpha value to be used for foreground objects drawn in an OSD window */
-#define MSD_OSD_WINDOW_FG_ALPHA 1.0
+#define CSD_OSD_WINDOW_FG_ALPHA 1.0
 
-#define MSD_TYPE_OSD_WINDOW            (csd_osd_window_get_type ())
-#define MSD_OSD_WINDOW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj),  MSD_TYPE_OSD_WINDOW, MsdOsdWindow))
-#define MSD_OSD_WINDOW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),   MSD_TYPE_OSD_WINDOW, MsdOsdWindowClass))
-#define MSD_IS_OSD_WINDOW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj),  MSD_TYPE_OSD_WINDOW))
-#define MSD_IS_OSD_WINDOW_CLASS(klass) (G_TYPE_INSTANCE_GET_CLASS ((klass), MSD_TYPE_OSD_WINDOW))
-#define MSD_OSD_WINDOW_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), MSD_TYPE_OSD_WINDOW, MsdOsdWindowClass))
+#define CSD_TYPE_OSD_WINDOW            (csd_osd_window_get_type ())
+#define CSD_OSD_WINDOW(obj)            (G_TYPE_CHECK_INSTANCE_CAST ((obj),  CSD_TYPE_OSD_WINDOW, MsdOsdWindow))
+#define CSD_OSD_WINDOW_CLASS(klass)    (G_TYPE_CHECK_CLASS_CAST ((klass),   CSD_TYPE_OSD_WINDOW, MsdOsdWindowClass))
+#define CSD_IS_OSD_WINDOW(obj)         (G_TYPE_CHECK_INSTANCE_TYPE ((obj),  CSD_TYPE_OSD_WINDOW))
+#define CSD_IS_OSD_WINDOW_CLASS(klass) (G_TYPE_INSTANCE_GET_CLASS ((klass), CSD_TYPE_OSD_WINDOW))
+#define CSD_OSD_WINDOW_GET_CLASS(obj)  (G_TYPE_INSTANCE_GET_CLASS ((obj), CSD_TYPE_OSD_WINDOW, MsdOsdWindowClass))
 
 typedef struct MsdOsdWindow                   MsdOsdWindow;
 typedef struct MsdOsdWindowClass              MsdOsdWindowClass;

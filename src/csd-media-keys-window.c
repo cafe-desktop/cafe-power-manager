@@ -47,7 +47,7 @@ struct MsdMediaKeysWindowPrivate
         CtkWidget               *progress;
 };
 
-G_DEFINE_TYPE_WITH_PRIVATE (MsdMediaKeysWindow, csd_media_keys_window, MSD_TYPE_OSD_WINDOW)
+G_DEFINE_TYPE_WITH_PRIVATE (MsdMediaKeysWindow, csd_media_keys_window, CSD_TYPE_OSD_WINDOW)
 
 static void
 volume_controls_set_visible (MsdMediaKeysWindow *window,
@@ -77,9 +77,9 @@ window_set_icon_name (MsdMediaKeysWindow *window,
 static void
 action_changed (MsdMediaKeysWindow *window)
 {
-        if (!csd_osd_window_is_composited (MSD_OSD_WINDOW (window))) {
+        if (!csd_osd_window_is_composited (CSD_OSD_WINDOW (window))) {
                 switch (window->priv->action) {
-                case MSD_MEDIA_KEYS_WINDOW_ACTION_VOLUME:
+                case CSD_MEDIA_KEYS_WINDOW_ACTION_VOLUME:
                         volume_controls_set_visible (window, TRUE);
 
                         if (window->priv->volume_muted) {
@@ -89,7 +89,7 @@ action_changed (MsdMediaKeysWindow *window)
                         }
 
                         break;
-                case MSD_MEDIA_KEYS_WINDOW_ACTION_CUSTOM:
+                case CSD_MEDIA_KEYS_WINDOW_ACTION_CUSTOM:
                         volume_controls_set_visible (window, window->priv->show_level);
                         window_set_icon_name (window, window->priv->icon_name);
                         break;
@@ -99,15 +99,15 @@ action_changed (MsdMediaKeysWindow *window)
                 }
         }
 
-        csd_osd_window_update_and_hide (MSD_OSD_WINDOW (window));
+        csd_osd_window_update_and_hide (CSD_OSD_WINDOW (window));
 }
 
 static void
 volume_level_changed (MsdMediaKeysWindow *window)
 {
-        csd_osd_window_update_and_hide (MSD_OSD_WINDOW (window));
+        csd_osd_window_update_and_hide (CSD_OSD_WINDOW (window));
 
-        if (!csd_osd_window_is_composited (MSD_OSD_WINDOW (window)) && window->priv->progress != NULL) {
+        if (!csd_osd_window_is_composited (CSD_OSD_WINDOW (window)) && window->priv->progress != NULL) {
                 double fraction;
 
                 fraction = (double) window->priv->volume_level / 100.0;
@@ -120,9 +120,9 @@ volume_level_changed (MsdMediaKeysWindow *window)
 static void
 volume_muted_changed (MsdMediaKeysWindow *window)
 {
-        csd_osd_window_update_and_hide (MSD_OSD_WINDOW (window));
+        csd_osd_window_update_and_hide (CSD_OSD_WINDOW (window));
 
-        if (!csd_osd_window_is_composited (MSD_OSD_WINDOW (window))) {
+        if (!csd_osd_window_is_composited (CSD_OSD_WINDOW (window))) {
                 if (window->priv->volume_muted) {
                         window_set_icon_name (window, "audio-volume-muted");
                 } else {
@@ -135,14 +135,14 @@ void
 csd_media_keys_window_set_action (MsdMediaKeysWindow      *window,
                                   MsdMediaKeysWindowAction action)
 {
-        g_return_if_fail (MSD_IS_MEDIA_KEYS_WINDOW (window));
-        g_return_if_fail (action == MSD_MEDIA_KEYS_WINDOW_ACTION_VOLUME);
+        g_return_if_fail (CSD_IS_MEDIA_KEYS_WINDOW (window));
+        g_return_if_fail (action == CSD_MEDIA_KEYS_WINDOW_ACTION_VOLUME);
 
         if (window->priv->action != action) {
                 window->priv->action = action;
                 action_changed (window);
         } else {
-                csd_osd_window_update_and_hide (MSD_OSD_WINDOW (window));
+                csd_osd_window_update_and_hide (CSD_OSD_WINDOW (window));
         }
 }
 
@@ -151,19 +151,19 @@ csd_media_keys_window_set_action_custom (MsdMediaKeysWindow      *window,
                                          const char              *icon_name,
                                          gboolean                 show_level)
 {
-        g_return_if_fail (MSD_IS_MEDIA_KEYS_WINDOW (window));
+        g_return_if_fail (CSD_IS_MEDIA_KEYS_WINDOW (window));
         g_return_if_fail (icon_name != NULL);
 
-        if (window->priv->action != MSD_MEDIA_KEYS_WINDOW_ACTION_CUSTOM ||
+        if (window->priv->action != CSD_MEDIA_KEYS_WINDOW_ACTION_CUSTOM ||
             g_strcmp0 (window->priv->icon_name, icon_name) != 0 ||
             window->priv->show_level != show_level) {
-                window->priv->action = MSD_MEDIA_KEYS_WINDOW_ACTION_CUSTOM;
+                window->priv->action = CSD_MEDIA_KEYS_WINDOW_ACTION_CUSTOM;
                 g_free (window->priv->icon_name);
                 window->priv->icon_name = g_strdup (icon_name);
                 window->priv->show_level = show_level;
                 action_changed (window);
         } else {
-                csd_osd_window_update_and_hide (MSD_OSD_WINDOW (window));
+                csd_osd_window_update_and_hide (CSD_OSD_WINDOW (window));
         }
 }
 
@@ -171,7 +171,7 @@ void
 csd_media_keys_window_set_volume_muted (MsdMediaKeysWindow *window,
                                         gboolean            muted)
 {
-        g_return_if_fail (MSD_IS_MEDIA_KEYS_WINDOW (window));
+        g_return_if_fail (CSD_IS_MEDIA_KEYS_WINDOW (window));
 
         if (window->priv->volume_muted != muted) {
                 window->priv->volume_muted = muted;
@@ -183,7 +183,7 @@ void
 csd_media_keys_window_set_volume_level (MsdMediaKeysWindow *window,
                                         int                 level)
 {
-        g_return_if_fail (MSD_IS_MEDIA_KEYS_WINDOW (window));
+        g_return_if_fail (CSD_IS_MEDIA_KEYS_WINDOW (window));
 
         if (window->priv->volume_level != level) {
                 window->priv->volume_level = level;
@@ -236,10 +236,10 @@ draw_eject (cairo_t *cr,
         cairo_rel_line_to (cr, -width / 2, -tri_height);
         cairo_rel_line_to (cr, -width / 2, tri_height);
         cairo_close_path (cr);
-        cairo_set_source_rgba (cr, 1.0, 1.0, 1.0, MSD_OSD_WINDOW_FG_ALPHA);
+        cairo_set_source_rgba (cr, 1.0, 1.0, 1.0, CSD_OSD_WINDOW_FG_ALPHA);
         cairo_fill_preserve (cr);
 
-        cairo_set_source_rgba (cr, 0.6, 0.6, 0.6, MSD_OSD_WINDOW_FG_ALPHA / 2);
+        cairo_set_source_rgba (cr, 0.6, 0.6, 0.6, CSD_OSD_WINDOW_FG_ALPHA / 2);
         cairo_set_line_width (cr, 2);
         cairo_stroke (cr);
 }
@@ -298,12 +298,12 @@ draw_cross (cairo_t *cr,
         cairo_move_to (cr, cx, cy + size/2.0);
         cairo_rel_line_to (cr, size, -size);
 
-        cairo_set_source_rgba (cr, 0.6, 0.6, 0.6, MSD_OSD_WINDOW_FG_ALPHA / 2);
+        cairo_set_source_rgba (cr, 0.6, 0.6, 0.6, CSD_OSD_WINDOW_FG_ALPHA / 2);
         cairo_set_line_width (cr, 14);
         cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
         cairo_stroke_preserve (cr);
 
-        cairo_set_source_rgba (cr, 1.0, 1.0, 1.0, MSD_OSD_WINDOW_FG_ALPHA);
+        cairo_set_source_rgba (cr, 1.0, 1.0, 1.0, CSD_OSD_WINDOW_FG_ALPHA);
         cairo_set_line_width (cr, 10);
         cairo_set_line_cap (cr, CAIRO_LINE_CAP_ROUND);
         cairo_stroke (cr);
@@ -337,10 +337,10 @@ draw_speaker (cairo_t *cr,
         cairo_line_to (cr, _x0, _y0);
         cairo_close_path (cr);
 
-        cairo_set_source_rgba (cr, 1.0, 1.0, 1.0, MSD_OSD_WINDOW_FG_ALPHA);
+        cairo_set_source_rgba (cr, 1.0, 1.0, 1.0, CSD_OSD_WINDOW_FG_ALPHA);
         cairo_fill_preserve (cr);
 
-        cairo_set_source_rgba (cr, 0.6, 0.6, 0.6, MSD_OSD_WINDOW_FG_ALPHA / 2);
+        cairo_set_source_rgba (cr, 0.6, 0.6, 0.6, CSD_OSD_WINDOW_FG_ALPHA / 2);
         cairo_set_line_width (cr, 2);
         cairo_stroke (cr);
 }
@@ -385,7 +385,7 @@ render_speaker (MsdMediaKeysWindow *window,
         }
 
         cdk_cairo_set_source_pixbuf (cr, pixbuf, _x0, _y0);
-        cairo_paint_with_alpha (cr, MSD_OSD_WINDOW_FG_ALPHA);
+        cairo_paint_with_alpha (cr, CSD_OSD_WINDOW_FG_ALPHA);
 
         g_object_unref (pixbuf);
 
@@ -548,7 +548,7 @@ render_custom (MsdMediaKeysWindow *window,
         }
 
         cdk_cairo_set_source_pixbuf (cr, pixbuf, _x0, _y0);
-        cairo_paint_with_alpha (cr, MSD_OSD_WINDOW_FG_ALPHA);
+        cairo_paint_with_alpha (cr, CSD_OSD_WINDOW_FG_ALPHA);
 
         g_object_unref (pixbuf);
 
@@ -623,13 +623,13 @@ static void
 csd_media_keys_window_draw_when_composited (MsdOsdWindow *osd_window,
                                               cairo_t      *cr)
 {
-        MsdMediaKeysWindow *window = MSD_MEDIA_KEYS_WINDOW (osd_window);
+        MsdMediaKeysWindow *window = CSD_MEDIA_KEYS_WINDOW (osd_window);
 
         switch (window->priv->action) {
-        case MSD_MEDIA_KEYS_WINDOW_ACTION_VOLUME:
+        case CSD_MEDIA_KEYS_WINDOW_ACTION_VOLUME:
                 draw_action_volume (window, cr);
                 break;
-        case MSD_MEDIA_KEYS_WINDOW_ACTION_CUSTOM:
+        case CSD_MEDIA_KEYS_WINDOW_ACTION_CUSTOM:
                 draw_action_custom (window, cr);
                 break;
         default:
@@ -640,7 +640,7 @@ csd_media_keys_window_draw_when_composited (MsdOsdWindow *osd_window,
 static void
 csd_media_keys_window_class_init (MsdMediaKeysWindowClass *klass)
 {
-        MsdOsdWindowClass *osd_window_class = MSD_OSD_WINDOW_CLASS (klass);
+        MsdOsdWindowClass *osd_window_class = CSD_OSD_WINDOW_CLASS (klass);
 
         osd_window_class->draw_when_composited = csd_media_keys_window_draw_when_composited;
 }
@@ -654,7 +654,7 @@ csd_media_keys_window_init (MsdMediaKeysWindow *window)
 
         screen = ctk_widget_get_screen (CTK_WIDGET (window));
 
-        if (!csd_osd_window_is_composited (MSD_OSD_WINDOW (window))) {
+        if (!csd_osd_window_is_composited (CSD_OSD_WINDOW (window))) {
                 CtkBuilder *builder;
                 const gchar *objects[] = {"acme_box", NULL};
                 CtkWidget *box;
@@ -683,5 +683,5 @@ csd_media_keys_window_init (MsdMediaKeysWindow *window)
 CtkWidget *
 csd_media_keys_window_new (void)
 {
-        return g_object_new (MSD_TYPE_MEDIA_KEYS_WINDOW, NULL);
+        return g_object_new (CSD_TYPE_MEDIA_KEYS_WINDOW, NULL);
 }
