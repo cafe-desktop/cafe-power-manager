@@ -1227,7 +1227,7 @@ msgstr ""
 
 #: src/cpm-manager.c:1314
 #, c-format
-msgid "Approxicafely <b>%s</b> remaining (%.0f%%)"
+msgid "Approximately <b>%s</b> remaining (%.0f%%)"
 msgstr ""
 
 #: src/cpm-manager.c:1318
@@ -1236,7 +1236,7 @@ msgstr ""
 
 #: src/cpm-manager.c:1322
 #, c-format
-msgid "Approxicafely <b>%s</b> of remaining UPS backup power (%.0f%%)"
+msgid "Approximately <b>%s</b> of remaining UPS backup power (%.0f%%)"
 msgstr ""
 
 #: src/cpm-manager.c:1331 src/cpm-manager.c:1470
@@ -1333,7 +1333,7 @@ msgstr ""
 #: src/cpm-manager.c:1459
 #, c-format
 msgid ""
-"Approxicafely <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
+"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
 " your computer to avoid losing data."
 msgstr ""
 

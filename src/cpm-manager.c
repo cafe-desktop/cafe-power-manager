@@ -1311,7 +1311,7 @@ cpm_manager_engine_charge_low_cb (CpmEngine *engine, UpDevice *device, CpmManage
 		remaining_text = cpm_get_timestring (time_to_empty);
 
 		/* TRANSLATORS: tell the user how much time they have got */
-		message = g_strdup_printf (_("Approxicafely <b>%s</b> remaining (%.0f%%)"), remaining_text, percentage);
+		message = g_strdup_printf (_("Approximately <b>%s</b> remaining (%.0f%%)"), remaining_text, percentage);
 
 	} else if (kind == UP_DEVICE_KIND_UPS) {
 		/* TRANSLATORS: UPS is starting to get a little low */
@@ -1319,7 +1319,7 @@ cpm_manager_engine_charge_low_cb (CpmEngine *engine, UpDevice *device, CpmManage
 		remaining_text = cpm_get_timestring (time_to_empty);
 
 		/* TRANSLATORS: tell the user how much time they have got */
-		message = g_strdup_printf (_("Approxicafely <b>%s</b> of remaining UPS backup power (%.0f%%)"),
+		message = g_strdup_printf (_("Approximately <b>%s</b> of remaining UPS backup power (%.0f%%)"),
 					   remaining_text, percentage);
 	} else if (kind == UP_DEVICE_KIND_MOUSE) {
 		gboolean notify = g_settings_get_boolean (manager->priv->settings,
@@ -1456,7 +1456,7 @@ cpm_manager_engine_charge_critical_cb (CpmEngine *engine, UpDevice *device, CpmM
 		remaining_text = cpm_get_timestring (time_to_empty);
 
 		/* TRANSLATORS: give the user a ultimatum */
-		message = g_strdup_printf (_("Approxicafely <b>%s</b> of remaining UPS power (%.0f%%). "
+		message = g_strdup_printf (_("Approximately <b>%s</b> of remaining UPS power (%.0f%%). "
 					     "Restore AC power to your computer to avoid losing data."),
 					   remaining_text, percentage);
 		g_free (remaining_text);

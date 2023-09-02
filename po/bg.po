@@ -1373,7 +1373,7 @@ msgstr "Ниско ниво на батерията на преносим ком
 
 #: src/cpm-manager.c:1314
 #, c-format
-msgid "Approxicafely <b>%s</b> remaining (%.0f%%)"
+msgid "Approximately <b>%s</b> remaining (%.0f%%)"
 msgstr "Остава приблизително <b>%s</b> (%.0f %%)"
 
 #: src/cpm-manager.c:1318
@@ -1382,7 +1382,7 @@ msgstr "Ниско ниво на непрекъсваемото токозахр
 
 #: src/cpm-manager.c:1322
 #, c-format
-msgid "Approxicafely <b>%s</b> of remaining UPS backup power (%.0f%%)"
+msgid "Approximately <b>%s</b> of remaining UPS backup power (%.0f%%)"
 msgstr ""
 "Остава приблизително <b>%s</b> живот на непрекъсваемото токозахранване (%.0f"
 " %%)"
@@ -1487,7 +1487,7 @@ msgstr "Критично ниско ниво на непрекъсваемото
 #: src/cpm-manager.c:1459
 #, c-format
 msgid ""
-"Approxicafely <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
+"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
 " your computer to avoid losing data."
 msgstr ""
 "Остава приблизително <b>%s</b> живот на непрекъсваемото токозахранване (%.0f"

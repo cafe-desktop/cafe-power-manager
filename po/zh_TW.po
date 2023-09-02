@@ -1226,7 +1226,7 @@ msgstr "筆電電池電力低落"
 
 #: src/cpm-manager.c:1314
 #, c-format
-msgid "Approxicafely <b>%s</b> remaining (%.0f%%)"
+msgid "Approximately <b>%s</b> remaining (%.0f%%)"
 msgstr "大約剩下 <b>%s</b> (%.0f%%)"
 
 #: src/cpm-manager.c:1318
@@ -1235,7 +1235,7 @@ msgstr "不斷電系統(UPS)電力低落"
 
 #: src/cpm-manager.c:1322
 #, c-format
-msgid "Approxicafely <b>%s</b> of remaining UPS backup power (%.0f%%)"
+msgid "Approximately <b>%s</b> of remaining UPS backup power (%.0f%%)"
 msgstr "您大約剩下 <b>%s</b> 的不斷電系統備用電源 (%.0f%%)"
 
 #: src/cpm-manager.c:1331 src/cpm-manager.c:1470
@@ -1332,7 +1332,7 @@ msgstr "不斷電系統的電量極低"
 #: src/cpm-manager.c:1459
 #, c-format
 msgid ""
-"Approxicafely <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
+"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
 " your computer to avoid losing data."
 msgstr "您大約剩下 <b>%s</b> 的 UPS 電力 (%.0f%%)。請回復電腦的交流電源以避免遺失資料。"
 

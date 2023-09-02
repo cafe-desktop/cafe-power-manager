@@ -1323,7 +1323,7 @@ msgstr "Computerens batteriniveau lavt"
 
 #: src/cpm-manager.c:1314
 #, c-format
-msgid "Approxicafely <b>%s</b> remaining (%.0f%%)"
+msgid "Approximately <b>%s</b> remaining (%.0f%%)"
 msgstr "Omtrent <b>%s</b> resterende tid (%.0f%%)"
 
 #: src/cpm-manager.c:1318
@@ -1332,7 +1332,7 @@ msgstr "Nødstrømsniveau lavt"
 
 #: src/cpm-manager.c:1322
 #, c-format
-msgid "Approxicafely <b>%s</b> of remaining UPS backup power (%.0f%%)"
+msgid "Approximately <b>%s</b> of remaining UPS backup power (%.0f%%)"
 msgstr "Der er omtrent <b>%s</b> resterende tid med nødstrøm (%.0f%%)"
 
 #: src/cpm-manager.c:1331 src/cpm-manager.c:1470
@@ -1436,7 +1436,7 @@ msgstr "Nødstrøm på kritisk lavt niveau"
 #: src/cpm-manager.c:1459
 #, c-format
 msgid ""
-"Approxicafely <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
+"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
 " your computer to avoid losing data."
 msgstr ""
 "Der er omtrent <b>%s</b> resterende tid på nødstrøm (%.0f%%). Tilslut "

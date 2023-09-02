@@ -1251,7 +1251,7 @@ msgstr "노트북 배터리 전원 부족"
 
 #: src/cpm-manager.c:1314
 #, c-format
-msgid "Approxicafely <b>%s</b> remaining (%.0f%%)"
+msgid "Approximately <b>%s</b> remaining (%.0f%%)"
 msgstr "평균 <b>%s</b> 남은 용량(%.0f%%)"
 
 #: src/cpm-manager.c:1318
@@ -1260,7 +1260,7 @@ msgstr "UPS 전원 부족"
 
 #: src/cpm-manager.c:1322
 #, c-format
-msgid "Approxicafely <b>%s</b> of remaining UPS backup power (%.0f%%)"
+msgid "Approximately <b>%s</b> of remaining UPS backup power (%.0f%%)"
 msgstr "평균 무정전 전원 장치 백업 전원 <b>%s</b> 남은 용량(%.0f%%)"
 
 #: src/cpm-manager.c:1331 src/cpm-manager.c:1470
@@ -1357,7 +1357,7 @@ msgstr "무정전 전원 장치 전원 매우 부족"
 #: src/cpm-manager.c:1459
 #, c-format
 msgid ""
-"Approxicafely <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
+"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
 " your computer to avoid losing data."
 msgstr ""
 "평균적으로 <b>%s</b>의 남은 무정전 전원 장치 전원입니다(%.0f%%). 데이터 손실을 방지하려면 교류 전원 상태를 복원하십시오."
