@@ -349,9 +349,9 @@
   </section>
 
   <section id="statistics-time">
-    <title>Esticafed Time History</title>
+    <title>Estimated Time History</title>
     <para>
-      This graph shows the esticafed charge history for the composite primary
+      This graph shows the estimated charge history for the composite primary
       battery.
       This line represents the amount of time required until charged, or the
       amount of time until discharge.

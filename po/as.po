@@ -1823,7 +1823,7 @@ msgstr "Cell Voltage"
 
 #: src/cpm-statistics.c:1339 src/cpm-statistics.c:1345
 msgid "Predicted time"
-msgstr "Esticafed time"
+msgstr "Estimated time"
 
 #: src/cpm-statistics.c:1379 src/cpm-statistics.c:1391
 msgid "Correction factor"

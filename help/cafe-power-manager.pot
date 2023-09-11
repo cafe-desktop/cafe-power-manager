@@ -333,12 +333,12 @@ msgstr ""
 
 #. (itstool) path: section/title
 #: C/index.docbook:352
-msgid "Esticafed Time History"
+msgid "Estimated Time History"
 msgstr ""
 
 #. (itstool) path: section/para
 #: C/index.docbook:353
-msgid "This graph shows the esticafed charge history for the composite primary battery. This line represents the amount of time required until charged, or the amount of time until discharge. This line should go proportionally up when the rate decreases and down when the rate increases. A legend is shown with this graph when data events have been received."
+msgid "This graph shows the estimated charge history for the composite primary battery. This line represents the amount of time required until charged, or the amount of time until discharge. This line should go proportionally up when the rate decreases and down when the rate increases. A legend is shown with this graph when data events have been received."
 msgstr ""
 
 #. (itstool) path: section/title
