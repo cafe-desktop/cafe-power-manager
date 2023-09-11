@@ -14,7 +14,7 @@
 # Bamstam, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Tobias Bannert <tobannert@gmail.com>, 2020
-# Wolfgang Ulbrich <cafe@raveit.de>, 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
 # valsu <valsu@hylia.de>, 2020
 # 
 msgid ""

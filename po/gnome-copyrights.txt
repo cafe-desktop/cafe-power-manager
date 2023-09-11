@@ -847,7 +847,7 @@
 # This file is distributed under the same license as the gnome-power-manager package.
 #
 # Matjaž Horvat <m@owca.info>, 2006.
-# Cafej Urbančič <gnomeju@svn.gnome.org>, 2007 - 2010.
+# Matej Urbančič <gnomeju@svn.gnome.org>, 2007 - 2010.
 #
 
 

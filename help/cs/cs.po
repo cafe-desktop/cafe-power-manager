@@ -3,7 +3,7 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # ToMáš Marný, 2020
 # Lucas Lommer <drom@kdyne.net>, 2020
-# Wolfgang Ulbrich <cafe@raveit.de>, 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
 # LiberteCzech <liberte.czech@gmail.com>, 2020
 # Pavel Borecki <pavel.borecki@gmail.com>, 2020
 # 

@@ -31,7 +31,7 @@ sub ReplaceAuthors {
   $_ eq 'José Aliste <jaliste%src.gnome.org>' and $_ = 'José Aliste <jaliste%gnome.org>' for @authors;
   $_ eq 'leigh123linux <leigh123linux%googlemail.com>' and $_ = 'Leigh Scott <leigh123linux%googlemail.com>' for @authors;
   $_ eq 'lyokha <alexey.radkov%gmail.com>' and $_ = 'Alexey Radkov <alexey.radkov%gmail.com>' for @authors;
-  $_ eq 'Martin Wimpress <code%flexion.org>' and $_ = 'Martin Wimpress <martin%cafe-desktop.org>' for @authors;
+  $_ eq 'Martin Wimpress <code%flexion.org>' and $_ = 'Martin Wimpress <martin%mate-desktop.org>' for @authors;
   $_ eq 'monsta <monsta%inbox.ru>' and $_ = 'Vlad Orlov <monsta%inbox.ru>' for @authors;
   $_ eq 'Monsta <monsta%inbox.ru>' and $_ = 'Vlad Orlov <monsta%inbox.ru>' for @authors;
   $_ eq 'Nachanon Vetjasit <nachanon%users.noreply.github.com>' and $_ = 'Nutchanon Wetchasit <nachanon%users.noreply.github.com>' for @authors;
@@ -39,13 +39,13 @@ sub ReplaceAuthors {
   $_ eq 'Piiit <pitiz29a%gmail.com>' and $_ = 'Peter Moser <pitiz29a%gmail.com>' for @authors;
   $_ eq 'rootavish <avishkar_gupta%outlook.com>' and $_ = 'Avishkar Gupta <rootavish%gmail.com>' for @authors;
   $_ eq 'rootavish <rootavish%gmail.com>' and $_ = 'Avishkar Gupta <rootavish%gmail.com>' for @authors;
-  $_ eq 'raveit <chat-to-me%raveit.de>' and $_ = 'Wolfgang Ulbrich <cafe%raveit.de>' for @authors;
-  $_ eq 'raveit65 <chat-to-me%raveit.de>' and $_ = 'Wolfgang Ulbrich <cafe%raveit.de>' for @authors;
-  $_ eq 'raveit65 <cafe%raveit.de>' and $_ = 'Wolfgang Ulbrich <cafe%raveit.de>' for @authors;
+  $_ eq 'raveit <chat-to-me%raveit.de>' and $_ = 'Wolfgang Ulbrich <mate%raveit.de>' for @authors;
+  $_ eq 'raveit65 <chat-to-me%raveit.de>' and $_ = 'Wolfgang Ulbrich <mate%raveit.de>' for @authors;
+  $_ eq 'raveit65 <mate%raveit.de>' and $_ = 'Wolfgang Ulbrich <mate%raveit.de>' for @authors;
   $_ eq 'rbuj <robert.buj%gmail.com>' and $_ = 'Robert Buj <robert.buj%gmail.com>' for @authors;
-  $_ eq 'Scott Balneaves <sbalneav%ltsp.org>' and $_ = 'Scott Balneaves <sbalneav%cafe-desktop.org>' for @authors;
+  $_ eq 'Scott Balneaves <sbalneav%ltsp.org>' and $_ = 'Scott Balneaves <sbalneav%mate-desktop.org>' for @authors;
   $_ eq 'Victor Kareh <vkareh%vkareh.net>'and $_ = 'Victor Kareh <vkareh%redhat.com>' for @authors;
-  $_ eq 'Wolfgang Ulbrich <chat-to-me%raveit.de>' and $_ = 'Wolfgang Ulbrich <cafe%raveit.de>' for @authors;
+  $_ eq 'Wolfgang Ulbrich <chat-to-me%raveit.de>' and $_ = 'Wolfgang Ulbrich <mate%raveit.de>' for @authors;
   $_ eq 'ZenWalker <scow%riseup.net>' and $_ = 'Pablo Barciela <scow%riseup.net>' for @authors;
   return @authors;
 }

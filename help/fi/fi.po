@@ -2,7 +2,7 @@
 # Translators:
 # Lasse Liehu <larso@gmx.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
-# Wolfgang Ulbrich <cafe@raveit.de>, 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
 # Riku Viitanen <riisseli4@gmail.com>, 2020
 # Kimmo Kujansuu <mrkujansuu@gmail.com>, 2020
 # 

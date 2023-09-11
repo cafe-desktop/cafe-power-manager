@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Wolfgang Ulbrich <cafe@raveit.de>, 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
 # Kiril Kirilov <cybercop_montana@abv.bg>, 2020
 # Борислав Георгиев <crazyroler@gmail.com>, 2020
 # Замфир Йончев <zamfir.yonchev@gmail.com>, 2020

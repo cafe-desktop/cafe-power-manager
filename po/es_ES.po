@@ -1796,8 +1796,8 @@ msgstr ""
 #: src/cpm-tray-icon.c:193
 msgid "translator-credits"
 msgstr ""
-"Jorge González <jorgegonz@svn.cafe.org>\n"
-"Francisco Javier F. Serrador <serrador@cvs.cafe.org>"
+"Jorge González <jorgegonz@svn.mate.org>\n"
+"Francisco Javier F. Serrador <serrador@cvs.mate.org>"
 
 #: src/cpm-tray-icon.c:295
 #, c-format

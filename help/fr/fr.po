@@ -4,7 +4,7 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
 # Étienne Deparis <etienne@depar.is>, 2020
-# Wolfgang Ulbrich <cafe@raveit.de>, 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
 # Xorg, 2020
 # Guillaume Fayard <guillaume2.fayard@wanadoo.fr>, 2020
 # Laurent Napias <tamplan+transifex@free.fr>, 2020

@@ -4,7 +4,7 @@
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 # 
 # Translators:
-# Wolfgang Ulbrich <cafe@raveit.de>, 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
 # Angelos Chraniotis <chraniotis@gmail.com>, 2020
 # Efstathios Iosifidis <iefstathios@gmail.com>, 2020
 # Timos Zacharatos <kokkinopioupiou@hotmail.com>, 2020

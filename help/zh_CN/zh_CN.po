@@ -3,7 +3,7 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Mingcong Bai <jeffbai@aosc.xyz>, 2020
 # liushuyu011 <liushuyu011@gmail.com>, 2020
-# Wolfgang Ulbrich <cafe@raveit.de>, 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
 # CNAmira <forucial@icloud.com>, 2020
 # biqiu-ssw <shenshuaiwen@gmail.com>, 2020
 # Mingtian Yang <i@skylee.xyz>, 2020

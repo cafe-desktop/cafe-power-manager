@@ -2,7 +2,7 @@
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Любомир Василев, 2020
-# Wolfgang Ulbrich <cafe@raveit.de>, 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
 # Замфир Йончев <zamfir.yonchev@gmail.com>, 2020
 # H Bozhkov, 2020
 # 

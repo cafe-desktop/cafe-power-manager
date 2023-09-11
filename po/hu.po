@@ -5,7 +5,7 @@
 # 
 # Translators:
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
-# Wolfgang Ulbrich <cafe@raveit.de>, 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
 # Rezső Páder <rezso@rezso.net>, 2020
 # István Szőllősi <szollosi.istv4n@gmail.com>, 2020
 # Balázs Meskó <meskobalazs@mailbox.org>, 2020

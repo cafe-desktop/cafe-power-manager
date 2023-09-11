@@ -3,7 +3,7 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Ettore Atalan <atalanttore@googlemail.com>, 2020
 # Tobias Bannert <tobannert@gmail.com>, 2020
-# Wolfgang Ulbrich <cafe@raveit.de>, 2020
+# Wolfgang Ulbrich <mate@raveit.de>, 2020
 # Julian Rüger <jr98@gmx.net>, 2020
 # Marcel Artz <email@marcel-artz.de>, 2020
 # 
