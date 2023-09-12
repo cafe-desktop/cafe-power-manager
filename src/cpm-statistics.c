@@ -1446,6 +1446,8 @@ main (int argc, char *argv[])
 
 	widget = CTK_WIDGET (ctk_builder_get_object (builder, "dialog_stats"));
 
+	g_object_set (ctk_settings_get_default (), "ctk-button-images", TRUE, NULL);
+
 	status = g_application_run (G_APPLICATION (app), argc, argv);
 	if (devices != NULL)
 		g_ptr_array_unref (devices);
