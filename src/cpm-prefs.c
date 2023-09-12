@@ -104,6 +104,8 @@ main (int argc, char **argv)
 	g_signal_connect_swapped (prefs, "action-close",
 			  G_CALLBACK (ctk_widget_destroy), window);
 
+	g_object_set (ctk_settings_get_default (), "ctk-button-images", TRUE, NULL);
+
 	status = g_application_run (G_APPLICATION (app), argc, argv);
 	g_object_unref (prefs);
 
