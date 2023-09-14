@@ -2,25 +2,26 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Polihron Alexandru (APoliTech) <ppolihron@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Daniel <danny3@tutanota.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-power-manager 1.23.1\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2019-11-12 15:22+0100\n"
+"POT-Creation-Date: 2023-09-14 10:39+0200\n"
 "PO-Revision-Date: 2020-02-15 16:27+0000\n"
 "Last-Translator: Daniel <danny3@tutanota.com>, 2020\n"
 "Language-Team: Romanian (https://www.transifex.com/cafe/teams/13566/ro/)\n"
+"Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ro\n"
-"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?2:1));\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
+"2:1));\n"
 
 #: applets/brightness/brightness-applet.c:107
 msgid "Power Manager Brightness Applet"
@@ -44,57 +45,55 @@ msgstr "Nu se poate determina luminozitatea ecranului laptopului"
 msgid "LCD brightness : %d%%"
 msgstr "Luminozitate LCD: %d%%"
 
+#: applets/brightness/brightness-applet.c:790
+#: applets/inhibit/inhibit-applet.c:287
+msgid ""
+"Power Manager is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:795
+#: applets/inhibit/inhibit-applet.c:292
+msgid ""
+"Power Manager is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+
 #: applets/brightness/brightness-applet.c:800
 #: applets/inhibit/inhibit-applet.c:297
-msgid "Licensed under the GNU General Public License Version 2"
-msgstr "Licențiat sub GNU General Public License Versiunea a 2-a"
-
-#: applets/brightness/brightness-applet.c:801
-#: applets/inhibit/inhibit-applet.c:298
 msgid ""
-"Power Manager is free software; you can redistribute it and/or\n"
-"modify it under the terms of the GNU General Public License\n"
-"as published by the Free Software Foundation; either version 2\n"
-"of the License, or (at your option) any later version."
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"Gestionarul de consum este software liber; puteți să îl redistribuiți și/sau\n"
-"să îl modificați sub termenii GNU General Public License\n"
-"așa cum este publicată de către Free Software Foundation; sau versiunea a 2-a\n"
-"a Licenței, sau (la alegerea dumneavoastră) orice versiune ulterioară."
 
-#: applets/brightness/brightness-applet.c:805
-#: applets/inhibit/inhibit-applet.c:302
+#: applets/brightness/brightness-applet.c:813
+msgid "About Power Manager Brightness Applet"
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:815
 msgid ""
-"Power Manager is distributed in the hope that it will be useful,\n"
-"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-"GNU General Public License for more details."
+"Copyright © 2006 Benjamin Canou\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"Getionarul de consum este distribuit în speranța că va fi folositor,\n"
-"dar FARĂ NICIO GARANȚIE; chiar fără garanția implicită a\n"
-"COMERCIALIZĂRII sau FOLOSIRII ÎN SCOPURI PARTICULARE. Verficați \n"
-"GNU General Public License pentru mai multe detalii."
 
-#: applets/brightness/brightness-applet.c:809
-#: applets/inhibit/inhibit-applet.c:306
-msgid ""
-"You should have received a copy of the GNU General Public License\n"
-"along with this program; if not, write to the Free Software\n"
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
-msgstr ""
-"Ar fi trebuit să primiți o copie a GNU General Public License\n"
-"alături de acest program; dacă nu, scrieți la Free Software\n"
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
+#: applets/brightness/brightness-applet.c:823
+#: applets/inhibit/inhibit-applet.c:320 src/cpm-tray-icon.c:214
+msgid "translator-credits"
+msgstr "Daniel Alămiță <danny3@tutanota.com>"
 
-#: applets/brightness/brightness-applet.c:1063
-#: applets/inhibit/inhibit-applet.c:519
+#: applets/brightness/brightness-applet.c:1051
+#: applets/inhibit/inhibit-applet.c:507
 msgid "_About"
 msgstr "_Despre"
 
-#: applets/brightness/brightness-applet.c:1066
-#: applets/inhibit/inhibit-applet.c:522
+#: applets/brightness/brightness-applet.c:1054
+#: applets/inhibit/inhibit-applet.c:510
 msgid "_Help"
 msgstr "_Ajutor"
 
@@ -105,12 +104,6 @@ msgstr "Șablon miniaplicație de luminozitate"
 #: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Brightness Applet"
 msgstr "Miniaplicație luminozitate"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-brightness-applet"
-msgstr ""
 
 #: applets/inhibit/inhibit-applet.c:87
 msgid "Power Manager Inhibit Applet"
@@ -134,6 +127,17 @@ msgstr "Suspendarea automată a sistemului este activată"
 msgid "Manual inhibit"
 msgstr "Împiedicare manuală"
 
+#: applets/inhibit/inhibit-applet.c:310
+msgid "About Power Manager Inhibit Applet"
+msgstr ""
+
+#: applets/inhibit/inhibit-applet.c:312
+msgid ""
+"Copyright © 2006-2007 Richard Hughes\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
+msgstr ""
+
 #: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Inhibit Applet Factory"
 msgstr "Șablon miniaplicație de împiedicare"
@@ -142,26 +146,13 @@ msgstr "Șablon miniaplicație de împiedicare"
 msgid "Inhibit Applet"
 msgstr "Miniaplicație de împiedicare"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-inhibit-applet"
-msgstr ""
-
-#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:184
+#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:204
 msgid "Power Manager"
 msgstr "Administrare consum"
 
-#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:186
+#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:206
 msgid "Power management daemon"
 msgstr "Serviciu de administrare consum"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-manager.desktop.in.in:6
-#: data/cafe-power-preferences.desktop.in.in:6
-msgid "cafe-power-manager"
-msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:26
 #: data/org.cafe.power-manager.gschema.xml.in:41
@@ -193,8 +184,8 @@ msgid ""
 "If the battery event should occur when the lid is shut and the power "
 "disconnected"
 msgstr ""
-"Dacă să fie declanșat event acumulator când capacul este închis și cablul de"
-" alimentare deconectat."
+"Dacă să fie declanșat event acumulator când capacul este închis și cablul de "
+"alimentare deconectat."
 
 #: data/org.cafe.power-manager.gschema.xml.in:37
 msgid ""
@@ -264,8 +255,8 @@ msgid ""
 "If the keyboard backlight brightness should be reduced when the computer is "
 "on battery power"
 msgstr ""
-"Dacă să fie redusă luminozitatea de fundal a tastaturii când calculatorul se"
-" alimentează din acumulator"
+"Dacă să fie redusă luminozitatea de fundal a tastaturii când calculatorul se "
+"alimentează din acumulator"
 
 #: data/org.cafe.power-manager.gschema.xml.in:71
 msgid "Keyboard backlight brightness when on AC power."
@@ -292,8 +283,8 @@ msgid ""
 "For example, if set to '60', the backlight will be cut by 40% on battery "
 "power. Legal values are between 0 and 100."
 msgstr ""
-"Procentul cu care să fie redusă lumina de fundal a tastaturii la alimentarea"
-" din acumulator. De exemplu, dacă este definit la „60„, lumina de fundal va "
+"Procentul cu care să fie redusă lumina de fundal a tastaturii la alimentarea "
+"din acumulator. De exemplu, dacă este definit la „60„, lumina de fundal va "
 "fi redusă cu 40% la alimentarea din acumulator. Valorile acceptate sunt "
 "între 0 și 100."
 
@@ -306,8 +297,8 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:82
 msgid ""
 "The percentage to reduce the keyboard backlight by when idle. For example, "
-"if set to '60', the backlight will be cut by 40% when idle. Legal values are"
-" between 0 and 100."
+"if set to '60', the backlight will be cut by 40% when idle. Legal values are "
+"between 0 and 100."
 msgstr ""
 "Procentul cu care să fie redusă lumina de fundal a tastaturii la "
 "inactivitate. De exemplu, dacă este definit la „60„, lumina de fundal va fi "
@@ -352,8 +343,7 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:101
 msgid "LCD dimming amount when on battery"
 msgstr ""
-"Factorul scădere a luminozității ecranului când se alimentează din "
-"acumulator"
+"Factorul scădere a luminozității ecranului când se alimentează din acumulator"
 
 #: data/org.cafe.power-manager.gschema.xml.in:102
 msgid ""
@@ -386,8 +376,8 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:112
 msgid "The DPMS method used to blank the screen when on AC power."
 msgstr ""
-"Metoda DPMS folosită pentru golirea ecranului când alimentarea se face de la"
-" priză"
+"Metoda DPMS folosită pentru golirea ecranului când alimentarea se face de la "
+"priză"
 
 #: data/org.cafe.power-manager.gschema.xml.in:116
 msgid "Method used to blank screen on battery"
@@ -398,8 +388,8 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:117
 msgid "The DPMS method used to blank the screen when on battery power."
 msgstr ""
-"Metodă DPMS folosită pentru golirea ecranului când se folosește acumulatorul"
-" ca sursă de energie."
+"Metodă DPMS folosită pentru golirea ecranului când se folosește acumulatorul "
+"ca sursă de energie."
 
 #: data/org.cafe.power-manager.gschema.xml.in:121
 msgid "LCD brightness when on AC"
@@ -461,8 +451,8 @@ msgid ""
 "The action to take when the laptop lid is closed and the laptop is on AC "
 "power."
 msgstr ""
-"Acțiunea care să fie luată când  capacul laptopului este închis și acesta se"
-" alimentează de la priză."
+"Acțiunea care să fie luată când  capacul laptopului este închis și acesta se "
+"alimentează de la priză."
 
 #: data/org.cafe.power-manager.gschema.xml.in:151
 msgid "Whether to use time-based notifications"
@@ -532,8 +522,8 @@ msgstr "Blochează ecranul la suspendare"
 
 #: data/org.cafe.power-manager.gschema.xml.in:177
 msgid ""
-"Whether the screen is locked when the computer wakes up from a suspend. Only"
-" used if lock-use-screensaver is false."
+"Whether the screen is locked when the computer wakes up from a suspend. Only "
+"used if lock-use-screensaver is false."
 msgstr ""
 "Dacă ecranul este blocat când calculatorul revine din suspendare. Folosit "
 "numai dacă lock_use_screensaver_settings este fals."
@@ -557,11 +547,11 @@ msgstr "Blochează inelul de chei GNOME la suspendare"
 
 #: data/org.cafe.power-manager.gschema.xml.in:187
 msgid ""
-"Whether the GNOME keyring is locked before the computer enters suspend. This"
-" means the keyring will have to be unlocked on resume."
+"Whether the GNOME keyring is locked before the computer enters suspend. This "
+"means the keyring will have to be unlocked on resume."
 msgstr ""
-"Dacă inelul de chei GNOME este blocat înainte de suspendarea calculatorului."
-" Aceasta înseamnă că inelul va trebui deblocat, la revenire."
+"Dacă inelul de chei GNOME este blocat înainte de suspendarea calculatorului. "
+"Aceasta înseamnă că inelul va trebui deblocat, la revenire."
 
 #: data/org.cafe.power-manager.gschema.xml.in:192
 msgid ""
@@ -602,8 +592,8 @@ msgid ""
 "If a notification message should be displayed when the battery is fully "
 "charged."
 msgstr ""
-"Dacă să fie afișat un mesaj de notificare în cazul în care acumulatorul este"
-" pe deplin încărcat."
+"Dacă să fie afișat un mesaj de notificare în cazul în care acumulatorul este "
+"pe deplin încărcat."
 
 #: data/org.cafe.power-manager.gschema.xml.in:211
 msgid "Notify on a sleep failure"
@@ -627,8 +617,8 @@ msgid ""
 "Leave this blank if the button should not be shown."
 msgstr ""
 "Când intrarea în starea de veghe eșuează se poate afișa utilizatorului un "
-"buton pentru a ajuta la rezolvarea situației. Nu bifați dacă nu vreți să fie"
-" afișat butonul."
+"buton pentru a ajuta la rezolvarea situației. Nu bifați dacă nu vreți să fie "
+"afișat butonul."
 
 #: data/org.cafe.power-manager.gschema.xml.in:221
 msgid "Notify on a low power"
@@ -735,8 +725,8 @@ msgstr "Procentaj considerat scăzut"
 
 #: data/org.cafe.power-manager.gschema.xml.in:277
 msgid ""
-"The percentage of the battery when it is considered low. Only valid when "
-"use-time-for-policy is false."
+"The percentage of the battery when it is considered low. Only valid when use-"
+"time-for-policy is false."
 msgstr ""
 "Procentul la care nivelul acumulatorului este considerat scăzut. Valid doar "
 "când politica use-time-for- este falsă."
@@ -771,11 +761,11 @@ msgstr "Timpul rămas când energia este scăzută"
 
 #: data/org.cafe.power-manager.gschema.xml.in:292
 msgid ""
-"The time remaining in seconds of the battery when it is considered low. Only"
-" valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered low. Only "
+"valid when use-time-for-policy is true."
 msgstr ""
-"Timpul rămas în secunde pentru ca acumulatorul să fie considerat la un nivel"
-" scăzut. Valid doar când politica use-time-for- este adevărată."
+"Timpul rămas în secunde pentru ca acumulatorul să fie considerat la un nivel "
+"scăzut. Valid doar când politica use-time-for- este adevărată."
 
 #: data/org.cafe.power-manager.gschema.xml.in:296
 msgid "The time remaining when critical"
@@ -783,11 +773,11 @@ msgstr "Timpul rămas când energia este critică"
 
 #: data/org.cafe.power-manager.gschema.xml.in:297
 msgid ""
-"The time remaining in seconds of the battery when it is considered critical."
-" Only valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered critical. "
+"Only valid when use-time-for-policy is true."
 msgstr ""
-"Timpul rămas în secunde pentru ca acumulatorul să fie considerat la un nivel"
-" critic de scăzut. Valid doar când politica use-time-for- este adevărată."
+"Timpul rămas în secunde pentru ca acumulatorul să fie considerat la un nivel "
+"critic de scăzut. Valid doar când politica use-time-for- este adevărată."
 
 #: data/org.cafe.power-manager.gschema.xml.in:301
 msgid "The time remaining when action is taken"
@@ -818,8 +808,7 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:311
 msgid "Sleep timeout computer when on AC"
 msgstr ""
-"Timp după care se adoarme calculatorul auntci când se alimentează de la "
-"rețea"
+"Timp după care se adoarme calculatorul auntci când se alimentează de la rețea"
 
 #: data/org.cafe.power-manager.gschema.xml.in:312
 msgid ""
@@ -837,8 +826,8 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:317
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before it goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before it goes to sleep."
 msgstr ""
 "Secunde de inactivitate când alimentarea se face de la sursă de alimentare "
 "neîntreruptibilă înainte de a intra în starea de suspendare."
@@ -877,8 +866,8 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:332
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before the display goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before the display goes to sleep."
 msgstr ""
 "Secunde de inactivitate când alimentarea se face de la UPS înainte de a "
 "trece monitorul în starea de veghe."
@@ -896,8 +885,7 @@ msgstr ""
 "cereri de împiedicare au oprit acțiunea politicii."
 
 #: data/org.cafe.power-manager.gschema.xml.in:341
-msgid ""
-"If preferences and statistics items should be shown in the context menu"
+msgid "If preferences and statistics items should be shown in the context menu"
 msgstr ""
 "Dacă preferințele și statisticile ar trebui să fie afișate în meniul "
 "contextual"
@@ -918,14 +906,13 @@ msgstr "Administrare consum"
 msgid "Configure power management"
 msgstr "Configurare administrare consum"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
 msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
-#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:7
-#: src/cpm-statistics.c:1090 src/cpm-statistics.c:1577
+#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:8
+#: src/cpm-statistics.c:764 src/cpm-statistics.c:1233
 msgid "Power Statistics"
 msgstr "Statistici consum"
 
@@ -933,55 +920,37 @@ msgstr "Statistici consum"
 msgid "Observe power management"
 msgstr "Examinează administrarea consumului"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-statistics.desktop.in.in:6
-msgid "cafe-power-statistics"
-msgstr ""
-
-#: data/cpm-statistics.ui:113 src/cpm-statistics.c:208
+#: data/cpm-statistics.ui:119
 msgid "Details"
 msgstr "Detalii"
 
-#: data/cpm-statistics.ui:139 data/cpm-statistics.ui:342
+#: data/cpm-statistics.ui:145 data/cpm-statistics.ui:347
 msgid "Graph type:"
 msgstr "Tip grafic:"
 
-#: data/cpm-statistics.ui:174
+#: data/cpm-statistics.ui:180
 msgid "Data length:"
 msgstr "Lungime date:"
 
-#: data/cpm-statistics.ui:234 data/cpm-statistics.ui:395
+#: data/cpm-statistics.ui:239 data/cpm-statistics.ui:399
 msgid "There is no data to display."
 msgstr "Nu există date de afișat."
 
-#: data/cpm-statistics.ui:276 data/cpm-statistics.ui:438
+#: data/cpm-statistics.ui:281 data/cpm-statistics.ui:442
 msgid "Use smoothed line"
 msgstr "Folosește o linie netezită"
 
-#: data/cpm-statistics.ui:291 data/cpm-statistics.ui:453
+#: data/cpm-statistics.ui:296 data/cpm-statistics.ui:457
 msgid "Show data points"
 msgstr "Afișează puncte pentru date"
 
-#: data/cpm-statistics.ui:320
+#: data/cpm-statistics.ui:325
 msgid "History"
 msgstr "Istoric"
 
-#: data/cpm-statistics.ui:482
+#: data/cpm-statistics.ui:486
 msgid "Statistics"
 msgstr "Statistici"
-
-#: data/cpm-statistics.ui:504
-msgid "Processor wakeups per second:"
-msgstr "Treziri procesor pe secundă:"
-
-#: data/cpm-statistics.ui:516
-msgid "0"
-msgstr "0"
-
-#: data/cpm-statistics.ui:563 src/cpm-statistics.c:194
-msgid "Wakeups"
-msgstr "Treziri"
 
 #: data/cpm-prefs.ui:55
 msgid "Power Management Preferences"
@@ -1239,7 +1208,7 @@ msgstr "%.1fW"
 msgid "%.1fV"
 msgstr "%.1fV"
 
-#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1560
+#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1216
 msgid "Show extra debugging information"
 msgstr "Afișează informații suplimentare de depanare"
 
@@ -1346,8 +1315,8 @@ msgstr "Acumulatorul poate fi defect"
 #: src/cpm-manager.c:1110
 #, c-format
 msgid ""
-"Battery has a very low capacity (%1.1f%%), which means that it may be old or"
-" broken."
+"Battery has a very low capacity (%1.1f%%), which means that it may be old or "
+"broken."
 msgstr ""
 "Acumulatorul are o capacitate foarte mică (%1.1f%%), ceea ce înseamnă că "
 "este vechi sau defect."
@@ -1487,8 +1456,7 @@ msgstr ""
 
 #: src/cpm-manager.c:1440
 msgid "Computer will suspend very soon unless it is plugged in."
-msgstr ""
-"Calculatorul se va fi suspendat foarte curând dacă nu va fi alimentat."
+msgstr "Calculatorul se va fi suspendat foarte curând dacă nu va fi alimentat."
 
 #: src/cpm-manager.c:1444
 msgid "Computer will hibernate very soon unless it is plugged in."
@@ -1505,12 +1473,12 @@ msgstr "Nivel UPS critic"
 #: src/cpm-manager.c:1459
 #, c-format
 msgid ""
-"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
-" your computer to avoid losing data."
+"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to "
+"your computer to avoid losing data."
 msgstr ""
 "Aproximativ <b>%s</b> din energia de rezervă a sursei de alimentare "
-"neîntreruptibilă rămasă (%.0f%%). Restaurați energia din rețea la calculator"
-" pentru a evita pierderea de date."
+"neîntreruptibilă rămasă (%.0f%%). Restaurați energia din rețea la calculator "
+"pentru a evita pierderea de date."
 
 #: src/cpm-manager.c:1473
 #, c-format
@@ -1533,8 +1501,8 @@ msgstr ""
 #: src/cpm-manager.c:1490
 #, c-format
 msgid ""
-"PDA is very low in power (%.0f%%). This device will soon stop functioning if"
-" not charged."
+"PDA is very low in power (%.0f%%). This device will soon stop functioning if "
+"not charged."
 msgstr ""
 "Acumulatorul asistentului digital personal este la un nivel foarte scăzut "
 "(%.0f%%). Acest dispozitiv va înceta să funcționeze în curând dacă nu este "
@@ -1561,8 +1529,8 @@ msgstr ""
 #: src/cpm-manager.c:1519
 #, c-format
 msgid ""
-"Tablet is very low in power (%.0f%%). This device will soon stop functioning"
-" if not charged."
+"Tablet is very low in power (%.0f%%). This device will soon stop functioning "
+"if not charged."
 msgstr ""
 "Acumulatorul tabletei este la un nivel foarte scăzut (%.0f%%). Acest "
 "dispozitiv va înceta să funcționeze în curând dacă nu este încărcat."
@@ -1578,8 +1546,8 @@ msgstr ""
 
 #: src/cpm-manager.c:1593
 msgid ""
-"The battery is below the critical level and this computer will <b>power-"
-"off</b> when the battery becomes completely empty."
+"The battery is below the critical level and this computer will <b>power-off</"
+"b> when the battery becomes completely empty."
 msgstr ""
 "Nivelul acumulatorului este sub cel critic și calculatorul va <b>opri</b> "
 "când energia acumulatorul se va termina complet."
@@ -1661,91 +1629,79 @@ msgstr "Nu fă nimic"
 msgid "Never"
 msgstr "Niciodată"
 
-#: src/cpm-statistics.c:78 src/cpm-statistics.c:466
+#: src/cpm-statistics.c:67 src/cpm-statistics.c:410
 msgid "Rate"
 msgstr "Rată"
 
-#: src/cpm-statistics.c:79
+#: src/cpm-statistics.c:68
 msgid "Charge"
 msgstr "Încărcare"
 
-#: src/cpm-statistics.c:80 src/cpm-statistics.c:480
+#: src/cpm-statistics.c:69 src/cpm-statistics.c:424
 msgid "Time to full"
 msgstr "Timp până la încărcare"
 
-#: src/cpm-statistics.c:81 src/cpm-statistics.c:485
+#: src/cpm-statistics.c:70 src/cpm-statistics.c:429
 msgid "Time to empty"
 msgstr "Timp până la golire"
 
-#: src/cpm-statistics.c:88
+#: src/cpm-statistics.c:77
 msgid "10 minutes"
 msgstr "zece minute"
 
-#: src/cpm-statistics.c:89
+#: src/cpm-statistics.c:78
 msgid "2 hours"
 msgstr "două ore"
 
-#: src/cpm-statistics.c:90
+#: src/cpm-statistics.c:79
 msgid "6 hours"
 msgstr "6ore"
 
-#: src/cpm-statistics.c:91
+#: src/cpm-statistics.c:80
 msgid "1 day"
 msgstr "o zi"
 
-#: src/cpm-statistics.c:92
+#: src/cpm-statistics.c:81
 msgid "1 week"
 msgstr "o săptămână"
 
-#: src/cpm-statistics.c:101
+#: src/cpm-statistics.c:90
 msgid "Charge profile"
 msgstr "Profil încărcare"
 
-#: src/cpm-statistics.c:102
+#: src/cpm-statistics.c:91
 msgid "Discharge profile"
 msgstr "Profil descărcare"
 
-#: src/cpm-statistics.c:104
+#: src/cpm-statistics.c:93
 msgid "Charge accuracy"
 msgstr "Acuratețe încărcare"
 
-#: src/cpm-statistics.c:105
+#: src/cpm-statistics.c:94
 msgid "Discharge accuracy"
 msgstr "Acuratețe descărcare"
 
-#: src/cpm-statistics.c:132
+#: src/cpm-statistics.c:121
 msgid "Attribute"
 msgstr "Atribut"
 
-#: src/cpm-statistics.c:139
+#: src/cpm-statistics.c:128
 msgid "Value"
 msgstr "Valoare"
 
-#: src/cpm-statistics.c:156
+#: src/cpm-statistics.c:145
 msgid "Image"
 msgstr "Imagine"
 
-#: src/cpm-statistics.c:162
+#: src/cpm-statistics.c:151
 msgid "Description"
 msgstr "Descriere"
 
-#: src/cpm-statistics.c:181 src/cpm-statistics.c:405
-msgid "Type"
-msgstr "Tip"
-
-#: src/cpm-statistics.c:187
-msgid "ID"
-msgstr "ID"
-
-#: src/cpm-statistics.c:201
-msgid "Command"
-msgstr "Comandă"
-
-#: src/cpm-statistics.c:286
+#: src/cpm-statistics.c:230
 msgid "Unknown"
 msgstr "Necunoscut"
 
-#: src/cpm-statistics.c:290
+#: src/cpm-statistics.c:234
 #, c-format
 msgid "%.0f second"
 msgid_plural "%.0f seconds"
@@ -1753,7 +1709,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: src/cpm-statistics.c:295
+#: src/cpm-statistics.c:239
 #, c-format
 msgid "%.1f minute"
 msgid_plural "%.1f minutes"
@@ -1761,7 +1717,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: src/cpm-statistics.c:300
+#: src/cpm-statistics.c:244
 #, c-format
 msgid "%.1f hour"
 msgid_plural "%.1f hours"
@@ -1769,7 +1725,7 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: src/cpm-statistics.c:304
+#: src/cpm-statistics.c:248
 #, c-format
 msgid "%.1f day"
 msgid_plural "%.1f days"
@@ -1777,35 +1733,39 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "Yes"
 msgstr "Da"
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "No"
 msgstr "Nu"
 
-#: src/cpm-statistics.c:402
+#: src/cpm-statistics.c:346
 msgid "Device"
 msgstr "Dispozitiv"
 
-#: src/cpm-statistics.c:407
+#: src/cpm-statistics.c:349
+msgid "Type"
+msgstr "Tip"
+
+#: src/cpm-statistics.c:351
 msgid "Vendor"
 msgstr "Comerciant"
 
-#: src/cpm-statistics.c:409
+#: src/cpm-statistics.c:353
 msgid "Model"
 msgstr "Model"
 
-#: src/cpm-statistics.c:411
+#: src/cpm-statistics.c:355
 msgid "Serial number"
 msgstr "Număr serie"
 
-#: src/cpm-statistics.c:416
+#: src/cpm-statistics.c:360
 msgid "Supply"
 msgstr "Alimentare"
 
-#: src/cpm-statistics.c:419
+#: src/cpm-statistics.c:363
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -1813,212 +1773,112 @@ msgstr[0] ""
 msgstr[1] ""
 msgstr[2] ""
 
-#: src/cpm-statistics.c:423
+#: src/cpm-statistics.c:367
 msgid "Refreshed"
 msgstr "Reactualizat"
 
-#: src/cpm-statistics.c:433
+#: src/cpm-statistics.c:377
 msgid "Present"
 msgstr "Prezent"
 
-#: src/cpm-statistics.c:440
+#: src/cpm-statistics.c:384
 msgid "Rechargeable"
 msgstr "Reîncărcabil"
 
-#: src/cpm-statistics.c:446
+#: src/cpm-statistics.c:390
 msgid "State"
 msgstr "Stat"
 
-#: src/cpm-statistics.c:450
+#: src/cpm-statistics.c:394
 msgid "Energy"
 msgstr "Energie"
 
-#: src/cpm-statistics.c:453
+#: src/cpm-statistics.c:397
 msgid "Energy when empty"
 msgstr "Energie la golire"
 
-#: src/cpm-statistics.c:456
+#: src/cpm-statistics.c:400
 msgid "Energy when full"
 msgstr "Energie la încărcare completă"
 
-#: src/cpm-statistics.c:459
+#: src/cpm-statistics.c:403
 msgid "Energy (design)"
 msgstr "Energie (proiectat)"
 
-#: src/cpm-statistics.c:473
+#: src/cpm-statistics.c:417
 msgid "Voltage"
 msgstr "Voltaj"
 
-#: src/cpm-statistics.c:495
+#: src/cpm-statistics.c:439
 msgid "Percentage"
 msgstr "Procentaj"
 
-#: src/cpm-statistics.c:502
+#: src/cpm-statistics.c:446
 msgid "Capacity"
 msgstr "Capacitate"
 
-#: src/cpm-statistics.c:507
+#: src/cpm-statistics.c:451
 msgid "Technology"
 msgstr "Tehnologie"
 
-#: src/cpm-statistics.c:512
+#: src/cpm-statistics.c:456
 msgid "Online"
 msgstr "Conectat"
 
-#: src/cpm-statistics.c:824
-msgid "No data"
-msgstr "Lipsă date"
-
-#: src/cpm-statistics.c:831 src/cpm-statistics.c:836
-msgid "Kernel module"
-msgstr "Modul kernel"
-
-#: src/cpm-statistics.c:841
-msgid "Kernel core"
-msgstr "Kernel core"
-
-#: src/cpm-statistics.c:846
-msgid "Interprocessor interrupt"
-msgstr "Intrerupere interprocesor"
-
-#: src/cpm-statistics.c:851
-msgid "Interrupt"
-msgstr "Intrerupere"
-
-#: src/cpm-statistics.c:898
-msgid "PS/2 keyboard/mouse/touchpad"
-msgstr "Tastatură/maus/zonă tactilă PS2"
-
-#: src/cpm-statistics.c:901
-msgid "ACPI"
-msgstr "ACPI"
-
-#: src/cpm-statistics.c:904
-msgid "Serial ATA"
-msgstr "Serial ATA"
-
-#: src/cpm-statistics.c:907
-msgid "ATA host controller"
-msgstr "Controler gazdă ATA"
-
-#: src/cpm-statistics.c:910
-msgid "Intel wireless adaptor"
-msgstr "Adaptor fără fir Intel"
-
-#: src/cpm-statistics.c:917 src/cpm-statistics.c:922 src/cpm-statistics.c:927
-#: src/cpm-statistics.c:932 src/cpm-statistics.c:937
-#, c-format
-msgid "Timer %s"
-msgstr "Declanșator %s"
-
-#: src/cpm-statistics.c:941
-#, c-format
-msgid "Sleep %s"
-msgstr "Adomit %s"
-
-#: src/cpm-statistics.c:944
-#, c-format
-msgid "New task %s"
-msgstr "Sarcină nouă %s"
-
-#: src/cpm-statistics.c:948
-#, c-format
-msgid "Wait %s"
-msgstr "Așteptare %s"
-
-#: src/cpm-statistics.c:952 src/cpm-statistics.c:956
-#, c-format
-msgid "Work queue %s"
-msgstr "Coadă sarcini %s"
-
-#: src/cpm-statistics.c:959
-#, c-format
-msgid "Network route flush %s"
-msgstr "Golire rută rețea %s"
-
-#: src/cpm-statistics.c:962
-#, c-format
-msgid "USB activity %s"
-msgstr "Activitate USB %s"
-
-#: src/cpm-statistics.c:965
-#, c-format
-msgid "Wakeup %s"
-msgstr "Trezit %s"
-
-#: src/cpm-statistics.c:968
-msgid "Local interrupts"
-msgstr "Întreruperi locale"
-
-#: src/cpm-statistics.c:971
-msgid "Rescheduling interrupts"
-msgstr "Se replanifică întreruperile"
-
-#: src/cpm-statistics.c:1080
+#: src/cpm-statistics.c:756
 msgid "Device Information"
 msgstr "Informații dispozitiv"
 
-#: src/cpm-statistics.c:1082
+#: src/cpm-statistics.c:758
 msgid "Device History"
 msgstr "Istoric dispozitiv"
 
-#: src/cpm-statistics.c:1084
+#: src/cpm-statistics.c:760
 msgid "Device Profile"
 msgstr "Profil dispozitiv"
 
-#: src/cpm-statistics.c:1086
-msgid "Processor Wakeups"
-msgstr "Treziri procesor"
-
-#: src/cpm-statistics.c:1325 src/cpm-statistics.c:1331
-#: src/cpm-statistics.c:1337 src/cpm-statistics.c:1343
+#: src/cpm-statistics.c:982 src/cpm-statistics.c:988 src/cpm-statistics.c:994
+#: src/cpm-statistics.c:1000
 msgid "Time elapsed"
 msgstr "Timp trecut"
 
-#: src/cpm-statistics.c:1327
+#: src/cpm-statistics.c:984
 msgid "Power"
 msgstr "Putere"
 
-#: src/cpm-statistics.c:1333 src/cpm-statistics.c:1377
-#: src/cpm-statistics.c:1383 src/cpm-statistics.c:1389
-#: src/cpm-statistics.c:1395
+#: src/cpm-statistics.c:990 src/cpm-statistics.c:1034 src/cpm-statistics.c:1040
+#: src/cpm-statistics.c:1046 src/cpm-statistics.c:1052
 msgid "Cell charge"
 msgstr "Încărcare celulă"
 
-#: src/cpm-statistics.c:1339 src/cpm-statistics.c:1345
+#: src/cpm-statistics.c:996 src/cpm-statistics.c:1002
 msgid "Predicted time"
 msgstr "Timp estimat"
 
-#: src/cpm-statistics.c:1379 src/cpm-statistics.c:1391
+#: src/cpm-statistics.c:1036 src/cpm-statistics.c:1048
 msgid "Correction factor"
 msgstr "Factor corecție"
 
-#: src/cpm-statistics.c:1385 src/cpm-statistics.c:1397
+#: src/cpm-statistics.c:1042 src/cpm-statistics.c:1054
 msgid "Prediction accuracy"
 msgstr "Precizie predicție"
 
-#: src/cpm-statistics.c:1563
+#: src/cpm-statistics.c:1219
 msgid "Select this device at startup"
 msgstr "Alege acest dispozitiv la pornire"
 
-#: src/cpm-statistics.c:1802
-msgid "Processor"
-msgstr "Procesor"
-
-#: src/cpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 CAFE developers"
+#: src/cpm-tray-icon.c:207
+msgid ""
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
 
-#: src/cpm-tray-icon.c:193
-msgid "translator-credits"
-msgstr "Daniel Alămiță <danny3@tutanota.com>"
-
-#: src/cpm-tray-icon.c:295
+#: src/cpm-tray-icon.c:318
 #, c-format
 msgid "%s remaining"
 msgstr "%s rămase"
 
-#: src/cpm-tray-icon.c:349
+#: src/cpm-tray-icon.c:372
 msgid "_Preferences"
 msgstr "_Preferințe"
 
@@ -2294,3 +2154,130 @@ msgstr "Așteaptă să se descarce"
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr "Stare necunoscută"
+
+#~ msgid "Licensed under the GNU General Public License Version 2"
+#~ msgstr "Licențiat sub GNU General Public License Versiunea a 2-a"
+
+#~ msgid ""
+#~ "Power Manager is free software; you can redistribute it and/or\n"
+#~ "modify it under the terms of the GNU General Public License\n"
+#~ "as published by the Free Software Foundation; either version 2\n"
+#~ "of the License, or (at your option) any later version."
+#~ msgstr ""
+#~ "Gestionarul de consum este software liber; puteți să îl redistribuiți și/"
+#~ "sau\n"
+#~ "să îl modificați sub termenii GNU General Public License\n"
+#~ "așa cum este publicată de către Free Software Foundation; sau versiunea a "
+#~ "2-a\n"
+#~ "a Licenței, sau (la alegerea dumneavoastră) orice versiune ulterioară."
+
+#~ msgid ""
+#~ "Power Manager is distributed in the hope that it will be useful,\n"
+#~ "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+#~ "GNU General Public License for more details."
+#~ msgstr ""
+#~ "Getionarul de consum este distribuit în speranța că va fi folositor,\n"
+#~ "dar FARĂ NICIO GARANȚIE; chiar fără garanția implicită a\n"
+#~ "COMERCIALIZĂRII sau FOLOSIRII ÎN SCOPURI PARTICULARE. Verficați \n"
+#~ "GNU General Public License pentru mai multe detalii."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License\n"
+#~ "along with this program; if not, write to the Free Software\n"
+#~ "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA."
+#~ msgstr ""
+#~ "Ar fi trebuit să primiți o copie a GNU General Public License\n"
+#~ "alături de acest program; dacă nu, scrieți la Free Software\n"
+#~ "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA."
+
+#~ msgid "Processor wakeups per second:"
+#~ msgstr "Treziri procesor pe secundă:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Wakeups"
+#~ msgstr "Treziri"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Command"
+#~ msgstr "Comandă"
+
+#~ msgid "No data"
+#~ msgstr "Lipsă date"
+
+#~ msgid "Kernel module"
+#~ msgstr "Modul kernel"
+
+#~ msgid "Kernel core"
+#~ msgstr "Kernel core"
+
+#~ msgid "Interprocessor interrupt"
+#~ msgstr "Intrerupere interprocesor"
+
+#~ msgid "Interrupt"
+#~ msgstr "Intrerupere"
+
+#~ msgid "PS/2 keyboard/mouse/touchpad"
+#~ msgstr "Tastatură/maus/zonă tactilă PS2"
+
+#~ msgid "ACPI"
+#~ msgstr "ACPI"
+
+#~ msgid "Serial ATA"
+#~ msgstr "Serial ATA"
+
+#~ msgid "ATA host controller"
+#~ msgstr "Controler gazdă ATA"
+
+#~ msgid "Intel wireless adaptor"
+#~ msgstr "Adaptor fără fir Intel"
+
+#, c-format
+#~ msgid "Timer %s"
+#~ msgstr "Declanșator %s"
+
+#, c-format
+#~ msgid "Sleep %s"
+#~ msgstr "Adomit %s"
+
+#, c-format
+#~ msgid "New task %s"
+#~ msgstr "Sarcină nouă %s"
+
+#, c-format
+#~ msgid "Wait %s"
+#~ msgstr "Așteptare %s"
+
+#, c-format
+#~ msgid "Work queue %s"
+#~ msgstr "Coadă sarcini %s"
+
+#, c-format
+#~ msgid "Network route flush %s"
+#~ msgstr "Golire rută rețea %s"
+
+#, c-format
+#~ msgid "USB activity %s"
+#~ msgstr "Activitate USB %s"
+
+#, c-format
+#~ msgid "Wakeup %s"
+#~ msgstr "Trezit %s"
+
+#~ msgid "Local interrupts"
+#~ msgstr "Întreruperi locale"
+
+#~ msgid "Rescheduling interrupts"
+#~ msgstr "Se replanifică întreruperile"
+
+#~ msgid "Processor Wakeups"
+#~ msgstr "Treziri procesor"
+
+#~ msgid "Processor"
+#~ msgstr "Procesor"

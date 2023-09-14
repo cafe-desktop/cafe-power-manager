@@ -2,23 +2,23 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Mooglie <mooglietech@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-power-manager 1.23.1\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2019-11-12 15:22+0100\n"
+"POT-Creation-Date: 2023-09-14 10:39+0200\n"
 "PO-Revision-Date: 2020-02-15 16:27+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Tamil (https://www.transifex.com/cafe/teams/13566/ta/)\n"
+"Language: ta\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ta\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: applets/brightness/brightness-applet.c:107
@@ -43,57 +43,58 @@ msgstr "மடி கணினியின் பலக பிரகாசத்
 msgid "LCD brightness : %d%%"
 msgstr "எல்சிடி(LCD) வெளிச்சம்:: %d%%"
 
+#: applets/brightness/brightness-applet.c:790
+#: applets/inhibit/inhibit-applet.c:287
+msgid ""
+"Power Manager is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:795
+#: applets/inhibit/inhibit-applet.c:292
+msgid ""
+"Power Manager is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+
 #: applets/brightness/brightness-applet.c:800
 #: applets/inhibit/inhibit-applet.c:297
-msgid "Licensed under the GNU General Public License Version 2"
-msgstr "ஜிஎன்யு பொது அனுமதி விதிகளின் 2ம் பதிப்பு படி அனுமதிக்கப் பட்டது "
-
-#: applets/brightness/brightness-applet.c:801
-#: applets/inhibit/inhibit-applet.c:298
 msgid ""
-"Power Manager is free software; you can redistribute it and/or\n"
-"modify it under the terms of the GNU General Public License\n"
-"as published by the Free Software Foundation; either version 2\n"
-"of the License, or (at your option) any later version."
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"சக்தி மேலாளர் இலவச மென் பொருளாகும்.நீங்கள்  இலவச மென் பொருள் அமைப்பினால் \n"
-"வெளியிடப்பட்ட ஜிஎன்யு பொது அனுமதிக்கான விதிகளின் படி இந்த 2ம் பதிப்பையோ \n"
-"அல்லது அடுத்த பதிப்புகளையோ நீங்கள் (விருப்பப்படி) மாற்றலாம்.\n"
-" அல்லது மீண்டும் பறிமாறலாம்."
 
-#: applets/brightness/brightness-applet.c:805
-#: applets/inhibit/inhibit-applet.c:302
+#: applets/brightness/brightness-applet.c:813
+msgid "About Power Manager Brightness Applet"
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:815
 msgid ""
-"Power Manager is distributed in the hope that it will be useful,\n"
-"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-"GNU General Public License for more details."
+"Copyright © 2006 Benjamin Canou\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"உபயோகப்படும் என்ற எதிர்பார்ப்புடன் சக்தி மேலாளர் வெளியிடப்படுகிறது.\n"
-" ஆனால் விற்க தகுதி, குறிப்பிட்ட செயலுக்கான தகுதி உள்பட எந்த உத்திரவாதமும் \n"
-"அளிக்கப்படவில்லை. மேற் கொண்டு விவரங்களுக்கு ஜிஎன்யு பொது அனுமதிக்கான \n"
-"விதிகளை பார்க்கவும்"
 
-#: applets/brightness/brightness-applet.c:809
-#: applets/inhibit/inhibit-applet.c:306
-msgid ""
-"You should have received a copy of the GNU General Public License\n"
-"along with this program; if not, write to the Free Software\n"
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
+#: applets/brightness/brightness-applet.c:823
+#: applets/inhibit/inhibit-applet.c:320 src/cpm-tray-icon.c:214
+msgid "translator-credits"
 msgstr ""
-"சக்தி மேலாளர் உடன் ஜிஎன்யு பொது அனுமதிக்கான விதிகளின் பிரதி \n"
-"உங்களுக்கு கிடைத்திருக்க வேண்டும். இல்லையானால் கீழ் கண்ட \n"
-"முகவரிக்கு கடிதம் எழுதவும். Free Software Foundation, Inc., 51 Franklin Street, \n"
-"Fifth Floor, Boston, MA 02110-1301, USA."
+"Launchpad Contributions:\n"
+"  Valmantas Palikša https://launchpad.net/~walmis\n"
+"  bhuvi https://launchpad.net/~bhuvanesh"
 
-#: applets/brightness/brightness-applet.c:1063
-#: applets/inhibit/inhibit-applet.c:519
+#: applets/brightness/brightness-applet.c:1051
+#: applets/inhibit/inhibit-applet.c:507
 msgid "_About"
 msgstr "பற்றி "
 
-#: applets/brightness/brightness-applet.c:1066
-#: applets/inhibit/inhibit-applet.c:522
+#: applets/brightness/brightness-applet.c:1054
+#: applets/inhibit/inhibit-applet.c:510
 msgid "_Help"
 msgstr "_உதவி"
 
@@ -104,12 +105,6 @@ msgstr "வெளிச்ச குறு நிரல் தொழிற்ச
 #: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Brightness Applet"
 msgstr "வெளிச்ச குறு நிரல்"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-brightness-applet"
-msgstr ""
 
 #: applets/inhibit/inhibit-applet.c:87
 msgid "Power Manager Inhibit Applet"
@@ -131,6 +126,17 @@ msgstr "தானியங்கி தூக்கம் செயல் பட
 msgid "Manual inhibit"
 msgstr "கைமுறை பாதிப்பு"
 
+#: applets/inhibit/inhibit-applet.c:310
+msgid "About Power Manager Inhibit Applet"
+msgstr ""
+
+#: applets/inhibit/inhibit-applet.c:312
+msgid ""
+"Copyright © 2006-2007 Richard Hughes\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
+msgstr ""
+
 #: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Inhibit Applet Factory"
 msgstr "பாதிப்பு குறு நிரல் தொழிற்சாலை"
@@ -139,33 +145,18 @@ msgstr "பாதிப்பு குறு நிரல் தொழிற்
 msgid "Inhibit Applet"
 msgstr "பாதிப்பு குறுநிரல்"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-inhibit-applet"
-msgstr ""
-
-#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:184
+#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:204
 msgid "Power Manager"
 msgstr "மின் மேலாளர்"
 
-#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:186
+#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:206
 msgid "Power management daemon"
 msgstr "மின் மேலாளர் டீமான்"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-manager.desktop.in.in:6
-#: data/cafe-power-preferences.desktop.in.in:6
-msgid "cafe-power-manager"
-msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:26
 #: data/org.cafe.power-manager.gschema.xml.in:41
 msgid "Whether to hibernate, suspend or do nothing when inactive"
-msgstr ""
-"செயலிலில்லாத போது உறக்கம், இடைநீக்கம் அல்லது ஒன்றும் செய்யாமல் இருக்க "
-"வேண்டுமா"
+msgstr "செயலிலில்லாத போது உறக்கம், இடைநீக்கம் அல்லது ஒன்றும் செய்யாமல் இருக்க வேண்டுமா"
 
 #: data/org.cafe.power-manager.gschema.xml.in:27
 #: data/org.cafe.power-manager.gschema.xml.in:42
@@ -185,9 +176,7 @@ msgstr ""
 msgid ""
 "If the battery event should occur when the lid is shut and the power "
 "disconnected"
-msgstr ""
-"மூடப் பட்டு மின் இணைப்பு துண்டிக்கப் படும் போது மின்கல நிகழ்வு நடக்க "
-"வேண்டுமா"
+msgstr "மூடப் பட்டு மின் இணைப்பு துண்டிக்கப் படும் போது மின்கல நிகழ்வு நடக்க வேண்டுமா"
 
 #: data/org.cafe.power-manager.gschema.xml.in:37
 msgid ""
@@ -195,9 +184,8 @@ msgid ""
 "closed on battery') when the lid is previously shut and the AC power "
 "disconnected at a later time."
 msgstr ""
-"மடிக் கணினி முன்பு மூடி பின் ஏசி மின் இணைப்பு துண்டிக்கப் பட்டால் (மின் "
-"கலத்தில் இருப்பின் மூடி மூடும் போது இடை நிறுத்து போன்ற) மின்கல மூடு நிகழ்வு "
-"நேர வேண்டுமா."
+"மடிக் கணினி முன்பு மூடி பின் ஏசி மின் இணைப்பு துண்டிக்கப் பட்டால் (மின் கலத்தில் இருப்பின் "
+"மூடி மூடும் போது இடை நிறுத்து போன்ற) மின்கல மூடு நிகழ்வு நேர வேண்டுமா."
 
 #: data/org.cafe.power-manager.gschema.xml.in:46
 msgid "UPS critical low action"
@@ -223,8 +211,7 @@ msgstr "பின்வெளிச்ச பிரகாசத்தை சர�
 msgid ""
 "If the screen brightness should be changed when switching between AC and "
 "battery power."
-msgstr ""
-"ஏசி மற்றும் மின்கல மாற்றதின் போதும்  திரையின் பிரகாசத்தை மாற்ற வேண்டுமா."
+msgstr "ஏசி மற்றும் மின்கல மாற்றதின் போதும்  திரையின் பிரகாசத்தை மாற்ற வேண்டுமா."
 
 #: data/org.cafe.power-manager.gschema.xml.in:61
 msgid "Reduce the backlight brightness when on battery power"
@@ -234,9 +221,7 @@ msgstr "மின்கல சக்தியில் இயங்கும் 
 msgid ""
 "If the screen should be reduced in brightness when the computer is on "
 "battery power."
-msgstr ""
-"கணினி மின்கல சக்தியில் இயங்கும் போது திரையை குறைந்த வெளிச்சத்தில் காட்ட "
-"வேண்டுமா"
+msgstr "கணினி மின்கல சக்தியில் இயங்கும் போது திரையை குறைந்த வெளிச்சத்தில் காட்ட வேண்டுமா"
 
 #: data/org.cafe.power-manager.gschema.xml.in:66
 msgid "Reduce the keyboard backlight when on battery power"
@@ -276,8 +261,8 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:82
 msgid ""
 "The percentage to reduce the keyboard backlight by when idle. For example, "
-"if set to '60', the backlight will be cut by 40% when idle. Legal values are"
-" between 0 and 100."
+"if set to '60', the backlight will be cut by 40% when idle. Legal values are "
+"between 0 and 100."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:86
@@ -292,17 +277,15 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:91
 msgid "Dim the screen after a period of inactivity when on battery power"
-msgstr ""
-"மின் கல மின்சாரத்தில் உள்ள போது சிறிது நேரம் செயலிழந்தால் திரையினை "
-"மங்கலாக்கவும்"
+msgstr "மின் கல மின்சாரத்தில் உள்ள போது சிறிது நேரம் செயலிழந்தால் திரையினை மங்கலாக்கவும்"
 
 #: data/org.cafe.power-manager.gschema.xml.in:92
 msgid ""
 "If the screen should be dimmed to save power when the computer is idle when "
 "on battery power."
 msgstr ""
-"மின்கல மின்இணைப்பு உள்ள போது கணினி சும்மா இருக்கும் போது மின் சக்தி சேமிக்க "
-"திரையை மங்கலாக்க வேண்டுமா"
+"மின்கல மின்இணைப்பு உள்ள போது கணினி சும்மா இருக்கும் போது மின் சக்தி சேமிக்க திரையை "
+"மங்கலாக்க வேண்டுமா"
 
 #: data/org.cafe.power-manager.gschema.xml.in:96
 msgid "The default amount of time to dim the screen after idle"
@@ -321,21 +304,20 @@ msgid ""
 "The amount to dim the brightness of the display when on battery power. "
 "Possible values are between 0 and 100."
 msgstr ""
-"மின்கல சக்தியில் இயங்கும் போது திரை வெளிச்சத்தை  குறைக்கும் அளவு. மதிப்பு 0 "
-"க்கும் 100க்கும் இடையே. "
+"மின்கல சக்தியில் இயங்கும் போது திரை வெளிச்சத்தை  குறைக்கும் அளவு. மதிப்பு 0 க்கும் "
+"100க்கும் இடையே. "
 
 #: data/org.cafe.power-manager.gschema.xml.in:106
 msgid "Dim the screen after a period of inactivity when on AC power"
-msgstr ""
-"ஏசி மின்சாரத்தில் உள்ள போது சிறிது நேரம் செயலிழந்தால் திரையினை மங்கலாக்கவும்"
+msgstr "ஏசி மின்சாரத்தில் உள்ள போது சிறிது நேரம் செயலிழந்தால் திரையினை மங்கலாக்கவும்"
 
 #: data/org.cafe.power-manager.gschema.xml.in:107
 msgid ""
 "If the screen should be dimmed to save power when the computer is idle when "
 "on AC power."
 msgstr ""
-"ஏசி மின்இணைப்பு உள்ள போது கணினி சும்மா இருக்கும் போது மின் சக்தி சேமிக்க "
-"திரையை மங்கலாக்க வேண்டுமா"
+"ஏசி மின்இணைப்பு உள்ள போது கணினி சும்மா இருக்கும் போது மின் சக்தி சேமிக்க திரையை "
+"மங்கலாக்க வேண்டுமா"
 
 #: data/org.cafe.power-manager.gschema.xml.in:111
 msgid "Method used to blank screen on AC"
@@ -416,8 +398,8 @@ msgid ""
 "If time based notifications should be used. If set to false, then the "
 "percentage change is used instead, which may fix a broken ACPI BIOS."
 msgstr ""
-"நேரம் ஆதாரமான அறிவுறுத்தல்கள் அமைய வேண்டுமா. இல்லை எனில் மாறுதல் சதவிகிதம் "
-"உபயோகிக்கப் படும், அது உடைந்த ACPI BIOS. ஐ சரி செய்யக் கூடும்"
+"நேரம் ஆதாரமான அறிவுறுத்தல்கள் அமைய வேண்டுமா. இல்லை எனில் மாறுதல் சதவிகிதம் உபயோகிக்கப் "
+"படும், அது உடைந்த ACPI BIOS. ஐ சரி செய்யக் கூடும்"
 
 #: data/org.cafe.power-manager.gschema.xml.in:156
 msgid "Check CPU load before sleeping"
@@ -436,8 +418,7 @@ msgid ""
 "Whether NetworkManager should disconnect before suspending or hibernating "
 "and connect on resume."
 msgstr ""
-"வலையமைப்பு மேலாளர் ஐ இடை நிறுத்தத்தின் முன் இணைப்பு நீக்கி தொடரும் போது "
-"இணைக்க வேண்டுமா."
+"வலையமைப்பு மேலாளர் ஐ இடை நிறுத்தத்தின் முன் இணைப்பு நீக்கி தொடரும் போது இணைக்க வேண்டுமா."
 
 #: data/org.cafe.power-manager.gschema.xml.in:166
 msgid "Use cafe-screensaver lock setting"
@@ -448,8 +429,8 @@ msgid ""
 "Whether to use the screen lock setting of cafe-screensaver to decide if the "
 "screen is locked after a hibernate, suspend or blank screen."
 msgstr ""
-"கணினி உறங்கி, இடை நிறுத்தி, வெற்று திரையாக இருந்து மீளும் போது க்னோம் "
-"திரைகாப்பி பூட்டு அமைப்பை பயன்படுத்த வேண்டுமா."
+"கணினி உறங்கி, இடை நிறுத்தி, வெற்று திரையாக இருந்து மீளும் போது க்னோம் திரைகாப்பி "
+"பூட்டு அமைப்பை பயன்படுத்த வேண்டுமா."
 
 #: data/org.cafe.power-manager.gschema.xml.in:171
 msgid "Lock screen when blanked"
@@ -467,8 +448,8 @@ msgstr "இடை நிறுத்தத்தில் திரையை ப
 
 #: data/org.cafe.power-manager.gschema.xml.in:177
 msgid ""
-"Whether the screen is locked when the computer wakes up from a suspend. Only"
-" used if lock-use-screensaver is false."
+"Whether the screen is locked when the computer wakes up from a suspend. Only "
+"used if lock-use-screensaver is false."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:181
@@ -488,8 +469,8 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:187
 msgid ""
-"Whether the GNOME keyring is locked before the computer enters suspend. This"
-" means the keyring will have to be unlocked on resume."
+"Whether the GNOME keyring is locked before the computer enters suspend. This "
+"means the keyring will have to be unlocked on resume."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:192
@@ -543,8 +524,8 @@ msgid ""
 "When sleep fails we can show the user a button to help fix the situation. "
 "Leave this blank if the button should not be shown."
 msgstr ""
-"உறக்கம் தோல்வியடையும்போது சரி செய்ய பயனருக்கு ஒரு பொத்தானை காட்டலாம். "
-"பொத்தான் காட்டப்படக்கூடாது எனில் இதை வெற்றாக விடவும்."
+"உறக்கம் தோல்வியடையும்போது சரி செய்ய பயனருக்கு ஒரு பொத்தானை காட்டலாம். பொத்தான் "
+"காட்டப்படக்கூடாது எனில் இதை வெற்றாக விடவும்."
 
 #: data/org.cafe.power-manager.gschema.xml.in:221
 msgid "Notify on a low power"
@@ -645,8 +626,8 @@ msgstr "சதவீதம் குறைவாக எடுத்துக்�
 
 #: data/org.cafe.power-manager.gschema.xml.in:277
 msgid ""
-"The percentage of the battery when it is considered low. Only valid when "
-"use-time-for-policy is false."
+"The percentage of the battery when it is considered low. Only valid when use-"
+"time-for-policy is false."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:281
@@ -675,8 +656,8 @@ msgstr "குறைவில் மீதமுள்ள நேரம்"
 
 #: data/org.cafe.power-manager.gschema.xml.in:292
 msgid ""
-"The time remaining in seconds of the battery when it is considered low. Only"
-" valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered low. Only "
+"valid when use-time-for-policy is true."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:296
@@ -685,8 +666,8 @@ msgstr "சிக்கலின் மீதமுள்ள நேரம்"
 
 #: data/org.cafe.power-manager.gschema.xml.in:297
 msgid ""
-"The time remaining in seconds of the battery when it is considered critical."
-" Only valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered critical. "
+"Only valid when use-time-for-policy is true."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:301
@@ -708,8 +689,8 @@ msgid ""
 "The amount of time in seconds the computer on battery power needs to be "
 "inactive before it goes to sleep."
 msgstr ""
-"மின்கல சக்தியில் கணினி உள்ள போது எவ்வளவு நேரம் (நொடிகளில்) செயலற்று "
-"இருந்தால் கணினி தூங்கப் போகும்"
+"மின்கல சக்தியில் கணினி உள்ள போது எவ்வளவு நேரம் (நொடிகளில்) செயலற்று இருந்தால் கணினி "
+"தூங்கப் போகும்"
 
 #: data/org.cafe.power-manager.gschema.xml.in:311
 msgid "Sleep timeout computer when on AC"
@@ -720,8 +701,8 @@ msgid ""
 "The amount of time in seconds the computer on AC power needs to be inactive "
 "before it goes to sleep."
 msgstr ""
-"ஏசி சக்தியில் கணினி உள்ள போது எவ்வளவு நேரம் (நொடிகளில்) செயலற்று இருந்தால் "
-"கணினி தூங்கப் போகும்"
+"ஏசி சக்தியில் கணினி உள்ள போது எவ்வளவு நேரம் (நொடிகளில்) செயலற்று இருந்தால் கணினி "
+"தூங்கப் போகும்"
 
 #: data/org.cafe.power-manager.gschema.xml.in:316
 msgid "Sleep timeout computer when on UPS"
@@ -729,11 +710,11 @@ msgstr "யூபிஎஸ் மின்கல சக்தியில் க
 
 #: data/org.cafe.power-manager.gschema.xml.in:317
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before it goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before it goes to sleep."
 msgstr ""
-"யூபிஎஸ் சக்தியில் கணினி உள்ள போது எவ்வளவு நேரம் (நொடிகளில்) செயலற்று "
-"இருந்தால் கணினி தூங்கப் போகும்"
+"யூபிஎஸ் சக்தியில் கணினி உள்ள போது எவ்வளவு நேரம் (நொடிகளில்) செயலற்று இருந்தால் கணினி "
+"தூங்கப் போகும்"
 
 #: data/org.cafe.power-manager.gschema.xml.in:321
 msgid "Sleep timeout display when on AC"
@@ -743,9 +724,7 @@ msgstr "ஏசி சக்தியில் கணினி தூக்கம
 msgid ""
 "The amount of time in seconds before the display goes to sleep when the "
 "computer is on AC power."
-msgstr ""
-"ஏசி சக்தியில் கணினி உள்ள போது எந்த நேரம் (நொடிகளில்) சென்று திரை தூக்கம் "
-"வரும் "
+msgstr "ஏசி சக்தியில் கணினி உள்ள போது எந்த நேரம் (நொடிகளில்) சென்று திரை தூக்கம் வரும் "
 
 #: data/org.cafe.power-manager.gschema.xml.in:326
 msgid "Sleep timeout display when on battery"
@@ -756,8 +735,8 @@ msgid ""
 "The amount of time in seconds the computer on battery power needs to be "
 "inactive before the display goes to sleep."
 msgstr ""
-"மின்கல சக்தியில் கணினி உள்ள போது எவ்வளவு நேரம் (நொடிகளில்) செயலற்று "
-"இருந்தால் திரை தூங்கப் போகும்"
+"மின்கல சக்தியில் கணினி உள்ள போது எவ்வளவு நேரம் (நொடிகளில்) செயலற்று இருந்தால் திரை "
+"தூங்கப் போகும்"
 
 #: data/org.cafe.power-manager.gschema.xml.in:331
 msgid "Sleep timeout display when on UPS"
@@ -765,11 +744,11 @@ msgstr "யூபிஎஸ் மின்கல சக்தியில் க
 
 #: data/org.cafe.power-manager.gschema.xml.in:332
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before the display goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before the display goes to sleep."
 msgstr ""
-"யூபிஎஸ் சக்தியில் கணினி உள்ள போது எவ்வளவு நேரம் (நொடிகளில்) செயலற்று "
-"இருந்தால் திரை தூங்கப் போகும்"
+"யூபிஎஸ் சக்தியில் கணினி உள்ள போது எவ்வளவு நேரம் (நொடிகளில்) செயலற்று இருந்தால் திரை "
+"தூங்கப் போகும்"
 
 #: data/org.cafe.power-manager.gschema.xml.in:336
 msgid "If sounds should be used"
@@ -780,15 +759,13 @@ msgid ""
 "If sounds should be used when the power is critically low, or inhibit "
 "requests have stopped the policy action."
 msgstr ""
-"மின் சக்தி மிகக்குறைவாக உள்ளபோது ஒலிகள் பயன்படுத்த வேண்டுமா அல்லது பாதிப்பு "
-"வேண்டுதல்கள் கொள்கை செயலை நிறுத்தினவா."
+"மின் சக்தி மிகக்குறைவாக உள்ளபோது ஒலிகள் பயன்படுத்த வேண்டுமா அல்லது பாதிப்பு வேண்டுதல்கள் "
+"கொள்கை செயலை நிறுத்தினவா."
 
 #: data/org.cafe.power-manager.gschema.xml.in:341
-msgid ""
-"If preferences and statistics items should be shown in the context menu"
+msgid "If preferences and statistics items should be shown in the context menu"
 msgstr ""
-"தேர்வுகள் மற்றும் புள்ளி விவரங்கள் உருப்படிகள் கான்டெக்ஸ்ட் மெனுவில் "
-"காட்டாப்பட வேண்டுமா "
+"தேர்வுகள் மற்றும் புள்ளி விவரங்கள் உருப்படிகள் கான்டெக்ஸ்ட் மெனுவில் காட்டாப்பட வேண்டுமா "
 
 #: data/org.cafe.power-manager.gschema.xml.in:345
 msgid "When to show the notification icon"
@@ -806,14 +783,13 @@ msgstr "மின் மேலாண்மை"
 msgid "Configure power management"
 msgstr "மின் மேலாண்மையை கட்டமை"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
 msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
-#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:7
-#: src/cpm-statistics.c:1090 src/cpm-statistics.c:1577
+#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:8
+#: src/cpm-statistics.c:764 src/cpm-statistics.c:1233
 msgid "Power Statistics"
 msgstr "மின் புள்ளிவிவரங்கள்"
 
@@ -821,55 +797,37 @@ msgstr "மின் புள்ளிவிவரங்கள்"
 msgid "Observe power management"
 msgstr "மின் மேலாண்மையை அனுசரி"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-statistics.desktop.in.in:6
-msgid "cafe-power-statistics"
-msgstr ""
-
-#: data/cpm-statistics.ui:113 src/cpm-statistics.c:208
+#: data/cpm-statistics.ui:119
 msgid "Details"
 msgstr "விவரங்கள்"
 
-#: data/cpm-statistics.ui:139 data/cpm-statistics.ui:342
+#: data/cpm-statistics.ui:145 data/cpm-statistics.ui:347
 msgid "Graph type:"
 msgstr "வரைபட வகை:"
 
-#: data/cpm-statistics.ui:174
+#: data/cpm-statistics.ui:180
 msgid "Data length:"
 msgstr "தரவு நீளம்:"
 
-#: data/cpm-statistics.ui:234 data/cpm-statistics.ui:395
+#: data/cpm-statistics.ui:239 data/cpm-statistics.ui:399
 msgid "There is no data to display."
 msgstr "காட்ட தரவு ஏதும் இல்லை"
 
-#: data/cpm-statistics.ui:276 data/cpm-statistics.ui:438
+#: data/cpm-statistics.ui:281 data/cpm-statistics.ui:442
 msgid "Use smoothed line"
 msgstr "இதப்படுத்திய தடத்தை பயன்படுத்துக"
 
-#: data/cpm-statistics.ui:291 data/cpm-statistics.ui:453
+#: data/cpm-statistics.ui:296 data/cpm-statistics.ui:457
 msgid "Show data points"
 msgstr "தரவு புள்ளிகளை காட்டு "
 
-#: data/cpm-statistics.ui:320
+#: data/cpm-statistics.ui:325
 msgid "History"
 msgstr "வரலாறு"
 
-#: data/cpm-statistics.ui:482
+#: data/cpm-statistics.ui:486
 msgid "Statistics"
 msgstr "புள்ளிவிவரம்"
-
-#: data/cpm-statistics.ui:504
-msgid "Processor wakeups per second:"
-msgstr "ஒரு வினாடிக்கு செயலக எழுப்புதல்கள்"
-
-#: data/cpm-statistics.ui:516
-msgid "0"
-msgstr "0"
-
-#: data/cpm-statistics.ui:563 src/cpm-statistics.c:194
-msgid "Wakeups"
-msgstr "எழுப்புதல்கள்"
 
 #: data/cpm-prefs.ui:55
 msgid "Power Management Preferences"
@@ -1123,7 +1081,7 @@ msgstr "%.1fW"
 msgid "%.1fV"
 msgstr "%.1fV"
 
-#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1560
+#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1216
 msgid "Show extra debugging information"
 msgstr "கூடுதல் பிழைத்திருத்த தகவல்களை காட்டு"
 
@@ -1230,8 +1188,8 @@ msgstr "மின்கலம் சிதைந்து இருக்கல�
 #: src/cpm-manager.c:1110
 #, c-format
 msgid ""
-"Battery has a very low capacity (%1.1f%%), which means that it may be old or"
-" broken."
+"Battery has a very low capacity (%1.1f%%), which means that it may be old or "
+"broken."
 msgstr ""
 
 #: src/cpm-manager.c:1159
@@ -1362,8 +1320,7 @@ msgstr "தரவை இழக்காதிருக்க ஏசி தகவ
 
 #: src/cpm-manager.c:1440
 msgid "Computer will suspend very soon unless it is plugged in."
-msgstr ""
-"மின்சக்தி தொடர்பு தரவில்லையானால்  கணினி சீக்கிரம்  இடை நிறுத்தப்படும்."
+msgstr "மின்சக்தி தொடர்பு தரவில்லையானால்  கணினி சீக்கிரம்  இடை நிறுத்தப்படும்."
 
 #: src/cpm-manager.c:1444
 msgid "Computer will hibernate very soon unless it is plugged in."
@@ -1371,8 +1328,7 @@ msgstr "மின்சக்தி தொடர்பு தரவில்ல�
 
 #: src/cpm-manager.c:1448
 msgid "Computer will shutdown very soon unless it is plugged in."
-msgstr ""
-"மின்சக்தி தொடர்பு தரவில்லையானால் கணினி சீக்கிரம் பணிநிறுத்தம் செய்யப்படும்."
+msgstr "மின்சக்தி தொடர்பு தரவில்லையானால் கணினி சீக்கிரம் பணிநிறுத்தம் செய்யப்படும்."
 
 #: src/cpm-manager.c:1455 src/cpm-manager.c:1621
 msgid "UPS critically low"
@@ -1381,8 +1337,8 @@ msgstr "யூபிஎஸ்(UPS) மின் அடக்கம் மிக�
 #: src/cpm-manager.c:1459
 #, c-format
 msgid ""
-"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
-" your computer to avoid losing data."
+"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to "
+"your computer to avoid losing data."
 msgstr ""
 
 #: src/cpm-manager.c:1473
@@ -1402,8 +1358,8 @@ msgstr ""
 #: src/cpm-manager.c:1490
 #, c-format
 msgid ""
-"PDA is very low in power (%.0f%%). This device will soon stop functioning if"
-" not charged."
+"PDA is very low in power (%.0f%%). This device will soon stop functioning if "
+"not charged."
 msgstr ""
 
 #: src/cpm-manager.c:1500
@@ -1423,8 +1379,8 @@ msgstr ""
 #: src/cpm-manager.c:1519
 #, c-format
 msgid ""
-"Tablet is very low in power (%.0f%%). This device will soon stop functioning"
-" if not charged."
+"Tablet is very low in power (%.0f%%). This device will soon stop functioning "
+"if not charged."
 msgstr ""
 
 #: src/cpm-manager.c:1528
@@ -1436,11 +1392,11 @@ msgstr ""
 
 #: src/cpm-manager.c:1593
 msgid ""
-"The battery is below the critical level and this computer will <b>power-"
-"off</b> when the battery becomes completely empty."
+"The battery is below the critical level and this computer will <b>power-off</"
+"b> when the battery becomes completely empty."
 msgstr ""
-"மின்கல மின் அடக்கம் அபாயகரமாக குறைவு. முழுக்க மின் கலம் காலி ஆகும் போது இந்த"
-" கணினி <b> மின் நிறுத்தம்</b> செய்யும்."
+"மின்கல மின் அடக்கம் அபாயகரமாக குறைவு. முழுக்க மின் கலம் காலி ஆகும் போது இந்த கணினி "
+"<b> மின் நிறுத்தம்</b> செய்யும்."
 
 #: src/cpm-manager.c:1599
 msgid ""
@@ -1448,47 +1404,42 @@ msgid ""
 "suspend.<br><b>NOTE:</b> A small amount of power is required to keep your "
 "computer in a suspended state."
 msgstr ""
-"மின்கல மின் அடக்கம் அபாயகரமாக குறைவு. இந்த கணினி இப்போது இடை நிறுத்தம் செய்ய"
-" உள்ளது. <br><b>NOTE:</b> கணினியை இடை நிறுத்தத்தில் வைக்க சிறிது மின் சக்தி "
-"தேவை."
+"மின்கல மின் அடக்கம் அபாயகரமாக குறைவு. இந்த கணினி இப்போது இடை நிறுத்தம் செய்ய உள்ளது. "
+"<br><b>NOTE:</b> கணினியை இடை நிறுத்தத்தில் வைக்க சிறிது மின் சக்தி தேவை."
 
 #: src/cpm-manager.c:1606
 msgid ""
 "The battery is below the critical level and this computer is about to "
 "hibernate."
-msgstr ""
-"மின்கல மின் அடக்கம் அபாயகரமாக குறைவு. இந்த கணினி இப்போது உறக்கம் செய்ய "
-"உள்ளது"
+msgstr "மின்கல மின் அடக்கம் அபாயகரமாக குறைவு. இந்த கணினி இப்போது உறக்கம் செய்ய உள்ளது"
 
 #: src/cpm-manager.c:1611
 msgid ""
 "The battery is below the critical level and this computer is about to "
 "shutdown."
 msgstr ""
-"மின்கல மின் அடக்கம் அபாயகரமாக குறைவு ஆகையால் இந்த கணினி இப்போது முழு செயல் "
-"நிறுத்தம் செய்ய உள்ளது."
+"மின்கல மின் அடக்கம் அபாயகரமாக குறைவு ஆகையால் இந்த கணினி இப்போது முழு செயல் நிறுத்தம் "
+"செய்ய உள்ளது."
 
 #: src/cpm-manager.c:1629
 msgid ""
 "The UPS is below the critical level and this computer will <b>power-off</b> "
 "when the UPS becomes completely empty."
 msgstr ""
-"யுபிஎஸ் மின் அடக்கம் அபாயகரமாக குறைவு. முழுக்க மின் கலம் காலி ஆகும் போது "
-"இந்த கணினி <b> மின் நிறுத்தம்</b> செய்யும்."
+"யுபிஎஸ் மின் அடக்கம் அபாயகரமாக குறைவு. முழுக்க மின் கலம் காலி ஆகும் போது இந்த கணினி "
+"<b> மின் நிறுத்தம்</b> செய்யும்."
 
 #: src/cpm-manager.c:1635
 msgid ""
 "The UPS is below the critical level and this computer is about to hibernate."
-msgstr ""
-"யுபிஎஸ் மின் அடக்கம் அபாயகரமாக குறைவு இந்த கணினி இப்போது உறக்கம் செய்ய "
-"உள்ளது."
+msgstr "யுபிஎஸ் மின் அடக்கம் அபாயகரமாக குறைவு இந்த கணினி இப்போது உறக்கம் செய்ய உள்ளது."
 
 #: src/cpm-manager.c:1640
 msgid ""
 "The UPS is below the critical level and this computer is about to shutdown."
 msgstr ""
-"யுபிஎஸ் மின் அடக்கம் அபாயகரமாக குறைவு இந்த கணினி இப்போது முழு செயல் "
-"நிறுத்தம் செய்ய உள்ளது."
+"யுபிஎஸ் மின் அடக்கம் அபாயகரமாக குறைவு இந்த கணினி இப்போது முழு செயல் நிறுத்தம் செய்ய "
+"உள்ளது."
 
 #: src/cpm-prefs.c:81
 msgid "CAFE Power Preferences"
@@ -1522,362 +1473,251 @@ msgstr "ஒன்றும் செய்யாதே"
 msgid "Never"
 msgstr "ஒரு போதும் இல்லை"
 
-#: src/cpm-statistics.c:78 src/cpm-statistics.c:466
+#: src/cpm-statistics.c:67 src/cpm-statistics.c:410
 msgid "Rate"
 msgstr "விகிதம்"
 
-#: src/cpm-statistics.c:79
+#: src/cpm-statistics.c:68
 msgid "Charge"
 msgstr "சக்தி"
 
-#: src/cpm-statistics.c:80 src/cpm-statistics.c:480
+#: src/cpm-statistics.c:69 src/cpm-statistics.c:424
 msgid "Time to full"
 msgstr "நிறைவதற்கு நேரம் "
 
-#: src/cpm-statistics.c:81 src/cpm-statistics.c:485
+#: src/cpm-statistics.c:70 src/cpm-statistics.c:429
 msgid "Time to empty"
 msgstr "வெற்றாக நேரம் "
 
-#: src/cpm-statistics.c:88
+#: src/cpm-statistics.c:77
 msgid "10 minutes"
 msgstr "10 நிமிடங்கள்"
 
-#: src/cpm-statistics.c:89
+#: src/cpm-statistics.c:78
 msgid "2 hours"
 msgstr "2 மணிகள்"
 
-#: src/cpm-statistics.c:90
+#: src/cpm-statistics.c:79
 msgid "6 hours"
 msgstr ""
 
-#: src/cpm-statistics.c:91
+#: src/cpm-statistics.c:80
 msgid "1 day"
 msgstr "1 நாள்"
 
-#: src/cpm-statistics.c:92
+#: src/cpm-statistics.c:81
 msgid "1 week"
 msgstr "1 வாரம்"
 
-#: src/cpm-statistics.c:101
+#: src/cpm-statistics.c:90
 msgid "Charge profile"
 msgstr "சக்தியூட்டும் நேர வரியுரு"
 
-#: src/cpm-statistics.c:102
+#: src/cpm-statistics.c:91
 msgid "Discharge profile"
 msgstr "சக்தியிறக்கும் நேர வரியுரு"
 
-#: src/cpm-statistics.c:104
+#: src/cpm-statistics.c:93
 msgid "Charge accuracy"
 msgstr "சக்தியூட்டும் நேர வழுவாமை "
 
-#: src/cpm-statistics.c:105
+#: src/cpm-statistics.c:94
 msgid "Discharge accuracy"
 msgstr "சக்தியிறக்கும் நேர வழுவாமை "
 
-#: src/cpm-statistics.c:132
+#: src/cpm-statistics.c:121
 msgid "Attribute"
 msgstr "பண்புக்கூறு"
 
-#: src/cpm-statistics.c:139
+#: src/cpm-statistics.c:128
 msgid "Value"
 msgstr "மதிப்பு"
 
-#: src/cpm-statistics.c:156
+#: src/cpm-statistics.c:145
 msgid "Image"
 msgstr "படம்"
 
-#: src/cpm-statistics.c:162
+#: src/cpm-statistics.c:151
 msgid "Description"
 msgstr "விவரம்"
 
-#: src/cpm-statistics.c:181 src/cpm-statistics.c:405
-msgid "Type"
-msgstr "þனம்"
-
-#: src/cpm-statistics.c:187
-msgid "ID"
-msgstr "எண்"
-
-#: src/cpm-statistics.c:201
-msgid "Command"
-msgstr "கட்டளை"
-
-#: src/cpm-statistics.c:286
+#: src/cpm-statistics.c:230
 msgid "Unknown"
 msgstr "தெரியாத"
 
-#: src/cpm-statistics.c:290
+#: src/cpm-statistics.c:234
 #, c-format
 msgid "%.0f second"
 msgid_plural "%.0f seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:295
+#: src/cpm-statistics.c:239
 #, c-format
 msgid "%.1f minute"
 msgid_plural "%.1f minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:300
+#: src/cpm-statistics.c:244
 #, c-format
 msgid "%.1f hour"
 msgid_plural "%.1f hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:304
+#: src/cpm-statistics.c:248
 #, c-format
 msgid "%.1f day"
 msgid_plural "%.1f days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "Yes"
 msgstr "ஆம்"
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "No"
 msgstr "இல்லை"
 
-#: src/cpm-statistics.c:402
+#: src/cpm-statistics.c:346
 msgid "Device"
 msgstr "சாதனம்"
 
-#: src/cpm-statistics.c:407
+#: src/cpm-statistics.c:349
+msgid "Type"
+msgstr "þனம்"
+
+#: src/cpm-statistics.c:351
 msgid "Vendor"
 msgstr "விற்பனையாளர்"
 
-#: src/cpm-statistics.c:409
+#: src/cpm-statistics.c:353
 msgid "Model"
 msgstr "மாதிரி"
 
-#: src/cpm-statistics.c:411
+#: src/cpm-statistics.c:355
 msgid "Serial number"
 msgstr "வரிசை எண் "
 
-#: src/cpm-statistics.c:416
+#: src/cpm-statistics.c:360
 msgid "Supply"
 msgstr "வழங்கு"
 
-#: src/cpm-statistics.c:419
+#: src/cpm-statistics.c:363
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:423
+#: src/cpm-statistics.c:367
 msgid "Refreshed"
 msgstr "புதுப்பிக்கப்பட்டது"
 
-#: src/cpm-statistics.c:433
+#: src/cpm-statistics.c:377
 msgid "Present"
 msgstr "நிகழ்"
 
-#: src/cpm-statistics.c:440
+#: src/cpm-statistics.c:384
 msgid "Rechargeable"
 msgstr "மீள் சக்தியேற்ற இயலும்"
 
-#: src/cpm-statistics.c:446
+#: src/cpm-statistics.c:390
 msgid "State"
 msgstr "மாவட்டம்"
 
-#: src/cpm-statistics.c:450
+#: src/cpm-statistics.c:394
 msgid "Energy"
 msgstr "சக்தி"
 
-#: src/cpm-statistics.c:453
+#: src/cpm-statistics.c:397
 msgid "Energy when empty"
 msgstr "வெற்றான போது சக்தி"
 
-#: src/cpm-statistics.c:456
+#: src/cpm-statistics.c:400
 msgid "Energy when full"
 msgstr "முழுமையான போது சக்தி"
 
-#: src/cpm-statistics.c:459
+#: src/cpm-statistics.c:403
 msgid "Energy (design)"
 msgstr "சக்தி (வடிவு)"
 
-#: src/cpm-statistics.c:473
+#: src/cpm-statistics.c:417
 msgid "Voltage"
 msgstr "வோல்டேஜ்"
 
-#: src/cpm-statistics.c:495
+#: src/cpm-statistics.c:439
 msgid "Percentage"
 msgstr "சதவிகிதம்"
 
-#: src/cpm-statistics.c:502
+#: src/cpm-statistics.c:446
 msgid "Capacity"
 msgstr "கொள்ளளவு:"
 
-#: src/cpm-statistics.c:507
+#: src/cpm-statistics.c:451
 msgid "Technology"
 msgstr "தொழில் நுட்பம்:"
 
-#: src/cpm-statistics.c:512
+#: src/cpm-statistics.c:456
 msgid "Online"
 msgstr "இணைப்பில்"
 
-#: src/cpm-statistics.c:824
-msgid "No data"
-msgstr "தரவு இல்லை"
-
-#: src/cpm-statistics.c:831 src/cpm-statistics.c:836
-msgid "Kernel module"
-msgstr "கரு தொகுப்பு"
-
-#: src/cpm-statistics.c:841
-msgid "Kernel core"
-msgstr "கரு உட்கூறு "
-
-#: src/cpm-statistics.c:846
-msgid "Interprocessor interrupt"
-msgstr "இடைசெயலி மறிப்பு"
-
-#: src/cpm-statistics.c:851
-msgid "Interrupt"
-msgstr "தடை"
-
-#: src/cpm-statistics.c:898
-msgid "PS/2 keyboard/mouse/touchpad"
-msgstr "பிஎஸ்/2 விசைப்பலகை/ சொடுக்கி/ தொடுதிட்டு"
-
-#: src/cpm-statistics.c:901
-msgid "ACPI"
-msgstr "ஏசிபிஐ"
-
-#: src/cpm-statistics.c:904
-msgid "Serial ATA"
-msgstr "சீரியல் ஏடிஏ"
-
-#: src/cpm-statistics.c:907
-msgid "ATA host controller"
-msgstr "ஏடிஏ புரவலன் கட்டுபடுத்தி"
-
-#: src/cpm-statistics.c:910
-msgid "Intel wireless adaptor"
-msgstr "இன்டல் கம்பியில்லா தகவி"
-
-#: src/cpm-statistics.c:917 src/cpm-statistics.c:922 src/cpm-statistics.c:927
-#: src/cpm-statistics.c:932 src/cpm-statistics.c:937
-#, c-format
-msgid "Timer %s"
-msgstr "நேர கணனி %s"
-
-#: src/cpm-statistics.c:941
-#, c-format
-msgid "Sleep %s"
-msgstr "உறங்கு %s"
-
-#: src/cpm-statistics.c:944
-#, c-format
-msgid "New task %s"
-msgstr "புதிய வேலை %s"
-
-#: src/cpm-statistics.c:948
-#, c-format
-msgid "Wait %s"
-msgstr "காத்திரு %s"
-
-#: src/cpm-statistics.c:952 src/cpm-statistics.c:956
-#, c-format
-msgid "Work queue %s"
-msgstr "வேலை வரிசை %s"
-
-#: src/cpm-statistics.c:959
-#, c-format
-msgid "Network route flush %s"
-msgstr "வலையமைப்பு தட சுத்தம் %s"
-
-#: src/cpm-statistics.c:962
-#, c-format
-msgid "USB activity %s"
-msgstr "யூஎஸ்பி செயல் %s"
-
-#: src/cpm-statistics.c:965
-#, c-format
-msgid "Wakeup %s"
-msgstr "எழுப்புதல் %s"
-
-#: src/cpm-statistics.c:968
-msgid "Local interrupts"
-msgstr "உள்ளமை தடைகள்"
-
-#: src/cpm-statistics.c:971
-msgid "Rescheduling interrupts"
-msgstr "தடைகளை மீள் அமைத்தல்"
-
-#: src/cpm-statistics.c:1080
+#: src/cpm-statistics.c:756
 msgid "Device Information"
 msgstr "சாதனம் தகவல்"
 
-#: src/cpm-statistics.c:1082
+#: src/cpm-statistics.c:758
 msgid "Device History"
 msgstr "சாதனம் வரலாறு"
 
-#: src/cpm-statistics.c:1084
+#: src/cpm-statistics.c:760
 msgid "Device Profile"
 msgstr "சாதனம் விவரகுறிப்பு"
 
-#: src/cpm-statistics.c:1086
-msgid "Processor Wakeups"
-msgstr "செயலக எழுப்புதல்"
-
-#: src/cpm-statistics.c:1325 src/cpm-statistics.c:1331
-#: src/cpm-statistics.c:1337 src/cpm-statistics.c:1343
+#: src/cpm-statistics.c:982 src/cpm-statistics.c:988 src/cpm-statistics.c:994
+#: src/cpm-statistics.c:1000
 msgid "Time elapsed"
 msgstr "கடந்த நேரம்"
 
-#: src/cpm-statistics.c:1327
+#: src/cpm-statistics.c:984
 msgid "Power"
 msgstr "சக்தி"
 
-#: src/cpm-statistics.c:1333 src/cpm-statistics.c:1377
-#: src/cpm-statistics.c:1383 src/cpm-statistics.c:1389
-#: src/cpm-statistics.c:1395
+#: src/cpm-statistics.c:990 src/cpm-statistics.c:1034 src/cpm-statistics.c:1040
+#: src/cpm-statistics.c:1046 src/cpm-statistics.c:1052
 msgid "Cell charge"
 msgstr "அறை சக்தி"
 
-#: src/cpm-statistics.c:1339 src/cpm-statistics.c:1345
+#: src/cpm-statistics.c:996 src/cpm-statistics.c:1002
 msgid "Predicted time"
 msgstr "கணிக்கப்பட்ட நேரம்"
 
-#: src/cpm-statistics.c:1379 src/cpm-statistics.c:1391
+#: src/cpm-statistics.c:1036 src/cpm-statistics.c:1048
 msgid "Correction factor"
 msgstr "திருத்த காரணி "
 
-#: src/cpm-statistics.c:1385 src/cpm-statistics.c:1397
+#: src/cpm-statistics.c:1042 src/cpm-statistics.c:1054
 msgid "Prediction accuracy"
 msgstr "கணிப்பு வழுவாமை "
 
-#: src/cpm-statistics.c:1563
+#: src/cpm-statistics.c:1219
 msgid "Select this device at startup"
 msgstr "துவக்கத்தில் இந்த சாதனத்தை தேர்ந்தெடுக்கவும்"
 
-#: src/cpm-statistics.c:1802
-msgid "Processor"
-msgstr "செயலகம்"
-
-#: src/cpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 CAFE developers"
+#: src/cpm-tray-icon.c:207
+msgid ""
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
 
-#: src/cpm-tray-icon.c:193
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Valmantas Palikša https://launchpad.net/~walmis\n"
-"  bhuvi https://launchpad.net/~bhuvanesh"
-
-#: src/cpm-tray-icon.c:295
+#: src/cpm-tray-icon.c:318
 #, c-format
 msgid "%s remaining"
 msgstr ""
 
-#: src/cpm-tray-icon.c:349
+#: src/cpm-tray-icon.c:372
 msgid "_Preferences"
 msgstr "விருப்ப தேர்வுகள் "
 
@@ -2142,3 +1982,129 @@ msgstr ""
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr ""
+
+#~ msgid "Licensed under the GNU General Public License Version 2"
+#~ msgstr "ஜிஎன்யு பொது அனுமதி விதிகளின் 2ம் பதிப்பு படி அனுமதிக்கப் பட்டது "
+
+#~ msgid ""
+#~ "Power Manager is free software; you can redistribute it and/or\n"
+#~ "modify it under the terms of the GNU General Public License\n"
+#~ "as published by the Free Software Foundation; either version 2\n"
+#~ "of the License, or (at your option) any later version."
+#~ msgstr ""
+#~ "சக்தி மேலாளர் இலவச மென் பொருளாகும்.நீங்கள்  இலவச மென் பொருள் அமைப்பினால் \n"
+#~ "வெளியிடப்பட்ட ஜிஎன்யு பொது அனுமதிக்கான விதிகளின் படி இந்த 2ம் பதிப்பையோ \n"
+#~ "அல்லது அடுத்த பதிப்புகளையோ நீங்கள் (விருப்பப்படி) மாற்றலாம்.\n"
+#~ " அல்லது மீண்டும் பறிமாறலாம்."
+
+#~ msgid ""
+#~ "Power Manager is distributed in the hope that it will be useful,\n"
+#~ "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+#~ "GNU General Public License for more details."
+#~ msgstr ""
+#~ "உபயோகப்படும் என்ற எதிர்பார்ப்புடன் சக்தி மேலாளர் வெளியிடப்படுகிறது.\n"
+#~ " ஆனால் விற்க தகுதி, குறிப்பிட்ட செயலுக்கான தகுதி உள்பட எந்த உத்திரவாதமும் \n"
+#~ "அளிக்கப்படவில்லை. மேற் கொண்டு விவரங்களுக்கு ஜிஎன்யு பொது அனுமதிக்கான \n"
+#~ "விதிகளை பார்க்கவும்"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License\n"
+#~ "along with this program; if not, write to the Free Software\n"
+#~ "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA."
+#~ msgstr ""
+#~ "சக்தி மேலாளர் உடன் ஜிஎன்யு பொது அனுமதிக்கான விதிகளின் பிரதி \n"
+#~ "உங்களுக்கு கிடைத்திருக்க வேண்டும். இல்லையானால் கீழ் கண்ட \n"
+#~ "முகவரிக்கு கடிதம் எழுதவும். Free Software Foundation, Inc., 51 Franklin "
+#~ "Street, \n"
+#~ "Fifth Floor, Boston, MA 02110-1301, USA."
+
+#~ msgid "Processor wakeups per second:"
+#~ msgstr "ஒரு வினாடிக்கு செயலக எழுப்புதல்கள்"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Wakeups"
+#~ msgstr "எழுப்புதல்கள்"
+
+#~ msgid "ID"
+#~ msgstr "எண்"
+
+#~ msgid "Command"
+#~ msgstr "கட்டளை"
+
+#~ msgid "No data"
+#~ msgstr "தரவு இல்லை"
+
+#~ msgid "Kernel module"
+#~ msgstr "கரு தொகுப்பு"
+
+#~ msgid "Kernel core"
+#~ msgstr "கரு உட்கூறு "
+
+#~ msgid "Interprocessor interrupt"
+#~ msgstr "இடைசெயலி மறிப்பு"
+
+#~ msgid "Interrupt"
+#~ msgstr "தடை"
+
+#~ msgid "PS/2 keyboard/mouse/touchpad"
+#~ msgstr "பிஎஸ்/2 விசைப்பலகை/ சொடுக்கி/ தொடுதிட்டு"
+
+#~ msgid "ACPI"
+#~ msgstr "ஏசிபிஐ"
+
+#~ msgid "Serial ATA"
+#~ msgstr "சீரியல் ஏடிஏ"
+
+#~ msgid "ATA host controller"
+#~ msgstr "ஏடிஏ புரவலன் கட்டுபடுத்தி"
+
+#~ msgid "Intel wireless adaptor"
+#~ msgstr "இன்டல் கம்பியில்லா தகவி"
+
+#, c-format
+#~ msgid "Timer %s"
+#~ msgstr "நேர கணனி %s"
+
+#, c-format
+#~ msgid "Sleep %s"
+#~ msgstr "உறங்கு %s"
+
+#, c-format
+#~ msgid "New task %s"
+#~ msgstr "புதிய வேலை %s"
+
+#, c-format
+#~ msgid "Wait %s"
+#~ msgstr "காத்திரு %s"
+
+#, c-format
+#~ msgid "Work queue %s"
+#~ msgstr "வேலை வரிசை %s"
+
+#, c-format
+#~ msgid "Network route flush %s"
+#~ msgstr "வலையமைப்பு தட சுத்தம் %s"
+
+#, c-format
+#~ msgid "USB activity %s"
+#~ msgstr "யூஎஸ்பி செயல் %s"
+
+#, c-format
+#~ msgid "Wakeup %s"
+#~ msgstr "எழுப்புதல் %s"
+
+#~ msgid "Local interrupts"
+#~ msgstr "உள்ளமை தடைகள்"
+
+#~ msgid "Rescheduling interrupts"
+#~ msgstr "தடைகளை மீள் அமைத்தல்"
+
+#~ msgid "Processor Wakeups"
+#~ msgstr "செயலக எழுப்புதல்"
+
+#~ msgid "Processor"
+#~ msgstr "செயலகம்"

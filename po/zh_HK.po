@@ -2,24 +2,25 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # tomoe_musashi <hkg.musashi@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Chan Shur Yan Daniel <shuryanc@hotmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-power-manager 1.23.1\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2019-11-12 15:22+0100\n"
+"POT-Creation-Date: 2023-09-14 10:39+0200\n"
 "PO-Revision-Date: 2020-02-15 16:27+0000\n"
 "Last-Translator: Chan Shur Yan Daniel <shuryanc@hotmail.com>, 2020\n"
-"Language-Team: Chinese (Hong Kong) (https://www.transifex.com/cafe/teams/13566/zh_HK/)\n"
+"Language-Team: Chinese (Hong Kong) (https://www.transifex.com/cafe/"
+"teams/13566/zh_HK/)\n"
+"Language: zh_HK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_HK\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: applets/brightness/brightness-applet.c:107
@@ -44,55 +45,58 @@ msgstr "不能取得手提電腦面板亮度"
 msgid "LCD brightness : %d%%"
 msgstr "LCD 亮度： %d%%"
 
+#: applets/brightness/brightness-applet.c:790
+#: applets/inhibit/inhibit-applet.c:287
+msgid ""
+"Power Manager is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:795
+#: applets/inhibit/inhibit-applet.c:292
+msgid ""
+"Power Manager is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+
 #: applets/brightness/brightness-applet.c:800
 #: applets/inhibit/inhibit-applet.c:297
-msgid "Licensed under the GNU General Public License Version 2"
-msgstr "根據 GNU General Public License Version 2 授權"
-
-#: applets/brightness/brightness-applet.c:801
-#: applets/inhibit/inhibit-applet.c:298
 msgid ""
-"Power Manager is free software; you can redistribute it and/or\n"
-"modify it under the terms of the GNU General Public License\n"
-"as published by the Free Software Foundation; either version 2\n"
-"of the License, or (at your option) any later version."
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"電源管理程式為自由軟件；你可根據據自由軟件基金會所發表\n"
-"的 GNU 通用公共授權條款規定，就本程式再為散布與／或修改；\n"
-"無論你根據據的是本授權的第二版或（你自行選擇的）任一日後發行的版本。"
 
-#: applets/brightness/brightness-applet.c:805
-#: applets/inhibit/inhibit-applet.c:302
+#: applets/brightness/brightness-applet.c:813
+msgid "About Power Manager Brightness Applet"
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:815
 msgid ""
-"Power Manager is distributed in the hope that it will be useful,\n"
-"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-"GNU General Public License for more details."
+"Copyright © 2006 Benjamin Canou\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"電源管理程式係基於使用目的而加以散布，\n"
-"然而不負任何擔保責任；\n"
-"亦無對適售性或特定目的適用性所為的默示性擔保。\n"
-"詳情請參照 GNU 通用公共授權。"
 
-#: applets/brightness/brightness-applet.c:809
-#: applets/inhibit/inhibit-applet.c:306
-msgid ""
-"You should have received a copy of the GNU General Public License\n"
-"along with this program; if not, write to the Free Software\n"
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
+#: applets/brightness/brightness-applet.c:823
+#: applets/inhibit/inhibit-applet.c:320 src/cpm-tray-icon.c:214
+msgid "translator-credits"
 msgstr ""
-"你應已收到附隨於本程式的 GNU 通用公共授權的副本；如無，請寫信至\n"
-"自由軟件基金會：\n"
-"51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA"
+"Launchpad Contributions:\n"
+"  Valmantas Palikša https://launchpad.net/~walmis\n"
+"  yanq.wang https://launchpad.net/~nile-wangyq"
 
-#: applets/brightness/brightness-applet.c:1063
-#: applets/inhibit/inhibit-applet.c:519
+#: applets/brightness/brightness-applet.c:1051
+#: applets/inhibit/inhibit-applet.c:507
 msgid "_About"
 msgstr "關於(_A)"
 
-#: applets/brightness/brightness-applet.c:1066
-#: applets/inhibit/inhibit-applet.c:522
+#: applets/brightness/brightness-applet.c:1054
+#: applets/inhibit/inhibit-applet.c:510
 msgid "_Help"
 msgstr "求助(_H)"
 
@@ -103,12 +107,6 @@ msgstr "亮度面板程式工廠"
 #: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Brightness Applet"
 msgstr "亮度面板程式"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-brightness-applet"
-msgstr ""
 
 #: applets/inhibit/inhibit-applet.c:87
 msgid "Power Manager Inhibit Applet"
@@ -130,6 +128,17 @@ msgstr "自動睡眠已啟用"
 msgid "Manual inhibit"
 msgstr "手動抑制"
 
+#: applets/inhibit/inhibit-applet.c:310
+msgid "About Power Manager Inhibit Applet"
+msgstr ""
+
+#: applets/inhibit/inhibit-applet.c:312
+msgid ""
+"Copyright © 2006-2007 Richard Hughes\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
+msgstr ""
+
 #: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Inhibit Applet Factory"
 msgstr "抑制面板程式工廠"
@@ -138,26 +147,13 @@ msgstr "抑制面板程式工廠"
 msgid "Inhibit Applet"
 msgstr "抑制面板程式"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-inhibit-applet"
-msgstr ""
-
-#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:184
+#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:204
 msgid "Power Manager"
 msgstr "電源管理程式"
 
-#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:186
+#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:206
 msgid "Power management daemon"
 msgstr "電源管理伺服程式"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-manager.desktop.in.in:6
-#: data/cafe-power-preferences.desktop.in.in:6
-msgid "cafe-power-manager"
-msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:26
 #: data/org.cafe.power-manager.gschema.xml.in:41
@@ -189,7 +185,9 @@ msgid ""
 "If the battery lid close event should occur (for example 'Suspend when lid "
 "closed on battery') when the lid is previously shut and the AC power "
 "disconnected at a later time."
-msgstr "關上上蓋及有使用交流電時，是否執行上蓋關上事件（如「關上上蓋時進入暫停模式」）。"
+msgstr ""
+"關上上蓋及有使用交流電時，是否執行上蓋關上事件（如「關上上蓋時進入暫停模"
+"式」）。"
 
 #: data/org.cafe.power-manager.gschema.xml.in:46
 msgid "UPS critical low action"
@@ -265,8 +263,8 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:82
 msgid ""
 "The percentage to reduce the keyboard backlight by when idle. For example, "
-"if set to '60', the backlight will be cut by 40% when idle. Legal values are"
-" between 0 and 100."
+"if set to '60', the backlight will be cut by 40% when idle. Legal values are "
+"between 0 and 100."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:86
@@ -395,7 +393,9 @@ msgstr "是否使用以時間為基準的通知"
 msgid ""
 "If time based notifications should be used. If set to false, then the "
 "percentage change is used instead, which may fix a broken ACPI BIOS."
-msgstr "是否使用以時間為基準的通知。如設為‘false’，會以百分更改來取代，這樣可能能解決一些有修正 ACPI BIOS 的問題。"
+msgstr ""
+"是否使用以時間為基準的通知。如設為‘false’，會以百分更改來取代，這樣可能能解決"
+"一些有修正 ACPI BIOS 的問題。"
 
 #: data/org.cafe.power-manager.gschema.xml.in:156
 msgid "Check CPU load before sleeping"
@@ -423,7 +423,9 @@ msgstr "使用 cafe-screensaver 螢幕鎖定設定"
 msgid ""
 "Whether to use the screen lock setting of cafe-screensaver to decide if the "
 "screen is locked after a hibernate, suspend or blank screen."
-msgstr "是否使用 cafe-screensaver 的螢幕鎖定來決定在休眠、暫停及畫面變黑後將螢幕鎖上。"
+msgstr ""
+"是否使用 cafe-screensaver 的螢幕鎖定來決定在休眠、暫停及畫面變黑後將螢幕鎖"
+"上。"
 
 #: data/org.cafe.power-manager.gschema.xml.in:171
 msgid "Lock screen when blanked"
@@ -441,8 +443,8 @@ msgstr "暫停時鎖上螢幕"
 
 #: data/org.cafe.power-manager.gschema.xml.in:177
 msgid ""
-"Whether the screen is locked when the computer wakes up from a suspend. Only"
-" used if lock-use-screensaver is false."
+"Whether the screen is locked when the computer wakes up from a suspend. Only "
+"used if lock-use-screensaver is false."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:181
@@ -462,8 +464,8 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:187
 msgid ""
-"Whether the GNOME keyring is locked before the computer enters suspend. This"
-" means the keyring will have to be unlocked on resume."
+"Whether the GNOME keyring is locked before the computer enters suspend. This "
+"means the keyring will have to be unlocked on resume."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:192
@@ -516,7 +518,9 @@ msgstr "睡眠失敗時顯示給使用者的 URI"
 msgid ""
 "When sleep fails we can show the user a button to help fix the situation. "
 "Leave this blank if the button should not be shown."
-msgstr "當睡眠失敗時可以顯示按鈕協助使用者修正此狀況。如果不想顯示此按鈕就讓此項留空。"
+msgstr ""
+"當睡眠失敗時可以顯示按鈕協助使用者修正此狀況。如果不想顯示此按鈕就讓此項留"
+"空。"
 
 #: data/org.cafe.power-manager.gschema.xml.in:221
 msgid "Notify on a low power"
@@ -617,8 +621,8 @@ msgstr "剩餘多少百分比為低電量"
 
 #: data/org.cafe.power-manager.gschema.xml.in:277
 msgid ""
-"The percentage of the battery when it is considered low. Only valid when "
-"use-time-for-policy is false."
+"The percentage of the battery when it is considered low. Only valid when use-"
+"time-for-policy is false."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:281
@@ -647,8 +651,8 @@ msgstr "剩餘多少時間為低電量"
 
 #: data/org.cafe.power-manager.gschema.xml.in:292
 msgid ""
-"The time remaining in seconds of the battery when it is considered low. Only"
-" valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered low. Only "
+"valid when use-time-for-policy is true."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:296
@@ -657,8 +661,8 @@ msgstr "剩餘多少時間為極低電量"
 
 #: data/org.cafe.power-manager.gschema.xml.in:297
 msgid ""
-"The time remaining in seconds of the battery when it is considered critical."
-" Only valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered critical. "
+"Only valid when use-time-for-policy is true."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:301
@@ -697,8 +701,8 @@ msgstr "在 UPS 下電腦睡眠的逾時時間"
 
 #: data/org.cafe.power-manager.gschema.xml.in:317
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before it goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before it goes to sleep."
 msgstr "在 UPS 電源下電腦閒置多少時間（秒）後進入睡眠模式。"
 
 #: data/org.cafe.power-manager.gschema.xml.in:321
@@ -727,8 +731,8 @@ msgstr "在 UPS 下螢幕睡眠的逾時時間"
 
 #: data/org.cafe.power-manager.gschema.xml.in:332
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before the display goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before the display goes to sleep."
 msgstr "在 UPS 電源下電腦閒置多少時間（秒）後讓螢幕進入睡眠模式。"
 
 #: data/org.cafe.power-manager.gschema.xml.in:336
@@ -742,8 +746,7 @@ msgid ""
 msgstr "電量極低時，應否發出系統鈴聲，或抑制要求來停止策略動作。"
 
 #: data/org.cafe.power-manager.gschema.xml.in:341
-msgid ""
-"If preferences and statistics items should be shown in the context menu"
+msgid "If preferences and statistics items should be shown in the context menu"
 msgstr "偏好設定與統計是否顯示在關聯選單中"
 
 #: data/org.cafe.power-manager.gschema.xml.in:345
@@ -762,14 +765,13 @@ msgstr "電源管理程式"
 msgid "Configure power management"
 msgstr "設定電源管理程式"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
 msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
-#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:7
-#: src/cpm-statistics.c:1090 src/cpm-statistics.c:1577
+#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:8
+#: src/cpm-statistics.c:764 src/cpm-statistics.c:1233
 msgid "Power Statistics"
 msgstr "電源統計"
 
@@ -777,55 +779,37 @@ msgstr "電源統計"
 msgid "Observe power management"
 msgstr "監控電源管理程式"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-statistics.desktop.in.in:6
-msgid "cafe-power-statistics"
-msgstr ""
-
-#: data/cpm-statistics.ui:113 src/cpm-statistics.c:208
+#: data/cpm-statistics.ui:119
 msgid "Details"
 msgstr "詳細資料"
 
-#: data/cpm-statistics.ui:139 data/cpm-statistics.ui:342
+#: data/cpm-statistics.ui:145 data/cpm-statistics.ui:347
 msgid "Graph type:"
 msgstr "圖表類型:"
 
-#: data/cpm-statistics.ui:174
+#: data/cpm-statistics.ui:180
 msgid "Data length:"
 msgstr "資料長度:"
 
-#: data/cpm-statistics.ui:234 data/cpm-statistics.ui:395
+#: data/cpm-statistics.ui:239 data/cpm-statistics.ui:399
 msgid "There is no data to display."
 msgstr "沒有要顯示的資料。"
 
-#: data/cpm-statistics.ui:276 data/cpm-statistics.ui:438
+#: data/cpm-statistics.ui:281 data/cpm-statistics.ui:442
 msgid "Use smoothed line"
 msgstr "使用平滑的線條"
 
-#: data/cpm-statistics.ui:291 data/cpm-statistics.ui:453
+#: data/cpm-statistics.ui:296 data/cpm-statistics.ui:457
 msgid "Show data points"
 msgstr "顯示資料點"
 
-#: data/cpm-statistics.ui:320
+#: data/cpm-statistics.ui:325
 msgid "History"
 msgstr "紀錄"
 
-#: data/cpm-statistics.ui:482
+#: data/cpm-statistics.ui:486
 msgid "Statistics"
 msgstr "統計資料"
-
-#: data/cpm-statistics.ui:504
-msgid "Processor wakeups per second:"
-msgstr "每幾秒喚醒處理器："
-
-#: data/cpm-statistics.ui:516
-msgid "0"
-msgstr "0"
-
-#: data/cpm-statistics.ui:563 src/cpm-statistics.c:194
-msgid "Wakeups"
-msgstr "喚醒"
 
 #: data/cpm-prefs.ui:55
 msgid "Power Management Preferences"
@@ -1075,7 +1059,7 @@ msgstr "%.1fW"
 msgid "%.1fV"
 msgstr "%.1fV"
 
-#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1560
+#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1216
 msgid "Show extra debugging information"
 msgstr "顯示額外的除錯資訊"
 
@@ -1182,8 +1166,8 @@ msgstr "電池可能已損壞"
 #: src/cpm-manager.c:1110
 #, c-format
 msgid ""
-"Battery has a very low capacity (%1.1f%%), which means that it may be old or"
-" broken."
+"Battery has a very low capacity (%1.1f%%), which means that it may be old or "
+"broken."
 msgstr "電池容量極低 (%1.1f%%)，這表示該電池可能太過老舊或已經損壞。"
 
 #: src/cpm-manager.c:1159
@@ -1330,9 +1314,11 @@ msgstr "不斷電系統的電量極低"
 #: src/cpm-manager.c:1459
 #, c-format
 msgid ""
-"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
-" your computer to avoid losing data."
-msgstr "你大約剩下 <b>%s</b> 的 UPS 電力 (%.0f%%)。請回復電腦的 AC 電源以避免遺失資料。"
+"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to "
+"your computer to avoid losing data."
+msgstr ""
+"你大約剩下 <b>%s</b> 的 UPS 電力 (%.0f%%)。請回復電腦的 AC 電源以避免遺失資"
+"料。"
 
 #: src/cpm-manager.c:1473
 #, c-format
@@ -1351,8 +1337,8 @@ msgstr "無線鍵盤電量極低 (%.0f%%)。如不充電該裝置將會無法使
 #: src/cpm-manager.c:1490
 #, c-format
 msgid ""
-"PDA is very low in power (%.0f%%). This device will soon stop functioning if"
-" not charged."
+"PDA is very low in power (%.0f%%). This device will soon stop functioning if "
+"not charged."
 msgstr "PDA 電量極低 (%.0f%%)。如不充電該裝置將會無法使用。"
 
 #: src/cpm-manager.c:1500
@@ -1372,8 +1358,8 @@ msgstr "媒體播放器電量極低 (%.0f%%)。如不充電該裝置將會無法
 #: src/cpm-manager.c:1519
 #, c-format
 msgid ""
-"Tablet is very low in power (%.0f%%). This device will soon stop functioning"
-" if not charged."
+"Tablet is very low in power (%.0f%%). This device will soon stop functioning "
+"if not charged."
 msgstr "手寫板電量極低 (%.0f%%)。如不充電該裝置將會無法使用。"
 
 #: src/cpm-manager.c:1528
@@ -1385,8 +1371,8 @@ msgstr "連接的電腦電量極低 (%.0f%%)。如不充電該裝置將會無法
 
 #: src/cpm-manager.c:1593
 msgid ""
-"The battery is below the critical level and this computer will <b>power-"
-"off</b> when the battery becomes completely empty."
+"The battery is below the critical level and this computer will <b>power-off</"
+"b> when the battery becomes completely empty."
 msgstr "電池電量已在極低的程度之下，在電力用完時這台電腦亦會<b>關關</b>。"
 
 #: src/cpm-manager.c:1599
@@ -1394,7 +1380,9 @@ msgid ""
 "The battery is below the critical level and this computer is about to "
 "suspend.<br><b>NOTE:</b> A small amount of power is required to keep your "
 "computer in a suspended state."
-msgstr "電池電量已在極低的程度之下，這台電腦將會進入暫停模式。<br><b>注意：</b>將電腦進入暫停模式仍需要少量的電力。"
+msgstr ""
+"電池電量已在極低的程度之下，這台電腦將會進入暫停模式。<br><b>注意：</b>將電腦"
+"進入暫停模式仍需要少量的電力。"
 
 #: src/cpm-manager.c:1606
 msgid ""
@@ -1412,7 +1400,8 @@ msgstr "電池電量已在極低的程度之下，這台電腦即將關機。"
 msgid ""
 "The UPS is below the critical level and this computer will <b>power-off</b> "
 "when the UPS becomes completely empty."
-msgstr "不斷電系統的電量已處於極低的程度，在電用完的時候這台電腦亦會立即<b>關閉</b>。"
+msgstr ""
+"不斷電系統的電量已處於極低的程度，在電用完的時候這台電腦亦會立即<b>關閉</b>。"
 
 #: src/cpm-manager.c:1635
 msgid ""
@@ -1456,357 +1445,246 @@ msgstr "不做任何事"
 msgid "Never"
 msgstr "永不"
 
-#: src/cpm-statistics.c:78 src/cpm-statistics.c:466
+#: src/cpm-statistics.c:67 src/cpm-statistics.c:410
 msgid "Rate"
 msgstr "Rate"
 
-#: src/cpm-statistics.c:79
+#: src/cpm-statistics.c:68
 msgid "Charge"
 msgstr "充電"
 
-#: src/cpm-statistics.c:80 src/cpm-statistics.c:480
+#: src/cpm-statistics.c:69 src/cpm-statistics.c:424
 msgid "Time to full"
 msgstr "充飽的時間"
 
-#: src/cpm-statistics.c:81 src/cpm-statistics.c:485
+#: src/cpm-statistics.c:70 src/cpm-statistics.c:429
 msgid "Time to empty"
 msgstr "用完的時間"
 
-#: src/cpm-statistics.c:88
+#: src/cpm-statistics.c:77
 msgid "10 minutes"
 msgstr "10 分鐘"
 
-#: src/cpm-statistics.c:89
+#: src/cpm-statistics.c:78
 msgid "2 hours"
 msgstr "2 小時"
 
-#: src/cpm-statistics.c:90
+#: src/cpm-statistics.c:79
 msgid "6 hours"
 msgstr "6 小時"
 
-#: src/cpm-statistics.c:91
+#: src/cpm-statistics.c:80
 msgid "1 day"
 msgstr "1 天"
 
-#: src/cpm-statistics.c:92
+#: src/cpm-statistics.c:81
 msgid "1 week"
 msgstr "1 週"
 
-#: src/cpm-statistics.c:101
+#: src/cpm-statistics.c:90
 msgid "Charge profile"
 msgstr "充電設定組合"
 
-#: src/cpm-statistics.c:102
+#: src/cpm-statistics.c:91
 msgid "Discharge profile"
 msgstr "放電設定組合"
 
-#: src/cpm-statistics.c:104
+#: src/cpm-statistics.c:93
 msgid "Charge accuracy"
 msgstr "充電準確度"
 
-#: src/cpm-statistics.c:105
+#: src/cpm-statistics.c:94
 msgid "Discharge accuracy"
 msgstr "放電準確度"
 
-#: src/cpm-statistics.c:132
+#: src/cpm-statistics.c:121
 msgid "Attribute"
 msgstr "屬性"
 
-#: src/cpm-statistics.c:139
+#: src/cpm-statistics.c:128
 msgid "Value"
 msgstr "鍵值"
 
-#: src/cpm-statistics.c:156
+#: src/cpm-statistics.c:145
 msgid "Image"
 msgstr "圖片"
 
-#: src/cpm-statistics.c:162
+#: src/cpm-statistics.c:151
 msgid "Description"
 msgstr "描述"
 
-#: src/cpm-statistics.c:181 src/cpm-statistics.c:405
-msgid "Type"
-msgstr "類型"
-
-#: src/cpm-statistics.c:187
-msgid "ID"
-msgstr "ID"
-
-#: src/cpm-statistics.c:201
-msgid "Command"
-msgstr "指令"
-
-#: src/cpm-statistics.c:286
+#: src/cpm-statistics.c:230
 msgid "Unknown"
 msgstr "不明"
 
-#: src/cpm-statistics.c:290
+#: src/cpm-statistics.c:234
 #, c-format
 msgid "%.0f second"
 msgid_plural "%.0f seconds"
 msgstr[0] ""
 
-#: src/cpm-statistics.c:295
+#: src/cpm-statistics.c:239
 #, c-format
 msgid "%.1f minute"
 msgid_plural "%.1f minutes"
 msgstr[0] ""
 
-#: src/cpm-statistics.c:300
+#: src/cpm-statistics.c:244
 #, c-format
 msgid "%.1f hour"
 msgid_plural "%.1f hours"
 msgstr[0] ""
 
-#: src/cpm-statistics.c:304
+#: src/cpm-statistics.c:248
 #, c-format
 msgid "%.1f day"
 msgid_plural "%.1f days"
 msgstr[0] ""
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "Yes"
 msgstr "是"
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "No"
 msgstr "否"
 
-#: src/cpm-statistics.c:402
+#: src/cpm-statistics.c:346
 msgid "Device"
 msgstr "裝置"
 
-#: src/cpm-statistics.c:407
+#: src/cpm-statistics.c:349
+msgid "Type"
+msgstr "類型"
+
+#: src/cpm-statistics.c:351
 msgid "Vendor"
 msgstr "廠商"
 
-#: src/cpm-statistics.c:409
+#: src/cpm-statistics.c:353
 msgid "Model"
 msgstr "型號"
 
-#: src/cpm-statistics.c:411
+#: src/cpm-statistics.c:355
 msgid "Serial number"
 msgstr "序號"
 
-#: src/cpm-statistics.c:416
+#: src/cpm-statistics.c:360
 msgid "Supply"
 msgstr "供給"
 
-#: src/cpm-statistics.c:419
+#: src/cpm-statistics.c:363
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] ""
 
-#: src/cpm-statistics.c:423
+#: src/cpm-statistics.c:367
 msgid "Refreshed"
 msgstr "已重新整理"
 
-#: src/cpm-statistics.c:433
+#: src/cpm-statistics.c:377
 msgid "Present"
 msgstr "目前"
 
-#: src/cpm-statistics.c:440
+#: src/cpm-statistics.c:384
 msgid "Rechargeable"
 msgstr "可重複充電"
 
-#: src/cpm-statistics.c:446
+#: src/cpm-statistics.c:390
 msgid "State"
 msgstr "州"
 
-#: src/cpm-statistics.c:450
+#: src/cpm-statistics.c:394
 msgid "Energy"
 msgstr "能源"
 
-#: src/cpm-statistics.c:453
+#: src/cpm-statistics.c:397
 msgid "Energy when empty"
 msgstr "電力用盡時的能源"
 
-#: src/cpm-statistics.c:456
+#: src/cpm-statistics.c:400
 msgid "Energy when full"
 msgstr "電力充飽時的能源"
 
-#: src/cpm-statistics.c:459
+#: src/cpm-statistics.c:403
 msgid "Energy (design)"
 msgstr "能源 (設計)"
 
-#: src/cpm-statistics.c:473
+#: src/cpm-statistics.c:417
 msgid "Voltage"
 msgstr "電壓"
 
-#: src/cpm-statistics.c:495
+#: src/cpm-statistics.c:439
 msgid "Percentage"
 msgstr "百分比"
 
-#: src/cpm-statistics.c:502
+#: src/cpm-statistics.c:446
 msgid "Capacity"
 msgstr "容量"
 
-#: src/cpm-statistics.c:507
+#: src/cpm-statistics.c:451
 msgid "Technology"
 msgstr "科技"
 
-#: src/cpm-statistics.c:512
+#: src/cpm-statistics.c:456
 msgid "Online"
 msgstr "上線"
 
-#: src/cpm-statistics.c:824
-msgid "No data"
-msgstr "沒有資料"
-
-#: src/cpm-statistics.c:831 src/cpm-statistics.c:836
-msgid "Kernel module"
-msgstr "核心模組"
-
-#: src/cpm-statistics.c:841
-msgid "Kernel core"
-msgstr "Kernel 核心"
-
-#: src/cpm-statistics.c:846
-msgid "Interprocessor interrupt"
-msgstr "處理器間的中斷"
-
-#: src/cpm-statistics.c:851
-msgid "Interrupt"
-msgstr "中斷"
-
-#: src/cpm-statistics.c:898
-msgid "PS/2 keyboard/mouse/touchpad"
-msgstr "PS/2 鍵盤/滑鼠/觸控板"
-
-#: src/cpm-statistics.c:901
-msgid "ACPI"
-msgstr "ACPI"
-
-#: src/cpm-statistics.c:904
-msgid "Serial ATA"
-msgstr "SATA"
-
-#: src/cpm-statistics.c:907
-msgid "ATA host controller"
-msgstr "ATA 主端控制器"
-
-#: src/cpm-statistics.c:910
-msgid "Intel wireless adaptor"
-msgstr "Intel 無線配接器"
-
-#: src/cpm-statistics.c:917 src/cpm-statistics.c:922 src/cpm-statistics.c:927
-#: src/cpm-statistics.c:932 src/cpm-statistics.c:937
-#, c-format
-msgid "Timer %s"
-msgstr "計時器 %s"
-
-#: src/cpm-statistics.c:941
-#, c-format
-msgid "Sleep %s"
-msgstr "睡眠 %s"
-
-#: src/cpm-statistics.c:944
-#, c-format
-msgid "New task %s"
-msgstr "新工作 %s"
-
-#: src/cpm-statistics.c:948
-#, c-format
-msgid "Wait %s"
-msgstr "等待 %s"
-
-#: src/cpm-statistics.c:952 src/cpm-statistics.c:956
-#, c-format
-msgid "Work queue %s"
-msgstr "工作佇列 %s"
-
-#: src/cpm-statistics.c:959
-#, c-format
-msgid "Network route flush %s"
-msgstr "網絡路由清空 %s"
-
-#: src/cpm-statistics.c:962
-#, c-format
-msgid "USB activity %s"
-msgstr "USB 使用 %s"
-
-#: src/cpm-statistics.c:965
-#, c-format
-msgid "Wakeup %s"
-msgstr "喚醒 %s"
-
-#: src/cpm-statistics.c:968
-msgid "Local interrupts"
-msgstr "本地端中斷"
-
-#: src/cpm-statistics.c:971
-msgid "Rescheduling interrupts"
-msgstr "重新排程中斷"
-
-#: src/cpm-statistics.c:1080
+#: src/cpm-statistics.c:756
 msgid "Device Information"
 msgstr "裝置資訊"
 
-#: src/cpm-statistics.c:1082
+#: src/cpm-statistics.c:758
 msgid "Device History"
 msgstr "裝置紀錄"
 
-#: src/cpm-statistics.c:1084
+#: src/cpm-statistics.c:760
 msgid "Device Profile"
 msgstr "裝置設定組合"
 
-#: src/cpm-statistics.c:1086
-msgid "Processor Wakeups"
-msgstr "處理器喚醒"
-
-#: src/cpm-statistics.c:1325 src/cpm-statistics.c:1331
-#: src/cpm-statistics.c:1337 src/cpm-statistics.c:1343
+#: src/cpm-statistics.c:982 src/cpm-statistics.c:988 src/cpm-statistics.c:994
+#: src/cpm-statistics.c:1000
 msgid "Time elapsed"
 msgstr "花費時間"
 
-#: src/cpm-statistics.c:1327
+#: src/cpm-statistics.c:984
 msgid "Power"
 msgstr "電源"
 
-#: src/cpm-statistics.c:1333 src/cpm-statistics.c:1377
-#: src/cpm-statistics.c:1383 src/cpm-statistics.c:1389
-#: src/cpm-statistics.c:1395
+#: src/cpm-statistics.c:990 src/cpm-statistics.c:1034 src/cpm-statistics.c:1040
+#: src/cpm-statistics.c:1046 src/cpm-statistics.c:1052
 msgid "Cell charge"
 msgstr "Cell 充電"
 
-#: src/cpm-statistics.c:1339 src/cpm-statistics.c:1345
+#: src/cpm-statistics.c:996 src/cpm-statistics.c:1002
 msgid "Predicted time"
 msgstr "預計時間"
 
-#: src/cpm-statistics.c:1379 src/cpm-statistics.c:1391
+#: src/cpm-statistics.c:1036 src/cpm-statistics.c:1048
 msgid "Correction factor"
 msgstr "校正因素"
 
-#: src/cpm-statistics.c:1385 src/cpm-statistics.c:1397
+#: src/cpm-statistics.c:1042 src/cpm-statistics.c:1054
 msgid "Prediction accuracy"
 msgstr "預測準確度"
 
-#: src/cpm-statistics.c:1563
+#: src/cpm-statistics.c:1219
 msgid "Select this device at startup"
 msgstr "啟動時選擇這個裝置"
 
-#: src/cpm-statistics.c:1802
-msgid "Processor"
-msgstr "處理器"
-
-#: src/cpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 CAFE developers"
+#: src/cpm-tray-icon.c:207
+msgid ""
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
 
-#: src/cpm-tray-icon.c:193
-msgid "translator-credits"
-msgstr ""
-"Launchpad Contributions:\n"
-"  Valmantas Palikša https://launchpad.net/~walmis\n"
-"  yanq.wang https://launchpad.net/~nile-wangyq"
-
-#: src/cpm-tray-icon.c:295
+#: src/cpm-tray-icon.c:318
 #, c-format
 msgid "%s remaining"
 msgstr ""
 
-#: src/cpm-tray-icon.c:349
+#: src/cpm-tray-icon.c:372
 msgid "_Preferences"
 msgstr "偏好設定(_P)"
 
@@ -2060,3 +1938,126 @@ msgstr "正等待放電"
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr "不明的狀態"
+
+#~ msgid "Licensed under the GNU General Public License Version 2"
+#~ msgstr "根據 GNU General Public License Version 2 授權"
+
+#~ msgid ""
+#~ "Power Manager is free software; you can redistribute it and/or\n"
+#~ "modify it under the terms of the GNU General Public License\n"
+#~ "as published by the Free Software Foundation; either version 2\n"
+#~ "of the License, or (at your option) any later version."
+#~ msgstr ""
+#~ "電源管理程式為自由軟件；你可根據據自由軟件基金會所發表\n"
+#~ "的 GNU 通用公共授權條款規定，就本程式再為散布與／或修改；\n"
+#~ "無論你根據據的是本授權的第二版或（你自行選擇的）任一日後發行的版本。"
+
+#~ msgid ""
+#~ "Power Manager is distributed in the hope that it will be useful,\n"
+#~ "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+#~ "GNU General Public License for more details."
+#~ msgstr ""
+#~ "電源管理程式係基於使用目的而加以散布，\n"
+#~ "然而不負任何擔保責任；\n"
+#~ "亦無對適售性或特定目的適用性所為的默示性擔保。\n"
+#~ "詳情請參照 GNU 通用公共授權。"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License\n"
+#~ "along with this program; if not, write to the Free Software\n"
+#~ "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA."
+#~ msgstr ""
+#~ "你應已收到附隨於本程式的 GNU 通用公共授權的副本；如無，請寫信至\n"
+#~ "自由軟件基金會：\n"
+#~ "51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA"
+
+#~ msgid "Processor wakeups per second:"
+#~ msgstr "每幾秒喚醒處理器："
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Wakeups"
+#~ msgstr "喚醒"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Command"
+#~ msgstr "指令"
+
+#~ msgid "No data"
+#~ msgstr "沒有資料"
+
+#~ msgid "Kernel module"
+#~ msgstr "核心模組"
+
+#~ msgid "Kernel core"
+#~ msgstr "Kernel 核心"
+
+#~ msgid "Interprocessor interrupt"
+#~ msgstr "處理器間的中斷"
+
+#~ msgid "Interrupt"
+#~ msgstr "中斷"
+
+#~ msgid "PS/2 keyboard/mouse/touchpad"
+#~ msgstr "PS/2 鍵盤/滑鼠/觸控板"
+
+#~ msgid "ACPI"
+#~ msgstr "ACPI"
+
+#~ msgid "Serial ATA"
+#~ msgstr "SATA"
+
+#~ msgid "ATA host controller"
+#~ msgstr "ATA 主端控制器"
+
+#~ msgid "Intel wireless adaptor"
+#~ msgstr "Intel 無線配接器"
+
+#, c-format
+#~ msgid "Timer %s"
+#~ msgstr "計時器 %s"
+
+#, c-format
+#~ msgid "Sleep %s"
+#~ msgstr "睡眠 %s"
+
+#, c-format
+#~ msgid "New task %s"
+#~ msgstr "新工作 %s"
+
+#, c-format
+#~ msgid "Wait %s"
+#~ msgstr "等待 %s"
+
+#, c-format
+#~ msgid "Work queue %s"
+#~ msgstr "工作佇列 %s"
+
+#, c-format
+#~ msgid "Network route flush %s"
+#~ msgstr "網絡路由清空 %s"
+
+#, c-format
+#~ msgid "USB activity %s"
+#~ msgstr "USB 使用 %s"
+
+#, c-format
+#~ msgid "Wakeup %s"
+#~ msgstr "喚醒 %s"
+
+#~ msgid "Local interrupts"
+#~ msgstr "本地端中斷"
+
+#~ msgid "Rescheduling interrupts"
+#~ msgstr "重新排程中斷"
+
+#~ msgid "Processor Wakeups"
+#~ msgstr "處理器喚醒"
+
+#~ msgid "Processor"
+#~ msgstr "處理器"

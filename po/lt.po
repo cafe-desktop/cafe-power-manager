@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # brennus <jonas.ska@gmail.com>, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
@@ -11,20 +11,22 @@
 # Moo, 2020
 # Džiugas Grėbliūnas <dziugas.grebliunas@gmail.com>, 2020
 # Wolfgang Ulbrich <mate@raveit.de>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-power-manager 1.23.1\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2019-11-12 15:22+0100\n"
+"POT-Creation-Date: 2023-09-14 10:39+0200\n"
 "PO-Revision-Date: 2020-02-15 16:27+0000\n"
 "Last-Translator: Wolfgang Ulbrich <mate@raveit.de>, 2020\n"
 "Language-Team: Lithuanian (https://www.transifex.com/cafe/teams/13566/lt/)\n"
+"Language: lt\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: lt\n"
-"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < 11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? 1 : n % 1 != 0 ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 10 == 1 && (n % 100 > 19 || n % 100 < "
+"11) ? 0 : (n % 10 >= 2 && n % 10 <=9) && (n % 100 > 19 || n % 100 < 11) ? "
+"1 : n % 1 != 0 ? 2: 3);\n"
 
 #: applets/brightness/brightness-applet.c:107
 msgid "Power Manager Brightness Applet"
@@ -48,56 +50,65 @@ msgstr "Nepavyko gauti nešiojamojo kompiuterio skydelio ryškumo"
 msgid "LCD brightness : %d%%"
 msgstr "LCD ryškumas: %d%%"
 
+#: applets/brightness/brightness-applet.c:790
+#: applets/inhibit/inhibit-applet.c:287
+msgid ""
+"Power Manager is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:795
+#: applets/inhibit/inhibit-applet.c:292
+msgid ""
+"Power Manager is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+
 #: applets/brightness/brightness-applet.c:800
 #: applets/inhibit/inhibit-applet.c:297
-msgid "Licensed under the GNU General Public License Version 2"
-msgstr "Licencijuota GNU General Public Licence Version 2 sąlygomis"
-
-#: applets/brightness/brightness-applet.c:801
-#: applets/inhibit/inhibit-applet.c:298
 msgid ""
-"Power Manager is free software; you can redistribute it and/or\n"
-"modify it under the terms of the GNU General Public License\n"
-"as published by the Free Software Foundation; either version 2\n"
-"of the License, or (at your option) any later version."
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"Energijos tvarkytuvė yra laisva programinė įranga; galite ją\n"
-"platinti ir/ar modifikuoti GNU bendrosios viešosios licencijos\n"
-"sąlygomis, paskelbtomis Laisvosios programinės įrangos fondo (Free Software Foundation); 2-osios\n"
-"arba (jūsų pasirinkimu) bet kurios vėlesnės licencijos versijos sąlygomis."
 
-#: applets/brightness/brightness-applet.c:805
-#: applets/inhibit/inhibit-applet.c:302
+#: applets/brightness/brightness-applet.c:813
+msgid "About Power Manager Brightness Applet"
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:815
 msgid ""
-"Power Manager is distributed in the hope that it will be useful,\n"
-"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-"GNU General Public License for more details."
+"Copyright © 2006 Benjamin Canou\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"Energijos tvarkytuvė platinama tikintis, kad ji bus naudinga, bet\n"
-"BE JOKIŲ GARANTIJŲ; netgi be numanomų PARDAVIMO arba TINKAMUMO\n"
-"KONKREČIAM TIKSLUI garantijų. Dėl išsamesnės informacijos žiūrėkite GNU\n"
-"bendrąją viešąją licenciją."
 
-#: applets/brightness/brightness-applet.c:809
-#: applets/inhibit/inhibit-applet.c:306
-msgid ""
-"You should have received a copy of the GNU General Public License\n"
-"along with this program; if not, write to the Free Software\n"
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
+#: applets/brightness/brightness-applet.c:823
+#: applets/inhibit/inhibit-applet.c:320 src/cpm-tray-icon.c:214
+msgid "translator-credits"
 msgstr ""
-"Jūs turėjote gauti GNU bendrosios viešosios licencijos kopiją kartu su\n"
-"CAFE energijos tvarkytuve; jeigu negavote, rašykite Free Software Foundation,\n"
-"Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+"Vertėjai:\n"
+"Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
+"Aurimas Černius <aurisc4@gmail.com>\n"
+"Rimas Kudelis <rq@akl.lt>\n"
+"Žygimantas Beručka <uid0@akl.lt>\n"
+"Justina Klingaitė <justina.klingaite@gmail.com>\n"
+"Gintautas Miliauskas <gintas@akl.lt>\n"
+"Tomas Kuliavas <tokul@users.sourceforge.net>\n"
+"Gediminas Paulauskas <menesis@chatsubo.lt>\n"
+"Moo"
 
-#: applets/brightness/brightness-applet.c:1063
-#: applets/inhibit/inhibit-applet.c:519
+#: applets/brightness/brightness-applet.c:1051
+#: applets/inhibit/inhibit-applet.c:507
 msgid "_About"
 msgstr "_Apie"
 
-#: applets/brightness/brightness-applet.c:1066
-#: applets/inhibit/inhibit-applet.c:522
+#: applets/brightness/brightness-applet.c:1054
+#: applets/inhibit/inhibit-applet.c:510
 msgid "_Help"
 msgstr "_Žinynas"
 
@@ -108,12 +119,6 @@ msgstr "Ryškumo įtaiso gamykla"
 #: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Brightness Applet"
 msgstr "Ryškumo įtaisas"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-brightness-applet"
-msgstr "cafe-brightness-applet"
 
 #: applets/inhibit/inhibit-applet.c:87
 msgid "Power Manager Inhibit Applet"
@@ -135,6 +140,17 @@ msgstr "Automatinis užmigimas įjungtas"
 msgid "Manual inhibit"
 msgstr "Rankinis uždraudimas"
 
+#: applets/inhibit/inhibit-applet.c:310
+msgid "About Power Manager Inhibit Applet"
+msgstr ""
+
+#: applets/inhibit/inhibit-applet.c:312
+msgid ""
+"Copyright © 2006-2007 Richard Hughes\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
+msgstr ""
+
 #: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Inhibit Applet Factory"
 msgstr "Uždraudimo įtaiso gamykla"
@@ -143,26 +159,13 @@ msgstr "Uždraudimo įtaiso gamykla"
 msgid "Inhibit Applet"
 msgstr "Uždraudimo įtaisas"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-inhibit-applet"
-msgstr "cafe-inhibit-applet"
-
-#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:184
+#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:204
 msgid "Power Manager"
 msgstr "Energijos tvarkytuvė"
 
-#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:186
+#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:206
 msgid "Power management daemon"
 msgstr "Energijos valdymo tarnyba"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-manager.desktop.in.in:6
-#: data/cafe-power-preferences.desktop.in.in:6
-msgid "cafe-power-manager"
-msgstr "cafe-power-manager"
 
 #: data/org.cafe.power-manager.gschema.xml.in:26
 #: data/org.cafe.power-manager.gschema.xml.in:41
@@ -181,8 +184,7 @@ msgstr "Veiksmas, vykdytinas esant kritiškai mažai įkrovai"
 
 #: data/org.cafe.power-manager.gschema.xml.in:32
 msgid "The action to take when the battery is critically low."
-msgstr ""
-"Veiksmas, vykdytinas esant kritiškai mažam baterijos energijos lygiui."
+msgstr "Veiksmas, vykdytinas esant kritiškai mažam baterijos energijos lygiui."
 
 #: data/org.cafe.power-manager.gschema.xml.in:36
 msgid ""
@@ -199,8 +201,8 @@ msgid ""
 "disconnected at a later time."
 msgstr ""
 "Ar baterijos įvykis (pavyzdžiui, „Pristabdyti, kai dangtis uždarytas ir "
-"maitinamasi iš baterijos“) turėtų būti aktyvuojamas, kai kompiuterio dangtis"
-" buvo anksčiau užvertas ir tik po to atjungtas nuo elektros tinklo."
+"maitinamasi iš baterijos“) turėtų būti aktyvuojamas, kai kompiuterio dangtis "
+"buvo anksčiau užvertas ir tik po to atjungtas nuo elektros tinklo."
 
 #: data/org.cafe.power-manager.gschema.xml.in:46
 msgid "UPS critical low action"
@@ -300,8 +302,8 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:82
 msgid ""
 "The percentage to reduce the keyboard backlight by when idle. For example, "
-"if set to '60', the backlight will be cut by 40% when idle. Legal values are"
-" between 0 and 100."
+"if set to '60', the backlight will be cut by 40% when idle. Legal values are "
+"between 0 and 100."
 msgstr ""
 "Klaviatūros foninio apšvietimo sumažinimo procentinė reikšmė, kai "
 "kompiuteris yra neaktyvus. Pavyzdžiui, jeigu nustatyta \"60\", foninis "
@@ -357,8 +359,8 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:106
 msgid "Dim the screen after a period of inactivity when on AC power"
 msgstr ""
-"Užtemdyti ekraną po tam tikro neaktyvumo periodo, kai naudojamas kintamosios"
-" srovės šaltinis"
+"Užtemdyti ekraną po tam tikro neaktyvumo periodo, kai naudojamas kintamosios "
+"srovės šaltinis"
 
 #: data/org.cafe.power-manager.gschema.xml.in:107
 msgid ""
@@ -396,8 +398,8 @@ msgid ""
 "The brightness of the display when on AC power. Possible values are between "
 "0.0 and 100.0."
 msgstr ""
-"Ekrano ryškumas, naudojant kintamosios srovės šaltinį. Tinkamos reikšmės yra"
-" tarp 0,0 ir 100,0."
+"Ekrano ryškumas, naudojant kintamosios srovės šaltinį. Tinkamos reikšmės yra "
+"tarp 0,0 ir 100,0."
 
 #: data/org.cafe.power-manager.gschema.xml.in:126
 msgid "Suspend button action"
@@ -448,8 +450,8 @@ msgid ""
 "The action to take when the laptop lid is closed and the laptop is on AC "
 "power."
 msgstr ""
-"Veiksmas, vykdytinas uždarius nešiojamojo kompiuterio dangtį, kai naudojamas"
-" kintamos srovės energijos šaltinis."
+"Veiksmas, vykdytinas uždarius nešiojamojo kompiuterio dangtį, kai naudojamas "
+"kintamos srovės energijos šaltinis."
 
 #: data/org.cafe.power-manager.gschema.xml.in:151
 msgid "Whether to use time-based notifications"
@@ -513,8 +515,8 @@ msgstr "Pristabdant užrakinti ekraną"
 
 #: data/org.cafe.power-manager.gschema.xml.in:177
 msgid ""
-"Whether the screen is locked when the computer wakes up from a suspend. Only"
-" used if lock-use-screensaver is false."
+"Whether the screen is locked when the computer wakes up from a suspend. Only "
+"used if lock-use-screensaver is false."
 msgstr ""
 "Ar užrakinti ekraną, kai kompiuteris sugrąžinamas iš pristabdymo. Naudojama "
 "tik tada, kai rakto lock-use-screensaver reikšmė neigiama."
@@ -538,8 +540,8 @@ msgstr "Užmigdant, užrakinti GNOME raktinę"
 
 #: data/org.cafe.power-manager.gschema.xml.in:187
 msgid ""
-"Whether the GNOME keyring is locked before the computer enters suspend. This"
-" means the keyring will have to be unlocked on resume."
+"Whether the GNOME keyring is locked before the computer enters suspend. This "
+"means the keyring will have to be unlocked on resume."
 msgstr ""
 "Ar GNOME raktinė užrakinama prieš pristabdymą. Tai reiškia, kad pratęsus, "
 "reikės vėl atrakinti raktinę."
@@ -549,8 +551,8 @@ msgid ""
 "Whether the GNOME keyring is locked before the computer enters hibernate. "
 "This means the keyring will have to be unlocked on resume."
 msgstr ""
-"Ar GNOME raktinė užrakinama prieš užmigdymą. Tai reiškia, kad nubudus reikės"
-" vėl atrakinti raktinę."
+"Ar GNOME raktinė užrakinama prieš užmigdymą. Tai reiškia, kad nubudus reikės "
+"vėl atrakinti raktinę."
 
 #: data/org.cafe.power-manager.gschema.xml.in:196
 msgid "If we should show the low capacity warning for a broken battery"
@@ -601,8 +603,8 @@ msgid ""
 "Leave this blank if the button should not be shown."
 msgstr ""
 "Kai nepavyksta užmigdyti kompiuterio, galima parodyti naudotojui mygtuką, "
-"padedantį pataisyti problemą. Palikite reikšmę tuščią, jei mygtukas neturėtų"
-" būti rodomas"
+"padedantį pataisyti problemą. Palikite reikšmę tuščią, jei mygtukas neturėtų "
+"būti rodomas"
 
 #: data/org.cafe.power-manager.gschema.xml.in:221
 msgid "Notify on a low power"
@@ -686,8 +688,7 @@ msgid ""
 "The index of the page number to show by default which is used to return "
 "focus to the correct page."
 msgstr ""
-"Įprastai rodoma puslapių numerių rodyklė, skirta grąžinti į teisingą "
-"puslapį."
+"Įprastai rodoma puslapių numerių rodyklė, skirta grąžinti į teisingą puslapį."
 
 #: data/org.cafe.power-manager.gschema.xml.in:271
 msgid "The ID of the last device selected"
@@ -706,8 +707,8 @@ msgstr "Procentai, kai laikoma maža"
 
 #: data/org.cafe.power-manager.gschema.xml.in:277
 msgid ""
-"The percentage of the battery when it is considered low. Only valid when "
-"use-time-for-policy is false."
+"The percentage of the battery when it is considered low. Only valid when use-"
+"time-for-policy is false."
 msgstr ""
 "Baterijos įkrova procentais, kai ši laikoma maža. Naudojama tik, kai use-"
 "time-for-policy reikšmė neigiama."
@@ -721,8 +722,8 @@ msgid ""
 "The percentage of the battery when it is considered critical. Only valid "
 "when use-time-for-policy is false."
 msgstr ""
-"Baterijos įkrova procentais, kai ši laikoma kritiška. Naudojama tik, kai "
-"use-time-for-policy reikšmė neigiama."
+"Baterijos įkrova procentais, kai ši laikoma kritiška. Naudojama tik, kai use-"
+"time-for-policy reikšmė neigiama."
 
 #: data/org.cafe.power-manager.gschema.xml.in:286
 msgid "Percentage action is taken"
@@ -742,8 +743,8 @@ msgstr "Likęs laikas, kai maža įkrova"
 
 #: data/org.cafe.power-manager.gschema.xml.in:292
 msgid ""
-"The time remaining in seconds of the battery when it is considered low. Only"
-" valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered low. Only "
+"valid when use-time-for-policy is true."
 msgstr ""
 "Likęs laikas sekundėmis, iki įkrovos lygio laikymo mažu. Naudojama tik, kai "
 "use-time-for-policy reikšmė teigiama."
@@ -754,8 +755,8 @@ msgstr "Likęs laikas, kai kritiškai maža įkrova"
 
 #: data/org.cafe.power-manager.gschema.xml.in:297
 msgid ""
-"The time remaining in seconds of the battery when it is considered critical."
-" Only valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered critical. "
+"Only valid when use-time-for-policy is true."
 msgstr ""
 "Likęs laikas sekundėmis, iki įkrovos lygio laikymo kritišku. Naudojama tik, "
 "kai use-time-for-policy reikšmė teigiama."
@@ -805,8 +806,8 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:317
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before it goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before it goes to sleep."
 msgstr ""
 "Neaktyvumo laikotarpis sekundėmis iki kompiuterio užmigdymo, kai naudojamas "
 "nenutrūkstamo maitinimo šaltinis."
@@ -842,8 +843,8 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:332
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before the display goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before the display goes to sleep."
 msgstr ""
 "Laikotarpis sekundėmis iki ekrano užmigdymo, kai naudojamas nenutrūkstamo "
 "maitinimo šaltinis."
@@ -861,8 +862,7 @@ msgstr ""
 "užklausos sustabdė veiksmą."
 
 #: data/org.cafe.power-manager.gschema.xml.in:341
-msgid ""
-"If preferences and statistics items should be shown in the context menu"
+msgid "If preferences and statistics items should be shown in the context menu"
 msgstr "Ar rodyti nustatymus ir statistiką kontekstiniame meniu"
 
 #: data/org.cafe.power-manager.gschema.xml.in:345
@@ -881,15 +881,15 @@ msgstr "Energijos valdymas"
 msgid "Configure power management"
 msgstr "Konfigūruokite energijos valdymą"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
 msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
-"CAFE;maitinimas;maitinimo;energijos;energija;valdymas;valdymo;tvarkymo;tvarkymas;nuostatos;nustatymai;"
+"CAFE;maitinimas;maitinimo;energijos;energija;valdymas;valdymo;tvarkymo;"
+"tvarkymas;nuostatos;nustatymai;"
 
-#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:7
-#: src/cpm-statistics.c:1090 src/cpm-statistics.c:1577
+#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:8
+#: src/cpm-statistics.c:764 src/cpm-statistics.c:1233
 msgid "Power Statistics"
 msgstr "Energijos statistika"
 
@@ -897,55 +897,37 @@ msgstr "Energijos statistika"
 msgid "Observe power management"
 msgstr "Stebėkite energijos valdymą"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-statistics.desktop.in.in:6
-msgid "cafe-power-statistics"
-msgstr "cafe-power-statistics"
-
-#: data/cpm-statistics.ui:113 src/cpm-statistics.c:208
+#: data/cpm-statistics.ui:119
 msgid "Details"
 msgstr "Detalės"
 
-#: data/cpm-statistics.ui:139 data/cpm-statistics.ui:342
+#: data/cpm-statistics.ui:145 data/cpm-statistics.ui:347
 msgid "Graph type:"
 msgstr "Grafiko tipas:"
 
-#: data/cpm-statistics.ui:174
+#: data/cpm-statistics.ui:180
 msgid "Data length:"
 msgstr "Duomenų ilgis:"
 
-#: data/cpm-statistics.ui:234 data/cpm-statistics.ui:395
+#: data/cpm-statistics.ui:239 data/cpm-statistics.ui:399
 msgid "There is no data to display."
 msgstr "Nėra rodytinų duomenų."
 
-#: data/cpm-statistics.ui:276 data/cpm-statistics.ui:438
+#: data/cpm-statistics.ui:281 data/cpm-statistics.ui:442
 msgid "Use smoothed line"
 msgstr "Piešti glodžias linijas"
 
-#: data/cpm-statistics.ui:291 data/cpm-statistics.ui:453
+#: data/cpm-statistics.ui:296 data/cpm-statistics.ui:457
 msgid "Show data points"
 msgstr "Rodyti duomenų taškus"
 
-#: data/cpm-statistics.ui:320
+#: data/cpm-statistics.ui:325
 msgid "History"
 msgstr "Žurnalas"
 
-#: data/cpm-statistics.ui:482
+#: data/cpm-statistics.ui:486
 msgid "Statistics"
 msgstr "Statistika"
-
-#: data/cpm-statistics.ui:504
-msgid "Processor wakeups per second:"
-msgstr "Procesoriaus pabudimų per sekundę:"
-
-#: data/cpm-statistics.ui:516
-msgid "0"
-msgstr "0"
-
-#: data/cpm-statistics.ui:563 src/cpm-statistics.c:194
-msgid "Wakeups"
-msgstr "Pabudimai"
 
 #: data/cpm-prefs.ui:55
 msgid "Power Management Preferences"
@@ -1207,7 +1189,7 @@ msgstr "%.1fW"
 msgid "%.1fV"
 msgstr "%.1fV"
 
-#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1560
+#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1216
 msgid "Show extra debugging information"
 msgstr "Rodyti papildomą derinimo informaciją"
 
@@ -1314,8 +1296,8 @@ msgstr "Baterija gali būti susidėvėjusi"
 #: src/cpm-manager.c:1110
 #, c-format
 msgid ""
-"Battery has a very low capacity (%1.1f%%), which means that it may be old or"
-" broken."
+"Battery has a very low capacity (%1.1f%%), which means that it may be old or "
+"broken."
 msgstr ""
 "Jūsų baterijos talpa labai sumažėjo (%1.1f%%), tai gali reikšti, kad ji "
 "paseno arba sugedo."
@@ -1449,8 +1431,8 @@ msgstr "Kritinis nešiojamojo kompiuterio baterijos įkrovos lygis"
 #: src/cpm-manager.c:1436
 msgid "Plug in your AC adapter to avoid losing data."
 msgstr ""
-"Prijunkite kompiuterį prie kintamosios srovės šaltinio, idant neprarastumėte"
-" duomenų."
+"Prijunkite kompiuterį prie kintamosios srovės šaltinio, idant neprarastumėte "
+"duomenų."
 
 #: src/cpm-manager.c:1440
 msgid "Computer will suspend very soon unless it is plugged in."
@@ -1476,8 +1458,8 @@ msgstr "Kritiškai mažas NMŠ energijos lygis"
 #: src/cpm-manager.c:1459
 #, c-format
 msgid ""
-"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
-" your computer to avoid losing data."
+"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to "
+"your computer to avoid losing data."
 msgstr ""
 "Liko maždaug <b>%s</b> iki išsikraus nenutrūkstamo maitinimo šaltinis "
 "(%.0f%%). Norėdami išvengti duomenų praradimo, prijunkite kompiuterį prie "
@@ -1498,17 +1480,17 @@ msgid ""
 "Wireless keyboard is very low in power (%.0f%%). This device will soon stop "
 "functioning if not charged."
 msgstr ""
-"Belaidė klaviatūra baigia išsikrauti (%.0f%%). Šis įrenginys netrukus nustos"
-" veikti, jeigu jo neįkrausite."
+"Belaidė klaviatūra baigia išsikrauti (%.0f%%). Šis įrenginys netrukus nustos "
+"veikti, jeigu jo neįkrausite."
 
 #: src/cpm-manager.c:1490
 #, c-format
 msgid ""
-"PDA is very low in power (%.0f%%). This device will soon stop functioning if"
-" not charged."
+"PDA is very low in power (%.0f%%). This device will soon stop functioning if "
+"not charged."
 msgstr ""
-"Delninukas baigia išsikrauti (%.0f%%). Šis įrenginys netrukus nustos veikti,"
-" jei jo neįkrausite."
+"Delninukas baigia išsikrauti (%.0f%%). Šis įrenginys netrukus nustos veikti, "
+"jei jo neįkrausite."
 
 #: src/cpm-manager.c:1500
 #, c-format
@@ -1531,8 +1513,8 @@ msgstr ""
 #: src/cpm-manager.c:1519
 #, c-format
 msgid ""
-"Tablet is very low in power (%.0f%%). This device will soon stop functioning"
-" if not charged."
+"Tablet is very low in power (%.0f%%). This device will soon stop functioning "
+"if not charged."
 msgstr ""
 "Planšetinis kompiuteris baigia išsikrauti  (%.0f%%). Šis įrenginys netrukus "
 "nustos veikti, jei jo neįkrausite."
@@ -1548,8 +1530,8 @@ msgstr ""
 
 #: src/cpm-manager.c:1593
 msgid ""
-"The battery is below the critical level and this computer will <b>power-"
-"off</b> when the battery becomes completely empty."
+"The battery is below the critical level and this computer will <b>power-off</"
+"b> when the battery becomes completely empty."
 msgstr ""
 "Baterijos energijos lygis yra žemiau kritinio lygio ir kompiuteris "
 "<b>išsijungs</b>, kai baterija visiškai išsikraus."
@@ -1585,8 +1567,8 @@ msgid ""
 "The UPS is below the critical level and this computer will <b>power-off</b> "
 "when the UPS becomes completely empty."
 msgstr ""
-"NMŠ energijos lygis yra žemiau kritinio lygio ir kompiuteris "
-"<b>išsijungs</b>, kai baterija visiškai išsikraus."
+"NMŠ energijos lygis yra žemiau kritinio lygio ir kompiuteris <b>išsijungs</"
+"b>, kai baterija visiškai išsikraus."
 
 #: src/cpm-manager.c:1635
 msgid ""
@@ -1634,91 +1616,79 @@ msgstr "Nieko nedaryti"
 msgid "Never"
 msgstr "Niekada"
 
-#: src/cpm-statistics.c:78 src/cpm-statistics.c:466
+#: src/cpm-statistics.c:67 src/cpm-statistics.c:410
 msgid "Rate"
 msgstr "Proc"
 
-#: src/cpm-statistics.c:79
+#: src/cpm-statistics.c:68
 msgid "Charge"
 msgstr "Įkrova"
 
-#: src/cpm-statistics.c:80 src/cpm-statistics.c:480
+#: src/cpm-statistics.c:69 src/cpm-statistics.c:424
 msgid "Time to full"
 msgstr "Laikas iki pilnos įkrovos"
 
-#: src/cpm-statistics.c:81 src/cpm-statistics.c:485
+#: src/cpm-statistics.c:70 src/cpm-statistics.c:429
 msgid "Time to empty"
 msgstr "Laikas iki iškrovimo"
 
-#: src/cpm-statistics.c:88
+#: src/cpm-statistics.c:77
 msgid "10 minutes"
 msgstr "10 minučių"
 
-#: src/cpm-statistics.c:89
+#: src/cpm-statistics.c:78
 msgid "2 hours"
 msgstr "2 valandos"
 
-#: src/cpm-statistics.c:90
+#: src/cpm-statistics.c:79
 msgid "6 hours"
 msgstr "6 valandos"
 
-#: src/cpm-statistics.c:91
+#: src/cpm-statistics.c:80
 msgid "1 day"
 msgstr "1 diena"
 
-#: src/cpm-statistics.c:92
+#: src/cpm-statistics.c:81
 msgid "1 week"
 msgstr "1 savaitė"
 
-#: src/cpm-statistics.c:101
+#: src/cpm-statistics.c:90
 msgid "Charge profile"
 msgstr "Įkrovos laiko profilis"
 
-#: src/cpm-statistics.c:102
+#: src/cpm-statistics.c:91
 msgid "Discharge profile"
 msgstr "Iškrovos profilis"
 
-#: src/cpm-statistics.c:104
+#: src/cpm-statistics.c:93
 msgid "Charge accuracy"
 msgstr "Įkrovos tikslumas"
 
-#: src/cpm-statistics.c:105
+#: src/cpm-statistics.c:94
 msgid "Discharge accuracy"
 msgstr "Iškrovos tikslumas"
 
-#: src/cpm-statistics.c:132
+#: src/cpm-statistics.c:121
 msgid "Attribute"
 msgstr "Atributas"
 
-#: src/cpm-statistics.c:139
+#: src/cpm-statistics.c:128
 msgid "Value"
 msgstr "Reikšmė"
 
-#: src/cpm-statistics.c:156
+#: src/cpm-statistics.c:145
 msgid "Image"
 msgstr "Paveikslas"
 
-#: src/cpm-statistics.c:162
+#: src/cpm-statistics.c:151
 msgid "Description"
 msgstr "Aprašymas"
 
-#: src/cpm-statistics.c:181 src/cpm-statistics.c:405
-msgid "Type"
-msgstr "Tipas"
-
-#: src/cpm-statistics.c:187
-msgid "ID"
-msgstr "ID"
-
-#: src/cpm-statistics.c:201
-msgid "Command"
-msgstr "Komanda"
-
-#: src/cpm-statistics.c:286
+#: src/cpm-statistics.c:230
 msgid "Unknown"
 msgstr "Nežinoma"
 
-#: src/cpm-statistics.c:290
+#: src/cpm-statistics.c:234
 #, c-format
 msgid "%.0f second"
 msgid_plural "%.0f seconds"
@@ -1727,7 +1697,7 @@ msgstr[1] "%.0f sekundės"
 msgstr[2] "%.0f sekundžių"
 msgstr[3] "%.0f sekundžių"
 
-#: src/cpm-statistics.c:295
+#: src/cpm-statistics.c:239
 #, c-format
 msgid "%.1f minute"
 msgid_plural "%.1f minutes"
@@ -1736,7 +1706,7 @@ msgstr[1] "%.1f minutės"
 msgstr[2] "%.1f minučių"
 msgstr[3] "%.1f minučių"
 
-#: src/cpm-statistics.c:300
+#: src/cpm-statistics.c:244
 #, c-format
 msgid "%.1f hour"
 msgid_plural "%.1f hours"
@@ -1745,7 +1715,7 @@ msgstr[1] "%.1f valandos"
 msgstr[2] "%.1f valandų"
 msgstr[3] "%.1f valandų"
 
-#: src/cpm-statistics.c:304
+#: src/cpm-statistics.c:248
 #, c-format
 msgid "%.1f day"
 msgid_plural "%.1f days"
@@ -1754,35 +1724,39 @@ msgstr[1] "%.1f dienos"
 msgstr[2] "%.1f dienų"
 msgstr[3] "%.1f dienų"
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "Yes"
 msgstr "Taip"
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "No"
 msgstr "Ne"
 
-#: src/cpm-statistics.c:402
+#: src/cpm-statistics.c:346
 msgid "Device"
 msgstr "Įrenginys"
 
-#: src/cpm-statistics.c:407
+#: src/cpm-statistics.c:349
+msgid "Type"
+msgstr "Tipas"
+
+#: src/cpm-statistics.c:351
 msgid "Vendor"
 msgstr "Gamintojas"
 
-#: src/cpm-statistics.c:409
+#: src/cpm-statistics.c:353
 msgid "Model"
 msgstr "Modelis"
 
-#: src/cpm-statistics.c:411
+#: src/cpm-statistics.c:355
 msgid "Serial number"
 msgstr "Serijos numeris"
 
-#: src/cpm-statistics.c:416
+#: src/cpm-statistics.c:360
 msgid "Supply"
 msgstr "Maitinimas"
 
-#: src/cpm-statistics.c:419
+#: src/cpm-statistics.c:363
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -1791,222 +1765,112 @@ msgstr[1] "%d sekundės"
 msgstr[2] "%d sekundžių"
 msgstr[3] "%d sekundžių"
 
-#: src/cpm-statistics.c:423
+#: src/cpm-statistics.c:367
 msgid "Refreshed"
 msgstr "Atnaujinta"
 
-#: src/cpm-statistics.c:433
+#: src/cpm-statistics.c:377
 msgid "Present"
 msgstr "Yra"
 
-#: src/cpm-statistics.c:440
+#: src/cpm-statistics.c:384
 msgid "Rechargeable"
 msgstr "Įkraunama"
 
-#: src/cpm-statistics.c:446
+#: src/cpm-statistics.c:390
 msgid "State"
 msgstr "Būsena"
 
-#: src/cpm-statistics.c:450
+#: src/cpm-statistics.c:394
 msgid "Energy"
 msgstr "Energija"
 
-#: src/cpm-statistics.c:453
+#: src/cpm-statistics.c:397
 msgid "Energy when empty"
 msgstr "Energija, kai tuščia"
 
-#: src/cpm-statistics.c:456
+#: src/cpm-statistics.c:400
 msgid "Energy when full"
 msgstr "Energija, kai pilna"
 
-#: src/cpm-statistics.c:459
+#: src/cpm-statistics.c:403
 msgid "Energy (design)"
 msgstr "Energija (projektinė)"
 
-#: src/cpm-statistics.c:473
+#: src/cpm-statistics.c:417
 msgid "Voltage"
 msgstr "Įtampa"
 
-#: src/cpm-statistics.c:495
+#: src/cpm-statistics.c:439
 msgid "Percentage"
 msgstr "Įkrova nuošimčiais"
 
-#: src/cpm-statistics.c:502
+#: src/cpm-statistics.c:446
 msgid "Capacity"
 msgstr "Talpa"
 
-#: src/cpm-statistics.c:507
+#: src/cpm-statistics.c:451
 msgid "Technology"
 msgstr "Technologija"
 
-#: src/cpm-statistics.c:512
+#: src/cpm-statistics.c:456
 msgid "Online"
 msgstr "Prijungta"
 
-#: src/cpm-statistics.c:824
-msgid "No data"
-msgstr "Nėra duomenų"
-
-#: src/cpm-statistics.c:831 src/cpm-statistics.c:836
-msgid "Kernel module"
-msgstr "Branduolio modulis"
-
-#: src/cpm-statistics.c:841
-msgid "Kernel core"
-msgstr "Branduolys"
-
-#: src/cpm-statistics.c:846
-msgid "Interprocessor interrupt"
-msgstr "Tarpprocesorinis pertraukimas"
-
-#: src/cpm-statistics.c:851
-msgid "Interrupt"
-msgstr "Pertraukimas"
-
-#: src/cpm-statistics.c:898
-msgid "PS/2 keyboard/mouse/touchpad"
-msgstr "PS/2 klaviatūra/pelė/paliesties lentelė"
-
-#: src/cpm-statistics.c:901
-msgid "ACPI"
-msgstr "ACPI"
-
-#: src/cpm-statistics.c:904
-msgid "Serial ATA"
-msgstr "Serial ATA"
-
-#: src/cpm-statistics.c:907
-msgid "ATA host controller"
-msgstr "ATA valdiklis"
-
-#: src/cpm-statistics.c:910
-msgid "Intel wireless adaptor"
-msgstr "Intel belaidis adapteris"
-
-#: src/cpm-statistics.c:917 src/cpm-statistics.c:922 src/cpm-statistics.c:927
-#: src/cpm-statistics.c:932 src/cpm-statistics.c:937
-#, c-format
-msgid "Timer %s"
-msgstr "Laikrodis %s"
-
-#: src/cpm-statistics.c:941
-#, c-format
-msgid "Sleep %s"
-msgstr "Miega %s"
-
-#: src/cpm-statistics.c:944
-#, c-format
-msgid "New task %s"
-msgstr "Nauja užduotis %s"
-
-#: src/cpm-statistics.c:948
-#, c-format
-msgid "Wait %s"
-msgstr "Laukia %s"
-
-#: src/cpm-statistics.c:952 src/cpm-statistics.c:956
-#, c-format
-msgid "Work queue %s"
-msgstr "Darbo eilė %s"
-
-#: src/cpm-statistics.c:959
-#, c-format
-msgid "Network route flush %s"
-msgstr "Tinklo maršruto išvalymas %s"
-
-#: src/cpm-statistics.c:962
-#, c-format
-msgid "USB activity %s"
-msgstr "USB veikla %s"
-
-#: src/cpm-statistics.c:965
-#, c-format
-msgid "Wakeup %s"
-msgstr "Pabudimas %s"
-
-#: src/cpm-statistics.c:968
-msgid "Local interrupts"
-msgstr "Vietiniai pertraukimai"
-
-#: src/cpm-statistics.c:971
-msgid "Rescheduling interrupts"
-msgstr "Perplanuojami pertraukimai"
-
-#: src/cpm-statistics.c:1080
+#: src/cpm-statistics.c:756
 msgid "Device Information"
 msgstr "Informacija apie įrenginį"
 
-#: src/cpm-statistics.c:1082
+#: src/cpm-statistics.c:758
 msgid "Device History"
 msgstr "Energijos retrospektyva"
 
-#: src/cpm-statistics.c:1084
+#: src/cpm-statistics.c:760
 msgid "Device Profile"
 msgstr "Įrenginio profilis"
 
-#: src/cpm-statistics.c:1086
-msgid "Processor Wakeups"
-msgstr "Procesoriaus pabudimai"
-
-#: src/cpm-statistics.c:1325 src/cpm-statistics.c:1331
-#: src/cpm-statistics.c:1337 src/cpm-statistics.c:1343
+#: src/cpm-statistics.c:982 src/cpm-statistics.c:988 src/cpm-statistics.c:994
+#: src/cpm-statistics.c:1000
 msgid "Time elapsed"
 msgstr "Praėjo laiko"
 
-#: src/cpm-statistics.c:1327
+#: src/cpm-statistics.c:984
 msgid "Power"
 msgstr "Kelti laipsniu"
 
-#: src/cpm-statistics.c:1333 src/cpm-statistics.c:1377
-#: src/cpm-statistics.c:1383 src/cpm-statistics.c:1389
-#: src/cpm-statistics.c:1395
+#: src/cpm-statistics.c:990 src/cpm-statistics.c:1034 src/cpm-statistics.c:1040
+#: src/cpm-statistics.c:1046 src/cpm-statistics.c:1052
 msgid "Cell charge"
 msgstr "Esama įkrova"
 
-#: src/cpm-statistics.c:1339 src/cpm-statistics.c:1345
+#: src/cpm-statistics.c:996 src/cpm-statistics.c:1002
 msgid "Predicted time"
 msgstr "Prognozuojamas laikas"
 
-#: src/cpm-statistics.c:1379 src/cpm-statistics.c:1391
+#: src/cpm-statistics.c:1036 src/cpm-statistics.c:1048
 msgid "Correction factor"
 msgstr "Kompensavimo koeficientas"
 
-#: src/cpm-statistics.c:1385 src/cpm-statistics.c:1397
+#: src/cpm-statistics.c:1042 src/cpm-statistics.c:1054
 msgid "Prediction accuracy"
 msgstr "Spėjimo tikslumas"
 
-#: src/cpm-statistics.c:1563
+#: src/cpm-statistics.c:1219
 msgid "Select this device at startup"
 msgstr "Pasirinkti šį įrenginį įkrovus sistemą"
 
-#: src/cpm-statistics.c:1802
-msgid "Processor"
-msgstr "Procesorius"
-
-#: src/cpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 CAFE developers"
-msgstr "Autorių teisės © 2011-2018 CAFE kūrėjai"
-
-#: src/cpm-tray-icon.c:193
-msgid "translator-credits"
+#: src/cpm-tray-icon.c:207
+msgid ""
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"Vertėjai:\n"
-"Algimantas Margevičius <margevicius.algimantas@gmail.com>\n"
-"Aurimas Černius <aurisc4@gmail.com>\n"
-"Rimas Kudelis <rq@akl.lt>\n"
-"Žygimantas Beručka <uid0@akl.lt>\n"
-"Justina Klingaitė <justina.klingaite@gmail.com>\n"
-"Gintautas Miliauskas <gintas@akl.lt>\n"
-"Tomas Kuliavas <tokul@users.sourceforge.net>\n"
-"Gediminas Paulauskas <menesis@chatsubo.lt>\n"
-"Moo"
 
-#: src/cpm-tray-icon.c:295
+#: src/cpm-tray-icon.c:318
 #, c-format
 msgid "%s remaining"
 msgstr "Liko %s"
 
-#: src/cpm-tray-icon.c:349
+#: src/cpm-tray-icon.c:372
 msgid "_Preferences"
 msgstr "_Nustatymai"
 
@@ -2293,3 +2157,144 @@ msgstr "Laukia iškrovimo"
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr "Nežinoma būsena"
+
+#~ msgid "Licensed under the GNU General Public License Version 2"
+#~ msgstr "Licencijuota GNU General Public Licence Version 2 sąlygomis"
+
+#~ msgid ""
+#~ "Power Manager is free software; you can redistribute it and/or\n"
+#~ "modify it under the terms of the GNU General Public License\n"
+#~ "as published by the Free Software Foundation; either version 2\n"
+#~ "of the License, or (at your option) any later version."
+#~ msgstr ""
+#~ "Energijos tvarkytuvė yra laisva programinė įranga; galite ją\n"
+#~ "platinti ir/ar modifikuoti GNU bendrosios viešosios licencijos\n"
+#~ "sąlygomis, paskelbtomis Laisvosios programinės įrangos fondo (Free "
+#~ "Software Foundation); 2-osios\n"
+#~ "arba (jūsų pasirinkimu) bet kurios vėlesnės licencijos versijos sąlygomis."
+
+#~ msgid ""
+#~ "Power Manager is distributed in the hope that it will be useful,\n"
+#~ "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+#~ "GNU General Public License for more details."
+#~ msgstr ""
+#~ "Energijos tvarkytuvė platinama tikintis, kad ji bus naudinga, bet\n"
+#~ "BE JOKIŲ GARANTIJŲ; netgi be numanomų PARDAVIMO arba TINKAMUMO\n"
+#~ "KONKREČIAM TIKSLUI garantijų. Dėl išsamesnės informacijos žiūrėkite GNU\n"
+#~ "bendrąją viešąją licenciją."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License\n"
+#~ "along with this program; if not, write to the Free Software\n"
+#~ "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA."
+#~ msgstr ""
+#~ "Jūs turėjote gauti GNU bendrosios viešosios licencijos kopiją kartu su\n"
+#~ "CAFE energijos tvarkytuve; jeigu negavote, rašykite Free Software "
+#~ "Foundation,\n"
+#~ "Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+
+#~ msgid "cafe-brightness-applet"
+#~ msgstr "cafe-brightness-applet"
+
+#~ msgid "cafe-inhibit-applet"
+#~ msgstr "cafe-inhibit-applet"
+
+#~ msgid "cafe-power-manager"
+#~ msgstr "cafe-power-manager"
+
+#~ msgid "cafe-power-statistics"
+#~ msgstr "cafe-power-statistics"
+
+#~ msgid "Processor wakeups per second:"
+#~ msgstr "Procesoriaus pabudimų per sekundę:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Wakeups"
+#~ msgstr "Pabudimai"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Command"
+#~ msgstr "Komanda"
+
+#~ msgid "No data"
+#~ msgstr "Nėra duomenų"
+
+#~ msgid "Kernel module"
+#~ msgstr "Branduolio modulis"
+
+#~ msgid "Kernel core"
+#~ msgstr "Branduolys"
+
+#~ msgid "Interprocessor interrupt"
+#~ msgstr "Tarpprocesorinis pertraukimas"
+
+#~ msgid "Interrupt"
+#~ msgstr "Pertraukimas"
+
+#~ msgid "PS/2 keyboard/mouse/touchpad"
+#~ msgstr "PS/2 klaviatūra/pelė/paliesties lentelė"
+
+#~ msgid "ACPI"
+#~ msgstr "ACPI"
+
+#~ msgid "Serial ATA"
+#~ msgstr "Serial ATA"
+
+#~ msgid "ATA host controller"
+#~ msgstr "ATA valdiklis"
+
+#~ msgid "Intel wireless adaptor"
+#~ msgstr "Intel belaidis adapteris"
+
+#, c-format
+#~ msgid "Timer %s"
+#~ msgstr "Laikrodis %s"
+
+#, c-format
+#~ msgid "Sleep %s"
+#~ msgstr "Miega %s"
+
+#, c-format
+#~ msgid "New task %s"
+#~ msgstr "Nauja užduotis %s"
+
+#, c-format
+#~ msgid "Wait %s"
+#~ msgstr "Laukia %s"
+
+#, c-format
+#~ msgid "Work queue %s"
+#~ msgstr "Darbo eilė %s"
+
+#, c-format
+#~ msgid "Network route flush %s"
+#~ msgstr "Tinklo maršruto išvalymas %s"
+
+#, c-format
+#~ msgid "USB activity %s"
+#~ msgstr "USB veikla %s"
+
+#, c-format
+#~ msgid "Wakeup %s"
+#~ msgstr "Pabudimas %s"
+
+#~ msgid "Local interrupts"
+#~ msgstr "Vietiniai pertraukimai"
+
+#~ msgid "Rescheduling interrupts"
+#~ msgstr "Perplanuojami pertraukimai"
+
+#~ msgid "Processor Wakeups"
+#~ msgstr "Procesoriaus pabudimai"
+
+#~ msgid "Processor"
+#~ msgstr "Procesorius"
+
+#~ msgid "Copyright © 2011-2018 CAFE developers"
+#~ msgstr "Autorių teisės © 2011-2018 CAFE kūrėjai"

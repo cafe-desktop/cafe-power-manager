@@ -2,24 +2,25 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Wolfgang Ulbrich <mate@raveit.de>, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-power-manager 1.23.1\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2019-11-12 15:22+0100\n"
+"POT-Creation-Date: 2023-09-14 10:39+0200\n"
 "PO-Revision-Date: 2020-02-15 16:27+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
-"Language-Team: Panjabi (Punjabi) (https://www.transifex.com/cafe/teams/13566/pa/)\n"
+"Language-Team: Panjabi (Punjabi) (https://www.transifex.com/cafe/teams/13566/"
+"pa/)\n"
+"Language: pa\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: pa\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: applets/brightness/brightness-applet.c:107
@@ -44,56 +45,59 @@ msgstr "ਲੈਪਟਾਪ ਪੈਨਲ ਚਮਕ ਖੋਜੀ ਨਹੀਂ ਜ�
 msgid "LCD brightness : %d%%"
 msgstr "LCD ਚਮਕ : %d%%"
 
+#: applets/brightness/brightness-applet.c:790
+#: applets/inhibit/inhibit-applet.c:287
+msgid ""
+"Power Manager is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:795
+#: applets/inhibit/inhibit-applet.c:292
+msgid ""
+"Power Manager is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+
 #: applets/brightness/brightness-applet.c:800
 #: applets/inhibit/inhibit-applet.c:297
-msgid "Licensed under the GNU General Public License Version 2"
-msgstr "ਗਨੂ ਜਰਨਲ ਪਬਲਿਕ ਲਾਈਸੈਂਸ ਵਰਜਨ 2 ਹੇਠ ਜਾਰੀ ਕੀਤਾ ਗਿਆ ਹੈ"
-
-#: applets/brightness/brightness-applet.c:801
-#: applets/inhibit/inhibit-applet.c:298
 msgid ""
-"Power Manager is free software; you can redistribute it and/or\n"
-"modify it under the terms of the GNU General Public License\n"
-"as published by the Free Software Foundation; either version 2\n"
-"of the License, or (at your option) any later version."
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"ਪਾਵਰ ਮੈਨੇਜਰ ਇੱਕ ਮੁਫਤ ਸਾਫਟਵੇਅਰ ਹੈ, ਜਿਸ ਨੂੰ ਤੁਸੀਂ ਗਨੂ ਜਰਨਲ ਪਬਲਿਕ ਲਾਈਸੈਂਸ,\n"
-"ਜਿਸ ਨੂੰ ਫਰੀ ਸਾਫਟਵੇਅਰ ਫਾਊਨਡੇਸ਼ਨ ਨੇ ਤਿਆਰ ਕੀਤਾ ਹੈ, ਦੇ ਵਰਜਨ 2 ਜਾਂ ਨਵੇਂ ਦੀਆਂ\n"
-"ਸ਼ਰਤਾਂ (ਉਹ ਤੁਹਾਡੀ ਆਪਣੀ ਮਰਜ਼ੀ ਹੈ) ਅਧੀਨ ਵੰਡ ਅਤੇ/ਜਾਂ ਸੋਧ ਸਕਦੇ ਹੋ।"
 
-#: applets/brightness/brightness-applet.c:805
-#: applets/inhibit/inhibit-applet.c:302
+#: applets/brightness/brightness-applet.c:813
+msgid "About Power Manager Brightness Applet"
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:815
 msgid ""
-"Power Manager is distributed in the hope that it will be useful,\n"
-"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-"GNU General Public License for more details."
+"Copyright © 2006 Benjamin Canou\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"ਪਾਵਰ ਮੈਨੇਜਰ ਨੂੰ ਇਹ ਮੰਨ ਕੇ ਵੰਡਿਆ ਜਾ ਰਿਹਾ ਹੈ ਕਿ ਇਹ ਫਾਇਦੇਮੰਦ ਰਹੇਗਾ,\n"
-"ਪਰ ਇਸ ਦੀ ਕੋਈ ਵਾਰੰਟੀ ਨਹੀਂ ਲਈ ਜਾ ਰਹੀ ਹੈ, ਕਿਸੇ ਖਾਸ ਕੰਮ ਲਈ ਅਨੁਕੂਲ ਹੋਣ ਜਾਂ\n"
-"ਠੀਕ ਤਰ੍ਹਾਂ ਕੰਮ ਕਰਨ ਦੀ ਵੀ ਕੋਈ ਗਾਰੰਟੀ ਨਹੀਂ ਹੈ।  ਹੋਰ ਵੇਰਵੇ ਲਈ ਗਨੂ ਜਰਨਲ\n"
-"ਪਬਲਿਕ ਲਾਇਸੈਂਸ ਨੂੰ ਪੜ੍ਹੋ।"
 
-#: applets/brightness/brightness-applet.c:809
-#: applets/inhibit/inhibit-applet.c:306
-msgid ""
-"You should have received a copy of the GNU General Public License\n"
-"along with this program; if not, write to the Free Software\n"
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
+#: applets/brightness/brightness-applet.c:823
+#: applets/inhibit/inhibit-applet.c:320 src/cpm-tray-icon.c:214
+msgid "translator-credits"
 msgstr ""
-"ਤੁਸੀਂ ਗਨੂ ਜਰਨਲ ਪਬਲਿਕ ਲਾਇਸੈਂਸ ਦੀ ਨਕਲ ਇਹ ਪ੍ਰੋਗਰਾਮ ਨਾਲ ਪ੍ਰਾਪਤ ਕਰੋਗੇ,\n"
-"ਜੇਕਰ ਤੁਹਾਨੂੰ ਨਹੀਂ ਮਿਲੀ ਹੈ ਤਾਂ ਫਰੀ ਸਾਫਟਵੇਅਰ ਫਾਊਨਡੇਸ਼ਨ, 51 ਫਰਾਕਲਿੰਨ\n"
-"ਸਟਰੀਟ, ਪੰਜਵੀਂ ਮੰਜ਼ਲ, ਬੋਸਟਨ, ਐਮ ਏ 02110-1301, ਅਮਰੀਕਾ ਨੂੰ\n"
-"ਲਿਖੋ।"
+"ਜਸਵਿੰਦਰ ਸਿੰਘ ਫੂਲੇਵਾਲਾ ੨੦੦੪\n"
+"ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮਵਾਲਾ ੨੦੦੪-੨੦੧੦\n"
+"ਪੰਜਾਬੀ ਓਪਨ ਸੋਰਸ ਟੀਮ (POST)\n"
+"http://www.satluj.com"
 
-#: applets/brightness/brightness-applet.c:1063
-#: applets/inhibit/inhibit-applet.c:519
+#: applets/brightness/brightness-applet.c:1051
+#: applets/inhibit/inhibit-applet.c:507
 msgid "_About"
 msgstr "ਇਸ ਬਾਰੇ(_A)"
 
-#: applets/brightness/brightness-applet.c:1066
-#: applets/inhibit/inhibit-applet.c:522
+#: applets/brightness/brightness-applet.c:1054
+#: applets/inhibit/inhibit-applet.c:510
 msgid "_Help"
 msgstr "ਮੱਦਦ(_H)"
 
@@ -104,12 +108,6 @@ msgstr "ਚਮਕ ਐਪਲਿਟ ਫੈਕਟਰੀ"
 #: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Brightness Applet"
 msgstr "ਚਮਕ ਐਪਲਿਟ"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-brightness-applet"
-msgstr ""
 
 #: applets/inhibit/inhibit-applet.c:87
 msgid "Power Manager Inhibit Applet"
@@ -131,6 +129,17 @@ msgstr "ਆਟੋਮੈਟਿਕ ਸਲੀਪ ਯੋਗ ਹੈ"
 msgid "Manual inhibit"
 msgstr "ਦਸਤੀ ਇੰਨਹੇਬਿਟ"
 
+#: applets/inhibit/inhibit-applet.c:310
+msgid "About Power Manager Inhibit Applet"
+msgstr ""
+
+#: applets/inhibit/inhibit-applet.c:312
+msgid ""
+"Copyright © 2006-2007 Richard Hughes\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
+msgstr ""
+
 #: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Inhibit Applet Factory"
 msgstr "ਇੰਨਹੇਬਿਟ ਐਪਲਿਟ ਫੈਕਟਰੀ"
@@ -139,26 +148,13 @@ msgstr "ਇੰਨਹੇਬਿਟ ਐਪਲਿਟ ਫੈਕਟਰੀ"
 msgid "Inhibit Applet"
 msgstr "ਇੰਨਹੇਬਿਟ ਐਪਲਿਟ"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-inhibit-applet"
-msgstr ""
-
-#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:184
+#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:204
 msgid "Power Manager"
 msgstr "ਪਾਵਰ ਮੈਨੇਜਰ"
 
-#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:186
+#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:206
 msgid "Power management daemon"
 msgstr "ਪਾਵਰ ਮੈਨੇਜ਼ਮੈਂਟ ਡੈਮਨ"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-manager.desktop.in.in:6
-#: data/cafe-power-preferences.desktop.in.in:6
-msgid "cafe-power-manager"
-msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:26
 #: data/org.cafe.power-manager.gschema.xml.in:41
@@ -183,9 +179,7 @@ msgstr ""
 msgid ""
 "If the battery event should occur when the lid is shut and the power "
 "disconnected"
-msgstr ""
-"ਕੀ ਬੈਟਰੀ ਘਟਨਾ ਨੂੰ ਨੋਟ ਕੀਤਾ ਜਾਵੇ, ਜੇ ਲਾਟੂ (lid) ਬੰਦ ਹੋਵੇ ਅਤੇ ਪਾਵਰ ਕੁਨੈਕਸ਼ਟ "
-"ਕੱਟਿਆ ਜਾਵੇ।"
+msgstr "ਕੀ ਬੈਟਰੀ ਘਟਨਾ ਨੂੰ ਨੋਟ ਕੀਤਾ ਜਾਵੇ, ਜੇ ਲਾਟੂ (lid) ਬੰਦ ਹੋਵੇ ਅਤੇ ਪਾਵਰ ਕੁਨੈਕਸ਼ਟ ਕੱਟਿਆ ਜਾਵੇ।"
 
 #: data/org.cafe.power-manager.gschema.xml.in:37
 msgid ""
@@ -193,9 +187,8 @@ msgid ""
 "closed on battery') when the lid is previously shut and the AC power "
 "disconnected at a later time."
 msgstr ""
-"ਜੇ ਬੈਟਰੀ ਲਾਟੂ (lid) ਬੰਦ ਘਟਨਾ ਹੋਵੇ (ਜਿਵੇਂ ਕਿ 'ਸਸਪੈਂਡ ਜਦੋਂ ਬੈਟਰੀ ਉੱਤੇ ਲਾਟੂ "
-"(lid) ਬੰਦ ਹੋਵੇ') ਜਦੋਂ ਲਾਟੂ (lid) ਪਹਿਲਾਂ ਬੰਦ ਹੋਵੇ ਅਤੇ AC ਪਾਵਰ ਬਾਅਦ 'ਚ ਬੰਦ ਹੋ "
-"ਜਾਵੇ।"
+"ਜੇ ਬੈਟਰੀ ਲਾਟੂ (lid) ਬੰਦ ਘਟਨਾ ਹੋਵੇ (ਜਿਵੇਂ ਕਿ 'ਸਸਪੈਂਡ ਜਦੋਂ ਬੈਟਰੀ ਉੱਤੇ ਲਾਟੂ (lid) ਬੰਦ ਹੋਵੇ') ਜਦੋਂ "
+"ਲਾਟੂ (lid) ਪਹਿਲਾਂ ਬੰਦ ਹੋਵੇ ਅਤੇ AC ਪਾਵਰ ਬਾਅਦ 'ਚ ਬੰਦ ਹੋ ਜਾਵੇ।"
 
 #: data/org.cafe.power-manager.gschema.xml.in:46
 msgid "UPS critical low action"
@@ -271,8 +264,8 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:82
 msgid ""
 "The percentage to reduce the keyboard backlight by when idle. For example, "
-"if set to '60', the backlight will be cut by 40% when idle. Legal values are"
-" between 0 and 100."
+"if set to '60', the backlight will be cut by 40% when idle. Legal values are "
+"between 0 and 100."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:86
@@ -287,16 +280,13 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:91
 msgid "Dim the screen after a period of inactivity when on battery power"
-msgstr ""
-"ਜਦੋਂ ਬੈਟਰੀ ਪਾਵਰ ਚਾਲੂ ਹੋਵੇ, ਤਾਂ ਕੁਝ ਸਮੇਂ ਤੱਕ ਸਰਗਰਮੀ ਨਾ ਹੋਣ ਤੇ ਸਕਰੀਨ ਡਿਮ ਕਰੋ"
+msgstr "ਜਦੋਂ ਬੈਟਰੀ ਪਾਵਰ ਚਾਲੂ ਹੋਵੇ, ਤਾਂ ਕੁਝ ਸਮੇਂ ਤੱਕ ਸਰਗਰਮੀ ਨਾ ਹੋਣ ਤੇ ਸਕਰੀਨ ਡਿਮ ਕਰੋ"
 
 #: data/org.cafe.power-manager.gschema.xml.in:92
 msgid ""
 "If the screen should be dimmed to save power when the computer is idle when "
 "on battery power."
-msgstr ""
-"ਕੀ ਸਕਰੀਨ ਨੂੰ ਡਿਮ ਕੀਤਾ ਜਾਵੇ, ਜਦੋਂ ਬੈਟਰੀ ਪਾਵਰ ਚਾਲੂ ਹੋਵੇ ਅਤੇ ਕੁਝ ਸਮੇਂ ਤੱਕ "
-"ਸਰਗਰਮੀ ਨਾ ਹੋਵੇ।"
+msgstr "ਕੀ ਸਕਰੀਨ ਨੂੰ ਡਿਮ ਕੀਤਾ ਜਾਵੇ, ਜਦੋਂ ਬੈਟਰੀ ਪਾਵਰ ਚਾਲੂ ਹੋਵੇ ਅਤੇ ਕੁਝ ਸਮੇਂ ਤੱਕ ਸਰਗਰਮੀ ਨਾ ਹੋਵੇ।"
 
 #: data/org.cafe.power-manager.gschema.xml.in:96
 msgid "The default amount of time to dim the screen after idle"
@@ -315,21 +305,17 @@ msgid ""
 "The amount to dim the brightness of the display when on battery power. "
 "Possible values are between 0 and 100."
 msgstr ""
-"ਜਦੋਂ ਬੈਟਰੀ ਪਾਵਰ ਵਰਤੀ ਜਾਵੇ ਤਾਂ ਡਿਸਪਲੇਅ ਦੀ ਚਮਕ ਡਿਮ ਦੀ ਮਾਤਰਾ ਹੈ। ਸੰਭਵ ਮੁੱਲ 0 "
-"ਤੋਂ 100 ਵਿੱਚ ਹਨ।"
+"ਜਦੋਂ ਬੈਟਰੀ ਪਾਵਰ ਵਰਤੀ ਜਾਵੇ ਤਾਂ ਡਿਸਪਲੇਅ ਦੀ ਚਮਕ ਡਿਮ ਦੀ ਮਾਤਰਾ ਹੈ। ਸੰਭਵ ਮੁੱਲ 0 ਤੋਂ 100 ਵਿੱਚ ਹਨ।"
 
 #: data/org.cafe.power-manager.gschema.xml.in:106
 msgid "Dim the screen after a period of inactivity when on AC power"
-msgstr ""
-"ਜਦੋਂ AC ਪਾਵਰ ਚਾਲੂ ਹੋਵੇ, ਤਾਂ ਕੁਝ ਸਮੇਂ ਤੱਕ ਸਰਗਰਮੀ ਨਾ ਹੋਣ ਤੇ ਸਕਰੀਨ ਡਿਮ ਕਰੋ"
+msgstr "ਜਦੋਂ AC ਪਾਵਰ ਚਾਲੂ ਹੋਵੇ, ਤਾਂ ਕੁਝ ਸਮੇਂ ਤੱਕ ਸਰਗਰਮੀ ਨਾ ਹੋਣ ਤੇ ਸਕਰੀਨ ਡਿਮ ਕਰੋ"
 
 #: data/org.cafe.power-manager.gschema.xml.in:107
 msgid ""
 "If the screen should be dimmed to save power when the computer is idle when "
 "on AC power."
-msgstr ""
-"ਕੀ ਸਕਰੀਨ ਨੂੰ ਡਿਮ ਕੀਤਾ ਜਾਵੇ, ਜਦੋਂ AC ਪਾਵਰ ਚਾਲੂ ਹੋਵੇ ਅਤੇ ਕੁਝ ਸਮੇਂ ਤੱਕ ਸਰਗਰਮੀ "
-"ਨਾ ਹੋਵੇ।"
+msgstr "ਕੀ ਸਕਰੀਨ ਨੂੰ ਡਿਮ ਕੀਤਾ ਜਾਵੇ, ਜਦੋਂ AC ਪਾਵਰ ਚਾਲੂ ਹੋਵੇ ਅਤੇ ਕੁਝ ਸਮੇਂ ਤੱਕ ਸਰਗਰਮੀ ਨਾ ਹੋਵੇ।"
 
 #: data/org.cafe.power-manager.gschema.xml.in:111
 msgid "Method used to blank screen on AC"
@@ -410,8 +396,8 @@ msgid ""
 "If time based notifications should be used. If set to false, then the "
 "percentage change is used instead, which may fix a broken ACPI BIOS."
 msgstr ""
-"ਕੀ ਟਾਈਮ ਅਧਾਰਿਤ ਸੂਚਨਾਵਾਂ ਵਰਤੀਆਂ ਹਨ ਜਾਂ ਨਹੀਂ। ਜੇਕਰ ਨਹੀਂ ਤਾਂ ਫੀ-ਸਦੀ ਤਬਦੀਲੀ ਦੀ "
-"ਵਰਤੋਂ ਕੀਤੀ ਜਾਵੇਗੀ, ਜੋ ਕਿ ਕੁਝ ਖਰਾਬ ACPI BIOS ਲਈ ਠੀਕ ਹੋ ਸਕਦੀ ਹੈ।"
+"ਕੀ ਟਾਈਮ ਅਧਾਰਿਤ ਸੂਚਨਾਵਾਂ ਵਰਤੀਆਂ ਹਨ ਜਾਂ ਨਹੀਂ। ਜੇਕਰ ਨਹੀਂ ਤਾਂ ਫੀ-ਸਦੀ ਤਬਦੀਲੀ ਦੀ ਵਰਤੋਂ ਕੀਤੀ "
+"ਜਾਵੇਗੀ, ਜੋ ਕਿ ਕੁਝ ਖਰਾਬ ACPI BIOS ਲਈ ਠੀਕ ਹੋ ਸਕਦੀ ਹੈ।"
 
 #: data/org.cafe.power-manager.gschema.xml.in:156
 msgid "Check CPU load before sleeping"
@@ -430,8 +416,8 @@ msgid ""
 "Whether NetworkManager should disconnect before suspending or hibernating "
 "and connect on resume."
 msgstr ""
-"ਕੀ ਨੈੱਟਵਰਕ-ਮੈਨੇਜਰ ਨੂੰ ਸਸਪੈਂਡ ਕਰਨ ਜਾਂ ਹਾਇਬਰਨੇਟ ਕਰਨ ਸਮੇਂ ਕੁਨੈਕਸ਼ਨ ਬੰਦ ਕਰਨਾ ਅਤੇ"
-" ਮੁੜ ਚੱਲਣ ਉੱਤੇ ਜੁੜਨਾ ਚਾਹੀਦਾ ਹੈ।"
+"ਕੀ ਨੈੱਟਵਰਕ-ਮੈਨੇਜਰ ਨੂੰ ਸਸਪੈਂਡ ਕਰਨ ਜਾਂ ਹਾਇਬਰਨੇਟ ਕਰਨ ਸਮੇਂ ਕੁਨੈਕਸ਼ਨ ਬੰਦ ਕਰਨਾ ਅਤੇ ਮੁੜ ਚੱਲਣ ਉੱਤੇ ਜੁੜਨਾ "
+"ਚਾਹੀਦਾ ਹੈ।"
 
 #: data/org.cafe.power-manager.gschema.xml.in:166
 msgid "Use cafe-screensaver lock setting"
@@ -442,8 +428,8 @@ msgid ""
 "Whether to use the screen lock setting of cafe-screensaver to decide if the "
 "screen is locked after a hibernate, suspend or blank screen."
 msgstr ""
-"ਕੀ ਗਨੋਮ-ਸਕਰੀਨ-ਸੇਵਰ ਦੇ ਸਕਰੀਨ-ਤਾਲਾਬੰਦ ਸਥਾਪਨ ਦੀ ਵਰਤੋਂ ਹਾਈਬਰਨੇਟ, ਸਸਪੈਂਡ ਜਾਂ ਖਾਲੀ"
-" ਸਕਰੀਨ ਬਾਅਦ ਸਕਰੀਨ ਨੂੰ ਤਾਲਾਬੰਦ ਦੀ ਚੋਣ ਵਾਸਤੇ ਕੀਤੀ ਜਾਵੇ।"
+"ਕੀ ਗਨੋਮ-ਸਕਰੀਨ-ਸੇਵਰ ਦੇ ਸਕਰੀਨ-ਤਾਲਾਬੰਦ ਸਥਾਪਨ ਦੀ ਵਰਤੋਂ ਹਾਈਬਰਨੇਟ, ਸਸਪੈਂਡ ਜਾਂ ਖਾਲੀ ਸਕਰੀਨ "
+"ਬਾਅਦ ਸਕਰੀਨ ਨੂੰ ਤਾਲਾਬੰਦ ਦੀ ਚੋਣ ਵਾਸਤੇ ਕੀਤੀ ਜਾਵੇ।"
 
 #: data/org.cafe.power-manager.gschema.xml.in:171
 msgid "Lock screen when blanked"
@@ -461,8 +447,8 @@ msgstr "ਸਸਪੈਂਡ ਕਰਨ ਉੱਤੇ ਸਕਰੀਨ ਨੂੰ ਤ�
 
 #: data/org.cafe.power-manager.gschema.xml.in:177
 msgid ""
-"Whether the screen is locked when the computer wakes up from a suspend. Only"
-" used if lock-use-screensaver is false."
+"Whether the screen is locked when the computer wakes up from a suspend. Only "
+"used if lock-use-screensaver is false."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:181
@@ -482,8 +468,8 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:187
 msgid ""
-"Whether the GNOME keyring is locked before the computer enters suspend. This"
-" means the keyring will have to be unlocked on resume."
+"Whether the GNOME keyring is locked before the computer enters suspend. This "
+"means the keyring will have to be unlocked on resume."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:192
@@ -526,8 +512,7 @@ msgstr "ਇੱਕ ਸਲੀਪ ਫੇਲ੍ਹ ਹੋਣ ਦੀ ਸੂਚਨਾ 
 msgid ""
 "If a notification message should be displayed after suspend or hibernate "
 "failed."
-msgstr ""
-"ਕੀ ਸਸਪੈਂਡ ਜਾਂ ਹਾਈਬਰਨੇਟ ਫੇਲ੍ਹ ਹੋਣ ਦੀ ਸੂਰਤ ਵਿੱਚ ਇੱਕ ਸੂਚਨਾ ਸੁਨੇਹਾ ਵੇਖਾਇਆ ਜਾਵੇ।"
+msgstr "ਕੀ ਸਸਪੈਂਡ ਜਾਂ ਹਾਈਬਰਨੇਟ ਫੇਲ੍ਹ ਹੋਣ ਦੀ ਸੂਰਤ ਵਿੱਚ ਇੱਕ ਸੂਚਨਾ ਸੁਨੇਹਾ ਵੇਖਾਇਆ ਜਾਵੇ।"
 
 #: data/org.cafe.power-manager.gschema.xml.in:216
 msgid "The URI to show to the user on sleep failure"
@@ -538,8 +523,8 @@ msgid ""
 "When sleep fails we can show the user a button to help fix the situation. "
 "Leave this blank if the button should not be shown."
 msgstr ""
-"ਜਦੋਂ ਸਲੀਪ ਫੇਲ੍ਹ ਹੋਵੇ ਤਾਂ ਅਸੀਂ ਯੂਜ਼ਰ ਨੂੰ ਸਮੱਸਿਆ ਠੀਕ ਕਰਨ ਲਈ ਬਟਨ ਵੇਖ ਸਕਦੇ ਹਾਂ। "
-"ਇਸ ਨੂੰ ਖਾਲੀ ਛੱਡੋ ਜੇ ਬਟਨ ਨਹੀਂ ਵੇਖਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ।"
+"ਜਦੋਂ ਸਲੀਪ ਫੇਲ੍ਹ ਹੋਵੇ ਤਾਂ ਅਸੀਂ ਯੂਜ਼ਰ ਨੂੰ ਸਮੱਸਿਆ ਠੀਕ ਕਰਨ ਲਈ ਬਟਨ ਵੇਖ ਸਕਦੇ ਹਾਂ। ਇਸ ਨੂੰ ਖਾਲੀ ਛੱਡੋ ਜੇ "
+"ਬਟਨ ਨਹੀਂ ਵੇਖਾਉਣਾ ਚਾਹੁੰਦੇ ਹੋ।"
 
 #: data/org.cafe.power-manager.gschema.xml.in:221
 msgid "Notify on a low power"
@@ -640,8 +625,8 @@ msgstr "ਫੀ-ਸਦੀ, ਜਿਸ ਨੂੰ ਘੱਟ ਗਿਣਿਆ ਜਾ�
 
 #: data/org.cafe.power-manager.gschema.xml.in:277
 msgid ""
-"The percentage of the battery when it is considered low. Only valid when "
-"use-time-for-policy is false."
+"The percentage of the battery when it is considered low. Only valid when use-"
+"time-for-policy is false."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:281
@@ -670,8 +655,8 @@ msgstr "ਬਾਕੀ ਰਹਿੰਦਾ ਸਮਾਂ, ਜਦੋਂ ਘੱਟ ਹ
 
 #: data/org.cafe.power-manager.gschema.xml.in:292
 msgid ""
-"The time remaining in seconds of the battery when it is considered low. Only"
-" valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered low. Only "
+"valid when use-time-for-policy is true."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:296
@@ -680,8 +665,8 @@ msgstr "ਬਾਕੀ ਰਹਿੰਦਾ ਸਮਾਂ, ਜਦੋਂ ਨਾਜ਼�
 
 #: data/org.cafe.power-manager.gschema.xml.in:297
 msgid ""
-"The time remaining in seconds of the battery when it is considered critical."
-" Only valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered critical. "
+"Only valid when use-time-for-policy is true."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:301
@@ -703,8 +688,8 @@ msgid ""
 "The amount of time in seconds the computer on battery power needs to be "
 "inactive before it goes to sleep."
 msgstr ""
-"ਬੈਟਰੀ ਪਾਵਰ ਉੱਤੇ ਚੱਲਦੇ ਕੰਪਿਊਟਰ ਲਈ ਨਾ-ਸਰਗਰਮ ਰਹਿਣ ਦਾ ਸਕਿੰਟਾਂ 'ਚ ਸਮਾਂ, ਜਿਸ ਤੋਂ "
-"ਬਾਅਦ ਇਹ ਸਲੀਪ ਹਾਲਤ 'ਚ ਚਲਾ ਜਾਵੇ।"
+"ਬੈਟਰੀ ਪਾਵਰ ਉੱਤੇ ਚੱਲਦੇ ਕੰਪਿਊਟਰ ਲਈ ਨਾ-ਸਰਗਰਮ ਰਹਿਣ ਦਾ ਸਕਿੰਟਾਂ 'ਚ ਸਮਾਂ, ਜਿਸ ਤੋਂ ਬਾਅਦ ਇਹ ਸਲੀਪ "
+"ਹਾਲਤ 'ਚ ਚਲਾ ਜਾਵੇ।"
 
 #: data/org.cafe.power-manager.gschema.xml.in:311
 msgid "Sleep timeout computer when on AC"
@@ -715,8 +700,8 @@ msgid ""
 "The amount of time in seconds the computer on AC power needs to be inactive "
 "before it goes to sleep."
 msgstr ""
-"AC ਪਾਵਰ ਉੱਤੇ ਚੱਲਦੇ ਕੰਪਿਊਟਰ ਲਈ ਨਾ-ਸਰਗਰਮ ਰਹਿਣ ਦਾ ਸਕਿੰਟਾਂ 'ਚ ਸਮਾਂ, ਜਿਸ ਤੋਂ ਬਾਅਦ"
-" ਇਸ ਨੂੰ ਸਲੀਪ ਹਾਲਤ 'ਚ ਚਲਾ ਜਾਵੇ।"
+"AC ਪਾਵਰ ਉੱਤੇ ਚੱਲਦੇ ਕੰਪਿਊਟਰ ਲਈ ਨਾ-ਸਰਗਰਮ ਰਹਿਣ ਦਾ ਸਕਿੰਟਾਂ 'ਚ ਸਮਾਂ, ਜਿਸ ਤੋਂ ਬਾਅਦ ਇਸ ਨੂੰ ਸਲੀਪ "
+"ਹਾਲਤ 'ਚ ਚਲਾ ਜਾਵੇ।"
 
 #: data/org.cafe.power-manager.gschema.xml.in:316
 msgid "Sleep timeout computer when on UPS"
@@ -724,11 +709,11 @@ msgstr "ਕੰਪਿਊਟਰ ਸਲੀਪ ਅੰਤਰਾਲ, ਜਦੋਂ UPS 
 
 #: data/org.cafe.power-manager.gschema.xml.in:317
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before it goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before it goes to sleep."
 msgstr ""
-"UPS ਪਾਵਰ ਉੱਤੇ ਚੱਲਦੇ ਕੰਪਿਊਟਰ ਲਈ ਨਾ-ਸਰਗਰਮ ਰਹਿਣ ਦਾ ਸਕਿੰਟਾਂ 'ਚ ਸਮਾਂ, ਜਿਸ ਤੋਂ "
-"ਬਾਅਦ ਇਸ ਨੂੰ ਸਲੀਪ ਹਾਲਤ 'ਚ ਚਲਾ ਜਾਵੇ।"
+"UPS ਪਾਵਰ ਉੱਤੇ ਚੱਲਦੇ ਕੰਪਿਊਟਰ ਲਈ ਨਾ-ਸਰਗਰਮ ਰਹਿਣ ਦਾ ਸਕਿੰਟਾਂ 'ਚ ਸਮਾਂ, ਜਿਸ ਤੋਂ ਬਾਅਦ ਇਸ ਨੂੰ "
+"ਸਲੀਪ ਹਾਲਤ 'ਚ ਚਲਾ ਜਾਵੇ।"
 
 #: data/org.cafe.power-manager.gschema.xml.in:321
 msgid "Sleep timeout display when on AC"
@@ -739,8 +724,7 @@ msgid ""
 "The amount of time in seconds before the display goes to sleep when the "
 "computer is on AC power."
 msgstr ""
-"AC ਪਾਵਰ ਉੱਤੇ ਚੱਲਦੇ ਕੰਪਿਊਟਰ ਵਾਸਤੇ ਡਿਸਪਲੇਅ ਨੂੰ ਸਲੀਪ ਵਿੱਚ ਜਾਣ ਤੋਂ ਪਹਿਲਾਂ "
-"ਸਕਿੰਟਾਂ ਵਿੱਚ ਟਾਈਮ ਹੈ।"
+"AC ਪਾਵਰ ਉੱਤੇ ਚੱਲਦੇ ਕੰਪਿਊਟਰ ਵਾਸਤੇ ਡਿਸਪਲੇਅ ਨੂੰ ਸਲੀਪ ਵਿੱਚ ਜਾਣ ਤੋਂ ਪਹਿਲਾਂ ਸਕਿੰਟਾਂ ਵਿੱਚ ਟਾਈਮ ਹੈ।"
 
 #: data/org.cafe.power-manager.gschema.xml.in:326
 msgid "Sleep timeout display when on battery"
@@ -751,8 +735,8 @@ msgid ""
 "The amount of time in seconds the computer on battery power needs to be "
 "inactive before the display goes to sleep."
 msgstr ""
-"ਬੈਟਰੀ ਪਾਵਰ ਉੱਤੇ ਚੱਲਦੇ ਕੰਪਿਊਟਰ ਲਈ ਨਾ-ਸਰਗਰਮ ਰਹਿਣ ਦਾ ਸਕਿੰਟਾਂ 'ਚ ਸਮਾਂ, ਜਿਸ ਤੋਂ "
-"ਬਾਅਦ ਡਿਸਲਪੇਅ ਸਲੀਪ ਹਾਲਤ 'ਚ ਚਲਾ ਜਾਵੇ।"
+"ਬੈਟਰੀ ਪਾਵਰ ਉੱਤੇ ਚੱਲਦੇ ਕੰਪਿਊਟਰ ਲਈ ਨਾ-ਸਰਗਰਮ ਰਹਿਣ ਦਾ ਸਕਿੰਟਾਂ 'ਚ ਸਮਾਂ, ਜਿਸ ਤੋਂ ਬਾਅਦ ਡਿਸਲਪੇਅ "
+"ਸਲੀਪ ਹਾਲਤ 'ਚ ਚਲਾ ਜਾਵੇ।"
 
 #: data/org.cafe.power-manager.gschema.xml.in:331
 msgid "Sleep timeout display when on UPS"
@@ -760,11 +744,11 @@ msgstr "ਸਲੀਪ ਅੰਤਰਾਲ, ਜਦੋਂ UPS ਉੱਤੇ ਚੱਲ
 
 #: data/org.cafe.power-manager.gschema.xml.in:332
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before the display goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before the display goes to sleep."
 msgstr ""
-"UPS ਪਾਵਰ ਉੱਤੇ ਚੱਲਦੇ ਕੰਪਿਊਟਰ ਲਈ ਨਾ-ਸਰਗਰਮ ਰਹਿਣ ਦਾ ਸਕਿੰਟਾਂ 'ਚ ਸਮਾਂ, ਜਿਸ ਤੋਂ "
-"ਬਾਅਦ ਡਿਸਲਪੇਅ ਸਲੀਪ ਹਾਲਤ 'ਚ ਚਲਾ ਜਾਵੇ।"
+"UPS ਪਾਵਰ ਉੱਤੇ ਚੱਲਦੇ ਕੰਪਿਊਟਰ ਲਈ ਨਾ-ਸਰਗਰਮ ਰਹਿਣ ਦਾ ਸਕਿੰਟਾਂ 'ਚ ਸਮਾਂ, ਜਿਸ ਤੋਂ ਬਾਅਦ ਡਿਸਲਪੇਅ "
+"ਸਲੀਪ ਹਾਲਤ 'ਚ ਚਲਾ ਜਾਵੇ।"
 
 #: data/org.cafe.power-manager.gschema.xml.in:336
 msgid "If sounds should be used"
@@ -775,12 +759,11 @@ msgid ""
 "If sounds should be used when the power is critically low, or inhibit "
 "requests have stopped the policy action."
 msgstr ""
-"ਪਾਵਰ ਨਾਜ਼ੁਕ ਰੂਪ 'ਚ ਘੱਟ ਹੋਣ ਸਮੇਂ ਜਾਂ ਇੰਨਹੇਬਿਟ ਮੰਗ ਨੂੰ ਨੀਤੀ ਕਾਰਵਾਈ ਰਾਹੀਂ ਰੋਕੇ "
-"ਜਾਣ ਸਮੇਂ ਆਵਾਜ਼ (ਸਾਊਂਡ) ਵਰਤੀ ਜਾਵੇ।"
+"ਪਾਵਰ ਨਾਜ਼ੁਕ ਰੂਪ 'ਚ ਘੱਟ ਹੋਣ ਸਮੇਂ ਜਾਂ ਇੰਨਹੇਬਿਟ ਮੰਗ ਨੂੰ ਨੀਤੀ ਕਾਰਵਾਈ ਰਾਹੀਂ ਰੋਕੇ ਜਾਣ ਸਮੇਂ ਆਵਾਜ਼ "
+"(ਸਾਊਂਡ) ਵਰਤੀ ਜਾਵੇ।"
 
 #: data/org.cafe.power-manager.gschema.xml.in:341
-msgid ""
-"If preferences and statistics items should be shown in the context menu"
+msgid "If preferences and statistics items should be shown in the context menu"
 msgstr "ਪਰਸੰਗ ਮੇਨੂ ਵਿੱਚ ਪਸੰਦ ਅਤੇ ਅੰਕੜੇ ਆਈਟਮਾਂ ਨੂੰ ਵੇਖਾਉਣਾ ਹੈ"
 
 #: data/org.cafe.power-manager.gschema.xml.in:345
@@ -799,14 +782,13 @@ msgstr "ਪਾਵਰ ਪਰਬੰਧ"
 msgid "Configure power management"
 msgstr "ਪਾਵਰ ਪਰਬੰਧ ਸੰਰਚਨਾ"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
 msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
-#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:7
-#: src/cpm-statistics.c:1090 src/cpm-statistics.c:1577
+#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:8
+#: src/cpm-statistics.c:764 src/cpm-statistics.c:1233
 msgid "Power Statistics"
 msgstr "ਪਾਵਰ ਅੰਕੜੇ"
 
@@ -814,55 +796,37 @@ msgstr "ਪਾਵਰ ਅੰਕੜੇ"
 msgid "Observe power management"
 msgstr "ਪਾਵਰ ਪਰਬੰਧ ਨਿਗਰਾਨੀ"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-statistics.desktop.in.in:6
-msgid "cafe-power-statistics"
-msgstr ""
-
-#: data/cpm-statistics.ui:113 src/cpm-statistics.c:208
+#: data/cpm-statistics.ui:119
 msgid "Details"
 msgstr "ਵੇਰਵਾ"
 
-#: data/cpm-statistics.ui:139 data/cpm-statistics.ui:342
+#: data/cpm-statistics.ui:145 data/cpm-statistics.ui:347
 msgid "Graph type:"
 msgstr "ਗਰਾਫ਼ ਕਿਸਮ:"
 
-#: data/cpm-statistics.ui:174
+#: data/cpm-statistics.ui:180
 msgid "Data length:"
 msgstr "ਡਾਟਾ ਲੰਬਾਈ:"
 
-#: data/cpm-statistics.ui:234 data/cpm-statistics.ui:395
+#: data/cpm-statistics.ui:239 data/cpm-statistics.ui:399
 msgid "There is no data to display."
 msgstr "ਵੇਖਾਉਣ ਲਈ ਕੋਈ ਡਾਟਾ ਨਹੀਂ ਹੈ।"
 
-#: data/cpm-statistics.ui:276 data/cpm-statistics.ui:438
+#: data/cpm-statistics.ui:281 data/cpm-statistics.ui:442
 msgid "Use smoothed line"
 msgstr "ਸਮੂਥ ਲਾਈਨ ਵਰਤੋਂ "
 
-#: data/cpm-statistics.ui:291 data/cpm-statistics.ui:453
+#: data/cpm-statistics.ui:296 data/cpm-statistics.ui:457
 msgid "Show data points"
 msgstr "ਡਾਟਾ ਪੁਆਇੰਟ ਵੇਖੋ"
 
-#: data/cpm-statistics.ui:320
+#: data/cpm-statistics.ui:325
 msgid "History"
 msgstr "ਅਤੀਤ"
 
-#: data/cpm-statistics.ui:482
+#: data/cpm-statistics.ui:486
 msgid "Statistics"
 msgstr "ਅੰਕੜੇ"
-
-#: data/cpm-statistics.ui:504
-msgid "Processor wakeups per second:"
-msgstr "ਪਰੋਸੈੱਸਰ ਵੇਕਅੱਪ ਪ੍ਰਤੀ ਸਕਿੰਟ:"
-
-#: data/cpm-statistics.ui:516
-msgid "0"
-msgstr "0"
-
-#: data/cpm-statistics.ui:563 src/cpm-statistics.c:194
-msgid "Wakeups"
-msgstr "ਵੇਕਅੱਪ"
 
 #: data/cpm-prefs.ui:55
 msgid "Power Management Preferences"
@@ -1116,7 +1080,7 @@ msgstr "%.1fW"
 msgid "%.1fV"
 msgstr "%.1fV"
 
-#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1560
+#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1216
 msgid "Show extra debugging information"
 msgstr "ਹੋਰ ਡੀਬੱਗ ਜਾਣਕਾਰੀ ਵੇਖੋ"
 
@@ -1223,11 +1187,11 @@ msgstr "ਬੈਟਰੀ ਖਰਾਬ ਹੋ ਸਕਦੀ ਹੈ"
 #: src/cpm-manager.c:1110
 #, c-format
 msgid ""
-"Battery has a very low capacity (%1.1f%%), which means that it may be old or"
-" broken."
+"Battery has a very low capacity (%1.1f%%), which means that it may be old or "
+"broken."
 msgstr ""
-"ਤੁਹਾਡੀ ਬੈਟਰੀ ਦੀ ਸਮਰੱਥਾ (%1.1f%%) ਬਹੁਤ ਘੱਟ ਹੈ, ਜਿਸ ਦਾ ਮਤਲਬ ਹੈ ਕਿ ਇਹ ਬਹੁਤ "
-"ਪੁਰਾਣੀ ਹੈ ਜਾਂ ਖਰਾਬ ਗਈ ਹੈ।"
+"ਤੁਹਾਡੀ ਬੈਟਰੀ ਦੀ ਸਮਰੱਥਾ (%1.1f%%) ਬਹੁਤ ਘੱਟ ਹੈ, ਜਿਸ ਦਾ ਮਤਲਬ ਹੈ ਕਿ ਇਹ ਬਹੁਤ ਪੁਰਾਣੀ ਹੈ ਜਾਂ "
+"ਖਰਾਬ ਗਈ ਹੈ।"
 
 #: src/cpm-manager.c:1159
 msgid "Battery Charged"
@@ -1374,11 +1338,11 @@ msgstr "UPS ਨਾਜ਼ੁਕ ਰੂਪ ਵਿੱਚ ਘੱਟ ਹੈ"
 #: src/cpm-manager.c:1459
 #, c-format
 msgid ""
-"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
-" your computer to avoid losing data."
+"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to "
+"your computer to avoid losing data."
 msgstr ""
-"ਤੁਹਾਡੇ ਕੋਲ UPS ਪਾਵਰ ਵਿੱਚੋਂ <b>%s</b> ਬਾਕੀ ਰਹਿ ਗਈ ਹੈ (%.0f%%)। ਡਾਟਾ ਖਰਾਬ ਹੋਣ "
-"ਤੋਂ ਬਚਣ ਲਈ ਆਪਣੇ ਕੰਪਿਊਟਰ ਨੂੰ AC ਬਿਜਲੀ ਪਾਵਰ ਦਿਓ।"
+"ਤੁਹਾਡੇ ਕੋਲ UPS ਪਾਵਰ ਵਿੱਚੋਂ <b>%s</b> ਬਾਕੀ ਰਹਿ ਗਈ ਹੈ (%.0f%%)। ਡਾਟਾ ਖਰਾਬ ਹੋਣ ਤੋਂ ਬਚਣ ਲਈ "
+"ਆਪਣੇ ਕੰਪਿਊਟਰ ਨੂੰ AC ਬਿਜਲੀ ਪਾਵਰ ਦਿਓ।"
 
 #: src/cpm-manager.c:1473
 #, c-format
@@ -1386,8 +1350,8 @@ msgid ""
 "Wireless mouse is very low in power (%.0f%%). This device will soon stop "
 "functioning if not charged."
 msgstr ""
-"ਬੇਤਾਰ ਮਾਊਸ ਦੀ ਪਾਵਰ (%.0f%%) ਬਹੁਤ ਘੱਟ ਹੋ ਗਈ ਹੈ। ਇਹ ਜੰਤਰ, ਜੇਕਰ ਚਾਰਜ ਨਾ ਕੀਤਾ "
-"ਗਿਆ ਹੈ, ਤਾਂ ਛੇਤੀ ਹੀ ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦੇਵੇਗਾ।"
+"ਬੇਤਾਰ ਮਾਊਸ ਦੀ ਪਾਵਰ (%.0f%%) ਬਹੁਤ ਘੱਟ ਹੋ ਗਈ ਹੈ। ਇਹ ਜੰਤਰ, ਜੇਕਰ ਚਾਰਜ ਨਾ ਕੀਤਾ ਗਿਆ ਹੈ, ਤਾਂ "
+"ਛੇਤੀ ਹੀ ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦੇਵੇਗਾ।"
 
 #: src/cpm-manager.c:1481
 #, c-format
@@ -1395,17 +1359,17 @@ msgid ""
 "Wireless keyboard is very low in power (%.0f%%). This device will soon stop "
 "functioning if not charged."
 msgstr ""
-"ਬੇਤਾਰ ਕੀਬੋਰਡ ਦੀ ਪਾਵਰ (%.0f%%) ਬਹੁਤ ਘੱਟ ਹੋ ਗਈ ਹੈ। ਇਹ ਜੰਤਰ, ਜੇਕਰ ਚਾਰਜ ਨਾ ਕੀਤਾ "
-"ਗਿਆ ਹੈ, ਤਾਂ ਛੇਤੀ ਹੀ ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦੇਵੇਗਾ।"
+"ਬੇਤਾਰ ਕੀਬੋਰਡ ਦੀ ਪਾਵਰ (%.0f%%) ਬਹੁਤ ਘੱਟ ਹੋ ਗਈ ਹੈ। ਇਹ ਜੰਤਰ, ਜੇਕਰ ਚਾਰਜ ਨਾ ਕੀਤਾ ਗਿਆ ਹੈ, "
+"ਤਾਂ ਛੇਤੀ ਹੀ ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦੇਵੇਗਾ।"
 
 #: src/cpm-manager.c:1490
 #, c-format
 msgid ""
-"PDA is very low in power (%.0f%%). This device will soon stop functioning if"
-" not charged."
+"PDA is very low in power (%.0f%%). This device will soon stop functioning if "
+"not charged."
 msgstr ""
-"PDA ਦੀ ਪਾਵਰ (%.0f%%) ਬਹੁਤ ਘੱਟ ਹੋ ਗਈ ਹੈ। ਇਹ ਜੰਤਰ, ਜੇਕਰ ਚਾਰਜ ਨਾ ਕੀਤਾ ਗਿਆ ਹੈ, "
-"ਤਾਂ ਛੇਤੀ ਹੀ ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦੇਵੇਗਾ।"
+"PDA ਦੀ ਪਾਵਰ (%.0f%%) ਬਹੁਤ ਘੱਟ ਹੋ ਗਈ ਹੈ। ਇਹ ਜੰਤਰ, ਜੇਕਰ ਚਾਰਜ ਨਾ ਕੀਤਾ ਗਿਆ ਹੈ, ਤਾਂ ਛੇਤੀ "
+"ਹੀ ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦੇਵੇਗਾ।"
 
 #: src/cpm-manager.c:1500
 #, c-format
@@ -1413,8 +1377,8 @@ msgid ""
 "Cell phone is very low in power (%.0f%%). This device will soon stop "
 "functioning if not charged."
 msgstr ""
-"ਸੈੱਲ ਫੋਨ ਦੀ ਪਾਵਰ (%.0f%%) ਬਹੁਤ ਘੱਟ ਹੋ ਗਈ ਹੈ। ਇਹ ਜੰਤਰ, ਜੇਕਰ ਚਾਰਜ ਨਾ ਕੀਤਾ ਗਿਆ "
-"ਹੈ, ਤਾਂ ਛੇਤੀ ਹੀ ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦੇਵੇਗਾ।"
+"ਸੈੱਲ ਫੋਨ ਦੀ ਪਾਵਰ (%.0f%%) ਬਹੁਤ ਘੱਟ ਹੋ ਗਈ ਹੈ। ਇਹ ਜੰਤਰ, ਜੇਕਰ ਚਾਰਜ ਨਾ ਕੀਤਾ ਗਿਆ ਹੈ, ਤਾਂ ਛੇਤੀ "
+"ਹੀ ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦੇਵੇਗਾ।"
 
 #: src/cpm-manager.c:1510
 #, c-format
@@ -1422,17 +1386,17 @@ msgid ""
 "Media player is very low in power (%.0f%%). This device will soon stop "
 "functioning if not charged."
 msgstr ""
-"ਮੀਡਿਆ ਪਲੇਅਰ ਦੀ ਪਾਵਰ (%.0f%%) ਬਹੁਤ ਘੱਟ ਹੋ ਗਈ ਹੈ। ਇਹ ਜੰਤਰ, ਜੇਕਰ ਚਾਰਜ ਨਾ ਕੀਤਾ "
-"ਗਿਆ ਹੈ, ਤਾਂ ਛੇਤੀ ਹੀ ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦੇਵੇਗਾ।"
+"ਮੀਡਿਆ ਪਲੇਅਰ ਦੀ ਪਾਵਰ (%.0f%%) ਬਹੁਤ ਘੱਟ ਹੋ ਗਈ ਹੈ। ਇਹ ਜੰਤਰ, ਜੇਕਰ ਚਾਰਜ ਨਾ ਕੀਤਾ ਗਿਆ ਹੈ, "
+"ਤਾਂ ਛੇਤੀ ਹੀ ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦੇਵੇਗਾ।"
 
 #: src/cpm-manager.c:1519
 #, c-format
 msgid ""
-"Tablet is very low in power (%.0f%%). This device will soon stop functioning"
-" if not charged."
+"Tablet is very low in power (%.0f%%). This device will soon stop functioning "
+"if not charged."
 msgstr ""
-"ਟੇਬਲੇਟ ਦੀ ਪਾਵਰ (%.0f%%) ਬਹੁਤ ਘੱਟ ਹੋ ਗਈ ਹੈ। ਇਹ ਜੰਤਰ, ਜੇਕਰ ਚਾਰਜ ਨਾ ਕੀਤਾ ਗਿਆ "
-"ਹੈ, ਤਾਂ ਛੇਤੀ ਹੀ ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦੇਵੇਗਾ।"
+"ਟੇਬਲੇਟ ਦੀ ਪਾਵਰ (%.0f%%) ਬਹੁਤ ਘੱਟ ਹੋ ਗਈ ਹੈ। ਇਹ ਜੰਤਰ, ਜੇਕਰ ਚਾਰਜ ਨਾ ਕੀਤਾ ਗਿਆ ਹੈ, ਤਾਂ ਛੇਤੀ "
+"ਹੀ ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦੇਵੇਗਾ।"
 
 #: src/cpm-manager.c:1528
 #, c-format
@@ -1440,16 +1404,16 @@ msgid ""
 "Attached computer is very low in power (%.0f%%). The device will soon "
 "shutdown if not charged."
 msgstr ""
-"ਜੁੜੇ ਕੰਪਿਊਟਰ ਦੀ ਪਾਵਰ (%.0f%%) ਘੱਟ ਹੋ ਗਈ ਹੈ। ਇਹ ਜੰਤਰ ਜੇਕਰ ਚਾਰਜ ਨਾ ਕੀਤਾ ਗਿਆ ਹੈ"
-" ਤਾਂ ਛੇਤੀ ਹੀ ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦੇਵੇਗਾ।"
+"ਜੁੜੇ ਕੰਪਿਊਟਰ ਦੀ ਪਾਵਰ (%.0f%%) ਘੱਟ ਹੋ ਗਈ ਹੈ। ਇਹ ਜੰਤਰ ਜੇਕਰ ਚਾਰਜ ਨਾ ਕੀਤਾ ਗਿਆ ਹੈ ਤਾਂ ਛੇਤੀ "
+"ਹੀ ਕੰਮ ਕਰਨਾ ਬੰਦ ਕਰ ਦੇਵੇਗਾ।"
 
 #: src/cpm-manager.c:1593
 msgid ""
-"The battery is below the critical level and this computer will <b>power-"
-"off</b> when the battery becomes completely empty."
+"The battery is below the critical level and this computer will <b>power-off</"
+"b> when the battery becomes completely empty."
 msgstr ""
-"ਬੈਟਰੀ ਹੁਣ ਨਾਜ਼ੁਕ ਪੱਧਰ ਤੋਂ ਵੀ ਹੇਠਾਂ ਚੱਲੀ ਗਈ ਹੈ ਅਤੇ ਇਹ ਕੰਪਿਊਟਰ ਬੈਟਰੀ ਦੇ ਪੂਰੀ "
-"ਤਰ੍ਹਾਂ ਖਾਲੀ ਹੋਣ ਨਾਲ <b>ਬੰਦ</b> ਹੋ ਜਾਵੇਗਾ।"
+"ਬੈਟਰੀ ਹੁਣ ਨਾਜ਼ੁਕ ਪੱਧਰ ਤੋਂ ਵੀ ਹੇਠਾਂ ਚੱਲੀ ਗਈ ਹੈ ਅਤੇ ਇਹ ਕੰਪਿਊਟਰ ਬੈਟਰੀ ਦੇ ਪੂਰੀ ਤਰ੍ਹਾਂ ਖਾਲੀ ਹੋਣ ਨਾਲ "
+"<b>ਬੰਦ</b> ਹੋ ਜਾਵੇਗਾ।"
 
 #: src/cpm-manager.c:1599
 msgid ""
@@ -1457,47 +1421,41 @@ msgid ""
 "suspend.<br><b>NOTE:</b> A small amount of power is required to keep your "
 "computer in a suspended state."
 msgstr ""
-"ਬੈਟਰੀ ਹੁਣ ਨਾਜ਼ੁਕ ਪੱਧਰ ਤੋਂ ਵੀ ਹੇਠਾਂ ਚੱਲੀ ਗਈ ਹੈ ਅਤੇ ਇਹ ਕੰਪਿਊਟਰ ਹੁਣ ਬੱਸ ਸਸਪੈਂਡ "
-"ਹੋਣ ਵਾਲਾ ਹੀ ਹੈ। <br><b>ਸੂਚਨਾ:</b>ਤੁਹਾਡੇ ਕੰਪਿਊਟਰ ਨੂੰ ਸਸਪੈਂਡ ਹਾਲਤ ਵਿੱਚ ਰੱਖਣ ਲਈ"
-" ਥੋੜ੍ਹੀ ਜੇਹੀ ਪਾਵਰ ਦੀ ਲੋੜ ਰਹਿੰਦੀ ਹੈ।"
+"ਬੈਟਰੀ ਹੁਣ ਨਾਜ਼ੁਕ ਪੱਧਰ ਤੋਂ ਵੀ ਹੇਠਾਂ ਚੱਲੀ ਗਈ ਹੈ ਅਤੇ ਇਹ ਕੰਪਿਊਟਰ ਹੁਣ ਬੱਸ ਸਸਪੈਂਡ ਹੋਣ ਵਾਲਾ ਹੀ ਹੈ। "
+"<br><b>ਸੂਚਨਾ:</b>ਤੁਹਾਡੇ ਕੰਪਿਊਟਰ ਨੂੰ ਸਸਪੈਂਡ ਹਾਲਤ ਵਿੱਚ ਰੱਖਣ ਲਈ ਥੋੜ੍ਹੀ ਜੇਹੀ ਪਾਵਰ ਦੀ ਲੋੜ ਰਹਿੰਦੀ "
+"ਹੈ।"
 
 #: src/cpm-manager.c:1606
 msgid ""
 "The battery is below the critical level and this computer is about to "
 "hibernate."
 msgstr ""
-"ਬੈਟਰੀ ਹੁਣ ਨਾਜ਼ੁਕ ਪੱਧਰ ਤੋਂ ਵੀ ਹੇਠਾਂ ਚੱਲੀ ਗਈ ਹੈ ਅਤੇ ਇਹ ਕੰਪਿਊਟਰ ਹੁਣ ਬੱਸ "
-"ਹਾਈਬਰਨੇਟ ਹੋਣ ਵਾਲਾ ਹੀ ਹੈ।"
+"ਬੈਟਰੀ ਹੁਣ ਨਾਜ਼ੁਕ ਪੱਧਰ ਤੋਂ ਵੀ ਹੇਠਾਂ ਚੱਲੀ ਗਈ ਹੈ ਅਤੇ ਇਹ ਕੰਪਿਊਟਰ ਹੁਣ ਬੱਸ ਹਾਈਬਰਨੇਟ ਹੋਣ ਵਾਲਾ ਹੀ ਹੈ।"
 
 #: src/cpm-manager.c:1611
 msgid ""
 "The battery is below the critical level and this computer is about to "
 "shutdown."
-msgstr ""
-"ਬੈਟਰੀ ਹੁਣ ਨਾਜ਼ੁਕ ਪੱਧਰ ਤੋਂ ਵੀ ਹੇਠਾਂ ਚੱਲੀ ਗਈ ਹੈ ਅਤੇ ਇਹ ਕੰਪਿਊਟਰ ਹੁਣ ਬੱਸ ਬੰਦ ਹੋਣ"
-" ਵਾਲਾ ਹੀ ਹੈ।"
+msgstr "ਬੈਟਰੀ ਹੁਣ ਨਾਜ਼ੁਕ ਪੱਧਰ ਤੋਂ ਵੀ ਹੇਠਾਂ ਚੱਲੀ ਗਈ ਹੈ ਅਤੇ ਇਹ ਕੰਪਿਊਟਰ ਹੁਣ ਬੱਸ ਬੰਦ ਹੋਣ ਵਾਲਾ ਹੀ ਹੈ।"
 
 #: src/cpm-manager.c:1629
 msgid ""
 "The UPS is below the critical level and this computer will <b>power-off</b> "
 "when the UPS becomes completely empty."
 msgstr ""
-"UPS ਹੁਣ ਨਾਜ਼ੁਕ ਪੱਧਰ ਤੋਂ ਵੀ ਹੇਠਾਂ ਚੱਲੀ ਗਈ ਹੈ ਅਤੇ ਇਹ ਕੰਪਿਊਟਰ UPS ਦੇ ਪੂਰੀ "
-"ਤਰ੍ਹਾਂ ਖਾਲੀ ਹੋਣ ਨਾਲ <b>ਬੰਦ</b> ਹੋ ਜਾਵੇਗਾ।"
+"UPS ਹੁਣ ਨਾਜ਼ੁਕ ਪੱਧਰ ਤੋਂ ਵੀ ਹੇਠਾਂ ਚੱਲੀ ਗਈ ਹੈ ਅਤੇ ਇਹ ਕੰਪਿਊਟਰ UPS ਦੇ ਪੂਰੀ ਤਰ੍ਹਾਂ ਖਾਲੀ ਹੋਣ ਨਾਲ "
+"<b>ਬੰਦ</b> ਹੋ ਜਾਵੇਗਾ।"
 
 #: src/cpm-manager.c:1635
 msgid ""
 "The UPS is below the critical level and this computer is about to hibernate."
 msgstr ""
-"UPS ਹੁਣ ਨਾਜ਼ੁਕ ਪੱਧਰ ਤੋਂ ਵੀ ਹੇਠਾਂ ਚੱਲੀ ਗਈ ਹੈ ਅਤੇ ਇਹ ਕੰਪਿਊਟਰ ਹੁਣ ਬੱਸ ਹਾਈਬਰਨੇਟ "
-"ਹੋਣ ਵਾਲਾ ਹੀ ਹੈ।"
+"UPS ਹੁਣ ਨਾਜ਼ੁਕ ਪੱਧਰ ਤੋਂ ਵੀ ਹੇਠਾਂ ਚੱਲੀ ਗਈ ਹੈ ਅਤੇ ਇਹ ਕੰਪਿਊਟਰ ਹੁਣ ਬੱਸ ਹਾਈਬਰਨੇਟ ਹੋਣ ਵਾਲਾ ਹੀ ਹੈ।"
 
 #: src/cpm-manager.c:1640
 msgid ""
 "The UPS is below the critical level and this computer is about to shutdown."
-msgstr ""
-"UPS ਹੁਣ ਨਾਜ਼ੁਕ ਪੱਧਰ ਤੋਂ ਵੀ ਹੇਠਾਂ ਚੱਲੀ ਗਈ ਹੈ ਅਤੇ ਇਹ ਕੰਪਿਊਟਰ ਹੁਣ ਬੱਸ ਬੰਦ ਹੋਣ "
-"ਵਾਲਾ ਹੀ ਹੈ।"
+msgstr "UPS ਹੁਣ ਨਾਜ਼ੁਕ ਪੱਧਰ ਤੋਂ ਵੀ ਹੇਠਾਂ ਚੱਲੀ ਗਈ ਹੈ ਅਤੇ ਇਹ ਕੰਪਿਊਟਰ ਹੁਣ ਬੱਸ ਬੰਦ ਹੋਣ ਵਾਲਾ ਹੀ ਹੈ।"
 
 #: src/cpm-prefs.c:81
 msgid "CAFE Power Preferences"
@@ -1531,363 +1489,251 @@ msgstr "ਕੁਝ ਨਾ ਕਰੋ"
 msgid "Never"
 msgstr "ਕਦੇ ਨਹੀਂ"
 
-#: src/cpm-statistics.c:78 src/cpm-statistics.c:466
+#: src/cpm-statistics.c:67 src/cpm-statistics.c:410
 msgid "Rate"
 msgstr "ਦਰ"
 
-#: src/cpm-statistics.c:79
+#: src/cpm-statistics.c:68
 msgid "Charge"
 msgstr "ਚਾਰਜ"
 
-#: src/cpm-statistics.c:80 src/cpm-statistics.c:480
+#: src/cpm-statistics.c:69 src/cpm-statistics.c:424
 msgid "Time to full"
 msgstr "ਪੂਰਾ ਹੋਣ ਲਈ ਸਮਾਂ"
 
-#: src/cpm-statistics.c:81 src/cpm-statistics.c:485
+#: src/cpm-statistics.c:70 src/cpm-statistics.c:429
 msgid "Time to empty"
 msgstr "ਖਾਲੀ ਹੋਣ ਲਈ ਸਮਾਂ"
 
-#: src/cpm-statistics.c:88
+#: src/cpm-statistics.c:77
 msgid "10 minutes"
 msgstr "10 ਮਿੰਟ"
 
-#: src/cpm-statistics.c:89
+#: src/cpm-statistics.c:78
 msgid "2 hours"
 msgstr "2 ਘੰਟੇ"
 
-#: src/cpm-statistics.c:90
+#: src/cpm-statistics.c:79
 msgid "6 hours"
 msgstr "੬ ਘੰਟੇ"
 
-#: src/cpm-statistics.c:91
+#: src/cpm-statistics.c:80
 msgid "1 day"
 msgstr "1 ਦਿਨ"
 
-#: src/cpm-statistics.c:92
+#: src/cpm-statistics.c:81
 msgid "1 week"
 msgstr "1 ਹਫ਼ਤਾ"
 
-#: src/cpm-statistics.c:101
+#: src/cpm-statistics.c:90
 msgid "Charge profile"
 msgstr "ਚਾਰਜ ਪਰੋਫਾਇਲ"
 
-#: src/cpm-statistics.c:102
+#: src/cpm-statistics.c:91
 msgid "Discharge profile"
 msgstr "ਡਿਸਚਾਰਜ ਪਰੋਫਾਇਲ"
 
-#: src/cpm-statistics.c:104
+#: src/cpm-statistics.c:93
 msgid "Charge accuracy"
 msgstr "ਚਾਰਜ ਸ਼ੁੱਧਤਾ"
 
-#: src/cpm-statistics.c:105
+#: src/cpm-statistics.c:94
 msgid "Discharge accuracy"
 msgstr "ਡਿਸਚਾਰਜ ਸ਼ੁੱਧਤਾ"
 
-#: src/cpm-statistics.c:132
+#: src/cpm-statistics.c:121
 msgid "Attribute"
 msgstr "ਗੁਣ"
 
-#: src/cpm-statistics.c:139
+#: src/cpm-statistics.c:128
 msgid "Value"
 msgstr "ਮੁੱਲ"
 
-#: src/cpm-statistics.c:156
+#: src/cpm-statistics.c:145
 msgid "Image"
 msgstr "ਚਿੱਤਰ"
 
-#: src/cpm-statistics.c:162
+#: src/cpm-statistics.c:151
 msgid "Description"
 msgstr "ਵੇਰਵਾ"
 
-#: src/cpm-statistics.c:181 src/cpm-statistics.c:405
-msgid "Type"
-msgstr "ਟਾਈਪ"
-
-#: src/cpm-statistics.c:187
-msgid "ID"
-msgstr "ID"
-
-#: src/cpm-statistics.c:201
-msgid "Command"
-msgstr "ਕਮਾਂਡ"
-
-#: src/cpm-statistics.c:286
+#: src/cpm-statistics.c:230
 msgid "Unknown"
 msgstr "ਅਣਜਾਣ"
 
-#: src/cpm-statistics.c:290
+#: src/cpm-statistics.c:234
 #, c-format
 msgid "%.0f second"
 msgid_plural "%.0f seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:295
+#: src/cpm-statistics.c:239
 #, c-format
 msgid "%.1f minute"
 msgid_plural "%.1f minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:300
+#: src/cpm-statistics.c:244
 #, c-format
 msgid "%.1f hour"
 msgid_plural "%.1f hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:304
+#: src/cpm-statistics.c:248
 #, c-format
 msgid "%.1f day"
 msgid_plural "%.1f days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "Yes"
 msgstr "ਹਾਂ"
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "No"
 msgstr "ਨਹੀਂ"
 
-#: src/cpm-statistics.c:402
+#: src/cpm-statistics.c:346
 msgid "Device"
 msgstr "ਜੰਤਰ"
 
-#: src/cpm-statistics.c:407
+#: src/cpm-statistics.c:349
+msgid "Type"
+msgstr "ਟਾਈਪ"
+
+#: src/cpm-statistics.c:351
 msgid "Vendor"
 msgstr "ਵੇਂਡਰ"
 
-#: src/cpm-statistics.c:409
+#: src/cpm-statistics.c:353
 msgid "Model"
 msgstr "ਮਾਡਲ"
 
-#: src/cpm-statistics.c:411
+#: src/cpm-statistics.c:355
 msgid "Serial number"
 msgstr "ਸੀਰੀਅਲ ਨੰਬਰ"
 
-#: src/cpm-statistics.c:416
+#: src/cpm-statistics.c:360
 msgid "Supply"
 msgstr "ਸਪਲਾਈ"
 
-#: src/cpm-statistics.c:419
+#: src/cpm-statistics.c:363
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:423
+#: src/cpm-statistics.c:367
 msgid "Refreshed"
 msgstr "ਤਾਜ਼ਾ ਕੀਤਾ"
 
-#: src/cpm-statistics.c:433
+#: src/cpm-statistics.c:377
 msgid "Present"
 msgstr "ਮੌਜੂਦ"
 
-#: src/cpm-statistics.c:440
+#: src/cpm-statistics.c:384
 msgid "Rechargeable"
 msgstr "ਮੁੜ-ਚਾਰਜਹੋਣ ਯੋਗ"
 
-#: src/cpm-statistics.c:446
+#: src/cpm-statistics.c:390
 msgid "State"
 msgstr "ਹਾਲਤ"
 
-#: src/cpm-statistics.c:450
+#: src/cpm-statistics.c:394
 msgid "Energy"
 msgstr "ਊਰਜਾ"
 
-#: src/cpm-statistics.c:453
+#: src/cpm-statistics.c:397
 msgid "Energy when empty"
 msgstr "ਊਰਜਾ, ਜਦੋਂ ਖਾਲੀ ਹੈ"
 
-#: src/cpm-statistics.c:456
+#: src/cpm-statistics.c:400
 msgid "Energy when full"
 msgstr "ਊਰਜਾ, ਜਦੋਂ ਪੂਰਾ ਹੈ"
 
-#: src/cpm-statistics.c:459
+#: src/cpm-statistics.c:403
 msgid "Energy (design)"
 msgstr "ਊਰਜਾ (ਡਿਜ਼ਾਇਨ)"
 
-#: src/cpm-statistics.c:473
+#: src/cpm-statistics.c:417
 msgid "Voltage"
 msgstr "ਵੋਲਟੇਜ਼"
 
-#: src/cpm-statistics.c:495
+#: src/cpm-statistics.c:439
 msgid "Percentage"
 msgstr "ਫ਼ੀ-ਸਦੀ"
 
-#: src/cpm-statistics.c:502
+#: src/cpm-statistics.c:446
 msgid "Capacity"
 msgstr "ਕੰਪੈਸਟੀ"
 
-#: src/cpm-statistics.c:507
+#: src/cpm-statistics.c:451
 msgid "Technology"
 msgstr "ਤਕਨਾਲੋਜੀ"
 
-#: src/cpm-statistics.c:512
+#: src/cpm-statistics.c:456
 msgid "Online"
 msgstr "ਆਨਲਾਈਨ"
 
-#: src/cpm-statistics.c:824
-msgid "No data"
-msgstr "ਕੋਈ ਡਾਟਾ ਨਹੀਂ"
-
-#: src/cpm-statistics.c:831 src/cpm-statistics.c:836
-msgid "Kernel module"
-msgstr "ਕਰਨਲ ਮੋਡੀਊਲ"
-
-#: src/cpm-statistics.c:841
-msgid "Kernel core"
-msgstr "ਕਰਨਲ ਕੋਰ"
-
-#: src/cpm-statistics.c:846
-msgid "Interprocessor interrupt"
-msgstr "ਇੰਟਰਪਰੋਸੈੱਸਰ ਇੰਟਰੱਪਟ"
-
-#: src/cpm-statistics.c:851
-msgid "Interrupt"
-msgstr "ਇੰਟਰੱਪਟ"
-
-#: src/cpm-statistics.c:898
-msgid "PS/2 keyboard/mouse/touchpad"
-msgstr "PS/2 ਕੀਬੋਰਡ/ਮਾਊਸ/ਟੱਚਪੈਡ"
-
-#: src/cpm-statistics.c:901
-msgid "ACPI"
-msgstr "ACPI"
-
-#: src/cpm-statistics.c:904
-msgid "Serial ATA"
-msgstr "ਸੀਰੀਅਲ ATA"
-
-#: src/cpm-statistics.c:907
-msgid "ATA host controller"
-msgstr "ATA ਹੋਸਟ ਕੰਟਰੋਲਰ"
-
-#: src/cpm-statistics.c:910
-msgid "Intel wireless adaptor"
-msgstr "ਇੰਟੈੱਲ ਬੇਤਾਰ ਐਡਪਟਰ"
-
-#: src/cpm-statistics.c:917 src/cpm-statistics.c:922 src/cpm-statistics.c:927
-#: src/cpm-statistics.c:932 src/cpm-statistics.c:937
-#, c-format
-msgid "Timer %s"
-msgstr "ਟਾਈਮਰ %s"
-
-#: src/cpm-statistics.c:941
-#, c-format
-msgid "Sleep %s"
-msgstr "ਸਲੀਪ %s"
-
-#: src/cpm-statistics.c:944
-#, c-format
-msgid "New task %s"
-msgstr "ਨਵਾਂ ਕੰਮ %s"
-
-#: src/cpm-statistics.c:948
-#, c-format
-msgid "Wait %s"
-msgstr "ਉਡੀਕ %s"
-
-#: src/cpm-statistics.c:952 src/cpm-statistics.c:956
-#, c-format
-msgid "Work queue %s"
-msgstr "ਕੰਮ ਕਤਾਰ %s"
-
-#: src/cpm-statistics.c:959
-#, c-format
-msgid "Network route flush %s"
-msgstr "ਨੈੱਟਵਰਕ ਰੂਟ ਫਲੱਸ਼ %s"
-
-#: src/cpm-statistics.c:962
-#, c-format
-msgid "USB activity %s"
-msgstr "USB ਸਰਗਰਮੀ %s"
-
-#: src/cpm-statistics.c:965
-#, c-format
-msgid "Wakeup %s"
-msgstr "ਵੇਕਅੱਪ %s"
-
-#: src/cpm-statistics.c:968
-msgid "Local interrupts"
-msgstr "ਲੋਕਲ ਇੰਟਰਪਟ"
-
-#: src/cpm-statistics.c:971
-msgid "Rescheduling interrupts"
-msgstr "ਇੰਟਰਪਟ ਮੁੜ-ਸੈਡਿਊਲ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ"
-
-#: src/cpm-statistics.c:1080
+#: src/cpm-statistics.c:756
 msgid "Device Information"
 msgstr "ਜੰਤਰ ਜਾਣਕਾਰੀ"
 
-#: src/cpm-statistics.c:1082
+#: src/cpm-statistics.c:758
 msgid "Device History"
 msgstr "ਜੰਤਰ ਅਤੀਤ"
 
-#: src/cpm-statistics.c:1084
+#: src/cpm-statistics.c:760
 msgid "Device Profile"
 msgstr "ਜੰਤਰ ਪਰੋਫਾਇਲ"
 
-#: src/cpm-statistics.c:1086
-msgid "Processor Wakeups"
-msgstr "ਪਰੋਸੈਸਰ ਵੇਕਅੱਪ"
-
-#: src/cpm-statistics.c:1325 src/cpm-statistics.c:1331
-#: src/cpm-statistics.c:1337 src/cpm-statistics.c:1343
+#: src/cpm-statistics.c:982 src/cpm-statistics.c:988 src/cpm-statistics.c:994
+#: src/cpm-statistics.c:1000
 msgid "Time elapsed"
 msgstr "ਬਾਕੀ ਰਹਿੰਦਾ ਸਮਾਂ"
 
-#: src/cpm-statistics.c:1327
+#: src/cpm-statistics.c:984
 msgid "Power"
 msgstr "ਪਾਵਰ"
 
-#: src/cpm-statistics.c:1333 src/cpm-statistics.c:1377
-#: src/cpm-statistics.c:1383 src/cpm-statistics.c:1389
-#: src/cpm-statistics.c:1395
+#: src/cpm-statistics.c:990 src/cpm-statistics.c:1034 src/cpm-statistics.c:1040
+#: src/cpm-statistics.c:1046 src/cpm-statistics.c:1052
 msgid "Cell charge"
 msgstr "ਸੈੱਲ ਚਾਰਜ"
 
-#: src/cpm-statistics.c:1339 src/cpm-statistics.c:1345
+#: src/cpm-statistics.c:996 src/cpm-statistics.c:1002
 msgid "Predicted time"
 msgstr "ਅੰਦਾਜ਼ਨ ਸਮਾਂ"
 
-#: src/cpm-statistics.c:1379 src/cpm-statistics.c:1391
+#: src/cpm-statistics.c:1036 src/cpm-statistics.c:1048
 msgid "Correction factor"
 msgstr "ਸੋਧ ਗੁਣਾਂਕ"
 
-#: src/cpm-statistics.c:1385 src/cpm-statistics.c:1397
+#: src/cpm-statistics.c:1042 src/cpm-statistics.c:1054
 msgid "Prediction accuracy"
 msgstr "ਅੰਦਾਜ਼ਨ ਸ਼ੁੱਧਤਾ"
 
-#: src/cpm-statistics.c:1563
+#: src/cpm-statistics.c:1219
 msgid "Select this device at startup"
 msgstr "ਸ਼ੁਰੂ ਸਮੇਂ ਇਹ ਜੰਤਰ ਚੁਣੋ"
 
-#: src/cpm-statistics.c:1802
-msgid "Processor"
-msgstr "ਪਰੋਸੈਸਰ"
-
-#: src/cpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 CAFE developers"
+#: src/cpm-tray-icon.c:207
+msgid ""
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
 
-#: src/cpm-tray-icon.c:193
-msgid "translator-credits"
-msgstr ""
-"ਜਸਵਿੰਦਰ ਸਿੰਘ ਫੂਲੇਵਾਲਾ ੨੦੦੪\n"
-"ਅਮਨਪਰੀਤ ਸਿੰਘ ਆਲਮਵਾਲਾ ੨੦੦੪-੨੦੧੦\n"
-"ਪੰਜਾਬੀ ਓਪਨ ਸੋਰਸ ਟੀਮ (POST)\n"
-"http://www.satluj.com"
-
-#: src/cpm-tray-icon.c:295
+#: src/cpm-tray-icon.c:318
 #, c-format
 msgid "%s remaining"
 msgstr ""
 
-#: src/cpm-tray-icon.c:349
+#: src/cpm-tray-icon.c:372
 msgid "_Preferences"
 msgstr "ਮੇਰੀ ਪਸੰਦ(_P)"
 
@@ -2152,3 +1998,127 @@ msgstr "ਡਿਸ-ਚਾਰਜ ਹੋਣ ਲਈ ਉਡੀਕ ਜਾਰੀ"
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr ""
+
+#~ msgid "Licensed under the GNU General Public License Version 2"
+#~ msgstr "ਗਨੂ ਜਰਨਲ ਪਬਲਿਕ ਲਾਈਸੈਂਸ ਵਰਜਨ 2 ਹੇਠ ਜਾਰੀ ਕੀਤਾ ਗਿਆ ਹੈ"
+
+#~ msgid ""
+#~ "Power Manager is free software; you can redistribute it and/or\n"
+#~ "modify it under the terms of the GNU General Public License\n"
+#~ "as published by the Free Software Foundation; either version 2\n"
+#~ "of the License, or (at your option) any later version."
+#~ msgstr ""
+#~ "ਪਾਵਰ ਮੈਨੇਜਰ ਇੱਕ ਮੁਫਤ ਸਾਫਟਵੇਅਰ ਹੈ, ਜਿਸ ਨੂੰ ਤੁਸੀਂ ਗਨੂ ਜਰਨਲ ਪਬਲਿਕ ਲਾਈਸੈਂਸ,\n"
+#~ "ਜਿਸ ਨੂੰ ਫਰੀ ਸਾਫਟਵੇਅਰ ਫਾਊਨਡੇਸ਼ਨ ਨੇ ਤਿਆਰ ਕੀਤਾ ਹੈ, ਦੇ ਵਰਜਨ 2 ਜਾਂ ਨਵੇਂ ਦੀਆਂ\n"
+#~ "ਸ਼ਰਤਾਂ (ਉਹ ਤੁਹਾਡੀ ਆਪਣੀ ਮਰਜ਼ੀ ਹੈ) ਅਧੀਨ ਵੰਡ ਅਤੇ/ਜਾਂ ਸੋਧ ਸਕਦੇ ਹੋ।"
+
+#~ msgid ""
+#~ "Power Manager is distributed in the hope that it will be useful,\n"
+#~ "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+#~ "GNU General Public License for more details."
+#~ msgstr ""
+#~ "ਪਾਵਰ ਮੈਨੇਜਰ ਨੂੰ ਇਹ ਮੰਨ ਕੇ ਵੰਡਿਆ ਜਾ ਰਿਹਾ ਹੈ ਕਿ ਇਹ ਫਾਇਦੇਮੰਦ ਰਹੇਗਾ,\n"
+#~ "ਪਰ ਇਸ ਦੀ ਕੋਈ ਵਾਰੰਟੀ ਨਹੀਂ ਲਈ ਜਾ ਰਹੀ ਹੈ, ਕਿਸੇ ਖਾਸ ਕੰਮ ਲਈ ਅਨੁਕੂਲ ਹੋਣ ਜਾਂ\n"
+#~ "ਠੀਕ ਤਰ੍ਹਾਂ ਕੰਮ ਕਰਨ ਦੀ ਵੀ ਕੋਈ ਗਾਰੰਟੀ ਨਹੀਂ ਹੈ।  ਹੋਰ ਵੇਰਵੇ ਲਈ ਗਨੂ ਜਰਨਲ\n"
+#~ "ਪਬਲਿਕ ਲਾਇਸੈਂਸ ਨੂੰ ਪੜ੍ਹੋ।"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License\n"
+#~ "along with this program; if not, write to the Free Software\n"
+#~ "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA."
+#~ msgstr ""
+#~ "ਤੁਸੀਂ ਗਨੂ ਜਰਨਲ ਪਬਲਿਕ ਲਾਇਸੈਂਸ ਦੀ ਨਕਲ ਇਹ ਪ੍ਰੋਗਰਾਮ ਨਾਲ ਪ੍ਰਾਪਤ ਕਰੋਗੇ,\n"
+#~ "ਜੇਕਰ ਤੁਹਾਨੂੰ ਨਹੀਂ ਮਿਲੀ ਹੈ ਤਾਂ ਫਰੀ ਸਾਫਟਵੇਅਰ ਫਾਊਨਡੇਸ਼ਨ, 51 ਫਰਾਕਲਿੰਨ\n"
+#~ "ਸਟਰੀਟ, ਪੰਜਵੀਂ ਮੰਜ਼ਲ, ਬੋਸਟਨ, ਐਮ ਏ 02110-1301, ਅਮਰੀਕਾ ਨੂੰ\n"
+#~ "ਲਿਖੋ।"
+
+#~ msgid "Processor wakeups per second:"
+#~ msgstr "ਪਰੋਸੈੱਸਰ ਵੇਕਅੱਪ ਪ੍ਰਤੀ ਸਕਿੰਟ:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Wakeups"
+#~ msgstr "ਵੇਕਅੱਪ"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Command"
+#~ msgstr "ਕਮਾਂਡ"
+
+#~ msgid "No data"
+#~ msgstr "ਕੋਈ ਡਾਟਾ ਨਹੀਂ"
+
+#~ msgid "Kernel module"
+#~ msgstr "ਕਰਨਲ ਮੋਡੀਊਲ"
+
+#~ msgid "Kernel core"
+#~ msgstr "ਕਰਨਲ ਕੋਰ"
+
+#~ msgid "Interprocessor interrupt"
+#~ msgstr "ਇੰਟਰਪਰੋਸੈੱਸਰ ਇੰਟਰੱਪਟ"
+
+#~ msgid "Interrupt"
+#~ msgstr "ਇੰਟਰੱਪਟ"
+
+#~ msgid "PS/2 keyboard/mouse/touchpad"
+#~ msgstr "PS/2 ਕੀਬੋਰਡ/ਮਾਊਸ/ਟੱਚਪੈਡ"
+
+#~ msgid "ACPI"
+#~ msgstr "ACPI"
+
+#~ msgid "Serial ATA"
+#~ msgstr "ਸੀਰੀਅਲ ATA"
+
+#~ msgid "ATA host controller"
+#~ msgstr "ATA ਹੋਸਟ ਕੰਟਰੋਲਰ"
+
+#~ msgid "Intel wireless adaptor"
+#~ msgstr "ਇੰਟੈੱਲ ਬੇਤਾਰ ਐਡਪਟਰ"
+
+#, c-format
+#~ msgid "Timer %s"
+#~ msgstr "ਟਾਈਮਰ %s"
+
+#, c-format
+#~ msgid "Sleep %s"
+#~ msgstr "ਸਲੀਪ %s"
+
+#, c-format
+#~ msgid "New task %s"
+#~ msgstr "ਨਵਾਂ ਕੰਮ %s"
+
+#, c-format
+#~ msgid "Wait %s"
+#~ msgstr "ਉਡੀਕ %s"
+
+#, c-format
+#~ msgid "Work queue %s"
+#~ msgstr "ਕੰਮ ਕਤਾਰ %s"
+
+#, c-format
+#~ msgid "Network route flush %s"
+#~ msgstr "ਨੈੱਟਵਰਕ ਰੂਟ ਫਲੱਸ਼ %s"
+
+#, c-format
+#~ msgid "USB activity %s"
+#~ msgstr "USB ਸਰਗਰਮੀ %s"
+
+#, c-format
+#~ msgid "Wakeup %s"
+#~ msgstr "ਵੇਕਅੱਪ %s"
+
+#~ msgid "Local interrupts"
+#~ msgstr "ਲੋਕਲ ਇੰਟਰਪਟ"
+
+#~ msgid "Rescheduling interrupts"
+#~ msgstr "ਇੰਟਰਪਟ ਮੁੜ-ਸੈਡਿਊਲ ਕੀਤੀ ਜਾ ਰਹੀ ਹੈ"
+
+#~ msgid "Processor Wakeups"
+#~ msgstr "ਪਰੋਸੈਸਰ ਵੇਕਅੱਪ"
+
+#~ msgid "Processor"
+#~ msgstr "ਪਰੋਸੈਸਰ"

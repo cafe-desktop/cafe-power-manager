@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Kristoffer Grundström <lovaren@gmail.com>, 2020
 # Wolfgang Ulbrich <mate@raveit.de>, 2020
@@ -13,19 +13,19 @@
 # 6a42dd6e7ca9a813693714b0d9aa1ad8, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Tobias Lekare <lekare@linux.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-power-manager 1.23.1\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2019-11-12 15:22+0100\n"
+"POT-Creation-Date: 2023-09-14 10:39+0200\n"
 "PO-Revision-Date: 2020-02-15 16:27+0000\n"
 "Last-Translator: Tobias Lekare <lekare@linux.com>, 2020\n"
 "Language-Team: Swedish (https://www.transifex.com/cafe/teams/13566/sv/)\n"
+"Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sv\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: applets/brightness/brightness-applet.c:107
@@ -50,56 +50,55 @@ msgstr "Kan inte läsa av ljusstyrkan för skärmen"
 msgid "LCD brightness : %d%%"
 msgstr "LCD-ljusstyrka : %d%%"
 
+#: applets/brightness/brightness-applet.c:790
+#: applets/inhibit/inhibit-applet.c:287
+msgid ""
+"Power Manager is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:795
+#: applets/inhibit/inhibit-applet.c:292
+msgid ""
+"Power Manager is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+
 #: applets/brightness/brightness-applet.c:800
 #: applets/inhibit/inhibit-applet.c:297
-msgid "Licensed under the GNU General Public License Version 2"
-msgstr "Licensierat under GNU General Public License version 2"
-
-#: applets/brightness/brightness-applet.c:801
-#: applets/inhibit/inhibit-applet.c:298
 msgid ""
-"Power Manager is free software; you can redistribute it and/or\n"
-"modify it under the terms of the GNU General Public License\n"
-"as published by the Free Software Foundation; either version 2\n"
-"of the License, or (at your option) any later version."
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"Strömhanteraren är fri programvara. Du kan distribuera det och/eller\n"
-"modifiera det under villkoren i GNU General Public License, publicerad\n"
-"av Free Software Foundation, antingen version 2 eller (om du så vill)\n"
-"någon senare version."
 
-#: applets/brightness/brightness-applet.c:805
-#: applets/inhibit/inhibit-applet.c:302
+#: applets/brightness/brightness-applet.c:813
+msgid "About Power Manager Brightness Applet"
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:815
 msgid ""
-"Power Manager is distributed in the hope that it will be useful,\n"
-"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-"GNU General Public License for more details."
+"Copyright © 2006 Benjamin Canou\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"Strömhanteraren distribueras i hopp om att det ska vara användbart,\n"
-"men UTAN NÅGON SOM HELST GARANTI, även utan underförstådd garanti\n"
-"om SÄLJBARHET eller LÄMPLIGHET FÖR NÅGOT SPECIELLT ÄNDAMÅL. Se GNU\n"
-"General Public License för ytterligare information."
 
-#: applets/brightness/brightness-applet.c:809
-#: applets/inhibit/inhibit-applet.c:306
-msgid ""
-"You should have received a copy of the GNU General Public License\n"
-"along with this program; if not, write to the Free Software\n"
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
-msgstr ""
-"Du bör ha fått en kopia av GNU General Public License tillsammans\n"
-"med detta program. Om inte, skriv till Free Software Foundation, Inc.,\n"
-"51 Franklin Street, Fifth Floor, Boston, MA 02111-1307, USA."
+#: applets/brightness/brightness-applet.c:823
+#: applets/inhibit/inhibit-applet.c:320 src/cpm-tray-icon.c:214
+msgid "translator-credits"
+msgstr "Kristoffer Grundström <kristoffer.grundstrom1983@gmail.com>"
 
-#: applets/brightness/brightness-applet.c:1063
-#: applets/inhibit/inhibit-applet.c:519
+#: applets/brightness/brightness-applet.c:1051
+#: applets/inhibit/inhibit-applet.c:507
 msgid "_About"
 msgstr "_Om"
 
-#: applets/brightness/brightness-applet.c:1066
-#: applets/inhibit/inhibit-applet.c:522
+#: applets/brightness/brightness-applet.c:1054
+#: applets/inhibit/inhibit-applet.c:510
 msgid "_Help"
 msgstr "_Hjälp"
 
@@ -110,12 +109,6 @@ msgstr "Panelprogramsfabrik för justering av ljusstyrka"
 #: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Brightness Applet"
 msgstr "Panelprogram för justering av ljusstyrka"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-brightness-applet"
-msgstr ""
 
 #: applets/inhibit/inhibit-applet.c:87
 msgid "Power Manager Inhibit Applet"
@@ -137,6 +130,17 @@ msgstr "Automatisk sömn aktiverad"
 msgid "Manual inhibit"
 msgstr "Manuell förhindring"
 
+#: applets/inhibit/inhibit-applet.c:310
+msgid "About Power Manager Inhibit Applet"
+msgstr ""
+
+#: applets/inhibit/inhibit-applet.c:312
+msgid ""
+"Copyright © 2006-2007 Richard Hughes\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
+msgstr ""
+
 #: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Inhibit Applet Factory"
 msgstr "Panelprogramsfabrik för hindring av strömsparning"
@@ -145,26 +149,13 @@ msgstr "Panelprogramsfabrik för hindring av strömsparning"
 msgid "Inhibit Applet"
 msgstr "Panelprogram för hindring av strömsparning"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-inhibit-applet"
-msgstr ""
-
-#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:184
+#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:204
 msgid "Power Manager"
 msgstr "Strömhanterare"
 
-#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:186
+#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:206
 msgid "Power management daemon"
 msgstr "Strömhanteringsdemon"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-manager.desktop.in.in:6
-#: data/cafe-power-preferences.desktop.in.in:6
-msgid "cafe-power-manager"
-msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:26
 #: data/org.cafe.power-manager.gschema.xml.in:41
@@ -200,8 +191,8 @@ msgid ""
 "closed on battery') when the lid is previously shut and the AC power "
 "disconnected at a later time."
 msgstr ""
-"Huruvida lockstängningshändelsen ska inträffa vid batteridrift (till exempel"
-" \"Vänteläge när locket stängs vid batteridrift\") när locket tidigare "
+"Huruvida lockstängningshändelsen ska inträffa vid batteridrift (till exempel "
+"\"Vänteläge när locket stängs vid batteridrift\") när locket tidigare "
 "stängts och strömadaptern kopplats från vid en senare tidpunkt."
 
 #: data/org.cafe.power-manager.gschema.xml.in:46
@@ -257,8 +248,8 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:71
 msgid "Keyboard backlight brightness when on AC power."
 msgstr ""
-"Ljusstyrka för tangentbordets bakgrundsbelysning när datorn är ansluten till"
-" ett vägguttag."
+"Ljusstyrka för tangentbordets bakgrundsbelysning när datorn är ansluten till "
+"ett vägguttag."
 
 #: data/org.cafe.power-manager.gschema.xml.in:72
 msgid ""
@@ -282,8 +273,8 @@ msgid ""
 msgstr ""
 "Procentandelen att minska bakgrundsbelysning på tangentbordet vid "
 "batteridrift. Till exempel om den är inställd på '60' kommer "
-"bakgrundsbelysningen att sänkas med 40% vid batteridrift. Tillåtna värden är"
-" mellan 0 och 100."
+"bakgrundsbelysningen att sänkas med 40% vid batteridrift. Tillåtna värden är "
+"mellan 0 och 100."
 
 #: data/org.cafe.power-manager.gschema.xml.in:81
 msgid "Percent to reduce keyboard backlight by when idle."
@@ -294,8 +285,8 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:82
 msgid ""
 "The percentage to reduce the keyboard backlight by when idle. For example, "
-"if set to '60', the backlight will be cut by 40% when idle. Legal values are"
-" between 0 and 100."
+"if set to '60', the backlight will be cut by 40% when idle. Legal values are "
+"between 0 and 100."
 msgstr ""
 "Procentandelen att minska bakgrundsbelysning på tangentbordet vid inaktiv. "
 "Till exempel om den är inställd på '60' kommer bakgrundsbelysningen att "
@@ -499,8 +490,8 @@ msgstr "Lås skärm vid vänteläge"
 
 #: data/org.cafe.power-manager.gschema.xml.in:177
 msgid ""
-"Whether the screen is locked when the computer wakes up from a suspend. Only"
-" used if lock-use-screensaver is false."
+"Whether the screen is locked when the computer wakes up from a suspend. Only "
+"used if lock-use-screensaver is false."
 msgstr ""
 "Om skärmen är låst när datorn vaknar upp från vänteläge. Användas endast om "
 "lock-use-screensaver är false."
@@ -524,12 +515,12 @@ msgstr "Lås GNOME-nyckelring vid sömn"
 
 #: data/org.cafe.power-manager.gschema.xml.in:187
 msgid ""
-"Whether the GNOME keyring is locked before the computer enters suspend. This"
-" means the keyring will have to be unlocked on resume."
+"Whether the GNOME keyring is locked before the computer enters suspend. This "
+"means the keyring will have to be unlocked on resume."
 msgstr ""
 "Huruvida GNOME-nyckelringen är låst innan datorn går i vänteläge. Det här "
-"betyder att nyckelringen kommer att behöva låsas upp när datorn återgår till"
-" normal drift."
+"betyder att nyckelringen kommer att behöva låsas upp när datorn återgår till "
+"normal drift."
 
 #: data/org.cafe.power-manager.gschema.xml.in:192
 msgid ""
@@ -537,8 +528,8 @@ msgid ""
 "This means the keyring will have to be unlocked on resume."
 msgstr ""
 "Huruvida GNOME-nyckelringen är låst innan datorn går i viloläge. Det här "
-"betyder att nyckelringen kommer att behöva låsas upp när datorn återgår till"
-" normal drift."
+"betyder att nyckelringen kommer att behöva låsas upp när datorn återgår till "
+"normal drift."
 
 #: data/org.cafe.power-manager.gschema.xml.in:196
 msgid "If we should show the low capacity warning for a broken battery"
@@ -697,8 +688,8 @@ msgstr "Procenttal som anses som lågt"
 
 #: data/org.cafe.power-manager.gschema.xml.in:277
 msgid ""
-"The percentage of the battery when it is considered low. Only valid when "
-"use-time-for-policy is false."
+"The percentage of the battery when it is considered low. Only valid when use-"
+"time-for-policy is false."
 msgstr ""
 "Procentandel av batteriet när det anses vara lågt. Endast giltig när use-"
 "time-for-policy är inställd till falskt."
@@ -733,8 +724,8 @@ msgstr "Tiden som återstår när låg"
 
 #: data/org.cafe.power-manager.gschema.xml.in:292
 msgid ""
-"The time remaining in seconds of the battery when it is considered low. Only"
-" valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered low. Only "
+"valid when use-time-for-policy is true."
 msgstr ""
 "Tiden som återstår (i sekunder) av batteriet när det anses som lågt. Endast "
 "giltig när use-time-for-policy är sant."
@@ -745,8 +736,8 @@ msgstr "Tiden som återstår när kritisk"
 
 #: data/org.cafe.power-manager.gschema.xml.in:297
 msgid ""
-"The time remaining in seconds of the battery when it is considered critical."
-" Only valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered critical. "
+"Only valid when use-time-for-policy is true."
 msgstr ""
 "Tiden som återstår (i sekunder) av batteriet när det anses som kritiskt. "
 "Endast giltig när use-time-for-policy är sant."
@@ -793,8 +784,8 @@ msgstr "Tidsgräns innan datorn ska somna när UPS används"
 
 #: data/org.cafe.power-manager.gschema.xml.in:317
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before it goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before it goes to sleep."
 msgstr ""
 "Tidsperiod av inaktivitet (i sekunder) innan datorn går tills sömns när den "
 "använder UPS."
@@ -829,11 +820,11 @@ msgstr "Tidsgräns innan skärmen ska somna när UPS används"
 
 #: data/org.cafe.power-manager.gschema.xml.in:332
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before the display goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before the display goes to sleep."
 msgstr ""
-"Tidsperiod av inaktivitet (i sekunder) innan skärmen går tills sömns när den"
-" använder UPS."
+"Tidsperiod av inaktivitet (i sekunder) innan skärmen går tills sömns när den "
+"använder UPS."
 
 #: data/org.cafe.power-manager.gschema.xml.in:336
 msgid "If sounds should be used"
@@ -848,8 +839,7 @@ msgstr ""
 "förhindringsbegäran har stoppat policyåtgärden."
 
 #: data/org.cafe.power-manager.gschema.xml.in:341
-msgid ""
-"If preferences and statistics items should be shown in the context menu"
+msgid "If preferences and statistics items should be shown in the context menu"
 msgstr "Om inställningar och statistikobjekt ska visas i sammanhangsmenyn"
 
 #: data/org.cafe.power-manager.gschema.xml.in:345
@@ -868,14 +858,13 @@ msgstr "Strömhantering"
 msgid "Configure power management"
 msgstr "Konfigurera strömhantering"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
 msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
-#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:7
-#: src/cpm-statistics.c:1090 src/cpm-statistics.c:1577
+#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:8
+#: src/cpm-statistics.c:764 src/cpm-statistics.c:1233
 msgid "Power Statistics"
 msgstr "Strömstatistik"
 
@@ -883,55 +872,37 @@ msgstr "Strömstatistik"
 msgid "Observe power management"
 msgstr "Observera strömhantering"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-statistics.desktop.in.in:6
-msgid "cafe-power-statistics"
-msgstr ""
-
-#: data/cpm-statistics.ui:113 src/cpm-statistics.c:208
+#: data/cpm-statistics.ui:119
 msgid "Details"
 msgstr "Detaljer"
 
-#: data/cpm-statistics.ui:139 data/cpm-statistics.ui:342
+#: data/cpm-statistics.ui:145 data/cpm-statistics.ui:347
 msgid "Graph type:"
 msgstr "Diagramtyp:"
 
-#: data/cpm-statistics.ui:174
+#: data/cpm-statistics.ui:180
 msgid "Data length:"
 msgstr "Datalängd:"
 
-#: data/cpm-statistics.ui:234 data/cpm-statistics.ui:395
+#: data/cpm-statistics.ui:239 data/cpm-statistics.ui:399
 msgid "There is no data to display."
 msgstr "Det finns ingen data att visa."
 
-#: data/cpm-statistics.ui:276 data/cpm-statistics.ui:438
+#: data/cpm-statistics.ui:281 data/cpm-statistics.ui:442
 msgid "Use smoothed line"
 msgstr "Använd mjuk linje"
 
-#: data/cpm-statistics.ui:291 data/cpm-statistics.ui:453
+#: data/cpm-statistics.ui:296 data/cpm-statistics.ui:457
 msgid "Show data points"
 msgstr "Visa datapunkter"
 
-#: data/cpm-statistics.ui:320
+#: data/cpm-statistics.ui:325
 msgid "History"
 msgstr "Historik"
 
-#: data/cpm-statistics.ui:482
+#: data/cpm-statistics.ui:486
 msgid "Statistics"
 msgstr "Statistik"
-
-#: data/cpm-statistics.ui:504
-msgid "Processor wakeups per second:"
-msgstr "Processoruppvakningar per sekund:"
-
-#: data/cpm-statistics.ui:516
-msgid "0"
-msgstr "0"
-
-#: data/cpm-statistics.ui:563 src/cpm-statistics.c:194
-msgid "Wakeups"
-msgstr "Uppvakningar"
 
 #: data/cpm-prefs.ui:55
 msgid "Power Management Preferences"
@@ -1185,7 +1156,7 @@ msgstr "%.1fW"
 msgid "%.1fV"
 msgstr "%.1fV"
 
-#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1560
+#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1216
 msgid "Show extra debugging information"
 msgstr "Visa extra felsökningsinformation"
 
@@ -1292,11 +1263,11 @@ msgstr "Batteriet kan vara trasigt"
 #: src/cpm-manager.c:1110
 #, c-format
 msgid ""
-"Battery has a very low capacity (%1.1f%%), which means that it may be old or"
-" broken."
+"Battery has a very low capacity (%1.1f%%), which means that it may be old or "
+"broken."
 msgstr ""
-"Batteriet har mycket låg kapacitet (%1.1f%%) vilket betyder att det kan vara"
-" gammalt eller trasigt."
+"Batteriet har mycket låg kapacitet (%1.1f%%) vilket betyder att det kan vara "
+"gammalt eller trasigt."
 
 #: src/cpm-manager.c:1159
 msgid "Battery Charged"
@@ -1433,8 +1404,8 @@ msgstr ""
 #: src/cpm-manager.c:1444
 msgid "Computer will hibernate very soon unless it is plugged in."
 msgstr ""
-"Datorn kommer mycket snart att försättas i viloläge om den inte ansluts till"
-" extern ström."
+"Datorn kommer mycket snart att försättas i viloläge om den inte ansluts till "
+"extern ström."
 
 #: src/cpm-manager.c:1448
 msgid "Computer will shutdown very soon unless it is plugged in."
@@ -1449,8 +1420,8 @@ msgstr "UPS-reservström är kritiskt låg"
 #: src/cpm-manager.c:1459
 #, c-format
 msgid ""
-"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
-" your computer to avoid losing data."
+"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to "
+"your computer to avoid losing data."
 msgstr ""
 "Ungefär <b>%s</b> återstår av UPS-reservströmmen (%.0f%%). Anslut "
 "strömadaptern till din dator för att undvika att förlora data."
@@ -1470,14 +1441,14 @@ msgid ""
 "Wireless keyboard is very low in power (%.0f%%). This device will soon stop "
 "functioning if not charged."
 msgstr ""
-"Trådlösa tangentbordet har mycket låg strömspänning (%.0f%%). Enheten kommer"
-" inom kort att sluta fungera om den inte laddas upp."
+"Trådlösa tangentbordet har mycket låg strömspänning (%.0f%%). Enheten kommer "
+"inom kort att sluta fungera om den inte laddas upp."
 
 #: src/cpm-manager.c:1490
 #, c-format
 msgid ""
-"PDA is very low in power (%.0f%%). This device will soon stop functioning if"
-" not charged."
+"PDA is very low in power (%.0f%%). This device will soon stop functioning if "
+"not charged."
 msgstr ""
 "Handdatorn har mycket låg strömspänning (%.0f%%). Enheten kommer inom kort "
 "att sluta fungera om den inte laddas upp."
@@ -1503,8 +1474,8 @@ msgstr ""
 #: src/cpm-manager.c:1519
 #, c-format
 msgid ""
-"Tablet is very low in power (%.0f%%). This device will soon stop functioning"
-" if not charged."
+"Tablet is very low in power (%.0f%%). This device will soon stop functioning "
+"if not charged."
 msgstr ""
 "Pekdatorn har mycket låg strömspänning (%.0f%%). Enheten kommer inom kort "
 "att sluta fungera om den inte laddas upp."
@@ -1520,8 +1491,8 @@ msgstr ""
 
 #: src/cpm-manager.c:1593
 msgid ""
-"The battery is below the critical level and this computer will <b>power-"
-"off</b> when the battery becomes completely empty."
+"The battery is below the critical level and this computer will <b>power-off</"
+"b> when the battery becomes completely empty."
 msgstr ""
 "Batteriet är under den kritiska nivån och den här datorn kommer att "
 "<b>stängas av</b> när batteriet blir helt tomt."
@@ -1564,8 +1535,8 @@ msgstr ""
 msgid ""
 "The UPS is below the critical level and this computer is about to hibernate."
 msgstr ""
-"UPS-reservströmmen är under den kritiska nivån och den här datorn kommer att"
-" försättas i viloläge."
+"UPS-reservströmmen är under den kritiska nivån och den här datorn kommer att "
+"försättas i viloläge."
 
 #: src/cpm-manager.c:1640
 msgid ""
@@ -1606,359 +1577,251 @@ msgstr "Gör ingenting"
 msgid "Never"
 msgstr "Aldrig"
 
-#: src/cpm-statistics.c:78 src/cpm-statistics.c:466
+#: src/cpm-statistics.c:67 src/cpm-statistics.c:410
 msgid "Rate"
 msgstr "Sats"
 
-#: src/cpm-statistics.c:79
+#: src/cpm-statistics.c:68
 msgid "Charge"
 msgstr "Laddning"
 
-#: src/cpm-statistics.c:80 src/cpm-statistics.c:480
+#: src/cpm-statistics.c:69 src/cpm-statistics.c:424
 msgid "Time to full"
 msgstr "Tid till fullständig"
 
-#: src/cpm-statistics.c:81 src/cpm-statistics.c:485
+#: src/cpm-statistics.c:70 src/cpm-statistics.c:429
 msgid "Time to empty"
 msgstr "Tid till tom"
 
-#: src/cpm-statistics.c:88
+#: src/cpm-statistics.c:77
 msgid "10 minutes"
 msgstr "10 minuter"
 
-#: src/cpm-statistics.c:89
+#: src/cpm-statistics.c:78
 msgid "2 hours"
 msgstr "2 timmar"
 
-#: src/cpm-statistics.c:90
+#: src/cpm-statistics.c:79
 msgid "6 hours"
 msgstr "6 timmar"
 
-#: src/cpm-statistics.c:91
+#: src/cpm-statistics.c:80
 msgid "1 day"
 msgstr "En dag"
 
-#: src/cpm-statistics.c:92
+#: src/cpm-statistics.c:81
 msgid "1 week"
 msgstr "En vecka"
 
-#: src/cpm-statistics.c:101
+#: src/cpm-statistics.c:90
 msgid "Charge profile"
 msgstr "Uppladdningsprofil"
 
-#: src/cpm-statistics.c:102
+#: src/cpm-statistics.c:91
 msgid "Discharge profile"
 msgstr "Urladdningsprofil"
 
-#: src/cpm-statistics.c:104
+#: src/cpm-statistics.c:93
 msgid "Charge accuracy"
 msgstr "Noggrannhet för uppladdning"
 
-#: src/cpm-statistics.c:105
+#: src/cpm-statistics.c:94
 msgid "Discharge accuracy"
 msgstr "Noggrannhet för urladdning"
 
-#: src/cpm-statistics.c:132
+#: src/cpm-statistics.c:121
 msgid "Attribute"
 msgstr "Attribut"
 
-#: src/cpm-statistics.c:139
+#: src/cpm-statistics.c:128
 msgid "Value"
 msgstr "Värde"
 
-#: src/cpm-statistics.c:156
+#: src/cpm-statistics.c:145
 msgid "Image"
 msgstr "Bild"
 
-#: src/cpm-statistics.c:162
+#: src/cpm-statistics.c:151
 msgid "Description"
 msgstr "Beskrivning"
 
-#: src/cpm-statistics.c:181 src/cpm-statistics.c:405
-msgid "Type"
-msgstr "Typ"
-
-#: src/cpm-statistics.c:187
-msgid "ID"
-msgstr "ID"
-
-#: src/cpm-statistics.c:201
-msgid "Command"
-msgstr "Kommando"
-
-#: src/cpm-statistics.c:286
+#: src/cpm-statistics.c:230
 msgid "Unknown"
 msgstr "Okänt"
 
-#: src/cpm-statistics.c:290
+#: src/cpm-statistics.c:234
 #, c-format
 msgid "%.0f second"
 msgid_plural "%.0f seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:295
+#: src/cpm-statistics.c:239
 #, c-format
 msgid "%.1f minute"
 msgid_plural "%.1f minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:300
+#: src/cpm-statistics.c:244
 #, c-format
 msgid "%.1f hour"
 msgid_plural "%.1f hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:304
+#: src/cpm-statistics.c:248
 #, c-format
 msgid "%.1f day"
 msgid_plural "%.1f days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "Yes"
 msgstr "Ja"
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "No"
 msgstr "Nej"
 
-#: src/cpm-statistics.c:402
+#: src/cpm-statistics.c:346
 msgid "Device"
 msgstr "Enhet"
 
-#: src/cpm-statistics.c:407
+#: src/cpm-statistics.c:349
+msgid "Type"
+msgstr "Typ"
+
+#: src/cpm-statistics.c:351
 msgid "Vendor"
 msgstr "Tillverkare"
 
-#: src/cpm-statistics.c:409
+#: src/cpm-statistics.c:353
 msgid "Model"
 msgstr "Modell"
 
-#: src/cpm-statistics.c:411
+#: src/cpm-statistics.c:355
 msgid "Serial number"
 msgstr "Serienummer"
 
-#: src/cpm-statistics.c:416
+#: src/cpm-statistics.c:360
 msgid "Supply"
 msgstr "Matning"
 
-#: src/cpm-statistics.c:419
+#: src/cpm-statistics.c:363
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:423
+#: src/cpm-statistics.c:367
 msgid "Refreshed"
 msgstr "Uppdaterat"
 
-#: src/cpm-statistics.c:433
+#: src/cpm-statistics.c:377
 msgid "Present"
 msgstr "Ansluten"
 
-#: src/cpm-statistics.c:440
+#: src/cpm-statistics.c:384
 msgid "Rechargeable"
 msgstr "Uppladdningsbar"
 
-#: src/cpm-statistics.c:446
+#: src/cpm-statistics.c:390
 msgid "State"
 msgstr "Tillstånd"
 
-#: src/cpm-statistics.c:450
+#: src/cpm-statistics.c:394
 msgid "Energy"
 msgstr "Energi"
 
-#: src/cpm-statistics.c:453
+#: src/cpm-statistics.c:397
 msgid "Energy when empty"
 msgstr "Energi när tomt"
 
-#: src/cpm-statistics.c:456
+#: src/cpm-statistics.c:400
 msgid "Energy when full"
 msgstr "Energi när fullt"
 
-#: src/cpm-statistics.c:459
+#: src/cpm-statistics.c:403
 msgid "Energy (design)"
 msgstr "Energi (angiven)"
 
-#: src/cpm-statistics.c:473
+#: src/cpm-statistics.c:417
 msgid "Voltage"
 msgstr "Spänning"
 
-#: src/cpm-statistics.c:495
+#: src/cpm-statistics.c:439
 msgid "Percentage"
 msgstr "Procentandel"
 
-#: src/cpm-statistics.c:502
+#: src/cpm-statistics.c:446
 msgid "Capacity"
 msgstr "Kapacitet"
 
-#: src/cpm-statistics.c:507
+#: src/cpm-statistics.c:451
 msgid "Technology"
 msgstr "Teknologi"
 
-#: src/cpm-statistics.c:512
+#: src/cpm-statistics.c:456
 msgid "Online"
 msgstr "Ansluten"
 
-#: src/cpm-statistics.c:824
-msgid "No data"
-msgstr "Inget data"
-
-#: src/cpm-statistics.c:831 src/cpm-statistics.c:836
-msgid "Kernel module"
-msgstr "Kärnmodul"
-
-#: src/cpm-statistics.c:841
-msgid "Kernel core"
-msgstr "Kärna"
-
-#: src/cpm-statistics.c:846
-msgid "Interprocessor interrupt"
-msgstr "Interprocessor-avbrott"
-
-#: src/cpm-statistics.c:851
-msgid "Interrupt"
-msgstr "Avbrott"
-
-#: src/cpm-statistics.c:898
-msgid "PS/2 keyboard/mouse/touchpad"
-msgstr "PS/2 tangentbord/mus/pekplatta"
-
-#: src/cpm-statistics.c:901
-msgid "ACPI"
-msgstr "ACPI"
-
-#: src/cpm-statistics.c:904
-msgid "Serial ATA"
-msgstr "Serial ATA"
-
-#: src/cpm-statistics.c:907
-msgid "ATA host controller"
-msgstr "ATA-styrkort"
-
-#: src/cpm-statistics.c:910
-msgid "Intel wireless adaptor"
-msgstr "Trådlöst Intel-nätverkskort"
-
-#: src/cpm-statistics.c:917 src/cpm-statistics.c:922 src/cpm-statistics.c:927
-#: src/cpm-statistics.c:932 src/cpm-statistics.c:937
-#, c-format
-msgid "Timer %s"
-msgstr "Tidtagare %s"
-
-#: src/cpm-statistics.c:941
-#, c-format
-msgid "Sleep %s"
-msgstr "Sov %s"
-
-#: src/cpm-statistics.c:944
-#, c-format
-msgid "New task %s"
-msgstr "Ny uppgift %s"
-
-#: src/cpm-statistics.c:948
-#, c-format
-msgid "Wait %s"
-msgstr "Vänta %s"
-
-#: src/cpm-statistics.c:952 src/cpm-statistics.c:956
-#, c-format
-msgid "Work queue %s"
-msgstr "Arbetskö %s"
-
-#: src/cpm-statistics.c:959
-#, c-format
-msgid "Network route flush %s"
-msgstr "Tömning av nätverksrutt %s"
-
-#: src/cpm-statistics.c:962
-#, c-format
-msgid "USB activity %s"
-msgstr "USB-aktivitet %s"
-
-#: src/cpm-statistics.c:965
-#, c-format
-msgid "Wakeup %s"
-msgstr "Väck upp %s"
-
-#: src/cpm-statistics.c:968
-msgid "Local interrupts"
-msgstr "Lokala avbrott"
-
-#: src/cpm-statistics.c:971
-msgid "Rescheduling interrupts"
-msgstr "Ombokning av avbrott"
-
-#: src/cpm-statistics.c:1080
+#: src/cpm-statistics.c:756
 msgid "Device Information"
 msgstr "Enhetsinformation"
 
-#: src/cpm-statistics.c:1082
+#: src/cpm-statistics.c:758
 msgid "Device History"
 msgstr "Enhetshistorik"
 
-#: src/cpm-statistics.c:1084
+#: src/cpm-statistics.c:760
 msgid "Device Profile"
 msgstr "Enhetsprofil"
 
-#: src/cpm-statistics.c:1086
-msgid "Processor Wakeups"
-msgstr "Processoruppvakningar"
-
-#: src/cpm-statistics.c:1325 src/cpm-statistics.c:1331
-#: src/cpm-statistics.c:1337 src/cpm-statistics.c:1343
+#: src/cpm-statistics.c:982 src/cpm-statistics.c:988 src/cpm-statistics.c:994
+#: src/cpm-statistics.c:1000
 msgid "Time elapsed"
 msgstr "Tid åtgången"
 
-#: src/cpm-statistics.c:1327
+#: src/cpm-statistics.c:984
 msgid "Power"
 msgstr "Exponent"
 
-#: src/cpm-statistics.c:1333 src/cpm-statistics.c:1377
-#: src/cpm-statistics.c:1383 src/cpm-statistics.c:1389
-#: src/cpm-statistics.c:1395
+#: src/cpm-statistics.c:990 src/cpm-statistics.c:1034 src/cpm-statistics.c:1040
+#: src/cpm-statistics.c:1046 src/cpm-statistics.c:1052
 msgid "Cell charge"
 msgstr "Batteriladdning"
 
-#: src/cpm-statistics.c:1339 src/cpm-statistics.c:1345
+#: src/cpm-statistics.c:996 src/cpm-statistics.c:1002
 msgid "Predicted time"
 msgstr "Beräknad tid"
 
-#: src/cpm-statistics.c:1379 src/cpm-statistics.c:1391
+#: src/cpm-statistics.c:1036 src/cpm-statistics.c:1048
 msgid "Correction factor"
 msgstr "Korrigeringsfaktor"
 
-#: src/cpm-statistics.c:1385 src/cpm-statistics.c:1397
+#: src/cpm-statistics.c:1042 src/cpm-statistics.c:1054
 msgid "Prediction accuracy"
 msgstr "Noggrannhet för beräkning"
 
-#: src/cpm-statistics.c:1563
+#: src/cpm-statistics.c:1219
 msgid "Select this device at startup"
 msgstr "Välj denna enhet vid uppstart"
 
-#: src/cpm-statistics.c:1802
-msgid "Processor"
-msgstr "Processor"
+#: src/cpm-tray-icon.c:207
+msgid ""
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
+msgstr ""
 
-#: src/cpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 CAFE developers"
-msgstr "Copyright © 2011-2018 CAFE utvecklare"
-
-#: src/cpm-tray-icon.c:193
-msgid "translator-credits"
-msgstr "Kristoffer Grundström <kristoffer.grundstrom1983@gmail.com>"
-
-#: src/cpm-tray-icon.c:295
+#: src/cpm-tray-icon.c:318
 #, c-format
 msgid "%s remaining"
 msgstr "%s återstår"
 
-#: src/cpm-tray-icon.c:349
+#: src/cpm-tray-icon.c:372
 msgid "_Preferences"
 msgstr "_Inställningar"
 
@@ -2223,3 +2086,130 @@ msgstr "Väntar på urladdning"
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr "Okänt stadie"
+
+#~ msgid "Licensed under the GNU General Public License Version 2"
+#~ msgstr "Licensierat under GNU General Public License version 2"
+
+#~ msgid ""
+#~ "Power Manager is free software; you can redistribute it and/or\n"
+#~ "modify it under the terms of the GNU General Public License\n"
+#~ "as published by the Free Software Foundation; either version 2\n"
+#~ "of the License, or (at your option) any later version."
+#~ msgstr ""
+#~ "Strömhanteraren är fri programvara. Du kan distribuera det och/eller\n"
+#~ "modifiera det under villkoren i GNU General Public License, publicerad\n"
+#~ "av Free Software Foundation, antingen version 2 eller (om du så vill)\n"
+#~ "någon senare version."
+
+#~ msgid ""
+#~ "Power Manager is distributed in the hope that it will be useful,\n"
+#~ "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+#~ "GNU General Public License for more details."
+#~ msgstr ""
+#~ "Strömhanteraren distribueras i hopp om att det ska vara användbart,\n"
+#~ "men UTAN NÅGON SOM HELST GARANTI, även utan underförstådd garanti\n"
+#~ "om SÄLJBARHET eller LÄMPLIGHET FÖR NÅGOT SPECIELLT ÄNDAMÅL. Se GNU\n"
+#~ "General Public License för ytterligare information."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License\n"
+#~ "along with this program; if not, write to the Free Software\n"
+#~ "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA."
+#~ msgstr ""
+#~ "Du bör ha fått en kopia av GNU General Public License tillsammans\n"
+#~ "med detta program. Om inte, skriv till Free Software Foundation, Inc.,\n"
+#~ "51 Franklin Street, Fifth Floor, Boston, MA 02111-1307, USA."
+
+#~ msgid "Processor wakeups per second:"
+#~ msgstr "Processoruppvakningar per sekund:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Wakeups"
+#~ msgstr "Uppvakningar"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Command"
+#~ msgstr "Kommando"
+
+#~ msgid "No data"
+#~ msgstr "Inget data"
+
+#~ msgid "Kernel module"
+#~ msgstr "Kärnmodul"
+
+#~ msgid "Kernel core"
+#~ msgstr "Kärna"
+
+#~ msgid "Interprocessor interrupt"
+#~ msgstr "Interprocessor-avbrott"
+
+#~ msgid "Interrupt"
+#~ msgstr "Avbrott"
+
+#~ msgid "PS/2 keyboard/mouse/touchpad"
+#~ msgstr "PS/2 tangentbord/mus/pekplatta"
+
+#~ msgid "ACPI"
+#~ msgstr "ACPI"
+
+#~ msgid "Serial ATA"
+#~ msgstr "Serial ATA"
+
+#~ msgid "ATA host controller"
+#~ msgstr "ATA-styrkort"
+
+#~ msgid "Intel wireless adaptor"
+#~ msgstr "Trådlöst Intel-nätverkskort"
+
+#, c-format
+#~ msgid "Timer %s"
+#~ msgstr "Tidtagare %s"
+
+#, c-format
+#~ msgid "Sleep %s"
+#~ msgstr "Sov %s"
+
+#, c-format
+#~ msgid "New task %s"
+#~ msgstr "Ny uppgift %s"
+
+#, c-format
+#~ msgid "Wait %s"
+#~ msgstr "Vänta %s"
+
+#, c-format
+#~ msgid "Work queue %s"
+#~ msgstr "Arbetskö %s"
+
+#, c-format
+#~ msgid "Network route flush %s"
+#~ msgstr "Tömning av nätverksrutt %s"
+
+#, c-format
+#~ msgid "USB activity %s"
+#~ msgstr "USB-aktivitet %s"
+
+#, c-format
+#~ msgid "Wakeup %s"
+#~ msgstr "Väck upp %s"
+
+#~ msgid "Local interrupts"
+#~ msgstr "Lokala avbrott"
+
+#~ msgid "Rescheduling interrupts"
+#~ msgstr "Ombokning av avbrott"
+
+#~ msgid "Processor Wakeups"
+#~ msgstr "Processoruppvakningar"
+
+#~ msgid "Processor"
+#~ msgstr "Processor"
+
+#~ msgid "Copyright © 2011-2018 CAFE developers"
+#~ msgstr "Copyright © 2011-2018 CAFE utvecklare"

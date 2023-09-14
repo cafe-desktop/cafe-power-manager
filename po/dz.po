@@ -2,22 +2,22 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-power-manager 1.23.1\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2019-11-12 15:22+0100\n"
+"POT-Creation-Date: 2023-09-14 10:39+0200\n"
 "PO-Revision-Date: 2020-02-15 16:27+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Dzongkha (https://www.transifex.com/cafe/teams/13566/dz/)\n"
+"Language: dz\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: dz\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: applets/brightness/brightness-applet.c:107
@@ -42,59 +42,57 @@ msgstr "ལེཔ་ཊོཔ་པེ་ནཱལ་དཀར་མདངས་
 msgid "LCD brightness : %d%%"
 msgstr "ཨེ་སི་ཌི་དཀར་མདངས་: %d%%"
 
+#: applets/brightness/brightness-applet.c:790
+#: applets/inhibit/inhibit-applet.c:287
+msgid ""
+"Power Manager is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:795
+#: applets/inhibit/inhibit-applet.c:292
+msgid ""
+"Power Manager is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+
 #: applets/brightness/brightness-applet.c:800
 #: applets/inhibit/inhibit-applet.c:297
-msgid "Licensed under the GNU General Public License Version 2"
-msgstr ""
-"ཇི་ཨེན་ཡུ་ མི་མང་ཡོངས་ཁྱབ་ཀྱི་ཆོག་ཐམ་ཐོན་རིམ་གཉིས་པའི་ཐོག་ལས་ "
-"ཆོག་ཐམ་སྤྲོད་སྤྲོདཔ་ཨིན།"
-
-#: applets/brightness/brightness-applet.c:801
-#: applets/inhibit/inhibit-applet.c:298
 msgid ""
-"Power Manager is free software; you can redistribute it and/or\n"
-"modify it under the terms of the GNU General Public License\n"
-"as published by the Free Software Foundation; either version 2\n"
-"of the License, or (at your option) any later version."
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"པ་ཝར་མེ་ནེ་ཇར་དེ་ སྟོང་མར་ཐོབ་པའི་མཉེན་ཆས་ཅིག་ཨིནམ་ལས་ ཁྱོད་ཀྱིས་\n"
-" རང་དབང་མཉེན་ཆས་གཞི་ཚོགས་ཀྱིས་ དཔེ་བསྐྲུན་འབད་མི་\n"
-" ཇི་ཨེན་ཡུ་ ཡོངས་ཁྱབ་མི་མང་ཆོག་ཐམ་གྱི་ ཐོན་རིམ་ ༢ ཡང་ན་ ཁྱོད་རའི་བློ་འདོད་བཞིན་དུ་ཤུལ་ལས་ཀྱི་ཐོན་རིམ་གང་རུང་གི་ ཁ་ཚིག་དང་འཁྲིལ་ཏེ་\n"
-"བསྐྱར་འགྲེམ་འབད་བ་ ཡང་ན་ ལེགས་བཅོས་འབད་ཆོག"
 
-#: applets/brightness/brightness-applet.c:805
-#: applets/inhibit/inhibit-applet.c:302
+#: applets/brightness/brightness-applet.c:813
+msgid "About Power Manager Brightness Applet"
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:815
 msgid ""
-"Power Manager is distributed in the hope that it will be useful,\n"
-"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-"GNU General Public License for more details."
+"Copyright © 2006 Benjamin Canou\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"ནུས་ཤུགས་འཛིན་སྐྱོང་པ་འདི་ ཀུན་ལུ་ཕན་པའི་རེ་བ་བསྐྱེད་དེ་འགྲེམ་སྤེལ་འབདཝ་ཨིན། \n"
-"དེ་འབདཝ་དང་ ཉེན་ལེན་ག་ནི་ཡང་མེད་པའི་ནང་ལས་ ཐ་ན་སྐྱེལ་འདྲེན་\n"
-" ཡང་ན་ དམིགས་བསལ་དགོས་དོན་ཅིག་གི་དོན་ལུ་ ཚུད་སྒྲིག་ཡོད་མེད་ཀྱི་ཉེན་ལེན་ཙམ་ཡང་མེད། \n"
-"རྒྱས་བཤད་ཀྱི་དོན་ལུ་ ཇི་ཨེན་ཡུ་ ཡོངས་ཁྱབ་མི་མང་ཆོག་ཐམ་ལུ་བལྟཇི་ཨེན་ཡུ་ཡོངས་ཁྱབ་མི་མང་ཆོག་ཐམ་དོན་ལས་ རྒྱས་བཤད་མངམ་ལྟ་ད།"
 
-#: applets/brightness/brightness-applet.c:809
-#: applets/inhibit/inhibit-applet.c:306
-msgid ""
-"You should have received a copy of the GNU General Public License\n"
-"along with this program; if not, write to the Free Software\n"
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
+#: applets/brightness/brightness-applet.c:823
+#: applets/inhibit/inhibit-applet.c:320 src/cpm-tray-icon.c:214
+msgid "translator-credits"
 msgstr ""
-"ཁྱོད་ཀྱིས་ཇི་ཨེན་ཡུ་ ཡོངས་ཁྱབ་མི་མང་ཆོག་ཐམ་ཅིག་ ལས་རིམ་འདི་དང་གཅིག་ཁར་ཐོབ་ཐོབ་འོང་།\n"
-" གལ་སྲིད་མ་ཐོབ་ཅིན་ Free Software Foundation,\n"
-" Inc., 1 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA.ལུ་ ཡི་གུ་གཏང་།"
+"ཨའི་ཌི་ཨར་སི་གི་མ་དངུལ་རྒྱབ་སྐྱོར་ཐོག་ལས་ བརྡ་དོན་འཕྲུལ་རིག་ལས་ཁུངས་ནང་ སྐད་བསྒྱུར་འབད་ཡི། ཁ་གསལ་གྱི་"
+"དོན་ལུ་ འབྲེལ་བ་འཐབ་ས་: <pema_geyleg@druknet.bt>/<pgeyleg@dit.gov.bt>(_c)"
 
-#: applets/brightness/brightness-applet.c:1063
-#: applets/inhibit/inhibit-applet.c:519
+#: applets/brightness/brightness-applet.c:1051
+#: applets/inhibit/inhibit-applet.c:507
 msgid "_About"
 msgstr "སྐོར་ལས།(_A)"
 
-#: applets/brightness/brightness-applet.c:1066
-#: applets/inhibit/inhibit-applet.c:522
+#: applets/brightness/brightness-applet.c:1054
+#: applets/inhibit/inhibit-applet.c:510
 msgid "_Help"
 msgstr "གྲོགས་རམ།(_H)"
 
@@ -106,21 +104,13 @@ msgstr " དཀར་མདངས་ཨེཔ་ལེཊི་གི་འཕ�
 msgid "Brightness Applet"
 msgstr "དཀར་མདངས་ཨེཔ་ལེཊི"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-brightness-applet"
-msgstr ""
-
 #: applets/inhibit/inhibit-applet.c:87
 msgid "Power Manager Inhibit Applet"
 msgstr "ནུས་ཤུགས་འཛིན་སྐྱོང་པའི་ བར་ཆར་རྐྱབས་ནིའི་ཨེཔ་ལེཊི་"
 
 #: applets/inhibit/inhibit-applet.c:88
 msgid "Allows user to inhibit automatic power saving."
-msgstr ""
-"ལག་ལེན་པ་འདི་ལུ་ རང་བཞིན་གྱིས་ནུས་ཤུགས་སྲུང་བཞག་འབད་ནི་ "
-"བར་ཆར་རྐྱབས་བཅུགཔ་ཨིན།"
+msgstr "ལག་ལེན་པ་འདི་ལུ་ རང་བཞིན་གྱིས་ནུས་ཤུགས་སྲུང་བཞག་འབད་ནི་ བར་ཆར་རྐྱབས་བཅུགཔ་ཨིན།"
 
 #: applets/inhibit/inhibit-applet.c:228
 msgid "Automatic sleep inhibited"
@@ -134,6 +124,17 @@ msgstr "རང་བཞིན་གྱིས་ཉལ་ནི་ ལྕོག�
 msgid "Manual inhibit"
 msgstr "ལག་དེབ་བར་ཆར་རྐྱབས་ནི་"
 
+#: applets/inhibit/inhibit-applet.c:310
+msgid "About Power Manager Inhibit Applet"
+msgstr ""
+
+#: applets/inhibit/inhibit-applet.c:312
+msgid ""
+"Copyright © 2006-2007 Richard Hughes\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
+msgstr ""
+
 #: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Inhibit Applet Factory"
 msgstr "བར་ཆར་བརྐྱབ་ནི་ཨེཔ་ལེཊི་གི་འཕྲུལ་ཁང"
@@ -142,32 +143,18 @@ msgstr "བར་ཆར་བརྐྱབ་ནི་ཨེཔ་ལེཊི་
 msgid "Inhibit Applet"
 msgstr "བར་ཆར་བརྐྱབ་ནིའི་ཨེཔ་ལིཊི"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-inhibit-applet"
-msgstr ""
-
-#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:184
+#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:204
 msgid "Power Manager"
 msgstr "ནུས་ཤུགས་འཛིན་སྐྱོང་པ།"
 
-#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:186
+#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:206
 msgid "Power management daemon"
 msgstr "ནུས་ཤུགས་འཛིན་སྐྱོངས་པའི་ ཌེ་མཱོན།"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-manager.desktop.in.in:6
-#: data/cafe-power-preferences.desktop.in.in:6
-msgid "cafe-power-manager"
-msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:26
 #: data/org.cafe.power-manager.gschema.xml.in:41
 msgid "Whether to hibernate, suspend or do nothing when inactive"
-msgstr ""
-"ཤུགས་མེད་པའི་བསྒང་ གཉིད་ནང་བཙུགས་ནི་ལུ་ འཕྲལ་བཀག་ཡང་ན་ག་ནི་ཡང་མེདཔ་སྦེ་རུང་།"
+msgstr "ཤུགས་མེད་པའི་བསྒང་ གཉིད་ནང་བཙུགས་ནི་ལུ་ འཕྲལ་བཀག་ཡང་ན་ག་ནི་ཡང་མེདཔ་སྦེ་རུང་།"
 
 #: data/org.cafe.power-manager.gschema.xml.in:27
 #: data/org.cafe.power-manager.gschema.xml.in:42
@@ -187,9 +174,7 @@ msgstr ""
 msgid ""
 "If the battery event should occur when the lid is shut and the power "
 "disconnected"
-msgstr ""
-"ཁ་ཏོག་བཅད་དེ་ གློག་ཤུགས་བཏོག་པའི་སྐབས་ འཕྲུལ་ལྟོའི་བྱུང་ལས་ "
-"འབྱུང་དགོཔ་ཨིན་ན།"
+msgstr "ཁ་ཏོག་བཅད་དེ་ གློག་ཤུགས་བཏོག་པའི་སྐབས་ འཕྲུལ་ལྟོའི་བྱུང་ལས་ འབྱུང་དགོཔ་ཨིན་ན།"
 
 #: data/org.cafe.power-manager.gschema.xml.in:37
 msgid ""
@@ -197,9 +182,8 @@ msgid ""
 "closed on battery') when the lid is previously shut and the AC power "
 "disconnected at a later time."
 msgstr ""
-"ཁ་ཏོག་ཧེ་མ་ལས་བཅད་དེ་ གློག་ཤུགས་ཀྱི་ཤུལ་ལསབཏོག་པའི་སྐབས་ "
-"འཕྲུལ་ལྟོའི་ཁ་ཏོག་བཅད་པའི་བྱུང་ལས་དེ་འབྱུང་དགོཔ་ཨིན་ན།(དཔེར་ན་ "
-"འཕྲུལ་ལྟོ་ལུ་ཁ་ཏོག་བཅད་པའི་སྐབས་འཕྲལ་བཀག་འབད་དོ་བཟུམ)"
+"ཁ་ཏོག་ཧེ་མ་ལས་བཅད་དེ་ གློག་ཤུགས་ཀྱི་ཤུལ་ལསབཏོག་པའི་སྐབས་ འཕྲུལ་ལྟོའི་ཁ་ཏོག་བཅད་པའི་བྱུང་ལས་དེ་འབྱུང་"
+"དགོཔ་ཨིན་ན།(དཔེར་ན་ འཕྲུལ་ལྟོ་ལུ་ཁ་ཏོག་བཅད་པའི་སྐབས་འཕྲལ་བཀག་འབད་དོ་བཟུམ)"
 
 #: data/org.cafe.power-manager.gschema.xml.in:46
 msgid "UPS critical low action"
@@ -275,8 +259,8 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:82
 msgid ""
 "The percentage to reduce the keyboard backlight by when idle. For example, "
-"if set to '60', the backlight will be cut by 40% when idle. Legal values are"
-" between 0 and 100."
+"if set to '60', the backlight will be cut by 40% when idle. Legal values are "
+"between 0 and 100."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:86
@@ -291,27 +275,23 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:91
 msgid "Dim the screen after a period of inactivity when on battery power"
-msgstr ""
-"འཕྲུལ་ལྟོ་ནུསཤུགས་གུ་ཨིན་པའི་སྐབས་ ལཱ་མེད་ཀྱི་དུས་ཡུན་ཅིག་གི་ཤུལ་མ་ "
-"གསལ་གཞི་འདི་མདངས་གྲིབ་བཟོ་"
+msgstr "འཕྲུལ་ལྟོ་ནུསཤུགས་གུ་ཨིན་པའི་སྐབས་ ལཱ་མེད་ཀྱི་དུས་ཡུན་ཅིག་གི་ཤུལ་མ་ གསལ་གཞི་འདི་མདངས་གྲིབ་བཟོ་"
 
 #: data/org.cafe.power-manager.gschema.xml.in:92
 msgid ""
 "If the screen should be dimmed to save power when the computer is idle when "
 "on battery power."
 msgstr ""
-"འཕྲུལ་ལྟོ་ནུས་ཤུགས་གུ་འབདཝ་ད་ གློག་རིག་འདི་ལས་མེད་ཨིན་པའི་སྐབས་  "
-"ནུས་ཤུགས་སྲུང་བཞག་འབད་ནིའི་དོན་ལས་ གསལ་གཞི་འདི་མདངས་གྲིབ་བཟོ་དགོཔ་ཨིན་ན།"
+"འཕྲུལ་ལྟོ་ནུས་ཤུགས་གུ་འབདཝ་ད་ གློག་རིག་འདི་ལས་མེད་ཨིན་པའི་སྐབས་  ནུས་ཤུགས་སྲུང་བཞག་འབད་ནིའི་དོན་"
+"ལས་ གསལ་གཞི་འདི་མདངས་གྲིབ་བཟོ་དགོཔ་ཨིན་ན།"
 
 #: data/org.cafe.power-manager.gschema.xml.in:96
 msgid "The default amount of time to dim the screen after idle"
-msgstr ""
-"ལས་མེད་པའི་ཤུལ་ལུ་གསལ་གཞི་མདངས་གྲིབ་ཀྱི་དོན་ལུ་སྔོན་སྒྲིག་ཡོངས་བསྡོམས་ཀྱི་དུས་ཚོད"
+msgstr "ལས་མེད་པའི་ཤུལ་ལུ་གསལ་གཞི་མདངས་གྲིབ་ཀྱི་དོན་ལུ་སྔོན་སྒྲིག་ཡོངས་བསྡོམས་ཀྱི་དུས་ཚོད"
 
 #: data/org.cafe.power-manager.gschema.xml.in:97
 msgid "The default amount of time to dim the screen after idle."
-msgstr ""
-"ལས་མེད་ཤུལ་ལུ་གསལ་གཞི་མདངས་གྲིབ་ཀྱི་དོན་ལུ་སྔོན་སྒྲིག་ཡོངས་བསྡོམས་ཀྱི་དུས་ཚོད།"
+msgstr "ལས་མེད་ཤུལ་ལུ་གསལ་གཞི་མདངས་གྲིབ་ཀྱི་དོན་ལུ་སྔོན་སྒྲིག་ཡོངས་བསྡོམས་ཀྱི་དུས་ཚོད།"
 
 #: data/org.cafe.power-manager.gschema.xml.in:101
 msgid "LCD dimming amount when on battery"
@@ -325,17 +305,15 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:106
 msgid "Dim the screen after a period of inactivity when on AC power"
-msgstr ""
-"ཨེ་སི་ནུས་ཤུགས་གུ་ཨིན་པའི་སྐབས་ ལཱ་མེད་པའི་དུས་ཡུན་ཅིག་གི་ཤུལ་མ་ "
-"གསལ་གཞི་འདི་མདངས་གྲིབ་བཟོ་"
+msgstr "ཨེ་སི་ནུས་ཤུགས་གུ་ཨིན་པའི་སྐབས་ ལཱ་མེད་པའི་དུས་ཡུན་ཅིག་གི་ཤུལ་མ་ གསལ་གཞི་འདི་མདངས་གྲིབ་བཟོ་"
 
 #: data/org.cafe.power-manager.gschema.xml.in:107
 msgid ""
 "If the screen should be dimmed to save power when the computer is idle when "
 "on AC power."
 msgstr ""
-"ཨེ་སི་གུ་འབདཝ་ད་ གློག་རིག་འདི་ལས་མེད་ཨིན་པའི་སྐབས་ "
-"ནུས་ཤུགས་སྲུང་བཞག་འབད་ནིའི་དོན་ལས་ གསལ་གཞི་འདི་མདངས་གྲིབ་བཟོ་དགོཔ་ཨིན་ན།"
+"ཨེ་སི་གུ་འབདཝ་ད་ གློག་རིག་འདི་ལས་མེད་ཨིན་པའི་སྐབས་ ནུས་ཤུགས་སྲུང་བཞག་འབད་ནིའི་དོན་ལས་ གསལ་གཞི་"
+"འདི་མདངས་གྲིབ་བཟོ་དགོཔ་ཨིན་ན།"
 
 #: data/org.cafe.power-manager.gschema.xml.in:111
 msgid "Method used to blank screen on AC"
@@ -416,10 +394,9 @@ msgid ""
 "If time based notifications should be used. If set to false, then the "
 "percentage change is used instead, which may fix a broken ACPI BIOS."
 msgstr ""
-"དུས་ཚོད་ལུ་བརྟེན་པའི་བརྡ་བསྐུལ་ལག་ལེན་འཐབ་དགོཔ་ཨིན་ན། "
-"རྫུན་མ་ལུ་གཞི་སྒྲིག་འབད་བ་ཅིན་ དེ་ལས་ཚབ་ལུ་ "
-"བརྒྱ་ཆའི་བསྒྱུར་བཅོས་ལག་ལེན་འཐབ་ཨིན། དེ་ཡང་ རྒྱུན་ཆད་ཡོད་མི་ ཨེ་སི་པི་ཨའེ་ "
-"བ་ཡཱོསི་གི་དཀའ་ངལ་སེལ་ཚུགསཔ་ཨིན།"
+"དུས་ཚོད་ལུ་བརྟེན་པའི་བརྡ་བསྐུལ་ལག་ལེན་འཐབ་དགོཔ་ཨིན་ན། རྫུན་མ་ལུ་གཞི་སྒྲིག་འབད་བ་ཅིན་ དེ་ལས་ཚབ་ལུ་ "
+"བརྒྱ་ཆའི་བསྒྱུར་བཅོས་ལག་ལེན་འཐབ་ཨིན། དེ་ཡང་ རྒྱུན་ཆད་ཡོད་མི་ ཨེ་སི་པི་ཨའེ་ བ་ཡཱོསི་གི་དཀའ་ངལ་སེལ་"
+"ཚུགསཔ་ཨིན།"
 
 #: data/org.cafe.power-manager.gschema.xml.in:156
 msgid "Check CPU load before sleeping"
@@ -427,9 +404,7 @@ msgstr "གཉིད་མ་ཁུག་པའི་ཧེ་མ་ སི་�
 
 #: data/org.cafe.power-manager.gschema.xml.in:157
 msgid "If the CPU load should be checked before doing the idle action."
-msgstr ""
-"ལས་མེད་ཀྱི་བྱ་བ་མ་བཟོ་བའི་ཧེ་མ་  སི་པི་ཡུ་མངོན་གསལ་དེལུ་ "
-"ཞིབ་དཔྱད་འབད་དགོཔ་ཨིན་ན།"
+msgstr "ལས་མེད་ཀྱི་བྱ་བ་མ་བཟོ་བའི་ཧེ་མ་  སི་པི་ཡུ་མངོན་གསལ་དེལུ་ ཞིབ་དཔྱད་འབད་དགོཔ་ཨིན་ན།"
 
 #: data/org.cafe.power-manager.gschema.xml.in:161
 msgid "Whether NetworkManager should be connected and disconnected on sleep."
@@ -440,8 +415,8 @@ msgid ""
 "Whether NetworkManager should disconnect before suspending or hibernating "
 "and connect on resume."
 msgstr ""
-"ཡོངས་འབྲེལ་འཛིན་སྐྱོང་པ་གིས་ འཕྲལ་བཀག་ཡང་ན་གཉིད་ནང་མ་བཙུགས་པའི་ཧེ་མ་ "
-"མཐུད་ལམ་བཏོག་ཞིནམ་ལས་ བསྐྱར་ལོག་ལུ་མཐུད་དགོཔ་ཨིན་ན་མེན་ན།"
+"ཡོངས་འབྲེལ་འཛིན་སྐྱོང་པ་གིས་ འཕྲལ་བཀག་ཡང་ན་གཉིད་ནང་མ་བཙུགས་པའི་ཧེ་མ་ མཐུད་ལམ་བཏོག་ཞིནམ་ལས་ "
+"བསྐྱར་ལོག་ལུ་མཐུད་དགོཔ་ཨིན་ན་མེན་ན།"
 
 #: data/org.cafe.power-manager.gschema.xml.in:166
 msgid "Use cafe-screensaver lock setting"
@@ -452,9 +427,8 @@ msgid ""
 "Whether to use the screen lock setting of cafe-screensaver to decide if the "
 "screen is locked after a hibernate, suspend or blank screen."
 msgstr ""
-"གསལ་གཞི་གཉིད་ནང་བཙུགས་པམ་ འཕྲལ་བཏག་འབད་བ་ ཡང་ན་ སྟོངམ་བཞག་ཞིནམ་ལས་ "
-"གལ་སྲིད་གསལ་གཞི་འདི་བསྡམ་བཞག་ནི་ལུ་ གྲོས་ཐག་བཅད་ནིའི་དོན་ལུ་ "
-"ཇི་ནོམ་གྱི་གསལ་གཞི་ཉེན་སྲུང་གི་གསལ་གཞི་ལྡེ་མིག་གི་གཞི་སྒྲིག་ "
+"གསལ་གཞི་གཉིད་ནང་བཙུགས་པམ་ འཕྲལ་བཏག་འབད་བ་ ཡང་ན་ སྟོངམ་བཞག་ཞིནམ་ལས་ གལ་སྲིད་གསལ་གཞི་འདི་"
+"བསྡམ་བཞག་ནི་ལུ་ གྲོས་ཐག་བཅད་ནིའི་དོན་ལུ་ ཇི་ནོམ་གྱི་གསལ་གཞི་ཉེན་སྲུང་གི་གསལ་གཞི་ལྡེ་མིག་གི་གཞི་སྒྲིག་ "
 "ལག་ལེན་འཐབ་དགོཔ་ཨིན་ན།"
 
 #: data/org.cafe.power-manager.gschema.xml.in:171
@@ -473,8 +447,8 @@ msgstr "འཕྲལ་བཀག་གུ་གསལ་གཞི་བསྡམ
 
 #: data/org.cafe.power-manager.gschema.xml.in:177
 msgid ""
-"Whether the screen is locked when the computer wakes up from a suspend. Only"
-" used if lock-use-screensaver is false."
+"Whether the screen is locked when the computer wakes up from a suspend. Only "
+"used if lock-use-screensaver is false."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:181
@@ -494,8 +468,8 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:187
 msgid ""
-"Whether the GNOME keyring is locked before the computer enters suspend. This"
-" means the keyring will have to be unlocked on resume."
+"Whether the GNOME keyring is locked before the computer enters suspend. This "
+"means the keyring will have to be unlocked on resume."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:192
@@ -507,14 +481,11 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:196
 msgid "If we should show the low capacity warning for a broken battery"
 msgstr ""
-"ང་བཅས་ཀྱིས་ ཆད་ཡོད་པའི་འཕྲུལ་ལྟོ་ཅིག་གི་དོནལུ་ "
-"གལ་སྲིད་སླར་དྲན་འབད་ཡོད་པའི་འཕྲུལ་ལྟོ་འདི་སྟོན་དགོ་པ་ཅིན"
+"ང་བཅས་ཀྱིས་ ཆད་ཡོད་པའི་འཕྲུལ་ལྟོ་ཅིག་གི་དོནལུ་ གལ་སྲིད་སླར་དྲན་འབད་ཡོད་པའི་འཕྲུལ་ལྟོ་འདི་སྟོན་དགོ་པ་ཅིན"
 
 #: data/org.cafe.power-manager.gschema.xml.in:197
 msgid "If we should show the low capacity warning for a broken battery."
-msgstr ""
-"ང་བཅས་ཀྱིས་ ཆད་ཡོད་པའི་འཕྲུལ་ལྟོ་ཅིག་གི་དོནལུ་ "
-"ནུས་ཚད་མ་ཤོས་ཉེན་བརྡ་སྟོན་དགོ་ཨིན་ན"
+msgstr "ང་བཅས་ཀྱིས་ ཆད་ཡོད་པའི་འཕྲུལ་ལྟོ་ཅིག་གི་དོནལུ་ ནུས་ཚད་མ་ཤོས་ཉེན་བརྡ་སྟོན་དགོ་ཨིན་ན"
 
 #: data/org.cafe.power-manager.gschema.xml.in:201
 msgid "Notify when AC adapter is disconnected"
@@ -522,9 +493,7 @@ msgstr "ཨེ་སི་མཐུན་བྱེད་བཏོག་པའི
 
 #: data/org.cafe.power-manager.gschema.xml.in:202
 msgid "If the user should be notified when the AC adapter is disconnected."
-msgstr ""
-"ཨེ་སི་མཐུན་བྱེད་འདི་རྩ་བསྐྲད་གཏང་པའི་སྐབས་ ལག་ལེན་པ་ལུ་ "
-"བརྡ་བསྐུལ་འབད་དགོཔ་ཨིན་ན།"
+msgstr "ཨེ་སི་མཐུན་བྱེད་འདི་རྩ་བསྐྲད་གཏང་པའི་སྐབས་ ལག་ལེན་པ་ལུ་ བརྡ་བསྐུལ་འབད་དགོཔ་ཨིན་ན།"
 
 #: data/org.cafe.power-manager.gschema.xml.in:206
 msgid "Notify when fully charged"
@@ -535,8 +504,7 @@ msgid ""
 "If a notification message should be displayed when the battery is fully "
 "charged."
 msgstr ""
-"འཕྲུལ་ལྟོ་འདི་ཤུགས་ཚད་གངམ་སྦེ་བླུགས་ཚར་བའི་སྐབས་ "
-"བརྡ་བསྐུལ་གྱི་འཕྲིན་དོན་ཅིག་ བཀྲམ་སྟོན་འབད་དགོཔ་ཨིན་ན།"
+"འཕྲུལ་ལྟོ་འདི་ཤུགས་ཚད་གངམ་སྦེ་བླུགས་ཚར་བའི་སྐབས་ བརྡ་བསྐུལ་གྱི་འཕྲིན་དོན་ཅིག་ བཀྲམ་སྟོན་འབད་དགོཔ་ཨིན་ན།"
 
 #: data/org.cafe.power-manager.gschema.xml.in:211
 msgid "Notify on a sleep failure"
@@ -547,8 +515,8 @@ msgid ""
 "If a notification message should be displayed after suspend or hibernate "
 "failed."
 msgstr ""
-"འཕྲལ་བཀག་ ཡང་ན་ གཉིད་ནང་བཙུགས་ནི་ འཐུས་ཤོར་་བྱུང་པའི་ཤུལ་ལུ་ "
-"བརྡ་བསྐུལ་འཕྲིན་དོན་ཅིག་ བཀྲམ་སྟོན་འབད་དགོཔ་ཨིན་ན།"
+"འཕྲལ་བཀག་ ཡང་ན་ གཉིད་ནང་བཙུགས་ནི་ འཐུས་ཤོར་་བྱུང་པའི་ཤུལ་ལུ་ བརྡ་བསྐུལ་འཕྲིན་དོན་ཅིག་ བཀྲམ་སྟོན་"
+"འབད་དགོཔ་ཨིན་ན།"
 
 #: data/org.cafe.power-manager.gschema.xml.in:216
 msgid "The URI to show to the user on sleep failure"
@@ -570,8 +538,7 @@ msgid ""
 "If a notification message should be displayed when the battery is getting "
 "low."
 msgstr ""
-"འཕྲུལ་ལྟོ་འདི་ཤུགས་ཚད་དམའ་དྲགས་འགྱོ་བའི་སྐབས་ བརྡ་བསྐུལ་འཕྲིན་དོན་ཅིག་ "
-"བཀྲམ་སྟོན་འབད་དགོཔ་ཨིན་པ་ཅིན།"
+"འཕྲུལ་ལྟོ་འདི་ཤུགས་ཚད་དམའ་དྲགས་འགྱོ་བའི་སྐབས་ བརྡ་བསྐུལ་འཕྲིན་དོན་ཅིག་ བཀྲམ་སྟོན་འབད་དགོཔ་ཨིན་པ་ཅིན།"
 
 #: data/org.cafe.power-manager.gschema.xml.in:226
 msgid "Notify on low capacity of mouse battery"
@@ -661,8 +628,8 @@ msgstr "བརྒྱ་ཆ་དམའ་བ་སྦེ་ ཆ་འཇོག�
 
 #: data/org.cafe.power-manager.gschema.xml.in:277
 msgid ""
-"The percentage of the battery when it is considered low. Only valid when "
-"use-time-for-policy is false."
+"The percentage of the battery when it is considered low. Only valid when use-"
+"time-for-policy is false."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:281
@@ -691,8 +658,8 @@ msgstr "དམའ་ཤོས་ཀྱི་སྐབས་ལུ་ དུས�
 
 #: data/org.cafe.power-manager.gschema.xml.in:292
 msgid ""
-"The time remaining in seconds of the battery when it is considered low. Only"
-" valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered low. Only "
+"valid when use-time-for-policy is true."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:296
@@ -701,8 +668,8 @@ msgstr "ཚབ་ཆེན་གྱི་བསྒང་ དུས་ཡུན�
 
 #: data/org.cafe.power-manager.gschema.xml.in:297
 msgid ""
-"The time remaining in seconds of the battery when it is considered critical."
-" Only valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered critical. "
+"Only valid when use-time-for-policy is true."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:301
@@ -724,9 +691,8 @@ msgid ""
 "The amount of time in seconds the computer on battery power needs to be "
 "inactive before it goes to sleep."
 msgstr ""
-"གློག་རིག་འདི་གཉིད་ནང་མ་འཛུལ་བའི་ཧེ་མ་ "
-"འཕྲུལ་ལྟོའི་ནུས་ཤུགས་གུ་ཡོད་པའི་གློག་རིག་དེ་ ནུས་མེད་ཨིན་དགོ་པའི་དུས་ཡུན་ "
-"སྐར་ཆའི་ནང་།"
+"གློག་རིག་འདི་གཉིད་ནང་མ་འཛུལ་བའི་ཧེ་མ་ འཕྲུལ་ལྟོའི་ནུས་ཤུགས་གུ་ཡོད་པའི་གློག་རིག་དེ་ ནུས་མེད་ཨིན་དགོ་པའི་"
+"དུས་ཡུན་ སྐར་ཆའི་ནང་།"
 
 #: data/org.cafe.power-manager.gschema.xml.in:311
 msgid "Sleep timeout computer when on AC"
@@ -737,8 +703,8 @@ msgid ""
 "The amount of time in seconds the computer on AC power needs to be inactive "
 "before it goes to sleep."
 msgstr ""
-"གློག་རིག་འདི་གཉིད་ནང་མ་འཛུལ་བའི་ཧེ་མ་ ཨེ་སི་གུ་ཡོད་པའི་གློག་རིག་དེ་ "
-"ནུས་མེད་ཨིན་དགོ་པའི་དུས་ཡུན་ སྐར་ཆའི་ནང་།"
+"གློག་རིག་འདི་གཉིད་ནང་མ་འཛུལ་བའི་ཧེ་མ་ ཨེ་སི་གུ་ཡོད་པའི་གློག་རིག་དེ་ ནུས་མེད་ཨིན་དགོ་པའི་དུས་ཡུན་ སྐར་"
+"ཆའི་ནང་།"
 
 #: data/org.cafe.power-manager.gschema.xml.in:316
 msgid "Sleep timeout computer when on UPS"
@@ -746,8 +712,8 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:317
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before it goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before it goes to sleep."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:321
@@ -759,8 +725,7 @@ msgid ""
 "The amount of time in seconds before the display goes to sleep when the "
 "computer is on AC power."
 msgstr ""
-"གློག་རིག་འདི་ཨེ་སི་གུ་ཡོད་པའི་སྐབས་ བཀྲམ་སྟོན་དེ་གཉིད་ནང་མ་འཛུལ་བའི་ "
-"ཧེ་མའི་དུས་ཡུན་ སྐར་ཆའི་ནང་།"
+"གློག་རིག་འདི་ཨེ་སི་གུ་ཡོད་པའི་སྐབས་ བཀྲམ་སྟོན་དེ་གཉིད་ནང་མ་འཛུལ་བའི་ ཧེ་མའི་དུས་ཡུན་ སྐར་ཆའི་ནང་།"
 
 #: data/org.cafe.power-manager.gschema.xml.in:326
 msgid "Sleep timeout display when on battery"
@@ -771,9 +736,8 @@ msgid ""
 "The amount of time in seconds the computer on battery power needs to be "
 "inactive before the display goes to sleep."
 msgstr ""
-"གློག་རིག་འདི་གཉིད་ནང་མ་འཛུལ་བའི་ཧེ་མ་ "
-"འཕྲུལ་ལྟོའི་ནུས་ཤུགས་གུ་ཡོད་པའི་གློག་རིག་དེ་ ནུས་མེད་ཨིན་དགོ་པའི་དུས་ཡུན་ "
-"སྐར་ཆའི་ནང་།"
+"གློག་རིག་འདི་གཉིད་ནང་མ་འཛུལ་བའི་ཧེ་མ་ འཕྲུལ་ལྟོའི་ནུས་ཤུགས་གུ་ཡོད་པའི་གློག་རིག་དེ་ ནུས་མེད་ཨིན་དགོ་པའི་"
+"དུས་ཡུན་ སྐར་ཆའི་ནང་།"
 
 #: data/org.cafe.power-manager.gschema.xml.in:331
 msgid "Sleep timeout display when on UPS"
@@ -781,8 +745,8 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:332
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before the display goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before the display goes to sleep."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:336
@@ -794,13 +758,11 @@ msgid ""
 "If sounds should be used when the power is critically low, or inhibit "
 "requests have stopped the policy action."
 msgstr ""
-"ནུས་ཤུགས་འདི་ཚབས་ཆེན་སྦེ་དམའ་བའི་སྐབས་ལུ་ "
-"སྒྲ་སྐད་ཚུ་ལག་ལེན་འཐབ་དགོཔ་ཨིན་པ་ཅིན་ ཡང་ན་ བར་ཆར་བརྐྱབ་ནིའི་ཞུ་བ་གིས་ "
-"སྲིད་བྱུས་ཀྱི་བྱ་བ་འདི་བཀག་ཡོད་པ་ཅིན།"
+"ནུས་ཤུགས་འདི་ཚབས་ཆེན་སྦེ་དམའ་བའི་སྐབས་ལུ་ སྒྲ་སྐད་ཚུ་ལག་ལེན་འཐབ་དགོཔ་ཨིན་པ་ཅིན་ ཡང་ན་ བར་ཆར་"
+"བརྐྱབ་ནིའི་ཞུ་བ་གིས་ སྲིད་བྱུས་ཀྱི་བྱ་བ་འདི་བཀག་ཡོད་པ་ཅིན།"
 
 #: data/org.cafe.power-manager.gschema.xml.in:341
-msgid ""
-"If preferences and statistics items should be shown in the context menu"
+msgid "If preferences and statistics items should be shown in the context menu"
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:345
@@ -819,14 +781,13 @@ msgstr "ནུས་ཤུགས་འཛིན་སྐྱོང་།"
 msgid "Configure power management"
 msgstr "ནུས་ཤུགས་འཛིན་སྐྱོང་རིམ་སྒྲིག་འབད།"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
 msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
-#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:7
-#: src/cpm-statistics.c:1090 src/cpm-statistics.c:1577
+#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:8
+#: src/cpm-statistics.c:764 src/cpm-statistics.c:1233
 msgid "Power Statistics"
 msgstr "ནུས་ཤུགས་ཚད་རྩིས་"
 
@@ -834,54 +795,36 @@ msgstr "ནུས་ཤུགས་ཚད་རྩིས་"
 msgid "Observe power management"
 msgstr "ནུས་ཤུགས་འཛིན་སྐྱོང་ཞིབ་རྟོག་འབད་"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-statistics.desktop.in.in:6
-msgid "cafe-power-statistics"
-msgstr ""
-
-#: data/cpm-statistics.ui:113 src/cpm-statistics.c:208
+#: data/cpm-statistics.ui:119
 msgid "Details"
 msgstr "རྒྱས་བཤད།"
 
-#: data/cpm-statistics.ui:139 data/cpm-statistics.ui:342
+#: data/cpm-statistics.ui:145 data/cpm-statistics.ui:347
 msgid "Graph type:"
 msgstr "ཚད་ཁྲམ་དབྱེ་བ་:"
 
-#: data/cpm-statistics.ui:174
+#: data/cpm-statistics.ui:180
 msgid "Data length:"
 msgstr ""
 
-#: data/cpm-statistics.ui:234 data/cpm-statistics.ui:395
+#: data/cpm-statistics.ui:239 data/cpm-statistics.ui:399
 msgid "There is no data to display."
 msgstr ""
 
-#: data/cpm-statistics.ui:276 data/cpm-statistics.ui:438
+#: data/cpm-statistics.ui:281 data/cpm-statistics.ui:442
 msgid "Use smoothed line"
 msgstr ""
 
-#: data/cpm-statistics.ui:291 data/cpm-statistics.ui:453
+#: data/cpm-statistics.ui:296 data/cpm-statistics.ui:457
 msgid "Show data points"
 msgstr ""
 
-#: data/cpm-statistics.ui:320
+#: data/cpm-statistics.ui:325
 msgid "History"
 msgstr "ལོ་རྒྱུས།"
 
-#: data/cpm-statistics.ui:482
+#: data/cpm-statistics.ui:486
 msgid "Statistics"
-msgstr ""
-
-#: data/cpm-statistics.ui:504
-msgid "Processor wakeups per second:"
-msgstr ""
-
-#: data/cpm-statistics.ui:516
-msgid "0"
-msgstr ""
-
-#: data/cpm-statistics.ui:563 src/cpm-statistics.c:194
-msgid "Wakeups"
 msgstr ""
 
 #: data/cpm-prefs.ui:55
@@ -967,9 +910,7 @@ msgstr ""
 
 #: data/cpm-prefs.ui:969
 msgid "Only display an icon when charging or _discharging"
-msgstr ""
-"ནུས་ཤུགས་བླུགས་པའི་བསྒང་དང་ནུས་ཤུགས་བཏོན་གཏང་པའི་བསྒང་རྐྱངམ་ཅིག་ "
-"བཀྲམ་སྟོན་འབད་ (_d)"
+msgstr "ནུས་ཤུགས་བླུགས་པའི་བསྒང་དང་ནུས་ཤུགས་བཏོན་གཏང་པའི་བསྒང་རྐྱངམ་ཅིག་ བཀྲམ་སྟོན་འབད་ (_d)"
 
 #: data/cpm-prefs.ui:985
 msgid "Only display an icon when a battery is p_resent"
@@ -1134,7 +1075,7 @@ msgstr "%.1fW"
 msgid "%.1fV"
 msgstr "%.1fV"
 
-#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1560
+#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1216
 msgid "Show extra debugging information"
 msgstr "བརྡ་དོན་ཐེབས་རྐྱེན་སེལ་འབད་མི་འདི་སྟོན།"
 
@@ -1144,8 +1085,7 @@ msgstr "ཐོན་རིམ་གཞི་བཙུགས་འབད་ཡོ
 
 #: src/cpm-main.c:176
 msgid "Exit after a small delay (for debugging)"
-msgstr ""
-"ཕྱིར་འགྱངས་ཆུང་ཀུ་ཅིག་གི་ཤུལ་མ་ ཕྱིར་ཐོན་འབད་ (རྐྱེན་སེལ་འབད་ནིའི་དོན་ལུ་)"
+msgstr "ཕྱིར་འགྱངས་ཆུང་ཀུ་ཅིག་གི་ཤུལ་མ་ ཕྱིར་ཐོན་འབད་ (རྐྱེན་སེལ་འབད་ནིའི་དོན་ལུ་)"
 
 #: src/cpm-main.c:178
 msgid "Exit after the manager has loaded (for debugging)"
@@ -1242,8 +1182,8 @@ msgstr ""
 #: src/cpm-manager.c:1110
 #, c-format
 msgid ""
-"Battery has a very low capacity (%1.1f%%), which means that it may be old or"
-" broken."
+"Battery has a very low capacity (%1.1f%%), which means that it may be old or "
+"broken."
 msgstr ""
 
 #: src/cpm-manager.c:1159
@@ -1369,8 +1309,7 @@ msgstr "ཚབས་ཆེན་དམའ་བའི་ལེཔ་ཊོཔ་
 
 #: src/cpm-manager.c:1436
 msgid "Plug in your AC adapter to avoid losing data."
-msgstr ""
-"གནད་སྡུད་བྱང་སྟོར་ཤོར་་ནི་ཟུར་ནི་གི་དོན་ལས་ཁྱོད་རའི་ཨེ་སི་མཐུན་བྱེད་ནང་པ་ལག་ཨིན།"
+msgstr "གནད་སྡུད་བྱང་སྟོར་ཤོར་་ནི་ཟུར་ནི་གི་དོན་ལས་ཁྱོད་རའི་ཨེ་སི་མཐུན་བྱེད་ནང་པ་ལག་ཨིན།"
 
 #: src/cpm-manager.c:1440
 msgid "Computer will suspend very soon unless it is plugged in."
@@ -1391,8 +1330,8 @@ msgstr "ཚབས་ཆེན་དམའ་བའི་ཡུ་པི་ཨེ
 #: src/cpm-manager.c:1459
 #, c-format
 msgid ""
-"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
-" your computer to avoid losing data."
+"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to "
+"your computer to avoid losing data."
 msgstr ""
 
 #: src/cpm-manager.c:1473
@@ -1412,8 +1351,8 @@ msgstr ""
 #: src/cpm-manager.c:1490
 #, c-format
 msgid ""
-"PDA is very low in power (%.0f%%). This device will soon stop functioning if"
-" not charged."
+"PDA is very low in power (%.0f%%). This device will soon stop functioning if "
+"not charged."
 msgstr ""
 
 #: src/cpm-manager.c:1500
@@ -1433,8 +1372,8 @@ msgstr ""
 #: src/cpm-manager.c:1519
 #, c-format
 msgid ""
-"Tablet is very low in power (%.0f%%). This device will soon stop functioning"
-" if not charged."
+"Tablet is very low in power (%.0f%%). This device will soon stop functioning "
+"if not charged."
 msgstr ""
 
 #: src/cpm-manager.c:1528
@@ -1446,12 +1385,11 @@ msgstr ""
 
 #: src/cpm-manager.c:1593
 msgid ""
-"The battery is below the critical level and this computer will <b>power-"
-"off</b> when the battery becomes completely empty."
+"The battery is below the critical level and this computer will <b>power-off</"
+"b> when the battery becomes completely empty."
 msgstr ""
-"འཕྲུལ་ལྟོ་འདི་ཚབས་ཆེན་གནས་རིམ་གྱི་འོག་ལུ་ཡོདཔ་ལས་   "
-"འཕྲུལ་ལྟོ་འདི་རྩ་བ་ལས་སྟོངམ་འཐོན་པའི་བསྒང་  "
-"འ་ནི་གློག་རིག་འདི་<b>ནུས་ཤུགས་ཨོཕ་</b>འགྱོ་འོང་།"
+"འཕྲུལ་ལྟོ་འདི་ཚབས་ཆེན་གནས་རིམ་གྱི་འོག་ལུ་ཡོདཔ་ལས་   འཕྲུལ་ལྟོ་འདི་རྩ་བ་ལས་སྟོངམ་འཐོན་པའི་བསྒང་  འ་ནི་"
+"གློག་རིག་འདི་<b>ནུས་ཤུགས་ཨོཕ་</b>འགྱོ་འོང་།"
 
 #: src/cpm-manager.c:1599
 msgid ""
@@ -1459,49 +1397,39 @@ msgid ""
 "suspend.<br><b>NOTE:</b> A small amount of power is required to keep your "
 "computer in a suspended state."
 msgstr ""
-"འཕྲུལ་ལྟོ་འདི་ ཚབས་ཆེན་གནས་རིམ་གྱི་འོག་ལུ་ཡོདཔ་དང་ "
-"འ་ནི་གློག་རིག་འདི་འཕྲལ་བཀག་འགྱོ་ནི་འབད་དོ།<br><b>འདྲན་འཛིན:</b> "
-"ཁྱོད་རའི་གློག་རིག་འདི་ འཕྲལ་བཀག་གི་གནས་ལུགས་ནང་བཞག་ནའི་དོན་ལུ་ ནུས་ཤུགས་ "
-"བསྡོམ་གྱི་ཆུང་ཀུ་ཅིག་དགོས་མཁོ་ཡོད།"
+"འཕྲུལ་ལྟོ་འདི་ ཚབས་ཆེན་གནས་རིམ་གྱི་འོག་ལུ་ཡོདཔ་དང་ འ་ནི་གློག་རིག་འདི་འཕྲལ་བཀག་འགྱོ་ནི་འབད་དོ།"
+"<br><b>འདྲན་འཛིན:</b> ཁྱོད་རའི་གློག་རིག་འདི་ འཕྲལ་བཀག་གི་གནས་ལུགས་ནང་བཞག་ནའི་དོན་ལུ་ ནུས་"
+"ཤུགས་ བསྡོམ་གྱི་ཆུང་ཀུ་ཅིག་དགོས་མཁོ་ཡོད།"
 
 #: src/cpm-manager.c:1606
 msgid ""
 "The battery is below the critical level and this computer is about to "
 "hibernate."
-msgstr ""
-"འཕྲིལ་ལྟོ་འདི་ཚབས་ཆེན་གནས་རིམ་གྱི་འོག་ལུ་ཡོདཔ་དང་ "
-"འ་ནི་གློག་རིག་འདི་གཉིད་ནང་བཙུགས་ནི་འབད་དོ"
+msgstr "འཕྲིལ་ལྟོ་འདི་ཚབས་ཆེན་གནས་རིམ་གྱི་འོག་ལུ་ཡོདཔ་དང་ འ་ནི་གློག་རིག་འདི་གཉིད་ནང་བཙུགས་ནི་འབད་དོ"
 
 #: src/cpm-manager.c:1611
 msgid ""
 "The battery is below the critical level and this computer is about to "
 "shutdown."
-msgstr ""
-"འཕྲུལ་ལྟོ་འདི་ཚབས་ཆེན་གྱི་གནས་རིམ་འོག་ལུ་ཡོདཔ་དང་ "
-"འ་ནི་གལོག་རིག་འདི་སྒོ་བསྡམ་ནི་འབད་དོ།"
+msgstr "འཕྲུལ་ལྟོ་འདི་ཚབས་ཆེན་གྱི་གནས་རིམ་འོག་ལུ་ཡོདཔ་དང་ འ་ནི་གལོག་རིག་འདི་སྒོ་བསྡམ་ནི་འབད་དོ།"
 
 #: src/cpm-manager.c:1629
 msgid ""
 "The UPS is below the critical level and this computer will <b>power-off</b> "
 "when the UPS becomes completely empty."
 msgstr ""
-"ཡུ་པི་ཨེསི་འདི་ཚབས་ཆེན་གནས་རིམ་གྱི་ཐོག་ལུ་ཡོདཔ་དང་ "
-"ཡུ་པི་ཨེསི་འདི་རྩ་བ་ལས་སྟོངམ་འཐོནམ་ད་ "
-"གློག་རིག་འདི་<b>ནུས་ཤུགས་ཨོཕ</b>འགྱོ་འོང་།"
+"ཡུ་པི་ཨེསི་འདི་ཚབས་ཆེན་གནས་རིམ་གྱི་ཐོག་ལུ་ཡོདཔ་དང་ ཡུ་པི་ཨེསི་འདི་རྩ་བ་ལས་སྟོངམ་འཐོནམ་ད་ གློག་རིག་འདི་"
+"<b>ནུས་ཤུགས་ཨོཕ</b>འགྱོ་འོང་།"
 
 #: src/cpm-manager.c:1635
 msgid ""
 "The UPS is below the critical level and this computer is about to hibernate."
-msgstr ""
-"ཡུ་པི་ཨེསི་འདི་ ཚབས་ཆེན་གནས་རིམ་གྱི་ཐོག་ལུ་ཡོདཔ་ལས་ "
-"གློག་རིག་འདི་གཉིད་ནང་འཛུལ་ནི་འབད་དོ།"
+msgstr "ཡུ་པི་ཨེསི་འདི་ ཚབས་ཆེན་གནས་རིམ་གྱི་ཐོག་ལུ་ཡོདཔ་ལས་ གློག་རིག་འདི་གཉིད་ནང་འཛུལ་ནི་འབད་དོ།"
 
 #: src/cpm-manager.c:1640
 msgid ""
 "The UPS is below the critical level and this computer is about to shutdown."
-msgstr ""
-"ཡུ་པི་ཨེསི་འདི་ ཚབས་ཆེན་གནས་རིམ་གྱི་ཐོག་ལུ་ཡོདཔ་ལས་ "
-"གློག་རིག་འདི་སྒོ་བསྡམ་ནི་འབད་དོ།"
+msgstr "ཡུ་པི་ཨེསི་འདི་ ཚབས་ཆེན་གནས་རིམ་གྱི་ཐོག་ལུ་ཡོདཔ་ལས་ གློག་རིག་འདི་སྒོ་བསྡམ་ནི་འབད་དོ།"
 
 #: src/cpm-prefs.c:81
 msgid "CAFE Power Preferences"
@@ -1535,357 +1463,246 @@ msgstr "ག་ནི་ཡང་མ་སྦེ།"
 msgid "Never"
 msgstr "ནམ་ཡང་"
 
-#: src/cpm-statistics.c:78 src/cpm-statistics.c:466
+#: src/cpm-statistics.c:67 src/cpm-statistics.c:410
 msgid "Rate"
 msgstr "གོང་ཚད།"
 
-#: src/cpm-statistics.c:79
+#: src/cpm-statistics.c:68
 msgid "Charge"
 msgstr ""
 
-#: src/cpm-statistics.c:80 src/cpm-statistics.c:480
+#: src/cpm-statistics.c:69 src/cpm-statistics.c:424
 msgid "Time to full"
 msgstr ""
 
-#: src/cpm-statistics.c:81 src/cpm-statistics.c:485
+#: src/cpm-statistics.c:70 src/cpm-statistics.c:429
 msgid "Time to empty"
 msgstr ""
 
-#: src/cpm-statistics.c:88
+#: src/cpm-statistics.c:77
 msgid "10 minutes"
 msgstr ""
 
-#: src/cpm-statistics.c:89
+#: src/cpm-statistics.c:78
 msgid "2 hours"
 msgstr ""
 
-#: src/cpm-statistics.c:90
+#: src/cpm-statistics.c:79
 msgid "6 hours"
 msgstr ""
 
-#: src/cpm-statistics.c:91
+#: src/cpm-statistics.c:80
 msgid "1 day"
 msgstr ""
 
-#: src/cpm-statistics.c:92
+#: src/cpm-statistics.c:81
 msgid "1 week"
 msgstr ""
 
-#: src/cpm-statistics.c:101
+#: src/cpm-statistics.c:90
 msgid "Charge profile"
 msgstr ""
 
-#: src/cpm-statistics.c:102
+#: src/cpm-statistics.c:91
 msgid "Discharge profile"
 msgstr ""
 
-#: src/cpm-statistics.c:104
+#: src/cpm-statistics.c:93
 msgid "Charge accuracy"
 msgstr ""
 
-#: src/cpm-statistics.c:105
+#: src/cpm-statistics.c:94
 msgid "Discharge accuracy"
 msgstr ""
 
-#: src/cpm-statistics.c:132
+#: src/cpm-statistics.c:121
 msgid "Attribute"
 msgstr ""
 
-#: src/cpm-statistics.c:139
+#: src/cpm-statistics.c:128
 msgid "Value"
 msgstr "བེ་ལུ།"
 
-#: src/cpm-statistics.c:156
+#: src/cpm-statistics.c:145
 msgid "Image"
 msgstr "གཟུགས་བརྙན།"
 
-#: src/cpm-statistics.c:162
+#: src/cpm-statistics.c:151
 msgid "Description"
 msgstr "འགྲེལ་བཤད།"
 
-#: src/cpm-statistics.c:181 src/cpm-statistics.c:405
-msgid "Type"
-msgstr "དབྱེ་བ།"
-
-#: src/cpm-statistics.c:187
-msgid "ID"
-msgstr "ཨའི་ཌི།"
-
-#: src/cpm-statistics.c:201
-msgid "Command"
-msgstr "བརྡ་བཀོད།"
-
-#: src/cpm-statistics.c:286
+#: src/cpm-statistics.c:230
 msgid "Unknown"
 msgstr "མ་ཤེསཔ།"
 
-#: src/cpm-statistics.c:290
+#: src/cpm-statistics.c:234
 #, c-format
 msgid "%.0f second"
 msgid_plural "%.0f seconds"
 msgstr[0] ""
 
-#: src/cpm-statistics.c:295
+#: src/cpm-statistics.c:239
 #, c-format
 msgid "%.1f minute"
 msgid_plural "%.1f minutes"
 msgstr[0] ""
 
-#: src/cpm-statistics.c:300
+#: src/cpm-statistics.c:244
 #, c-format
 msgid "%.1f hour"
 msgid_plural "%.1f hours"
 msgstr[0] ""
 
-#: src/cpm-statistics.c:304
+#: src/cpm-statistics.c:248
 #, c-format
 msgid "%.1f day"
 msgid_plural "%.1f days"
 msgstr[0] ""
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "Yes"
 msgstr "ཨིན།"
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "No"
 msgstr "མེན།"
 
-#: src/cpm-statistics.c:402
+#: src/cpm-statistics.c:346
 msgid "Device"
 msgstr "ཐབས་འཕྲུལ།"
 
-#: src/cpm-statistics.c:407
+#: src/cpm-statistics.c:349
+msgid "Type"
+msgstr "དབྱེ་བ།"
+
+#: src/cpm-statistics.c:351
 msgid "Vendor"
 msgstr ""
 
-#: src/cpm-statistics.c:409
+#: src/cpm-statistics.c:353
 msgid "Model"
 msgstr ""
 
-#: src/cpm-statistics.c:411
+#: src/cpm-statistics.c:355
 msgid "Serial number"
 msgstr ""
 
-#: src/cpm-statistics.c:416
+#: src/cpm-statistics.c:360
 msgid "Supply"
 msgstr ""
 
-#: src/cpm-statistics.c:419
+#: src/cpm-statistics.c:363
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] ""
 
-#: src/cpm-statistics.c:423
+#: src/cpm-statistics.c:367
 msgid "Refreshed"
 msgstr ""
 
-#: src/cpm-statistics.c:433
+#: src/cpm-statistics.c:377
 msgid "Present"
 msgstr ""
 
-#: src/cpm-statistics.c:440
+#: src/cpm-statistics.c:384
 msgid "Rechargeable"
 msgstr ""
 
-#: src/cpm-statistics.c:446
+#: src/cpm-statistics.c:390
 msgid "State"
 msgstr ""
 
-#: src/cpm-statistics.c:450
+#: src/cpm-statistics.c:394
 msgid "Energy"
 msgstr ""
 
-#: src/cpm-statistics.c:453
+#: src/cpm-statistics.c:397
 msgid "Energy when empty"
 msgstr ""
 
-#: src/cpm-statistics.c:456
+#: src/cpm-statistics.c:400
 msgid "Energy when full"
 msgstr ""
 
-#: src/cpm-statistics.c:459
+#: src/cpm-statistics.c:403
 msgid "Energy (design)"
 msgstr ""
 
-#: src/cpm-statistics.c:473
+#: src/cpm-statistics.c:417
 msgid "Voltage"
 msgstr "གློག་ཤུགས"
 
-#: src/cpm-statistics.c:495
+#: src/cpm-statistics.c:439
 msgid "Percentage"
 msgstr "རྒྱ་ཆ"
 
-#: src/cpm-statistics.c:502
+#: src/cpm-statistics.c:446
 msgid "Capacity"
 msgstr ""
 
-#: src/cpm-statistics.c:507
+#: src/cpm-statistics.c:451
 msgid "Technology"
 msgstr ""
 
-#: src/cpm-statistics.c:512
+#: src/cpm-statistics.c:456
 msgid "Online"
 msgstr ""
 
-#: src/cpm-statistics.c:824
-msgid "No data"
-msgstr "གནད་སྡུད་མེད"
-
-#: src/cpm-statistics.c:831 src/cpm-statistics.c:836
-msgid "Kernel module"
-msgstr ""
-
-#: src/cpm-statistics.c:841
-msgid "Kernel core"
-msgstr ""
-
-#: src/cpm-statistics.c:846
-msgid "Interprocessor interrupt"
-msgstr ""
-
-#: src/cpm-statistics.c:851
-msgid "Interrupt"
-msgstr ""
-
-#: src/cpm-statistics.c:898
-msgid "PS/2 keyboard/mouse/touchpad"
-msgstr ""
-
-#: src/cpm-statistics.c:901
-msgid "ACPI"
-msgstr ""
-
-#: src/cpm-statistics.c:904
-msgid "Serial ATA"
-msgstr ""
-
-#: src/cpm-statistics.c:907
-msgid "ATA host controller"
-msgstr ""
-
-#: src/cpm-statistics.c:910
-msgid "Intel wireless adaptor"
-msgstr ""
-
-#: src/cpm-statistics.c:917 src/cpm-statistics.c:922 src/cpm-statistics.c:927
-#: src/cpm-statistics.c:932 src/cpm-statistics.c:937
-#, c-format
-msgid "Timer %s"
-msgstr ""
-
-#: src/cpm-statistics.c:941
-#, c-format
-msgid "Sleep %s"
-msgstr ""
-
-#: src/cpm-statistics.c:944
-#, c-format
-msgid "New task %s"
-msgstr ""
-
-#: src/cpm-statistics.c:948
-#, c-format
-msgid "Wait %s"
-msgstr ""
-
-#: src/cpm-statistics.c:952 src/cpm-statistics.c:956
-#, c-format
-msgid "Work queue %s"
-msgstr ""
-
-#: src/cpm-statistics.c:959
-#, c-format
-msgid "Network route flush %s"
-msgstr ""
-
-#: src/cpm-statistics.c:962
-#, c-format
-msgid "USB activity %s"
-msgstr ""
-
-#: src/cpm-statistics.c:965
-#, c-format
-msgid "Wakeup %s"
-msgstr ""
-
-#: src/cpm-statistics.c:968
-msgid "Local interrupts"
-msgstr ""
-
-#: src/cpm-statistics.c:971
-msgid "Rescheduling interrupts"
-msgstr ""
-
-#: src/cpm-statistics.c:1080
+#: src/cpm-statistics.c:756
 msgid "Device Information"
 msgstr ""
 
-#: src/cpm-statistics.c:1082
+#: src/cpm-statistics.c:758
 msgid "Device History"
 msgstr ""
 
-#: src/cpm-statistics.c:1084
+#: src/cpm-statistics.c:760
 msgid "Device Profile"
 msgstr ""
 
-#: src/cpm-statistics.c:1086
-msgid "Processor Wakeups"
-msgstr ""
-
-#: src/cpm-statistics.c:1325 src/cpm-statistics.c:1331
-#: src/cpm-statistics.c:1337 src/cpm-statistics.c:1343
+#: src/cpm-statistics.c:982 src/cpm-statistics.c:988 src/cpm-statistics.c:994
+#: src/cpm-statistics.c:1000
 msgid "Time elapsed"
 msgstr ""
 
-#: src/cpm-statistics.c:1327
+#: src/cpm-statistics.c:984
 msgid "Power"
 msgstr "ནུས་ཤུགས་"
 
-#: src/cpm-statistics.c:1333 src/cpm-statistics.c:1377
-#: src/cpm-statistics.c:1383 src/cpm-statistics.c:1389
-#: src/cpm-statistics.c:1395
+#: src/cpm-statistics.c:990 src/cpm-statistics.c:1034 src/cpm-statistics.c:1040
+#: src/cpm-statistics.c:1046 src/cpm-statistics.c:1052
 msgid "Cell charge"
 msgstr ""
 
-#: src/cpm-statistics.c:1339 src/cpm-statistics.c:1345
+#: src/cpm-statistics.c:996 src/cpm-statistics.c:1002
 msgid "Predicted time"
 msgstr ""
 
-#: src/cpm-statistics.c:1379 src/cpm-statistics.c:1391
+#: src/cpm-statistics.c:1036 src/cpm-statistics.c:1048
 msgid "Correction factor"
 msgstr ""
 
-#: src/cpm-statistics.c:1385 src/cpm-statistics.c:1397
+#: src/cpm-statistics.c:1042 src/cpm-statistics.c:1054
 msgid "Prediction accuracy"
 msgstr ""
 
-#: src/cpm-statistics.c:1563
+#: src/cpm-statistics.c:1219
 msgid "Select this device at startup"
 msgstr ""
 
-#: src/cpm-statistics.c:1802
-msgid "Processor"
-msgstr "ལས་སྦྱོར་་འཕྲུལ་ཆས།"
-
-#: src/cpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 CAFE developers"
+#: src/cpm-tray-icon.c:207
+msgid ""
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
 
-#: src/cpm-tray-icon.c:193
-msgid "translator-credits"
-msgstr ""
-"ཨའི་ཌི་ཨར་སི་གི་མ་དངུལ་རྒྱབ་སྐྱོར་ཐོག་ལས་ བརྡ་དོན་འཕྲུལ་རིག་ལས་ཁུངས་ནང་ "
-"སྐད་བསྒྱུར་འབད་ཡི། ཁ་གསལ་གྱི་དོན་ལུ་ འབྲེལ་བ་འཐབ་ས་: "
-"<pema_geyleg@druknet.bt>/<pgeyleg@dit.gov.bt>(_c)"
-
-#: src/cpm-tray-icon.c:295
+#: src/cpm-tray-icon.c:318
 #, c-format
 msgid "%s remaining"
 msgstr ""
 
-#: src/cpm-tray-icon.c:349
+#: src/cpm-tray-icon.c:372
 msgid "_Preferences"
 msgstr "དགའ་གདམ་ཚུ།(_P)"
 
@@ -2135,3 +1952,53 @@ msgstr ""
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr ""
+
+#~ msgid "Licensed under the GNU General Public License Version 2"
+#~ msgstr "ཇི་ཨེན་ཡུ་ མི་མང་ཡོངས་ཁྱབ་ཀྱི་ཆོག་ཐམ་ཐོན་རིམ་གཉིས་པའི་ཐོག་ལས་ ཆོག་ཐམ་སྤྲོད་སྤྲོདཔ་ཨིན།"
+
+#~ msgid ""
+#~ "Power Manager is free software; you can redistribute it and/or\n"
+#~ "modify it under the terms of the GNU General Public License\n"
+#~ "as published by the Free Software Foundation; either version 2\n"
+#~ "of the License, or (at your option) any later version."
+#~ msgstr ""
+#~ "པ་ཝར་མེ་ནེ་ཇར་དེ་ སྟོང་མར་ཐོབ་པའི་མཉེན་ཆས་ཅིག་ཨིནམ་ལས་ ཁྱོད་ཀྱིས་\n"
+#~ " རང་དབང་མཉེན་ཆས་གཞི་ཚོགས་ཀྱིས་ དཔེ་བསྐྲུན་འབད་མི་\n"
+#~ " ཇི་ཨེན་ཡུ་ ཡོངས་ཁྱབ་མི་མང་ཆོག་ཐམ་གྱི་ ཐོན་རིམ་ ༢ ཡང་ན་ ཁྱོད་རའི་བློ་འདོད་བཞིན་དུ་ཤུལ་ལས་ཀྱི་ཐོན་"
+#~ "རིམ་གང་རུང་གི་ ཁ་ཚིག་དང་འཁྲིལ་ཏེ་\n"
+#~ "བསྐྱར་འགྲེམ་འབད་བ་ ཡང་ན་ ལེགས་བཅོས་འབད་ཆོག"
+
+#~ msgid ""
+#~ "Power Manager is distributed in the hope that it will be useful,\n"
+#~ "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+#~ "GNU General Public License for more details."
+#~ msgstr ""
+#~ "ནུས་ཤུགས་འཛིན་སྐྱོང་པ་འདི་ ཀུན་ལུ་ཕན་པའི་རེ་བ་བསྐྱེད་དེ་འགྲེམ་སྤེལ་འབདཝ་ཨིན། \n"
+#~ "དེ་འབདཝ་དང་ ཉེན་ལེན་ག་ནི་ཡང་མེད་པའི་ནང་ལས་ ཐ་ན་སྐྱེལ་འདྲེན་\n"
+#~ " ཡང་ན་ དམིགས་བསལ་དགོས་དོན་ཅིག་གི་དོན་ལུ་ ཚུད་སྒྲིག་ཡོད་མེད་ཀྱི་ཉེན་ལེན་ཙམ་ཡང་མེད། \n"
+#~ "རྒྱས་བཤད་ཀྱི་དོན་ལུ་ ཇི་ཨེན་ཡུ་ ཡོངས་ཁྱབ་མི་མང་ཆོག་ཐམ་ལུ་བལྟཇི་ཨེན་ཡུ་ཡོངས་ཁྱབ་མི་མང་ཆོག་ཐམ་དོན་"
+#~ "ལས་ རྒྱས་བཤད་མངམ་ལྟ་ད།"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License\n"
+#~ "along with this program; if not, write to the Free Software\n"
+#~ "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA."
+#~ msgstr ""
+#~ "ཁྱོད་ཀྱིས་ཇི་ཨེན་ཡུ་ ཡོངས་ཁྱབ་མི་མང་ཆོག་ཐམ་ཅིག་ ལས་རིམ་འདི་དང་གཅིག་ཁར་ཐོབ་ཐོབ་འོང་།\n"
+#~ " གལ་སྲིད་མ་ཐོབ་ཅིན་ Free Software Foundation,\n"
+#~ " Inc., 1 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA.ལུ་ ཡི་གུ་གཏང་།"
+
+#~ msgid "ID"
+#~ msgstr "ཨའི་ཌི།"
+
+#~ msgid "Command"
+#~ msgstr "བརྡ་བཀོད།"
+
+#~ msgid "No data"
+#~ msgstr "གནད་སྡུད་མེད"
+
+#~ msgid "Processor"
+#~ msgstr "ལས་སྦྱོར་་འཕྲུལ་ཆས།"

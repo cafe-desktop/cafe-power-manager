@@ -2,26 +2,26 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Wolfgang Ulbrich <mate@raveit.de>, 2020
 # Egoitz Rodriguez <egoitzro@gmail.com>, 2020
 # Asier Iturralde Sarasola <asier.iturralde@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-power-manager 1.23.1\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2019-11-12 15:22+0100\n"
+"POT-Creation-Date: 2023-09-14 10:39+0200\n"
 "PO-Revision-Date: 2020-02-15 16:27+0000\n"
 "Last-Translator: clefebvre <clement.lefebvre@linuxmint.com>, 2020\n"
 "Language-Team: Basque (https://www.transifex.com/cafe/teams/13566/eu/)\n"
+"Language: eu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: eu\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: applets/brightness/brightness-applet.c:107
@@ -46,58 +46,57 @@ msgstr "Ezin da eramangarriaren pantailaren distira lortu"
 msgid "LCD brightness : %d%%"
 msgstr "LCD distira : %%%d"
 
+#: applets/brightness/brightness-applet.c:790
+#: applets/inhibit/inhibit-applet.c:287
+msgid ""
+"Power Manager is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:795
+#: applets/inhibit/inhibit-applet.c:292
+msgid ""
+"Power Manager is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+
 #: applets/brightness/brightness-applet.c:800
 #: applets/inhibit/inhibit-applet.c:297
-msgid "Licensed under the GNU General Public License Version 2"
-msgstr "GNU Lizentzia Publiko Orokorraren 2. bertsioan lizentziatua"
-
-#: applets/brightness/brightness-applet.c:801
-#: applets/inhibit/inhibit-applet.c:298
 msgid ""
-"Power Manager is free software; you can redistribute it and/or\n"
-"modify it under the terms of the GNU General Public License\n"
-"as published by the Free Software Foundation; either version 2\n"
-"of the License, or (at your option) any later version."
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"Energia kudeatzailea (cafe-power-manager) software librea da; birbana \n"
-"eta/edo alda dezakezu Software Foundation-ek argitaratutako GNU Lizentzia \n"
-"Publiko Orokorraren 2. bertsioan, edo (nahiago baduzu) beste berriago\n"
-"batean, jasotako baldintzak betez gero."
 
-#: applets/brightness/brightness-applet.c:805
-#: applets/inhibit/inhibit-applet.c:302
+#: applets/brightness/brightness-applet.c:813
+msgid "About Power Manager Brightness Applet"
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:815
 msgid ""
-"Power Manager is distributed in the hope that it will be useful,\n"
-"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-"GNU General Public License for more details."
+"Copyright © 2006 Benjamin Canou\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"Energia kudeatzailea (cafe-power-manager) erabilgarria izango delakoan \n"
-"banatzen da, baina, INOLAKO BERMERIK GABE; era berean, ez da bermatzen \n"
-"beraren EGOKITASUNA MERKATURATZEKO edo HELBURU PARTIKULARRETARAKO \n"
-"ERABILTZEKO. Argibide gehiago nahi izanez gero, ikus GNU Lizentzia \n"
-"Publiko Orokorra."
 
-#: applets/brightness/brightness-applet.c:809
-#: applets/inhibit/inhibit-applet.c:306
-msgid ""
-"You should have received a copy of the GNU General Public License\n"
-"along with this program; if not, write to the Free Software\n"
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
+#: applets/brightness/brightness-applet.c:823
+#: applets/inhibit/inhibit-applet.c:320 src/cpm-tray-icon.c:214
+msgid "translator-credits"
 msgstr ""
-"Programa honekin batera GNU Lizentzia Publiko Orokorraren kopia bat jasoko \n"
-"zenuen; hala ez bada, idatzi hona: Free Software Foundation, Inc., \n"
-"51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
+"Asier Iturralde Sarasola <asier.iturralde@gmail.com>\n"
+"Aritz Jorge Sánchez"
 
-#: applets/brightness/brightness-applet.c:1063
-#: applets/inhibit/inhibit-applet.c:519
+#: applets/brightness/brightness-applet.c:1051
+#: applets/inhibit/inhibit-applet.c:507
 msgid "_About"
 msgstr "Honi _buruz"
 
-#: applets/brightness/brightness-applet.c:1066
-#: applets/inhibit/inhibit-applet.c:522
+#: applets/brightness/brightness-applet.c:1054
+#: applets/inhibit/inhibit-applet.c:510
 msgid "_Help"
 msgstr "_Laguntza"
 
@@ -108,12 +107,6 @@ msgstr "Distiraren miniaplikazioaren faktoria"
 #: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Brightness Applet"
 msgstr "Distira miniaplikazioa"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-brightness-applet"
-msgstr ""
 
 #: applets/inhibit/inhibit-applet.c:87
 msgid "Power Manager Inhibit Applet"
@@ -135,6 +128,17 @@ msgstr "Automatikoki lo egitea gaituta"
 msgid "Manual inhibit"
 msgstr "Galarazi eskuz"
 
+#: applets/inhibit/inhibit-applet.c:310
+msgid "About Power Manager Inhibit Applet"
+msgstr ""
+
+#: applets/inhibit/inhibit-applet.c:312
+msgid ""
+"Copyright © 2006-2007 Richard Hughes\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
+msgstr ""
+
 #: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Inhibit Applet Factory"
 msgstr "Galarazteko miniaplikazioaren faktoria"
@@ -143,26 +147,13 @@ msgstr "Galarazteko miniaplikazioaren faktoria"
 msgid "Inhibit Applet"
 msgstr "Galarazteko miniaplikazioa"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-inhibit-applet"
-msgstr ""
-
-#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:184
+#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:204
 msgid "Power Manager"
 msgstr "Energia kudeatzailea"
 
-#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:186
+#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:206
 msgid "Power management daemon"
 msgstr "Energia kudeatzeko daemon-a"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-manager.desktop.in.in:6
-#: data/cafe-power-preferences.desktop.in.in:6
-msgid "cafe-power-manager"
-msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:26
 #: data/org.cafe.power-manager.gschema.xml.in:41
@@ -279,8 +270,8 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:82
 msgid ""
 "The percentage to reduce the keyboard backlight by when idle. For example, "
-"if set to '60', the backlight will be cut by 40% when idle. Legal values are"
-" between 0 and 100."
+"if set to '60', the backlight will be cut by 40% when idle. Legal values are "
+"between 0 and 100."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:86
@@ -311,8 +302,7 @@ msgstr "Denbora-kopuru lehenetsia pantaila iluntzeko inaktibitatearen ondoren"
 
 #: data/org.cafe.power-manager.gschema.xml.in:97
 msgid "The default amount of time to dim the screen after idle."
-msgstr ""
-"Denbora-kopuru lehenetsia pantaila iluntzeko inaktibitatearen ondoren."
+msgstr "Denbora-kopuru lehenetsia pantaila iluntzeko inaktibitatearen ondoren."
 
 #: data/org.cafe.power-manager.gschema.xml.in:101
 msgid "LCD dimming amount when on battery"
@@ -453,8 +443,7 @@ msgid ""
 "screen is locked after a hibernate, suspend or blank screen."
 msgstr ""
 "cafe-screensaver aplikazioko pantailaren blokeoaren ezarpenak erabili behar "
-"diren pantaila blokeatzeko hibernatu, eseki edo pantaila beltz baten "
-"ondoren."
+"diren pantaila blokeatzeko hibernatu, eseki edo pantaila beltz baten ondoren."
 
 #: data/org.cafe.power-manager.gschema.xml.in:171
 msgid "Lock screen when blanked"
@@ -472,8 +461,8 @@ msgstr "Blokeatu pantaila esekitzean"
 
 #: data/org.cafe.power-manager.gschema.xml.in:177
 msgid ""
-"Whether the screen is locked when the computer wakes up from a suspend. Only"
-" used if lock-use-screensaver is false."
+"Whether the screen is locked when the computer wakes up from a suspend. Only "
+"used if lock-use-screensaver is false."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:181
@@ -493,8 +482,8 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:187
 msgid ""
-"Whether the GNOME keyring is locked before the computer enters suspend. This"
-" means the keyring will have to be unlocked on resume."
+"Whether the GNOME keyring is locked before the computer enters suspend. This "
+"means the keyring will have to be unlocked on resume."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:192
@@ -506,14 +495,14 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:196
 msgid "If we should show the low capacity warning for a broken battery"
 msgstr ""
-"Bateriak energia baxua duenean jakinarazpena bistaratu behar den hondatutako"
-" bateriaren aurrean"
+"Bateriak energia baxua duenean jakinarazpena bistaratu behar den hondatutako "
+"bateriaren aurrean"
 
 #: data/org.cafe.power-manager.gschema.xml.in:197
 msgid "If we should show the low capacity warning for a broken battery."
 msgstr ""
-"Bateriak energia baxua duenean jakinarazpena bistaratu behar den hondatutako"
-" bateriaren aurrean."
+"Bateriak energia baxua duenean jakinarazpena bistaratu behar den hondatutako "
+"bateriaren aurrean."
 
 #: data/org.cafe.power-manager.gschema.xml.in:201
 msgid "Notify when AC adapter is disconnected"
@@ -657,8 +646,8 @@ msgstr "Ehunekoa baxua izateko"
 
 #: data/org.cafe.power-manager.gschema.xml.in:277
 msgid ""
-"The percentage of the battery when it is considered low. Only valid when "
-"use-time-for-policy is false."
+"The percentage of the battery when it is considered low. Only valid when use-"
+"time-for-policy is false."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:281
@@ -687,8 +676,8 @@ msgstr "Denbora baxua izateko"
 
 #: data/org.cafe.power-manager.gschema.xml.in:292
 msgid ""
-"The time remaining in seconds of the battery when it is considered low. Only"
-" valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered low. Only "
+"valid when use-time-for-policy is true."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:296
@@ -697,8 +686,8 @@ msgstr "Denbora larria izateko"
 
 #: data/org.cafe.power-manager.gschema.xml.in:297
 msgid ""
-"The time remaining in seconds of the battery when it is considered critical."
-" Only valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered critical. "
+"Only valid when use-time-for-policy is true."
 msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:301
@@ -720,8 +709,8 @@ msgid ""
 "The amount of time in seconds the computer on battery power needs to be "
 "inactive before it goes to sleep."
 msgstr ""
-"Denbora-kopurua (segundotan) inaktibitatean egon beharrekoa ordenagailuak lo"
-" hartu aurretik, bateriarekin dagoenean."
+"Denbora-kopurua (segundotan) inaktibitatean egon beharrekoa ordenagailuak lo "
+"hartu aurretik, bateriarekin dagoenean."
 
 #: data/org.cafe.power-manager.gschema.xml.in:311
 msgid "Sleep timeout computer when on AC"
@@ -732,8 +721,8 @@ msgid ""
 "The amount of time in seconds the computer on AC power needs to be inactive "
 "before it goes to sleep."
 msgstr ""
-"Denbora-kopurua (segundotan) inaktibitatean egon beharrekoa ordenagailuak lo"
-" hartu aurretik, entxufatuta dagoenean."
+"Denbora-kopurua (segundotan) inaktibitatean egon beharrekoa ordenagailuak lo "
+"hartu aurretik, entxufatuta dagoenean."
 
 #: data/org.cafe.power-manager.gschema.xml.in:316
 msgid "Sleep timeout computer when on UPS"
@@ -741,11 +730,11 @@ msgstr "Lo egotearen denbora (SAI/UPSa erabiltzean)"
 
 #: data/org.cafe.power-manager.gschema.xml.in:317
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before it goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before it goes to sleep."
 msgstr ""
-"Denbora-kopurua (segundotan) inaktibitatean egon beharrekoa ordenagailuak lo"
-" hartu aurretik, SAI/UPSarekin dabilenean."
+"Denbora-kopurua (segundotan) inaktibitatean egon beharrekoa ordenagailuak lo "
+"hartu aurretik, SAI/UPSarekin dabilenean."
 
 #: data/org.cafe.power-manager.gschema.xml.in:321
 msgid "Sleep timeout display when on AC"
@@ -777,8 +766,8 @@ msgstr "Pantaila lo egotearen denbora (SAI/UPSa erabiltzean)"
 
 #: data/org.cafe.power-manager.gschema.xml.in:332
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before the display goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before the display goes to sleep."
 msgstr ""
 "Denbora-kopurua (segundotan) inaktibitatean egon beharrekoa pantailak lo "
 "hartu aurretik, SAI/UPSarekin dabilenean."
@@ -796,8 +785,7 @@ msgstr ""
 "eskaerak arauaren ekintza gelditu badu."
 
 #: data/org.cafe.power-manager.gschema.xml.in:341
-msgid ""
-"If preferences and statistics items should be shown in the context menu"
+msgid "If preferences and statistics items should be shown in the context menu"
 msgstr ""
 "Hobespenen eta estatistiken elementuak testuinguruko menuan erakutsi behar "
 "diren ala ez"
@@ -818,14 +806,13 @@ msgstr "Energia kudeatzailea"
 msgid "Configure power management"
 msgstr "Konfiguratu energia kudeatzailea"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
 msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
-#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:7
-#: src/cpm-statistics.c:1090 src/cpm-statistics.c:1577
+#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:8
+#: src/cpm-statistics.c:764 src/cpm-statistics.c:1233
 msgid "Power Statistics"
 msgstr "Energiaren estatistikak"
 
@@ -833,55 +820,37 @@ msgstr "Energiaren estatistikak"
 msgid "Observe power management"
 msgstr "Begiratu energia kudeatzailea"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-statistics.desktop.in.in:6
-msgid "cafe-power-statistics"
-msgstr ""
-
-#: data/cpm-statistics.ui:113 src/cpm-statistics.c:208
+#: data/cpm-statistics.ui:119
 msgid "Details"
 msgstr "Xehetasunak"
 
-#: data/cpm-statistics.ui:139 data/cpm-statistics.ui:342
+#: data/cpm-statistics.ui:145 data/cpm-statistics.ui:347
 msgid "Graph type:"
 msgstr "Grafiko-mota:"
 
-#: data/cpm-statistics.ui:174
+#: data/cpm-statistics.ui:180
 msgid "Data length:"
 msgstr "Datuen luzera:"
 
-#: data/cpm-statistics.ui:234 data/cpm-statistics.ui:395
+#: data/cpm-statistics.ui:239 data/cpm-statistics.ui:399
 msgid "There is no data to display."
 msgstr "Ez dago daturik bistaratzeko."
 
-#: data/cpm-statistics.ui:276 data/cpm-statistics.ui:438
+#: data/cpm-statistics.ui:281 data/cpm-statistics.ui:442
 msgid "Use smoothed line"
 msgstr "Erabili marra leunak"
 
-#: data/cpm-statistics.ui:291 data/cpm-statistics.ui:453
+#: data/cpm-statistics.ui:296 data/cpm-statistics.ui:457
 msgid "Show data points"
 msgstr "Erakutsi datuen puntuak"
 
-#: data/cpm-statistics.ui:320
+#: data/cpm-statistics.ui:325
 msgid "History"
 msgstr "Historia"
 
-#: data/cpm-statistics.ui:482
+#: data/cpm-statistics.ui:486
 msgid "Statistics"
 msgstr "Estatistikak"
-
-#: data/cpm-statistics.ui:504
-msgid "Processor wakeups per second:"
-msgstr "Prozesagailuaren esnatzeak segundoko:"
-
-#: data/cpm-statistics.ui:516
-msgid "0"
-msgstr "0"
-
-#: data/cpm-statistics.ui:563 src/cpm-statistics.c:194
-msgid "Wakeups"
-msgstr "Esnatzeak"
 
 #: data/cpm-prefs.ui:55
 msgid "Power Management Preferences"
@@ -1135,7 +1104,7 @@ msgstr "%.1fW"
 msgid "%.1fV"
 msgstr "%.1fV"
 
-#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1560
+#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1216
 msgid "Show extra debugging information"
 msgstr "Erakutsi arazketako datu gehigarriak"
 
@@ -1242,8 +1211,8 @@ msgstr "Bateria hondatuta egon daiteke"
 #: src/cpm-manager.c:1110
 #, c-format
 msgid ""
-"Battery has a very low capacity (%1.1f%%), which means that it may be old or"
-" broken."
+"Battery has a very low capacity (%1.1f%%), which means that it may be old or "
+"broken."
 msgstr ""
 
 #: src/cpm-manager.c:1159
@@ -1391,8 +1360,8 @@ msgstr "UPS larriki baxua"
 #: src/cpm-manager.c:1459
 #, c-format
 msgid ""
-"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
-" your computer to avoid losing data."
+"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to "
+"your computer to avoid losing data."
 msgstr ""
 
 #: src/cpm-manager.c:1473
@@ -1412,8 +1381,8 @@ msgstr ""
 #: src/cpm-manager.c:1490
 #, c-format
 msgid ""
-"PDA is very low in power (%.0f%%). This device will soon stop functioning if"
-" not charged."
+"PDA is very low in power (%.0f%%). This device will soon stop functioning if "
+"not charged."
 msgstr ""
 
 #: src/cpm-manager.c:1500
@@ -1433,8 +1402,8 @@ msgstr ""
 #: src/cpm-manager.c:1519
 #, c-format
 msgid ""
-"Tablet is very low in power (%.0f%%). This device will soon stop functioning"
-" if not charged."
+"Tablet is very low in power (%.0f%%). This device will soon stop functioning "
+"if not charged."
 msgstr ""
 
 #: src/cpm-manager.c:1528
@@ -1446,8 +1415,8 @@ msgstr ""
 
 #: src/cpm-manager.c:1593
 msgid ""
-"The battery is below the critical level and this computer will <b>power-"
-"off</b> when the battery becomes completely empty."
+"The battery is below the critical level and this computer will <b>power-off</"
+"b> when the battery becomes completely empty."
 msgstr ""
 "Bateria maila larriaren azpitik dabil eta ordenagailua <b>itzali</b> egingo "
 "da bateria erabat hustutzean."
@@ -1527,361 +1496,251 @@ msgstr "Ez egin ezer"
 msgid "Never"
 msgstr "Inoiz ez"
 
-#: src/cpm-statistics.c:78 src/cpm-statistics.c:466
+#: src/cpm-statistics.c:67 src/cpm-statistics.c:410
 msgid "Rate"
 msgstr "Tasa"
 
-#: src/cpm-statistics.c:79
+#: src/cpm-statistics.c:68
 msgid "Charge"
 msgstr "Karga"
 
-#: src/cpm-statistics.c:80 src/cpm-statistics.c:480
+#: src/cpm-statistics.c:69 src/cpm-statistics.c:424
 msgid "Time to full"
 msgstr "Denbora betetzeko"
 
-#: src/cpm-statistics.c:81 src/cpm-statistics.c:485
+#: src/cpm-statistics.c:70 src/cpm-statistics.c:429
 msgid "Time to empty"
 msgstr "Denbora hustutzeko"
 
-#: src/cpm-statistics.c:88
+#: src/cpm-statistics.c:77
 msgid "10 minutes"
 msgstr "10 minutu"
 
-#: src/cpm-statistics.c:89
+#: src/cpm-statistics.c:78
 msgid "2 hours"
 msgstr "2 ordu"
 
-#: src/cpm-statistics.c:90
+#: src/cpm-statistics.c:79
 msgid "6 hours"
 msgstr "6 ordu"
 
-#: src/cpm-statistics.c:91
+#: src/cpm-statistics.c:80
 msgid "1 day"
 msgstr "Egun 1"
 
-#: src/cpm-statistics.c:92
+#: src/cpm-statistics.c:81
 msgid "1 week"
 msgstr "Aste 1"
 
-#: src/cpm-statistics.c:101
+#: src/cpm-statistics.c:90
 msgid "Charge profile"
 msgstr "Kargaren profila"
 
-#: src/cpm-statistics.c:102
+#: src/cpm-statistics.c:91
 msgid "Discharge profile"
 msgstr "Deskargaren profila"
 
-#: src/cpm-statistics.c:104
+#: src/cpm-statistics.c:93
 msgid "Charge accuracy"
 msgstr "Kargaren doitasuna"
 
-#: src/cpm-statistics.c:105
+#: src/cpm-statistics.c:94
 msgid "Discharge accuracy"
 msgstr "Deskargaren doitasuna"
 
-#: src/cpm-statistics.c:132
+#: src/cpm-statistics.c:121
 msgid "Attribute"
 msgstr "Atributua"
 
-#: src/cpm-statistics.c:139
+#: src/cpm-statistics.c:128
 msgid "Value"
 msgstr "Balioa"
 
-#: src/cpm-statistics.c:156
+#: src/cpm-statistics.c:145
 msgid "Image"
 msgstr "Irudia"
 
-#: src/cpm-statistics.c:162
+#: src/cpm-statistics.c:151
 msgid "Description"
 msgstr "Deskribapena"
 
-#: src/cpm-statistics.c:181 src/cpm-statistics.c:405
-msgid "Type"
-msgstr "Mota"
-
-#: src/cpm-statistics.c:187
-msgid "ID"
-msgstr "IDa"
-
-#: src/cpm-statistics.c:201
-msgid "Command"
-msgstr "Komandoa"
-
-#: src/cpm-statistics.c:286
+#: src/cpm-statistics.c:230
 msgid "Unknown"
 msgstr "Ezezaguna"
 
-#: src/cpm-statistics.c:290
+#: src/cpm-statistics.c:234
 #, c-format
 msgid "%.0f second"
 msgid_plural "%.0f seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:295
+#: src/cpm-statistics.c:239
 #, c-format
 msgid "%.1f minute"
 msgid_plural "%.1f minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:300
+#: src/cpm-statistics.c:244
 #, c-format
 msgid "%.1f hour"
 msgid_plural "%.1f hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:304
+#: src/cpm-statistics.c:248
 #, c-format
 msgid "%.1f day"
 msgid_plural "%.1f days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "Yes"
 msgstr "Bai"
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "No"
 msgstr "Ez"
 
-#: src/cpm-statistics.c:402
+#: src/cpm-statistics.c:346
 msgid "Device"
 msgstr "Gailua"
 
-#: src/cpm-statistics.c:407
+#: src/cpm-statistics.c:349
+msgid "Type"
+msgstr "Mota"
+
+#: src/cpm-statistics.c:351
 msgid "Vendor"
 msgstr "Hornitzailea"
 
-#: src/cpm-statistics.c:409
+#: src/cpm-statistics.c:353
 msgid "Model"
 msgstr "Modeloa"
 
-#: src/cpm-statistics.c:411
+#: src/cpm-statistics.c:355
 msgid "Serial number"
 msgstr "Serie-zenbakia"
 
-#: src/cpm-statistics.c:416
+#: src/cpm-statistics.c:360
 msgid "Supply"
 msgstr "Hornitu"
 
-#: src/cpm-statistics.c:419
+#: src/cpm-statistics.c:363
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:423
+#: src/cpm-statistics.c:367
 msgid "Refreshed"
 msgstr "Freskatuta"
 
-#: src/cpm-statistics.c:433
+#: src/cpm-statistics.c:377
 msgid "Present"
 msgstr "Unekoa"
 
-#: src/cpm-statistics.c:440
+#: src/cpm-statistics.c:384
 msgid "Rechargeable"
 msgstr "Birkargagarria"
 
-#: src/cpm-statistics.c:446
+#: src/cpm-statistics.c:390
 msgid "State"
 msgstr "Egoera"
 
-#: src/cpm-statistics.c:450
+#: src/cpm-statistics.c:394
 msgid "Energy"
 msgstr "Energia"
 
-#: src/cpm-statistics.c:453
+#: src/cpm-statistics.c:397
 msgid "Energy when empty"
 msgstr "Energia hustuta dagoenean"
 
-#: src/cpm-statistics.c:456
+#: src/cpm-statistics.c:400
 msgid "Energy when full"
 msgstr "Energia beteta dagoenean"
 
-#: src/cpm-statistics.c:459
+#: src/cpm-statistics.c:403
 msgid "Energy (design)"
 msgstr "Energia (teorikoa)"
 
-#: src/cpm-statistics.c:473
+#: src/cpm-statistics.c:417
 msgid "Voltage"
 msgstr "Tentsioa"
 
-#: src/cpm-statistics.c:495
+#: src/cpm-statistics.c:439
 msgid "Percentage"
 msgstr "Ehunekoa"
 
-#: src/cpm-statistics.c:502
+#: src/cpm-statistics.c:446
 msgid "Capacity"
 msgstr "Edukiera"
 
-#: src/cpm-statistics.c:507
+#: src/cpm-statistics.c:451
 msgid "Technology"
 msgstr "Teknologia"
 
-#: src/cpm-statistics.c:512
+#: src/cpm-statistics.c:456
 msgid "Online"
 msgstr "Linean"
 
-#: src/cpm-statistics.c:824
-msgid "No data"
-msgstr "Daturik ez"
-
-#: src/cpm-statistics.c:831 src/cpm-statistics.c:836
-msgid "Kernel module"
-msgstr "Nukleo-modulua"
-
-#: src/cpm-statistics.c:841
-msgid "Kernel core"
-msgstr "Nukleoa"
-
-#: src/cpm-statistics.c:846
-msgid "Interprocessor interrupt"
-msgstr "Prozesuen arteko etendurak"
-
-#: src/cpm-statistics.c:851
-msgid "Interrupt"
-msgstr "Etendura"
-
-#: src/cpm-statistics.c:898
-msgid "PS/2 keyboard/mouse/touchpad"
-msgstr "PS/2 teklatua/sagua/touchpad"
-
-#: src/cpm-statistics.c:901
-msgid "ACPI"
-msgstr "ACPI"
-
-#: src/cpm-statistics.c:904
-msgid "Serial ATA"
-msgstr "Serieko ATA"
-
-#: src/cpm-statistics.c:907
-msgid "ATA host controller"
-msgstr "Ostalariko ATA kontrolatzailea"
-
-#: src/cpm-statistics.c:910
-msgid "Intel wireless adaptor"
-msgstr "Intel-en haririk gabeko moldagailua"
-
-#: src/cpm-statistics.c:917 src/cpm-statistics.c:922 src/cpm-statistics.c:927
-#: src/cpm-statistics.c:932 src/cpm-statistics.c:937
-#, c-format
-msgid "Timer %s"
-msgstr "%s tenporizadorea"
-
-#: src/cpm-statistics.c:941
-#, c-format
-msgid "Sleep %s"
-msgstr "%s lotan"
-
-#: src/cpm-statistics.c:944
-#, c-format
-msgid "New task %s"
-msgstr "%s ataza berria"
-
-#: src/cpm-statistics.c:948
-#, c-format
-msgid "Wait %s"
-msgstr "%s itxoiten"
-
-#: src/cpm-statistics.c:952 src/cpm-statistics.c:956
-#, c-format
-msgid "Work queue %s"
-msgstr "%s lan-ilara"
-
-#: src/cpm-statistics.c:959
-#, c-format
-msgid "Network route flush %s"
-msgstr "%s sareko bideratze-garbiketa"
-
-#: src/cpm-statistics.c:962
-#, c-format
-msgid "USB activity %s"
-msgstr "%s USBaren jarduera"
-
-#: src/cpm-statistics.c:965
-#, c-format
-msgid "Wakeup %s"
-msgstr "%s esnatzea"
-
-#: src/cpm-statistics.c:968
-msgid "Local interrupts"
-msgstr "Etendura lokalak"
-
-#: src/cpm-statistics.c:971
-msgid "Rescheduling interrupts"
-msgstr "Etendurak birplanifikatzen"
-
-#: src/cpm-statistics.c:1080
+#: src/cpm-statistics.c:756
 msgid "Device Information"
 msgstr "Gailuaren informazioa"
 
-#: src/cpm-statistics.c:1082
+#: src/cpm-statistics.c:758
 msgid "Device History"
 msgstr "Gailuaren historia"
 
-#: src/cpm-statistics.c:1084
+#: src/cpm-statistics.c:760
 msgid "Device Profile"
 msgstr "Gailuaren profila"
 
-#: src/cpm-statistics.c:1086
-msgid "Processor Wakeups"
-msgstr "Prozesagailuaren esnatzea"
-
-#: src/cpm-statistics.c:1325 src/cpm-statistics.c:1331
-#: src/cpm-statistics.c:1337 src/cpm-statistics.c:1343
+#: src/cpm-statistics.c:982 src/cpm-statistics.c:988 src/cpm-statistics.c:994
+#: src/cpm-statistics.c:1000
 msgid "Time elapsed"
 msgstr "Igarotako denbora"
 
-#: src/cpm-statistics.c:1327
+#: src/cpm-statistics.c:984
 msgid "Power"
 msgstr "Berredura"
 
-#: src/cpm-statistics.c:1333 src/cpm-statistics.c:1377
-#: src/cpm-statistics.c:1383 src/cpm-statistics.c:1389
-#: src/cpm-statistics.c:1395
+#: src/cpm-statistics.c:990 src/cpm-statistics.c:1034 src/cpm-statistics.c:1040
+#: src/cpm-statistics.c:1046 src/cpm-statistics.c:1052
 msgid "Cell charge"
 msgstr "Gelaxkaren karga"
 
-#: src/cpm-statistics.c:1339 src/cpm-statistics.c:1345
+#: src/cpm-statistics.c:996 src/cpm-statistics.c:1002
 msgid "Predicted time"
 msgstr "Aurresandako denbora"
 
-#: src/cpm-statistics.c:1379 src/cpm-statistics.c:1391
+#: src/cpm-statistics.c:1036 src/cpm-statistics.c:1048
 msgid "Correction factor"
 msgstr "Zuzenketaren faktorea"
 
-#: src/cpm-statistics.c:1385 src/cpm-statistics.c:1397
+#: src/cpm-statistics.c:1042 src/cpm-statistics.c:1054
 msgid "Prediction accuracy"
 msgstr "Aurresate-doitasuna"
 
-#: src/cpm-statistics.c:1563
+#: src/cpm-statistics.c:1219
 msgid "Select this device at startup"
 msgstr "Hautatu gailu hau abioan"
 
-#: src/cpm-statistics.c:1802
-msgid "Processor"
-msgstr "Prozesadorea"
-
-#: src/cpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 CAFE developers"
+#: src/cpm-tray-icon.c:207
+msgid ""
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
 
-#: src/cpm-tray-icon.c:193
-msgid "translator-credits"
-msgstr ""
-"Asier Iturralde Sarasola <asier.iturralde@gmail.com>\n"
-"Aritz Jorge Sánchez"
-
-#: src/cpm-tray-icon.c:295
+#: src/cpm-tray-icon.c:318
 #, c-format
 msgid "%s remaining"
 msgstr ""
 
-#: src/cpm-tray-icon.c:349
+#: src/cpm-tray-icon.c:372
 msgid "_Preferences"
 msgstr "_Hobespenak"
 
@@ -2146,3 +2005,131 @@ msgstr "Deskargatzeko zain"
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr ""
+
+#~ msgid "Licensed under the GNU General Public License Version 2"
+#~ msgstr "GNU Lizentzia Publiko Orokorraren 2. bertsioan lizentziatua"
+
+#~ msgid ""
+#~ "Power Manager is free software; you can redistribute it and/or\n"
+#~ "modify it under the terms of the GNU General Public License\n"
+#~ "as published by the Free Software Foundation; either version 2\n"
+#~ "of the License, or (at your option) any later version."
+#~ msgstr ""
+#~ "Energia kudeatzailea (cafe-power-manager) software librea da; birbana \n"
+#~ "eta/edo alda dezakezu Software Foundation-ek argitaratutako GNU "
+#~ "Lizentzia \n"
+#~ "Publiko Orokorraren 2. bertsioan, edo (nahiago baduzu) beste berriago\n"
+#~ "batean, jasotako baldintzak betez gero."
+
+#~ msgid ""
+#~ "Power Manager is distributed in the hope that it will be useful,\n"
+#~ "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+#~ "GNU General Public License for more details."
+#~ msgstr ""
+#~ "Energia kudeatzailea (cafe-power-manager) erabilgarria izango delakoan \n"
+#~ "banatzen da, baina, INOLAKO BERMERIK GABE; era berean, ez da bermatzen \n"
+#~ "beraren EGOKITASUNA MERKATURATZEKO edo HELBURU PARTIKULARRETARAKO \n"
+#~ "ERABILTZEKO. Argibide gehiago nahi izanez gero, ikus GNU Lizentzia \n"
+#~ "Publiko Orokorra."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License\n"
+#~ "along with this program; if not, write to the Free Software\n"
+#~ "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA."
+#~ msgstr ""
+#~ "Programa honekin batera GNU Lizentzia Publiko Orokorraren kopia bat "
+#~ "jasoko \n"
+#~ "zenuen; hala ez bada, idatzi hona: Free Software Foundation, Inc., \n"
+#~ "51 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA."
+
+#~ msgid "Processor wakeups per second:"
+#~ msgstr "Prozesagailuaren esnatzeak segundoko:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Wakeups"
+#~ msgstr "Esnatzeak"
+
+#~ msgid "ID"
+#~ msgstr "IDa"
+
+#~ msgid "Command"
+#~ msgstr "Komandoa"
+
+#~ msgid "No data"
+#~ msgstr "Daturik ez"
+
+#~ msgid "Kernel module"
+#~ msgstr "Nukleo-modulua"
+
+#~ msgid "Kernel core"
+#~ msgstr "Nukleoa"
+
+#~ msgid "Interprocessor interrupt"
+#~ msgstr "Prozesuen arteko etendurak"
+
+#~ msgid "Interrupt"
+#~ msgstr "Etendura"
+
+#~ msgid "PS/2 keyboard/mouse/touchpad"
+#~ msgstr "PS/2 teklatua/sagua/touchpad"
+
+#~ msgid "ACPI"
+#~ msgstr "ACPI"
+
+#~ msgid "Serial ATA"
+#~ msgstr "Serieko ATA"
+
+#~ msgid "ATA host controller"
+#~ msgstr "Ostalariko ATA kontrolatzailea"
+
+#~ msgid "Intel wireless adaptor"
+#~ msgstr "Intel-en haririk gabeko moldagailua"
+
+#, c-format
+#~ msgid "Timer %s"
+#~ msgstr "%s tenporizadorea"
+
+#, c-format
+#~ msgid "Sleep %s"
+#~ msgstr "%s lotan"
+
+#, c-format
+#~ msgid "New task %s"
+#~ msgstr "%s ataza berria"
+
+#, c-format
+#~ msgid "Wait %s"
+#~ msgstr "%s itxoiten"
+
+#, c-format
+#~ msgid "Work queue %s"
+#~ msgstr "%s lan-ilara"
+
+#, c-format
+#~ msgid "Network route flush %s"
+#~ msgstr "%s sareko bideratze-garbiketa"
+
+#, c-format
+#~ msgid "USB activity %s"
+#~ msgstr "%s USBaren jarduera"
+
+#, c-format
+#~ msgid "Wakeup %s"
+#~ msgstr "%s esnatzea"
+
+#~ msgid "Local interrupts"
+#~ msgstr "Etendura lokalak"
+
+#~ msgid "Rescheduling interrupts"
+#~ msgstr "Etendurak birplanifikatzen"
+
+#~ msgid "Processor Wakeups"
+#~ msgstr "Prozesagailuaren esnatzea"
+
+#~ msgid "Processor"
+#~ msgstr "Prozesadorea"

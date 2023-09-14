@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # zubr139, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
@@ -10,20 +10,23 @@
 # Шаповалов Анатолій Романович <elrond.716.smith@gmail.com>, 2020
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Микола Ткач <chistomov@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-power-manager 1.23.1\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2019-11-12 15:22+0100\n"
+"POT-Creation-Date: 2023-09-14 10:39+0200\n"
 "PO-Revision-Date: 2020-02-15 16:27+0000\n"
 "Last-Translator: Микола Ткач <chistomov@gmail.com>, 2020\n"
 "Language-Team: Ukrainian (https://www.transifex.com/cafe/teams/13566/uk/)\n"
+"Language: uk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: uk\n"
-"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != 11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % 100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || (n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
+"Plural-Forms: nplurals=4; plural=(n % 1 == 0 && n % 10 == 1 && n % 100 != "
+"11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
+"100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
+"(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
 
 #: applets/brightness/brightness-applet.c:107
 msgid "Power Manager Brightness Applet"
@@ -47,57 +50,58 @@ msgstr "Не вдається отримати значення яскравос
 msgid "LCD brightness : %d%%"
 msgstr "Яскравість LCD : %d%%"
 
+#: applets/brightness/brightness-applet.c:790
+#: applets/inhibit/inhibit-applet.c:287
+msgid ""
+"Power Manager is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:795
+#: applets/inhibit/inhibit-applet.c:292
+msgid ""
+"Power Manager is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+
 #: applets/brightness/brightness-applet.c:800
 #: applets/inhibit/inhibit-applet.c:297
-msgid "Licensed under the GNU General Public License Version 2"
-msgstr ""
-"Ця програма розповсюджується за умовами GNU General Public License Version 2"
-
-#: applets/brightness/brightness-applet.c:801
-#: applets/inhibit/inhibit-applet.c:298
 msgid ""
-"Power Manager is free software; you can redistribute it and/or\n"
-"modify it under the terms of the GNU General Public License\n"
-"as published by the Free Software Foundation; either version 2\n"
-"of the License, or (at your option) any later version."
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"Керівник живлення є вільною програмою; дозволяється розповсюджувати та/або "
-"змінювати її за умовами ліцензії GNU General Public \"\"License, що "
-"оголошена Free Software Foundation; версії 2 цієї ліцензії, \"\"або (за "
-"вашим бажанням) будь-якої старшої версії.\""
 
-#: applets/brightness/brightness-applet.c:805
-#: applets/inhibit/inhibit-applet.c:302
+#: applets/brightness/brightness-applet.c:813
+msgid "About Power Manager Brightness Applet"
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:815
 msgid ""
-"Power Manager is distributed in the hope that it will be useful,\n"
-"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-"GNU General Public License for more details."
+"Copyright © 2006 Benjamin Canou\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"Керівник живлення поширюється зі сподіванням, що він буде корисним,але БЕЗ "
-"БУДЬ-ЯКИХ ЗАПОРУК; навіть без запоруки КОРИСНОСТИ чи ПРИДАТНОСТИ ДЛЯ ПЕВНОЇ "
-"КОНКРЕТНОЇ МЕТИ. Дивіться GNU General Public License для отримання "
-"докладнішої інформації."
 
-#: applets/brightness/brightness-applet.c:809
-#: applets/inhibit/inhibit-applet.c:306
-msgid ""
-"You should have received a copy of the GNU General Public License\n"
-"along with this program; if not, write to the Free Software\n"
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
+#: applets/brightness/brightness-applet.c:823
+#: applets/inhibit/inhibit-applet.c:320 src/cpm-tray-icon.c:214
+msgid "translator-credits"
 msgstr ""
-"Ви мали отримати копію GNU General Public License разом з цією програмою; "
-"якщо це не так, напишіть у Free Software Foundation, Inc., 51 Franklin "
-"Street, Fifth Floor, Boston, MA 02110-1301, USA."
+"Yarema aka Knedlyk <yupadmin@gmail.com>,\n"
+"Микола Ткач <Stuartlittle1970@gmail.com>,\n"
+"Oleh Tsyupka <myr4yk@gmail.com>"
 
-#: applets/brightness/brightness-applet.c:1063
-#: applets/inhibit/inhibit-applet.c:519
+#: applets/brightness/brightness-applet.c:1051
+#: applets/inhibit/inhibit-applet.c:507
 msgid "_About"
 msgstr "_Про програму"
 
-#: applets/brightness/brightness-applet.c:1066
-#: applets/inhibit/inhibit-applet.c:522
+#: applets/brightness/brightness-applet.c:1054
+#: applets/inhibit/inhibit-applet.c:510
 msgid "_Help"
 msgstr "_Допомога"
 
@@ -108,12 +112,6 @@ msgstr "Фабрика аплету зміни яскравости"
 #: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Brightness Applet"
 msgstr "Аплет зміни яскравости"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-brightness-applet"
-msgstr "cafe-brightness-applet"
 
 #: applets/inhibit/inhibit-applet.c:87
 msgid "Power Manager Inhibit Applet"
@@ -136,6 +134,17 @@ msgstr "Самочинне засипання увімкнено"
 msgid "Manual inhibit"
 msgstr "Ручне стримання"
 
+#: applets/inhibit/inhibit-applet.c:310
+msgid "About Power Manager Inhibit Applet"
+msgstr ""
+
+#: applets/inhibit/inhibit-applet.c:312
+msgid ""
+"Copyright © 2006-2007 Richard Hughes\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
+msgstr ""
+
 #: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Inhibit Applet Factory"
 msgstr "Фабрика аплету стримування"
@@ -144,26 +153,13 @@ msgstr "Фабрика аплету стримування"
 msgid "Inhibit Applet"
 msgstr "Аплет Автостримування"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-inhibit-applet"
-msgstr "cafe-inhibit-applet"
-
-#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:184
+#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:204
 msgid "Power Manager"
 msgstr "Керування живленням"
 
-#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:186
+#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:206
 msgid "Power management daemon"
 msgstr "Служба керування живленням"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-manager.desktop.in.in:6
-#: data/cafe-power-preferences.desktop.in.in:6
-msgid "cafe-power-manager"
-msgstr "cafe-power-manager"
 
 #: data/org.cafe.power-manager.gschema.xml.in:26
 #: data/org.cafe.power-manager.gschema.xml.in:41
@@ -277,8 +273,8 @@ msgid ""
 "power. Legal values are between 0 and 100."
 msgstr ""
 "Відсоток зменшення підсвічування набірниці при живленні від батареї. "
-"Наприклад, якщо встановлено \"60\", підсвітка зменшиться на 40% при живленні"
-" від батареї. Можливі значення між 0 та 100."
+"Наприклад, якщо встановлено \"60\", підсвітка зменшиться на 40% при живленні "
+"від батареї. Можливі значення між 0 та 100."
 
 #: data/org.cafe.power-manager.gschema.xml.in:81
 msgid "Percent to reduce keyboard backlight by when idle."
@@ -287,12 +283,12 @@ msgstr "Відсоток зменшення підсвічування набі�
 #: data/org.cafe.power-manager.gschema.xml.in:82
 msgid ""
 "The percentage to reduce the keyboard backlight by when idle. For example, "
-"if set to '60', the backlight will be cut by 40% when idle. Legal values are"
-" between 0 and 100."
+"if set to '60', the backlight will be cut by 40% when idle. Legal values are "
+"between 0 and 100."
 msgstr ""
 "Відсоток зменшення підсвічування набірниці при живленні від батареї. "
-"Наприклад, якщо встановлено \"60\", підсвітка зменшиться на 40% при живленні"
-" від батареї. Можливі значення між 0 та 100."
+"Наприклад, якщо встановлено \"60\", підсвітка зменшиться на 40% при живленні "
+"від батареї. Можливі значення між 0 та 100."
 
 #: data/org.cafe.power-manager.gschema.xml.in:86
 msgid "The brightness of the screen when idle"
@@ -309,8 +305,7 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:91
 msgid "Dim the screen after a period of inactivity when on battery power"
 msgstr ""
-"Зменшувати яскравість після періоду неактивности при живленні від "
-"акумулятора"
+"Зменшувати яскравість після періоду неактивности при живленні від акумулятора"
 
 #: data/org.cafe.power-manager.gschema.xml.in:92
 msgid ""
@@ -475,8 +470,8 @@ msgid ""
 "Whether to use the screen lock setting of cafe-screensaver to decide if the "
 "screen is locked after a hibernate, suspend or blank screen."
 msgstr ""
-"Чи використовувати параметр блокування екрану cafe-screensaver при прийнятті"
-" рішення про блокування екрану при виході з режиму сну, призупинення чи "
+"Чи використовувати параметр блокування екрану cafe-screensaver при прийнятті "
+"рішення про блокування екрану при виході з режиму сну, призупинення чи "
 "згасання екрану."
 
 #: data/org.cafe.power-manager.gschema.xml.in:171
@@ -497,8 +492,8 @@ msgstr "Блокувати екран при призупиненні"
 
 #: data/org.cafe.power-manager.gschema.xml.in:177
 msgid ""
-"Whether the screen is locked when the computer wakes up from a suspend. Only"
-" used if lock-use-screensaver is false."
+"Whether the screen is locked when the computer wakes up from a suspend. Only "
+"used if lock-use-screensaver is false."
 msgstr ""
 "Чи блокувати екран після відновлення комп’ютера з режиму очікування. "
 "Використовується лише у випадку, якщо не встановлено параметр lock-use-"
@@ -524,11 +519,11 @@ msgstr "Блокувати в'язку ключів GNOME при призупи�
 
 #: data/org.cafe.power-manager.gschema.xml.in:187
 msgid ""
-"Whether the GNOME keyring is locked before the computer enters suspend. This"
-" means the keyring will have to be unlocked on resume."
+"Whether the GNOME keyring is locked before the computer enters suspend. This "
+"means the keyring will have to be unlocked on resume."
 msgstr ""
-"Чи в'язка ключів GNOME блокується перед переходом комп'ютера у режим сну. Це"
-" означає, що в'язка ключів має бути розблокована після пробудження."
+"Чи в'язка ключів GNOME блокується перед переходом комп'ютера у режим сну. Це "
+"означає, що в'язка ключів має бути розблокована після пробудження."
 
 #: data/org.cafe.power-manager.gschema.xml.in:192
 msgid ""
@@ -687,8 +682,8 @@ msgid ""
 "The identifier of the last device which is used to return focus to the "
 "correct device."
 msgstr ""
-"Ідентифікатор останнього пристрою, що використовується для повернення фокусу"
-" для потрібного пристрою."
+"Ідентифікатор останнього пристрою, що використовується для повернення фокусу "
+"для потрібного пристрою."
 
 #: data/org.cafe.power-manager.gschema.xml.in:276
 msgid "Percentage considered low"
@@ -696,8 +691,8 @@ msgstr "Відсоток заряду вважається низьким"
 
 #: data/org.cafe.power-manager.gschema.xml.in:277
 msgid ""
-"The percentage of the battery when it is considered low. Only valid when "
-"use-time-for-policy is false."
+"The percentage of the battery when it is considered low. Only valid when use-"
+"time-for-policy is false."
 msgstr ""
 "Відсоток заряду акумулятора, що сприймається як низький. Дійсний лише якщо "
 "не встановлено параметр use-time-for-policy."
@@ -733,8 +728,8 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:292
 msgid ""
-"The time remaining in seconds of the battery when it is considered low. Only"
-" valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered low. Only "
+"valid when use-time-for-policy is true."
 msgstr ""
 "Час роботи на акумуляторі, що залишився у секундах, що сприймається як "
 "низький. Дійсно лише у випадку, коли встановлено параметр use-time-for-"
@@ -746,8 +741,8 @@ msgstr "Час, що залишився при якому встановлюєт
 
 #: data/org.cafe.power-manager.gschema.xml.in:297
 msgid ""
-"The time remaining in seconds of the battery when it is considered critical."
-" Only valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered critical. "
+"Only valid when use-time-for-policy is true."
 msgstr ""
 "Час роботи на акумуляторі, що залишився у секундах, що сприймається як "
 "критичний. Дійсно лише у випадку, коли встановлено параметр use-time-for-"
@@ -796,8 +791,8 @@ msgstr "Інтервал часу до переходу у режим сну п�
 
 #: data/org.cafe.power-manager.gschema.xml.in:317
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before it goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before it goes to sleep."
 msgstr ""
 "Період у секундах, перш ніж комп'ютер перейде у режим сну при живленні від "
 "UPS."
@@ -832,8 +827,8 @@ msgstr "Інтервал часу до засипання дисплею при 
 
 #: data/org.cafe.power-manager.gschema.xml.in:332
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before the display goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before the display goes to sleep."
 msgstr ""
 "Час у секундах перш ніж дисплей перейде у режим сну при живленні комп'ютера "
 "від UPS."
@@ -851,8 +846,7 @@ msgstr ""
 "коли запити стримування зупиняють заплановану дію."
 
 #: data/org.cafe.power-manager.gschema.xml.in:341
-msgid ""
-"If preferences and statistics items should be shown in the context menu"
+msgid "If preferences and statistics items should be shown in the context menu"
 msgstr "Чи показувати пункти параметрів та статистики у контекстному меню"
 
 #: data/org.cafe.power-manager.gschema.xml.in:345
@@ -871,14 +865,13 @@ msgstr "Керування живленням"
 msgid "Configure power management"
 msgstr "Налаштовування керування живленням"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
 msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
-#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:7
-#: src/cpm-statistics.c:1090 src/cpm-statistics.c:1577
+#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:8
+#: src/cpm-statistics.c:764 src/cpm-statistics.c:1233
 msgid "Power Statistics"
 msgstr "Статистика живлення"
 
@@ -886,55 +879,37 @@ msgstr "Статистика живлення"
 msgid "Observe power management"
 msgstr "Стеження за керуванням живленням"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-statistics.desktop.in.in:6
-msgid "cafe-power-statistics"
-msgstr "cafe-power-statistics"
-
-#: data/cpm-statistics.ui:113 src/cpm-statistics.c:208
+#: data/cpm-statistics.ui:119
 msgid "Details"
 msgstr "Докладно"
 
-#: data/cpm-statistics.ui:139 data/cpm-statistics.ui:342
+#: data/cpm-statistics.ui:145 data/cpm-statistics.ui:347
 msgid "Graph type:"
 msgstr "Тип графіку:"
 
-#: data/cpm-statistics.ui:174
+#: data/cpm-statistics.ui:180
 msgid "Data length:"
 msgstr "Тривалість:"
 
-#: data/cpm-statistics.ui:234 data/cpm-statistics.ui:395
+#: data/cpm-statistics.ui:239 data/cpm-statistics.ui:399
 msgid "There is no data to display."
 msgstr "Відсутні дані."
 
-#: data/cpm-statistics.ui:276 data/cpm-statistics.ui:438
+#: data/cpm-statistics.ui:281 data/cpm-statistics.ui:442
 msgid "Use smoothed line"
 msgstr "Використовувати згладжування"
 
-#: data/cpm-statistics.ui:291 data/cpm-statistics.ui:453
+#: data/cpm-statistics.ui:296 data/cpm-statistics.ui:457
 msgid "Show data points"
 msgstr "Показувати відлік"
 
-#: data/cpm-statistics.ui:320
+#: data/cpm-statistics.ui:325
 msgid "History"
 msgstr "Дієпис"
 
-#: data/cpm-statistics.ui:482
+#: data/cpm-statistics.ui:486
 msgid "Statistics"
 msgstr "Статистика"
-
-#: data/cpm-statistics.ui:504
-msgid "Processor wakeups per second:"
-msgstr "Пробуджень процесора за секунду:"
-
-#: data/cpm-statistics.ui:516
-msgid "0"
-msgstr "0"
-
-#: data/cpm-statistics.ui:563 src/cpm-statistics.c:194
-msgid "Wakeups"
-msgstr "Пробудження"
 
 #: data/cpm-prefs.ui:55
 msgid "Power Management Preferences"
@@ -1196,7 +1171,7 @@ msgstr "%.1fВт"
 msgid "%.1fV"
 msgstr "%.1fВ"
 
-#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1560
+#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1216
 msgid "Show extra debugging information"
 msgstr "Показати додаткову зневаджувальну інформацію"
 
@@ -1303,8 +1278,8 @@ msgstr "Можливо акумулятор зіпсований"
 #: src/cpm-manager.c:1110
 #, c-format
 msgid ""
-"Battery has a very low capacity (%1.1f%%), which means that it may be old or"
-" broken."
+"Battery has a very low capacity (%1.1f%%), which means that it may be old or "
+"broken."
 msgstr ""
 "В акумулятора замала місткість (%1.1f%%); ймовірно, акумулятор застарий або "
 "зіпсувався."
@@ -1461,8 +1436,8 @@ msgstr "Заряд UPS критично низький"
 #: src/cpm-manager.c:1459
 #, c-format
 msgid ""
-"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
-" your computer to avoid losing data."
+"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to "
+"your computer to avoid losing data."
 msgstr ""
 "Залишилося приблизно <b>%s</b> заряду UPS (%.0f%%). Відновіть живлення "
 "Вашого комп’ютера, щоб запобігти втраті даних."
@@ -1488,11 +1463,11 @@ msgstr ""
 #: src/cpm-manager.c:1490
 #, c-format
 msgid ""
-"PDA is very low in power (%.0f%%). This device will soon stop functioning if"
-" not charged."
+"PDA is very low in power (%.0f%%). This device will soon stop functioning if "
+"not charged."
 msgstr ""
-"КПК незабаром розрядиться (%.0f%%). Цей пристрій незабаром припинить роботу,"
-" якщо не зарядити."
+"КПК незабаром розрядиться (%.0f%%). Цей пристрій незабаром припинить роботу, "
+"якщо не зарядити."
 
 #: src/cpm-manager.c:1500
 #, c-format
@@ -1515,8 +1490,8 @@ msgstr ""
 #: src/cpm-manager.c:1519
 #, c-format
 msgid ""
-"Tablet is very low in power (%.0f%%). This device will soon stop functioning"
-" if not charged."
+"Tablet is very low in power (%.0f%%). This device will soon stop functioning "
+"if not charged."
 msgstr ""
 "Планшет незабаром розрядиться (%.0f%%). Цей пристрій незабаром припинить "
 "роботу, якщо не зарядити."
@@ -1532,11 +1507,11 @@ msgstr ""
 
 #: src/cpm-manager.c:1593
 msgid ""
-"The battery is below the critical level and this computer will <b>power-"
-"off</b> when the battery becomes completely empty."
+"The battery is below the critical level and this computer will <b>power-off</"
+"b> when the battery becomes completely empty."
 msgstr ""
-"Рівень заряду акумулятора нижчий критичного і комп'ютер буде <b>вимкнено</b>"
-" коли акумулятор повністю розрядиться."
+"Рівень заряду акумулятора нижчий критичного і комп'ютер буде <b>вимкнено</b> "
+"коли акумулятор повністю розрядиться."
 
 #: src/cpm-manager.c:1599
 msgid ""
@@ -1545,8 +1520,8 @@ msgid ""
 "computer in a suspended state."
 msgstr ""
 "Рівень заряду акумулятора нижчий критичного і комп'ютер буде призупинено. "
-"<br><b>НОТАТКА:</b> Для підтримання комп'ютера у стані призупинення потрібна"
-" невелика потужність."
+"<br><b>НОТАТКА:</b> Для підтримання комп'ютера у стані призупинення потрібна "
+"невелика потужність."
 
 #: src/cpm-manager.c:1606
 msgid ""
@@ -1560,16 +1535,15 @@ msgstr ""
 msgid ""
 "The battery is below the critical level and this computer is about to "
 "shutdown."
-msgstr ""
-"Рівень заряду акумулятора нижчий критичного і комп'ютер буде вимкнено."
+msgstr "Рівень заряду акумулятора нижчий критичного і комп'ютер буде вимкнено."
 
 #: src/cpm-manager.c:1629
 msgid ""
 "The UPS is below the critical level and this computer will <b>power-off</b> "
 "when the UPS becomes completely empty."
 msgstr ""
-"Заряд UPS нижчий критичного рівню і комп'ютер буде <b>вимкнено</b>, коли UPS"
-" повністю розрядиться."
+"Заряд UPS нижчий критичного рівню і комп'ютер буде <b>вимкнено</b>, коли UPS "
+"повністю розрядиться."
 
 #: src/cpm-manager.c:1635
 msgid ""
@@ -1614,91 +1588,79 @@ msgstr "Нічого не робити"
 msgid "Never"
 msgstr "Ніколи"
 
-#: src/cpm-statistics.c:78 src/cpm-statistics.c:466
+#: src/cpm-statistics.c:67 src/cpm-statistics.c:410
 msgid "Rate"
 msgstr "Ставк"
 
-#: src/cpm-statistics.c:79
+#: src/cpm-statistics.c:68
 msgid "Charge"
 msgstr "Заряджання"
 
-#: src/cpm-statistics.c:80 src/cpm-statistics.c:480
+#: src/cpm-statistics.c:69 src/cpm-statistics.c:424
 msgid "Time to full"
 msgstr "Час до повного заряду"
 
-#: src/cpm-statistics.c:81 src/cpm-statistics.c:485
+#: src/cpm-statistics.c:70 src/cpm-statistics.c:429
 msgid "Time to empty"
 msgstr "Час до повного розряду"
 
-#: src/cpm-statistics.c:88
+#: src/cpm-statistics.c:77
 msgid "10 minutes"
 msgstr "10 хвилин"
 
-#: src/cpm-statistics.c:89
+#: src/cpm-statistics.c:78
 msgid "2 hours"
 msgstr "2 години"
 
-#: src/cpm-statistics.c:90
+#: src/cpm-statistics.c:79
 msgid "6 hours"
 msgstr "6 годин"
 
-#: src/cpm-statistics.c:91
+#: src/cpm-statistics.c:80
 msgid "1 day"
 msgstr "1 день"
 
-#: src/cpm-statistics.c:92
+#: src/cpm-statistics.c:81
 msgid "1 week"
 msgstr "1 тиждень "
 
-#: src/cpm-statistics.c:101
+#: src/cpm-statistics.c:90
 msgid "Charge profile"
 msgstr "Профіль часу заряду"
 
-#: src/cpm-statistics.c:102
+#: src/cpm-statistics.c:91
 msgid "Discharge profile"
 msgstr "Профіль часу розряду"
 
-#: src/cpm-statistics.c:104
+#: src/cpm-statistics.c:93
 msgid "Charge accuracy"
 msgstr "Профіль точности визначення часу заряду"
 
-#: src/cpm-statistics.c:105
+#: src/cpm-statistics.c:94
 msgid "Discharge accuracy"
 msgstr "Профіль точности визначення часу розряду"
 
-#: src/cpm-statistics.c:132
+#: src/cpm-statistics.c:121
 msgid "Attribute"
 msgstr "Атрибут"
 
-#: src/cpm-statistics.c:139
+#: src/cpm-statistics.c:128
 msgid "Value"
 msgstr "Значення"
 
-#: src/cpm-statistics.c:156
+#: src/cpm-statistics.c:145
 msgid "Image"
 msgstr "Зображення"
 
-#: src/cpm-statistics.c:162
+#: src/cpm-statistics.c:151
 msgid "Description"
 msgstr "Опис"
 
-#: src/cpm-statistics.c:181 src/cpm-statistics.c:405
-msgid "Type"
-msgstr "Тип"
-
-#: src/cpm-statistics.c:187
-msgid "ID"
-msgstr "ID"
-
-#: src/cpm-statistics.c:201
-msgid "Command"
-msgstr "Команда"
-
-#: src/cpm-statistics.c:286
+#: src/cpm-statistics.c:230
 msgid "Unknown"
 msgstr "Невідомий"
 
-#: src/cpm-statistics.c:290
+#: src/cpm-statistics.c:234
 #, c-format
 msgid "%.0f second"
 msgid_plural "%.0f seconds"
@@ -1707,7 +1669,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: src/cpm-statistics.c:295
+#: src/cpm-statistics.c:239
 #, c-format
 msgid "%.1f minute"
 msgid_plural "%.1f minutes"
@@ -1716,7 +1678,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: src/cpm-statistics.c:300
+#: src/cpm-statistics.c:244
 #, c-format
 msgid "%.1f hour"
 msgid_plural "%.1f hours"
@@ -1725,7 +1687,7 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: src/cpm-statistics.c:304
+#: src/cpm-statistics.c:248
 #, c-format
 msgid "%.1f day"
 msgid_plural "%.1f days"
@@ -1734,35 +1696,39 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "Yes"
 msgstr "Так"
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "No"
 msgstr "Ні"
 
-#: src/cpm-statistics.c:402
+#: src/cpm-statistics.c:346
 msgid "Device"
 msgstr "Пристрій"
 
-#: src/cpm-statistics.c:407
+#: src/cpm-statistics.c:349
+msgid "Type"
+msgstr "Тип"
+
+#: src/cpm-statistics.c:351
 msgid "Vendor"
 msgstr "Виробник"
 
-#: src/cpm-statistics.c:409
+#: src/cpm-statistics.c:353
 msgid "Model"
 msgstr "Модель"
 
-#: src/cpm-statistics.c:411
+#: src/cpm-statistics.c:355
 msgid "Serial number"
 msgstr "Серійний номер"
 
-#: src/cpm-statistics.c:416
+#: src/cpm-statistics.c:360
 msgid "Supply"
 msgstr "Постачальник енергії"
 
-#: src/cpm-statistics.c:419
+#: src/cpm-statistics.c:363
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -1771,215 +1737,112 @@ msgstr[1] ""
 msgstr[2] ""
 msgstr[3] ""
 
-#: src/cpm-statistics.c:423
+#: src/cpm-statistics.c:367
 msgid "Refreshed"
 msgstr "Оновлено"
 
-#: src/cpm-statistics.c:433
+#: src/cpm-statistics.c:377
 msgid "Present"
 msgstr "Присутній"
 
-#: src/cpm-statistics.c:440
+#: src/cpm-statistics.c:384
 msgid "Rechargeable"
 msgstr "Перезаряджуваний"
 
-#: src/cpm-statistics.c:446
+#: src/cpm-statistics.c:390
 msgid "State"
 msgstr "Стан"
 
-#: src/cpm-statistics.c:450
+#: src/cpm-statistics.c:394
 msgid "Energy"
 msgstr "Енергія"
 
-#: src/cpm-statistics.c:453
+#: src/cpm-statistics.c:397
 msgid "Energy when empty"
 msgstr "Енергія при спустошенні"
 
-#: src/cpm-statistics.c:456
+#: src/cpm-statistics.c:400
 msgid "Energy when full"
 msgstr "Енергія при заповненні"
 
-#: src/cpm-statistics.c:459
+#: src/cpm-statistics.c:403
 msgid "Energy (design)"
 msgstr "Енергія (початкова)"
 
-#: src/cpm-statistics.c:473
+#: src/cpm-statistics.c:417
 msgid "Voltage"
 msgstr "Вольтаж"
 
-#: src/cpm-statistics.c:495
+#: src/cpm-statistics.c:439
 msgid "Percentage"
 msgstr "Відсоток"
 
-#: src/cpm-statistics.c:502
+#: src/cpm-statistics.c:446
 msgid "Capacity"
 msgstr "Місткість:"
 
-#: src/cpm-statistics.c:507
+#: src/cpm-statistics.c:451
 msgid "Technology"
 msgstr "Технологія"
 
-#: src/cpm-statistics.c:512
+#: src/cpm-statistics.c:456
 msgid "Online"
 msgstr "Під’єднано"
 
-#: src/cpm-statistics.c:824
-msgid "No data"
-msgstr "Дані відсутні"
-
-#: src/cpm-statistics.c:831 src/cpm-statistics.c:836
-msgid "Kernel module"
-msgstr "Модуль ядра"
-
-#: src/cpm-statistics.c:841
-msgid "Kernel core"
-msgstr "Ядро"
-
-#: src/cpm-statistics.c:846
-msgid "Interprocessor interrupt"
-msgstr "Міжпроцесорне переривання"
-
-#: src/cpm-statistics.c:851
-msgid "Interrupt"
-msgstr "Переривання"
-
-#: src/cpm-statistics.c:898
-msgid "PS/2 keyboard/mouse/touchpad"
-msgstr "PS/2 набірниця/миша/чутлива панель"
-
-#: src/cpm-statistics.c:901
-msgid "ACPI"
-msgstr "ACPI"
-
-#: src/cpm-statistics.c:904
-msgid "Serial ATA"
-msgstr "Serial ATA"
-
-#: src/cpm-statistics.c:907
-msgid "ATA host controller"
-msgstr "Контролер ATA"
-
-#: src/cpm-statistics.c:910
-msgid "Intel wireless adaptor"
-msgstr "Бездротовий адаптер Intel"
-
-#: src/cpm-statistics.c:917 src/cpm-statistics.c:922 src/cpm-statistics.c:927
-#: src/cpm-statistics.c:932 src/cpm-statistics.c:937
-#, c-format
-msgid "Timer %s"
-msgstr "Періодична активність %s"
-
-#: src/cpm-statistics.c:941
-#, c-format
-msgid "Sleep %s"
-msgstr "Пробудження %s"
-
-#: src/cpm-statistics.c:944
-#, c-format
-msgid "New task %s"
-msgstr "Нове завдання %s"
-
-#: src/cpm-statistics.c:948
-#, c-format
-msgid "Wait %s"
-msgstr "Очікування %s"
-
-#: src/cpm-statistics.c:952 src/cpm-statistics.c:956
-#, c-format
-msgid "Work queue %s"
-msgstr "Черга завдань %s"
-
-#: src/cpm-statistics.c:959
-#, c-format
-msgid "Network route flush %s"
-msgstr "Очищення мережних маршрутів %s"
-
-#: src/cpm-statistics.c:962
-#, c-format
-msgid "USB activity %s"
-msgstr "Активність USB %s"
-
-#: src/cpm-statistics.c:965
-#, c-format
-msgid "Wakeup %s"
-msgstr "Пробудження періодичного завдання %s"
-
-#: src/cpm-statistics.c:968
-msgid "Local interrupts"
-msgstr "Переривання"
-
-#: src/cpm-statistics.c:971
-msgid "Rescheduling interrupts"
-msgstr "Перепланування завдань"
-
-#: src/cpm-statistics.c:1080
+#: src/cpm-statistics.c:756
 msgid "Device Information"
 msgstr "Відомості про пристрій"
 
-#: src/cpm-statistics.c:1082
+#: src/cpm-statistics.c:758
 msgid "Device History"
 msgstr "Дієпис пристрою"
 
-#: src/cpm-statistics.c:1084
+#: src/cpm-statistics.c:760
 msgid "Device Profile"
 msgstr "Профіль пристрою"
 
-#: src/cpm-statistics.c:1086
-msgid "Processor Wakeups"
-msgstr "Пробудження процесора"
-
-#: src/cpm-statistics.c:1325 src/cpm-statistics.c:1331
-#: src/cpm-statistics.c:1337 src/cpm-statistics.c:1343
+#: src/cpm-statistics.c:982 src/cpm-statistics.c:988 src/cpm-statistics.c:994
+#: src/cpm-statistics.c:1000
 msgid "Time elapsed"
 msgstr "Середній час до закінчення"
 
-#: src/cpm-statistics.c:1327
+#: src/cpm-statistics.c:984
 msgid "Power"
 msgstr "Зведення у ступінь"
 
-#: src/cpm-statistics.c:1333 src/cpm-statistics.c:1377
-#: src/cpm-statistics.c:1383 src/cpm-statistics.c:1389
-#: src/cpm-statistics.c:1395
+#: src/cpm-statistics.c:990 src/cpm-statistics.c:1034 src/cpm-statistics.c:1040
+#: src/cpm-statistics.c:1046 src/cpm-statistics.c:1052
 msgid "Cell charge"
 msgstr "Заряд комірки"
 
-#: src/cpm-statistics.c:1339 src/cpm-statistics.c:1345
+#: src/cpm-statistics.c:996 src/cpm-statistics.c:1002
 msgid "Predicted time"
 msgstr "Оцінковий час"
 
-#: src/cpm-statistics.c:1379 src/cpm-statistics.c:1391
+#: src/cpm-statistics.c:1036 src/cpm-statistics.c:1048
 msgid "Correction factor"
 msgstr "Корекція"
 
-#: src/cpm-statistics.c:1385 src/cpm-statistics.c:1397
+#: src/cpm-statistics.c:1042 src/cpm-statistics.c:1054
 msgid "Prediction accuracy"
 msgstr "Точність передрікання"
 
-#: src/cpm-statistics.c:1563
+#: src/cpm-statistics.c:1219
 msgid "Select this device at startup"
 msgstr "Виділяти цей пристрій після запуску"
 
-#: src/cpm-statistics.c:1802
-msgid "Processor"
-msgstr "Процесор"
-
-#: src/cpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 CAFE developers"
-msgstr "Авторське право © 2011-2018 Розробники CAFE"
-
-#: src/cpm-tray-icon.c:193
-msgid "translator-credits"
+#: src/cpm-tray-icon.c:207
+msgid ""
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"Yarema aka Knedlyk <yupadmin@gmail.com>,\n"
-"Микола Ткач <Stuartlittle1970@gmail.com>,\n"
-"Oleh Tsyupka <myr4yk@gmail.com>"
 
-#: src/cpm-tray-icon.c:295
+#: src/cpm-tray-icon.c:318
 #, c-format
 msgid "%s remaining"
 msgstr "%s залишилося"
 
-#: src/cpm-tray-icon.c:349
+#: src/cpm-tray-icon.c:372
 msgid "_Preferences"
 msgstr "_Налаштування"
 
@@ -2266,3 +2129,144 @@ msgstr "Очікування розрядки"
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr "Невідомий стан"
+
+#~ msgid "Licensed under the GNU General Public License Version 2"
+#~ msgstr ""
+#~ "Ця програма розповсюджується за умовами GNU General Public License "
+#~ "Version 2"
+
+#~ msgid ""
+#~ "Power Manager is free software; you can redistribute it and/or\n"
+#~ "modify it under the terms of the GNU General Public License\n"
+#~ "as published by the Free Software Foundation; either version 2\n"
+#~ "of the License, or (at your option) any later version."
+#~ msgstr ""
+#~ "Керівник живлення є вільною програмою; дозволяється розповсюджувати та/"
+#~ "або змінювати її за умовами ліцензії GNU General Public \"\"License, що "
+#~ "оголошена Free Software Foundation; версії 2 цієї ліцензії, \"\"або (за "
+#~ "вашим бажанням) будь-якої старшої версії.\""
+
+#~ msgid ""
+#~ "Power Manager is distributed in the hope that it will be useful,\n"
+#~ "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+#~ "GNU General Public License for more details."
+#~ msgstr ""
+#~ "Керівник живлення поширюється зі сподіванням, що він буде корисним,але "
+#~ "БЕЗ БУДЬ-ЯКИХ ЗАПОРУК; навіть без запоруки КОРИСНОСТИ чи ПРИДАТНОСТИ ДЛЯ "
+#~ "ПЕВНОЇ КОНКРЕТНОЇ МЕТИ. Дивіться GNU General Public License для отримання "
+#~ "докладнішої інформації."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License\n"
+#~ "along with this program; if not, write to the Free Software\n"
+#~ "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA."
+#~ msgstr ""
+#~ "Ви мали отримати копію GNU General Public License разом з цією програмою; "
+#~ "якщо це не так, напишіть у Free Software Foundation, Inc., 51 Franklin "
+#~ "Street, Fifth Floor, Boston, MA 02110-1301, USA."
+
+#~ msgid "cafe-brightness-applet"
+#~ msgstr "cafe-brightness-applet"
+
+#~ msgid "cafe-inhibit-applet"
+#~ msgstr "cafe-inhibit-applet"
+
+#~ msgid "cafe-power-manager"
+#~ msgstr "cafe-power-manager"
+
+#~ msgid "cafe-power-statistics"
+#~ msgstr "cafe-power-statistics"
+
+#~ msgid "Processor wakeups per second:"
+#~ msgstr "Пробуджень процесора за секунду:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Wakeups"
+#~ msgstr "Пробудження"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Command"
+#~ msgstr "Команда"
+
+#~ msgid "No data"
+#~ msgstr "Дані відсутні"
+
+#~ msgid "Kernel module"
+#~ msgstr "Модуль ядра"
+
+#~ msgid "Kernel core"
+#~ msgstr "Ядро"
+
+#~ msgid "Interprocessor interrupt"
+#~ msgstr "Міжпроцесорне переривання"
+
+#~ msgid "Interrupt"
+#~ msgstr "Переривання"
+
+#~ msgid "PS/2 keyboard/mouse/touchpad"
+#~ msgstr "PS/2 набірниця/миша/чутлива панель"
+
+#~ msgid "ACPI"
+#~ msgstr "ACPI"
+
+#~ msgid "Serial ATA"
+#~ msgstr "Serial ATA"
+
+#~ msgid "ATA host controller"
+#~ msgstr "Контролер ATA"
+
+#~ msgid "Intel wireless adaptor"
+#~ msgstr "Бездротовий адаптер Intel"
+
+#, c-format
+#~ msgid "Timer %s"
+#~ msgstr "Періодична активність %s"
+
+#, c-format
+#~ msgid "Sleep %s"
+#~ msgstr "Пробудження %s"
+
+#, c-format
+#~ msgid "New task %s"
+#~ msgstr "Нове завдання %s"
+
+#, c-format
+#~ msgid "Wait %s"
+#~ msgstr "Очікування %s"
+
+#, c-format
+#~ msgid "Work queue %s"
+#~ msgstr "Черга завдань %s"
+
+#, c-format
+#~ msgid "Network route flush %s"
+#~ msgstr "Очищення мережних маршрутів %s"
+
+#, c-format
+#~ msgid "USB activity %s"
+#~ msgstr "Активність USB %s"
+
+#, c-format
+#~ msgid "Wakeup %s"
+#~ msgstr "Пробудження періодичного завдання %s"
+
+#~ msgid "Local interrupts"
+#~ msgstr "Переривання"
+
+#~ msgid "Rescheduling interrupts"
+#~ msgstr "Перепланування завдань"
+
+#~ msgid "Processor Wakeups"
+#~ msgstr "Пробудження процесора"
+
+#~ msgid "Processor"
+#~ msgstr "Процесор"
+
+#~ msgid "Copyright © 2011-2018 CAFE developers"
+#~ msgstr "Авторське право © 2011-2018 Розробники CAFE"

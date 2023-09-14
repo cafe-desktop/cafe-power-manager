@@ -2,24 +2,24 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Pere O. <gotrunks@gmail.com>, 2020
 # Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-power-manager 1.23.1\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2019-11-12 15:22+0100\n"
+"POT-Creation-Date: 2023-09-14 10:39+0200\n"
 "PO-Revision-Date: 2020-02-15 16:27+0000\n"
 "Last-Translator: Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2020\n"
 "Language-Team: Catalan (https://www.transifex.com/cafe/teams/13566/ca/)\n"
+"Language: ca\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ca\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: applets/brightness/brightness-applet.c:107
@@ -37,65 +37,65 @@ msgstr "No es pot connectar amb el gestor d'energia de CAFE"
 
 #: applets/brightness/brightness-applet.c:366
 msgid "Cannot get laptop panel brightness"
-msgstr ""
-"No es pot obtenir la brillantor de la pantalla de l'ordinador portàtil"
+msgstr "No es pot obtenir la brillantor de la pantalla de l'ordinador portàtil"
 
 #: applets/brightness/brightness-applet.c:368
 #, c-format
 msgid "LCD brightness : %d%%"
 msgstr "Brillantor de la pantalla LCD: %d%%"
 
+#: applets/brightness/brightness-applet.c:790
+#: applets/inhibit/inhibit-applet.c:287
+msgid ""
+"Power Manager is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:795
+#: applets/inhibit/inhibit-applet.c:292
+msgid ""
+"Power Manager is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+
 #: applets/brightness/brightness-applet.c:800
 #: applets/inhibit/inhibit-applet.c:297
-msgid "Licensed under the GNU General Public License Version 2"
-msgstr "Sota la Llicència Pública General GNU, versió 2"
-
-#: applets/brightness/brightness-applet.c:801
-#: applets/inhibit/inhibit-applet.c:298
 msgid ""
-"Power Manager is free software; you can redistribute it and/or\n"
-"modify it under the terms of the GNU General Public License\n"
-"as published by the Free Software Foundation; either version 2\n"
-"of the License, or (at your option) any later version."
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"El gestor d'energia és programari lliure; el podeu redistribuir i/o\n"
-"modificar sota els termes de la Llicència Pública General GNU tal com ha\n"
-"estat publicada per la Free Software Foundation; ja sigui la versió 2 de la\n"
-"llicència, o (si ho preferiu) qualsevol versió posterior."
 
-#: applets/brightness/brightness-applet.c:805
-#: applets/inhibit/inhibit-applet.c:302
+#: applets/brightness/brightness-applet.c:813
+msgid "About Power Manager Brightness Applet"
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:815
 msgid ""
-"Power Manager is distributed in the hope that it will be useful,\n"
-"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-"GNU General Public License for more details."
+"Copyright © 2006 Benjamin Canou\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"El gestor d'energia es distribueix amb l'expectativa que serà útil, però\n"
-"SENSE CAP GARANTIA; ni tan sols la garantia implícita de\n"
-"COMERCIALITZACIÓ o ADEQUACIÓ PER A UN PROPÒSIT PARTICULAR.\n"
-"Per obtenir més informació, consulteu la Llicència Pública General de GNU."
 
-#: applets/brightness/brightness-applet.c:809
-#: applets/inhibit/inhibit-applet.c:306
-msgid ""
-"You should have received a copy of the GNU General Public License\n"
-"along with this program; if not, write to the Free Software\n"
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
+#: applets/brightness/brightness-applet.c:823
+#: applets/inhibit/inhibit-applet.c:320 src/cpm-tray-icon.c:214
+msgid "translator-credits"
 msgstr ""
-"Hauríeu d'haver rebut una còpia de la Llicència Pública General GNU\n"
-"juntament amb aquest programa; en cas contrari, escriviu a la\n"
-"Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,\n"
-"MA 02110-1301, USA."
+"Joan Duran <jodufi@gmail.com>, 2007\n"
+"Pere O. <gotrunks@gmail.com>, 2018\n"
+"Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2018, 2019, 2020"
 
-#: applets/brightness/brightness-applet.c:1063
-#: applets/inhibit/inhibit-applet.c:519
+#: applets/brightness/brightness-applet.c:1051
+#: applets/inhibit/inhibit-applet.c:507
 msgid "_About"
 msgstr "_Quant a"
 
-#: applets/brightness/brightness-applet.c:1066
-#: applets/inhibit/inhibit-applet.c:522
+#: applets/brightness/brightness-applet.c:1054
+#: applets/inhibit/inhibit-applet.c:510
 msgid "_Help"
 msgstr "_Ajuda"
 
@@ -106,12 +106,6 @@ msgstr "Fàbrica de la miniaplicació de la brillantor"
 #: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Brightness Applet"
 msgstr "Miniaplicació de la brillantor"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-brightness-applet"
-msgstr "cafe-brightness-applet"
 
 #: applets/inhibit/inhibit-applet.c:87
 msgid "Power Manager Inhibit Applet"
@@ -133,6 +127,17 @@ msgstr "Mode de baix consum automàtic habilitat"
 msgid "Manual inhibit"
 msgstr "Inhabilitació manual"
 
+#: applets/inhibit/inhibit-applet.c:310
+msgid "About Power Manager Inhibit Applet"
+msgstr ""
+
+#: applets/inhibit/inhibit-applet.c:312
+msgid ""
+"Copyright © 2006-2007 Richard Hughes\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
+msgstr ""
+
 #: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Inhibit Applet Factory"
 msgstr "Fàbrica de la miniaplicació d'inhibició"
@@ -141,26 +146,13 @@ msgstr "Fàbrica de la miniaplicació d'inhibició"
 msgid "Inhibit Applet"
 msgstr "Miniaplicació d'inhabilitació"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-inhibit-applet"
-msgstr "cafe-inhibit-applet"
-
-#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:184
+#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:204
 msgid "Power Manager"
 msgstr "Gestor d'energia"
 
-#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:186
+#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:206
 msgid "Power management daemon"
 msgstr "Dimoni del gestor d'energia"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-manager.desktop.in.in:6
-#: data/cafe-power-preferences.desktop.in.in:6
-msgid "cafe-power-manager"
-msgstr "cafe-power-manager"
 
 #: data/org.cafe.power-manager.gschema.xml.in:26
 #: data/org.cafe.power-manager.gschema.xml.in:41
@@ -191,8 +183,8 @@ msgid ""
 "If the battery event should occur when the lid is shut and the power "
 "disconnected"
 msgstr ""
-"Si s'ha de produir un esdeveniment de bateria quan la tapa estigui plegada i"
-" es desconnecti de la xarxa elèctrica"
+"Si s'ha de produir un esdeveniment de bateria quan la tapa estigui plegada i "
+"es desconnecti de la xarxa elèctrica"
 
 #: data/org.cafe.power-manager.gschema.xml.in:37
 msgid ""
@@ -202,8 +194,7 @@ msgid ""
 msgstr ""
 "Si l'esdeveniment de tancament de la tapa hauria d'ocórrer (per exemple "
 "«suspèn en plegar la tapa quan s'estigui utilitzant la bateria») quan la "
-"tapa ja estigui plegada i posteriorment es desconnecti de la xarxa "
-"elèctrica."
+"tapa ja estigui plegada i posteriorment es desconnecti de la xarxa elèctrica."
 
 #: data/org.cafe.power-manager.gschema.xml.in:46
 msgid "UPS critical low action"
@@ -223,8 +214,7 @@ msgstr "L'acció a dur a terme quan el nivell del SAI sigui baix."
 
 #: data/org.cafe.power-manager.gschema.xml.in:56
 msgid "Allow backlight brightness adjustment"
-msgstr ""
-"Permet l'ajust de la brillantor de la retroil·luminació de la pantalla"
+msgstr "Permet l'ajust de la brillantor de la retroil·luminació de la pantalla"
 
 #: data/org.cafe.power-manager.gschema.xml.in:57
 msgid ""
@@ -273,8 +263,8 @@ msgid ""
 "Percent brightness to set keyboard backlight at when on AC power. Legal "
 "values are between 0 and 100."
 msgstr ""
-"El percentatge de brillantor per ajustar la retroil·luminació del teclat amb"
-" energia de la xarxa elèctrica. Els valors vàlids estan entre 0 i 100."
+"El percentatge de brillantor per ajustar la retroil·luminació del teclat amb "
+"energia de la xarxa elèctrica. Els valors vàlids estan entre 0 i 100."
 
 #: data/org.cafe.power-manager.gschema.xml.in:76
 msgid "Percent to reduce keyboard backlight by when on battery power."
@@ -289,20 +279,19 @@ msgid ""
 "power. Legal values are between 0 and 100."
 msgstr ""
 "El percentatge a reduir la retroil·luminació del teclat  amb energia de la "
-"bateria. Per exemple, si s'estableix a «60», la retroil·luminació es reduirà"
-" un 40% amb energia de la bateria. Els valors vàlids estan entre 0 i 100."
+"bateria. Per exemple, si s'estableix a «60», la retroil·luminació es reduirà "
+"un 40% amb energia de la bateria. Els valors vàlids estan entre 0 i 100."
 
 #: data/org.cafe.power-manager.gschema.xml.in:81
 msgid "Percent to reduce keyboard backlight by when idle."
 msgstr ""
-"El percentatge a reduir la retroil·luminació del teclat quan estigui "
-"inactiu."
+"El percentatge a reduir la retroil·luminació del teclat quan estigui inactiu."
 
 #: data/org.cafe.power-manager.gschema.xml.in:82
 msgid ""
 "The percentage to reduce the keyboard backlight by when idle. For example, "
-"if set to '60', the backlight will be cut by 40% when idle. Legal values are"
-" between 0 and 100."
+"if set to '60', the backlight will be cut by 40% when idle. Legal values are "
+"between 0 and 100."
 msgstr ""
 "El percentatge a reduir la retroil·luminació del teclat quan l'ordinador "
 "està inactiu. Per exemple, si s'estableix a «60», la retroil·luminació es "
@@ -338,14 +327,14 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:96
 msgid "The default amount of time to dim the screen after idle"
 msgstr ""
-"El temps per defecte que es trigarà a reduir la brillantor de la pantalla en"
-" passar a l'estat inactiu"
+"El temps per defecte que es trigarà a reduir la brillantor de la pantalla en "
+"passar a l'estat inactiu"
 
 #: data/org.cafe.power-manager.gschema.xml.in:97
 msgid "The default amount of time to dim the screen after idle."
 msgstr ""
-"El temps per defecte que es trigarà a reduir la brillantor de la pantalla en"
-" passar a l'estat inactiu."
+"El temps per defecte que es trigarà a reduir la brillantor de la pantalla en "
+"passar a l'estat inactiu."
 
 #: data/org.cafe.power-manager.gschema.xml.in:101
 msgid "LCD dimming amount when on battery"
@@ -435,13 +424,11 @@ msgstr "Acció del botó d'arrencada"
 
 #: data/org.cafe.power-manager.gschema.xml.in:137
 msgid "The action to take when the system power button is pressed."
-msgstr ""
-"L'acció a dur a terme quan es premi el botó d'alimentació del sistema."
+msgstr "L'acció a dur a terme quan es premi el botó d'alimentació del sistema."
 
 #: data/org.cafe.power-manager.gschema.xml.in:141
 msgid "Laptop lid close action on battery"
-msgstr ""
-"Acció en plegar la tapa del portàtil quan s'està utilitzant la bateria"
+msgstr "Acció en plegar la tapa del portàtil quan s'està utilitzant la bateria"
 
 #: data/org.cafe.power-manager.gschema.xml.in:142
 msgid ""
@@ -475,8 +462,8 @@ msgid ""
 "percentage change is used instead, which may fix a broken ACPI BIOS."
 msgstr ""
 "Si s'han d'utilitzar les notificacions basades en temps. Si és fals, "
-"aleshores s'utilitza el canvi de percentatge, cosa que pot solucionar alguns"
-" problemes amb BIOS ACPI defectuoses."
+"aleshores s'utilitza el canvi de percentatge, cosa que pot solucionar alguns "
+"problemes amb BIOS ACPI defectuoses."
 
 #: data/org.cafe.power-manager.gschema.xml.in:156
 msgid "Check CPU load before sleeping"
@@ -531,8 +518,8 @@ msgstr "Bloqueja la pantalla en suspendre"
 
 #: data/org.cafe.power-manager.gschema.xml.in:177
 msgid ""
-"Whether the screen is locked when the computer wakes up from a suspend. Only"
-" used if lock-use-screensaver is false."
+"Whether the screen is locked when the computer wakes up from a suspend. Only "
+"used if lock-use-screensaver is false."
 msgstr ""
 "Si es bloqueja la pantalla quan l'ordinador es reactiva després d'una "
 "suspensió. Només s'utilitza quan «lock-use-screensaver» és fals."
@@ -556,8 +543,8 @@ msgstr "Bloqueja l'anell de claus de GNOME en entrar al mode de baix consum"
 
 #: data/org.cafe.power-manager.gschema.xml.in:187
 msgid ""
-"Whether the GNOME keyring is locked before the computer enters suspend. This"
-" means the keyring will have to be unlocked on resume."
+"Whether the GNOME keyring is locked before the computer enters suspend. This "
+"means the keyring will have to be unlocked on resume."
 msgstr ""
 "Si l'anell de claus de GNOME està bloquejat abans que l'ordinador entri en "
 "l'estat de suspensió. Això implica que l'anell de claus s'haurà de "
@@ -602,8 +589,7 @@ msgid ""
 "If a notification message should be displayed when the battery is fully "
 "charged."
 msgstr ""
-"Si s'ha de mostrar una notificació quan la bateria estigui carregada del "
-"tot."
+"Si s'ha de mostrar una notificació quan la bateria estigui carregada del tot."
 
 #: data/org.cafe.power-manager.gschema.xml.in:211
 msgid "Notify on a sleep failure"
@@ -620,8 +606,8 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:216
 msgid "The URI to show to the user on sleep failure"
 msgstr ""
-"L'URI que es mostrarà a l'usuari en produir-se una fallada en entrar en mode"
-" de baix consum"
+"L'URI que es mostrarà a l'usuari en produir-se una fallada en entrar en mode "
+"de baix consum"
 
 #: data/org.cafe.power-manager.gschema.xml.in:217
 msgid ""
@@ -642,8 +628,7 @@ msgid ""
 "If a notification message should be displayed when the battery is getting "
 "low."
 msgstr ""
-"Si s'ha de mostrar una notificació quan la càrrega de la bateria sigui "
-"baixa."
+"Si s'ha de mostrar una notificació quan la càrrega de la bateria sigui baixa."
 
 #: data/org.cafe.power-manager.gschema.xml.in:226
 msgid "Notify on low capacity of mouse battery"
@@ -674,8 +659,7 @@ msgstr "El tipus de gràfic a mostrar per defecte per a l'historial"
 
 #: data/org.cafe.power-manager.gschema.xml.in:242
 msgid "The default graph type to show in the history window."
-msgstr ""
-"El tipus de gràfic a mostrar per defecte a la finestra de l'historial."
+msgstr "El tipus de gràfic a mostrar per defecte a la finestra de l'historial."
 
 #: data/org.cafe.power-manager.gschema.xml.in:246
 msgid "The maximum time displayed for history"
@@ -744,8 +728,8 @@ msgstr "Percentatge considerat baix"
 
 #: data/org.cafe.power-manager.gschema.xml.in:277
 msgid ""
-"The percentage of the battery when it is considered low. Only valid when "
-"use-time-for-policy is false."
+"The percentage of the battery when it is considered low. Only valid when use-"
+"time-for-policy is false."
 msgstr ""
 "El percentatge de bateria quan es considera baixa. Només és vàlid quan use-"
 "time-for-policy és «false» (fals)."
@@ -759,8 +743,8 @@ msgid ""
 "The percentage of the battery when it is considered critical. Only valid "
 "when use-time-for-policy is false."
 msgstr ""
-"El percentatge de bateria quan es considera crítica. Només és vàlid quan "
-"use-time-for-policy és «false» (fals)."
+"El percentatge de bateria quan es considera crítica. Només és vàlid quan use-"
+"time-for-policy és «false» (fals)."
 
 #: data/org.cafe.power-manager.gschema.xml.in:286
 msgid "Percentage action is taken"
@@ -780,8 +764,8 @@ msgstr "El temps restant quan la càrrega és baixa"
 
 #: data/org.cafe.power-manager.gschema.xml.in:292
 msgid ""
-"The time remaining in seconds of the battery when it is considered low. Only"
-" valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered low. Only "
+"valid when use-time-for-policy is true."
 msgstr ""
 "El temps restant de bateria (en segons) quan es considera baixa. Només és "
 "vàlid quan use-time-for-policy és cert."
@@ -792,8 +776,8 @@ msgstr "El temps restant quan la càrrega és crítica"
 
 #: data/org.cafe.power-manager.gschema.xml.in:297
 msgid ""
-"The time remaining in seconds of the battery when it is considered critical."
-" Only valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered critical. "
+"Only valid when use-time-for-policy is true."
 msgstr ""
 "El temps restant de bateria (en segons) quan es considera crítica. Només és "
 "vàlid quan use-time-for-policy és cert."
@@ -807,8 +791,8 @@ msgid ""
 "The time remaining in seconds of the battery when critical action is taken. "
 "Only valid when use-time-for-policy is true."
 msgstr ""
-"El temps restant de bateria (en segons) quan l'acció crítica es duu a terme."
-" Només és vàlid quan use-time-for-policy és cert."
+"El temps restant de bateria (en segons) quan l'acció crítica es duu a terme. "
+"Només és vàlid quan use-time-for-policy és cert."
 
 #: data/org.cafe.power-manager.gschema.xml.in:306
 msgid "Sleep timeout computer when on battery"
@@ -846,8 +830,8 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:317
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before it goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before it goes to sleep."
 msgstr ""
 "El temps d'inactivitat de l'ordinador (en segons) abans d'entrar en el mode "
 "de baix consum quan s'estigui utilitzant un SAI."
@@ -888,8 +872,8 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:332
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before the display goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before the display goes to sleep."
 msgstr ""
 "El temps d'inactivitat en segons abans que la pantalla entri en el mode de "
 "baix consum quan l'ordinador estigui utilitzant un SAI."
@@ -908,8 +892,7 @@ msgstr ""
 "directiva."
 
 #: data/org.cafe.power-manager.gschema.xml.in:341
-msgid ""
-"If preferences and statistics items should be shown in the context menu"
+msgid "If preferences and statistics items should be shown in the context menu"
 msgstr ""
 "Si els elements de preferències i estadístiques s'han de mostrar al menú "
 "contextual"
@@ -930,14 +913,13 @@ msgstr "Gestor d'energia"
 msgid "Configure power management"
 msgstr "Configureu la gestió de l'energia"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
 msgid "CAFE;power;management;preferences;settings;"
 msgstr "CAFE;alimentació;energia;gestió;preferències;ajusts;"
 
-#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:7
-#: src/cpm-statistics.c:1090 src/cpm-statistics.c:1577
+#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:8
+#: src/cpm-statistics.c:764 src/cpm-statistics.c:1233
 msgid "Power Statistics"
 msgstr "Estadístiques de l'energia"
 
@@ -945,55 +927,37 @@ msgstr "Estadístiques de l'energia"
 msgid "Observe power management"
 msgstr "Observeu la gestió d'energia"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-statistics.desktop.in.in:6
-msgid "cafe-power-statistics"
-msgstr "cafe-power-statistics"
-
-#: data/cpm-statistics.ui:113 src/cpm-statistics.c:208
+#: data/cpm-statistics.ui:119
 msgid "Details"
 msgstr "Detalls"
 
-#: data/cpm-statistics.ui:139 data/cpm-statistics.ui:342
+#: data/cpm-statistics.ui:145 data/cpm-statistics.ui:347
 msgid "Graph type:"
 msgstr "Tipus de diagrama:"
 
-#: data/cpm-statistics.ui:174
+#: data/cpm-statistics.ui:180
 msgid "Data length:"
 msgstr "Durada de les dades:"
 
-#: data/cpm-statistics.ui:234 data/cpm-statistics.ui:395
+#: data/cpm-statistics.ui:239 data/cpm-statistics.ui:399
 msgid "There is no data to display."
 msgstr "No hi ha dades a mostrar."
 
-#: data/cpm-statistics.ui:276 data/cpm-statistics.ui:438
+#: data/cpm-statistics.ui:281 data/cpm-statistics.ui:442
 msgid "Use smoothed line"
 msgstr "Utilitza una línia suavitzada"
 
-#: data/cpm-statistics.ui:291 data/cpm-statistics.ui:453
+#: data/cpm-statistics.ui:296 data/cpm-statistics.ui:457
 msgid "Show data points"
 msgstr "Mostra els punts de dades"
 
-#: data/cpm-statistics.ui:320
+#: data/cpm-statistics.ui:325
 msgid "History"
 msgstr "Historial"
 
-#: data/cpm-statistics.ui:482
+#: data/cpm-statistics.ui:486
 msgid "Statistics"
 msgstr "Estadístiques"
-
-#: data/cpm-statistics.ui:504
-msgid "Processor wakeups per second:"
-msgstr "Despertaments del processador per segon:"
-
-#: data/cpm-statistics.ui:516
-msgid "0"
-msgstr "0"
-
-#: data/cpm-statistics.ui:563 src/cpm-statistics.c:194
-msgid "Wakeups"
-msgstr "Despertaments"
 
 #: data/cpm-prefs.ui:55
 msgid "Power Management Preferences"
@@ -1006,8 +970,7 @@ msgstr "<b>Accions</b>"
 
 #: data/cpm-prefs.ui:111 data/cpm-prefs.ui:354 data/cpm-prefs.ui:612
 msgid "Put computer to _sleep when inactive for:"
-msgstr ""
-"Posa l'_ordinador en baix consum quan no hi hagi cap activitat durant:"
+msgstr "Posa l'_ordinador en baix consum quan no hi hagi cap activitat durant:"
 
 #: data/cpm-prefs.ui:144 data/cpm-prefs.ui:387
 msgid "When laptop lid is cl_osed:"
@@ -1019,8 +982,7 @@ msgstr "<b>Pantalla</b>"
 
 #: data/cpm-prefs.ui:216 data/cpm-prefs.ui:490 data/cpm-prefs.ui:748
 msgid "Put _display to sleep when inactive for:"
-msgstr ""
-"Posa la _pantalla en baix consum quan no hi hagi cap activitat durant:"
+msgstr "Posa la _pantalla en baix consum quan no hi hagi cap activitat durant:"
 
 #: data/cpm-prefs.ui:247
 msgid "Set display _brightness to:"
@@ -1249,7 +1211,7 @@ msgstr "%.1f W"
 msgid "%.1fV"
 msgstr "%.1f V"
 
-#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1560
+#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1216
 msgid "Show extra debugging information"
 msgstr "Mostra informació extra de depuració"
 
@@ -1356,8 +1318,8 @@ msgstr "Pot ser que la bateria estigui malmesa"
 #: src/cpm-manager.c:1110
 #, c-format
 msgid ""
-"Battery has a very low capacity (%1.1f%%), which means that it may be old or"
-" broken."
+"Battery has a very low capacity (%1.1f%%), which means that it may be old or "
+"broken."
 msgstr ""
 "La bateria té una capacitat molt baixa (%1.1f%%), el que significa que pot "
 "ser vella o estigui trencada."
@@ -1412,8 +1374,7 @@ msgstr "La càrrega del SAI és baixa"
 #, c-format
 msgid "Approximately <b>%s</b> of remaining UPS backup power (%.0f%%)"
 msgstr ""
-"Aproximadament <b>%s</b> restant de l'energia de salvaguarda del SAI "
-"(%.0f%%)"
+"Aproximadament <b>%s</b> restant de l'energia de salvaguarda del SAI (%.0f%%)"
 
 #: src/cpm-manager.c:1331 src/cpm-manager.c:1470
 msgid "Mouse battery low"
@@ -1511,8 +1472,8 @@ msgstr "El nivell de càrrega del SAI és críticament baix"
 #: src/cpm-manager.c:1459
 #, c-format
 msgid ""
-"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
-" your computer to avoid losing data."
+"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to "
+"your computer to avoid losing data."
 msgstr ""
 "Aproximadament <b>%s</b> restant de l'energia del SAI (%.0f%%). Restareu "
 "l'alimentació de la xarxa elèctrica a l'ordinador per evitar la pèrdua de "
@@ -1539,8 +1500,8 @@ msgstr ""
 #: src/cpm-manager.c:1490
 #, c-format
 msgid ""
-"PDA is very low in power (%.0f%%). This device will soon stop functioning if"
-" not charged."
+"PDA is very low in power (%.0f%%). This device will soon stop functioning if "
+"not charged."
 msgstr ""
 "El PDA té un nivell molt baix d'energia (%.0f%%). Aquest dispositiu deixarà "
 "de funcionar aviat si no es carrega."
@@ -1566,8 +1527,8 @@ msgstr ""
 #: src/cpm-manager.c:1519
 #, c-format
 msgid ""
-"Tablet is very low in power (%.0f%%). This device will soon stop functioning"
-" if not charged."
+"Tablet is very low in power (%.0f%%). This device will soon stop functioning "
+"if not charged."
 msgstr ""
 "La tauleta té un nivell molt baix d'energia (%.0f%%). Aquest dispositiu "
 "deixarà de funcionar aviat si no es carrega."
@@ -1583,8 +1544,8 @@ msgstr ""
 
 #: src/cpm-manager.c:1593
 msgid ""
-"The battery is below the critical level and this computer will <b>power-"
-"off</b> when the battery becomes completely empty."
+"The battery is below the critical level and this computer will <b>power-off</"
+"b> when the battery becomes completely empty."
 msgstr ""
 "La bateria està per sota el nivell crític i l'ordinador <b>s'aturarà</b> "
 "quan la bateria quedi completament buida."
@@ -1618,8 +1579,8 @@ msgid ""
 "The UPS is below the critical level and this computer will <b>power-off</b> "
 "when the UPS becomes completely empty."
 msgstr ""
-"El SAI està per sota el nivell crític i l'ordinador <b>s'aturarà</b> quan el"
-" SAI quedi completament buit."
+"El SAI està per sota el nivell crític i l'ordinador <b>s'aturarà</b> quan el "
+"SAI quedi completament buit."
 
 #: src/cpm-manager.c:1635
 msgid ""
@@ -1666,362 +1627,251 @@ msgstr "No facis res"
 msgid "Never"
 msgstr "Mai"
 
-#: src/cpm-statistics.c:78 src/cpm-statistics.c:466
+#: src/cpm-statistics.c:67 src/cpm-statistics.c:410
 msgid "Rate"
 msgstr "Cadència"
 
-#: src/cpm-statistics.c:79
+#: src/cpm-statistics.c:68
 msgid "Charge"
 msgstr "Càrrega"
 
-#: src/cpm-statistics.c:80 src/cpm-statistics.c:480
+#: src/cpm-statistics.c:69 src/cpm-statistics.c:424
 msgid "Time to full"
 msgstr "Temps per carregar-se completament"
 
-#: src/cpm-statistics.c:81 src/cpm-statistics.c:485
+#: src/cpm-statistics.c:70 src/cpm-statistics.c:429
 msgid "Time to empty"
 msgstr "Temps per descarregar-se completament"
 
-#: src/cpm-statistics.c:88
+#: src/cpm-statistics.c:77
 msgid "10 minutes"
 msgstr "10 minuts"
 
-#: src/cpm-statistics.c:89
+#: src/cpm-statistics.c:78
 msgid "2 hours"
 msgstr "2 hores"
 
-#: src/cpm-statistics.c:90
+#: src/cpm-statistics.c:79
 msgid "6 hours"
 msgstr "6 hores"
 
-#: src/cpm-statistics.c:91
+#: src/cpm-statistics.c:80
 msgid "1 day"
 msgstr "1 dia"
 
-#: src/cpm-statistics.c:92
+#: src/cpm-statistics.c:81
 msgid "1 week"
 msgstr "1 setmana"
 
-#: src/cpm-statistics.c:101
+#: src/cpm-statistics.c:90
 msgid "Charge profile"
 msgstr "Perfil de la càrrega"
 
-#: src/cpm-statistics.c:102
+#: src/cpm-statistics.c:91
 msgid "Discharge profile"
 msgstr "Perfil de la descàrrega"
 
-#: src/cpm-statistics.c:104
+#: src/cpm-statistics.c:93
 msgid "Charge accuracy"
 msgstr "Precisió de la càrrega"
 
-#: src/cpm-statistics.c:105
+#: src/cpm-statistics.c:94
 msgid "Discharge accuracy"
 msgstr "Precisió de la descàrrega"
 
-#: src/cpm-statistics.c:132
+#: src/cpm-statistics.c:121
 msgid "Attribute"
 msgstr "Atribut"
 
-#: src/cpm-statistics.c:139
+#: src/cpm-statistics.c:128
 msgid "Value"
 msgstr "Valor"
 
-#: src/cpm-statistics.c:156
+#: src/cpm-statistics.c:145
 msgid "Image"
 msgstr "Imatge"
 
-#: src/cpm-statistics.c:162
+#: src/cpm-statistics.c:151
 msgid "Description"
 msgstr "Descripció"
 
-#: src/cpm-statistics.c:181 src/cpm-statistics.c:405
-msgid "Type"
-msgstr "Tipus"
-
-#: src/cpm-statistics.c:187
-msgid "ID"
-msgstr "id."
-
-#: src/cpm-statistics.c:201
-msgid "Command"
-msgstr "Ordre"
-
-#: src/cpm-statistics.c:286
+#: src/cpm-statistics.c:230
 msgid "Unknown"
 msgstr "Desconegut"
 
-#: src/cpm-statistics.c:290
+#: src/cpm-statistics.c:234
 #, c-format
 msgid "%.0f second"
 msgid_plural "%.0f seconds"
 msgstr[0] "%.0f segon"
 msgstr[1] "%.0f segons"
 
-#: src/cpm-statistics.c:295
+#: src/cpm-statistics.c:239
 #, c-format
 msgid "%.1f minute"
 msgid_plural "%.1f minutes"
 msgstr[0] "%.1f minut"
 msgstr[1] "%.1f minuts"
 
-#: src/cpm-statistics.c:300
+#: src/cpm-statistics.c:244
 #, c-format
 msgid "%.1f hour"
 msgid_plural "%.1f hours"
 msgstr[0] "%.1f hora"
 msgstr[1] "%.1f hores"
 
-#: src/cpm-statistics.c:304
+#: src/cpm-statistics.c:248
 #, c-format
 msgid "%.1f day"
 msgid_plural "%.1f days"
 msgstr[0] "%.1f dia"
 msgstr[1] "%.1f dies"
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "Yes"
 msgstr "Sí"
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "No"
 msgstr "No"
 
-#: src/cpm-statistics.c:402
+#: src/cpm-statistics.c:346
 msgid "Device"
 msgstr "Dispositiu"
 
-#: src/cpm-statistics.c:407
+#: src/cpm-statistics.c:349
+msgid "Type"
+msgstr "Tipus"
+
+#: src/cpm-statistics.c:351
 msgid "Vendor"
 msgstr "Fabricant"
 
-#: src/cpm-statistics.c:409
+#: src/cpm-statistics.c:353
 msgid "Model"
 msgstr "Model"
 
-#: src/cpm-statistics.c:411
+#: src/cpm-statistics.c:355
 msgid "Serial number"
 msgstr "Número de sèrie"
 
-#: src/cpm-statistics.c:416
+#: src/cpm-statistics.c:360
 msgid "Supply"
 msgstr "Xarxa elèctrica"
 
-#: src/cpm-statistics.c:419
+#: src/cpm-statistics.c:363
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] "%d segon"
 msgstr[1] "%d segons"
 
-#: src/cpm-statistics.c:423
+#: src/cpm-statistics.c:367
 msgid "Refreshed"
 msgstr "Ultim canvi d'estat"
 
-#: src/cpm-statistics.c:433
+#: src/cpm-statistics.c:377
 msgid "Present"
 msgstr "Present"
 
-#: src/cpm-statistics.c:440
+#: src/cpm-statistics.c:384
 msgid "Rechargeable"
 msgstr "Recarregable"
 
-#: src/cpm-statistics.c:446
+#: src/cpm-statistics.c:390
 msgid "State"
 msgstr "Estat"
 
-#: src/cpm-statistics.c:450
+#: src/cpm-statistics.c:394
 msgid "Energy"
 msgstr "Energia"
 
-#: src/cpm-statistics.c:453
+#: src/cpm-statistics.c:397
 msgid "Energy when empty"
 msgstr "Energia quan està descarregada"
 
-#: src/cpm-statistics.c:456
+#: src/cpm-statistics.c:400
 msgid "Energy when full"
 msgstr "Energia quan està carregada"
 
-#: src/cpm-statistics.c:459
+#: src/cpm-statistics.c:403
 msgid "Energy (design)"
 msgstr "Energia (disseny)"
 
-#: src/cpm-statistics.c:473
+#: src/cpm-statistics.c:417
 msgid "Voltage"
 msgstr "Voltatge"
 
-#: src/cpm-statistics.c:495
+#: src/cpm-statistics.c:439
 msgid "Percentage"
 msgstr "Percentatge"
 
-#: src/cpm-statistics.c:502
+#: src/cpm-statistics.c:446
 msgid "Capacity"
 msgstr "Capacitat"
 
-#: src/cpm-statistics.c:507
+#: src/cpm-statistics.c:451
 msgid "Technology"
 msgstr "Tecnologia"
 
-#: src/cpm-statistics.c:512
+#: src/cpm-statistics.c:456
 msgid "Online"
 msgstr "Endollat"
 
-#: src/cpm-statistics.c:824
-msgid "No data"
-msgstr "Cap dada"
-
-#: src/cpm-statistics.c:831 src/cpm-statistics.c:836
-msgid "Kernel module"
-msgstr "Mòdul del kernel"
-
-#: src/cpm-statistics.c:841
-msgid "Kernel core"
-msgstr "Nucli del kernel"
-
-#: src/cpm-statistics.c:846
-msgid "Interprocessor interrupt"
-msgstr "Interrupció entre processadors"
-
-#: src/cpm-statistics.c:851
-msgid "Interrupt"
-msgstr "Interrupció"
-
-#: src/cpm-statistics.c:898
-msgid "PS/2 keyboard/mouse/touchpad"
-msgstr "teclat/ratolí/ratolí tàctil PS/2"
-
-#: src/cpm-statistics.c:901
-msgid "ACPI"
-msgstr "ACPI"
-
-#: src/cpm-statistics.c:904
-msgid "Serial ATA"
-msgstr "ATA en sèrie (SATA)"
-
-#: src/cpm-statistics.c:907
-msgid "ATA host controller"
-msgstr "Controlador d'amfitrió ATA"
-
-#: src/cpm-statistics.c:910
-msgid "Intel wireless adaptor"
-msgstr "Adaptador de xarxa sense fil d'Intel"
-
-#: src/cpm-statistics.c:917 src/cpm-statistics.c:922 src/cpm-statistics.c:927
-#: src/cpm-statistics.c:932 src/cpm-statistics.c:937
-#, c-format
-msgid "Timer %s"
-msgstr "Temporitzador %s"
-
-#: src/cpm-statistics.c:941
-#, c-format
-msgid "Sleep %s"
-msgstr "Dorm %s"
-
-#: src/cpm-statistics.c:944
-#, c-format
-msgid "New task %s"
-msgstr "Tasca nova %s"
-
-#: src/cpm-statistics.c:948
-#, c-format
-msgid "Wait %s"
-msgstr "Espera %s"
-
-#: src/cpm-statistics.c:952 src/cpm-statistics.c:956
-#, c-format
-msgid "Work queue %s"
-msgstr "Cua de treball %s"
-
-#: src/cpm-statistics.c:959
-#, c-format
-msgid "Network route flush %s"
-msgstr "Neteja de les rutes de xarxa %s"
-
-#: src/cpm-statistics.c:962
-#, c-format
-msgid "USB activity %s"
-msgstr "Activitat de l'USB %s"
-
-#: src/cpm-statistics.c:965
-#, c-format
-msgid "Wakeup %s"
-msgstr "Desperta %s"
-
-#: src/cpm-statistics.c:968
-msgid "Local interrupts"
-msgstr "Interrupcions locals"
-
-#: src/cpm-statistics.c:971
-msgid "Rescheduling interrupts"
-msgstr "Re-planificació de les interrupcions"
-
-#: src/cpm-statistics.c:1080
+#: src/cpm-statistics.c:756
 msgid "Device Information"
 msgstr "Informació del dispositiu"
 
-#: src/cpm-statistics.c:1082
+#: src/cpm-statistics.c:758
 msgid "Device History"
 msgstr "Historial del dispositiu"
 
-#: src/cpm-statistics.c:1084
+#: src/cpm-statistics.c:760
 msgid "Device Profile"
 msgstr "Perfil del dispositiu"
 
-#: src/cpm-statistics.c:1086
-msgid "Processor Wakeups"
-msgstr "Despertaments del processador"
-
-#: src/cpm-statistics.c:1325 src/cpm-statistics.c:1331
-#: src/cpm-statistics.c:1337 src/cpm-statistics.c:1343
+#: src/cpm-statistics.c:982 src/cpm-statistics.c:988 src/cpm-statistics.c:994
+#: src/cpm-statistics.c:1000
 msgid "Time elapsed"
 msgstr "Temps transcorregut"
 
-#: src/cpm-statistics.c:1327
+#: src/cpm-statistics.c:984
 msgid "Power"
 msgstr "Potència"
 
-#: src/cpm-statistics.c:1333 src/cpm-statistics.c:1377
-#: src/cpm-statistics.c:1383 src/cpm-statistics.c:1389
-#: src/cpm-statistics.c:1395
+#: src/cpm-statistics.c:990 src/cpm-statistics.c:1034 src/cpm-statistics.c:1040
+#: src/cpm-statistics.c:1046 src/cpm-statistics.c:1052
 msgid "Cell charge"
 msgstr "Càrrega de la cel·la"
 
-#: src/cpm-statistics.c:1339 src/cpm-statistics.c:1345
+#: src/cpm-statistics.c:996 src/cpm-statistics.c:1002
 msgid "Predicted time"
 msgstr "Temps predit"
 
-#: src/cpm-statistics.c:1379 src/cpm-statistics.c:1391
+#: src/cpm-statistics.c:1036 src/cpm-statistics.c:1048
 msgid "Correction factor"
 msgstr "Factor de correcció"
 
-#: src/cpm-statistics.c:1385 src/cpm-statistics.c:1397
+#: src/cpm-statistics.c:1042 src/cpm-statistics.c:1054
 msgid "Prediction accuracy"
 msgstr "Precisió de la predicció"
 
-#: src/cpm-statistics.c:1563
+#: src/cpm-statistics.c:1219
 msgid "Select this device at startup"
 msgstr "Selecciona aquest dispositiu a l'inici"
 
-#: src/cpm-statistics.c:1802
-msgid "Processor"
-msgstr "Processador"
-
-#: src/cpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 CAFE developers"
-msgstr "Drets d'autor © 2011-2018 els desenvolupadors de CAFE"
-
-#: src/cpm-tray-icon.c:193
-msgid "translator-credits"
+#: src/cpm-tray-icon.c:207
+msgid ""
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"Joan Duran <jodufi@gmail.com>, 2007\n"
-"Pere O. <gotrunks@gmail.com>, 2018\n"
-"Robert Antoni Buj Gelonch <rbuj@fedoraproject.org>, 2018, 2019, 2020"
 
-#: src/cpm-tray-icon.c:295
+#: src/cpm-tray-icon.c:318
 #, c-format
 msgid "%s remaining"
 msgstr "%s restants"
 
-#: src/cpm-tray-icon.c:349
+#: src/cpm-tray-icon.c:372
 msgid "_Preferences"
 msgstr "_Preferències"
 
@@ -2286,3 +2136,144 @@ msgstr "S'està esperant que es descarregui"
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr "Estat desconegut"
+
+#~ msgid "Licensed under the GNU General Public License Version 2"
+#~ msgstr "Sota la Llicència Pública General GNU, versió 2"
+
+#~ msgid ""
+#~ "Power Manager is free software; you can redistribute it and/or\n"
+#~ "modify it under the terms of the GNU General Public License\n"
+#~ "as published by the Free Software Foundation; either version 2\n"
+#~ "of the License, or (at your option) any later version."
+#~ msgstr ""
+#~ "El gestor d'energia és programari lliure; el podeu redistribuir i/o\n"
+#~ "modificar sota els termes de la Llicència Pública General GNU tal com ha\n"
+#~ "estat publicada per la Free Software Foundation; ja sigui la versió 2 de "
+#~ "la\n"
+#~ "llicència, o (si ho preferiu) qualsevol versió posterior."
+
+#~ msgid ""
+#~ "Power Manager is distributed in the hope that it will be useful,\n"
+#~ "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+#~ "GNU General Public License for more details."
+#~ msgstr ""
+#~ "El gestor d'energia es distribueix amb l'expectativa que serà útil, però\n"
+#~ "SENSE CAP GARANTIA; ni tan sols la garantia implícita de\n"
+#~ "COMERCIALITZACIÓ o ADEQUACIÓ PER A UN PROPÒSIT PARTICULAR.\n"
+#~ "Per obtenir més informació, consulteu la Llicència Pública General de GNU."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License\n"
+#~ "along with this program; if not, write to the Free Software\n"
+#~ "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA."
+#~ msgstr ""
+#~ "Hauríeu d'haver rebut una còpia de la Llicència Pública General GNU\n"
+#~ "juntament amb aquest programa; en cas contrari, escriviu a la\n"
+#~ "Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,\n"
+#~ "MA 02110-1301, USA."
+
+#~ msgid "cafe-brightness-applet"
+#~ msgstr "cafe-brightness-applet"
+
+#~ msgid "cafe-inhibit-applet"
+#~ msgstr "cafe-inhibit-applet"
+
+#~ msgid "cafe-power-manager"
+#~ msgstr "cafe-power-manager"
+
+#~ msgid "cafe-power-statistics"
+#~ msgstr "cafe-power-statistics"
+
+#~ msgid "Processor wakeups per second:"
+#~ msgstr "Despertaments del processador per segon:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Wakeups"
+#~ msgstr "Despertaments"
+
+#~ msgid "ID"
+#~ msgstr "id."
+
+#~ msgid "Command"
+#~ msgstr "Ordre"
+
+#~ msgid "No data"
+#~ msgstr "Cap dada"
+
+#~ msgid "Kernel module"
+#~ msgstr "Mòdul del kernel"
+
+#~ msgid "Kernel core"
+#~ msgstr "Nucli del kernel"
+
+#~ msgid "Interprocessor interrupt"
+#~ msgstr "Interrupció entre processadors"
+
+#~ msgid "Interrupt"
+#~ msgstr "Interrupció"
+
+#~ msgid "PS/2 keyboard/mouse/touchpad"
+#~ msgstr "teclat/ratolí/ratolí tàctil PS/2"
+
+#~ msgid "ACPI"
+#~ msgstr "ACPI"
+
+#~ msgid "Serial ATA"
+#~ msgstr "ATA en sèrie (SATA)"
+
+#~ msgid "ATA host controller"
+#~ msgstr "Controlador d'amfitrió ATA"
+
+#~ msgid "Intel wireless adaptor"
+#~ msgstr "Adaptador de xarxa sense fil d'Intel"
+
+#, c-format
+#~ msgid "Timer %s"
+#~ msgstr "Temporitzador %s"
+
+#, c-format
+#~ msgid "Sleep %s"
+#~ msgstr "Dorm %s"
+
+#, c-format
+#~ msgid "New task %s"
+#~ msgstr "Tasca nova %s"
+
+#, c-format
+#~ msgid "Wait %s"
+#~ msgstr "Espera %s"
+
+#, c-format
+#~ msgid "Work queue %s"
+#~ msgstr "Cua de treball %s"
+
+#, c-format
+#~ msgid "Network route flush %s"
+#~ msgstr "Neteja de les rutes de xarxa %s"
+
+#, c-format
+#~ msgid "USB activity %s"
+#~ msgstr "Activitat de l'USB %s"
+
+#, c-format
+#~ msgid "Wakeup %s"
+#~ msgstr "Desperta %s"
+
+#~ msgid "Local interrupts"
+#~ msgstr "Interrupcions locals"
+
+#~ msgid "Rescheduling interrupts"
+#~ msgstr "Re-planificació de les interrupcions"
+
+#~ msgid "Processor Wakeups"
+#~ msgstr "Despertaments del processador"
+
+#~ msgid "Processor"
+#~ msgstr "Processador"
+
+#~ msgid "Copyright © 2011-2018 CAFE developers"
+#~ msgstr "Drets d'autor © 2011-2018 els desenvolupadors de CAFE"

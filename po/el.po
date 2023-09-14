@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Wolfgang Ulbrich <mate@raveit.de>, 2020
 # Angelos Chraniotis <chraniotis@gmail.com>, 2020
@@ -13,19 +13,19 @@
 # thunk <thunk77@gmail.com>, 2020
 # Alexandros Kapetanios <alexandros@gnugr.org>, 2020
 # Constantinos Tsakiris, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-power-manager 1.23.1\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2019-11-12 15:22+0100\n"
+"POT-Creation-Date: 2023-09-14 10:39+0200\n"
 "PO-Revision-Date: 2020-02-15 16:27+0000\n"
 "Last-Translator: Constantinos Tsakiris, 2020\n"
 "Language-Team: Greek (https://www.transifex.com/cafe/teams/13566/el/)\n"
+"Language: el\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: el\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: applets/brightness/brightness-applet.c:107
@@ -50,60 +50,59 @@ msgstr "Αδυναμία λήψης της τιμής φωτεινότητας �
 msgid "LCD brightness : %d%%"
 msgstr "Φωτεινότητα LCD : %d%%"
 
+#: applets/brightness/brightness-applet.c:790
+#: applets/inhibit/inhibit-applet.c:287
+msgid ""
+"Power Manager is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:795
+#: applets/inhibit/inhibit-applet.c:292
+msgid ""
+"Power Manager is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+
 #: applets/brightness/brightness-applet.c:800
 #: applets/inhibit/inhibit-applet.c:297
-msgid "Licensed under the GNU General Public License Version 2"
-msgstr ""
-"Διανέμεται υπό τους όρους της Γενικής Άδειας Δημόσιας Χρήσης GNU (GPL), "
-"έκδοσης 2"
-
-#: applets/brightness/brightness-applet.c:801
-#: applets/inhibit/inhibit-applet.c:298
 msgid ""
-"Power Manager is free software; you can redistribute it and/or\n"
-"modify it under the terms of the GNU General Public License\n"
-"as published by the Free Software Foundation; either version 2\n"
-"of the License, or (at your option) any later version."
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"Ο Power Manager είναι ελεύθερο λογισμικό· επιτρέπεται η αναδιανομή \n"
-"ή/και τροποποίησή του υπό τους όρους της Γενικής Άδειας Δημόσιας \n"
-"Χρήσης GNU (GPL), όπως αυτή έχει δημοσιευτεί από το Ίδρυμα \n"
-"Ελεύθερου Λογισμικού (FSF) — είτε της έκδοσης 2 της Άδειας, είτε \n"
-"(κατ' επιλογήν σας) οποιασδήποτε μεταγενέστερης έκδοσης."
 
-#: applets/brightness/brightness-applet.c:805
-#: applets/inhibit/inhibit-applet.c:302
+#: applets/brightness/brightness-applet.c:813
+msgid "About Power Manager Brightness Applet"
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:815
 msgid ""
-"Power Manager is distributed in the hope that it will be useful,\n"
-"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-"GNU General Public License for more details."
+"Copyright © 2006 Benjamin Canou\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"Ο Power Manager διανέμεται με την ελπίδα ότι θα αποδειχθεί χρήσιμος, \n"
-"παρόλα αυτά ΧΩΡΙΣ ΚΑΜΙΑ ΕΓΓΥΗΣΗ — χωρίς ούτε και την σιωπηρή εγγύηση \n"
-"ΕΜΠΟΡΕΥΣΙΜΟΤΗΤΑΣ ή ΚΑΤΑΛΛΗΛΟΤΗΤΑΣ ΓΙΑ ΕΙΔΙΚΟ ΣΚΟΠΟ. \n"
-"Για περισσότερες λεπτομέρειες ανατρέξτε στη Γενική Άδεια Δημόσιας Χρήσης GNU (GPL)."
 
-#: applets/brightness/brightness-applet.c:809
-#: applets/inhibit/inhibit-applet.c:306
-msgid ""
-"You should have received a copy of the GNU General Public License\n"
-"along with this program; if not, write to the Free Software\n"
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
+#: applets/brightness/brightness-applet.c:823
+#: applets/inhibit/inhibit-applet.c:320 src/cpm-tray-icon.c:214
+msgid "translator-credits"
 msgstr ""
-"Θα πρέπει να έχετε λάβει αντίγραφο της Γενικής Άδειας Δημόσιας \n"
-"Χρήσης GNU (GPL) μαζί με το πρόγραμμα. Αν όχι, γράψτε στο \n"
-"Free Software Foundation, Inc., 59 Temple Place, Suite 330, \n"
-"Boston, MA  02111-1307  USA"
+"Ελληνική μεταφραστική ομάδα CAFE\n"
+" Αλέξανδρος Μουχτσής <alexandros@gnugr.org>\n"
+"\n"
+"Για περισσότερες πληροφορίες, επισκεφθείτε την σελίδα http://www.cafe.gr/"
 
-#: applets/brightness/brightness-applet.c:1063
-#: applets/inhibit/inhibit-applet.c:519
+#: applets/brightness/brightness-applet.c:1051
+#: applets/inhibit/inhibit-applet.c:507
 msgid "_About"
 msgstr "Πε_ρί"
 
-#: applets/brightness/brightness-applet.c:1066
-#: applets/inhibit/inhibit-applet.c:522
+#: applets/brightness/brightness-applet.c:1054
+#: applets/inhibit/inhibit-applet.c:510
 msgid "_Help"
 msgstr "_Βοήθεια"
 
@@ -115,20 +114,13 @@ msgstr "Εργοστάσιο μικροεφαρμογής φωτεινότητα
 msgid "Brightness Applet"
 msgstr "Διαχείριση φωτεινότητας"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-brightness-applet"
-msgstr ""
-
 #: applets/inhibit/inhibit-applet.c:87
 msgid "Power Manager Inhibit Applet"
 msgstr "Μικροεφαρμογή αποτροπής διαχείρισης ενέργειας"
 
 #: applets/inhibit/inhibit-applet.c:88
 msgid "Allows user to inhibit automatic power saving."
-msgstr ""
-"Επιτρέπει στο χρήστη να αποτρέπει την αυτόματη εξοικονόμηση ενέργειας."
+msgstr "Επιτρέπει στο χρήστη να αποτρέπει την αυτόματη εξοικονόμηση ενέργειας."
 
 #: applets/inhibit/inhibit-applet.c:228
 msgid "Automatic sleep inhibited"
@@ -142,6 +134,17 @@ msgstr "Είναι ενεργή η αυτόματη αναστολή"
 msgid "Manual inhibit"
 msgstr "Χειροκίνητη αποτροπή"
 
+#: applets/inhibit/inhibit-applet.c:310
+msgid "About Power Manager Inhibit Applet"
+msgstr ""
+
+#: applets/inhibit/inhibit-applet.c:312
+msgid ""
+"Copyright © 2006-2007 Richard Hughes\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
+msgstr ""
+
 #: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Inhibit Applet Factory"
 msgstr "Εργοστάσιο μικροεφαρμογής αποτροπής"
@@ -150,26 +153,13 @@ msgstr "Εργοστάσιο μικροεφαρμογής αποτροπής"
 msgid "Inhibit Applet"
 msgstr "Αποτροπή εξοικονόμησης ενέργειας"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-inhibit-applet"
-msgstr ""
-
-#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:184
+#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:204
 msgid "Power Manager"
 msgstr "Διαχείριση ενέργειας"
 
-#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:186
+#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:206
 msgid "Power management daemon"
 msgstr "Υπηρεσία διαχείρισης ενέργειας"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-manager.desktop.in.in:6
-#: data/cafe-power-preferences.desktop.in.in:6
-msgid "cafe-power-manager"
-msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:26
 #: data/org.cafe.power-manager.gschema.xml.in:41
@@ -296,8 +286,8 @@ msgid ""
 msgstr ""
 "Το ποσοστό για να μειώσει τον οπίσθιο φωτισμό πληκτρολογίου όταν λειτουργεί "
 "με την μπαταρία. Για παράδειγμα, αν τεθεί σε '60', ο οπίσθιος φωτισμός θα "
-"μειωθεί κατά 40% σε λειτουργία μπαταρίας. Επιτρεπόμενες τιμές είναι μεταξύ 0"
-" και 100."
+"μειωθεί κατά 40% σε λειτουργία μπαταρίας. Επιτρεπόμενες τιμές είναι μεταξύ 0 "
+"και 100."
 
 #: data/org.cafe.power-manager.gschema.xml.in:81
 msgid "Percent to reduce keyboard backlight by when idle."
@@ -306,13 +296,12 @@ msgstr "Ποσοστό για τη μείωση οπίσθιου φωτισμο�
 #: data/org.cafe.power-manager.gschema.xml.in:82
 msgid ""
 "The percentage to reduce the keyboard backlight by when idle. For example, "
-"if set to '60', the backlight will be cut by 40% when idle. Legal values are"
-" between 0 and 100."
+"if set to '60', the backlight will be cut by 40% when idle. Legal values are "
+"between 0 and 100."
 msgstr ""
 "Το ποσοστό για να μειώσει τον οπίσθιο φωτισμό πληκτρολογίου όταν βρίσκεται "
 "σε αεργία. Για παράδειγμα, αν τεθεί σε '60', ο οπίσθιος φωτισμός θα μειωθεί "
-"κατά 40% σε λειτουργία μπαταρίας. Επιτρεπόμενες τιμές είναι μεταξύ 0 και "
-"100."
+"κατά 40% σε λειτουργία μπαταρίας. Επιτρεπόμενες τιμές είναι μεταξύ 0 και 100."
 
 #: data/org.cafe.power-manager.gschema.xml.in:86
 msgid "The brightness of the screen when idle"
@@ -338,8 +327,8 @@ msgid ""
 "If the screen should be dimmed to save power when the computer is idle when "
 "on battery power."
 msgstr ""
-"Αν θα μειώνεται η φωτεινότητα της οθόνης, για εξοικονόμηση ενέργειας όταν δε"
-" χρησιμοποιείται ο υπολογιστής, κατά την τροφοδοσία από μπαταρία."
+"Αν θα μειώνεται η φωτεινότητα της οθόνης, για εξοικονόμηση ενέργειας όταν δε "
+"χρησιμοποιείται ο υπολογιστής, κατά την τροφοδοσία από μπαταρία."
 
 #: data/org.cafe.power-manager.gschema.xml.in:96
 msgid "The default amount of time to dim the screen after idle"
@@ -378,8 +367,8 @@ msgid ""
 "If the screen should be dimmed to save power when the computer is idle when "
 "on AC power."
 msgstr ""
-"Αν θα μειώνεται η φωτεινότητα της οθόνης, για εξοικονόμηση ενέργειας όταν δε"
-" χρησιμοποιείται ο υπολογιστής, κατά την τροφοδοσία από πρίζα."
+"Αν θα μειώνεται η φωτεινότητα της οθόνης, για εξοικονόμηση ενέργειας όταν δε "
+"χρησιμοποιείται ο υπολογιστής, κατά την τροφοδοσία από πρίζα."
 
 #: data/org.cafe.power-manager.gschema.xml.in:111
 msgid "Method used to blank screen on AC"
@@ -430,8 +419,8 @@ msgstr "Ενέργεια κουμπιού αδρανοποίησης"
 #: data/org.cafe.power-manager.gschema.xml.in:132
 msgid "The action to take when the system hibernate button is pressed."
 msgstr ""
-"Η ενέργεια που θα πραγματοποιείται όταν πιέζεται το κουμπί αδρανοποίησης του"
-" συστήματος."
+"Η ενέργεια που θα πραγματοποιείται όταν πιέζεται το κουμπί αδρανοποίησης του "
+"συστήματος."
 
 #: data/org.cafe.power-manager.gschema.xml.in:136
 msgid "Power button action"
@@ -491,8 +480,7 @@ msgstr "Αν θα ελέγχεται ο φόρτος της CPU πριν την 
 #: data/org.cafe.power-manager.gschema.xml.in:161
 msgid "Whether NetworkManager should be connected and disconnected on sleep."
 msgstr ""
-"Αν το NetworkManager θα είναι συνδεμένο και αποσυνδεδεμένο κατά την "
-"αδράνεια."
+"Αν το NetworkManager θα είναι συνδεμένο και αποσυνδεδεμένο κατά την αδράνεια."
 
 #: data/org.cafe.power-manager.gschema.xml.in:162
 msgid ""
@@ -533,11 +521,11 @@ msgstr "Κλείδωμα οθόνης όταν γίνεται αναστολή"
 
 #: data/org.cafe.power-manager.gschema.xml.in:177
 msgid ""
-"Whether the screen is locked when the computer wakes up from a suspend. Only"
-" used if lock-use-screensaver is false."
+"Whether the screen is locked when the computer wakes up from a suspend. Only "
+"used if lock-use-screensaver is false."
 msgstr ""
-"Αν θα κλειδώνει η οθόνη όταν ο υπολογιστής επιστρέφει από την αναστολή. Αυτή"
-" η επιλογή χρησιμοποιείται μόνο αν το lock-use-screensaver έχει οριστεί ως "
+"Αν θα κλειδώνει η οθόνη όταν ο υπολογιστής επιστρέφει από την αναστολή. Αυτή "
+"η επιλογή χρησιμοποιείται μόνο αν το lock-use-screensaver έχει οριστεί ως "
 "ψευδές."
 
 #: data/org.cafe.power-manager.gschema.xml.in:181
@@ -560,8 +548,8 @@ msgstr "Κλείδωσε την GNOME κλειδοθήκη όταν γίνετα
 
 #: data/org.cafe.power-manager.gschema.xml.in:187
 msgid ""
-"Whether the GNOME keyring is locked before the computer enters suspend. This"
-" means the keyring will have to be unlocked on resume."
+"Whether the GNOME keyring is locked before the computer enters suspend. This "
+"means the keyring will have to be unlocked on resume."
 msgstr ""
 "Αν θα κλειδώνεται η κλειδοθήκη του CAFE όταν ο υπολογιστής αναστέλλεται. Αν "
 "ναι, η κλειδοθήκη θα πρέπει να ξεκλειδωθεί κατά την επαναφορά."
@@ -685,8 +673,8 @@ msgstr "Η μέγιστη τιμή χρόνου που θα εμφανίζετα
 msgid ""
 "The maximum duration of time displayed on the x-axis of the history graph."
 msgstr ""
-"Η μέγιστη διάρκεια χρόνου που θα εμφανίζεται στον άξονα Χ του γραφήματος του"
-" ιστορικού."
+"Η μέγιστη διάρκεια χρόνου που θα εμφανίζεται στον άξονα Χ του γραφήματος του "
+"ιστορικού."
 
 #: data/org.cafe.power-manager.gschema.xml.in:251
 msgid "Whether we should show the stats data points"
@@ -707,8 +695,7 @@ msgstr "Αν θα γίνεται εξομάλυνση στατιστικών δ�
 
 #: data/org.cafe.power-manager.gschema.xml.in:261
 msgid "The default graph type to show for stats"
-msgstr ""
-"Ο προεπιλεγμένος τύπος γραφήματος που θα εμφανίζεται για τα στατιστικά"
+msgstr "Ο προεπιλεγμένος τύπος γραφήματος που θα εμφανίζεται για τα στατιστικά"
 
 #: data/org.cafe.power-manager.gschema.xml.in:262
 msgid "The default graph type to show in the stats window."
@@ -737,8 +724,8 @@ msgid ""
 "The identifier of the last device which is used to return focus to the "
 "correct device."
 msgstr ""
-"Ο ταυτοποιητής της τελευταίας συσκευής που χρησιμοποιείται για την επιστροφή"
-" της εστίασης στη σωστή συσκευή."
+"Ο ταυτοποιητής της τελευταίας συσκευής που χρησιμοποιείται για την επιστροφή "
+"της εστίασης στη σωστή συσκευή."
 
 #: data/org.cafe.power-manager.gschema.xml.in:276
 msgid "Percentage considered low"
@@ -746,8 +733,8 @@ msgstr "Ποσοστό που θεωρείται χαμηλό"
 
 #: data/org.cafe.power-manager.gschema.xml.in:277
 msgid ""
-"The percentage of the battery when it is considered low. Only valid when "
-"use-time-for-policy is false."
+"The percentage of the battery when it is considered low. Only valid when use-"
+"time-for-policy is false."
 msgstr ""
 "Το ποσοστό της μπαταρίας που πρέπει να απομένει για να θεωρηθεί το φορτίο "
 "χαμηλό. Χρησιμοποιείται μόνο αν το use_time_for_policy έχει οριστεί σε "
@@ -785,11 +772,11 @@ msgstr "Ο χρόνος που πρέπει να απομένει για να θ
 
 #: data/org.cafe.power-manager.gschema.xml.in:292
 msgid ""
-"The time remaining in seconds of the battery when it is considered low. Only"
-" valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered low. Only "
+"valid when use-time-for-policy is true."
 msgstr ""
-"Ο χρόνος μπαταρίας σε δευτερόλεπτα που πρέπει να απομένει για να θεωρηθεί το"
-" φορτίο χαμηλό. Χρησιμοποιείται μόνο αν το use_time_for_policy έχει οριστεί "
+"Ο χρόνος μπαταρίας σε δευτερόλεπτα που πρέπει να απομένει για να θεωρηθεί το "
+"φορτίο χαμηλό. Χρησιμοποιείται μόνο αν το use_time_for_policy έχει οριστεί "
 "σε αληθές."
 
 #: data/org.cafe.power-manager.gschema.xml.in:296
@@ -799,11 +786,11 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:297
 msgid ""
-"The time remaining in seconds of the battery when it is considered critical."
-" Only valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered critical. "
+"Only valid when use-time-for-policy is true."
 msgstr ""
-"Ο χρόνος μπαταρίας σε δευτερόλεπτα που πρέπει να απομένει για να θεωρηθεί το"
-" φορτίο εξαιρετικά χαμηλό. Χρησιμοποιείται μόνο αν το use_time_for_policy "
+"Ο χρόνος μπαταρίας σε δευτερόλεπτα που πρέπει να απομένει για να θεωρηθεί το "
+"φορτίο εξαιρετικά χαμηλό. Χρησιμοποιείται μόνο αν το use_time_for_policy "
 "έχει οριστεί σε αληθές."
 
 #: data/org.cafe.power-manager.gschema.xml.in:301
@@ -822,8 +809,8 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:306
 msgid "Sleep timeout computer when on battery"
 msgstr ""
-"Δευτερόλεπτα αδράνειας πριν την αναστολή του υπολογιστή, κατά την τροφοδοσία"
-" από μπαταρία"
+"Δευτερόλεπτα αδράνειας πριν την αναστολή του υπολογιστή, κατά την τροφοδοσία "
+"από μπαταρία"
 
 #: data/org.cafe.power-manager.gschema.xml.in:307
 msgid ""
@@ -836,8 +823,8 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:311
 msgid "Sleep timeout computer when on AC"
 msgstr ""
-"Δευτερόλεπτα αδράνειας πριν την αναστολή του υπολογιστή, κατά την τροφοδοσία"
-" από πρίζα"
+"Δευτερόλεπτα αδράνειας πριν την αναστολή του υπολογιστή, κατά την τροφοδοσία "
+"από πρίζα"
 
 #: data/org.cafe.power-manager.gschema.xml.in:312
 msgid ""
@@ -850,13 +837,13 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:316
 msgid "Sleep timeout computer when on UPS"
 msgstr ""
-"Δευτερόλεπτα αδράνειας πριν την αναστολή του υπολογιστή, κατά την τροφοδοσία"
-" από UPS"
+"Δευτερόλεπτα αδράνειας πριν την αναστολή του υπολογιστή, κατά την τροφοδοσία "
+"από UPS"
 
 #: data/org.cafe.power-manager.gschema.xml.in:317
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before it goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before it goes to sleep."
 msgstr ""
 "Δευτερόλεπτα αδράνειας του υπολογιστή πριν την αναστολή του, κατά την "
 "τροφοδοσία από UPS."
@@ -872,8 +859,8 @@ msgid ""
 "The amount of time in seconds before the display goes to sleep when the "
 "computer is on AC power."
 msgstr ""
-"Δευτερόλεπτα αδράνειας της οθόνης πριν την αναστολή της, κατά την τροφοδοσία"
-" από πρίζα."
+"Δευτερόλεπτα αδράνειας της οθόνης πριν την αναστολή της, κατά την τροφοδοσία "
+"από πρίζα."
 
 #: data/org.cafe.power-manager.gschema.xml.in:326
 msgid "Sleep timeout display when on battery"
@@ -886,8 +873,8 @@ msgid ""
 "The amount of time in seconds the computer on battery power needs to be "
 "inactive before the display goes to sleep."
 msgstr ""
-"Δευτερόλεπτα αδράνειας της οθόνης πριν την αναστολή της, κατά την τροφοδοσία"
-" από μπαταρία."
+"Δευτερόλεπτα αδράνειας της οθόνης πριν την αναστολή της, κατά την τροφοδοσία "
+"από μπαταρία."
 
 #: data/org.cafe.power-manager.gschema.xml.in:331
 msgid "Sleep timeout display when on UPS"
@@ -897,11 +884,11 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:332
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before the display goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before the display goes to sleep."
 msgstr ""
-"Δευτερόλεπτα αδράνειας της οθόνης πριν την αναστολή της, κατά την τροφοδοσία"
-" από UPS."
+"Δευτερόλεπτα αδράνειας της οθόνης πριν την αναστολή της, κατά την τροφοδοσία "
+"από UPS."
 
 #: data/org.cafe.power-manager.gschema.xml.in:336
 msgid "If sounds should be used"
@@ -916,8 +903,7 @@ msgstr ""
 "ένα αίτημα αποτροπής εμποδίζει την εκτέλεση ενέργειας."
 
 #: data/org.cafe.power-manager.gschema.xml.in:341
-msgid ""
-"If preferences and statistics items should be shown in the context menu"
+msgid "If preferences and statistics items should be shown in the context menu"
 msgstr ""
 "Εάν οι προτιμήσεις και τα στοιχεία στατιστικών θα εμφανίζονται στo μενού "
 "συντόμευσης"
@@ -938,14 +924,13 @@ msgstr "Διαχείριση ενέργειας"
 msgid "Configure power management"
 msgstr "Ρύθμιση διαχείρισης ενέργειας"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
 msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
-#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:7
-#: src/cpm-statistics.c:1090 src/cpm-statistics.c:1577
+#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:8
+#: src/cpm-statistics.c:764 src/cpm-statistics.c:1233
 msgid "Power Statistics"
 msgstr "Στατιστικά ενέργειας"
 
@@ -953,55 +938,37 @@ msgstr "Στατιστικά ενέργειας"
 msgid "Observe power management"
 msgstr "Παρακολούθηση διαχείρισης ενέργειας"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-statistics.desktop.in.in:6
-msgid "cafe-power-statistics"
-msgstr ""
-
-#: data/cpm-statistics.ui:113 src/cpm-statistics.c:208
+#: data/cpm-statistics.ui:119
 msgid "Details"
 msgstr "Λεπτομέρειες"
 
-#: data/cpm-statistics.ui:139 data/cpm-statistics.ui:342
+#: data/cpm-statistics.ui:145 data/cpm-statistics.ui:347
 msgid "Graph type:"
 msgstr "Μορφή γραφήματος:"
 
-#: data/cpm-statistics.ui:174
+#: data/cpm-statistics.ui:180
 msgid "Data length:"
 msgstr "Μήκος δεδομένων:"
 
-#: data/cpm-statistics.ui:234 data/cpm-statistics.ui:395
+#: data/cpm-statistics.ui:239 data/cpm-statistics.ui:399
 msgid "There is no data to display."
 msgstr "Δεν υπάρχουν δεδομένα προς εμφάνιση."
 
-#: data/cpm-statistics.ui:276 data/cpm-statistics.ui:438
+#: data/cpm-statistics.ui:281 data/cpm-statistics.ui:442
 msgid "Use smoothed line"
 msgstr "Εξομάλυνση γραμμής"
 
-#: data/cpm-statistics.ui:291 data/cpm-statistics.ui:453
+#: data/cpm-statistics.ui:296 data/cpm-statistics.ui:457
 msgid "Show data points"
 msgstr "Προβολή σημείων δεδομένων"
 
-#: data/cpm-statistics.ui:320
+#: data/cpm-statistics.ui:325
 msgid "History"
 msgstr "Ιστορικό"
 
-#: data/cpm-statistics.ui:482
+#: data/cpm-statistics.ui:486
 msgid "Statistics"
 msgstr "Στατιστικά"
-
-#: data/cpm-statistics.ui:504
-msgid "Processor wakeups per second:"
-msgstr "Αφυπνίσεις επεξεργαστή ανά δευτερόλεπτο:"
-
-#: data/cpm-statistics.ui:516
-msgid "0"
-msgstr "0"
-
-#: data/cpm-statistics.ui:563 src/cpm-statistics.c:194
-msgid "Wakeups"
-msgstr "Αφυπνίσεις"
 
 #: data/cpm-prefs.ui:55
 msgid "Power Management Preferences"
@@ -1082,8 +1049,7 @@ msgstr "Να _μην εμφανίζεται ποτέ εικονίδιο"
 
 #: data/cpm-prefs.ui:953
 msgid "_Only display an icon when battery power is low"
-msgstr ""
-"Να εμφανίζεται εικονίδιο μόνο αν το φορτίο της μπαταρίας είναι χαμη_λό"
+msgstr "Να εμφανίζεται εικονίδιο μόνο αν το φορτίο της μπαταρίας είναι χαμη_λό"
 
 #: data/cpm-prefs.ui:969
 msgid "Only display an icon when charging or _discharging"
@@ -1257,7 +1223,7 @@ msgstr "%.1fW"
 msgid "%.1fV"
 msgstr "%.1fV"
 
-#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1560
+#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1216
 msgid "Show extra debugging information"
 msgstr "Προβολή επιπρόσθετων πληροφοριών αποσφαλμάτωσης"
 
@@ -1364,11 +1330,11 @@ msgstr "Η μπαταρία μπορεί να έχει βλάβη"
 #: src/cpm-manager.c:1110
 #, c-format
 msgid ""
-"Battery has a very low capacity (%1.1f%%), which means that it may be old or"
-" broken."
+"Battery has a very low capacity (%1.1f%%), which means that it may be old or "
+"broken."
 msgstr ""
-"Η μπαταρία σας έχει πολύ μικρή χωρητικότητα (%1.1f%%). Μπορεί να είναι παλιά"
-" ή να έχει βλάβη."
+"Η μπαταρία σας έχει πολύ μικρή χωρητικότητα (%1.1f%%). Μπορεί να είναι παλιά "
+"ή να έχει βλάβη."
 
 #: src/cpm-manager.c:1159
 msgid "Battery Charged"
@@ -1428,8 +1394,7 @@ msgstr "Το φορτίο της μπαταρίας του ποντικιού ε
 #: src/cpm-manager.c:1334
 #, c-format
 msgid "Wireless mouse is low in power (%.0f%%)"
-msgstr ""
-"Το επίπεδο φόρτισης του ασύρματου ποντικιού σας είναι χαμηλό (%.0f%%)."
+msgstr "Το επίπεδο φόρτισης του ασύρματου ποντικιού σας είναι χαμηλό (%.0f%%)."
 
 #: src/cpm-manager.c:1338 src/cpm-manager.c:1478
 msgid "Keyboard battery low"
@@ -1527,8 +1492,8 @@ msgstr "Το φορτίο του UPS είναι εξαιρετικά χαμηλ�
 #: src/cpm-manager.c:1459
 #, c-format
 msgid ""
-"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
-" your computer to avoid losing data."
+"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to "
+"your computer to avoid losing data."
 msgstr ""
 "Απομένουν περίπου <b>%s</b> λειτουργίας του UPS (%.0f%%). Συνδέστε το "
 "καλώδιο στην πρίζα ρεύματος για να μη χάσετε δεδομένα."
@@ -1540,8 +1505,7 @@ msgid ""
 "functioning if not charged."
 msgstr ""
 "Το επίπεδο φόρτισης του ασύρματου ποντικιού σας είναι εξαιρετικά χαμηλό "
-"(%.0f%%). Σύντομα, η συσκευή θα σταματήσει να λειτουργεί, εκτός αν "
-"φορτιστεί."
+"(%.0f%%). Σύντομα, η συσκευή θα σταματήσει να λειτουργεί, εκτός αν φορτιστεί."
 
 #: src/cpm-manager.c:1481
 #, c-format
@@ -1550,17 +1514,16 @@ msgid ""
 "functioning if not charged."
 msgstr ""
 "Το επίπεδο φόρτισης του ασύρματου πληκτρολογίου σας είναι εξαιρετικά χαμηλό "
-"(%.0f%%). Σύντομα, η συσκευή θα σταματήσει να λειτουργεί, εκτός αν "
-"φορτιστεί."
+"(%.0f%%). Σύντομα, η συσκευή θα σταματήσει να λειτουργεί, εκτός αν φορτιστεί."
 
 #: src/cpm-manager.c:1490
 #, c-format
 msgid ""
-"PDA is very low in power (%.0f%%). This device will soon stop functioning if"
-" not charged."
+"PDA is very low in power (%.0f%%). This device will soon stop functioning if "
+"not charged."
 msgstr ""
-"Το επίπεδο φόρτισης του PDA σας είναι εξαιρετικά χαμηλό (%.0f%%). Σύντομα, η"
-" συσκευή θα σταματήσει να λειτουργεί, εκτός αν φορτιστεί."
+"Το επίπεδο φόρτισης του PDA σας είναι εξαιρετικά χαμηλό (%.0f%%). Σύντομα, η "
+"συσκευή θα σταματήσει να λειτουργεί, εκτός αν φορτιστεί."
 
 #: src/cpm-manager.c:1500
 #, c-format
@@ -1578,14 +1541,13 @@ msgid ""
 "functioning if not charged."
 msgstr ""
 "Το επίπεδο φόρτισης του αναπαραγωγέα πολυμέσων σας είναι εξαιρετικά χαμηλό "
-"(%.0f%%). Σύντομα, η συσκευή θα σταματήσει να λειτουργεί, εκτός αν "
-"φορτιστεί."
+"(%.0f%%). Σύντομα, η συσκευή θα σταματήσει να λειτουργεί, εκτός αν φορτιστεί."
 
 #: src/cpm-manager.c:1519
 #, c-format
 msgid ""
-"Tablet is very low in power (%.0f%%). This device will soon stop functioning"
-" if not charged."
+"Tablet is very low in power (%.0f%%). This device will soon stop functioning "
+"if not charged."
 msgstr ""
 "Το επίπεδο φόρτισης της πινακίδας σας είναι εξαιρετικά χαμηλό (%.0f%%). "
 "Σύντομα, η συσκευή θα σταματήσει να λειτουργεί, εκτός αν φορτιστεί."
@@ -1601,8 +1563,8 @@ msgstr ""
 
 #: src/cpm-manager.c:1593
 msgid ""
-"The battery is below the critical level and this computer will <b>power-"
-"off</b> when the battery becomes completely empty."
+"The battery is below the critical level and this computer will <b>power-off</"
+"b> when the battery becomes completely empty."
 msgstr ""
 "Το φορτίο της μπαταρίας είναι εξαιρετικά χαμηλό. Ο υπολογιστής θα "
 "<b>κλείσει</b> όταν η μπαταρία αδειάσει τελείως."
@@ -1613,9 +1575,9 @@ msgid ""
 "suspend.<br><b>NOTE:</b> A small amount of power is required to keep your "
 "computer in a suspended state."
 msgstr ""
-"Το φορτίο της μπαταρίας είναι εξαιρετικά χαμηλό. Ο υπολογιστής θα "
-"ανασταλεί.<br><b> ΣΗΜΕΙΩΣΗ:</b> Ένα μικρό ποσοστό ενέργειας απαιτείται για "
-"να διατηρήσει τον υπολογιστή σας σε αναστολή."
+"Το φορτίο της μπαταρίας είναι εξαιρετικά χαμηλό. Ο υπολογιστής θα ανασταλεί."
+"<br><b> ΣΗΜΕΙΩΣΗ:</b> Ένα μικρό ποσοστό ενέργειας απαιτείται για να "
+"διατηρήσει τον υπολογιστή σας σε αναστολή."
 
 #: src/cpm-manager.c:1606
 msgid ""
@@ -1685,363 +1647,251 @@ msgstr "Καμία ενέργεια"
 msgid "Never"
 msgstr "Ποτέ"
 
-#: src/cpm-statistics.c:78 src/cpm-statistics.c:466
+#: src/cpm-statistics.c:67 src/cpm-statistics.c:410
 msgid "Rate"
 msgstr "Rate"
 
-#: src/cpm-statistics.c:79
+#: src/cpm-statistics.c:68
 msgid "Charge"
 msgstr "Φορτίο"
 
-#: src/cpm-statistics.c:80 src/cpm-statistics.c:480
+#: src/cpm-statistics.c:69 src/cpm-statistics.c:424
 msgid "Time to full"
 msgstr "Χρόνος για πλήρη φόρτιση"
 
-#: src/cpm-statistics.c:81 src/cpm-statistics.c:485
+#: src/cpm-statistics.c:70 src/cpm-statistics.c:429
 msgid "Time to empty"
 msgstr "Χρόνος για πλήρη εκφόρτιση"
 
-#: src/cpm-statistics.c:88
+#: src/cpm-statistics.c:77
 msgid "10 minutes"
 msgstr "10 λεπτά"
 
-#: src/cpm-statistics.c:89
+#: src/cpm-statistics.c:78
 msgid "2 hours"
 msgstr "2 ώρες"
 
-#: src/cpm-statistics.c:90
+#: src/cpm-statistics.c:79
 msgid "6 hours"
 msgstr "6 ώρες"
 
-#: src/cpm-statistics.c:91
+#: src/cpm-statistics.c:80
 msgid "1 day"
 msgstr "1 ημέρα"
 
-#: src/cpm-statistics.c:92
+#: src/cpm-statistics.c:81
 msgid "1 week"
 msgstr "1 εβδομάδα"
 
-#: src/cpm-statistics.c:101
+#: src/cpm-statistics.c:90
 msgid "Charge profile"
 msgstr "Προφίλ φόρτισης"
 
-#: src/cpm-statistics.c:102
+#: src/cpm-statistics.c:91
 msgid "Discharge profile"
 msgstr "Προφίλ εκφόρτισης"
 
-#: src/cpm-statistics.c:104
+#: src/cpm-statistics.c:93
 msgid "Charge accuracy"
 msgstr "Ακρίβεια φόρτισης"
 
-#: src/cpm-statistics.c:105
+#: src/cpm-statistics.c:94
 msgid "Discharge accuracy"
 msgstr "Ακρίβεια εκφόρτισης"
 
-#: src/cpm-statistics.c:132
+#: src/cpm-statistics.c:121
 msgid "Attribute"
 msgstr "Γνώρισμα"
 
-#: src/cpm-statistics.c:139
+#: src/cpm-statistics.c:128
 msgid "Value"
 msgstr "Τιμή"
 
-#: src/cpm-statistics.c:156
+#: src/cpm-statistics.c:145
 msgid "Image"
 msgstr "Φωτογραφία"
 
-#: src/cpm-statistics.c:162
+#: src/cpm-statistics.c:151
 msgid "Description"
 msgstr "Περιγραφή"
 
-#: src/cpm-statistics.c:181 src/cpm-statistics.c:405
-msgid "Type"
-msgstr "Τύπος"
-
-#: src/cpm-statistics.c:187
-msgid "ID"
-msgstr "ID"
-
-#: src/cpm-statistics.c:201
-msgid "Command"
-msgstr "Εντολή"
-
-#: src/cpm-statistics.c:286
+#: src/cpm-statistics.c:230
 msgid "Unknown"
 msgstr "Άγνωστο"
 
-#: src/cpm-statistics.c:290
+#: src/cpm-statistics.c:234
 #, c-format
 msgid "%.0f second"
 msgid_plural "%.0f seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:295
+#: src/cpm-statistics.c:239
 #, c-format
 msgid "%.1f minute"
 msgid_plural "%.1f minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:300
+#: src/cpm-statistics.c:244
 #, c-format
 msgid "%.1f hour"
 msgid_plural "%.1f hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:304
+#: src/cpm-statistics.c:248
 #, c-format
 msgid "%.1f day"
 msgid_plural "%.1f days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "Yes"
 msgstr "Ναι"
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "No"
 msgstr "Όχι"
 
-#: src/cpm-statistics.c:402
+#: src/cpm-statistics.c:346
 msgid "Device"
 msgstr "Συσκευή"
 
-#: src/cpm-statistics.c:407
+#: src/cpm-statistics.c:349
+msgid "Type"
+msgstr "Τύπος"
+
+#: src/cpm-statistics.c:351
 msgid "Vendor"
 msgstr "Κατασκευαστής"
 
-#: src/cpm-statistics.c:409
+#: src/cpm-statistics.c:353
 msgid "Model"
 msgstr "Μοντέλο"
 
-#: src/cpm-statistics.c:411
+#: src/cpm-statistics.c:355
 msgid "Serial number"
 msgstr "Σειριακός αριθμός"
 
-#: src/cpm-statistics.c:416
+#: src/cpm-statistics.c:360
 msgid "Supply"
 msgstr "Παροχή"
 
-#: src/cpm-statistics.c:419
+#: src/cpm-statistics.c:363
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:423
+#: src/cpm-statistics.c:367
 msgid "Refreshed"
 msgstr "Ανανεωμένη"
 
-#: src/cpm-statistics.c:433
+#: src/cpm-statistics.c:377
 msgid "Present"
 msgstr "Παρούσα"
 
-#: src/cpm-statistics.c:440
+#: src/cpm-statistics.c:384
 msgid "Rechargeable"
 msgstr "Επαναφορτιζόμενη"
 
-#: src/cpm-statistics.c:446
+#: src/cpm-statistics.c:390
 msgid "State"
 msgstr "Κατάσταση"
 
-#: src/cpm-statistics.c:450
+#: src/cpm-statistics.c:394
 msgid "Energy"
 msgstr "Ενέργεια"
 
-#: src/cpm-statistics.c:453
+#: src/cpm-statistics.c:397
 msgid "Energy when empty"
 msgstr "Ενέργεια σε πλήρη εκφόρτιση"
 
-#: src/cpm-statistics.c:456
+#: src/cpm-statistics.c:400
 msgid "Energy when full"
 msgstr "Ενέργεια σε πλήρη φόρτιση"
 
-#: src/cpm-statistics.c:459
+#: src/cpm-statistics.c:403
 msgid "Energy (design)"
 msgstr "Ενέργεια (προδιαγραφές)"
 
-#: src/cpm-statistics.c:473
+#: src/cpm-statistics.c:417
 msgid "Voltage"
 msgstr "Voltage"
 
-#: src/cpm-statistics.c:495
+#: src/cpm-statistics.c:439
 msgid "Percentage"
 msgstr "Ποσοστό"
 
-#: src/cpm-statistics.c:502
+#: src/cpm-statistics.c:446
 msgid "Capacity"
 msgstr "Χωρητικότητα"
 
-#: src/cpm-statistics.c:507
+#: src/cpm-statistics.c:451
 msgid "Technology"
 msgstr "Τεχνολογία"
 
-#: src/cpm-statistics.c:512
+#: src/cpm-statistics.c:456
 msgid "Online"
 msgstr "Σε σύνδεση"
 
-#: src/cpm-statistics.c:824
-msgid "No data"
-msgstr "Δεν υπάρχουν δεδομένα"
-
-#: src/cpm-statistics.c:831 src/cpm-statistics.c:836
-msgid "Kernel module"
-msgstr "Άρθρωμα πυρήνα"
-
-#: src/cpm-statistics.c:841
-msgid "Kernel core"
-msgstr "Κέντρο πυρήνα"
-
-#: src/cpm-statistics.c:846
-msgid "Interprocessor interrupt"
-msgstr "Διακοπή μεταξύ επεξεργαστών"
-
-#: src/cpm-statistics.c:851
-msgid "Interrupt"
-msgstr "Διακοπή"
-
-#: src/cpm-statistics.c:898
-msgid "PS/2 keyboard/mouse/touchpad"
-msgstr "PS/2 πληκτρολόγιο/ποντίκι/touchpad"
-
-#: src/cpm-statistics.c:901
-msgid "ACPI"
-msgstr "ACPI"
-
-#: src/cpm-statistics.c:904
-msgid "Serial ATA"
-msgstr "SATA"
-
-#: src/cpm-statistics.c:907
-msgid "ATA host controller"
-msgstr "ATA host controller"
-
-#: src/cpm-statistics.c:910
-msgid "Intel wireless adaptor"
-msgstr "Ασύρματος προσαρμογέας Intel"
-
-#: src/cpm-statistics.c:917 src/cpm-statistics.c:922 src/cpm-statistics.c:927
-#: src/cpm-statistics.c:932 src/cpm-statistics.c:937
-#, c-format
-msgid "Timer %s"
-msgstr "Χρονοδιακόπτης %s"
-
-#: src/cpm-statistics.c:941
-#, c-format
-msgid "Sleep %s"
-msgstr "Αναστολή %s"
-
-#: src/cpm-statistics.c:944
-#, c-format
-msgid "New task %s"
-msgstr "Νέα εργασία %s"
-
-#: src/cpm-statistics.c:948
-#, c-format
-msgid "Wait %s"
-msgstr "Αναμονή %s"
-
-#: src/cpm-statistics.c:952 src/cpm-statistics.c:956
-#, c-format
-msgid "Work queue %s"
-msgstr "Ουρά εργασιών %s"
-
-#: src/cpm-statistics.c:959
-#, c-format
-msgid "Network route flush %s"
-msgstr "Εκκαθάριση δρομολογίων δικτύου %s"
-
-#: src/cpm-statistics.c:962
-#, c-format
-msgid "USB activity %s"
-msgstr "Δραστηριότητα USB %s"
-
-#: src/cpm-statistics.c:965
-#, c-format
-msgid "Wakeup %s"
-msgstr "Αφύπνιση %s"
-
-#: src/cpm-statistics.c:968
-msgid "Local interrupts"
-msgstr "Τοπικές διακοπές"
-
-#: src/cpm-statistics.c:971
-msgid "Rescheduling interrupts"
-msgstr "Επαναπρογραμματισμός διακοπών"
-
-#: src/cpm-statistics.c:1080
+#: src/cpm-statistics.c:756
 msgid "Device Information"
 msgstr "Πληροφορίες συσκευής"
 
-#: src/cpm-statistics.c:1082
+#: src/cpm-statistics.c:758
 msgid "Device History"
 msgstr "Ιστορικό συσκευής"
 
-#: src/cpm-statistics.c:1084
+#: src/cpm-statistics.c:760
 msgid "Device Profile"
 msgstr "Προφίλ συσκευής"
 
-#: src/cpm-statistics.c:1086
-msgid "Processor Wakeups"
-msgstr "Αφυπνίσεις επεξεργαστή"
-
-#: src/cpm-statistics.c:1325 src/cpm-statistics.c:1331
-#: src/cpm-statistics.c:1337 src/cpm-statistics.c:1343
+#: src/cpm-statistics.c:982 src/cpm-statistics.c:988 src/cpm-statistics.c:994
+#: src/cpm-statistics.c:1000
 msgid "Time elapsed"
 msgstr "Χρόνος"
 
-#: src/cpm-statistics.c:1327
+#: src/cpm-statistics.c:984
 msgid "Power"
 msgstr "Δύναμη"
 
-#: src/cpm-statistics.c:1333 src/cpm-statistics.c:1377
-#: src/cpm-statistics.c:1383 src/cpm-statistics.c:1389
-#: src/cpm-statistics.c:1395
+#: src/cpm-statistics.c:990 src/cpm-statistics.c:1034 src/cpm-statistics.c:1040
+#: src/cpm-statistics.c:1046 src/cpm-statistics.c:1052
 msgid "Cell charge"
 msgstr "Φορτίο στοιχείων"
 
-#: src/cpm-statistics.c:1339 src/cpm-statistics.c:1345
+#: src/cpm-statistics.c:996 src/cpm-statistics.c:1002
 msgid "Predicted time"
 msgstr "Προβλεπόμενος χρόνος"
 
-#: src/cpm-statistics.c:1379 src/cpm-statistics.c:1391
+#: src/cpm-statistics.c:1036 src/cpm-statistics.c:1048
 msgid "Correction factor"
 msgstr "Συντελεστής διόρθωσης"
 
-#: src/cpm-statistics.c:1385 src/cpm-statistics.c:1397
+#: src/cpm-statistics.c:1042 src/cpm-statistics.c:1054
 msgid "Prediction accuracy"
 msgstr "Ακρίβεια πρόβλεψης"
 
-#: src/cpm-statistics.c:1563
+#: src/cpm-statistics.c:1219
 msgid "Select this device at startup"
 msgstr "Επιλογή αυτής της συσκευής κατά την εκκίνηση"
 
-#: src/cpm-statistics.c:1802
-msgid "Processor"
-msgstr "Επεξεργαστής"
-
-#: src/cpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 CAFE developers"
-msgstr "Πνευματική ιδιοκτησία © 2011-2018 CAFE προγραμματιστές"
-
-#: src/cpm-tray-icon.c:193
-msgid "translator-credits"
+#: src/cpm-tray-icon.c:207
+msgid ""
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"Ελληνική μεταφραστική ομάδα CAFE\n"
-" Αλέξανδρος Μουχτσής <alexandros@gnugr.org>\n"
-"\n"
-"Για περισσότερες πληροφορίες, επισκεφθείτε την σελίδα http://www.cafe.gr/"
 
-#: src/cpm-tray-icon.c:295
+#: src/cpm-tray-icon.c:318
 #, c-format
 msgid "%s remaining"
 msgstr "%s απομένει"
 
-#: src/cpm-tray-icon.c:349
+#: src/cpm-tray-icon.c:372
 msgid "_Preferences"
 msgstr "_Προτιμήσεις"
 
@@ -2306,3 +2156,135 @@ msgstr "Αναμονή εκφόρτισης"
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr "Άγνωστη κατάσταση"
+
+#~ msgid "Licensed under the GNU General Public License Version 2"
+#~ msgstr ""
+#~ "Διανέμεται υπό τους όρους της Γενικής Άδειας Δημόσιας Χρήσης GNU (GPL), "
+#~ "έκδοσης 2"
+
+#~ msgid ""
+#~ "Power Manager is free software; you can redistribute it and/or\n"
+#~ "modify it under the terms of the GNU General Public License\n"
+#~ "as published by the Free Software Foundation; either version 2\n"
+#~ "of the License, or (at your option) any later version."
+#~ msgstr ""
+#~ "Ο Power Manager είναι ελεύθερο λογισμικό· επιτρέπεται η αναδιανομή \n"
+#~ "ή/και τροποποίησή του υπό τους όρους της Γενικής Άδειας Δημόσιας \n"
+#~ "Χρήσης GNU (GPL), όπως αυτή έχει δημοσιευτεί από το Ίδρυμα \n"
+#~ "Ελεύθερου Λογισμικού (FSF) — είτε της έκδοσης 2 της Άδειας, είτε \n"
+#~ "(κατ' επιλογήν σας) οποιασδήποτε μεταγενέστερης έκδοσης."
+
+#~ msgid ""
+#~ "Power Manager is distributed in the hope that it will be useful,\n"
+#~ "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+#~ "GNU General Public License for more details."
+#~ msgstr ""
+#~ "Ο Power Manager διανέμεται με την ελπίδα ότι θα αποδειχθεί χρήσιμος, \n"
+#~ "παρόλα αυτά ΧΩΡΙΣ ΚΑΜΙΑ ΕΓΓΥΗΣΗ — χωρίς ούτε και την σιωπηρή εγγύηση \n"
+#~ "ΕΜΠΟΡΕΥΣΙΜΟΤΗΤΑΣ ή ΚΑΤΑΛΛΗΛΟΤΗΤΑΣ ΓΙΑ ΕΙΔΙΚΟ ΣΚΟΠΟ. \n"
+#~ "Για περισσότερες λεπτομέρειες ανατρέξτε στη Γενική Άδεια Δημόσιας Χρήσης "
+#~ "GNU (GPL)."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License\n"
+#~ "along with this program; if not, write to the Free Software\n"
+#~ "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA."
+#~ msgstr ""
+#~ "Θα πρέπει να έχετε λάβει αντίγραφο της Γενικής Άδειας Δημόσιας \n"
+#~ "Χρήσης GNU (GPL) μαζί με το πρόγραμμα. Αν όχι, γράψτε στο \n"
+#~ "Free Software Foundation, Inc., 59 Temple Place, Suite 330, \n"
+#~ "Boston, MA  02111-1307  USA"
+
+#~ msgid "Processor wakeups per second:"
+#~ msgstr "Αφυπνίσεις επεξεργαστή ανά δευτερόλεπτο:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Wakeups"
+#~ msgstr "Αφυπνίσεις"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Command"
+#~ msgstr "Εντολή"
+
+#~ msgid "No data"
+#~ msgstr "Δεν υπάρχουν δεδομένα"
+
+#~ msgid "Kernel module"
+#~ msgstr "Άρθρωμα πυρήνα"
+
+#~ msgid "Kernel core"
+#~ msgstr "Κέντρο πυρήνα"
+
+#~ msgid "Interprocessor interrupt"
+#~ msgstr "Διακοπή μεταξύ επεξεργαστών"
+
+#~ msgid "Interrupt"
+#~ msgstr "Διακοπή"
+
+#~ msgid "PS/2 keyboard/mouse/touchpad"
+#~ msgstr "PS/2 πληκτρολόγιο/ποντίκι/touchpad"
+
+#~ msgid "ACPI"
+#~ msgstr "ACPI"
+
+#~ msgid "Serial ATA"
+#~ msgstr "SATA"
+
+#~ msgid "ATA host controller"
+#~ msgstr "ATA host controller"
+
+#~ msgid "Intel wireless adaptor"
+#~ msgstr "Ασύρματος προσαρμογέας Intel"
+
+#, c-format
+#~ msgid "Timer %s"
+#~ msgstr "Χρονοδιακόπτης %s"
+
+#, c-format
+#~ msgid "Sleep %s"
+#~ msgstr "Αναστολή %s"
+
+#, c-format
+#~ msgid "New task %s"
+#~ msgstr "Νέα εργασία %s"
+
+#, c-format
+#~ msgid "Wait %s"
+#~ msgstr "Αναμονή %s"
+
+#, c-format
+#~ msgid "Work queue %s"
+#~ msgstr "Ουρά εργασιών %s"
+
+#, c-format
+#~ msgid "Network route flush %s"
+#~ msgstr "Εκκαθάριση δρομολογίων δικτύου %s"
+
+#, c-format
+#~ msgid "USB activity %s"
+#~ msgstr "Δραστηριότητα USB %s"
+
+#, c-format
+#~ msgid "Wakeup %s"
+#~ msgstr "Αφύπνιση %s"
+
+#~ msgid "Local interrupts"
+#~ msgstr "Τοπικές διακοπές"
+
+#~ msgid "Rescheduling interrupts"
+#~ msgstr "Επαναπρογραμματισμός διακοπών"
+
+#~ msgid "Processor Wakeups"
+#~ msgstr "Αφυπνίσεις επεξεργαστή"
+
+#~ msgid "Processor"
+#~ msgstr "Επεξεργαστής"
+
+#~ msgid "Copyright © 2011-2018 CAFE developers"
+#~ msgstr "Πνευματική ιδιοκτησία © 2011-2018 CAFE προγραμματιστές"

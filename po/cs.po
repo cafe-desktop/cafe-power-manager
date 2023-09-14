@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Ondřej Kolín <ondrej.kolin@gmail.com>, 2020
 # Lukáš Kvídera <lukas.kvidera@seznam.cz>, 2020
@@ -12,20 +12,21 @@
 # LiberteCzech <liberte.czech@gmail.com>, 2020
 # Lucas Lommer <drom@kdyne.net>, 2020
 # ToMáš Marný, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-power-manager 1.23.1\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2019-11-12 15:22+0100\n"
+"POT-Creation-Date: 2023-09-14 10:39+0200\n"
 "PO-Revision-Date: 2020-02-15 16:27+0000\n"
 "Last-Translator: ToMáš Marný, 2020\n"
 "Language-Team: Czech (https://www.transifex.com/cafe/teams/13566/cs/)\n"
+"Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: cs\n"
-"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n "
+"<= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
 
 #: applets/brightness/brightness-applet.c:107
 msgid "Power Manager Brightness Applet"
@@ -49,56 +50,67 @@ msgstr "Nelze zjistit jas displeje notebooku"
 msgid "LCD brightness : %d%%"
 msgstr "Jas LCD: %d%%"
 
+#: applets/brightness/brightness-applet.c:790
+#: applets/inhibit/inhibit-applet.c:287
+msgid ""
+"Power Manager is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:795
+#: applets/inhibit/inhibit-applet.c:292
+msgid ""
+"Power Manager is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+
 #: applets/brightness/brightness-applet.c:800
 #: applets/inhibit/inhibit-applet.c:297
-msgid "Licensed under the GNU General Public License Version 2"
-msgstr "Licencováno pod licencí GNU General Public Licence Verze 2"
-
-#: applets/brightness/brightness-applet.c:801
-#: applets/inhibit/inhibit-applet.c:298
 msgid ""
-"Power Manager is free software; you can redistribute it and/or\n"
-"modify it under the terms of the GNU General Public License\n"
-"as published by the Free Software Foundation; either version 2\n"
-"of the License, or (at your option) any later version."
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"Správce napájení je svobodný software; můžete jej dále šířit a/nebo "
-"upravovat za podmínek licence GNU General Public License v podobě, v jaké ji"
-" vydala Free Software Foundation, a to buď ve verzi 2 této licence nebo (dle"
-" vaší volby) v libovolné novější verzi."
 
-#: applets/brightness/brightness-applet.c:805
-#: applets/inhibit/inhibit-applet.c:302
+#: applets/brightness/brightness-applet.c:813
+msgid "About Power Manager Brightness Applet"
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:815
 msgid ""
-"Power Manager is distributed in the hope that it will be useful,\n"
-"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-"GNU General Public License for more details."
+"Copyright © 2006 Benjamin Canou\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"Správce napájení je šířen ve víře, že bude užitečný, ale BEZ JAKÝCHKOLIV "
-"ZÁRUK, a to i bez předpokládané záruky na PRODEJNOST nebo VHODNOST PRO "
-"KONKRÉTNÍ ÚČEL. Více podrobností najdete přímo v licenci GNU General Public "
-"License."
 
-#: applets/brightness/brightness-applet.c:809
-#: applets/inhibit/inhibit-applet.c:306
-msgid ""
-"You should have received a copy of the GNU General Public License\n"
-"along with this program; if not, write to the Free Software\n"
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
+#: applets/brightness/brightness-applet.c:823
+#: applets/inhibit/inhibit-applet.c:320 src/cpm-tray-icon.c:214
+msgid "translator-credits"
 msgstr ""
-"Spolu s tímto programem byste měli obdržet kopii licence GNU General Public License. Pokud se tak nestalo, napište o ni Free Software\n"
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,\n"
-"MA 02110-1301, USA."
+"Stanislav Brabec <utx@penguin.cz>\n"
+"Michal Bukovjan <bukm@centrum.cz>\n"
+"Miloslav Trmač <mitr@volny.cz>\n"
+"Petr Tomeš <ptomes@gmail.com>\n"
+"Jakub Friedl <jfriedl@suse.cz>\n"
+"Petr Tomeš <ptomes@gmail.com>\n"
+"Lukáš Novotný <lukasnov@cvs.gnome.org>\n"
+"Kamil Páral <ripper42@gmail.com>\n"
+"Petr Kovář <pknbe@volny.cz>\n"
+"Lucas Lommer <drom@kdyne.net>\n"
+"Tomas Bzatek <tbzatek@redhat.com>\n"
+"Roman Horník <roman.hornik@debian-linux.cz>"
 
-#: applets/brightness/brightness-applet.c:1063
-#: applets/inhibit/inhibit-applet.c:519
+#: applets/brightness/brightness-applet.c:1051
+#: applets/inhibit/inhibit-applet.c:507
 msgid "_About"
 msgstr "O _aplikaci"
 
-#: applets/brightness/brightness-applet.c:1066
-#: applets/inhibit/inhibit-applet.c:522
+#: applets/brightness/brightness-applet.c:1054
+#: applets/inhibit/inhibit-applet.c:510
 msgid "_Help"
 msgstr "_Nápověda"
 
@@ -109,12 +121,6 @@ msgstr "Generátor appletu nastavení jasu"
 #: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Brightness Applet"
 msgstr "Nastavení jasu"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-brightness-applet"
-msgstr "cafe-brightness-applet"
 
 #: applets/inhibit/inhibit-applet.c:87
 msgid "Power Manager Inhibit Applet"
@@ -136,6 +142,17 @@ msgstr "Povoleno automatické uspávání"
 msgid "Manual inhibit"
 msgstr "Manuální zákaz"
 
+#: applets/inhibit/inhibit-applet.c:310
+msgid "About Power Manager Inhibit Applet"
+msgstr ""
+
+#: applets/inhibit/inhibit-applet.c:312
+msgid ""
+"Copyright © 2006-2007 Richard Hughes\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
+msgstr ""
+
 #: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Inhibit Applet Factory"
 msgstr "Generátor appletu zákazu šetření energií"
@@ -144,26 +161,13 @@ msgstr "Generátor appletu zákazu šetření energií"
 msgid "Inhibit Applet"
 msgstr "Zákaz šetření energií"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-inhibit-applet"
-msgstr "cafe-inhibit-applet"
-
-#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:184
+#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:204
 msgid "Power Manager"
 msgstr "Správce napájení"
 
-#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:186
+#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:206
 msgid "Power management daemon"
 msgstr "Démon správy napájení"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-manager.desktop.in.in:6
-#: data/cafe-power-preferences.desktop.in.in:6
-msgid "cafe-power-manager"
-msgstr "cafe-power-manager"
 
 #: data/org.cafe.power-manager.gschema.xml.in:26
 #: data/org.cafe.power-manager.gschema.xml.in:41
@@ -291,11 +295,11 @@ msgstr "O kolik procent se má snížit podsvícení klávesnice v nečinnosti."
 #: data/org.cafe.power-manager.gschema.xml.in:82
 msgid ""
 "The percentage to reduce the keyboard backlight by when idle. For example, "
-"if set to '60', the backlight will be cut by 40% when idle. Legal values are"
-" between 0 and 100."
+"if set to '60', the backlight will be cut by 40% when idle. Legal values are "
+"between 0 and 100."
 msgstr ""
-"Procentuální snížení podsvícení klávesnice v nečinnosti. Například, pokud je"
-" nastaveno na \"60\", podsvícení bude sníženo o 40% v nečinnosti. Platné "
+"Procentuální snížení podsvícení klávesnice v nečinnosti. Například, pokud je "
+"nastaveno na \"60\", podsvícení bude sníženo o 40% v nečinnosti. Platné "
 "hodnoty se pohybují mezi 0 a 100 procenty."
 
 #: data/org.cafe.power-manager.gschema.xml.in:86
@@ -353,8 +357,8 @@ msgid ""
 "If the screen should be dimmed to save power when the computer is idle when "
 "on AC power."
 msgstr ""
-"Zda se má ztmavit obrazovka, je-li sezení delší dobu nečinné při napájení ze"
-" sítě."
+"Zda se má ztmavit obrazovka, je-li sezení delší dobu nečinné při napájení ze "
+"sítě."
 
 #: data/org.cafe.power-manager.gschema.xml.in:111
 msgid "Method used to blank screen on AC"
@@ -381,8 +385,7 @@ msgid ""
 "The brightness of the display when on AC power. Possible values are between "
 "0.0 and 100.0."
 msgstr ""
-"Jas displeje při napájení ze sítě. Možné jsou hodnoty v rozsahu 0.0 až "
-"100.0."
+"Jas displeje při napájení ze sítě. Možné jsou hodnoty v rozsahu 0.0 až 100.0."
 
 #: data/org.cafe.power-manager.gschema.xml.in:126
 msgid "Suspend button action"
@@ -452,8 +455,7 @@ msgstr "Zda se má zkontrolovat zátěž procesoru před zahájením nečinnosti
 #: data/org.cafe.power-manager.gschema.xml.in:161
 msgid "Whether NetworkManager should be connected and disconnected on sleep."
 msgstr ""
-"Zda má být při uspávání připojována a odpojována síť aplikací "
-"NetworkManager."
+"Zda má být při uspávání připojována a odpojována síť aplikací NetworkManager."
 
 #: data/org.cafe.power-manager.gschema.xml.in:162
 msgid ""
@@ -472,8 +474,8 @@ msgid ""
 "Whether to use the screen lock setting of cafe-screensaver to decide if the "
 "screen is locked after a hibernate, suspend or blank screen."
 msgstr ""
-"Zda používat nastavení cafe-screensaver ke zjištění, jestli má být obrazovka"
-" uzamčena při uspání počítače nebo obrazovky."
+"Zda používat nastavení cafe-screensaver ke zjištění, jestli má být obrazovka "
+"uzamčena při uspání počítače nebo obrazovky."
 
 #: data/org.cafe.power-manager.gschema.xml.in:171
 msgid "Lock screen when blanked"
@@ -493,8 +495,8 @@ msgstr "Uzamknout obrazovku při uspání do paměti"
 
 #: data/org.cafe.power-manager.gschema.xml.in:177
 msgid ""
-"Whether the screen is locked when the computer wakes up from a suspend. Only"
-" used if lock-use-screensaver is false."
+"Whether the screen is locked when the computer wakes up from a suspend. Only "
+"used if lock-use-screensaver is false."
 msgstr ""
 "Zda má být po probuzení počítače z uspání do paměti uzamčena obrazovka. "
 "Používáno pouze, není-li zaškrtnuto lock_use_screensaver."
@@ -518,8 +520,8 @@ msgstr "Při usnutí uzamknout klíčenku GNOME"
 
 #: data/org.cafe.power-manager.gschema.xml.in:187
 msgid ""
-"Whether the GNOME keyring is locked before the computer enters suspend. This"
-" means the keyring will have to be unlocked on resume."
+"Whether the GNOME keyring is locked before the computer enters suspend. This "
+"means the keyring will have to be unlocked on resume."
 msgstr ""
 "Zda při uspání do paměti neboli RAM, uzamknout klíčenku GNOME. Klíčenka se "
 "při probuzení odemkne."
@@ -578,8 +580,8 @@ msgid ""
 "When sleep fails we can show the user a button to help fix the situation. "
 "Leave this blank if the button should not be shown."
 msgstr ""
-"Pokud se nezdaří uspání počítače, lze uživateli zobrazit tlačítko pro řešení"
-" situace. Pokud jej nechcete zobrazovat, nechte pole prázdné."
+"Pokud se nezdaří uspání počítače, lze uživateli zobrazit tlačítko pro řešení "
+"situace. Pokud jej nechcete zobrazovat, nechte pole prázdné."
 
 #: data/org.cafe.power-manager.gschema.xml.in:221
 msgid "Notify on a low power"
@@ -684,8 +686,8 @@ msgstr "Procento považované za nízké"
 
 #: data/org.cafe.power-manager.gschema.xml.in:277
 msgid ""
-"The percentage of the battery when it is considered low. Only valid when "
-"use-time-for-policy is false."
+"The percentage of the battery when it is considered low. Only valid when use-"
+"time-for-policy is false."
 msgstr ""
 "Procento nabití baterie považované za nízké. Používáno pouze, není-li "
 "zaškrtnuto use_time_for_policy."
@@ -720,8 +722,8 @@ msgstr "Zbývající čas při nízkém stavu"
 
 #: data/org.cafe.power-manager.gschema.xml.in:292
 msgid ""
-"The time remaining in seconds of the battery when it is considered low. Only"
-" valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered low. Only "
+"valid when use-time-for-policy is true."
 msgstr ""
 "Zbývající čas v sekundách, je-li baterie téměř vybitá. Používáno pouze, je-"
 "li zaškrtnuto use_time_for_policy."
@@ -732,8 +734,8 @@ msgstr "Zbývající čas při kritickém stavu"
 
 #: data/org.cafe.power-manager.gschema.xml.in:297
 msgid ""
-"The time remaining in seconds of the battery when it is considered critical."
-" Only valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered critical. "
+"Only valid when use-time-for-policy is true."
 msgstr ""
 "Zbývající čas v sekundách, je-li baterie v kriticky nízkém stavu. Používáno "
 "pouze, pokud je zaškrtnuto use_time_for_policy."
@@ -780,8 +782,8 @@ msgstr "Čas pro uspání počítače při napájení ze záložního zdroje"
 
 #: data/org.cafe.power-manager.gschema.xml.in:317
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before it goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before it goes to sleep."
 msgstr ""
 "Doba prodlevy v sekundách před tím, než se počítač pokusí přejít do režimu "
 "spánku, je-li napájen ze záložního zdroje."
@@ -816,8 +818,8 @@ msgstr "Čas pro uspání displeje při napájení ze záložního zdroje"
 
 #: data/org.cafe.power-manager.gschema.xml.in:332
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before the display goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before the display goes to sleep."
 msgstr ""
 "Doba prodlevy v sekundách před tím, než se displej pokusí přejít do režimu "
 "spánku, je-li počítač napájen ze záložního zdroje."
@@ -835,8 +837,7 @@ msgstr ""
 "šetření energií."
 
 #: data/org.cafe.power-manager.gschema.xml.in:341
-msgid ""
-"If preferences and statistics items should be shown in the context menu"
+msgid "If preferences and statistics items should be shown in the context menu"
 msgstr ""
 "Zda by měly být v kontextové nabídce zobrazené položky pro předvolby a "
 "statistiky"
@@ -857,14 +858,13 @@ msgstr "Správa napájení"
 msgid "Configure power management"
 msgstr "Nastavit správu napájení"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
 msgid "CAFE;power;management;preferences;settings;"
 msgstr "CAFE;napájení;správa;předvolby;nastavení;"
 
-#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:7
-#: src/cpm-statistics.c:1090 src/cpm-statistics.c:1577
+#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:8
+#: src/cpm-statistics.c:764 src/cpm-statistics.c:1233
 msgid "Power Statistics"
 msgstr "Statistika napájení"
 
@@ -872,55 +872,37 @@ msgstr "Statistika napájení"
 msgid "Observe power management"
 msgstr "Sledovat správu napájení"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-statistics.desktop.in.in:6
-msgid "cafe-power-statistics"
-msgstr "cafe-power-statistics"
-
-#: data/cpm-statistics.ui:113 src/cpm-statistics.c:208
+#: data/cpm-statistics.ui:119
 msgid "Details"
 msgstr "Podrobnosti"
 
-#: data/cpm-statistics.ui:139 data/cpm-statistics.ui:342
+#: data/cpm-statistics.ui:145 data/cpm-statistics.ui:347
 msgid "Graph type:"
 msgstr "Typ grafu:"
 
-#: data/cpm-statistics.ui:174
+#: data/cpm-statistics.ui:180
 msgid "Data length:"
 msgstr "Délka dat:"
 
-#: data/cpm-statistics.ui:234 data/cpm-statistics.ui:395
+#: data/cpm-statistics.ui:239 data/cpm-statistics.ui:399
 msgid "There is no data to display."
 msgstr "Nelze zobrazit žádná data."
 
-#: data/cpm-statistics.ui:276 data/cpm-statistics.ui:438
+#: data/cpm-statistics.ui:281 data/cpm-statistics.ui:442
 msgid "Use smoothed line"
 msgstr "Použít vyhlazenou křivku"
 
-#: data/cpm-statistics.ui:291 data/cpm-statistics.ui:453
+#: data/cpm-statistics.ui:296 data/cpm-statistics.ui:457
 msgid "Show data points"
 msgstr "Zobrazovat v datech bod"
 
-#: data/cpm-statistics.ui:320
+#: data/cpm-statistics.ui:325
 msgid "History"
 msgstr "Historie"
 
-#: data/cpm-statistics.ui:482
+#: data/cpm-statistics.ui:486
 msgid "Statistics"
 msgstr "Statistiky"
-
-#: data/cpm-statistics.ui:504
-msgid "Processor wakeups per second:"
-msgstr "Počet probuzení procesoru za sekundu:"
-
-#: data/cpm-statistics.ui:516
-msgid "0"
-msgstr "0"
-
-#: data/cpm-statistics.ui:563 src/cpm-statistics.c:194
-msgid "Wakeups"
-msgstr "Probuzení"
 
 #: data/cpm-prefs.ui:55
 msgid "Power Management Preferences"
@@ -1182,7 +1164,7 @@ msgstr "%.1f W"
 msgid "%.1fV"
 msgstr "%.1f V"
 
-#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1560
+#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1216
 msgid "Show extra debugging information"
 msgstr "Zobrazit dodatečné ladicí informace"
 
@@ -1289,8 +1271,8 @@ msgstr "Baterie může být poškozena"
 #: src/cpm-manager.c:1110
 #, c-format
 msgid ""
-"Battery has a very low capacity (%1.1f%%), which means that it may be old or"
-" broken."
+"Battery has a very low capacity (%1.1f%%), which means that it may be old or "
+"broken."
 msgstr ""
 "Baterie má velmi malou kapacitu (%1.1f%%), což znamená, že může být stará "
 "nebo poškozená."
@@ -1425,8 +1407,7 @@ msgstr "Připojte svůj síťový adaptér, abyste zabránili ztrátě dat."
 
 #: src/cpm-manager.c:1440
 msgid "Computer will suspend very soon unless it is plugged in."
-msgstr ""
-"Pokud počítač nepřipojíte k napájení, bude velmi brzy uspán do paměti."
+msgstr "Pokud počítač nepřipojíte k napájení, bude velmi brzy uspán do paměti."
 
 #: src/cpm-manager.c:1444
 msgid "Computer will hibernate very soon unless it is plugged in."
@@ -1443,8 +1424,8 @@ msgstr "Kriticky nízký stav záložního zdroje"
 #: src/cpm-manager.c:1459
 #, c-format
 msgid ""
-"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
-" your computer to avoid losing data."
+"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to "
+"your computer to avoid losing data."
 msgstr ""
 "Zbývá vám přibližně <b>%s</b> výkonu záložního zdroje (%.0f%%). Obnovte "
 "napájení z elektrické sítě, abyste předešli ztrátě dat."
@@ -1470,8 +1451,8 @@ msgstr ""
 #: src/cpm-manager.c:1490
 #, c-format
 msgid ""
-"PDA is very low in power (%.0f%%). This device will soon stop functioning if"
-" not charged."
+"PDA is very low in power (%.0f%%). This device will soon stop functioning if "
+"not charged."
 msgstr ""
 "PDA je téměř vybité (%.0f%%). Jestliže jej nenabijete, přestane brzy "
 "pracovat."
@@ -1497,8 +1478,8 @@ msgstr ""
 #: src/cpm-manager.c:1519
 #, c-format
 msgid ""
-"Tablet is very low in power (%.0f%%). This device will soon stop functioning"
-" if not charged."
+"Tablet is very low in power (%.0f%%). This device will soon stop functioning "
+"if not charged."
 msgstr ""
 "Tablet je téměř vybitý (%.0f%%). Jestliže jej nenabijete, přestane brzy "
 "pracovat."
@@ -1514,8 +1495,8 @@ msgstr ""
 
 #: src/cpm-manager.c:1593
 msgid ""
-"The battery is below the critical level and this computer will <b>power-"
-"off</b> when the battery becomes completely empty."
+"The battery is below the critical level and this computer will <b>power-off</"
+"b> when the battery becomes completely empty."
 msgstr ""
 "Baterie je pod kritickou úrovní; jakmile se baterie zcela vyprázdní, bude "
 "<b>přerušeno napájení</b> počítače."
@@ -1526,9 +1507,9 @@ msgid ""
 "suspend.<br><b>NOTE:</b> A small amount of power is required to keep your "
 "computer in a suspended state."
 msgstr ""
-"Baterie je pod kritickou úrovní a počítač bude uspán do "
-"paměti.<br><b>POZOR:</b> K udržení počítače v uspaném stavu je třeba stálý "
-"přísun malého množství energie."
+"Baterie je pod kritickou úrovní a počítač bude uspán do paměti.<br><b>POZOR:"
+"</b> K udržení počítače v uspaném stavu je třeba stálý přísun malého "
+"množství energie."
 
 #: src/cpm-manager.c:1606
 msgid ""
@@ -1596,91 +1577,79 @@ msgstr "Nedělat nic"
 msgid "Never"
 msgstr "Nikdy"
 
-#: src/cpm-statistics.c:78 src/cpm-statistics.c:466
+#: src/cpm-statistics.c:67 src/cpm-statistics.c:410
 msgid "Rate"
 msgstr "Rate"
 
-#: src/cpm-statistics.c:79
+#: src/cpm-statistics.c:68
 msgid "Charge"
 msgstr "Nabíjení"
 
-#: src/cpm-statistics.c:80 src/cpm-statistics.c:480
+#: src/cpm-statistics.c:69 src/cpm-statistics.c:424
 msgid "Time to full"
 msgstr "Čas do nabití"
 
-#: src/cpm-statistics.c:81 src/cpm-statistics.c:485
+#: src/cpm-statistics.c:70 src/cpm-statistics.c:429
 msgid "Time to empty"
 msgstr "Čas do vybití"
 
-#: src/cpm-statistics.c:88
+#: src/cpm-statistics.c:77
 msgid "10 minutes"
 msgstr "10 minut"
 
-#: src/cpm-statistics.c:89
+#: src/cpm-statistics.c:78
 msgid "2 hours"
 msgstr "2 hodiny"
 
-#: src/cpm-statistics.c:90
+#: src/cpm-statistics.c:79
 msgid "6 hours"
 msgstr "6 hodin"
 
-#: src/cpm-statistics.c:91
+#: src/cpm-statistics.c:80
 msgid "1 day"
 msgstr "1 den"
 
-#: src/cpm-statistics.c:92
+#: src/cpm-statistics.c:81
 msgid "1 week"
 msgstr "1 týden"
 
-#: src/cpm-statistics.c:101
+#: src/cpm-statistics.c:90
 msgid "Charge profile"
 msgstr "Profil nabíjení"
 
-#: src/cpm-statistics.c:102
+#: src/cpm-statistics.c:91
 msgid "Discharge profile"
 msgstr "Profil vybíjení"
 
-#: src/cpm-statistics.c:104
+#: src/cpm-statistics.c:93
 msgid "Charge accuracy"
 msgstr "Přesnost nabíjení"
 
-#: src/cpm-statistics.c:105
+#: src/cpm-statistics.c:94
 msgid "Discharge accuracy"
 msgstr "Přesnost vybíjení"
 
-#: src/cpm-statistics.c:132
+#: src/cpm-statistics.c:121
 msgid "Attribute"
 msgstr "Atribut"
 
-#: src/cpm-statistics.c:139
+#: src/cpm-statistics.c:128
 msgid "Value"
 msgstr "Hodnota"
 
-#: src/cpm-statistics.c:156
+#: src/cpm-statistics.c:145
 msgid "Image"
 msgstr "Obrázek"
 
-#: src/cpm-statistics.c:162
+#: src/cpm-statistics.c:151
 msgid "Description"
 msgstr "Popis"
 
-#: src/cpm-statistics.c:181 src/cpm-statistics.c:405
-msgid "Type"
-msgstr "Typ"
-
-#: src/cpm-statistics.c:187
-msgid "ID"
-msgstr "ID"
-
-#: src/cpm-statistics.c:201
-msgid "Command"
-msgstr "Příkaz"
-
-#: src/cpm-statistics.c:286
+#: src/cpm-statistics.c:230
 msgid "Unknown"
 msgstr "Neznámo"
 
-#: src/cpm-statistics.c:290
+#: src/cpm-statistics.c:234
 #, c-format
 msgid "%.0f second"
 msgid_plural "%.0f seconds"
@@ -1689,7 +1658,7 @@ msgstr[1] "%.0f sekundy"
 msgstr[2] "%.0f sekund"
 msgstr[3] "%.0f sekund"
 
-#: src/cpm-statistics.c:295
+#: src/cpm-statistics.c:239
 #, c-format
 msgid "%.1f minute"
 msgid_plural "%.1f minutes"
@@ -1698,7 +1667,7 @@ msgstr[1] "%.1f minuty"
 msgstr[2] "%.1f minut"
 msgstr[3] "%.1f minut"
 
-#: src/cpm-statistics.c:300
+#: src/cpm-statistics.c:244
 #, c-format
 msgid "%.1f hour"
 msgid_plural "%.1f hours"
@@ -1707,7 +1676,7 @@ msgstr[1] "%.1f hodiny"
 msgstr[2] "%.1f hodin"
 msgstr[3] "%.1f hodin"
 
-#: src/cpm-statistics.c:304
+#: src/cpm-statistics.c:248
 #, c-format
 msgid "%.1f day"
 msgid_plural "%.1f days"
@@ -1716,35 +1685,39 @@ msgstr[1] "%.1f dny"
 msgstr[2] "%.1f dnů"
 msgstr[3] "%.1f dnů"
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "Yes"
 msgstr "Ano"
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "No"
 msgstr "Ne"
 
-#: src/cpm-statistics.c:402
+#: src/cpm-statistics.c:346
 msgid "Device"
 msgstr "Zařízení"
 
-#: src/cpm-statistics.c:407
+#: src/cpm-statistics.c:349
+msgid "Type"
+msgstr "Typ"
+
+#: src/cpm-statistics.c:351
 msgid "Vendor"
 msgstr "Dodavatel"
 
-#: src/cpm-statistics.c:409
+#: src/cpm-statistics.c:353
 msgid "Model"
 msgstr "Model"
 
-#: src/cpm-statistics.c:411
+#: src/cpm-statistics.c:355
 msgid "Serial number"
 msgstr "Sériové číslo"
 
-#: src/cpm-statistics.c:416
+#: src/cpm-statistics.c:360
 msgid "Supply"
 msgstr "Napájení"
 
-#: src/cpm-statistics.c:419
+#: src/cpm-statistics.c:363
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -1753,224 +1726,112 @@ msgstr[1] "%d sekundy"
 msgstr[2] "%d sekund"
 msgstr[3] "%d sekund"
 
-#: src/cpm-statistics.c:423
+#: src/cpm-statistics.c:367
 msgid "Refreshed"
 msgstr "Obnoveno"
 
-#: src/cpm-statistics.c:433
+#: src/cpm-statistics.c:377
 msgid "Present"
 msgstr "Současný"
 
-#: src/cpm-statistics.c:440
+#: src/cpm-statistics.c:384
 msgid "Rechargeable"
 msgstr "Dobíjitelný"
 
-#: src/cpm-statistics.c:446
+#: src/cpm-statistics.c:390
 msgid "State"
 msgstr "Stát"
 
-#: src/cpm-statistics.c:450
+#: src/cpm-statistics.c:394
 msgid "Energy"
 msgstr "Energie"
 
-#: src/cpm-statistics.c:453
+#: src/cpm-statistics.c:397
 msgid "Energy when empty"
 msgstr "Energie při úplném vybití"
 
-#: src/cpm-statistics.c:456
+#: src/cpm-statistics.c:400
 msgid "Energy when full"
 msgstr "Energie při plném nabití"
 
-#: src/cpm-statistics.c:459
+#: src/cpm-statistics.c:403
 msgid "Energy (design)"
 msgstr "Energie (výrobní)"
 
-#: src/cpm-statistics.c:473
+#: src/cpm-statistics.c:417
 msgid "Voltage"
 msgstr "Napětí"
 
-#: src/cpm-statistics.c:495
+#: src/cpm-statistics.c:439
 msgid "Percentage"
 msgstr "Procento"
 
-#: src/cpm-statistics.c:502
+#: src/cpm-statistics.c:446
 msgid "Capacity"
 msgstr "Kapacita"
 
-#: src/cpm-statistics.c:507
+#: src/cpm-statistics.c:451
 msgid "Technology"
 msgstr "Technologie"
 
-#: src/cpm-statistics.c:512
+#: src/cpm-statistics.c:456
 msgid "Online"
 msgstr "Připojeno"
 
-#: src/cpm-statistics.c:824
-msgid "No data"
-msgstr "Žádná data"
-
-#: src/cpm-statistics.c:831 src/cpm-statistics.c:836
-msgid "Kernel module"
-msgstr "Modul jádra"
-
-#: src/cpm-statistics.c:841
-msgid "Kernel core"
-msgstr "Jádro"
-
-#: src/cpm-statistics.c:846
-msgid "Interprocessor interrupt"
-msgstr "Přerušení mezi procesy"
-
-#: src/cpm-statistics.c:851
-msgid "Interrupt"
-msgstr "Přerušení"
-
-#: src/cpm-statistics.c:898
-msgid "PS/2 keyboard/mouse/touchpad"
-msgstr "Klávesnice/myš/touchpad na PS/2"
-
-#: src/cpm-statistics.c:901
-msgid "ACPI"
-msgstr "ACPI"
-
-#: src/cpm-statistics.c:904
-msgid "Serial ATA"
-msgstr "Serial ATA"
-
-#: src/cpm-statistics.c:907
-msgid "ATA host controller"
-msgstr "hostitelský řadič ATA"
-
-#: src/cpm-statistics.c:910
-msgid "Intel wireless adaptor"
-msgstr "Bezdrátový adaptér Intel"
-
-#: src/cpm-statistics.c:917 src/cpm-statistics.c:922 src/cpm-statistics.c:927
-#: src/cpm-statistics.c:932 src/cpm-statistics.c:937
-#, c-format
-msgid "Timer %s"
-msgstr "Časovač %s"
-
-#: src/cpm-statistics.c:941
-#, c-format
-msgid "Sleep %s"
-msgstr "Uspat %s"
-
-#: src/cpm-statistics.c:944
-#, c-format
-msgid "New task %s"
-msgstr "Nová úloha %s"
-
-#: src/cpm-statistics.c:948
-#, c-format
-msgid "Wait %s"
-msgstr "Čekat %s"
-
-#: src/cpm-statistics.c:952 src/cpm-statistics.c:956
-#, c-format
-msgid "Work queue %s"
-msgstr "Seznam prací %s"
-
-#: src/cpm-statistics.c:959
-#, c-format
-msgid "Network route flush %s"
-msgstr "Vyprázdnění směrovacích tabulek %s"
-
-#: src/cpm-statistics.c:962
-#, c-format
-msgid "USB activity %s"
-msgstr "Aktivita USB %s"
-
-#: src/cpm-statistics.c:965
-#, c-format
-msgid "Wakeup %s"
-msgstr "Probudit %s"
-
-#: src/cpm-statistics.c:968
-msgid "Local interrupts"
-msgstr "Místní přerušení"
-
-#: src/cpm-statistics.c:971
-msgid "Rescheduling interrupts"
-msgstr "Naplánovaná přerušení"
-
-#: src/cpm-statistics.c:1080
+#: src/cpm-statistics.c:756
 msgid "Device Information"
 msgstr "Informace o zařízení"
 
-#: src/cpm-statistics.c:1082
+#: src/cpm-statistics.c:758
 msgid "Device History"
 msgstr "Historie zařízení"
 
-#: src/cpm-statistics.c:1084
+#: src/cpm-statistics.c:760
 msgid "Device Profile"
 msgstr "Profil zařízení"
 
-#: src/cpm-statistics.c:1086
-msgid "Processor Wakeups"
-msgstr "Probuzení procesoru"
-
-#: src/cpm-statistics.c:1325 src/cpm-statistics.c:1331
-#: src/cpm-statistics.c:1337 src/cpm-statistics.c:1343
+#: src/cpm-statistics.c:982 src/cpm-statistics.c:988 src/cpm-statistics.c:994
+#: src/cpm-statistics.c:1000
 msgid "Time elapsed"
 msgstr "Uplynulý čas"
 
-#: src/cpm-statistics.c:1327
+#: src/cpm-statistics.c:984
 msgid "Power"
 msgstr "Mocnina"
 
-#: src/cpm-statistics.c:1333 src/cpm-statistics.c:1377
-#: src/cpm-statistics.c:1383 src/cpm-statistics.c:1389
-#: src/cpm-statistics.c:1395
+#: src/cpm-statistics.c:990 src/cpm-statistics.c:1034 src/cpm-statistics.c:1040
+#: src/cpm-statistics.c:1046 src/cpm-statistics.c:1052
 msgid "Cell charge"
 msgstr "Nabití baterie"
 
-#: src/cpm-statistics.c:1339 src/cpm-statistics.c:1345
+#: src/cpm-statistics.c:996 src/cpm-statistics.c:1002
 msgid "Predicted time"
 msgstr "Odhadovaný čas"
 
-#: src/cpm-statistics.c:1379 src/cpm-statistics.c:1391
+#: src/cpm-statistics.c:1036 src/cpm-statistics.c:1048
 msgid "Correction factor"
 msgstr "Korekční faktor"
 
-#: src/cpm-statistics.c:1385 src/cpm-statistics.c:1397
+#: src/cpm-statistics.c:1042 src/cpm-statistics.c:1054
 msgid "Prediction accuracy"
 msgstr "Odhadovaná přesnost"
 
-#: src/cpm-statistics.c:1563
+#: src/cpm-statistics.c:1219
 msgid "Select this device at startup"
 msgstr "Vybrat toto zařízení při spuštění"
 
-#: src/cpm-statistics.c:1802
-msgid "Processor"
-msgstr "Procesor"
-
-#: src/cpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 CAFE developers"
-msgstr "Copyright © 2011-2018 Vývojáři CAFE"
-
-#: src/cpm-tray-icon.c:193
-msgid "translator-credits"
+#: src/cpm-tray-icon.c:207
+msgid ""
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"Stanislav Brabec <utx@penguin.cz>\n"
-"Michal Bukovjan <bukm@centrum.cz>\n"
-"Miloslav Trmač <mitr@volny.cz>\n"
-"Petr Tomeš <ptomes@gmail.com>\n"
-"Jakub Friedl <jfriedl@suse.cz>\n"
-"Petr Tomeš <ptomes@gmail.com>\n"
-"Lukáš Novotný <lukasnov@cvs.gnome.org>\n"
-"Kamil Páral <ripper42@gmail.com>\n"
-"Petr Kovář <pknbe@volny.cz>\n"
-"Lucas Lommer <drom@kdyne.net>\n"
-"Tomas Bzatek <tbzatek@redhat.com>\n"
-"Roman Horník <roman.hornik@debian-linux.cz>"
 
-#: src/cpm-tray-icon.c:295
+#: src/cpm-tray-icon.c:318
 #, c-format
 msgid "%s remaining"
 msgstr "%s zbývající"
 
-#: src/cpm-tray-icon.c:349
+#: src/cpm-tray-icon.c:372
 msgid "_Preferences"
 msgstr "_Předvolby"
 
@@ -2257,3 +2118,143 @@ msgstr "Čeká se na vybití"
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr "Neznámý stav"
+
+#~ msgid "Licensed under the GNU General Public License Version 2"
+#~ msgstr "Licencováno pod licencí GNU General Public Licence Verze 2"
+
+#~ msgid ""
+#~ "Power Manager is free software; you can redistribute it and/or\n"
+#~ "modify it under the terms of the GNU General Public License\n"
+#~ "as published by the Free Software Foundation; either version 2\n"
+#~ "of the License, or (at your option) any later version."
+#~ msgstr ""
+#~ "Správce napájení je svobodný software; můžete jej dále šířit a/nebo "
+#~ "upravovat za podmínek licence GNU General Public License v podobě, v jaké "
+#~ "ji vydala Free Software Foundation, a to buď ve verzi 2 této licence nebo "
+#~ "(dle vaší volby) v libovolné novější verzi."
+
+#~ msgid ""
+#~ "Power Manager is distributed in the hope that it will be useful,\n"
+#~ "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+#~ "GNU General Public License for more details."
+#~ msgstr ""
+#~ "Správce napájení je šířen ve víře, že bude užitečný, ale BEZ JAKÝCHKOLIV "
+#~ "ZÁRUK, a to i bez předpokládané záruky na PRODEJNOST nebo VHODNOST PRO "
+#~ "KONKRÉTNÍ ÚČEL. Více podrobností najdete přímo v licenci GNU General "
+#~ "Public License."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License\n"
+#~ "along with this program; if not, write to the Free Software\n"
+#~ "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA."
+#~ msgstr ""
+#~ "Spolu s tímto programem byste měli obdržet kopii licence GNU General "
+#~ "Public License. Pokud se tak nestalo, napište o ni Free Software\n"
+#~ "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,\n"
+#~ "MA 02110-1301, USA."
+
+#~ msgid "cafe-brightness-applet"
+#~ msgstr "cafe-brightness-applet"
+
+#~ msgid "cafe-inhibit-applet"
+#~ msgstr "cafe-inhibit-applet"
+
+#~ msgid "cafe-power-manager"
+#~ msgstr "cafe-power-manager"
+
+#~ msgid "cafe-power-statistics"
+#~ msgstr "cafe-power-statistics"
+
+#~ msgid "Processor wakeups per second:"
+#~ msgstr "Počet probuzení procesoru za sekundu:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Wakeups"
+#~ msgstr "Probuzení"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Command"
+#~ msgstr "Příkaz"
+
+#~ msgid "No data"
+#~ msgstr "Žádná data"
+
+#~ msgid "Kernel module"
+#~ msgstr "Modul jádra"
+
+#~ msgid "Kernel core"
+#~ msgstr "Jádro"
+
+#~ msgid "Interprocessor interrupt"
+#~ msgstr "Přerušení mezi procesy"
+
+#~ msgid "Interrupt"
+#~ msgstr "Přerušení"
+
+#~ msgid "PS/2 keyboard/mouse/touchpad"
+#~ msgstr "Klávesnice/myš/touchpad na PS/2"
+
+#~ msgid "ACPI"
+#~ msgstr "ACPI"
+
+#~ msgid "Serial ATA"
+#~ msgstr "Serial ATA"
+
+#~ msgid "ATA host controller"
+#~ msgstr "hostitelský řadič ATA"
+
+#~ msgid "Intel wireless adaptor"
+#~ msgstr "Bezdrátový adaptér Intel"
+
+#, c-format
+#~ msgid "Timer %s"
+#~ msgstr "Časovač %s"
+
+#, c-format
+#~ msgid "Sleep %s"
+#~ msgstr "Uspat %s"
+
+#, c-format
+#~ msgid "New task %s"
+#~ msgstr "Nová úloha %s"
+
+#, c-format
+#~ msgid "Wait %s"
+#~ msgstr "Čekat %s"
+
+#, c-format
+#~ msgid "Work queue %s"
+#~ msgstr "Seznam prací %s"
+
+#, c-format
+#~ msgid "Network route flush %s"
+#~ msgstr "Vyprázdnění směrovacích tabulek %s"
+
+#, c-format
+#~ msgid "USB activity %s"
+#~ msgstr "Aktivita USB %s"
+
+#, c-format
+#~ msgid "Wakeup %s"
+#~ msgstr "Probudit %s"
+
+#~ msgid "Local interrupts"
+#~ msgstr "Místní přerušení"
+
+#~ msgid "Rescheduling interrupts"
+#~ msgstr "Naplánovaná přerušení"
+
+#~ msgid "Processor Wakeups"
+#~ msgstr "Probuzení procesoru"
+
+#~ msgid "Processor"
+#~ msgstr "Procesor"
+
+#~ msgid "Copyright © 2011-2018 CAFE developers"
+#~ msgstr "Copyright © 2011-2018 Vývojáři CAFE"

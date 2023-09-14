@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Wolfgang Ulbrich <mate@raveit.de>, 2020
 # clefebvre <clement.lefebvre@linuxmint.com>, 2020
@@ -10,19 +10,19 @@
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # 박정규(Jung-Kyu Park) <bagjunggyu@gmail.com>, 2020
 # Youngbin Han <sukso96100@gmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-power-manager 1.23.1\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2019-11-12 15:22+0100\n"
+"POT-Creation-Date: 2023-09-14 10:39+0200\n"
 "PO-Revision-Date: 2020-02-15 16:27+0000\n"
 "Last-Translator: Youngbin Han <sukso96100@gmail.com>, 2020\n"
 "Language-Team: Korean (https://www.transifex.com/cafe/teams/13566/ko/)\n"
+"Language: ko\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: ko\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: applets/brightness/brightness-applet.c:107
@@ -47,55 +47,62 @@ msgstr "노트북 패널 밝기를 알 수 없습니다"
 msgid "LCD brightness : %d%%"
 msgstr "LCD 밝기 : %d%%"
 
+#: applets/brightness/brightness-applet.c:790
+#: applets/inhibit/inhibit-applet.c:287
+msgid ""
+"Power Manager is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:795
+#: applets/inhibit/inhibit-applet.c:292
+msgid ""
+"Power Manager is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+
 #: applets/brightness/brightness-applet.c:800
 #: applets/inhibit/inhibit-applet.c:297
-msgid "Licensed under the GNU General Public License Version 2"
-msgstr "GNU 일반 공중 사용 허가서 2판 조항에 따라 사용을 허가합니다"
-
-#: applets/brightness/brightness-applet.c:801
-#: applets/inhibit/inhibit-applet.c:298
 msgid ""
-"Power Manager is free software; you can redistribute it and/or\n"
-"modify it under the terms of the GNU General Public License\n"
-"as published by the Free Software Foundation; either version 2\n"
-"of the License, or (at your option) any later version."
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"전원 관리자는 자유 소프트웨어입니다. 자유 소프트웨어 재단에서\n"
-"발표한 GNU 일반 공중 사용허가서 2판 또는(선택에 따라) 그 이후 판의\n"
-"조항에 따라 자유롭게 재배포 및 수정할 수 있습니다."
 
-#: applets/brightness/brightness-applet.c:805
-#: applets/inhibit/inhibit-applet.c:302
+#: applets/brightness/brightness-applet.c:813
+msgid "About Power Manager Brightness Applet"
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:815
 msgid ""
-"Power Manager is distributed in the hope that it will be useful,\n"
-"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-"GNU General Public License for more details."
+"Copyright © 2006 Benjamin Canou\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"전원 관리자가 쓸모가 있길 바라며 배포하지만, 어떤 보증도\n"
-"하지 않으며 상업성 또는 특정 목적에 적합성용 암묵적 보증\n"
-"조차도 하지 않습니다. 자세한 내용은 GNU 일반 공중 사용허가서를\n"
-"보십시오."
 
-#: applets/brightness/brightness-applet.c:809
-#: applets/inhibit/inhibit-applet.c:306
-msgid ""
-"You should have received a copy of the GNU General Public License\n"
-"along with this program; if not, write to the Free Software\n"
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
+#: applets/brightness/brightness-applet.c:823
+#: applets/inhibit/inhibit-applet.c:320 src/cpm-tray-icon.c:214
+msgid "translator-credits"
 msgstr ""
-"GNU 일반 공중 사용허가서 사본을 이 프로그램과 함께 받아야 합니다. 못받았다면 다음 주소로 요청하십시오. Free Software\n"
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
+"Elex https://launchpad.net/~mysticzizone\n"
+"Valmantas Palikša https://launchpad.net/~walmis\n"
+"Yoo Duk Nam https://launchpad.net/~yoo2001818\n"
+"onlyeriko https://launchpad.net/~onlyeriko\n"
+"Seong-ho Cho <darkcircle.0426@gmail.com>\n"
+"CAFE Desktop Environment Team <https://www.transifex.com/cafe/teams/13566/ko/"
+">"
 
-#: applets/brightness/brightness-applet.c:1063
-#: applets/inhibit/inhibit-applet.c:519
+#: applets/brightness/brightness-applet.c:1051
+#: applets/inhibit/inhibit-applet.c:507
 msgid "_About"
 msgstr "정보(_A)"
 
-#: applets/brightness/brightness-applet.c:1066
-#: applets/inhibit/inhibit-applet.c:522
+#: applets/brightness/brightness-applet.c:1054
+#: applets/inhibit/inhibit-applet.c:510
 msgid "_Help"
 msgstr "도움말(_H)"
 
@@ -106,12 +113,6 @@ msgstr "밝기 애플릿 팩토리"
 #: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Brightness Applet"
 msgstr "밝기 애플릿"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-brightness-applet"
-msgstr ""
 
 #: applets/inhibit/inhibit-applet.c:87
 msgid "Power Manager Inhibit Applet"
@@ -133,6 +134,17 @@ msgstr "자동 절전을 사용합니다"
 msgid "Manual inhibit"
 msgstr "수동 금지"
 
+#: applets/inhibit/inhibit-applet.c:310
+msgid "About Power Manager Inhibit Applet"
+msgstr ""
+
+#: applets/inhibit/inhibit-applet.c:312
+msgid ""
+"Copyright © 2006-2007 Richard Hughes\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
+msgstr ""
+
 #: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Inhibit Applet Factory"
 msgstr "금지 애플릿 팩토리"
@@ -141,26 +153,13 @@ msgstr "금지 애플릿 팩토리"
 msgid "Inhibit Applet"
 msgstr "금지 애플릿"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-inhibit-applet"
-msgstr ""
-
-#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:184
+#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:204
 msgid "Power Manager"
 msgstr "전원 관리자"
 
-#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:186
+#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:206
 msgid "Power management daemon"
 msgstr "전원 관리 데몬"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-manager.desktop.in.in:6
-#: data/cafe-power-preferences.desktop.in.in:6
-msgid "cafe-power-manager"
-msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:26
 #: data/org.cafe.power-manager.gschema.xml.in:41
@@ -185,7 +184,8 @@ msgstr "배터리 전원이 매우 부족할 때 취할 동작입니다."
 msgid ""
 "If the battery event should occur when the lid is shut and the power "
 "disconnected"
-msgstr "노트북 덮개가 닫히고 전원이 빠진 경우에 배터리 이벤트를 발생할 지 여부."
+msgstr ""
+"노트북 덮개가 닫히고 전원이 빠진 경우에 배터리 이벤트를 발생할 지 여부."
 
 #: data/org.cafe.power-manager.gschema.xml.in:37
 msgid ""
@@ -193,8 +193,9 @@ msgid ""
 "closed on battery') when the lid is previously shut and the AC power "
 "disconnected at a later time."
 msgstr ""
-"노트북 덮개가 이전에 닫히고 교류 전원이 나중에 빠졌을 경우에, 배터리 덮개 닫힘 이벤트를(예를 들어 '배터리 전원 사용중에 노트북 덮개"
-" 닫힘') 발생할 지 여부."
+"노트북 덮개가 이전에 닫히고 교류 전원이 나중에 빠졌을 경우에, 배터리 덮개 닫"
+"힘 이벤트를(예를 들어 '배터리 전원 사용중에 노트북 덮개 닫힘') 발생할 지 여"
+"부."
 
 #: data/org.cafe.power-manager.gschema.xml.in:46
 msgid "UPS critical low action"
@@ -240,7 +241,9 @@ msgstr "배터리를 사용할 때 키보드 백라이트 밝기 줄이기"
 msgid ""
 "If the keyboard backlight brightness should be reduced when the computer is "
 "on battery power"
-msgstr "컴퓨터가 배터리 전원을 사용할 때 키보드 백라이트 밝기를 줄여야 할지 여부를 결정합니다."
+msgstr ""
+"컴퓨터가 배터리 전원을 사용할 때 키보드 백라이트 밝기를 줄여야 할지 여부를 결"
+"정합니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:71
 msgid "Keyboard backlight brightness when on AC power."
@@ -250,7 +253,9 @@ msgstr "AC 전원에 연결되었을 때 키보드 백라이트 밝기"
 msgid ""
 "Percent brightness to set keyboard backlight at when on AC power. Legal "
 "values are between 0 and 100."
-msgstr "AC 전원에 연결되었을 때 키보드 백라이트 밝기를 백분율로 설정합니다. 사용 가능한 값은 0부터 100사이입니다."
+msgstr ""
+"AC 전원에 연결되었을 때 키보드 백라이트 밝기를 백분율로 설정합니다. 사용 가능"
+"한 값은 0부터 100사이입니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:76
 msgid "Percent to reduce keyboard backlight by when on battery power."
@@ -262,8 +267,9 @@ msgid ""
 "For example, if set to '60', the backlight will be cut by 40% on battery "
 "power. Legal values are between 0 and 100."
 msgstr ""
-"배터리 사용 중 일  때 키보드 백라이트 밝기를 줄일 비율. 예로, '60'으로 설정하면, 배터리 전력에서 40%를 줄이게 됩니다. 사용"
-" 가능한 값은 0부터 100사이입니다."
+"배터리 사용 중 일  때 키보드 백라이트 밝기를 줄일 비율. 예로, '60'으로 설정하"
+"면, 배터리 전력에서 40%를 줄이게 됩니다. 사용 가능한 값은 0부터 100사이입니"
+"다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:81
 msgid "Percent to reduce keyboard backlight by when idle."
@@ -272,11 +278,11 @@ msgstr "아이들 상태에서 키보드 백라이트 밝기 줄일 비율."
 #: data/org.cafe.power-manager.gschema.xml.in:82
 msgid ""
 "The percentage to reduce the keyboard backlight by when idle. For example, "
-"if set to '60', the backlight will be cut by 40% when idle. Legal values are"
-" between 0 and 100."
+"if set to '60', the backlight will be cut by 40% when idle. Legal values are "
+"between 0 and 100."
 msgstr ""
-"아이들 상태에서 키보드 백라이트 밝기를 줄일 비율. 예로, '60'으로 설정하면, 배터리 전력에서 40%를 줄이게 됩니다. 사용 가능한 "
-"값은 0부터 100사이입니다."
+"아이들 상태에서 키보드 백라이트 밝기를 줄일 비율. 예로, '60'으로 설정하면, 배"
+"터리 전력에서 40%를 줄이게 됩니다. 사용 가능한 값은 0부터 100사이입니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:86
 msgid "The brightness of the screen when idle"
@@ -286,7 +292,9 @@ msgstr "입력이 없을 때 화면 밝기"
 msgid ""
 "This is the laptop panel screen brightness used when the session is idle. "
 "Only valid when use-time-for-policy is true."
-msgstr "세션이 대기중일 때 사용하는 랩톱 패널 화면 밝기입니다. use-time-for-policy값이 참일 경우만 유효합니다."
+msgstr ""
+"세션이 대기중일 때 사용하는 랩톱 패널 화면 밝기입니다. use-time-for-policy값"
+"이 참일 경우만 유효합니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:91
 msgid "Dim the screen after a period of inactivity when on battery power"
@@ -296,7 +304,9 @@ msgstr "배터리 전원을 사용할 때 비활성화 기간 후에 화면을 �
 msgid ""
 "If the screen should be dimmed to save power when the computer is idle when "
 "on battery power."
-msgstr "배터리 전원을 사용할 때 컴퓨터에 입력이 없을 때 전원 절약을 위해 화면을 어둡게 할 지 여부입니다."
+msgstr ""
+"배터리 전원을 사용할 때 컴퓨터에 입력이 없을 때 전원 절약을 위해 화면을 어둡"
+"게 할 지 여부입니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:96
 msgid "The default amount of time to dim the screen after idle"
@@ -314,7 +324,9 @@ msgstr "배터리 사용할 때 LCD 어둡게 할 정도"
 msgid ""
 "The amount to dim the brightness of the display when on battery power. "
 "Possible values are between 0 and 100."
-msgstr "배터리 전원을 사용할 때 화면을 어둡게 할 정도. 사용 가능한 값은 0에서 100 사이 입니다."
+msgstr ""
+"배터리 전원을 사용할 때 화면을 어둡게 할 정도. 사용 가능한 값은 0에서 100 사"
+"이 입니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:106
 msgid "Dim the screen after a period of inactivity when on AC power"
@@ -324,7 +336,9 @@ msgstr "교류 전원을 사용할 때 비활성화 기간 후에 화면을 어�
 msgid ""
 "If the screen should be dimmed to save power when the computer is idle when "
 "on AC power."
-msgstr "교류 전원을 사용할 때 컴퓨터에 입력이 없으면 전원절약을 위해 화면을 어둡게 할 지 여부입니다."
+msgstr ""
+"교류 전원을 사용할 때 컴퓨터에 입력이 없으면 전원절약을 위해 화면을 어둡게 "
+"할 지 여부입니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:111
 msgid "Method used to blank screen on AC"
@@ -350,7 +364,9 @@ msgstr "교류 전원일 때 LCD 밝기"
 msgid ""
 "The brightness of the display when on AC power. Possible values are between "
 "0.0 and 100.0."
-msgstr "교류 전원을 연결했을 때 화면 밝기입니다. 0.0부터 100.0까지의 값을 설정할 수 있습니다."
+msgstr ""
+"교류 전원을 연결했을 때 화면 밝기입니다. 0.0부터 100.0까지의 값을 설정할 수 "
+"있습니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:126
 msgid "Suspend button action"
@@ -384,7 +400,8 @@ msgstr "배터리 사용할 때 노트북 덮개 닫기 동작"
 msgid ""
 "The action to take when the laptop lid is closed and the laptop is on "
 "battery power."
-msgstr "배터리 사용할 때 랩톱이 켜져 있고 랩톱 뚜껑이 닫혔을 경우 취할 동작입니다."
+msgstr ""
+"배터리 사용할 때 랩톱이 켜져 있고 랩톱 뚜껑이 닫혔을 경우 취할 동작입니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:146
 msgid "Laptop lid close action when on AC"
@@ -394,7 +411,9 @@ msgstr "교류 전원을 사용할 때 노트북 덮개 닫기 동작"
 msgid ""
 "The action to take when the laptop lid is closed and the laptop is on AC "
 "power."
-msgstr "교류 전원을 사용할 때 랩톱이 켜져 있고 랩톱 뚜껑이 닫혔을 경우 취할 동작입니다."
+msgstr ""
+"교류 전원을 사용할 때 랩톱이 켜져 있고 랩톱 뚜껑이 닫혔을 경우 취할 동작입니"
+"다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:151
 msgid "Whether to use time-based notifications"
@@ -405,8 +424,8 @@ msgid ""
 "If time based notifications should be used. If set to false, then the "
 "percentage change is used instead, which may fix a broken ACPI BIOS."
 msgstr ""
-"시간 값에 따라 알림을 사용할 지 여부. 거짓일 경우, 퍼센트 값에 따라 사용합니다. 퍼센트 값에 따라 사용하면 잘못된 ACPI "
-"BIOS에서도 제대로 동작합니다."
+"시간 값에 따라 알림을 사용할 지 여부. 거짓일 경우, 퍼센트 값에 따라 사용합니"
+"다. 퍼센트 값에 따라 사용하면 잘못된 ACPI BIOS에서도 제대로 동작합니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:156
 msgid "Check CPU load before sleeping"
@@ -424,7 +443,9 @@ msgstr "대기 상태일 때 NetworkManager에서 연결을 해야 할지 말아
 msgid ""
 "Whether NetworkManager should disconnect before suspending or hibernating "
 "and connect on resume."
-msgstr "절전 혹은 최대 절전 상태에 들어갈 때 네트워크 관리자에 연결을 끊고 돌아왔을 때 다시 연결할 지 여부."
+msgstr ""
+"절전 혹은 최대 절전 상태에 들어갈 때 네트워크 관리자에 연결을 끊고 돌아왔을 "
+"때 다시 연결할 지 여부."
 
 #: data/org.cafe.power-manager.gschema.xml.in:166
 msgid "Use cafe-screensaver lock setting"
@@ -435,7 +456,8 @@ msgid ""
 "Whether to use the screen lock setting of cafe-screensaver to decide if the "
 "screen is locked after a hibernate, suspend or blank screen."
 msgstr ""
-"최대 절전, 절전 또는 화면이 꺼졌을 때 화면을 잠글 지 여부를 결정할 때, 마테 화면 보호기의 화면 잠그기 설정을 사용할 지 여부."
+"최대 절전, 절전 또는 화면이 꺼졌을 때 화면을 잠글 지 여부를 결정할 때, 마테 "
+"화면 보호기의 화면 잠그기 설정을 사용할 지 여부."
 
 #: data/org.cafe.power-manager.gschema.xml.in:171
 msgid "Lock screen when blanked"
@@ -446,7 +468,8 @@ msgid ""
 "Whether the screen is locked when the screen is turned off. Only used if "
 "lock-use-screensaver is false."
 msgstr ""
-"화면을 껐을 경우 화면을 잠글지 말지에 대한 여부입니다. lock-use-screensaver값이 거짓일 경우에만 사용합니다."
+"화면을 껐을 경우 화면을 잠글지 말지에 대한 여부입니다. lock-use-screensaver값"
+"이 거짓일 경우에만 사용합니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:176
 msgid "Lock screen on suspend"
@@ -454,11 +477,11 @@ msgstr "대기할 때 화면 잠그기"
 
 #: data/org.cafe.power-manager.gschema.xml.in:177
 msgid ""
-"Whether the screen is locked when the computer wakes up from a suspend. Only"
-" used if lock-use-screensaver is false."
+"Whether the screen is locked when the computer wakes up from a suspend. Only "
+"used if lock-use-screensaver is false."
 msgstr ""
-"컴퓨터가 절전 상태에서 돌아올 경우 화면을 잠글지 말지에 대한 여부입니다. lock-use-screensaver 값이 거짓일 경우에만 "
-"사용합니다."
+"컴퓨터가 절전 상태에서 돌아올 경우 화면을 잠글지 말지에 대한 여부입니다. "
+"lock-use-screensaver 값이 거짓일 경우에만 사용합니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:181
 msgid "Lock screen on hibernate"
@@ -469,8 +492,8 @@ msgid ""
 "Whether the screen is locked when the computer wakes up from a hibernate. "
 "Only used if lock-use-screensaver is false."
 msgstr ""
-"컴퓨터가 최대 절전 상태에서 돌아올 경우 화면을 잠글지 말지에 대한 여부입니다. lock-use-screensaver 값이 거짓일 "
-"경우에만 사용합니다."
+"컴퓨터가 최대 절전 상태에서 돌아올 경우 화면을 잠글지 말지에 대한 여부입니"
+"다. lock-use-screensaver 값이 거짓일 경우에만 사용합니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:186
 #: data/org.cafe.power-manager.gschema.xml.in:191
@@ -479,15 +502,19 @@ msgstr "절전 상태 일 땐 GNOME 키 모음 잠그기"
 
 #: data/org.cafe.power-manager.gschema.xml.in:187
 msgid ""
-"Whether the GNOME keyring is locked before the computer enters suspend. This"
-" means the keyring will have to be unlocked on resume."
-msgstr "컴퓨터가 절전 상태에 들어갈 때 GNOME 키 모음을 잠글 지 여부. 원상복귀할 때 키 모음을 다시 풉니다."
+"Whether the GNOME keyring is locked before the computer enters suspend. This "
+"means the keyring will have to be unlocked on resume."
+msgstr ""
+"컴퓨터가 절전 상태에 들어갈 때 GNOME 키 모음을 잠글 지 여부. 원상복귀할 때 "
+"키 모음을 다시 풉니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:192
 msgid ""
 "Whether the GNOME keyring is locked before the computer enters hibernate. "
 "This means the keyring will have to be unlocked on resume."
-msgstr "컴퓨터가 최대 절전 상태에 들어갈 때 GNOME 키 모음을 잠글 지 여부. 원상복귀할 때 키 모음을 다시 풉니다."
+msgstr ""
+"컴퓨터가 최대 절전 상태에 들어갈 때 GNOME 키 모음을 잠글 지 여부. 원상복귀할 "
+"때 키 모음을 다시 풉니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:196
 msgid "If we should show the low capacity warning for a broken battery"
@@ -533,7 +560,9 @@ msgstr "절전이 실패했을 때 사용자에게 표시할 URI"
 msgid ""
 "When sleep fails we can show the user a button to help fix the situation. "
 "Leave this blank if the button should not be shown."
-msgstr "절진이 실패할 때 상황을 바로잡을 수 있는 도움말 단추를 표시합니다. 단추를 표시하지 않으려면 이 값을 비워 두십시오."
+msgstr ""
+"절진이 실패할 때 상황을 바로잡을 수 있는 도움말 단추를 표시합니다. 단추를 표"
+"시하지 않으려면 이 값을 비워 두십시오."
 
 #: data/org.cafe.power-manager.gschema.xml.in:221
 msgid "Notify on a low power"
@@ -616,7 +645,9 @@ msgstr "기본으로 보여줄 페이지 수 인덱스"
 msgid ""
 "The index of the page number to show by default which is used to return "
 "focus to the correct page."
-msgstr "제대로 된 페이지에 주목하고 있는 위치를 반환하는데 어떤 값을 사용할지 기본으로 보여줄 페이지 번호 인덱스입니다."
+msgstr ""
+"제대로 된 페이지에 주목하고 있는 위치를 반환하는데 어떤 값을 사용할지 기본으"
+"로 보여줄 페이지 번호 인덱스입니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:271
 msgid "The ID of the last device selected"
@@ -634,10 +665,11 @@ msgstr "부족할 경우 백분율"
 
 #: data/org.cafe.power-manager.gschema.xml.in:277
 msgid ""
-"The percentage of the battery when it is considered low. Only valid when "
-"use-time-for-policy is false."
+"The percentage of the battery when it is considered low. Only valid when use-"
+"time-for-policy is false."
 msgstr ""
-"배터리 전원이 부족하다고 간주 경우 배터리 전원의 백분율입니다. use-time-for-policy값이 거짓일 경우에만 유효합니다."
+"배터리 전원이 부족하다고 간주 경우 배터리 전원의 백분율입니다. use-time-for-"
+"policy값이 거짓일 경우에만 유효합니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:281
 msgid "Percentage considered critical"
@@ -648,8 +680,8 @@ msgid ""
 "The percentage of the battery when it is considered critical. Only valid "
 "when use-time-for-policy is false."
 msgstr ""
-"배터리 전원 부족 상태가 매우 심각할 경우 배터리 전원의 백분율입니다. use-time-for-policy값이 거짓일 경우에만 "
-"유효합니다."
+"배터리 전원 부족 상태가 매우 심각할 경우 배터리 전원의 백분율입니다. use-"
+"time-for-policy값이 거짓일 경우에만 유효합니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:286
 msgid "Percentage action is taken"
@@ -660,8 +692,8 @@ msgid ""
 "The percentage of the battery when the critical action is performed. Only "
 "valid when use-time-for-policy is false."
 msgstr ""
-"배터리 전원 부족 상태가 매우 심각한 상황에서 동작을 취했을 경우 배터리 전원의 백분율입니다. use-time-for-policy값이 "
-"거짓일 경우에만 유효합니다."
+"배터리 전원 부족 상태가 매우 심각한 상황에서 동작을 취했을 경우 배터리 전원"
+"의 백분율입니다. use-time-for-policy값이 거짓일 경우에만 유효합니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:291
 msgid "The time remaining when low"
@@ -669,10 +701,11 @@ msgstr "낮을 때 남은 시간"
 
 #: data/org.cafe.power-manager.gschema.xml.in:292
 msgid ""
-"The time remaining in seconds of the battery when it is considered low. Only"
-" valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered low. Only "
+"valid when use-time-for-policy is true."
 msgstr ""
-"배터리 전원이 부족하다고 간주될 경우 남아있는 초 단위 시간입니다. use-time-for-policy값이 참일 경우에만 유효합니다."
+"배터리 전원이 부족하다고 간주될 경우 남아있는 초 단위 시간입니다. use-time-"
+"for-policy값이 참일 경우에만 유효합니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:296
 msgid "The time remaining when critical"
@@ -680,11 +713,11 @@ msgstr "위험할 때 남은 시간"
 
 #: data/org.cafe.power-manager.gschema.xml.in:297
 msgid ""
-"The time remaining in seconds of the battery when it is considered critical."
-" Only valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered critical. "
+"Only valid when use-time-for-policy is true."
 msgstr ""
-"배터리 전원 부족 상태가 매우 심각할 경우 남아있는 초 단위 시간입니다. use-time-for-policy값이 참일 경우에만 "
-"유효합니다."
+"배터리 전원 부족 상태가 매우 심각할 경우 남아있는 초 단위 시간입니다. use-"
+"time-for-policy값이 참일 경우에만 유효합니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:301
 msgid "The time remaining when action is taken"
@@ -695,8 +728,8 @@ msgid ""
 "The time remaining in seconds of the battery when critical action is taken. "
 "Only valid when use-time-for-policy is true."
 msgstr ""
-"배터리 전원 부족 상태가 매우 심각한 상황에서 동작을 취했을 경우 남아있는 초 단위 시간입니다. use-time-for-policy값이 "
-"참이 경우에만 유효합니다."
+"배터리 전원 부족 상태가 매우 심각한 상황에서 동작을 취했을 경우 남아있는 초 "
+"단위 시간입니다. use-time-for-policy값이 참이 경우에만 유효합니다."
 
 #: data/org.cafe.power-manager.gschema.xml.in:306
 msgid "Sleep timeout computer when on battery"
@@ -706,7 +739,9 @@ msgstr "배터리를 사용할 때 컴퓨터 절전 제한 시간"
 msgid ""
 "The amount of time in seconds the computer on battery power needs to be "
 "inactive before it goes to sleep."
-msgstr "컴퓨터가 배터리 전원을 사용할 때(절전 모드로 바꾸기 전에) 비활성화로 할 시간(초)."
+msgstr ""
+"컴퓨터가 배터리 전원을 사용할 때(절전 모드로 바꾸기 전에) 비활성화로 할 시간"
+"(초)."
 
 #: data/org.cafe.power-manager.gschema.xml.in:311
 msgid "Sleep timeout computer when on AC"
@@ -716,7 +751,9 @@ msgstr "교류 전원을 사용할 때 컴퓨터 절전 제한 시간"
 msgid ""
 "The amount of time in seconds the computer on AC power needs to be inactive "
 "before it goes to sleep."
-msgstr "컴퓨터가 교류 전원을 사용할 때(절전 모드로 바꾸기 전에) 비활성화로 할 시간(초)."
+msgstr ""
+"컴퓨터가 교류 전원을 사용할 때(절전 모드로 바꾸기 전에) 비활성화로 할 시간"
+"(초)."
 
 #: data/org.cafe.power-manager.gschema.xml.in:316
 msgid "Sleep timeout computer when on UPS"
@@ -724,9 +761,11 @@ msgstr "무정전 전원 장치를 사용할 때 컴퓨터 절전 제한 시간"
 
 #: data/org.cafe.power-manager.gschema.xml.in:317
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before it goes to sleep."
-msgstr "컴퓨터가 무정전 전원 장치 전원을 사용할 때(절전 모드로 바꾸기 전에) 비활성화로 할 시간(초)."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before it goes to sleep."
+msgstr ""
+"컴퓨터가 무정전 전원 장치 전원을 사용할 때(절전 모드로 바꾸기 전에) 비활성화"
+"로 할 시간(초)."
 
 #: data/org.cafe.power-manager.gschema.xml.in:321
 msgid "Sleep timeout display when on AC"
@@ -746,7 +785,9 @@ msgstr "배터리를 사용할 때 디스플레이 절전 제한 시간"
 msgid ""
 "The amount of time in seconds the computer on battery power needs to be "
 "inactive before the display goes to sleep."
-msgstr "컴퓨터가 배터리 전원을 사용할 때(디스플레이를 절전 모드로 바꾸기 전에) 비활성화로 할 시간(초)."
+msgstr ""
+"컴퓨터가 배터리 전원을 사용할 때(디스플레이를 절전 모드로 바꾸기 전에) 비활성"
+"화로 할 시간(초)."
 
 #: data/org.cafe.power-manager.gschema.xml.in:331
 msgid "Sleep timeout display when on UPS"
@@ -754,9 +795,11 @@ msgstr "무정전 전원 장치를 사용할 때 디스플레이 절전 제한 �
 
 #: data/org.cafe.power-manager.gschema.xml.in:332
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before the display goes to sleep."
-msgstr "컴퓨터가 무정전 전원 장치 전원을 사용할 때(화면을 절전 모드로 바꾸기 전에) 비활성화로 할 시간(초)."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before the display goes to sleep."
+msgstr ""
+"컴퓨터가 무정전 전원 장치 전원을 사용할 때(화면을 절전 모드로 바꾸기 전에) 비"
+"활성화로 할 시간(초)."
 
 #: data/org.cafe.power-manager.gschema.xml.in:336
 msgid "If sounds should be used"
@@ -766,11 +809,12 @@ msgstr "소리를 사용할 지 여부"
 msgid ""
 "If sounds should be used when the power is critically low, or inhibit "
 "requests have stopped the policy action."
-msgstr "전원이 위험하게 적을 경우 혹은 전원관리 금지 요청이 전원관리 정책 동작을 금지하는 경우, 소리를 사용할 지 여부."
+msgstr ""
+"전원이 위험하게 적을 경우 혹은 전원관리 금지 요청이 전원관리 정책 동작을 금지"
+"하는 경우, 소리를 사용할 지 여부."
 
 #: data/org.cafe.power-manager.gschema.xml.in:341
-msgid ""
-"If preferences and statistics items should be shown in the context menu"
+msgid "If preferences and statistics items should be shown in the context menu"
 msgstr "기본 설정 및 통계를 팝업 메뉴에 표시할지 여부"
 
 #: data/org.cafe.power-manager.gschema.xml.in:345
@@ -789,14 +833,13 @@ msgstr "전원 관리"
 msgid "Configure power management"
 msgstr "전원 관리 설정"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
 msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
-#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:7
-#: src/cpm-statistics.c:1090 src/cpm-statistics.c:1577
+#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:8
+#: src/cpm-statistics.c:764 src/cpm-statistics.c:1233
 msgid "Power Statistics"
 msgstr "전원 통계"
 
@@ -804,55 +847,37 @@ msgstr "전원 통계"
 msgid "Observe power management"
 msgstr "전원 관리 관찰"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-statistics.desktop.in.in:6
-msgid "cafe-power-statistics"
-msgstr ""
-
-#: data/cpm-statistics.ui:113 src/cpm-statistics.c:208
+#: data/cpm-statistics.ui:119
 msgid "Details"
 msgstr "상세 정보"
 
-#: data/cpm-statistics.ui:139 data/cpm-statistics.ui:342
+#: data/cpm-statistics.ui:145 data/cpm-statistics.ui:347
 msgid "Graph type:"
 msgstr "그래프 종류:"
 
-#: data/cpm-statistics.ui:174
+#: data/cpm-statistics.ui:180
 msgid "Data length:"
 msgstr "데이터 크기:"
 
-#: data/cpm-statistics.ui:234 data/cpm-statistics.ui:395
+#: data/cpm-statistics.ui:239 data/cpm-statistics.ui:399
 msgid "There is no data to display."
 msgstr "표시할 데이터가 없습니다."
 
-#: data/cpm-statistics.ui:276 data/cpm-statistics.ui:438
+#: data/cpm-statistics.ui:281 data/cpm-statistics.ui:442
 msgid "Use smoothed line"
 msgstr "부드러운 선 사용"
 
-#: data/cpm-statistics.ui:291 data/cpm-statistics.ui:453
+#: data/cpm-statistics.ui:296 data/cpm-statistics.ui:457
 msgid "Show data points"
 msgstr "데이터 지점 표시"
 
-#: data/cpm-statistics.ui:320
+#: data/cpm-statistics.ui:325
 msgid "History"
 msgstr "기록"
 
-#: data/cpm-statistics.ui:482
+#: data/cpm-statistics.ui:486
 msgid "Statistics"
 msgstr "통계"
-
-#: data/cpm-statistics.ui:504
-msgid "Processor wakeups per second:"
-msgstr "초당 프로세서 깨어나는 회수:"
-
-#: data/cpm-statistics.ui:516
-msgid "0"
-msgstr "0"
-
-#: data/cpm-statistics.ui:563 src/cpm-statistics.c:194
-msgid "Wakeups"
-msgstr "깨어나기"
 
 #: data/cpm-prefs.ui:55
 msgid "Power Management Preferences"
@@ -1102,7 +1127,7 @@ msgstr "%.1fW"
 msgid "%.1fV"
 msgstr "%.1fV"
 
-#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1560
+#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1216
 msgid "Show extra debugging information"
 msgstr "추가 디버깅 정보 보기"
 
@@ -1209,9 +1234,11 @@ msgstr "배터리가 손상된 것 같습니다"
 #: src/cpm-manager.c:1110
 #, c-format
 msgid ""
-"Battery has a very low capacity (%1.1f%%), which means that it may be old or"
-" broken."
-msgstr "배터리 용량이 매우 부족합니다(%1.1f%%). 배터리가 오래되었거나 손상되었음을 의미합니다."
+"Battery has a very low capacity (%1.1f%%), which means that it may be old or "
+"broken."
+msgstr ""
+"배터리 용량이 매우 부족합니다(%1.1f%%). 배터리가 오래되었거나 손상되었음을 의"
+"미합니다."
 
 #: src/cpm-manager.c:1159
 msgid "Battery Charged"
@@ -1357,65 +1384,82 @@ msgstr "무정전 전원 장치 전원 매우 부족"
 #: src/cpm-manager.c:1459
 #, c-format
 msgid ""
-"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
-" your computer to avoid losing data."
+"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to "
+"your computer to avoid losing data."
 msgstr ""
-"평균적으로 <b>%s</b>의 남은 무정전 전원 장치 전원입니다(%.0f%%). 데이터 손실을 방지하려면 교류 전원 상태를 복원하십시오."
+"평균적으로 <b>%s</b>의 남은 무정전 전원 장치 전원입니다(%.0f%%). 데이터 손실"
+"을 방지하려면 교류 전원 상태를 복원하십시오."
 
 #: src/cpm-manager.c:1473
 #, c-format
 msgid ""
 "Wireless mouse is very low in power (%.0f%%). This device will soon stop "
 "functioning if not charged."
-msgstr "무선 마우스의 전원이 매우 부족합니다(%.0f%%). 충전하지 않으면 이 장치의 기능이 곧 멈춥니다."
+msgstr ""
+"무선 마우스의 전원이 매우 부족합니다(%.0f%%). 충전하지 않으면 이 장치의 기능"
+"이 곧 멈춥니다."
 
 #: src/cpm-manager.c:1481
 #, c-format
 msgid ""
 "Wireless keyboard is very low in power (%.0f%%). This device will soon stop "
 "functioning if not charged."
-msgstr "무선 키보드의 전원이 매우 부족합니다(%.0f%%). 충전하지 않으면 이 장치의 기능이 곧 멈춥니다."
+msgstr ""
+"무선 키보드의 전원이 매우 부족합니다(%.0f%%). 충전하지 않으면 이 장치의 기능"
+"이 곧 멈춥니다."
 
 #: src/cpm-manager.c:1490
 #, c-format
 msgid ""
-"PDA is very low in power (%.0f%%). This device will soon stop functioning if"
-" not charged."
-msgstr "PDA의 전원이 매우 부족합니다(%.0f%%). 충전하지 않으면 이 장치의 기능이 곧 멈춥니다."
+"PDA is very low in power (%.0f%%). This device will soon stop functioning if "
+"not charged."
+msgstr ""
+"PDA의 전원이 매우 부족합니다(%.0f%%). 충전하지 않으면 이 장치의 기능이 곧 멈"
+"춥니다."
 
 #: src/cpm-manager.c:1500
 #, c-format
 msgid ""
 "Cell phone is very low in power (%.0f%%). This device will soon stop "
 "functioning if not charged."
-msgstr "휴대 전화의 전원이 매우 부족합니다(%.0f%%). 충전하지 않으면 이 장치의 기능이 곧 멈춥니다."
+msgstr ""
+"휴대 전화의 전원이 매우 부족합니다(%.0f%%). 충전하지 않으면 이 장치의 기능이 "
+"곧 멈춥니다."
 
 #: src/cpm-manager.c:1510
 #, c-format
 msgid ""
 "Media player is very low in power (%.0f%%). This device will soon stop "
 "functioning if not charged."
-msgstr "미디어 플레이어의 전원이 매우 부족합니다(%.0f%%). 충전하지 않으면 이 장치의 기능이 곧 멈춥니다."
+msgstr ""
+"미디어 플레이어의 전원이 매우 부족합니다(%.0f%%). 충전하지 않으면 이 장치의 "
+"기능이 곧 멈춥니다."
 
 #: src/cpm-manager.c:1519
 #, c-format
 msgid ""
-"Tablet is very low in power (%.0f%%). This device will soon stop functioning"
-" if not charged."
-msgstr "태블릿의 전원이 매우 부족합니다(%.0f%%). 충전하지 않으면 이 장치의 기능이 곧 멈춥니다."
+"Tablet is very low in power (%.0f%%). This device will soon stop functioning "
+"if not charged."
+msgstr ""
+"태블릿의 전원이 매우 부족합니다(%.0f%%). 충전하지 않으면 이 장치의 기능이 곧 "
+"멈춥니다."
 
 #: src/cpm-manager.c:1528
 #, c-format
 msgid ""
 "Attached computer is very low in power (%.0f%%). The device will soon "
 "shutdown if not charged."
-msgstr "연결한 컴퓨터의 전원이 매우 부족합니다(%.0f%%). 충전하지 않으면 이 장치가 곧 꺼집니다."
+msgstr ""
+"연결한 컴퓨터의 전원이 매우 부족합니다(%.0f%%). 충전하지 않으면 이 장치가 곧 "
+"꺼집니다."
 
 #: src/cpm-manager.c:1593
 msgid ""
-"The battery is below the critical level and this computer will <b>power-"
-"off</b> when the battery becomes completely empty."
-msgstr "배터리가 위험한 수준보다 낮고 배터리가 완전히 방전되면 이 컴퓨터의 <b>전원이 꺼집니다</b>."
+"The battery is below the critical level and this computer will <b>power-off</"
+"b> when the battery becomes completely empty."
+msgstr ""
+"배터리가 위험한 수준보다 낮고 배터리가 완전히 방전되면 이 컴퓨터의 <b>전원이 "
+"꺼집니다</b>."
 
 #: src/cpm-manager.c:1599
 msgid ""
@@ -1423,8 +1467,8 @@ msgid ""
 "suspend.<br><b>NOTE:</b> A small amount of power is required to keep your "
 "computer in a suspended state."
 msgstr ""
-"배터리가 위험한 수준보다 낮고 이 컴퓨터는 절전 상태입니다. <br><b>주의:</b> 컴퓨터를 절전 상태로 유지하려면 약간의 전원이 "
-"필요합니다."
+"배터리가 위험한 수준보다 낮고 이 컴퓨터는 절전 상태입니다. <br><b>주의:</b> "
+"컴퓨터를 절전 상태로 유지하려면 약간의 전원이 필요합니다."
 
 #: src/cpm-manager.c:1606
 msgid ""
@@ -1443,12 +1487,14 @@ msgid ""
 "The UPS is below the critical level and this computer will <b>power-off</b> "
 "when the UPS becomes completely empty."
 msgstr ""
-"무정전 전원 장치의 전원이 위험 수준보다 부족하여 무정전 전원 장치가 완전히 방전되면 이 컴퓨터의 <b>전원이 꺼집니다</b>."
+"무정전 전원 장치의 전원이 위험 수준보다 부족하여 무정전 전원 장치가 완전히 방"
+"전되면 이 컴퓨터의 <b>전원이 꺼집니다</b>."
 
 #: src/cpm-manager.c:1635
 msgid ""
 "The UPS is below the critical level and this computer is about to hibernate."
-msgstr "배터리 전원이 위험 수준보다 부족하여 이 컴퓨터는 최대 절전 상태가 됩니다."
+msgstr ""
+"배터리 전원이 위험 수준보다 부족하여 이 컴퓨터는 최대 절전 상태가 됩니다."
 
 #: src/cpm-manager.c:1640
 msgid ""
@@ -1487,360 +1533,246 @@ msgstr "아무것도 안함"
 msgid "Never"
 msgstr "사용 안함"
 
-#: src/cpm-statistics.c:78 src/cpm-statistics.c:466
+#: src/cpm-statistics.c:67 src/cpm-statistics.c:410
 msgid "Rate"
 msgstr "Rate"
 
-#: src/cpm-statistics.c:79
+#: src/cpm-statistics.c:68
 msgid "Charge"
 msgstr "충전"
 
-#: src/cpm-statistics.c:80 src/cpm-statistics.c:480
+#: src/cpm-statistics.c:69 src/cpm-statistics.c:424
 msgid "Time to full"
 msgstr "완전 충전까지 시간"
 
-#: src/cpm-statistics.c:81 src/cpm-statistics.c:485
+#: src/cpm-statistics.c:70 src/cpm-statistics.c:429
 msgid "Time to empty"
 msgstr "완전 방전까지 시간"
 
-#: src/cpm-statistics.c:88
+#: src/cpm-statistics.c:77
 msgid "10 minutes"
 msgstr "10분"
 
-#: src/cpm-statistics.c:89
+#: src/cpm-statistics.c:78
 msgid "2 hours"
 msgstr "2시간"
 
-#: src/cpm-statistics.c:90
+#: src/cpm-statistics.c:79
 msgid "6 hours"
 msgstr "6 시간"
 
-#: src/cpm-statistics.c:91
+#: src/cpm-statistics.c:80
 msgid "1 day"
 msgstr "1일"
 
-#: src/cpm-statistics.c:92
+#: src/cpm-statistics.c:81
 msgid "1 week"
 msgstr "1주"
 
-#: src/cpm-statistics.c:101
+#: src/cpm-statistics.c:90
 msgid "Charge profile"
 msgstr "충전 프로파일"
 
-#: src/cpm-statistics.c:102
+#: src/cpm-statistics.c:91
 msgid "Discharge profile"
 msgstr "방전 프로파일"
 
-#: src/cpm-statistics.c:104
+#: src/cpm-statistics.c:93
 msgid "Charge accuracy"
 msgstr "충전 정확도"
 
-#: src/cpm-statistics.c:105
+#: src/cpm-statistics.c:94
 msgid "Discharge accuracy"
 msgstr "방전 정확도"
 
-#: src/cpm-statistics.c:132
+#: src/cpm-statistics.c:121
 msgid "Attribute"
 msgstr "속성"
 
-#: src/cpm-statistics.c:139
+#: src/cpm-statistics.c:128
 msgid "Value"
 msgstr "값"
 
-#: src/cpm-statistics.c:156
+#: src/cpm-statistics.c:145
 msgid "Image"
 msgstr "그림"
 
-#: src/cpm-statistics.c:162
+#: src/cpm-statistics.c:151
 msgid "Description"
 msgstr "설명"
 
-#: src/cpm-statistics.c:181 src/cpm-statistics.c:405
-msgid "Type"
-msgstr "형식"
-
-#: src/cpm-statistics.c:187
-msgid "ID"
-msgstr "ID"
-
-#: src/cpm-statistics.c:201
-msgid "Command"
-msgstr "명령어"
-
-#: src/cpm-statistics.c:286
+#: src/cpm-statistics.c:230
 msgid "Unknown"
 msgstr "알 수 없음"
 
-#: src/cpm-statistics.c:290
+#: src/cpm-statistics.c:234
 #, c-format
 msgid "%.0f second"
 msgid_plural "%.0f seconds"
 msgstr[0] ""
 
-#: src/cpm-statistics.c:295
+#: src/cpm-statistics.c:239
 #, c-format
 msgid "%.1f minute"
 msgid_plural "%.1f minutes"
 msgstr[0] ""
 
-#: src/cpm-statistics.c:300
+#: src/cpm-statistics.c:244
 #, c-format
 msgid "%.1f hour"
 msgid_plural "%.1f hours"
 msgstr[0] ""
 
-#: src/cpm-statistics.c:304
+#: src/cpm-statistics.c:248
 #, c-format
 msgid "%.1f day"
 msgid_plural "%.1f days"
 msgstr[0] ""
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "Yes"
 msgstr "예"
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "No"
 msgstr "아니요"
 
-#: src/cpm-statistics.c:402
+#: src/cpm-statistics.c:346
 msgid "Device"
 msgstr "장치"
 
-#: src/cpm-statistics.c:407
+#: src/cpm-statistics.c:349
+msgid "Type"
+msgstr "형식"
+
+#: src/cpm-statistics.c:351
 msgid "Vendor"
 msgstr "제조사"
 
-#: src/cpm-statistics.c:409
+#: src/cpm-statistics.c:353
 msgid "Model"
 msgstr "모델"
 
-#: src/cpm-statistics.c:411
+#: src/cpm-statistics.c:355
 msgid "Serial number"
 msgstr "일련 번호"
 
-#: src/cpm-statistics.c:416
+#: src/cpm-statistics.c:360
 msgid "Supply"
 msgstr "공급"
 
-#: src/cpm-statistics.c:419
+#: src/cpm-statistics.c:363
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] ""
 
-#: src/cpm-statistics.c:423
+#: src/cpm-statistics.c:367
 msgid "Refreshed"
 msgstr "새로 고침"
 
-#: src/cpm-statistics.c:433
+#: src/cpm-statistics.c:377
 msgid "Present"
 msgstr "현재"
 
-#: src/cpm-statistics.c:440
+#: src/cpm-statistics.c:384
 msgid "Rechargeable"
 msgstr "충전 가능"
 
-#: src/cpm-statistics.c:446
+#: src/cpm-statistics.c:390
 msgid "State"
 msgstr "상태"
 
-#: src/cpm-statistics.c:450
+#: src/cpm-statistics.c:394
 msgid "Energy"
 msgstr "에너지"
 
-#: src/cpm-statistics.c:453
+#: src/cpm-statistics.c:397
 msgid "Energy when empty"
 msgstr "완전 방전 시 에너지"
 
-#: src/cpm-statistics.c:456
+#: src/cpm-statistics.c:400
 msgid "Energy when full"
 msgstr "완전 충전 시 에너지"
 
-#: src/cpm-statistics.c:459
+#: src/cpm-statistics.c:403
 msgid "Energy (design)"
 msgstr "에너지(설계)"
 
-#: src/cpm-statistics.c:473
+#: src/cpm-statistics.c:417
 msgid "Voltage"
 msgstr "전압"
 
-#: src/cpm-statistics.c:495
+#: src/cpm-statistics.c:439
 msgid "Percentage"
 msgstr "퍼센트"
 
-#: src/cpm-statistics.c:502
+#: src/cpm-statistics.c:446
 msgid "Capacity"
 msgstr "용량"
 
-#: src/cpm-statistics.c:507
+#: src/cpm-statistics.c:451
 msgid "Technology"
 msgstr "기술"
 
-#: src/cpm-statistics.c:512
+#: src/cpm-statistics.c:456
 msgid "Online"
 msgstr "연결"
 
-#: src/cpm-statistics.c:824
-msgid "No data"
-msgstr "데이터 없음"
-
-#: src/cpm-statistics.c:831 src/cpm-statistics.c:836
-msgid "Kernel module"
-msgstr "커널 모듈"
-
-#: src/cpm-statistics.c:841
-msgid "Kernel core"
-msgstr "커널 코어"
-
-#: src/cpm-statistics.c:846
-msgid "Interprocessor interrupt"
-msgstr "인터프로세서 인터럽트"
-
-#: src/cpm-statistics.c:851
-msgid "Interrupt"
-msgstr "인터럽트"
-
-#: src/cpm-statistics.c:898
-msgid "PS/2 keyboard/mouse/touchpad"
-msgstr "PS/2 키보드/마우스/터치패드"
-
-#: src/cpm-statistics.c:901
-msgid "ACPI"
-msgstr "ACPI"
-
-#: src/cpm-statistics.c:904
-msgid "Serial ATA"
-msgstr "시리얼 ATA"
-
-#: src/cpm-statistics.c:907
-msgid "ATA host controller"
-msgstr "ATA 호스트 컨트롤러"
-
-#: src/cpm-statistics.c:910
-msgid "Intel wireless adaptor"
-msgstr "인텔 무선 어댑터"
-
-#: src/cpm-statistics.c:917 src/cpm-statistics.c:922 src/cpm-statistics.c:927
-#: src/cpm-statistics.c:932 src/cpm-statistics.c:937
-#, c-format
-msgid "Timer %s"
-msgstr "%s 타이머"
-
-#: src/cpm-statistics.c:941
-#, c-format
-msgid "Sleep %s"
-msgstr "%s 대기"
-
-#: src/cpm-statistics.c:944
-#, c-format
-msgid "New task %s"
-msgstr "새 작업 %s"
-
-#: src/cpm-statistics.c:948
-#, c-format
-msgid "Wait %s"
-msgstr "%s 대기"
-
-#: src/cpm-statistics.c:952 src/cpm-statistics.c:956
-#, c-format
-msgid "Work queue %s"
-msgstr "대기 큐 %s"
-
-#: src/cpm-statistics.c:959
-#, c-format
-msgid "Network route flush %s"
-msgstr "네트워크 라우팅 갱신 %s"
-
-#: src/cpm-statistics.c:962
-#, c-format
-msgid "USB activity %s"
-msgstr "USB 동작 %s"
-
-#: src/cpm-statistics.c:965
-#, c-format
-msgid "Wakeup %s"
-msgstr "%s 상태 복귀"
-
-#: src/cpm-statistics.c:968
-msgid "Local interrupts"
-msgstr "로컬 인터럽트"
-
-#: src/cpm-statistics.c:971
-msgid "Rescheduling interrupts"
-msgstr "인터럽트 다시 스케줄링"
-
-#: src/cpm-statistics.c:1080
+#: src/cpm-statistics.c:756
 msgid "Device Information"
 msgstr "장치 정보"
 
-#: src/cpm-statistics.c:1082
+#: src/cpm-statistics.c:758
 msgid "Device History"
 msgstr "장치 기록"
 
-#: src/cpm-statistics.c:1084
+#: src/cpm-statistics.c:760
 msgid "Device Profile"
 msgstr "장치 프로파일"
 
-#: src/cpm-statistics.c:1086
-msgid "Processor Wakeups"
-msgstr "프로세서 상태 복귀"
-
-#: src/cpm-statistics.c:1325 src/cpm-statistics.c:1331
-#: src/cpm-statistics.c:1337 src/cpm-statistics.c:1343
+#: src/cpm-statistics.c:982 src/cpm-statistics.c:988 src/cpm-statistics.c:994
+#: src/cpm-statistics.c:1000
 msgid "Time elapsed"
 msgstr "경과 시간"
 
-#: src/cpm-statistics.c:1327
+#: src/cpm-statistics.c:984
 msgid "Power"
 msgstr "제곱"
 
-#: src/cpm-statistics.c:1333 src/cpm-statistics.c:1377
-#: src/cpm-statistics.c:1383 src/cpm-statistics.c:1389
-#: src/cpm-statistics.c:1395
+#: src/cpm-statistics.c:990 src/cpm-statistics.c:1034 src/cpm-statistics.c:1040
+#: src/cpm-statistics.c:1046 src/cpm-statistics.c:1052
 msgid "Cell charge"
 msgstr "충전량"
 
-#: src/cpm-statistics.c:1339 src/cpm-statistics.c:1345
+#: src/cpm-statistics.c:996 src/cpm-statistics.c:1002
 msgid "Predicted time"
 msgstr "예상 시간"
 
-#: src/cpm-statistics.c:1379 src/cpm-statistics.c:1391
+#: src/cpm-statistics.c:1036 src/cpm-statistics.c:1048
 msgid "Correction factor"
 msgstr "보정 계수"
 
-#: src/cpm-statistics.c:1385 src/cpm-statistics.c:1397
+#: src/cpm-statistics.c:1042 src/cpm-statistics.c:1054
 msgid "Prediction accuracy"
 msgstr "예측 정확도"
 
-#: src/cpm-statistics.c:1563
+#: src/cpm-statistics.c:1219
 msgid "Select this device at startup"
 msgstr "시작할 때 이 장치 선택"
 
-#: src/cpm-statistics.c:1802
-msgid "Processor"
-msgstr "프로세서"
-
-#: src/cpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 CAFE developers"
-msgstr "Copyright © 2011-2018 CAFE developers"
-
-#: src/cpm-tray-icon.c:193
-msgid "translator-credits"
+#: src/cpm-tray-icon.c:207
+msgid ""
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"Elex https://launchpad.net/~mysticzizone\n"
-"Valmantas Palikša https://launchpad.net/~walmis\n"
-"Yoo Duk Nam https://launchpad.net/~yoo2001818\n"
-"onlyeriko https://launchpad.net/~onlyeriko\n"
-"Seong-ho Cho <darkcircle.0426@gmail.com>\n"
-"CAFE Desktop Environment Team <https://www.transifex.com/cafe/teams/13566/ko/>"
 
-#: src/cpm-tray-icon.c:295
+#: src/cpm-tray-icon.c:318
 #, c-format
 msgid "%s remaining"
 msgstr "%s 남음"
 
-#: src/cpm-tray-icon.c:349
+#: src/cpm-tray-icon.c:372
 msgid "_Preferences"
 msgstr "기본 설정(_P)"
 
@@ -2094,3 +2026,130 @@ msgstr "방전 대기 중"
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr "알 수 없음"
+
+#~ msgid "Licensed under the GNU General Public License Version 2"
+#~ msgstr "GNU 일반 공중 사용 허가서 2판 조항에 따라 사용을 허가합니다"
+
+#~ msgid ""
+#~ "Power Manager is free software; you can redistribute it and/or\n"
+#~ "modify it under the terms of the GNU General Public License\n"
+#~ "as published by the Free Software Foundation; either version 2\n"
+#~ "of the License, or (at your option) any later version."
+#~ msgstr ""
+#~ "전원 관리자는 자유 소프트웨어입니다. 자유 소프트웨어 재단에서\n"
+#~ "발표한 GNU 일반 공중 사용허가서 2판 또는(선택에 따라) 그 이후 판의\n"
+#~ "조항에 따라 자유롭게 재배포 및 수정할 수 있습니다."
+
+#~ msgid ""
+#~ "Power Manager is distributed in the hope that it will be useful,\n"
+#~ "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+#~ "GNU General Public License for more details."
+#~ msgstr ""
+#~ "전원 관리자가 쓸모가 있길 바라며 배포하지만, 어떤 보증도\n"
+#~ "하지 않으며 상업성 또는 특정 목적에 적합성용 암묵적 보증\n"
+#~ "조차도 하지 않습니다. 자세한 내용은 GNU 일반 공중 사용허가서를\n"
+#~ "보십시오."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License\n"
+#~ "along with this program; if not, write to the Free Software\n"
+#~ "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA."
+#~ msgstr ""
+#~ "GNU 일반 공중 사용허가서 사본을 이 프로그램과 함께 받아야 합니다. 못받았다"
+#~ "면 다음 주소로 요청하십시오. Free Software\n"
+#~ "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA."
+
+#~ msgid "Processor wakeups per second:"
+#~ msgstr "초당 프로세서 깨어나는 회수:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Wakeups"
+#~ msgstr "깨어나기"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Command"
+#~ msgstr "명령어"
+
+#~ msgid "No data"
+#~ msgstr "데이터 없음"
+
+#~ msgid "Kernel module"
+#~ msgstr "커널 모듈"
+
+#~ msgid "Kernel core"
+#~ msgstr "커널 코어"
+
+#~ msgid "Interprocessor interrupt"
+#~ msgstr "인터프로세서 인터럽트"
+
+#~ msgid "Interrupt"
+#~ msgstr "인터럽트"
+
+#~ msgid "PS/2 keyboard/mouse/touchpad"
+#~ msgstr "PS/2 키보드/마우스/터치패드"
+
+#~ msgid "ACPI"
+#~ msgstr "ACPI"
+
+#~ msgid "Serial ATA"
+#~ msgstr "시리얼 ATA"
+
+#~ msgid "ATA host controller"
+#~ msgstr "ATA 호스트 컨트롤러"
+
+#~ msgid "Intel wireless adaptor"
+#~ msgstr "인텔 무선 어댑터"
+
+#, c-format
+#~ msgid "Timer %s"
+#~ msgstr "%s 타이머"
+
+#, c-format
+#~ msgid "Sleep %s"
+#~ msgstr "%s 대기"
+
+#, c-format
+#~ msgid "New task %s"
+#~ msgstr "새 작업 %s"
+
+#, c-format
+#~ msgid "Wait %s"
+#~ msgstr "%s 대기"
+
+#, c-format
+#~ msgid "Work queue %s"
+#~ msgstr "대기 큐 %s"
+
+#, c-format
+#~ msgid "Network route flush %s"
+#~ msgstr "네트워크 라우팅 갱신 %s"
+
+#, c-format
+#~ msgid "USB activity %s"
+#~ msgstr "USB 동작 %s"
+
+#, c-format
+#~ msgid "Wakeup %s"
+#~ msgstr "%s 상태 복귀"
+
+#~ msgid "Local interrupts"
+#~ msgstr "로컬 인터럽트"
+
+#~ msgid "Rescheduling interrupts"
+#~ msgstr "인터럽트 다시 스케줄링"
+
+#~ msgid "Processor Wakeups"
+#~ msgstr "프로세서 상태 복귀"
+
+#~ msgid "Processor"
+#~ msgstr "프로세서"
+
+#~ msgid "Copyright © 2011-2018 CAFE developers"
+#~ msgstr "Copyright © 2011-2018 CAFE developers"

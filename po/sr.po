@@ -2,24 +2,25 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Мирослав Николић <miroslavnikolic@rocketmail.com>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-power-manager 1.23.1\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2019-11-12 15:22+0100\n"
+"POT-Creation-Date: 2023-09-14 10:39+0200\n"
 "PO-Revision-Date: 2020-02-15 16:27+0000\n"
 "Last-Translator: Мирослав Николић <miroslavnikolic@rocketmail.com>, 2020\n"
 "Language-Team: Serbian (https://www.transifex.com/cafe/teams/13566/sr/)\n"
+"Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: sr\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: applets/brightness/brightness-applet.c:107
 msgid "Power Manager Brightness Applet"
@@ -43,58 +44,55 @@ msgstr "Не могу да добавим осветљеност екрана"
 msgid "LCD brightness : %d%%"
 msgstr "Осветљеност екрана са течним кристалима : %d%%"
 
+#: applets/brightness/brightness-applet.c:790
+#: applets/inhibit/inhibit-applet.c:287
+msgid ""
+"Power Manager is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:795
+#: applets/inhibit/inhibit-applet.c:292
+msgid ""
+"Power Manager is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+
 #: applets/brightness/brightness-applet.c:800
 #: applets/inhibit/inhibit-applet.c:297
-msgid "Licensed under the GNU General Public License Version 2"
-msgstr "Објављено под Гнуовом општом јавном дозволом издања 2"
-
-#: applets/brightness/brightness-applet.c:801
-#: applets/inhibit/inhibit-applet.c:298
 msgid ""
-"Power Manager is free software; you can redistribute it and/or\n"
-"modify it under the terms of the GNU General Public License\n"
-"as published by the Free Software Foundation; either version 2\n"
-"of the License, or (at your option) any later version."
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"Управник напајања је слободан софтвер; можете га расподељивати\n"
-"и/или мењати под условима Гнуове опште јавне лиценце коју\n"
-"је објавила Задужбина слободног софтвера; издања 3 лиценце\n"
-"или (по вашем избору) било којег новијег издања."
 
-#: applets/brightness/brightness-applet.c:805
-#: applets/inhibit/inhibit-applet.c:302
+#: applets/brightness/brightness-applet.c:813
+msgid "About Power Manager Brightness Applet"
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:815
 msgid ""
-"Power Manager is distributed in the hope that it will be useful,\n"
-"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-"GNU General Public License for more details."
+"Copyright © 2006 Benjamin Canou\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"Управник напајања се расподељује у нади да ће бити користан,\n"
-"али БЕЗ ИКАКВЕ ГАРАНЦИЈЕ; чак и без примењене гаранције\n"
-"ТРЖИШНЕ ВРЕДНОСТИ или ПРИЛАГОЂЕНОСТИ ОДРЕЂЕНОЈ НАМЕНИ.\n"
-"Погледајте Гнуову Општу јавну лиценцу за више детаља."
 
-#: applets/brightness/brightness-applet.c:809
-#: applets/inhibit/inhibit-applet.c:306
-msgid ""
-"You should have received a copy of the GNU General Public License\n"
-"along with this program; if not, write to the Free Software\n"
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
-msgstr ""
-"Требали сте да примите примерак Гнуове Опште јавне лиценце\n"
-"уз овај програм. Ако нисте, пишите Задужбини слободног\n"
-"софтвера на адресу: „Free Software\n"
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA“."
+#: applets/brightness/brightness-applet.c:823
+#: applets/inhibit/inhibit-applet.c:320 src/cpm-tray-icon.c:214
+msgid "translator-credits"
+msgstr "Мирослав Николић <miroslavnikolic@rocketmail.com>"
 
-#: applets/brightness/brightness-applet.c:1063
-#: applets/inhibit/inhibit-applet.c:519
+#: applets/brightness/brightness-applet.c:1051
+#: applets/inhibit/inhibit-applet.c:507
 msgid "_About"
 msgstr "_О програму"
 
-#: applets/brightness/brightness-applet.c:1066
-#: applets/inhibit/inhibit-applet.c:522
+#: applets/brightness/brightness-applet.c:1054
+#: applets/inhibit/inhibit-applet.c:510
 msgid "_Help"
 msgstr "По_моћ"
 
@@ -105,12 +103,6 @@ msgstr "Штеловање осветљености екрана"
 #: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Brightness Applet"
 msgstr "Програмче за осветљеност"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-brightness-applet"
-msgstr "cafe-brightness-applet"
 
 #: applets/inhibit/inhibit-applet.c:87
 msgid "Power Manager Inhibit Applet"
@@ -132,6 +124,17 @@ msgstr "Успављивање је омогућено"
 msgid "Manual inhibit"
 msgstr "Ручно онемогућавање"
 
+#: applets/inhibit/inhibit-applet.c:310
+msgid "About Power Manager Inhibit Applet"
+msgstr ""
+
+#: applets/inhibit/inhibit-applet.c:312
+msgid ""
+"Copyright © 2006-2007 Richard Hughes\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
+msgstr ""
+
 #: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Inhibit Applet Factory"
 msgstr "Програмче за онемогућавање уштеде"
@@ -140,26 +143,13 @@ msgstr "Програмче за онемогућавање уштеде"
 msgid "Inhibit Applet"
 msgstr "Програмче за онемогућавање уштеде"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-inhibit-applet"
-msgstr "cafe-inhibit-applet"
-
-#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:184
+#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:204
 msgid "Power Manager"
 msgstr "Управник напајања"
 
-#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:186
+#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:206
 msgid "Power management daemon"
 msgstr "Услужник управљања напајањем"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-manager.desktop.in.in:6
-#: data/cafe-power-preferences.desktop.in.in:6
-msgid "cafe-power-manager"
-msgstr "cafe-power-manager"
 
 #: data/org.cafe.power-manager.gschema.xml.in:26
 #: data/org.cafe.power-manager.gschema.xml.in:41
@@ -224,8 +214,8 @@ msgid ""
 "If the screen brightness should be changed when switching between AC and "
 "battery power."
 msgstr ""
-"Да ли осветљење екрана треба да се промени када се прелази са батеријског на"
-" напајање из електричне мреже и обрнуто."
+"Да ли осветљење екрана треба да се промени када се прелази са батеријског на "
+"напајање из електричне мреже и обрнуто."
 
 #: data/org.cafe.power-manager.gschema.xml.in:61
 msgid "Reduce the backlight brightness when on battery power"
@@ -248,8 +238,8 @@ msgid ""
 "If the keyboard backlight brightness should be reduced when the computer is "
 "on battery power"
 msgstr ""
-"Да ли јачина позадинског светла тастатуре треба бити смањена када се рачунар"
-" напаја из батерије"
+"Да ли јачина позадинског светла тастатуре треба бити смањена када се рачунар "
+"напаја из батерије"
 
 #: data/org.cafe.power-manager.gschema.xml.in:71
 msgid "Keyboard backlight brightness when on AC power."
@@ -260,8 +250,8 @@ msgid ""
 "Percent brightness to set keyboard backlight at when on AC power. Legal "
 "values are between 0 and 100."
 msgstr ""
-"Проценат јачине за постављање позадинског светла тастатуре када се напаја из"
-" мреже. Дозвољене вредности су између 0 и 100."
+"Проценат јачине за постављање позадинског светла тастатуре када се напаја из "
+"мреже. Дозвољене вредности су између 0 и 100."
 
 #: data/org.cafe.power-manager.gschema.xml.in:76
 msgid "Percent to reduce keyboard backlight by when on battery power."
@@ -285,11 +275,11 @@ msgstr "Проценат за смањење позадинског светла
 #: data/org.cafe.power-manager.gschema.xml.in:82
 msgid ""
 "The percentage to reduce the keyboard backlight by when idle. For example, "
-"if set to '60', the backlight will be cut by 40% when idle. Legal values are"
-" between 0 and 100."
+"if set to '60', the backlight will be cut by 40% when idle. Legal values are "
+"between 0 and 100."
 msgstr ""
-"Проценат за смањење позадинског светла тастатуре када мирује. На пример, ако"
-" је постављено на 60, позадинско светло биће умањено за 40% приликом "
+"Проценат за смањење позадинског светла тастатуре када мирује. На пример, ако "
+"је постављено на 60, позадинско светло биће умањено за 40% приликом "
 "мировања. Дозвољене вредности су између 0 и 100."
 
 #: data/org.cafe.power-manager.gschema.xml.in:86
@@ -497,11 +487,11 @@ msgstr "Закључава екран приликом обустављања"
 
 #: data/org.cafe.power-manager.gschema.xml.in:177
 msgid ""
-"Whether the screen is locked when the computer wakes up from a suspend. Only"
-" used if lock-use-screensaver is false."
+"Whether the screen is locked when the computer wakes up from a suspend. Only "
+"used if lock-use-screensaver is false."
 msgstr ""
-"Да ли ће се екран закључати када се рачун пробуди из обустављања. Користи се"
-" само ако „lock-use-screensaver“ није постављено."
+"Да ли ће се екран закључати када се рачун пробуди из обустављања. Користи се "
+"само ако „lock-use-screensaver“ није постављено."
 
 #: data/org.cafe.power-manager.gschema.xml.in:181
 msgid "Lock screen on hibernate"
@@ -522,8 +512,8 @@ msgstr "Закључава Гномов привезак кључева прил
 
 #: data/org.cafe.power-manager.gschema.xml.in:187
 msgid ""
-"Whether the GNOME keyring is locked before the computer enters suspend. This"
-" means the keyring will have to be unlocked on resume."
+"Whether the GNOME keyring is locked before the computer enters suspend. This "
+"means the keyring will have to be unlocked on resume."
 msgstr ""
 "Да ли се Гномов привезак кључева закључава пре него што рачунар обустави "
 "рад. Ово значи да привезак кључева мора бити откључан након наставка рада."
@@ -533,8 +523,8 @@ msgid ""
 "Whether the GNOME keyring is locked before the computer enters hibernate. "
 "This means the keyring will have to be unlocked on resume."
 msgstr ""
-"Да ли се Гномов привезак кључева закључава пре него што рачунар замрзне рад."
-" Ово значи да привезак кључева мора бити откључан након наставка рада."
+"Да ли се Гномов привезак кључева закључава пре него што рачунар замрзне рад. "
+"Ово значи да привезак кључева мора бити откључан након наставка рада."
 
 #: data/org.cafe.power-manager.gschema.xml.in:196
 msgid "If we should show the low capacity warning for a broken battery"
@@ -700,8 +690,8 @@ msgstr "Проценат који се сматра ниским"
 
 #: data/org.cafe.power-manager.gschema.xml.in:277
 msgid ""
-"The percentage of the battery when it is considered low. Only valid when "
-"use-time-for-policy is false."
+"The percentage of the battery when it is considered low. Only valid when use-"
+"time-for-policy is false."
 msgstr ""
 "Проценат напуњености батерије када се сматра ниским. Користи се само ако "
 "није изабран кључ „use-time-for-policy“."
@@ -736,8 +726,8 @@ msgstr "Преостало време када је батерија скоро 
 
 #: data/org.cafe.power-manager.gschema.xml.in:292
 msgid ""
-"The time remaining in seconds of the battery when it is considered low. Only"
-" valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered low. Only "
+"valid when use-time-for-policy is true."
 msgstr ""
 "Преостало време у секундама напуњености батерије када се сматра ниским. "
 "Користи се само ако није изабран кључ „use-time-for-policy“."
@@ -748,8 +738,8 @@ msgstr "Преостало време када је батерија крити�
 
 #: data/org.cafe.power-manager.gschema.xml.in:297
 msgid ""
-"The time remaining in seconds of the battery when it is considered critical."
-" Only valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered critical. "
+"Only valid when use-time-for-policy is true."
 msgstr ""
 "Преостало време у секундама напуњености батерије када се сматра критичним. "
 "Користи се само ако није изабран кључ „use-time-for-policy“."
@@ -796,8 +786,8 @@ msgstr "Време за успављивање рачунара када је н
 
 #: data/org.cafe.power-manager.gschema.xml.in:317
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before it goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before it goes to sleep."
 msgstr ""
 "Време неактивности у секундама пре покушаја успављивања рачунара када се "
 "користи резервно напајање."
@@ -832,8 +822,8 @@ msgstr "Време за успављивање екрана када је на �
 
 #: data/org.cafe.power-manager.gschema.xml.in:332
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before the display goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before the display goes to sleep."
 msgstr ""
 "Време неактивности у секундама пре покушаја успављивања екрана када се "
 "користи резервно напајање."
@@ -851,8 +841,7 @@ msgstr ""
 "или када су захтеви за спречавање зауставили предвиђену радњу."
 
 #: data/org.cafe.power-manager.gschema.xml.in:341
-msgid ""
-"If preferences and statistics items should be shown in the context menu"
+msgid "If preferences and statistics items should be shown in the context menu"
 msgstr ""
 "Одређује да ли треба приказати поставке и статистику у приручном изборнику"
 
@@ -872,14 +861,13 @@ msgstr "Управљање напајањем"
 msgid "Configure power management"
 msgstr "Подесите управљање напајањем"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
 msgid "CAFE;power;management;preferences;settings;"
 msgstr "Мејт;напајање;управљање;поставке;подешавање;"
 
-#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:7
-#: src/cpm-statistics.c:1090 src/cpm-statistics.c:1577
+#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:8
+#: src/cpm-statistics.c:764 src/cpm-statistics.c:1233
 msgid "Power Statistics"
 msgstr "Статистика напајања"
 
@@ -887,55 +875,37 @@ msgstr "Статистика напајања"
 msgid "Observe power management"
 msgstr "Посматрајте потрошњу електричне енергије"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-statistics.desktop.in.in:6
-msgid "cafe-power-statistics"
-msgstr "cafe-power-statistics"
-
-#: data/cpm-statistics.ui:113 src/cpm-statistics.c:208
+#: data/cpm-statistics.ui:119
 msgid "Details"
 msgstr "Појединости"
 
-#: data/cpm-statistics.ui:139 data/cpm-statistics.ui:342
+#: data/cpm-statistics.ui:145 data/cpm-statistics.ui:347
 msgid "Graph type:"
 msgstr "Врста графика:"
 
-#: data/cpm-statistics.ui:174
+#: data/cpm-statistics.ui:180
 msgid "Data length:"
 msgstr "Време праћења:"
 
-#: data/cpm-statistics.ui:234 data/cpm-statistics.ui:395
+#: data/cpm-statistics.ui:239 data/cpm-statistics.ui:399
 msgid "There is no data to display."
 msgstr "Нема података за приказ."
 
-#: data/cpm-statistics.ui:276 data/cpm-statistics.ui:438
+#: data/cpm-statistics.ui:281 data/cpm-statistics.ui:442
 msgid "Use smoothed line"
 msgstr "Користи углађену линију"
 
-#: data/cpm-statistics.ui:291 data/cpm-statistics.ui:453
+#: data/cpm-statistics.ui:296 data/cpm-statistics.ui:457
 msgid "Show data points"
 msgstr "Прикажи тачке са подацима"
 
-#: data/cpm-statistics.ui:320
+#: data/cpm-statistics.ui:325
 msgid "History"
 msgstr "Претходне наредбе"
 
-#: data/cpm-statistics.ui:482
+#: data/cpm-statistics.ui:486
 msgid "Statistics"
 msgstr "Статистика"
-
-#: data/cpm-statistics.ui:504
-msgid "Processor wakeups per second:"
-msgstr "Број буђења процесора у секунди:"
-
-#: data/cpm-statistics.ui:516
-msgid "0"
-msgstr "0"
-
-#: data/cpm-statistics.ui:563 src/cpm-statistics.c:194
-msgid "Wakeups"
-msgstr "Буђења"
 
 #: data/cpm-prefs.ui:55
 msgid "Power Management Preferences"
@@ -1193,7 +1163,7 @@ msgstr "%.1f W"
 msgid "%.1fV"
 msgstr "%.1f V"
 
-#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1560
+#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1216
 msgid "Show extra debugging information"
 msgstr "Приказује додатне податке прочишћавања"
 
@@ -1300,8 +1270,8 @@ msgstr "Батерија је можда неисправна"
 #: src/cpm-manager.c:1110
 #, c-format
 msgid ""
-"Battery has a very low capacity (%1.1f%%), which means that it may be old or"
-" broken."
+"Battery has a very low capacity (%1.1f%%), which means that it may be old or "
+"broken."
 msgstr ""
 "Батерија има веома низак капацитет (%1.1f%%), што може да значи да је стара "
 "или оштећена."
@@ -1457,8 +1427,8 @@ msgstr "Резервно напајање је критично празно"
 #: src/cpm-manager.c:1459
 #, c-format
 msgid ""
-"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
-" your computer to avoid losing data."
+"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to "
+"your computer to avoid losing data."
 msgstr ""
 "Имате приближно још <b>%s</b> преосталог капацитета резервног напајања "
 "(%.0f%%). Укључите га на ел. мрежу да избегнете губљење податке."
@@ -1484,11 +1454,11 @@ msgstr ""
 #: src/cpm-manager.c:1490
 #, c-format
 msgid ""
-"PDA is very low in power (%.0f%%). This device will soon stop functioning if"
-" not charged."
+"PDA is very low in power (%.0f%%). This device will soon stop functioning if "
+"not charged."
 msgstr ""
-"ПДА уређају су критично ослабиле батерије (%.0f%%). Он ће ускоро престати да"
-" ради ако му не допуните батерије."
+"ПДА уређају су критично ослабиле батерије (%.0f%%). Он ће ускоро престати да "
+"ради ако му не допуните батерије."
 
 #: src/cpm-manager.c:1500
 #, c-format
@@ -1511,8 +1481,8 @@ msgstr ""
 #: src/cpm-manager.c:1519
 #, c-format
 msgid ""
-"Tablet is very low in power (%.0f%%). This device will soon stop functioning"
-" if not charged."
+"Tablet is very low in power (%.0f%%). This device will soon stop functioning "
+"if not charged."
 msgstr ""
 "Табличном рачунару су критично ослабиле батерије (%.0f%%). Он ће ускоро "
 "престати да ради ако му не допуните батерије."
@@ -1528,11 +1498,11 @@ msgstr ""
 
 #: src/cpm-manager.c:1593
 msgid ""
-"The battery is below the critical level and this computer will <b>power-"
-"off</b> when the battery becomes completely empty."
+"The battery is below the critical level and this computer will <b>power-off</"
+"b> when the battery becomes completely empty."
 msgstr ""
-"Стање батерије је испод критичног нивоа и рачунар ће бити <b>угашен</b> када"
-" се она у потпуности истроши."
+"Стање батерије је испод критичног нивоа и рачунар ће бити <b>угашен</b> када "
+"се она у потпуности истроши."
 
 #: src/cpm-manager.c:1599
 msgid ""
@@ -1609,91 +1579,79 @@ msgstr "Не ради ништа"
 msgid "Never"
 msgstr "Никад"
 
-#: src/cpm-statistics.c:78 src/cpm-statistics.c:466
+#: src/cpm-statistics.c:67 src/cpm-statistics.c:410
 msgid "Rate"
 msgstr "Стопа"
 
-#: src/cpm-statistics.c:79
+#: src/cpm-statistics.c:68
 msgid "Charge"
 msgstr "Пуњење"
 
-#: src/cpm-statistics.c:80 src/cpm-statistics.c:480
+#: src/cpm-statistics.c:69 src/cpm-statistics.c:424
 msgid "Time to full"
 msgstr "Време до пуњења"
 
-#: src/cpm-statistics.c:81 src/cpm-statistics.c:485
+#: src/cpm-statistics.c:70 src/cpm-statistics.c:429
 msgid "Time to empty"
 msgstr "Време до пражњења"
 
-#: src/cpm-statistics.c:88
+#: src/cpm-statistics.c:77
 msgid "10 minutes"
 msgstr "10 минута"
 
-#: src/cpm-statistics.c:89
+#: src/cpm-statistics.c:78
 msgid "2 hours"
 msgstr "2 сата"
 
-#: src/cpm-statistics.c:90
+#: src/cpm-statistics.c:79
 msgid "6 hours"
 msgstr "6 сата"
 
-#: src/cpm-statistics.c:91
+#: src/cpm-statistics.c:80
 msgid "1 day"
 msgstr "1 дан"
 
-#: src/cpm-statistics.c:92
+#: src/cpm-statistics.c:81
 msgid "1 week"
 msgstr "1 недеља"
 
-#: src/cpm-statistics.c:101
+#: src/cpm-statistics.c:90
 msgid "Charge profile"
 msgstr "Профил пуњења"
 
-#: src/cpm-statistics.c:102
+#: src/cpm-statistics.c:91
 msgid "Discharge profile"
 msgstr "Профил пражњења"
 
-#: src/cpm-statistics.c:104
+#: src/cpm-statistics.c:93
 msgid "Charge accuracy"
 msgstr "Прецизност пуњења"
 
-#: src/cpm-statistics.c:105
+#: src/cpm-statistics.c:94
 msgid "Discharge accuracy"
 msgstr "Прецизност пражњења"
 
-#: src/cpm-statistics.c:132
+#: src/cpm-statistics.c:121
 msgid "Attribute"
 msgstr "Особина"
 
-#: src/cpm-statistics.c:139
+#: src/cpm-statistics.c:128
 msgid "Value"
 msgstr "Вредност"
 
-#: src/cpm-statistics.c:156
+#: src/cpm-statistics.c:145
 msgid "Image"
 msgstr "Слике"
 
-#: src/cpm-statistics.c:162
+#: src/cpm-statistics.c:151
 msgid "Description"
 msgstr "Опис"
 
-#: src/cpm-statistics.c:181 src/cpm-statistics.c:405
-msgid "Type"
-msgstr "Врста"
-
-#: src/cpm-statistics.c:187
-msgid "ID"
-msgstr "ИБ"
-
-#: src/cpm-statistics.c:201
-msgid "Command"
-msgstr "Наредба"
-
-#: src/cpm-statistics.c:286
+#: src/cpm-statistics.c:230
 msgid "Unknown"
 msgstr "Непознато"
 
-#: src/cpm-statistics.c:290
+#: src/cpm-statistics.c:234
 #, c-format
 msgid "%.0f second"
 msgid_plural "%.0f seconds"
@@ -1701,7 +1659,7 @@ msgstr[0] "%.0f секунда"
 msgstr[1] "%.0f секунде"
 msgstr[2] "%.0f секунди"
 
-#: src/cpm-statistics.c:295
+#: src/cpm-statistics.c:239
 #, c-format
 msgid "%.1f minute"
 msgid_plural "%.1f minutes"
@@ -1709,7 +1667,7 @@ msgstr[0] "%.1f минут"
 msgstr[1] "%.1f минута"
 msgstr[2] "%.1f минута"
 
-#: src/cpm-statistics.c:300
+#: src/cpm-statistics.c:244
 #, c-format
 msgid "%.1f hour"
 msgid_plural "%.1f hours"
@@ -1717,7 +1675,7 @@ msgstr[0] "%.1f сат"
 msgstr[1] "%.1f сата"
 msgstr[2] "%.1f сати"
 
-#: src/cpm-statistics.c:304
+#: src/cpm-statistics.c:248
 #, c-format
 msgid "%.1f day"
 msgid_plural "%.1f days"
@@ -1725,35 +1683,39 @@ msgstr[0] "%.1f дан"
 msgstr[1] "%.1f дана"
 msgstr[2] "%.1f дана"
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "Yes"
 msgstr "Да"
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "No"
 msgstr "Не"
 
-#: src/cpm-statistics.c:402
+#: src/cpm-statistics.c:346
 msgid "Device"
 msgstr "Уређај"
 
-#: src/cpm-statistics.c:407
+#: src/cpm-statistics.c:349
+msgid "Type"
+msgstr "Врста"
+
+#: src/cpm-statistics.c:351
 msgid "Vendor"
 msgstr "Произвођач"
 
-#: src/cpm-statistics.c:409
+#: src/cpm-statistics.c:353
 msgid "Model"
 msgstr "Модел"
 
-#: src/cpm-statistics.c:411
+#: src/cpm-statistics.c:355
 msgid "Serial number"
 msgstr "Серијски број"
 
-#: src/cpm-statistics.c:416
+#: src/cpm-statistics.c:360
 msgid "Supply"
 msgstr "Залихе"
 
-#: src/cpm-statistics.c:419
+#: src/cpm-statistics.c:363
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
@@ -1761,212 +1723,112 @@ msgstr[0] "%d секунда"
 msgstr[1] "%d секунде"
 msgstr[2] "%d секунди"
 
-#: src/cpm-statistics.c:423
+#: src/cpm-statistics.c:367
 msgid "Refreshed"
 msgstr "Освежено пре"
 
-#: src/cpm-statistics.c:433
+#: src/cpm-statistics.c:377
 msgid "Present"
 msgstr "Присутна"
 
-#: src/cpm-statistics.c:440
+#: src/cpm-statistics.c:384
 msgid "Rechargeable"
 msgstr "Допуњива"
 
-#: src/cpm-statistics.c:446
+#: src/cpm-statistics.c:390
 msgid "State"
 msgstr "Савезна покрајина"
 
-#: src/cpm-statistics.c:450
+#: src/cpm-statistics.c:394
 msgid "Energy"
 msgstr "Енергија"
 
-#: src/cpm-statistics.c:453
+#: src/cpm-statistics.c:397
 msgid "Energy when empty"
 msgstr "Енергија празне"
 
-#: src/cpm-statistics.c:456
+#: src/cpm-statistics.c:400
 msgid "Energy when full"
 msgstr "Енергија пуне"
 
-#: src/cpm-statistics.c:459
+#: src/cpm-statistics.c:403
 msgid "Energy (design)"
 msgstr "Енергија (фабричка)"
 
-#: src/cpm-statistics.c:473
+#: src/cpm-statistics.c:417
 msgid "Voltage"
 msgstr "Напон"
 
-#: src/cpm-statistics.c:495
+#: src/cpm-statistics.c:439
 msgid "Percentage"
 msgstr "Проценат"
 
-#: src/cpm-statistics.c:502
+#: src/cpm-statistics.c:446
 msgid "Capacity"
 msgstr "Капацитет"
 
-#: src/cpm-statistics.c:507
+#: src/cpm-statistics.c:451
 msgid "Technology"
 msgstr "Технологија"
 
-#: src/cpm-statistics.c:512
+#: src/cpm-statistics.c:456
 msgid "Online"
 msgstr "Прикључен"
 
-#: src/cpm-statistics.c:824
-msgid "No data"
-msgstr "Нема података"
-
-#: src/cpm-statistics.c:831 src/cpm-statistics.c:836
-msgid "Kernel module"
-msgstr "Модул језгра"
-
-#: src/cpm-statistics.c:841
-msgid "Kernel core"
-msgstr "Језгро"
-
-#: src/cpm-statistics.c:846
-msgid "Interprocessor interrupt"
-msgstr "Међупроцесорско ометање"
-
-#: src/cpm-statistics.c:851
-msgid "Interrupt"
-msgstr "Ометање"
-
-#: src/cpm-statistics.c:898
-msgid "PS/2 keyboard/mouse/touchpad"
-msgstr "ПС/2 тастатура/миш/додирна табла"
-
-#: src/cpm-statistics.c:901
-msgid "ACPI"
-msgstr "АЦПИ"
-
-#: src/cpm-statistics.c:904
-msgid "Serial ATA"
-msgstr "Серијски АТА"
-
-#: src/cpm-statistics.c:907
-msgid "ATA host controller"
-msgstr "АТА контролер"
-
-#: src/cpm-statistics.c:910
-msgid "Intel wireless adaptor"
-msgstr "Интелов бежични адаптер"
-
-#: src/cpm-statistics.c:917 src/cpm-statistics.c:922 src/cpm-statistics.c:927
-#: src/cpm-statistics.c:932 src/cpm-statistics.c:937
-#, c-format
-msgid "Timer %s"
-msgstr "Одбројавач „%s“"
-
-#: src/cpm-statistics.c:941
-#, c-format
-msgid "Sleep %s"
-msgstr "Пробуђен „%s“"
-
-#: src/cpm-statistics.c:944
-#, c-format
-msgid "New task %s"
-msgstr "Нови задатак „%s“"
-
-#: src/cpm-statistics.c:948
-#, c-format
-msgid "Wait %s"
-msgstr "Чека „%s“"
-
-#: src/cpm-statistics.c:952 src/cpm-statistics.c:956
-#, c-format
-msgid "Work queue %s"
-msgstr "Заказани послови „%s“"
-
-#: src/cpm-statistics.c:959
-#, c-format
-msgid "Network route flush %s"
-msgstr "Чишћење мрежне руте „%s“"
-
-#: src/cpm-statistics.c:962
-#, c-format
-msgid "USB activity %s"
-msgstr "УСБ активност „%s“"
-
-#: src/cpm-statistics.c:965
-#, c-format
-msgid "Wakeup %s"
-msgstr "Буђење „%s“"
-
-#: src/cpm-statistics.c:968
-msgid "Local interrupts"
-msgstr "Месна ометања"
-
-#: src/cpm-statistics.c:971
-msgid "Rescheduling interrupts"
-msgstr "Ометања поновног заказивања"
-
-#: src/cpm-statistics.c:1080
+#: src/cpm-statistics.c:756
 msgid "Device Information"
 msgstr "Подаци о уређају"
 
-#: src/cpm-statistics.c:1082
+#: src/cpm-statistics.c:758
 msgid "Device History"
 msgstr "Историјат уређаја"
 
-#: src/cpm-statistics.c:1084
+#: src/cpm-statistics.c:760
 msgid "Device Profile"
 msgstr "Профил уређаја"
 
-#: src/cpm-statistics.c:1086
-msgid "Processor Wakeups"
-msgstr "Буђења процесора"
-
-#: src/cpm-statistics.c:1325 src/cpm-statistics.c:1331
-#: src/cpm-statistics.c:1337 src/cpm-statistics.c:1343
+#: src/cpm-statistics.c:982 src/cpm-statistics.c:988 src/cpm-statistics.c:994
+#: src/cpm-statistics.c:1000
 msgid "Time elapsed"
 msgstr "Протекло време"
 
-#: src/cpm-statistics.c:1327
+#: src/cpm-statistics.c:984
 msgid "Power"
 msgstr "Напајање"
 
-#: src/cpm-statistics.c:1333 src/cpm-statistics.c:1377
-#: src/cpm-statistics.c:1383 src/cpm-statistics.c:1389
-#: src/cpm-statistics.c:1395
+#: src/cpm-statistics.c:990 src/cpm-statistics.c:1034 src/cpm-statistics.c:1040
+#: src/cpm-statistics.c:1046 src/cpm-statistics.c:1052
 msgid "Cell charge"
 msgstr "Напон ћелије"
 
-#: src/cpm-statistics.c:1339 src/cpm-statistics.c:1345
+#: src/cpm-statistics.c:996 src/cpm-statistics.c:1002
 msgid "Predicted time"
 msgstr "Предвиђено време"
 
-#: src/cpm-statistics.c:1379 src/cpm-statistics.c:1391
+#: src/cpm-statistics.c:1036 src/cpm-statistics.c:1048
 msgid "Correction factor"
 msgstr "Чинилац поправке"
 
-#: src/cpm-statistics.c:1385 src/cpm-statistics.c:1397
+#: src/cpm-statistics.c:1042 src/cpm-statistics.c:1054
 msgid "Prediction accuracy"
 msgstr "Тачност предвиђања"
 
-#: src/cpm-statistics.c:1563
+#: src/cpm-statistics.c:1219
 msgid "Select this device at startup"
 msgstr "Изабери овај уређај при покретању"
 
-#: src/cpm-statistics.c:1802
-msgid "Processor"
-msgstr "Процесор"
+#: src/cpm-tray-icon.c:207
+msgid ""
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
+msgstr ""
 
-#: src/cpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 CAFE developers"
-msgstr "Ауторска права © 2011-2018 Програмери Мејта"
-
-#: src/cpm-tray-icon.c:193
-msgid "translator-credits"
-msgstr "Мирослав Николић <miroslavnikolic@rocketmail.com>"
-
-#: src/cpm-tray-icon.c:295
+#: src/cpm-tray-icon.c:318
 #, c-format
 msgid "%s remaining"
 msgstr "преостало време: %s"
 
-#: src/cpm-tray-icon.c:349
+#: src/cpm-tray-icon.c:372
 msgid "_Preferences"
 msgstr "_Поставке"
 
@@ -2242,3 +2104,144 @@ msgstr "Чекам да се испразни"
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr "Непознато стање"
+
+#~ msgid "Licensed under the GNU General Public License Version 2"
+#~ msgstr "Објављено под Гнуовом општом јавном дозволом издања 2"
+
+#~ msgid ""
+#~ "Power Manager is free software; you can redistribute it and/or\n"
+#~ "modify it under the terms of the GNU General Public License\n"
+#~ "as published by the Free Software Foundation; either version 2\n"
+#~ "of the License, or (at your option) any later version."
+#~ msgstr ""
+#~ "Управник напајања је слободан софтвер; можете га расподељивати\n"
+#~ "и/или мењати под условима Гнуове опште јавне лиценце коју\n"
+#~ "је објавила Задужбина слободног софтвера; издања 3 лиценце\n"
+#~ "или (по вашем избору) било којег новијег издања."
+
+#~ msgid ""
+#~ "Power Manager is distributed in the hope that it will be useful,\n"
+#~ "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+#~ "GNU General Public License for more details."
+#~ msgstr ""
+#~ "Управник напајања се расподељује у нади да ће бити користан,\n"
+#~ "али БЕЗ ИКАКВЕ ГАРАНЦИЈЕ; чак и без примењене гаранције\n"
+#~ "ТРЖИШНЕ ВРЕДНОСТИ или ПРИЛАГОЂЕНОСТИ ОДРЕЂЕНОЈ НАМЕНИ.\n"
+#~ "Погледајте Гнуову Општу јавну лиценцу за више детаља."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License\n"
+#~ "along with this program; if not, write to the Free Software\n"
+#~ "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA."
+#~ msgstr ""
+#~ "Требали сте да примите примерак Гнуове Опште јавне лиценце\n"
+#~ "уз овај програм. Ако нисте, пишите Задужбини слободног\n"
+#~ "софтвера на адресу: „Free Software\n"
+#~ "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA“."
+
+#~ msgid "cafe-brightness-applet"
+#~ msgstr "cafe-brightness-applet"
+
+#~ msgid "cafe-inhibit-applet"
+#~ msgstr "cafe-inhibit-applet"
+
+#~ msgid "cafe-power-manager"
+#~ msgstr "cafe-power-manager"
+
+#~ msgid "cafe-power-statistics"
+#~ msgstr "cafe-power-statistics"
+
+#~ msgid "Processor wakeups per second:"
+#~ msgstr "Број буђења процесора у секунди:"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Wakeups"
+#~ msgstr "Буђења"
+
+#~ msgid "ID"
+#~ msgstr "ИБ"
+
+#~ msgid "Command"
+#~ msgstr "Наредба"
+
+#~ msgid "No data"
+#~ msgstr "Нема података"
+
+#~ msgid "Kernel module"
+#~ msgstr "Модул језгра"
+
+#~ msgid "Kernel core"
+#~ msgstr "Језгро"
+
+#~ msgid "Interprocessor interrupt"
+#~ msgstr "Међупроцесорско ометање"
+
+#~ msgid "Interrupt"
+#~ msgstr "Ометање"
+
+#~ msgid "PS/2 keyboard/mouse/touchpad"
+#~ msgstr "ПС/2 тастатура/миш/додирна табла"
+
+#~ msgid "ACPI"
+#~ msgstr "АЦПИ"
+
+#~ msgid "Serial ATA"
+#~ msgstr "Серијски АТА"
+
+#~ msgid "ATA host controller"
+#~ msgstr "АТА контролер"
+
+#~ msgid "Intel wireless adaptor"
+#~ msgstr "Интелов бежични адаптер"
+
+#, c-format
+#~ msgid "Timer %s"
+#~ msgstr "Одбројавач „%s“"
+
+#, c-format
+#~ msgid "Sleep %s"
+#~ msgstr "Пробуђен „%s“"
+
+#, c-format
+#~ msgid "New task %s"
+#~ msgstr "Нови задатак „%s“"
+
+#, c-format
+#~ msgid "Wait %s"
+#~ msgstr "Чека „%s“"
+
+#, c-format
+#~ msgid "Work queue %s"
+#~ msgstr "Заказани послови „%s“"
+
+#, c-format
+#~ msgid "Network route flush %s"
+#~ msgstr "Чишћење мрежне руте „%s“"
+
+#, c-format
+#~ msgid "USB activity %s"
+#~ msgstr "УСБ активност „%s“"
+
+#, c-format
+#~ msgid "Wakeup %s"
+#~ msgstr "Буђење „%s“"
+
+#~ msgid "Local interrupts"
+#~ msgstr "Месна ометања"
+
+#~ msgid "Rescheduling interrupts"
+#~ msgstr "Ометања поновног заказивања"
+
+#~ msgid "Processor Wakeups"
+#~ msgstr "Буђења процесора"
+
+#~ msgid "Processor"
+#~ msgstr "Процесор"
+
+#~ msgid "Copyright © 2011-2018 CAFE developers"
+#~ msgstr "Ауторска права © 2011-2018 Програмери Мејта"

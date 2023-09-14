@@ -2,22 +2,22 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # Siranush <ss.m.95@mail.ru>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-power-manager 1.23.1\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2019-11-12 15:22+0100\n"
+"POT-Creation-Date: 2023-09-14 10:39+0200\n"
 "PO-Revision-Date: 2020-02-15 16:27+0000\n"
 "Last-Translator: Siranush <ss.m.95@mail.ru>, 2020\n"
 "Language-Team: Armenian (https://www.transifex.com/cafe/teams/13566/hy/)\n"
+"Language: hy\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: hy\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: applets/brightness/brightness-applet.c:107
@@ -42,57 +42,55 @@ msgstr "Հնարավոր չէ ստանալ դյուրակիր համակարգչ
 msgid "LCD brightness : %d%%"
 msgstr "LCD պայծառություն : %d%%"
 
+#: applets/brightness/brightness-applet.c:790
+#: applets/inhibit/inhibit-applet.c:287
+msgid ""
+"Power Manager is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:795
+#: applets/inhibit/inhibit-applet.c:292
+msgid ""
+"Power Manager is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+
 #: applets/brightness/brightness-applet.c:800
 #: applets/inhibit/inhibit-applet.c:297
-msgid "Licensed under the GNU General Public License Version 2"
-msgstr "Լիցենզավորված է ԳՆՈՒ Համընդհանուր Հանրային Արտոնագրի Տարբերակ 2֊ի տակ"
-
-#: applets/brightness/brightness-applet.c:801
-#: applets/inhibit/inhibit-applet.c:298
 msgid ""
-"Power Manager is free software; you can redistribute it and/or\n"
-"modify it under the terms of the GNU General Public License\n"
-"as published by the Free Software Foundation; either version 2\n"
-"of the License, or (at your option) any later version."
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"Հզորության Կառավարիչը ազատ ծրագրային ապահովում է, դուք կարող եք վերաբաշխել և/կամ\n"
-" ձևափոխել այն՝ համաձայն GNU Համընդհանուր Հանրային Արտոնագրի պայմանների\n"
-" ինչպես հրապարակվել է Ազատ Ծրագրային Ապահովության Հիմնադրամում\n"
-" կամ տարբերակ 2 լիցենզիայի, կամ (ձեր ընտրությամբ) ցանկացած ավելի ուշ տարբերակը։ "
 
-#: applets/brightness/brightness-applet.c:805
-#: applets/inhibit/inhibit-applet.c:302
+#: applets/brightness/brightness-applet.c:813
+msgid "About Power Manager Brightness Applet"
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:815
 msgid ""
-"Power Manager is distributed in the hope that it will be useful,\n"
-"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-"GNU General Public License for more details."
+"Copyright © 2006 Benjamin Canou\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"Հզորության Կառավարիչը տարածվում է այն հույսով, որ օգտակար կլինի\n"
-" սակայն ԱՌԱՆՑ ՈՐԵՒԷ ԵՐԱՇԽԻՔՆԵՐԻ; բացակայում են նույնիսկ\n"
-"ՎԱՃԱՌՔԻ ՀՆԱՐԱՎՈՐՈՒԹՅՈՒՆՆԵՐԸ, ԲԱՎԱՐԱՐ ՈՐԱԿԸ կամ ՈՐՈՇ ՆՊԱՏԱԿՈՎ ԿԻՐԱՌԵԼԻՈՒԹՅՈՒՆԸ։\n"
-" Մանրամասները տեսեք GNU համընդհանուր հանրային արտոնագրի մեջ։"
 
-#: applets/brightness/brightness-applet.c:809
-#: applets/inhibit/inhibit-applet.c:306
-msgid ""
-"You should have received a copy of the GNU General Public License\n"
-"along with this program; if not, write to the Free Software\n"
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
-msgstr ""
-"Դուք պետք է ընդունեք GNU համընդհանուր հանրային արտոնագրի պատճենը\n"
-" այս ծրագրի հետ համատեղ, եթե ոչ, ապա գրեք Ազատ Ծրագրային Ապահովման Հիմնադրամ,\n"
-" Inc., 51 Franklin փողոց, Հինգերորդ հարկ, Boston, MA\n"
-"02110-1301 USA"
+#: applets/brightness/brightness-applet.c:823
+#: applets/inhibit/inhibit-applet.c:320 src/cpm-tray-icon.c:214
+msgid "translator-credits"
+msgstr "թարգմանչի կրեդիտներ"
 
-#: applets/brightness/brightness-applet.c:1063
-#: applets/inhibit/inhibit-applet.c:519
+#: applets/brightness/brightness-applet.c:1051
+#: applets/inhibit/inhibit-applet.c:507
 msgid "_About"
 msgstr "_Մասին"
 
-#: applets/brightness/brightness-applet.c:1066
-#: applets/inhibit/inhibit-applet.c:522
+#: applets/brightness/brightness-applet.c:1054
+#: applets/inhibit/inhibit-applet.c:510
 msgid "_Help"
 msgstr "_Օգնություն"
 
@@ -103,12 +101,6 @@ msgstr "Պայծառության Ապլետի Գործարան"
 #: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Brightness Applet"
 msgstr "Պայծառության Ապլետը"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-brightness-applet"
-msgstr ""
 
 #: applets/inhibit/inhibit-applet.c:87
 msgid "Power Manager Inhibit Applet"
@@ -130,6 +122,17 @@ msgstr "Ավտոմատ  քունը ակտիվացված է"
 msgid "Manual inhibit"
 msgstr "Մեխանիկական արգելակում"
 
+#: applets/inhibit/inhibit-applet.c:310
+msgid "About Power Manager Inhibit Applet"
+msgstr ""
+
+#: applets/inhibit/inhibit-applet.c:312
+msgid ""
+"Copyright © 2006-2007 Richard Hughes\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
+msgstr ""
+
 #: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Inhibit Applet Factory"
 msgstr "Արգելել Ապլետի Գործարանը"
@@ -138,26 +141,13 @@ msgstr "Արգելել Ապլետի Գործարանը"
 msgid "Inhibit Applet"
 msgstr "Արգելակման Ապլետ"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-inhibit-applet"
-msgstr ""
-
-#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:184
+#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:204
 msgid "Power Manager"
 msgstr "Հզորության Կառավարիչ"
 
-#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:186
+#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:206
 msgid "Power management daemon"
 msgstr "Հզորության կառավարման օժանդակ ծրագիր"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-manager.desktop.in.in:6
-#: data/cafe-power-preferences.desktop.in.in:6
-msgid "cafe-power-manager"
-msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:26
 #: data/org.cafe.power-manager.gschema.xml.in:41
@@ -273,9 +263,9 @@ msgid ""
 "For example, if set to '60', the backlight will be cut by 40% on battery "
 "power. Legal values are between 0 and 100."
 msgstr ""
-"Ստեղնաշարի լուսավորության տոկոսը նվազեցնել, երբ գտնվում է մարտկոցի էներգիայի"
-" վրա։ Օրինակի համար, եթե սահմանված է  '60', ապա լուսավորությունը կկրճատվի "
-"40%֊ով մարտկոցի էներգիայի վրա։ Լեգալ արժեքներն են՝ 0 և 100 միջակայքում։"
+"Ստեղնաշարի լուսավորության տոկոսը նվազեցնել, երբ գտնվում է մարտկոցի էներգիայի "
+"վրա։ Օրինակի համար, եթե սահմանված է  '60', ապա լուսավորությունը կկրճատվի 40%֊"
+"ով մարտկոցի էներգիայի վրա։ Լեգալ արժեքներն են՝ 0 և 100 միջակայքում։"
 
 #: data/org.cafe.power-manager.gschema.xml.in:81
 msgid "Percent to reduce keyboard backlight by when idle."
@@ -284,12 +274,12 @@ msgstr "Ստեղնաշարի լուսավորության տոկոսը նվազ�
 #: data/org.cafe.power-manager.gschema.xml.in:82
 msgid ""
 "The percentage to reduce the keyboard backlight by when idle. For example, "
-"if set to '60', the backlight will be cut by 40% when idle. Legal values are"
-" between 0 and 100."
+"if set to '60', the backlight will be cut by 40% when idle. Legal values are "
+"between 0 and 100."
 msgstr ""
 "Ստեղնաշարի լուսավորության տոկոսը նվազեցնել, երբ գտնվում է պարաօուրդի մեջ։ "
-"Օրինակի համար, եթե սահմանված է  '60', ապա լուսավորությունը կկրճատվի 40%֊ով ,"
-" երբ պարապուրդի մեջ է։ Լեգալ արժեքներն են՝ 0 և 100 միջակայքում։"
+"Օրինակի համար, եթե սահմանված է  '60', ապա լուսավորությունը կկրճատվի 40%֊ով , "
+"երբ պարապուրդի մեջ է։ Լեգալ արժեքներն են՝ 0 և 100 միջակայքում։"
 
 #: data/org.cafe.power-manager.gschema.xml.in:86
 msgid "The brightness of the screen when idle"
@@ -314,8 +304,8 @@ msgid ""
 "If the screen should be dimmed to save power when the computer is idle when "
 "on battery power."
 msgstr ""
-"Էկրանը պետք է լինի աղոտացած էներգիայի պահպանման համար, երբ համակարգիչը պարապ"
-" է գտնվում մարտկոցի էներգիայի վրա։"
+"Էկրանը պետք է լինի աղոտացած էներգիայի պահպանման համար, երբ համակարգիչը պարապ "
+"է գտնվում մարտկոցի էներգիայի վրա։"
 
 #: data/org.cafe.power-manager.gschema.xml.in:96
 msgid "The default amount of time to dim the screen after idle"
@@ -342,16 +332,16 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:106
 msgid "Dim the screen after a period of inactivity when on AC power"
 msgstr ""
-"Էկրանը աղոտանում է անգործության ժամանակահատվածից հետո, երբ գործարկվում է "
-"ՓՀ֊ի վրա"
+"Էկրանը աղոտանում է անգործության ժամանակահատվածից հետո, երբ գործարկվում է ՓՀ֊"
+"ի վրա"
 
 #: data/org.cafe.power-manager.gschema.xml.in:107
 msgid ""
 "If the screen should be dimmed to save power when the computer is idle when "
 "on AC power."
 msgstr ""
-"Էկրանը պետք է լինի աղոտացած էներգիայի պահպանման համար, երբ համակարգիչը պարապ"
-" է գտնվում ՓՀ վրա։"
+"Էկրանը պետք է լինի աղոտացած էներգիայի պահպանման համար, երբ համակարգիչը պարապ "
+"է գտնվում ՓՀ վրա։"
 
 #: data/org.cafe.power-manager.gschema.xml.in:111
 msgid "Method used to blank screen on AC"
@@ -390,8 +380,8 @@ msgstr "Կասեցնել կոճակի գործողություն"
 #: data/org.cafe.power-manager.gschema.xml.in:127
 msgid "The action to take when the system suspend button is pressed."
 msgstr ""
-"Գործողությունը պետք է վերցնել այն ժամանակ, երբ այդ համակարգի կասեցնել կոճակը"
-" սեղմված է։"
+"Գործողությունը պետք է վերցնել այն ժամանակ, երբ այդ համակարգի կասեցնել կոճակը "
+"սեղմված է։"
 
 #: data/org.cafe.power-manager.gschema.xml.in:131
 msgid "Hibernate button action"
@@ -422,8 +412,8 @@ msgid ""
 "The action to take when the laptop lid is closed and the laptop is on "
 "battery power."
 msgstr ""
-"Գործողությունը պետք է վերցնել այն ժամանակ, երբ դյուրակիր համակարգչի կափարիչը"
-" փակված է և դյուրակիր համակարգիչը մարտկոցի հզորության վրա է:"
+"Գործողությունը պետք է վերցնել այն ժամանակ, երբ դյուրակիր համակարգչի կափարիչը "
+"փակված է և դյուրակիր համակարգիչը մարտկոցի հզորության վրա է:"
 
 #: data/org.cafe.power-manager.gschema.xml.in:146
 msgid "Laptop lid close action when on AC"
@@ -434,8 +424,8 @@ msgid ""
 "The action to take when the laptop lid is closed and the laptop is on AC "
 "power."
 msgstr ""
-"Գործողությունը պետք է վերցնել այն ժամանակ, երբ դյուրակիր համակարգչի կափարիչը"
-" փակված է և դյուրակիր համակարգիչը ՓՀ֊ի վրա է:"
+"Գործողությունը պետք է վերցնել այն ժամանակ, երբ դյուրակիր համակարգչի կափարիչը "
+"փակված է և դյուրակիր համակարգիչը ՓՀ֊ի վրա է:"
 
 #: data/org.cafe.power-manager.gschema.xml.in:151
 msgid "Whether to use time-based notifications"
@@ -447,8 +437,8 @@ msgid ""
 "percentage change is used instead, which may fix a broken ACPI BIOS."
 msgstr ""
 "Եթե ժամանակի վրա հիմնված ծանուցումները պետք է օգտագործված լինեն։ Եթե "
-"սահմանված է կեղծ է, ապա տոկոսային փոփոխությունը օգտագործված է, այլ ոչ թե որը"
-" կարող ուղղել կոտրված ACPI BIOS։"
+"սահմանված է կեղծ է, ապա տոկոսային փոփոխությունը օգտագործված է, այլ ոչ թե որը "
+"կարող ուղղել կոտրված ACPI BIOS։"
 
 #: data/org.cafe.power-manager.gschema.xml.in:156
 msgid "Check CPU load before sleeping"
@@ -469,8 +459,8 @@ msgid ""
 "Whether NetworkManager should disconnect before suspending or hibernating "
 "and connect on resume."
 msgstr ""
-"Արդյոք Ցանցային Կառավարիչը պետք է անջատել նախքան կասեցումը կամ կանգնեցումը և"
-" միացնել վերսկսման վրա։"
+"Արդյոք Ցանցային Կառավարիչը պետք է անջատել նախքան կասեցումը կամ կանգնեցումը և "
+"միացնել վերսկսման վրա։"
 
 #: data/org.cafe.power-manager.gschema.xml.in:166
 msgid "Use cafe-screensaver lock setting"
@@ -503,8 +493,8 @@ msgstr "Արգելափակել էկրանը կասեցնելու վրա"
 
 #: data/org.cafe.power-manager.gschema.xml.in:177
 msgid ""
-"Whether the screen is locked when the computer wakes up from a suspend. Only"
-" used if lock-use-screensaver is false."
+"Whether the screen is locked when the computer wakes up from a suspend. Only "
+"used if lock-use-screensaver is false."
 msgstr ""
 "Արդյոք արգելափակել էկրանը, երբ համարակգիչը արթնանում է կասեցված վիճակից։ "
 "Միայն օգտագործվում է, եթե lock-use-screensaver սխալ է։"
@@ -528,8 +518,8 @@ msgstr "Արգելափակել GNOME keyring քնից"
 
 #: data/org.cafe.power-manager.gschema.xml.in:187
 msgid ""
-"Whether the GNOME keyring is locked before the computer enters suspend. This"
-" means the keyring will have to be unlocked on resume."
+"Whether the GNOME keyring is locked before the computer enters suspend. This "
+"means the keyring will have to be unlocked on resume."
 msgstr ""
 "Արդյոք GNOME keyring արգելափակված է, մինչ համակարգիչը մուտքագրում է "
 "կասեցումը։ Սա նշանակում է, որ keyring պետք է ապաարգելափակվի վերսկսումից։"
@@ -545,14 +535,14 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:196
 msgid "If we should show the low capacity warning for a broken battery"
 msgstr ""
-"Եթե մենք պետք է ցույց տանք, ցածր հզորության նախազգուշացումը կոտրված մարտկոցի"
-" համար"
+"Եթե մենք պետք է ցույց տանք, ցածր հզորության նախազգուշացումը կոտրված մարտկոցի "
+"համար"
 
 #: data/org.cafe.power-manager.gschema.xml.in:197
 msgid "If we should show the low capacity warning for a broken battery."
 msgstr ""
-"Եթե մենք պետք է ցույց տանք, ցածր հզորության նախազգուշացումը կոտրված մարտկոցի"
-" համար։"
+"Եթե մենք պետք է ցույց տանք, ցածր հզորության նախազգուշացումը կոտրված մարտկոցի "
+"համար։"
 
 #: data/org.cafe.power-manager.gschema.xml.in:201
 msgid "Notify when AC adapter is disconnected"
@@ -659,8 +649,8 @@ msgstr "Արդյոք մենք պետք է ցույց տանք վիճակագրո
 #: data/org.cafe.power-manager.gschema.xml.in:252
 msgid "Whether we should show the stats data points in the statistics window."
 msgstr ""
-"Արդյոք մենք պետք է ցույց տանք վիճակագրության տվյալների կետերը վիճակագրության"
-" պատուհանի մեջ"
+"Արդյոք մենք պետք է ցույց տանք վիճակագրության տվյալների կետերը վիճակագրության "
+"պատուհանի մեջ"
 
 #: data/org.cafe.power-manager.gschema.xml.in:256
 msgid "Whether we should smooth the stats data"
@@ -699,8 +689,8 @@ msgid ""
 "The identifier of the last device which is used to return focus to the "
 "correct device."
 msgstr ""
-"Վերջին սարքի նույնականացումը, որը օգտագործվում է կենտրոնացումը վերադարձնելու"
-" համար ճիշտ էջում:"
+"Վերջին սարքի նույնականացումը, որը օգտագործվում է կենտրոնացումը վերադարձնելու "
+"համար ճիշտ էջում:"
 
 #: data/org.cafe.power-manager.gschema.xml.in:276
 msgid "Percentage considered low"
@@ -708,11 +698,11 @@ msgstr "Ցածր քննարկված տոկոսային հարաբերությո�
 
 #: data/org.cafe.power-manager.gschema.xml.in:277
 msgid ""
-"The percentage of the battery when it is considered low. Only valid when "
-"use-time-for-policy is false."
+"The percentage of the battery when it is considered low. Only valid when use-"
+"time-for-policy is false."
 msgstr ""
-"Մարտկոցի տոկոսայնի հարաբերությունը, երբ այն համարվում է ցածր: Միայն այն ուժի"
-" մեջ է, երբ use-time-for-policy սխալ է։"
+"Մարտկոցի տոկոսայնի հարաբերությունը, երբ այն համարվում է ցածր: Միայն այն ուժի "
+"մեջ է, երբ use-time-for-policy սխալ է։"
 
 #: data/org.cafe.power-manager.gschema.xml.in:281
 msgid "Percentage considered critical"
@@ -744,8 +734,8 @@ msgstr "Մնացած ժամանակը, երբ ցածր է"
 
 #: data/org.cafe.power-manager.gschema.xml.in:292
 msgid ""
-"The time remaining in seconds of the battery when it is considered low. Only"
-" valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered low. Only "
+"valid when use-time-for-policy is true."
 msgstr ""
 " Մարտկոցի մնացած ժամանակը վարկյաններով, երբ այն համարվում է ցածր։ Միայն այն "
 "ուժի մեջ է, երբ use-time-for-policy սխալ է։"
@@ -756,11 +746,11 @@ msgstr "Մնացած ժամանակը, երբ կրիտիկական է"
 
 #: data/org.cafe.power-manager.gschema.xml.in:297
 msgid ""
-"The time remaining in seconds of the battery when it is considered critical."
-" Only valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered critical. "
+"Only valid when use-time-for-policy is true."
 msgstr ""
-"Մարտկոցի մնացած ժամանակը վարկյաններով, երբ այն համարվում է կրիտիկական։ Միայն"
-" այն ուժի մեջ է, երբ use-time-for-policy ճիշտ է։"
+"Մարտկոցի մնացած ժամանակը վարկյաններով, երբ այն համարվում է կրիտիկական։ Միայն "
+"այն ուժի մեջ է, երբ use-time-for-policy ճիշտ է։"
 
 #: data/org.cafe.power-manager.gschema.xml.in:301
 msgid "The time remaining when action is taken"
@@ -771,8 +761,8 @@ msgid ""
 "The time remaining in seconds of the battery when critical action is taken. "
 "Only valid when use-time-for-policy is true."
 msgstr ""
-"Մարտկոցի մնացած ժամանակը վարկյաններով, երբ կրիտիկական գործողությունը վերցված"
-" է։ Միայն այն ուժի մեջ է, երբ use-time-for-policy ճիշտ է։"
+"Մարտկոցի մնացած ժամանակը վարկյաններով, երբ կրիտիկական գործողությունը վերցված "
+"է։ Միայն այն ուժի մեջ է, երբ use-time-for-policy ճիշտ է։"
 
 #: data/org.cafe.power-manager.gschema.xml.in:306
 msgid "Sleep timeout computer when on battery"
@@ -804,8 +794,8 @@ msgstr "Քնելու ժամանակի սպառումը համակարգիչը, �
 
 #: data/org.cafe.power-manager.gschema.xml.in:317
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before it goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before it goes to sleep."
 msgstr ""
 "Գումար ժամանակը վայրկյաններով, երբ համակարգիչը պետք է լինի UPS վրա պասիվ, "
 "նախքան այն գնում է քուն:"
@@ -840,8 +830,8 @@ msgstr "Քնելու ժամանակի ցուցադրումը, երբ UPS վրա 
 
 #: data/org.cafe.power-manager.gschema.xml.in:332
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before the display goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before the display goes to sleep."
 msgstr ""
 "Այն գումարային ժամանակը վարկյաններով, որ համակարգչի UPS հզորության վրա "
 "հարկավոր է լինի պասիվ, մինչ ցուցադրումը գնում է քնելու։"
@@ -859,8 +849,7 @@ msgstr ""
 "արգելակման հարցումները դադարեցնում են քաղաքականության գործողությունը։"
 
 #: data/org.cafe.power-manager.gschema.xml.in:341
-msgid ""
-"If preferences and statistics items should be shown in the context menu"
+msgid "If preferences and statistics items should be shown in the context menu"
 msgstr ""
 "Նախապատվությունների և վիճակագրությունների տարրերը պետք է ցույց տալ "
 "համատեքստի մենյուի մեջ"
@@ -881,14 +870,13 @@ msgstr "Էներգիայի կառավարում"
 msgid "Configure power management"
 msgstr "Կարգավորել էներգիայի կառավարումը"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
 msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
-#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:7
-#: src/cpm-statistics.c:1090 src/cpm-statistics.c:1577
+#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:8
+#: src/cpm-statistics.c:764 src/cpm-statistics.c:1233
 msgid "Power Statistics"
 msgstr "Սնուցման Վիճակագրություն"
 
@@ -896,55 +884,37 @@ msgstr "Սնուցման Վիճակագրություն"
 msgid "Observe power management"
 msgstr "Դիտարկել էներգիայի կառավարումը"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-statistics.desktop.in.in:6
-msgid "cafe-power-statistics"
-msgstr ""
-
-#: data/cpm-statistics.ui:113 src/cpm-statistics.c:208
+#: data/cpm-statistics.ui:119
 msgid "Details"
 msgstr "Մանրամասներ"
 
-#: data/cpm-statistics.ui:139 data/cpm-statistics.ui:342
+#: data/cpm-statistics.ui:145 data/cpm-statistics.ui:347
 msgid "Graph type:"
 msgstr "Գրաֆիկի չափը։"
 
-#: data/cpm-statistics.ui:174
+#: data/cpm-statistics.ui:180
 msgid "Data length:"
 msgstr "Տվյալների երկարությունը:"
 
-#: data/cpm-statistics.ui:234 data/cpm-statistics.ui:395
+#: data/cpm-statistics.ui:239 data/cpm-statistics.ui:399
 msgid "There is no data to display."
 msgstr "Ցուցադրման տվյալներ չկան։"
 
-#: data/cpm-statistics.ui:276 data/cpm-statistics.ui:438
+#: data/cpm-statistics.ui:281 data/cpm-statistics.ui:442
 msgid "Use smoothed line"
 msgstr "Օգտագորել հարթոցված գիծը"
 
-#: data/cpm-statistics.ui:291 data/cpm-statistics.ui:453
+#: data/cpm-statistics.ui:296 data/cpm-statistics.ui:457
 msgid "Show data points"
 msgstr "Ցույց տուր տվյալների կետերը"
 
-#: data/cpm-statistics.ui:320
+#: data/cpm-statistics.ui:325
 msgid "History"
 msgstr "Պատմություն"
 
-#: data/cpm-statistics.ui:482
+#: data/cpm-statistics.ui:486
 msgid "Statistics"
 msgstr "Վիճակագրություն"
-
-#: data/cpm-statistics.ui:504
-msgid "Processor wakeups per second:"
-msgstr "Պրոցեսորն արթնանում է վայրկյանում․"
-
-#: data/cpm-statistics.ui:516
-msgid "0"
-msgstr "0"
-
-#: data/cpm-statistics.ui:563 src/cpm-statistics.c:194
-msgid "Wakeups"
-msgstr "Արթնանալ"
 
 #: data/cpm-prefs.ui:55
 msgid "Power Management Preferences"
@@ -1200,7 +1170,7 @@ msgstr "%.1fW"
 msgid "%.1fV"
 msgstr "%.1fV"
 
-#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1560
+#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1216
 msgid "Show extra debugging information"
 msgstr "Ցույց տալ լրացուցիչ կարգաբերման տեղեկատվություն"
 
@@ -1307,8 +1277,8 @@ msgstr "Մարտկոցը կարող է կոտրվել"
 #: src/cpm-manager.c:1110
 #, c-format
 msgid ""
-"Battery has a very low capacity (%1.1f%%), which means that it may be old or"
-" broken."
+"Battery has a very low capacity (%1.1f%%), which means that it may be old or "
+"broken."
 msgstr ""
 "Մարտկոցը ունի շատ ցածր հզորություն (%1.1f%%), ինչը նշանակում է, որ դա կարող "
 "է լինել հին կամ կոտրված։"
@@ -1458,8 +1428,8 @@ msgstr "Չըդհատվող լարման աղբյուրը կրիտիկական ց
 #: src/cpm-manager.c:1459
 #, c-format
 msgid ""
-"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
-" your computer to avoid losing data."
+"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to "
+"your computer to avoid losing data."
 msgstr ""
 "Մոտավորապես մնում է <b>%s</b> UPS֊ի հզորություն (%.0f%%)։ Վերականգնիր AC "
 "հզորությունը տվյալները կորցնելուց խուսափելու համար։"
@@ -1485,8 +1455,8 @@ msgstr ""
 #: src/cpm-manager.c:1490
 #, c-format
 msgid ""
-"PDA is very low in power (%.0f%%). This device will soon stop functioning if"
-" not charged."
+"PDA is very low in power (%.0f%%). This device will soon stop functioning if "
+"not charged."
 msgstr ""
 "PDA  հզորությունը շատ ցածր է (%.0f%%)։ Սարքը շուտով կդադարի գործել, եթե "
 "չլիցքավորվի:"
@@ -1512,8 +1482,8 @@ msgstr ""
 #: src/cpm-manager.c:1519
 #, c-format
 msgid ""
-"Tablet is very low in power (%.0f%%). This device will soon stop functioning"
-" if not charged."
+"Tablet is very low in power (%.0f%%). This device will soon stop functioning "
+"if not charged."
 msgstr ""
 "Պլանշետի հզորությունը շատ ցածր է (%.0f%%)։ Սարքը շուտով կդադարի գործել, եթե "
 "չլիցքավորվի:"
@@ -1524,13 +1494,13 @@ msgid ""
 "Attached computer is very low in power (%.0f%%). The device will soon "
 "shutdown if not charged."
 msgstr ""
-"Կցված համակարգչի հզորությունը շատ ցածր է (%.0f%%)։Սարքը շուտով կանջատվի, եթե"
-" չլիցքավորվի:"
+"Կցված համակարգչի հզորությունը շատ ցածր է (%.0f%%)։Սարքը շուտով կանջատվի, եթե "
+"չլիցքավորվի:"
 
 #: src/cpm-manager.c:1593
 msgid ""
-"The battery is below the critical level and this computer will <b>power-"
-"off</b> when the battery becomes completely empty."
+"The battery is below the critical level and this computer will <b>power-off</"
+"b> when the battery becomes completely empty."
 msgstr ""
 "Մարտկոցը կրիտիրկական մակարդակից ցածր է և այս համակարգիչը պետք է <b>power-"
 "off</b>, երբ մարտկոցը կդառնա ամբողջովին դատարկ։"
@@ -1542,8 +1512,8 @@ msgid ""
 "computer in a suspended state."
 msgstr ""
 "Մարտկոցը կրիտիրկական մակարդակից ցածր է և այս համակարգիչը պատրաստվում է "
-"կասեցվել։ <br><b>NOTE:</b> Մի փոքր քանակությամբ հզորություն է պահանջվում Ձեր"
-" համակարգիչը դադարեցված վիճակում պահելու համար։"
+"կասեցվել։ <br><b>NOTE:</b> Մի փոքր քանակությամբ հզորություն է պահանջվում Ձեր "
+"համակարգիչը դադարեցված վիճակում պահելու համար։"
 
 #: src/cpm-manager.c:1606
 msgid ""
@@ -1566,8 +1536,8 @@ msgid ""
 "The UPS is below the critical level and this computer will <b>power-off</b> "
 "when the UPS becomes completely empty."
 msgstr ""
-"UPS֊ի մակարդակը կրիտիկականից ցածր է և այս համակարգիչը պետք է <b>power-"
-"off</b>, երբ UPS֊ը դառնում է ամբողջովին դատարկ։"
+"UPS֊ի մակարդակը կրիտիկականից ցածր է և այս համակարգիչը պետք է <b>power-off</"
+"b>, երբ UPS֊ը դառնում է ամբողջովին դատարկ։"
 
 #: src/cpm-manager.c:1635
 msgid ""
@@ -1579,8 +1549,7 @@ msgstr ""
 msgid ""
 "The UPS is below the critical level and this computer is about to shutdown."
 msgstr ""
-"UPS֊ի մակարդակը կրիտիկականից ցածր է և այս համակարգիչը պատրաստվում է "
-"անջատվել։"
+"UPS֊ի մակարդակը կրիտիկականից ցածր է և այս համակարգիչը պատրաստվում է անջատվել։"
 
 #: src/cpm-prefs.c:81
 msgid "CAFE Power Preferences"
@@ -1614,359 +1583,251 @@ msgstr "Ոչինչ չանել"
 msgid "Never"
 msgstr "Երբեք"
 
-#: src/cpm-statistics.c:78 src/cpm-statistics.c:466
+#: src/cpm-statistics.c:67 src/cpm-statistics.c:410
 msgid "Rate"
 msgstr "Գնահատեք"
 
-#: src/cpm-statistics.c:79
+#: src/cpm-statistics.c:68
 msgid "Charge"
 msgstr "Լիցքավորել"
 
-#: src/cpm-statistics.c:80 src/cpm-statistics.c:480
+#: src/cpm-statistics.c:69 src/cpm-statistics.c:424
 msgid "Time to full"
 msgstr "Լցնելու ժամանակ"
 
-#: src/cpm-statistics.c:81 src/cpm-statistics.c:485
+#: src/cpm-statistics.c:70 src/cpm-statistics.c:429
 msgid "Time to empty"
 msgstr "Դատարկելու ժամանակ"
 
-#: src/cpm-statistics.c:88
+#: src/cpm-statistics.c:77
 msgid "10 minutes"
 msgstr "10 րեպեներ"
 
-#: src/cpm-statistics.c:89
+#: src/cpm-statistics.c:78
 msgid "2 hours"
 msgstr "2 ժամ"
 
-#: src/cpm-statistics.c:90
+#: src/cpm-statistics.c:79
 msgid "6 hours"
 msgstr "6 ժամ"
 
-#: src/cpm-statistics.c:91
+#: src/cpm-statistics.c:80
 msgid "1 day"
 msgstr "1 օր"
 
-#: src/cpm-statistics.c:92
+#: src/cpm-statistics.c:81
 msgid "1 week"
 msgstr "1 շաբաթ"
 
-#: src/cpm-statistics.c:101
+#: src/cpm-statistics.c:90
 msgid "Charge profile"
 msgstr "Լիցքավորել պրոֆիլ"
 
-#: src/cpm-statistics.c:102
+#: src/cpm-statistics.c:91
 msgid "Discharge profile"
 msgstr "Լիցքաթափել պրոֆիլ"
 
-#: src/cpm-statistics.c:104
+#: src/cpm-statistics.c:93
 msgid "Charge accuracy"
 msgstr "Լիցքավորման ճշտություն"
 
-#: src/cpm-statistics.c:105
+#: src/cpm-statistics.c:94
 msgid "Discharge accuracy"
 msgstr "Լիցքաթափման ճշտություն"
 
-#: src/cpm-statistics.c:132
+#: src/cpm-statistics.c:121
 msgid "Attribute"
 msgstr "Ատրիբուտ"
 
-#: src/cpm-statistics.c:139
+#: src/cpm-statistics.c:128
 msgid "Value"
 msgstr "Արժեք"
 
-#: src/cpm-statistics.c:156
+#: src/cpm-statistics.c:145
 msgid "Image"
 msgstr "Պատկեր"
 
-#: src/cpm-statistics.c:162
+#: src/cpm-statistics.c:151
 msgid "Description"
 msgstr "Նկարագրություն"
 
-#: src/cpm-statistics.c:181 src/cpm-statistics.c:405
-msgid "Type"
-msgstr "Տիպ"
-
-#: src/cpm-statistics.c:187
-msgid "ID"
-msgstr "ID"
-
-#: src/cpm-statistics.c:201
-msgid "Command"
-msgstr "Հրահանգ"
-
-#: src/cpm-statistics.c:286
+#: src/cpm-statistics.c:230
 msgid "Unknown"
 msgstr "Անհայտ"
 
-#: src/cpm-statistics.c:290
+#: src/cpm-statistics.c:234
 #, c-format
 msgid "%.0f second"
 msgid_plural "%.0f seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:295
+#: src/cpm-statistics.c:239
 #, c-format
 msgid "%.1f minute"
 msgid_plural "%.1f minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:300
+#: src/cpm-statistics.c:244
 #, c-format
 msgid "%.1f hour"
 msgid_plural "%.1f hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:304
+#: src/cpm-statistics.c:248
 #, c-format
 msgid "%.1f day"
 msgid_plural "%.1f days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "Yes"
 msgstr "Այո"
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "No"
 msgstr "Ոչ"
 
-#: src/cpm-statistics.c:402
+#: src/cpm-statistics.c:346
 msgid "Device"
 msgstr "Սարք"
 
-#: src/cpm-statistics.c:407
+#: src/cpm-statistics.c:349
+msgid "Type"
+msgstr "Տիպ"
+
+#: src/cpm-statistics.c:351
 msgid "Vendor"
 msgstr "Վաճառող"
 
-#: src/cpm-statistics.c:409
+#: src/cpm-statistics.c:353
 msgid "Model"
 msgstr "Մոդել"
 
-#: src/cpm-statistics.c:411
+#: src/cpm-statistics.c:355
 msgid "Serial number"
 msgstr "Սերիական համար"
 
-#: src/cpm-statistics.c:416
+#: src/cpm-statistics.c:360
 msgid "Supply"
 msgstr "Մատակարարում"
 
-#: src/cpm-statistics.c:419
+#: src/cpm-statistics.c:363
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:423
+#: src/cpm-statistics.c:367
 msgid "Refreshed"
 msgstr "Թարմացած"
 
-#: src/cpm-statistics.c:433
+#: src/cpm-statistics.c:377
 msgid "Present"
 msgstr "Ներկա"
 
-#: src/cpm-statistics.c:440
+#: src/cpm-statistics.c:384
 msgid "Rechargeable"
 msgstr "Վերալիցքավորվող"
 
-#: src/cpm-statistics.c:446
+#: src/cpm-statistics.c:390
 msgid "State"
 msgstr "Վիճակ"
 
-#: src/cpm-statistics.c:450
+#: src/cpm-statistics.c:394
 msgid "Energy"
 msgstr "էներգիա"
 
-#: src/cpm-statistics.c:453
+#: src/cpm-statistics.c:397
 msgid "Energy when empty"
 msgstr "Երբ էներգիան դատարկ է"
 
-#: src/cpm-statistics.c:456
+#: src/cpm-statistics.c:400
 msgid "Energy when full"
 msgstr "Երբ էներգիան ամբողջական է"
 
-#: src/cpm-statistics.c:459
+#: src/cpm-statistics.c:403
 msgid "Energy (design)"
 msgstr "Էներգիա (դիզայն)"
 
-#: src/cpm-statistics.c:473
+#: src/cpm-statistics.c:417
 msgid "Voltage"
 msgstr "Լարում"
 
-#: src/cpm-statistics.c:495
+#: src/cpm-statistics.c:439
 msgid "Percentage"
 msgstr "Տոկոսային"
 
-#: src/cpm-statistics.c:502
+#: src/cpm-statistics.c:446
 msgid "Capacity"
 msgstr "Տարողությունը"
 
-#: src/cpm-statistics.c:507
+#: src/cpm-statistics.c:451
 msgid "Technology"
 msgstr "Տեխնոլոգիա"
 
-#: src/cpm-statistics.c:512
+#: src/cpm-statistics.c:456
 msgid "Online"
 msgstr "Առցանց"
 
-#: src/cpm-statistics.c:824
-msgid "No data"
-msgstr "Ոչ մի տվյալ"
-
-#: src/cpm-statistics.c:831 src/cpm-statistics.c:836
-msgid "Kernel module"
-msgstr "Միջուկի մոդուլ"
-
-#: src/cpm-statistics.c:841
-msgid "Kernel core"
-msgstr "Միջուկի էությունը"
-
-#: src/cpm-statistics.c:846
-msgid "Interprocessor interrupt"
-msgstr "Ինտերպրոցեսորի ընդհատում"
-
-#: src/cpm-statistics.c:851
-msgid "Interrupt"
-msgstr "Ընդհատել"
-
-#: src/cpm-statistics.c:898
-msgid "PS/2 keyboard/mouse/touchpad"
-msgstr " PS/2 ստեղնաշար/մկնիկ/դյուրակիր համակագիչ"
-
-#: src/cpm-statistics.c:901
-msgid "ACPI"
-msgstr "ACPI"
-
-#: src/cpm-statistics.c:904
-msgid "Serial ATA"
-msgstr "Սերիական ԱՏԱ"
-
-#: src/cpm-statistics.c:907
-msgid "ATA host controller"
-msgstr "ATA հյուրընկալող վերահսկիչ"
-
-#: src/cpm-statistics.c:910
-msgid "Intel wireless adaptor"
-msgstr "Ինտել անլար ադապտեր"
-
-#: src/cpm-statistics.c:917 src/cpm-statistics.c:922 src/cpm-statistics.c:927
-#: src/cpm-statistics.c:932 src/cpm-statistics.c:937
-#, c-format
-msgid "Timer %s"
-msgstr "Ժամանակաչափ %s"
-
-#: src/cpm-statistics.c:941
-#, c-format
-msgid "Sleep %s"
-msgstr "Քնել %s"
-
-#: src/cpm-statistics.c:944
-#, c-format
-msgid "New task %s"
-msgstr "Նոր խնդիրն %s"
-
-#: src/cpm-statistics.c:948
-#, c-format
-msgid "Wait %s"
-msgstr "Ապասել %s"
-
-#: src/cpm-statistics.c:952 src/cpm-statistics.c:956
-#, c-format
-msgid "Work queue %s"
-msgstr "Աշխատանքային հերթ %s"
-
-#: src/cpm-statistics.c:959
-#, c-format
-msgid "Network route flush %s"
-msgstr "Ցանցի երթուղին լցվել է %s"
-
-#: src/cpm-statistics.c:962
-#, c-format
-msgid "USB activity %s"
-msgstr " USB֊ի ակտիվություն %s"
-
-#: src/cpm-statistics.c:965
-#, c-format
-msgid "Wakeup %s"
-msgstr "Արթնանալ %s"
-
-#: src/cpm-statistics.c:968
-msgid "Local interrupts"
-msgstr "Տեղային ընդհատում"
-
-#: src/cpm-statistics.c:971
-msgid "Rescheduling interrupts"
-msgstr "Rescheduling ընդհատում"
-
-#: src/cpm-statistics.c:1080
+#: src/cpm-statistics.c:756
 msgid "Device Information"
 msgstr "Սարքի Տեղեկատվություն"
 
-#: src/cpm-statistics.c:1082
+#: src/cpm-statistics.c:758
 msgid "Device History"
 msgstr "Սարքի Պատմություն"
 
-#: src/cpm-statistics.c:1084
+#: src/cpm-statistics.c:760
 msgid "Device Profile"
 msgstr "Սարքի Պրոֆիլ"
 
-#: src/cpm-statistics.c:1086
-msgid "Processor Wakeups"
-msgstr "Պրոցեսորի Wakeups"
-
-#: src/cpm-statistics.c:1325 src/cpm-statistics.c:1331
-#: src/cpm-statistics.c:1337 src/cpm-statistics.c:1343
+#: src/cpm-statistics.c:982 src/cpm-statistics.c:988 src/cpm-statistics.c:994
+#: src/cpm-statistics.c:1000
 msgid "Time elapsed"
 msgstr "Անցած ժամանակ"
 
-#: src/cpm-statistics.c:1327
+#: src/cpm-statistics.c:984
 msgid "Power"
 msgstr "Աստիճան"
 
-#: src/cpm-statistics.c:1333 src/cpm-statistics.c:1377
-#: src/cpm-statistics.c:1383 src/cpm-statistics.c:1389
-#: src/cpm-statistics.c:1395
+#: src/cpm-statistics.c:990 src/cpm-statistics.c:1034 src/cpm-statistics.c:1040
+#: src/cpm-statistics.c:1046 src/cpm-statistics.c:1052
 msgid "Cell charge"
 msgstr "Բջջային լիցքավորում"
 
-#: src/cpm-statistics.c:1339 src/cpm-statistics.c:1345
+#: src/cpm-statistics.c:996 src/cpm-statistics.c:1002
 msgid "Predicted time"
 msgstr "Կանխատեսված ժամանակ"
 
-#: src/cpm-statistics.c:1379 src/cpm-statistics.c:1391
+#: src/cpm-statistics.c:1036 src/cpm-statistics.c:1048
 msgid "Correction factor"
 msgstr "Ուղղման գործոնը"
 
-#: src/cpm-statistics.c:1385 src/cpm-statistics.c:1397
+#: src/cpm-statistics.c:1042 src/cpm-statistics.c:1054
 msgid "Prediction accuracy"
 msgstr "Ճշտության Կանխատեսում"
 
-#: src/cpm-statistics.c:1563
+#: src/cpm-statistics.c:1219
 msgid "Select this device at startup"
 msgstr "Ընտրիր այս սարքի մեկնարկի ժամանակը"
 
-#: src/cpm-statistics.c:1802
-msgid "Processor"
-msgstr "Պրոցեսոր"
-
-#: src/cpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 CAFE developers"
+#: src/cpm-tray-icon.c:207
+msgid ""
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
 
-#: src/cpm-tray-icon.c:193
-msgid "translator-credits"
-msgstr "թարգմանչի կրեդիտներ"
-
-#: src/cpm-tray-icon.c:295
+#: src/cpm-tray-icon.c:318
 #, c-format
 msgid "%s remaining"
 msgstr ""
 
-#: src/cpm-tray-icon.c:349
+#: src/cpm-tray-icon.c:372
 msgid "_Preferences"
 msgstr "_Նախընտրանքներ"
 
@@ -2231,3 +2092,133 @@ msgstr "Լիցքաթափման սպասում"
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr "Անհայտ վիճակ"
+
+#~ msgid "Licensed under the GNU General Public License Version 2"
+#~ msgstr ""
+#~ "Լիցենզավորված է ԳՆՈՒ Համընդհանուր Հանրային Արտոնագրի Տարբերակ 2֊ի տակ"
+
+#~ msgid ""
+#~ "Power Manager is free software; you can redistribute it and/or\n"
+#~ "modify it under the terms of the GNU General Public License\n"
+#~ "as published by the Free Software Foundation; either version 2\n"
+#~ "of the License, or (at your option) any later version."
+#~ msgstr ""
+#~ "Հզորության Կառավարիչը ազատ ծրագրային ապահովում է, դուք կարող եք "
+#~ "վերաբաշխել և/կամ\n"
+#~ " ձևափոխել այն՝ համաձայն GNU Համընդհանուր Հանրային Արտոնագրի պայմանների\n"
+#~ " ինչպես հրապարակվել է Ազատ Ծրագրային Ապահովության Հիմնադրամում\n"
+#~ " կամ տարբերակ 2 լիցենզիայի, կամ (ձեր ընտրությամբ) ցանկացած ավելի ուշ "
+#~ "տարբերակը։ "
+
+#~ msgid ""
+#~ "Power Manager is distributed in the hope that it will be useful,\n"
+#~ "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+#~ "GNU General Public License for more details."
+#~ msgstr ""
+#~ "Հզորության Կառավարիչը տարածվում է այն հույսով, որ օգտակար կլինի\n"
+#~ " սակայն ԱՌԱՆՑ ՈՐԵՒԷ ԵՐԱՇԽԻՔՆԵՐԻ; բացակայում են նույնիսկ\n"
+#~ "ՎԱՃԱՌՔԻ ՀՆԱՐԱՎՈՐՈՒԹՅՈՒՆՆԵՐԸ, ԲԱՎԱՐԱՐ ՈՐԱԿԸ կամ ՈՐՈՇ ՆՊԱՏԱԿՈՎ "
+#~ "ԿԻՐԱՌԵԼԻՈՒԹՅՈՒՆԸ։\n"
+#~ " Մանրամասները տեսեք GNU համընդհանուր հանրային արտոնագրի մեջ։"
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License\n"
+#~ "along with this program; if not, write to the Free Software\n"
+#~ "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA."
+#~ msgstr ""
+#~ "Դուք պետք է ընդունեք GNU համընդհանուր հանրային արտոնագրի պատճենը\n"
+#~ " այս ծրագրի հետ համատեղ, եթե ոչ, ապա գրեք Ազատ Ծրագրային Ապահովման "
+#~ "Հիմնադրամ,\n"
+#~ " Inc., 51 Franklin փողոց, Հինգերորդ հարկ, Boston, MA\n"
+#~ "02110-1301 USA"
+
+#~ msgid "Processor wakeups per second:"
+#~ msgstr "Պրոցեսորն արթնանում է վայրկյանում․"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Wakeups"
+#~ msgstr "Արթնանալ"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Command"
+#~ msgstr "Հրահանգ"
+
+#~ msgid "No data"
+#~ msgstr "Ոչ մի տվյալ"
+
+#~ msgid "Kernel module"
+#~ msgstr "Միջուկի մոդուլ"
+
+#~ msgid "Kernel core"
+#~ msgstr "Միջուկի էությունը"
+
+#~ msgid "Interprocessor interrupt"
+#~ msgstr "Ինտերպրոցեսորի ընդհատում"
+
+#~ msgid "Interrupt"
+#~ msgstr "Ընդհատել"
+
+#~ msgid "PS/2 keyboard/mouse/touchpad"
+#~ msgstr " PS/2 ստեղնաշար/մկնիկ/դյուրակիր համակագիչ"
+
+#~ msgid "ACPI"
+#~ msgstr "ACPI"
+
+#~ msgid "Serial ATA"
+#~ msgstr "Սերիական ԱՏԱ"
+
+#~ msgid "ATA host controller"
+#~ msgstr "ATA հյուրընկալող վերահսկիչ"
+
+#~ msgid "Intel wireless adaptor"
+#~ msgstr "Ինտել անլար ադապտեր"
+
+#, c-format
+#~ msgid "Timer %s"
+#~ msgstr "Ժամանակաչափ %s"
+
+#, c-format
+#~ msgid "Sleep %s"
+#~ msgstr "Քնել %s"
+
+#, c-format
+#~ msgid "New task %s"
+#~ msgstr "Նոր խնդիրն %s"
+
+#, c-format
+#~ msgid "Wait %s"
+#~ msgstr "Ապասել %s"
+
+#, c-format
+#~ msgid "Work queue %s"
+#~ msgstr "Աշխատանքային հերթ %s"
+
+#, c-format
+#~ msgid "Network route flush %s"
+#~ msgstr "Ցանցի երթուղին լցվել է %s"
+
+#, c-format
+#~ msgid "USB activity %s"
+#~ msgstr " USB֊ի ակտիվություն %s"
+
+#, c-format
+#~ msgid "Wakeup %s"
+#~ msgstr "Արթնանալ %s"
+
+#~ msgid "Local interrupts"
+#~ msgstr "Տեղային ընդհատում"
+
+#~ msgid "Rescheduling interrupts"
+#~ msgstr "Rescheduling ընդհատում"
+
+#~ msgid "Processor Wakeups"
+#~ msgstr "Պրոցեսորի Wakeups"
+
+#~ msgid "Processor"
+#~ msgstr "Պրոցեսոր"

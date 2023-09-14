@@ -2,7 +2,7 @@
 # Copyright (C) YEAR CAFE Desktop Environment team
 # This file is distributed under the same license as the cafe-power-manager package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
-# 
+#
 # Translators:
 # jeremy shields <jeremy.shields@orange.fr>, 2020
 # mauron, 2020
@@ -15,19 +15,19 @@
 # yoplait <yoplait@tememe.org>, 2020
 # Laurent Napias, 2020
 # Rox fr <roxfr@outlook.fr>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: cafe-power-manager 1.23.1\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2019-11-12 15:22+0100\n"
+"POT-Creation-Date: 2023-09-14 10:39+0200\n"
 "PO-Revision-Date: 2020-02-15 16:27+0000\n"
 "Last-Translator: Rox fr <roxfr@outlook.fr>, 2020\n"
 "Language-Team: French (https://www.transifex.com/cafe/teams/13566/fr/)\n"
+"Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: fr\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 
 #: applets/brightness/brightness-applet.c:107
@@ -52,58 +52,69 @@ msgstr "Impossible d'obtenir la luminosité de l'écran"
 msgid "LCD brightness : %d%%"
 msgstr "Luminosité LCD : %d %%"
 
+#: applets/brightness/brightness-applet.c:790
+#: applets/inhibit/inhibit-applet.c:287
+msgid ""
+"Power Manager is free software; you can redistribute it and/or modify it "
+"under the terms of the GNU General Public License as published by the Free "
+"Software Foundation; either version 2 of the License, or (at your option) "
+"any later version."
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:795
+#: applets/inhibit/inhibit-applet.c:292
+msgid ""
+"Power Manager is distributed in the hope that it will be useful, but WITHOUT "
+"ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
+"FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for "
+"more details."
+msgstr ""
+
 #: applets/brightness/brightness-applet.c:800
 #: applets/inhibit/inhibit-applet.c:297
-msgid "Licensed under the GNU General Public License Version 2"
-msgstr ""
-"Distribué sous les termes de la Licence Publique Générale GNU Version 2"
-
-#: applets/brightness/brightness-applet.c:801
-#: applets/inhibit/inhibit-applet.c:298
 msgid ""
-"Power Manager is free software; you can redistribute it and/or\n"
-"modify it under the terms of the GNU General Public License\n"
-"as published by the Free Software Foundation; either version 2\n"
-"of the License, or (at your option) any later version."
+"You should have received a copy of the GNU General Public License along with "
+"this program; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
-"Le gestionnaire d'énergie CAFE est un logiciel libre ; vous pouvez le\n"
-"distribuer et/ou le modifier sous les termes de la Licence Publique\n"
-"Générale GNU tel que publiée par la Free Software Foundation ; soit la\n"
-"version 2 de la licence, ou (à votre discrétion), toutes versions ultérieures."
 
-#: applets/brightness/brightness-applet.c:805
-#: applets/inhibit/inhibit-applet.c:302
+#: applets/brightness/brightness-applet.c:813
+msgid "About Power Manager Brightness Applet"
+msgstr ""
+
+#: applets/brightness/brightness-applet.c:815
 msgid ""
-"Power Manager is distributed in the hope that it will be useful,\n"
-"but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
-"MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
-"GNU General Public License for more details."
+"Copyright © 2006 Benjamin Canou\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"Le gestionnaire d'énergie CAFE est distribué dans l'espoir qu'il puisse\n"
-"être utile mais SANS AUCUNE GARANTIE ; sans même une garantie implicite de\n"
-"VALEUR MARCHANDE ou d'ADÉQUATION À UN BESOIN PARTICULIER. Voir la Licence\n"
-"Publique Générale GNU pour plus d'informations."
 
-#: applets/brightness/brightness-applet.c:809
-#: applets/inhibit/inhibit-applet.c:306
-msgid ""
-"You should have received a copy of the GNU General Public License\n"
-"along with this program; if not, write to the Free Software\n"
-"Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
-"02110-1301, USA."
+#: applets/brightness/brightness-applet.c:823
+#: applets/inhibit/inhibit-applet.c:320 src/cpm-tray-icon.c:214
+msgid "translator-credits"
 msgstr ""
-"Vous devriez avoir reçu une copie de la Licence Publique Générale GNU\n"
-"avec ce programme ; si ce n'est pas le cas, écrivez à la\n"
-"Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,\n"
-"Boston, MA 02110-1301 USA."
+"Contributeurs au projet CAFE :\n"
+"Voir https://www.transifex.com/cafe/teams/13566/fr/\n"
+"\n"
+"Contributeurs au projet GNOME :\n"
+"Vincent Renardias <vincent@ldsol.com>, 1998-2000.\n"
+"Joaquim Fellmann <joaquim@hrnet.fr>, 2000.\n"
+"Christophe Merlet <redfox@redfoxcenter.org>, 2000-2006.\n"
+"Christophe Fergeau <teuf@users.sourceforge.net>, 2002-2003.\n"
+"Sun G11n <gnome_int_l10n@ireland.sun.com>, 2002.\n"
+"Robert-André Mauchin <zebob.m@pengzone.org>, 2006-2008.\n"
+"Stéphane Raimbault <stephane.raimbault@gmail.com>, 2007.\n"
+"Yannick Tailliez <ytdispatch-libre@yahoo.com>, 2008.\n"
+"Claude Paroz <claude@2xlibre.net>, 2008-2010.\n"
+"Gérard Baylard <gerard dot b at bbox dot fr>, 2010"
 
-#: applets/brightness/brightness-applet.c:1063
-#: applets/inhibit/inhibit-applet.c:519
+#: applets/brightness/brightness-applet.c:1051
+#: applets/inhibit/inhibit-applet.c:507
 msgid "_About"
 msgstr "_À propos"
 
-#: applets/brightness/brightness-applet.c:1066
-#: applets/inhibit/inhibit-applet.c:522
+#: applets/brightness/brightness-applet.c:1054
+#: applets/inhibit/inhibit-applet.c:510
 msgid "_Help"
 msgstr "_Aide"
 
@@ -114,12 +125,6 @@ msgstr "Fabrique de l'applet de luminosité"
 #: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:9
 msgid "Brightness Applet"
 msgstr "Applet de luminosité"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-brightness-applet"
-msgstr "cafe-brightness-applet"
 
 #: applets/inhibit/inhibit-applet.c:87
 msgid "Power Manager Inhibit Applet"
@@ -141,6 +146,17 @@ msgstr "Mise en veille automatique activée"
 msgid "Manual inhibit"
 msgstr "Inhibition manuelle"
 
+#: applets/inhibit/inhibit-applet.c:310
+msgid "About Power Manager Inhibit Applet"
+msgstr ""
+
+#: applets/inhibit/inhibit-applet.c:312
+msgid ""
+"Copyright © 2006-2007 Richard Hughes\n"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
+msgstr ""
+
 #: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:5
 msgid "Inhibit Applet Factory"
 msgstr "Fabrique de l'applet d'inhibition"
@@ -149,26 +165,13 @@ msgstr "Fabrique de l'applet d'inhibition"
 msgid "Inhibit Applet"
 msgstr "Applet d'inhibition"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:12
-msgid "cafe-inhibit-applet"
-msgstr "cafe-inhibit-applet"
-
-#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:184
+#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:204
 msgid "Power Manager"
 msgstr "Gestionnaire d'énergie"
 
-#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:186
+#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:206
 msgid "Power management daemon"
 msgstr "Moniteur du gestionnaire d'énergie"
-
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-manager.desktop.in.in:6
-#: data/cafe-power-preferences.desktop.in.in:6
-msgid "cafe-power-manager"
-msgstr "cafe-power-manager"
 
 #: data/org.cafe.power-manager.gschema.xml.in:26
 #: data/org.cafe.power-manager.gschema.xml.in:41
@@ -221,8 +224,7 @@ msgstr "Action sur un niveau critique de l'onduleur"
 #: data/org.cafe.power-manager.gschema.xml.in:47
 msgid "The action to take when the UPS is critically low."
 msgstr ""
-"L'action à effectuer lorsque le niveau de l'onduleur est critiquement "
-"faible."
+"L'action à effectuer lorsque le niveau de l'onduleur est critiquement faible."
 
 #: data/org.cafe.power-manager.gschema.xml.in:51
 msgid "UPS low power action"
@@ -241,8 +243,8 @@ msgid ""
 "If the screen brightness should be changed when switching between AC and "
 "battery power."
 msgstr ""
-"Indique si la luminosité de l'écran doit être modifiée lors d'un basculement"
-" entre l'alimentation secteur et la batterie."
+"Indique si la luminosité de l'écran doit être modifiée lors d'un basculement "
+"entre l'alimentation secteur et la batterie."
 
 #: data/org.cafe.power-manager.gschema.xml.in:61
 msgid "Reduce the backlight brightness when on battery power"
@@ -265,8 +267,8 @@ msgid ""
 "If the keyboard backlight brightness should be reduced when the computer is "
 "on battery power"
 msgstr ""
-"Indique si le rétro-éclairage du clavier doit être réduit quand l'ordinateur"
-" est sur batterie."
+"Indique si le rétro-éclairage du clavier doit être réduit quand l'ordinateur "
+"est sur batterie."
 
 #: data/org.cafe.power-manager.gschema.xml.in:71
 msgid "Keyboard backlight brightness when on AC power."
@@ -291,8 +293,8 @@ msgid ""
 "power. Legal values are between 0 and 100."
 msgstr ""
 "Le pourcentage de réduction du rétro-éclairage du clavier sur secteur. Par "
-"exemple, si il est fixé à '60', le rétro-éclairage sera de 40% sur batterie."
-" Doit être compris entre 0 et 100."
+"exemple, si il est fixé à '60', le rétro-éclairage sera de 40% sur batterie. "
+"Doit être compris entre 0 et 100."
 
 #: data/org.cafe.power-manager.gschema.xml.in:81
 msgid "Percent to reduce keyboard backlight by when idle."
@@ -302,8 +304,8 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:82
 msgid ""
 "The percentage to reduce the keyboard backlight by when idle. For example, "
-"if set to '60', the backlight will be cut by 40% when idle. Legal values are"
-" between 0 and 100."
+"if set to '60', the backlight will be cut by 40% when idle. Legal values are "
+"between 0 and 100."
 msgstr ""
 "Le pourcentage de réduction du rétro-éclairage du clavier quand il est "
 "inactif. Par exemple, si il est fixé à '60', le rétro-éclairage sera de 40% "
@@ -416,8 +418,7 @@ msgstr "Action sur appui du bouton d'hibernation"
 #: data/org.cafe.power-manager.gschema.xml.in:132
 msgid "The action to take when the system hibernate button is pressed."
 msgstr ""
-"L'action à effectuer lorsque le bouton d'hibernation du système est "
-"actionné."
+"L'action à effectuer lorsque le bouton d'hibernation du système est actionné."
 
 #: data/org.cafe.power-manager.gschema.xml.in:136
 msgid "Power button action"
@@ -522,11 +523,11 @@ msgstr "Verrouille l'écran lors de la mise en veille"
 
 #: data/org.cafe.power-manager.gschema.xml.in:177
 msgid ""
-"Whether the screen is locked when the computer wakes up from a suspend. Only"
-" used if lock-use-screensaver is false."
+"Whether the screen is locked when the computer wakes up from a suspend. Only "
+"used if lock-use-screensaver is false."
 msgstr ""
-"Indique si l'écran doit être verrouillé lorsque l'ordinateur sort d'une mise"
-" en veille. Uniquement utilisé si lock-use-screensaver est désactivé."
+"Indique si l'écran doit être verrouillé lorsque l'ordinateur sort d'une mise "
+"en veille. Uniquement utilisé si lock-use-screensaver est désactivé."
 
 #: data/org.cafe.power-manager.gschema.xml.in:181
 msgid "Lock screen on hibernate"
@@ -547,8 +548,8 @@ msgstr "Verrouille le trousseau de clef GNOME en veille."
 
 #: data/org.cafe.power-manager.gschema.xml.in:187
 msgid ""
-"Whether the GNOME keyring is locked before the computer enters suspend. This"
-" means the keyring will have to be unlocked on resume."
+"Whether the GNOME keyring is locked before the computer enters suspend. This "
+"means the keyring will have to be unlocked on resume."
 msgstr ""
 "Indique si le trousseau de clé GNOME est verrouillé avant la mise en veille "
 "de l'ordinateur. Cela signifie que le trousseau devra être déverrouillé au "
@@ -640,8 +641,7 @@ msgstr "Avertir de la faible capacité de la batterie de la souris"
 
 #: data/org.cafe.power-manager.gschema.xml.in:231
 msgid "Whether we should show the history data points"
-msgstr ""
-"Indique si les points de données de l'historique doivent être affichés"
+msgstr "Indique si les points de données de l'historique doivent être affichés"
 
 #: data/org.cafe.power-manager.gschema.xml.in:232
 msgid ""
@@ -657,8 +657,7 @@ msgstr "Indique si les données de l'historique doivent être lissées"
 #: data/org.cafe.power-manager.gschema.xml.in:237
 msgid "Whether we should smooth the history data in the graph."
 msgstr ""
-"Indique si les données de l'historique doivent être lissées sur le "
-"graphique."
+"Indique si les données de l'historique doivent être lissées sur le graphique."
 
 #: data/org.cafe.power-manager.gschema.xml.in:241
 msgid "The default graph type to show for history"
@@ -677,8 +676,7 @@ msgstr "Durée maximale affichée sur l'historique"
 msgid ""
 "The maximum duration of time displayed on the x-axis of the history graph."
 msgstr ""
-"Durée maximale affichée sur l'axe des abscisses du graphique de "
-"l'historique."
+"Durée maximale affichée sur l'axe des abscisses du graphique de l'historique."
 
 #: data/org.cafe.power-manager.gschema.xml.in:251
 msgid "Whether we should show the stats data points"
@@ -688,8 +686,8 @@ msgstr ""
 #: data/org.cafe.power-manager.gschema.xml.in:252
 msgid "Whether we should show the stats data points in the statistics window."
 msgstr ""
-"Indique si les points de données des statistiques doivent être affichés dans"
-" la fenêtre des statistiques."
+"Indique si les points de données des statistiques doivent être affichés dans "
+"la fenêtre des statistiques."
 
 #: data/org.cafe.power-manager.gschema.xml.in:256
 msgid "Whether we should smooth the stats data"
@@ -698,8 +696,7 @@ msgstr "Indique si les données de statistiques doivent être lissées"
 #: data/org.cafe.power-manager.gschema.xml.in:257
 msgid "Whether we should smooth the stats data in the graph."
 msgstr ""
-"Indique si les données de statistiques doivent être lissées sur le "
-"graphique."
+"Indique si les données de statistiques doivent être lissées sur le graphique."
 
 #: data/org.cafe.power-manager.gschema.xml.in:261
 msgid "The default graph type to show for stats"
@@ -731,8 +728,8 @@ msgid ""
 "The identifier of the last device which is used to return focus to the "
 "correct device."
 msgstr ""
-"L'identifiant du dernier périphérique qui est utilisé pour redonner le focus"
-" vers le bon périphérique."
+"L'identifiant du dernier périphérique qui est utilisé pour redonner le focus "
+"vers le bon périphérique."
 
 #: data/org.cafe.power-manager.gschema.xml.in:276
 msgid "Percentage considered low"
@@ -740,8 +737,8 @@ msgstr "Pourcentage considéré comme faible"
 
 #: data/org.cafe.power-manager.gschema.xml.in:277
 msgid ""
-"The percentage of the battery when it is considered low. Only valid when "
-"use-time-for-policy is false."
+"The percentage of the battery when it is considered low. Only valid when use-"
+"time-for-policy is false."
 msgstr ""
 "Pourcentage de la batterie considéré comme « faible ». Valide uniquement "
 "quand use-time-for-policy est désactivé."
@@ -776,8 +773,8 @@ msgstr "Le temps restant quand faible"
 
 #: data/org.cafe.power-manager.gschema.xml.in:292
 msgid ""
-"The time remaining in seconds of the battery when it is considered low. Only"
-" valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered low. Only "
+"valid when use-time-for-policy is true."
 msgstr ""
 "Temps restant en secondes sur la batterie considéré comme « faible ». "
 "Uniquement valide quand use_time_for_policy est activé."
@@ -788,8 +785,8 @@ msgstr "Le temps restant quand critique"
 
 #: data/org.cafe.power-manager.gschema.xml.in:297
 msgid ""
-"The time remaining in seconds of the battery when it is considered critical."
-" Only valid when use-time-for-policy is true."
+"The time remaining in seconds of the battery when it is considered critical. "
+"Only valid when use-time-for-policy is true."
 msgstr ""
 "Temps restant en secondes sur la batterie considéré comme « critique ». "
 "Uniquement valide quand use_time_for_policy est activé."
@@ -816,8 +813,8 @@ msgid ""
 "The amount of time in seconds the computer on battery power needs to be "
 "inactive before it goes to sleep."
 msgstr ""
-"Nombre de secondes d'inactivité avant que l'ordinateur ne soit mis en veille"
-" quand il est branché sur batterie."
+"Nombre de secondes d'inactivité avant que l'ordinateur ne soit mis en veille "
+"quand il est branché sur batterie."
 
 #: data/org.cafe.power-manager.gschema.xml.in:311
 msgid "Sleep timeout computer when on AC"
@@ -830,8 +827,8 @@ msgid ""
 "The amount of time in seconds the computer on AC power needs to be inactive "
 "before it goes to sleep."
 msgstr ""
-"Nombre de secondes d'inactivité avant que l'ordinateur ne soit mis en veille"
-" quand il est branché sur secteur."
+"Nombre de secondes d'inactivité avant que l'ordinateur ne soit mis en veille "
+"quand il est branché sur secteur."
 
 #: data/org.cafe.power-manager.gschema.xml.in:316
 msgid "Sleep timeout computer when on UPS"
@@ -841,8 +838,8 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:317
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before it goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before it goes to sleep."
 msgstr ""
 "Nombre de secondes d'inactivité avant que l'ordinateur ne soit mis en "
 "hibernation quand il est alimenté par un onduleur."
@@ -883,8 +880,8 @@ msgstr ""
 
 #: data/org.cafe.power-manager.gschema.xml.in:332
 msgid ""
-"The amount of time in seconds the computer on UPS power needs to be inactive"
-" before the display goes to sleep."
+"The amount of time in seconds the computer on UPS power needs to be inactive "
+"before the display goes to sleep."
 msgstr ""
 "Nombre de secondes d'inactivité avant que l'écran ne soit mis en veille "
 "quand l'ordinateur est alimenté par un onduleur."
@@ -903,8 +900,7 @@ msgstr ""
 "énergétique."
 
 #: data/org.cafe.power-manager.gschema.xml.in:341
-msgid ""
-"If preferences and statistics items should be shown in the context menu"
+msgid "If preferences and statistics items should be shown in the context menu"
 msgstr ""
 "Indique si les préférences et statistiques doivent être affichées dans le "
 "menu contextuel"
@@ -925,14 +921,13 @@ msgstr "Gestionnaire d'énergie"
 msgid "Configure power management"
 msgstr "Configure la gestion d'énergie"
 
-#. Translators: Search terms to find this application. Do NOT translate or
-#. localize the semicolons! The list MUST also end with a semicolon!
+#. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
 #: data/cafe-power-preferences.desktop.in.in:13
 msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
-#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:7
-#: src/cpm-statistics.c:1090 src/cpm-statistics.c:1577
+#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:8
+#: src/cpm-statistics.c:764 src/cpm-statistics.c:1233
 msgid "Power Statistics"
 msgstr "Statistiques de l'alimentation"
 
@@ -940,55 +935,37 @@ msgstr "Statistiques de l'alimentation"
 msgid "Observe power management"
 msgstr "Surveille la gestion d'énergie"
 
-#. Translators: Do NOT translate or transliterate this text (this is an icon
-#. file name)!
-#: data/cafe-power-statistics.desktop.in.in:6
-msgid "cafe-power-statistics"
-msgstr "cafe-power-statistics"
-
-#: data/cpm-statistics.ui:113 src/cpm-statistics.c:208
+#: data/cpm-statistics.ui:119
 msgid "Details"
 msgstr "Détails"
 
-#: data/cpm-statistics.ui:139 data/cpm-statistics.ui:342
+#: data/cpm-statistics.ui:145 data/cpm-statistics.ui:347
 msgid "Graph type:"
 msgstr "Type de graphique :"
 
-#: data/cpm-statistics.ui:174
+#: data/cpm-statistics.ui:180
 msgid "Data length:"
 msgstr "Longueur des données :"
 
-#: data/cpm-statistics.ui:234 data/cpm-statistics.ui:395
+#: data/cpm-statistics.ui:239 data/cpm-statistics.ui:399
 msgid "There is no data to display."
 msgstr "Il n'y a pas de données à afficher."
 
-#: data/cpm-statistics.ui:276 data/cpm-statistics.ui:438
+#: data/cpm-statistics.ui:281 data/cpm-statistics.ui:442
 msgid "Use smoothed line"
 msgstr "Lisser la courbe"
 
-#: data/cpm-statistics.ui:291 data/cpm-statistics.ui:453
+#: data/cpm-statistics.ui:296 data/cpm-statistics.ui:457
 msgid "Show data points"
 msgstr "Afficher les points de données"
 
-#: data/cpm-statistics.ui:320
+#: data/cpm-statistics.ui:325
 msgid "History"
 msgstr "Historique"
 
-#: data/cpm-statistics.ui:482
+#: data/cpm-statistics.ui:486
 msgid "Statistics"
 msgstr "Statistiques"
-
-#: data/cpm-statistics.ui:504
-msgid "Processor wakeups per second:"
-msgstr "Nombre de réveils du processeur par seconde :"
-
-#: data/cpm-statistics.ui:516
-msgid "0"
-msgstr "0"
-
-#: data/cpm-statistics.ui:563 src/cpm-statistics.c:194
-msgid "Wakeups"
-msgstr "Réveils"
 
 #: data/cpm-prefs.ui:55
 msgid "Power Management Preferences"
@@ -1242,7 +1219,7 @@ msgstr "%.1f W"
 msgid "%.1fV"
 msgstr "%.1f V"
 
-#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1560
+#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1216
 msgid "Show extra debugging information"
 msgstr "Affiche les informations de débogage"
 
@@ -1349,8 +1326,8 @@ msgstr "La batterie est peut être défectueuse"
 #: src/cpm-manager.c:1110
 #, c-format
 msgid ""
-"Battery has a very low capacity (%1.1f%%), which means that it may be old or"
-" broken."
+"Battery has a very low capacity (%1.1f%%), which means that it may be old or "
+"broken."
 msgstr ""
 "La batterie dispose d'une très faible capacité (%1.1f %%), celle-ci est "
 "probablement ancienne ou défectueuse."
@@ -1485,8 +1462,7 @@ msgstr "Branchez votre adaptateur secteur pour éviter de perdre des données."
 #: src/cpm-manager.c:1440
 msgid "Computer will suspend very soon unless it is plugged in."
 msgstr ""
-"L'ordinateur va se mettre en veille dans peu de temps s'il n'est pas "
-"branché."
+"L'ordinateur va se mettre en veille dans peu de temps s'il n'est pas branché."
 
 #: src/cpm-manager.c:1444
 msgid "Computer will hibernate very soon unless it is plugged in."
@@ -1505,8 +1481,8 @@ msgstr "Le niveau de l'onduleur est critique"
 #: src/cpm-manager.c:1459
 #, c-format
 msgid ""
-"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to"
-" your computer to avoid losing data."
+"Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to "
+"your computer to avoid losing data."
 msgstr ""
 "Il reste environ <b>%s</b> d'énergie sur l'onduleur (%.0f %%). Rétablissez "
 "votre alimentation secteur pour éviter de perdre des données."
@@ -1532,8 +1508,8 @@ msgstr ""
 #: src/cpm-manager.c:1490
 #, c-format
 msgid ""
-"PDA is very low in power (%.0f%%). This device will soon stop functioning if"
-" not charged."
+"PDA is very low in power (%.0f%%). This device will soon stop functioning if "
+"not charged."
 msgstr ""
 "La puissance de l'assistant personnel est très faible (%.0f %%). Ce "
 "périphérique s'arrêtera de fonctionner s'il n'est pas mis en charge."
@@ -1559,8 +1535,8 @@ msgstr ""
 #: src/cpm-manager.c:1519
 #, c-format
 msgid ""
-"Tablet is very low in power (%.0f%%). This device will soon stop functioning"
-" if not charged."
+"Tablet is very low in power (%.0f%%). This device will soon stop functioning "
+"if not charged."
 msgstr ""
 "La puissance de la tablette est très faible (%.0f %%). Ce périphérique "
 "s'arrêtera de fonctionner s'il n'est pas mis en charge."
@@ -1576,8 +1552,8 @@ msgstr ""
 
 #: src/cpm-manager.c:1593
 msgid ""
-"The battery is below the critical level and this computer will <b>power-"
-"off</b> when the battery becomes completely empty."
+"The battery is below the critical level and this computer will <b>power-off</"
+"b> when the battery becomes completely empty."
 msgstr ""
 "La batterie est en dessous de son niveau critique ; l'ordinateur va "
 "<b>s'éteindre</b> quand la batterie sera complètement déchargée."
@@ -1662,373 +1638,251 @@ msgstr "Ne rien faire"
 msgid "Never"
 msgstr "Jamais"
 
-#: src/cpm-statistics.c:78 src/cpm-statistics.c:466
+#: src/cpm-statistics.c:67 src/cpm-statistics.c:410
 msgid "Rate"
 msgstr "Taux"
 
-#: src/cpm-statistics.c:79
+#: src/cpm-statistics.c:68
 msgid "Charge"
 msgstr "Charge"
 
-#: src/cpm-statistics.c:80 src/cpm-statistics.c:480
+#: src/cpm-statistics.c:69 src/cpm-statistics.c:424
 msgid "Time to full"
 msgstr "Durée de la charge"
 
-#: src/cpm-statistics.c:81 src/cpm-statistics.c:485
+#: src/cpm-statistics.c:70 src/cpm-statistics.c:429
 msgid "Time to empty"
 msgstr "Durée de la décharge"
 
-#: src/cpm-statistics.c:88
+#: src/cpm-statistics.c:77
 msgid "10 minutes"
 msgstr "10 minutes"
 
-#: src/cpm-statistics.c:89
+#: src/cpm-statistics.c:78
 msgid "2 hours"
 msgstr "2 heures"
 
-#: src/cpm-statistics.c:90
+#: src/cpm-statistics.c:79
 msgid "6 hours"
 msgstr "6 heures"
 
-#: src/cpm-statistics.c:91
+#: src/cpm-statistics.c:80
 msgid "1 day"
 msgstr "1 jour"
 
-#: src/cpm-statistics.c:92
+#: src/cpm-statistics.c:81
 msgid "1 week"
 msgstr "1 semaine"
 
-#: src/cpm-statistics.c:101
+#: src/cpm-statistics.c:90
 msgid "Charge profile"
 msgstr "Profil de charge"
 
-#: src/cpm-statistics.c:102
+#: src/cpm-statistics.c:91
 msgid "Discharge profile"
 msgstr "Profil de décharge"
 
-#: src/cpm-statistics.c:104
+#: src/cpm-statistics.c:93
 msgid "Charge accuracy"
 msgstr "Précision de la charge"
 
-#: src/cpm-statistics.c:105
+#: src/cpm-statistics.c:94
 msgid "Discharge accuracy"
 msgstr "Précision de la décharge"
 
-#: src/cpm-statistics.c:132
+#: src/cpm-statistics.c:121
 msgid "Attribute"
 msgstr "Attribut"
 
-#: src/cpm-statistics.c:139
+#: src/cpm-statistics.c:128
 msgid "Value"
 msgstr "Valeur"
 
-#: src/cpm-statistics.c:156
+#: src/cpm-statistics.c:145
 msgid "Image"
 msgstr "Image"
 
-#: src/cpm-statistics.c:162
+#: src/cpm-statistics.c:151
 msgid "Description"
 msgstr "Description"
 
-#: src/cpm-statistics.c:181 src/cpm-statistics.c:405
-msgid "Type"
-msgstr "Type"
-
-#: src/cpm-statistics.c:187
-msgid "ID"
-msgstr "ID"
-
-#: src/cpm-statistics.c:201
-msgid "Command"
-msgstr "Commande"
-
-#: src/cpm-statistics.c:286
+#: src/cpm-statistics.c:230
 msgid "Unknown"
 msgstr "Inconnu"
 
-#: src/cpm-statistics.c:290
+#: src/cpm-statistics.c:234
 #, c-format
 msgid "%.0f second"
 msgid_plural "%.0f seconds"
 msgstr[0] "%.0f seconde"
 msgstr[1] "%.0f secondes"
 
-#: src/cpm-statistics.c:295
+#: src/cpm-statistics.c:239
 #, c-format
 msgid "%.1f minute"
 msgid_plural "%.1f minutes"
 msgstr[0] "%.1f minute"
 msgstr[1] "%.1f minutes"
 
-#: src/cpm-statistics.c:300
+#: src/cpm-statistics.c:244
 #, c-format
 msgid "%.1f hour"
 msgid_plural "%.1f hours"
 msgstr[0] "%.1f heure"
 msgstr[1] "%.1f heures"
 
-#: src/cpm-statistics.c:304
+#: src/cpm-statistics.c:248
 #, c-format
 msgid "%.1f day"
 msgid_plural "%.1f days"
 msgstr[0] "%.1f jour"
 msgstr[1] "%.1f jours"
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "Yes"
 msgstr "Oui"
 
-#: src/cpm-statistics.c:313
+#: src/cpm-statistics.c:257
 msgid "No"
 msgstr "Non"
 
-#: src/cpm-statistics.c:402
+#: src/cpm-statistics.c:346
 msgid "Device"
 msgstr "Périphérique"
 
-#: src/cpm-statistics.c:407
+#: src/cpm-statistics.c:349
+msgid "Type"
+msgstr "Type"
+
+#: src/cpm-statistics.c:351
 msgid "Vendor"
 msgstr "Marque"
 
-#: src/cpm-statistics.c:409
+#: src/cpm-statistics.c:353
 msgid "Model"
 msgstr "Modèle"
 
-#: src/cpm-statistics.c:411
+#: src/cpm-statistics.c:355
 msgid "Serial number"
 msgstr "Numéro de série"
 
-#: src/cpm-statistics.c:416
+#: src/cpm-statistics.c:360
 msgid "Supply"
 msgstr "Alimentation"
 
-#: src/cpm-statistics.c:419
+#: src/cpm-statistics.c:363
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] "%d seconde"
 msgstr[1] "%d secondes"
 
-#: src/cpm-statistics.c:423
+#: src/cpm-statistics.c:367
 msgid "Refreshed"
 msgstr "Actualisé"
 
-#: src/cpm-statistics.c:433
+#: src/cpm-statistics.c:377
 msgid "Present"
 msgstr "Présent(e)"
 
-#: src/cpm-statistics.c:440
+#: src/cpm-statistics.c:384
 msgid "Rechargeable"
 msgstr "Rechargeable"
 
-#: src/cpm-statistics.c:446
+#: src/cpm-statistics.c:390
 msgid "State"
 msgstr "État"
 
-#: src/cpm-statistics.c:450
+#: src/cpm-statistics.c:394
 msgid "Energy"
 msgstr "Énergie"
 
-#: src/cpm-statistics.c:453
+#: src/cpm-statistics.c:397
 msgid "Energy when empty"
 msgstr "Énergie à vide"
 
-#: src/cpm-statistics.c:456
+#: src/cpm-statistics.c:400
 msgid "Energy when full"
 msgstr "Énergie à pleine charge"
 
-#: src/cpm-statistics.c:459
+#: src/cpm-statistics.c:403
 msgid "Energy (design)"
 msgstr "Énergie (théorique)"
 
-#: src/cpm-statistics.c:473
+#: src/cpm-statistics.c:417
 msgid "Voltage"
 msgstr "tension"
 
-#: src/cpm-statistics.c:495
+#: src/cpm-statistics.c:439
 msgid "Percentage"
 msgstr "Pourcentage"
 
-#: src/cpm-statistics.c:502
+#: src/cpm-statistics.c:446
 msgid "Capacity"
 msgstr "Capacité"
 
-#: src/cpm-statistics.c:507
+#: src/cpm-statistics.c:451
 msgid "Technology"
 msgstr "Technologie"
 
-#: src/cpm-statistics.c:512
+#: src/cpm-statistics.c:456
 msgid "Online"
 msgstr "Branché"
 
-#: src/cpm-statistics.c:824
-msgid "No data"
-msgstr "Aucune donnée"
-
-#: src/cpm-statistics.c:831 src/cpm-statistics.c:836
-msgid "Kernel module"
-msgstr "Module du noyau"
-
-#: src/cpm-statistics.c:841
-msgid "Kernel core"
-msgstr "Noyau central"
-
-#: src/cpm-statistics.c:846
-msgid "Interprocessor interrupt"
-msgstr "Interruption entre processeurs"
-
-#: src/cpm-statistics.c:851
-msgid "Interrupt"
-msgstr "Interruption"
-
-#: src/cpm-statistics.c:898
-msgid "PS/2 keyboard/mouse/touchpad"
-msgstr "Clavier/souris/pavé tactile PS/2"
-
-#: src/cpm-statistics.c:901
-msgid "ACPI"
-msgstr "ACPI"
-
-#: src/cpm-statistics.c:904
-msgid "Serial ATA"
-msgstr "ATA série"
-
-#: src/cpm-statistics.c:907
-msgid "ATA host controller"
-msgstr "Contrôleur d'hôte ATA"
-
-#: src/cpm-statistics.c:910
-msgid "Intel wireless adaptor"
-msgstr "Adaptateur sans fil Intel"
-
-#: src/cpm-statistics.c:917 src/cpm-statistics.c:922 src/cpm-statistics.c:927
-#: src/cpm-statistics.c:932 src/cpm-statistics.c:937
-#, c-format
-msgid "Timer %s"
-msgstr "Tâche périodique %s"
-
-#: src/cpm-statistics.c:941
-#, c-format
-msgid "Sleep %s"
-msgstr "Tâche endormie %s"
-
-#: src/cpm-statistics.c:944
-#, c-format
-msgid "New task %s"
-msgstr "Nouvelle tâche %s"
-
-#: src/cpm-statistics.c:948
-#, c-format
-msgid "Wait %s"
-msgstr "Tâche en attente %s"
-
-#: src/cpm-statistics.c:952 src/cpm-statistics.c:956
-#, c-format
-msgid "Work queue %s"
-msgstr "File d'attente %s"
-
-#: src/cpm-statistics.c:959
-#, c-format
-msgid "Network route flush %s"
-msgstr "Vidage des routes réseau %s"
-
-#: src/cpm-statistics.c:962
-#, c-format
-msgid "USB activity %s"
-msgstr "Activité USB %s"
-
-#: src/cpm-statistics.c:965
-#, c-format
-msgid "Wakeup %s"
-msgstr "Éveil de %s"
-
-#: src/cpm-statistics.c:968
-msgid "Local interrupts"
-msgstr "Interruptions locales"
-
-#: src/cpm-statistics.c:971
-msgid "Rescheduling interrupts"
-msgstr "Interruptions de réordonnancement"
-
-#: src/cpm-statistics.c:1080
+#: src/cpm-statistics.c:756
 msgid "Device Information"
 msgstr "Informations sur le périphérique"
 
-#: src/cpm-statistics.c:1082
+#: src/cpm-statistics.c:758
 msgid "Device History"
 msgstr "Historique du périphérique"
 
-#: src/cpm-statistics.c:1084
+#: src/cpm-statistics.c:760
 msgid "Device Profile"
 msgstr "Profil du périphérique"
 
-#: src/cpm-statistics.c:1086
-msgid "Processor Wakeups"
-msgstr "Réveils du processeur"
-
-#: src/cpm-statistics.c:1325 src/cpm-statistics.c:1331
-#: src/cpm-statistics.c:1337 src/cpm-statistics.c:1343
+#: src/cpm-statistics.c:982 src/cpm-statistics.c:988 src/cpm-statistics.c:994
+#: src/cpm-statistics.c:1000
 msgid "Time elapsed"
 msgstr "Temps"
 
-#: src/cpm-statistics.c:1327
+#: src/cpm-statistics.c:984
 msgid "Power"
 msgstr "Puissance"
 
-#: src/cpm-statistics.c:1333 src/cpm-statistics.c:1377
-#: src/cpm-statistics.c:1383 src/cpm-statistics.c:1389
-#: src/cpm-statistics.c:1395
+#: src/cpm-statistics.c:990 src/cpm-statistics.c:1034 src/cpm-statistics.c:1040
+#: src/cpm-statistics.c:1046 src/cpm-statistics.c:1052
 msgid "Cell charge"
 msgstr "Charge de la batterie"
 
-#: src/cpm-statistics.c:1339 src/cpm-statistics.c:1345
+#: src/cpm-statistics.c:996 src/cpm-statistics.c:1002
 msgid "Predicted time"
 msgstr "Durée prévue"
 
-#: src/cpm-statistics.c:1379 src/cpm-statistics.c:1391
+#: src/cpm-statistics.c:1036 src/cpm-statistics.c:1048
 msgid "Correction factor"
 msgstr "Facteur de correction"
 
-#: src/cpm-statistics.c:1385 src/cpm-statistics.c:1397
+#: src/cpm-statistics.c:1042 src/cpm-statistics.c:1054
 msgid "Prediction accuracy"
 msgstr "Précision de la prédiction"
 
-#: src/cpm-statistics.c:1563
+#: src/cpm-statistics.c:1219
 msgid "Select this device at startup"
 msgstr "Sélectionner ce périphérique au démarrage"
 
-#: src/cpm-statistics.c:1802
-msgid "Processor"
-msgstr "Processeur"
-
-#: src/cpm-tray-icon.c:187
-msgid "Copyright © 2011-2018 CAFE developers"
-msgstr "Copyright © 2011-2018 Développeurs CAFE"
-
-#: src/cpm-tray-icon.c:193
-msgid "translator-credits"
+#: src/cpm-tray-icon.c:207
+msgid ""
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
-"Contributeurs au projet CAFE :\n"
-"Voir https://www.transifex.com/cafe/teams/13566/fr/\n"
-"\n"
-"Contributeurs au projet GNOME :\n"
-"Vincent Renardias <vincent@ldsol.com>, 1998-2000.\n"
-"Joaquim Fellmann <joaquim@hrnet.fr>, 2000.\n"
-"Christophe Merlet <redfox@redfoxcenter.org>, 2000-2006.\n"
-"Christophe Fergeau <teuf@users.sourceforge.net>, 2002-2003.\n"
-"Sun G11n <gnome_int_l10n@ireland.sun.com>, 2002.\n"
-"Robert-André Mauchin <zebob.m@pengzone.org>, 2006-2008.\n"
-"Stéphane Raimbault <stephane.raimbault@gmail.com>, 2007.\n"
-"Yannick Tailliez <ytdispatch-libre@yahoo.com>, 2008.\n"
-"Claude Paroz <claude@2xlibre.net>, 2008-2010.\n"
-"Gérard Baylard <gerard dot b at bbox dot fr>, 2010"
 
-#: src/cpm-tray-icon.c:295
+#: src/cpm-tray-icon.c:318
 #, c-format
 msgid "%s remaining"
 msgstr "%s restants"
 
-#: src/cpm-tray-icon.c:349
+#: src/cpm-tray-icon.c:372
 msgid "_Preferences"
 msgstr "_Préférences"
 
@@ -2293,3 +2147,147 @@ msgstr "En attente de décharge"
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr "État inconnu"
+
+#~ msgid "Licensed under the GNU General Public License Version 2"
+#~ msgstr ""
+#~ "Distribué sous les termes de la Licence Publique Générale GNU Version 2"
+
+#~ msgid ""
+#~ "Power Manager is free software; you can redistribute it and/or\n"
+#~ "modify it under the terms of the GNU General Public License\n"
+#~ "as published by the Free Software Foundation; either version 2\n"
+#~ "of the License, or (at your option) any later version."
+#~ msgstr ""
+#~ "Le gestionnaire d'énergie CAFE est un logiciel libre ; vous pouvez le\n"
+#~ "distribuer et/ou le modifier sous les termes de la Licence Publique\n"
+#~ "Générale GNU tel que publiée par la Free Software Foundation ; soit la\n"
+#~ "version 2 de la licence, ou (à votre discrétion), toutes versions "
+#~ "ultérieures."
+
+#~ msgid ""
+#~ "Power Manager is distributed in the hope that it will be useful,\n"
+#~ "but WITHOUT ANY WARRANTY; without even the implied warranty of\n"
+#~ "MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n"
+#~ "GNU General Public License for more details."
+#~ msgstr ""
+#~ "Le gestionnaire d'énergie CAFE est distribué dans l'espoir qu'il puisse\n"
+#~ "être utile mais SANS AUCUNE GARANTIE ; sans même une garantie implicite "
+#~ "de\n"
+#~ "VALEUR MARCHANDE ou d'ADÉQUATION À UN BESOIN PARTICULIER. Voir la "
+#~ "Licence\n"
+#~ "Publique Générale GNU pour plus d'informations."
+
+#~ msgid ""
+#~ "You should have received a copy of the GNU General Public License\n"
+#~ "along with this program; if not, write to the Free Software\n"
+#~ "Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA\n"
+#~ "02110-1301, USA."
+#~ msgstr ""
+#~ "Vous devriez avoir reçu une copie de la Licence Publique Générale GNU\n"
+#~ "avec ce programme ; si ce n'est pas le cas, écrivez à la\n"
+#~ "Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,\n"
+#~ "Boston, MA 02110-1301 USA."
+
+#~ msgid "cafe-brightness-applet"
+#~ msgstr "cafe-brightness-applet"
+
+#~ msgid "cafe-inhibit-applet"
+#~ msgstr "cafe-inhibit-applet"
+
+#~ msgid "cafe-power-manager"
+#~ msgstr "cafe-power-manager"
+
+#~ msgid "cafe-power-statistics"
+#~ msgstr "cafe-power-statistics"
+
+#~ msgid "Processor wakeups per second:"
+#~ msgstr "Nombre de réveils du processeur par seconde :"
+
+#~ msgid "0"
+#~ msgstr "0"
+
+#~ msgid "Wakeups"
+#~ msgstr "Réveils"
+
+#~ msgid "ID"
+#~ msgstr "ID"
+
+#~ msgid "Command"
+#~ msgstr "Commande"
+
+#~ msgid "No data"
+#~ msgstr "Aucune donnée"
+
+#~ msgid "Kernel module"
+#~ msgstr "Module du noyau"
+
+#~ msgid "Kernel core"
+#~ msgstr "Noyau central"
+
+#~ msgid "Interprocessor interrupt"
+#~ msgstr "Interruption entre processeurs"
+
+#~ msgid "Interrupt"
+#~ msgstr "Interruption"
+
+#~ msgid "PS/2 keyboard/mouse/touchpad"
+#~ msgstr "Clavier/souris/pavé tactile PS/2"
+
+#~ msgid "ACPI"
+#~ msgstr "ACPI"
+
+#~ msgid "Serial ATA"
+#~ msgstr "ATA série"
+
+#~ msgid "ATA host controller"
+#~ msgstr "Contrôleur d'hôte ATA"
+
+#~ msgid "Intel wireless adaptor"
+#~ msgstr "Adaptateur sans fil Intel"
+
+#, c-format
+#~ msgid "Timer %s"
+#~ msgstr "Tâche périodique %s"
+
+#, c-format
+#~ msgid "Sleep %s"
+#~ msgstr "Tâche endormie %s"
+
+#, c-format
+#~ msgid "New task %s"
+#~ msgstr "Nouvelle tâche %s"
+
+#, c-format
+#~ msgid "Wait %s"
+#~ msgstr "Tâche en attente %s"
+
+#, c-format
+#~ msgid "Work queue %s"
+#~ msgstr "File d'attente %s"
+
+#, c-format
+#~ msgid "Network route flush %s"
+#~ msgstr "Vidage des routes réseau %s"
+
+#, c-format
+#~ msgid "USB activity %s"
+#~ msgstr "Activité USB %s"
+
+#, c-format
+#~ msgid "Wakeup %s"
+#~ msgstr "Éveil de %s"
+
+#~ msgid "Local interrupts"
+#~ msgstr "Interruptions locales"
+
+#~ msgid "Rescheduling interrupts"
+#~ msgstr "Interruptions de réordonnancement"
+
+#~ msgid "Processor Wakeups"
+#~ msgstr "Réveils du processeur"
+
+#~ msgid "Processor"
+#~ msgstr "Processeur"
+
+#~ msgid "Copyright © 2011-2018 CAFE developers"
+#~ msgstr "Copyright © 2011-2018 Développeurs CAFE"
