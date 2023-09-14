@@ -1,4 +1,4 @@
-# 
+#
 # Translators:
 # Stefano Karapetsas <stefano@karapetsas.com>, 2020
 # Mingcong Bai <jeffbai@aosc.xyz>, 2020
@@ -7,18 +7,19 @@
 # CNAmira <forucial@icloud.com>, 2020
 # biqiu-ssw <shenshuaiwen@gmail.com>, 2020
 # Mingtian Yang <i@skylee.xyz>, 2020
-# 
+#
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2020-01-12 18:32+0100\n"
+"POT-Creation-Date: 2023-09-14 10:39+0200\n"
 "PO-Revision-Date: 2020-02-15 16:28+0000\n"
 "Last-Translator: Mingtian Yang <i@skylee.xyz>, 2020\n"
-"Language-Team: Chinese (China) (https://www.transifex.com/cafe/teams/13566/zh_CN/)\n"
+"Language-Team: Chinese (China) (https://www.transifex.com/cafe/teams/13566/"
+"zh_CN/)\n"
+"Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_CN\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #. Put one translator per line, in the form NAME <EMAIL>, YEAR1, YEAR2
@@ -74,8 +75,7 @@ msgstr ""
 
 #. (itstool) path: authorgroup/author
 #: C/index.docbook:61
-msgid ""
-"<surname>CAFE Documentation Team</surname> <affiliation> </affiliation>"
+msgid "<surname>CAFE Documentation Team</surname> <affiliation> </affiliation>"
 msgstr ""
 
 #. (itstool) path: authorgroup/author
@@ -107,8 +107,8 @@ msgid ""
 "To report a bug or make a suggestion regarding the CAFE Power Manager "
 "application or this manual, follow the directions in the <ulink "
 "url=\"https://github.com/cafe-desktop/cafe-power-manager/\" "
-"type=\"http\"><application>CAFE Power Manager</application> Contact "
-"Page</ulink>."
+"type=\"http\"><application>CAFE Power Manager</application> Contact Page</"
+"ulink>."
 msgstr ""
 
 #. (itstool) path: article/indexterm
@@ -149,8 +149,8 @@ msgstr "用法"
 #: C/index.docbook:144
 msgid ""
 "<application>CAFE Power Manager</application> is usually started in CAFE "
-"startup, but you can manually start <application>CAFE Power "
-"Manager</application> by doing:"
+"startup, but you can manually start <application>CAFE Power Manager</"
+"application> by doing:"
 msgstr ""
 
 #. (itstool) path: varlistentry/term
@@ -161,8 +161,8 @@ msgstr "命令行"
 #. (itstool) path: listitem/para
 #: C/index.docbook:152
 msgid ""
-"Type <command>cafe-power-manager --verbose --no-daemon</command>, then press"
-" <keycap>Return</keycap>:"
+"Type <command>cafe-power-manager --verbose --no-daemon</command>, then press "
+"<keycap>Return</keycap>:"
 msgstr ""
 
 #. (itstool) path: section/title
@@ -202,8 +202,8 @@ msgstr ""
 #. (itstool) path: note/para
 #: C/index.docbook:180
 msgid ""
-"You can disable this notification by changing the dconf key "
-"<command>org.cafe.power-manager notify-discharging</command>."
+"You can disable this notification by changing the dconf key <command>org."
+"cafe.power-manager notify-discharging</command>."
 msgstr ""
 
 #. (itstool) path: section/title
@@ -225,23 +225,22 @@ msgstr ""
 #: C/index.docbook:194
 msgctxt "_"
 msgid ""
-"external ref='figures/cpm-charged.png' "
-"md5='cc83716555d07b13a3659683f96c531c'"
+"external ref='figures/cpm-charged.png' md5='cc83716555d07b13a3659683f96c531c'"
 msgstr ""
 
 #. (itstool) path: note/para
 #: C/index.docbook:200
 msgid ""
-"You can disable this notification by changing the dconf key "
-"<command>org.cafe.power-manager notify-fully-charged</command>."
+"You can disable this notification by changing the dconf key <command>org."
+"cafe.power-manager notify-fully-charged</command>."
 msgstr ""
 
 #. (itstool) path: note/para
 #: C/index.docbook:206
 msgid ""
 "You will only get a repeat notification if your battery percentage charge "
-"drops below 95% and then is again fully charged. This prevents some machines"
-" from showing unwanted repeat notifications if the battery is incorrectly "
+"drops below 95% and then is again fully charged. This prevents some machines "
+"from showing unwanted repeat notifications if the battery is incorrectly "
 "reporting the charged status."
 msgstr ""
 
@@ -276,8 +275,8 @@ msgstr ""
 #. (itstool) path: note/para
 #: C/index.docbook:232
 msgid ""
-"You can disable this notification by changing the dconf key "
-"<command>org.cafe.power-manager notify-low-power</command>."
+"You can disable this notification by changing the dconf key <command>org."
+"cafe.power-manager notify-low-power</command>."
 msgstr ""
 
 #. (itstool) path: section/title
@@ -295,8 +294,7 @@ msgstr ""
 
 #. (itstool) path: figure/title
 #: C/index.docbook:247
-msgid ""
-"CAFE Power Manager Notification when the system power is critically low"
+msgid "CAFE Power Manager Notification when the system power is critically low"
 msgstr ""
 
 #. (itstool) path: imageobject/imagedata
@@ -344,8 +342,8 @@ msgstr ""
 #. (itstool) path: note/para
 #: C/index.docbook:276
 msgid ""
-"You can disable this notification by changing the dconf key "
-"<command>org.cafe.power-manager notify-sleep-failed</command>."
+"You can disable this notification by changing the dconf key <command>org."
+"cafe.power-manager notify-sleep-failed</command>."
 msgstr ""
 
 #. (itstool) path: section/title
@@ -356,8 +354,8 @@ msgstr "统计"
 #. (itstool) path: section/para
 #: C/index.docbook:286
 msgid ""
-"The statistics program allows you to visualize the power consumption of your"
-" laptop hardware."
+"The statistics program allows you to visualize the power consumption of your "
+"laptop hardware."
 msgstr ""
 
 #. (itstool) path: note/para
@@ -418,10 +416,10 @@ msgstr ""
 msgid ""
 "This graph shows the power history charge used by the composite primary "
 "battery. This line represents the amount of power that is either being used "
-"to charge the batteries in the system, or the power being used by the system"
-" from the batteries. You should see the line go up when processor intensive "
-"tasks are performed, and down when the system is at idle, or when the screen"
-" is dimmed. A legend is shown with this graph when data events have been "
+"to charge the batteries in the system, or the power being used by the system "
+"from the batteries. You should see the line go up when processor intensive "
+"tasks are performed, and down when the system is at idle, or when the screen "
+"is dimmed. A legend is shown with this graph when data events have been "
 "received."
 msgstr ""
 
@@ -534,8 +532,8 @@ msgstr ""
 #. (itstool) path: section/para
 #: C/index.docbook:427
 msgid ""
-"This allows a powerful computer to reduce the power usage when idle, or when"
-" the full capabilities are not required."
+"This allows a powerful computer to reduce the power usage when idle, or when "
+"the full capabilities are not required."
 msgstr ""
 
 #. (itstool) path: section/title
@@ -572,16 +570,16 @@ msgid ""
 "input, and if the mouse has not been moved, or the keyboard been pressed "
 "then it starts a timeout. When the value of this timeout reaches the value "
 "set in <command>cafe-screensaver-preferences</command>, then the login is "
-"marked as 'session idle'. This is when <application>CAFE Power "
-"Manager</application> performs all the session idle actions such as enabling"
-" low-power mode and lowering the laptop panel brightness."
+"marked as 'session idle'. This is when <application>CAFE Power Manager</"
+"application> performs all the session idle actions such as enabling low-"
+"power mode and lowering the laptop panel brightness."
 msgstr ""
 
 #. (itstool) path: figure/title
 #: C/index.docbook:461
 msgid ""
-"Changing the session idle timeout in <command>cafe-screensaver-"
-"preferences</command>"
+"Changing the session idle timeout in <command>cafe-screensaver-preferences</"
+"command>"
 msgstr ""
 
 #. (itstool) path: imageobject/imagedata
@@ -598,9 +596,9 @@ msgstr ""
 #. (itstool) path: section/para
 #: C/index.docbook:472
 msgid ""
-"As soon as the session is marked at idle, <application>CAFE Power "
-"Manager</application> starts its own 'system' timer. When the timeout set in"
-" <command>cafe-power-preferences</command> is reached, and the CPU load is "
+"As soon as the session is marked at idle, <application>CAFE Power Manager</"
+"application> starts its own 'system' timer. When the timeout set in "
+"<command>cafe-power-preferences</command> is reached, and the CPU load is "
 "idle, then the idle action is performed, which is usually to turn off the "
 "screen, or to suspend or hibernate."
 msgstr ""
@@ -608,12 +606,12 @@ msgstr ""
 #. (itstool) path: section/para
 #: C/index.docbook:479
 msgid ""
-"To make this clearer, the sliders in <command>cafe-power-"
-"preferences</command> are set to start at the value of the session-timeout +"
-" 1 minute, as we cannot logically trigger before the session is marked as "
-"idle. If you adjust the value of the 'session idle' timeout in <command"
-">cafe-screensaver-preferences</command> then the start of the sliders in "
-"<command>cafe-power-preferences</command> will change accordingly."
+"To make this clearer, the sliders in <command>cafe-power-preferences</"
+"command> are set to start at the value of the session-timeout + 1 minute, as "
+"we cannot logically trigger before the session is marked as idle. If you "
+"adjust the value of the 'session idle' timeout in <command>cafe-screensaver-"
+"preferences</command> then the start of the sliders in <command>cafe-power-"
+"preferences</command> will change accordingly."
 msgstr ""
 
 #. (itstool) path: section/title
@@ -738,8 +736,8 @@ msgstr "阻止管理小程序"
 #. (itstool) path: section/para
 #: C/index.docbook:588
 msgid ""
-"The <application>Inhibit Applet</application> allows the user to prevent the"
-" computer auto-sleeping when inactive. This may be required with old or "
+"The <application>Inhibit Applet</application> allows the user to prevent the "
+"computer auto-sleeping when inactive. This may be required with old or "
 "proprietary programs such as VMWare or Matlab. Just click the icon for the "
 "auto-suspend to be inhibited, and click it again for normal operation."
 msgstr ""
@@ -819,8 +817,8 @@ msgstr ""
 #: C/index.docbook:645
 msgid ""
 "The Suspend state is a power saving feature which is the lowest level of "
-"power consumption that preserves program data on the computer's memory. When"
-" your computer is in the Suspended state, computation will not be performed "
+"power consumption that preserves program data on the computer's memory. When "
+"your computer is in the Suspended state, computation will not be performed "
 "until normal activity is resumed. It will not resume until signaled by an "
 "external event such as a keyboard button press. It generally takes a few "
 "seconds to suspend and then resume your computer."
@@ -838,12 +836,11 @@ msgstr ""
 #: C/index.docbook:662
 msgid ""
 "The Hibernation state saves the complete state of the computer to hard disk "
-"and turns off the power, so that the computer appears to be off. It will not"
-" resume until signaled by an external event such as a keyboard button press."
-" This is the lowest power sleeping state available. If you remove AC power "
-"on a desktop, or run out of battery power on a laptop then work will not be "
-"lost. It can take up to a minute or more to hibernate and wake your "
-"computer."
+"and turns off the power, so that the computer appears to be off. It will not "
+"resume until signaled by an external event such as a keyboard button press. "
+"This is the lowest power sleeping state available. If you remove AC power on "
+"a desktop, or run out of battery power on a laptop then work will not be "
+"lost. It can take up to a minute or more to hibernate and wake your computer."
 msgstr ""
 
 #. (itstool) path: section/title
@@ -856,18 +853,18 @@ msgstr ""
 #. (itstool) path: section/para
 #: C/index.docbook:679
 msgid ""
-"You have to change the DPMS suspend mode <application>CAFE Power "
-"Manager</application> uses. Open <command>dconf-editor</command>, and then "
-"change the keys <literal>org.cafe.power-manager dpms-method-ac</literal> and"
-" <literal>org.cafe.power-manager dpms-method-battery</literal> to one of the"
-" modes that work, e.g. standby, suspend or off."
+"You have to change the DPMS suspend mode <application>CAFE Power Manager</"
+"application> uses. Open <command>dconf-editor</command>, and then change the "
+"keys <literal>org.cafe.power-manager dpms-method-ac</literal> and "
+"<literal>org.cafe.power-manager dpms-method-battery</literal> to one of the "
+"modes that work, e.g. standby, suspend or off."
 msgstr ""
 
 #. (itstool) path: section/title
 #: C/index.docbook:689
 msgid ""
-"My time to discharge is always incorrect due to a faulty battery, what can I"
-" do?"
+"My time to discharge is always incorrect due to a faulty battery, what can I "
+"do?"
 msgstr ""
 
 #. (itstool) path: section/para
@@ -895,8 +892,8 @@ msgstr ""
 #. (itstool) path: section/para
 #: C/index.docbook:713
 msgid ""
-"If your application is doing a long operation, you might want to disable the"
-" ability to suspend for a little while. You should use cafe-session if you "
+"If your application is doing a long operation, you might want to disable the "
+"ability to suspend for a little while. You should use cafe-session if you "
 "really don't want the user to be able to suspend, or for the computer to "
 "save power by hibernating or suspending."
 msgstr ""
@@ -936,8 +933,8 @@ msgstr ""
 #: C/index.docbook:747
 msgid ""
 "And check for the process <command>hald-addon-acpi</command>. If it is not "
-"being run, then please make sure that HAL is being run with the <command"
-">--retain-privileges</command> option in the <command>haldaemon</command> "
+"being run, then please make sure that HAL is being run with the <command>--"
+"retain-privileges</command> option in the <command>haldaemon</command> "
 "initscript. An alternative to this is to use acpid, rather than the kernel "
 "proc file."
 msgstr ""
@@ -953,24 +950,25 @@ msgid ""
 "Permission is granted to copy, distribute and/or modify this document under "
 "the terms of the GNU Free Documentation License (GFDL), Version 1.1 or any "
 "later version published by the Free Software Foundation with no Invariant "
-"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy"
-" of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
+"Sections, no Front-Cover Texts, and no Back-Cover Texts. You can find a copy "
+"of the GFDL at this <_:ulink-1/> or in the file COPYING-DOCS distributed "
 "with this manual."
 msgstr ""
-"对于本文档的复制、分发和／或修改必须遵循自由软件基金会 (Free Software Foundation) 发布的 GNU 自由文档许可证 "
-"(GFDL) 版本 1.1 或更高版本，该许可证没有固定的部分、没有封面和背页文本。您可以在此 <_:ulink-1/> 或者随本文档一并发行的 "
-"COPYING-DOCS 中找到 GFDL 的副本。"
+"对于本文档的复制、分发和／或修改必须遵循自由软件基金会 (Free Software "
+"Foundation) 发布的 GNU 自由文档许可证 (GFDL) 版本 1.1 或更高版本，该许可证没"
+"有固定的部分、没有封面和背页文本。您可以在此 <_:ulink-1/> 或者随本文档一并发"
+"行的 COPYING-DOCS 中找到 GFDL 的副本。"
 
 #. (itstool) path: legalnotice/para
 #: C/legal.xml:12
 msgid ""
 "This manual is part of a collection of CAFE manuals distributed under the "
 "GFDL. If you want to distribute this manual separately from the collection, "
-"you can do so by adding a copy of the license to the manual, as described in"
-" section 6 of the license."
+"you can do so by adding a copy of the license to the manual, as described in "
+"section 6 of the license."
 msgstr ""
-"本手册是在 GFDL 许可之下分发的 CAFE 手册集合的一部分。如果想要单独分发此手册，可以在手册中添加该许可证的一份副本然后分发，如该许可证的第 6"
-" 部分所述。"
+"本手册是在 GFDL 许可之下分发的 CAFE 手册集合的一部分。如果想要单独分发此手"
+"册，可以在手册中添加该许可证的一份副本然后分发，如该许可证的第 6 部分所述。"
 
 #. (itstool) path: legalnotice/para
 #: C/legal.xml:19
@@ -981,8 +979,9 @@ msgid ""
 "aware of those trademarks, then the names are in capital letters or initial "
 "capital letters."
 msgstr ""
-"各个公司使用的许多用于区别它们产品和服务的名称都声明为商标。在所有的 CAFE 文档以及 CAFE "
-"文档项目的成员中，这些名称都是以全大写字母或首字母大写显示，从而表明它们是商标。"
+"各个公司使用的许多用于区别它们产品和服务的名称都声明为商标。在所有的 CAFE 文"
+"档以及 CAFE 文档项目的成员中，这些名称都是以全大写字母或首字母大写显示，从而"
+"表明它们是商标。"
 
 #. (itstool) path: listitem/para
 #: C/legal.xml:35
@@ -999,23 +998,33 @@ msgid ""
 "ESSENTIAL PART OF THIS LICENSE. NO USE OF ANY DOCUMENT OR MODIFIED VERSION "
 "OF THE DOCUMENT IS AUTHORIZED HEREUNDER EXCEPT UNDER THIS DISCLAIMER; AND"
 msgstr ""
-"文档按“原样”提供，不提供任何明示或暗示的保证，包括但不限于：文档或文档的修改版本没有适销性方面的缺陷、适合特定目的的适用性，以及没有侵权行为。您将自行承担本文档以及文档修改版本的质量、准确性以及性能方面的风险。如果任何文档或文档修改版本存在缺陷，您(而不是最初的编写者、作者或撰写人)将承担所有必需的服务、维修或更正的费用。此免责声明是本许可证的重要组成部分。如果不接受此免责声明，那么您就没有权利使用任何文档或文档的修改版本；并且"
+"文档按“原样”提供，不提供任何明示或暗示的保证，包括但不限于：文档或文档的修改"
+"版本没有适销性方面的缺陷、适合特定目的的适用性，以及没有侵权行为。您将自行承"
+"担本文档以及文档修改版本的质量、准确性以及性能方面的风险。如果任何文档或文档"
+"修改版本存在缺陷，您(而不是最初的编写者、作者或撰写人)将承担所有必需的服务、"
+"维修或更正的费用。此免责声明是本许可证的重要组成部分。如果不接受此免责声明，"
+"那么您就没有权利使用任何文档或文档的修改版本；并且"
 
 #. (itstool) path: listitem/para
 #: C/legal.xml:55
 msgid ""
-"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING"
-" NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
+"UNDER NO CIRCUMSTANCES AND UNDER NO LEGAL THEORY, WHETHER IN TORT (INCLUDING "
+"NEGLIGENCE), CONTRACT, OR OTHERWISE, SHALL THE AUTHOR, INITIAL WRITER, ANY "
 "CONTRIBUTOR, OR ANY DISTRIBUTOR OF THE DOCUMENT OR MODIFIED VERSION OF THE "
 "DOCUMENT, OR ANY SUPPLIER OF ANY OF SUCH PARTIES, BE LIABLE TO ANY PERSON "
 "FOR ANY DIRECT, INDIRECT, SPECIAL, INCIDENTAL, OR CONSEQUENTIAL DAMAGES OF "
 "ANY CHARACTER INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF GOODWILL, "
-"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES"
-" OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
-"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE"
-" POSSIBILITY OF SUCH DAMAGES."
+"WORK STOPPAGE, COMPUTER FAILURE OR MALFUNCTION, OR ANY AND ALL OTHER DAMAGES "
+"OR LOSSES ARISING OUT OF OR RELATING TO USE OF THE DOCUMENT AND MODIFIED "
+"VERSIONS OF THE DOCUMENT, EVEN IF SUCH PARTY SHALL HAVE BEEN INFORMED OF THE "
+"POSSIBILITY OF SUCH DAMAGES."
 msgstr ""
-"无论在任何情况以及在任何法律理论下，本文档或文档修改版本的作者、最初的编写者、任何撰写人或任何分发者，或者任意这些方的任何提供者都不对任何人由于使用本文档或文档修改版本引起或带来的任何直接的、间接的、特殊的、偶然的或继发的损失承担任何民事(包括疏忽)、合同或其它方面的责任，这些损失包括但不限于信誉损失、工作停止、计算机失败或故障，或任何以及所有其它损失或由此引发的或与之相关的损失，即使这些方已被告知存在出现此类损失的可能性时也是如此。"
+"无论在任何情况以及在任何法律理论下，本文档或文档修改版本的作者、最初的编写"
+"者、任何撰写人或任何分发者，或者任意这些方的任何提供者都不对任何人由于使用本"
+"文档或文档修改版本引起或带来的任何直接的、间接的、特殊的、偶然的或继发的损失"
+"承担任何民事(包括疏忽)、合同或其它方面的责任，这些损失包括但不限于信誉损失、"
+"工作停止、计算机失败或故障，或任何以及所有其它损失或由此引发的或与之相关的损"
+"失，即使这些方已被告知存在出现此类损失的可能性时也是如此。"
 
 #. (itstool) path: legalnotice/para
 #: C/legal.xml:28
@@ -1023,7 +1032,9 @@ msgid ""
 "DOCUMENT AND MODIFIED VERSIONS OF THE DOCUMENT ARE PROVIDED UNDER THE TERMS "
 "OF THE GNU FREE DOCUMENTATION LICENSE WITH THE FURTHER UNDERSTANDING THAT: "
 "<_:orderedlist-1/>"
-msgstr "本文档和文档是根据 GNU 免费文档许可协议的条款提供的，并且还有进一步的阐述: <_:orderedlist-1/>"
+msgstr ""
+"本文档和文档是根据 GNU 免费文档许可协议的条款提供的，并且还有进一步的阐述: "
+"<_:orderedlist-1/>"
 
 #. (itstool) path: formalpara/title
 #: C/legal.xml:77
@@ -1051,7 +1062,7 @@ msgstr ""
 #. (itstool) path: formalpara/para
 #: C/legal.xml:88
 msgid ""
-"You should have received a copy of the GNU General Public License along with"
-" CAFE Power Manager; if not, write to the Free Software Foundation, Inc., 51"
-" Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
+"You should have received a copy of the GNU General Public License along with "
+"CAFE Power Manager; if not, write to the Free Software Foundation, Inc., 51 "
+"Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
