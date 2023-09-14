@@ -1939,12 +1939,3 @@ msgstr ""
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr ""
-
-#~ msgid "ID"
-#~ msgstr "ID"
-
-#~ msgid "Command"
-#~ msgstr "Opdrag"
-
-#~ msgid "Processor"
-#~ msgstr "Verwerker"

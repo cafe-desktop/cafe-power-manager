@@ -1916,24 +1916,3 @@ msgstr ""
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr ""
-
-#~ msgid "0"
-#~ msgstr "0"
-
-#~ msgid "ID"
-#~ msgstr "ID"
-
-#~ msgid "Command"
-#~ msgstr "Команда"
-
-#~ msgid "Kernel core"
-#~ msgstr "Ядро"
-
-#~ msgid "ACPI"
-#~ msgstr "ACPI"
-
-#~ msgid "Serial ATA"
-#~ msgstr "Serial ATA"
-
-#~ msgid "Processor"
-#~ msgstr "Процессор"

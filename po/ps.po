@@ -1938,12 +1938,3 @@ msgstr ""
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr ""
-
-#~ msgid "ID"
-#~ msgstr "پېژند"
-
-#~ msgid "Command"
-#~ msgstr "بولۍ"
-
-#~ msgid "Processor"
-#~ msgstr "بهيرګر"

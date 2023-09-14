@@ -1937,19 +1937,3 @@ msgstr ""
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr ""
-
-#~ msgid "0"
-#~ msgstr "0"
-
-#~ msgid "ID"
-#~ msgstr "پێناسە"
-
-#~ msgid "Command"
-#~ msgstr "فەرمان"
-
-#~ msgid "Intel wireless adaptor"
-#~ msgstr "گونجێنەری بێتەلی ئینتێل"
-
-#, c-format
-#~ msgid "Wait %s"
-#~ msgstr "چاوەڕوان بە %s"

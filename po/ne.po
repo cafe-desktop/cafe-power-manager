@@ -1939,12 +1939,3 @@ msgstr ""
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr ""
-
-#~ msgid "ID"
-#~ msgstr "आईडी"
-
-#~ msgid "Command"
-#~ msgstr "आदेश"
-
-#~ msgid "Processor"
-#~ msgstr "प्रक्रियाकर्ता"

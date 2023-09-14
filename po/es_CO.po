@@ -1941,18 +1941,3 @@ msgstr ""
 #: src/cpm-upower.c:662
 msgid "Unknown state"
 msgstr "Estado desconocido"
-
-#~ msgid "Licensed under the GNU General Public License Version 2"
-#~ msgstr "Licenciado bajo la Licencia Pública General de GNU Versión 2"
-
-#~ msgid "0"
-#~ msgstr "0"
-
-#~ msgid "ID"
-#~ msgstr "ID"
-
-#~ msgid "Command"
-#~ msgstr "Comando"
-
-#~ msgid "Processor"
-#~ msgstr "Procesador"
