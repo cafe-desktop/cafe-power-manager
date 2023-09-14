@@ -5,9 +5,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-power-manager 1.24.1\n"
+"Project-Id-Version: cafe-power-manager 1.25.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2020-08-15 10:48+0200\n"
+"POT-Creation-Date: 2023-09-14 10:39+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -72,21 +72,22 @@ msgstr ""
 #: applets/brightness/brightness-applet.c:815
 msgid ""
 "Copyright © 2006 Benjamin Canou\n"
-"Copyright © 2011-2020 CAFE developers"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
 
-#: applets/brightness/brightness-applet.c:822
-#: applets/inhibit/inhibit-applet.c:319 src/cpm-tray-icon.c:213
+#: applets/brightness/brightness-applet.c:823
+#: applets/inhibit/inhibit-applet.c:320 src/cpm-tray-icon.c:214
 msgid "translator-credits"
 msgstr ""
 
-#: applets/brightness/brightness-applet.c:1050
-#: applets/inhibit/inhibit-applet.c:506
+#: applets/brightness/brightness-applet.c:1051
+#: applets/inhibit/inhibit-applet.c:507
 msgid "_About"
 msgstr ""
 
-#: applets/brightness/brightness-applet.c:1053
-#: applets/inhibit/inhibit-applet.c:509
+#: applets/brightness/brightness-applet.c:1054
+#: applets/inhibit/inhibit-applet.c:510
 msgid "_Help"
 msgstr ""
 
@@ -125,7 +126,8 @@ msgstr ""
 #: applets/inhibit/inhibit-applet.c:312
 msgid ""
 "Copyright © 2006-2007 Richard Hughes\n"
-"Copyright © 2011-2020 CAFE developers"
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
 
 #: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:5
@@ -1660,15 +1662,17 @@ msgid "Select this device at startup"
 msgstr ""
 
 #: src/cpm-tray-icon.c:207
-msgid "Copyright © 2011-2020 CAFE developers"
+msgid ""
+"Copyright © 2011-2020 MATE developers\n"
+"Copyright © 2023 Pablo Barciela"
 msgstr ""
 
-#: src/cpm-tray-icon.c:317
+#: src/cpm-tray-icon.c:318
 #, c-format
 msgid "%s remaining"
 msgstr ""
 
-#: src/cpm-tray-icon.c:371
+#: src/cpm-tray-icon.c:372
 msgid "_Preferences"
 msgstr ""
 
