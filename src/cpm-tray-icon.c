@@ -205,7 +205,7 @@ cpm_tray_icon_show_about_cb (CtkMenuItem *item, gpointer data)
 				"version", VERSION,
 				"comments", _("Power management daemon"),
 				"copyright", _("Copyright \xC2\xA9 2011-2020 MATE developers\n"
-					       "Copyright \xC2\xA9 2023 Pablo Barciela"),
+					       "Copyright \xC2\xA9 2023-2024 Pablo Barciela"),
 				"authors", authors,
 				/* Translators should localize the following string
 				* which will be displayed at the bottom of the about

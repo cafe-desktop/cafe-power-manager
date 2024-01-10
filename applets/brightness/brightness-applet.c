@@ -814,7 +814,7 @@ cpm_applet_dialog_about_cb (CtkAction *action, gpointer data)
 	                       "comments", CPM_BRIGHTNESS_APPLET_DESC,
 	                       "copyright", _("Copyright \xC2\xA9 2006 Benjamin Canou\n"
 	                                      "Copyright \xC2\xA9 2011-2020 MATE developers\n"
-	                                      "Copyright \xC2\xA9 2023 Pablo Barciela"),
+	                                      "Copyright \xC2\xA9 2023-2024 Pablo Barciela"),
 	                       "icon-name", CPM_BRIGHTNESS_APPLET_ICON,
 	                       "logo-icon-name", CPM_BRIGHTNESS_APPLET_ICON,
 	                       "license", license_trans,
