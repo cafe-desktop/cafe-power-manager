@@ -1337,7 +1337,7 @@ msgstr "A noteszgép akkumulátora gyenge"
 #: src/cpm-manager.c:1314
 #, c-format
 msgid "Approximately <b>%s</b> remaining (%.0f%%)"
-msgstr "Megközelítőleg <b>%s</b> van hátra (%.0lf%%)"
+msgstr "Megközelítőleg <b>%s</b> van hátra (%.0f%%)"
 
 #: src/cpm-manager.c:1318
 msgid "UPS low"
