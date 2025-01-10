@@ -32,9 +32,9 @@
 
 static void     cpm_screensaver_finalize   (GObject		*object);
 
-#define GS_LISTENER_SERVICE	"org.cafe.ScreenSaver"
-#define GS_LISTENER_PATH	"/"
-#define GS_LISTENER_INTERFACE	"org.cafe.ScreenSaver"
+#define GS_LISTENER_SERVICE	"org.freedesktop.ScreenSaver"
+#define GS_LISTENER_PATH	"/org/freedesktop/ScreenSaver"
+#define GS_LISTENER_INTERFACE	"org.freedesktop.ScreenSaver"
 
 struct CpmScreensaverPrivate
 {
