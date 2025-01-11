@@ -1,0 +1,4 @@
+po,hu: Fix build since gettext 0.22
+
+Fixes the warning:
+hu.1po:988: 'msgstr' is not a valid C format string, unlike 'msgid'. Reason: In the directive number 2, the argument size specifier is invalid.
