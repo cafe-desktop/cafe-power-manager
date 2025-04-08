@@ -112,7 +112,7 @@ msgstr "Miniaplicație de împiedicare administrare consum"
 #: applets/inhibit/inhibit-applet.c:88
 msgid "Allows user to inhibit automatic power saving."
 msgstr ""
-"Permite utilizatorului împiedicarea reducerii autocafe a consumului de "
+"Permite utilizatorului împiedicarea reducerii automate a consumului de "
 "energie."
 
 #: applets/inhibit/inhibit-applet.c:228
