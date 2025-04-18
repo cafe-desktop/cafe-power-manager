@@ -1,0 +1,3 @@
+Revert "cpm-screensaver: org.freedesktop.ScreenSaver instead org.cafe.ScreenSaver"
+
+This reverts commit 92931a020bcdaf84b85fc8e9016b2d56d5ec078f.

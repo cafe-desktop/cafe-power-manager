@@ -1,0 +1,5 @@
+cpm-screensaver: org.freedesktop.ScreenSaver instead org.cafe.ScreenSaver
+
+Without this commit everything works fine, this change is to be consistent with:
+https://github.com/cafe-desktop/cafe-screensaver/commit/7ae6284641c675702dbb7f0b6c0fb62005df52dc
+https://github.com/cafe-desktop/cafe-notification-daemon/commit/76e15b2fcd8fd597743082f3830eea30bca607bf
