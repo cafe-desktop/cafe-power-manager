@@ -350,7 +350,9 @@ cpm_idle_set_timeout_sleep (CpmIdle *idle, guint timeout)
  * The SessionIdleChanged callback from cafe-session.
  **/
 static void
-cpm_idle_session_idle_changed_cb (CpmSession *session, gboolean is_idle, CpmIdle *idle)
+cpm_idle_session_idle_changed_cb (CpmSession *session G_GNUC_UNUSED,
+				  gboolean    is_idle,
+				  CpmIdle    *idle)
 {
 	egg_debug ("Received cafe session idle changed: %i", is_idle);
 	idle->priv->x_idle = is_idle;
@@ -361,7 +363,10 @@ cpm_idle_session_idle_changed_cb (CpmSession *session, gboolean is_idle, CpmIdle
  * cpm_idle_session_inhibited_changed_cb:
  **/
 static void
-cpm_idle_session_inhibited_changed_cb (CpmSession *session, gboolean is_idle_inhibited, gboolean is_suspend_inhibited, CpmIdle *idle)
+cpm_idle_session_inhibited_changed_cb (CpmSession *session G_GNUC_UNUSED,
+				       gboolean    is_idle_inhibited,
+				       gboolean    is_suspend_inhibited,
+				       CpmIdle    *idle)
 {
 	egg_debug ("Received cafe session inhibited changed: idle=(%i), suspend=(%i)", is_idle_inhibited, is_suspend_inhibited);
 	cpm_idle_evaluate (idle);
@@ -373,7 +378,9 @@ cpm_idle_session_inhibited_changed_cb (CpmSession *session, gboolean is_idle_inh
  * We're idle, something timed out
  **/
 static void
-cpm_idle_idletime_alarm_expired_cb (EggIdletime *idletime, guint alarm_id, CpmIdle *idle)
+cpm_idle_idletime_alarm_expired_cb (EggIdletime *idletime G_GNUC_UNUSED,
+				    guint        alarm_id,
+				    CpmIdle     *idle)
 {
 	egg_debug ("idletime alarm: %i", alarm_id);
 
@@ -388,7 +395,8 @@ cpm_idle_idletime_alarm_expired_cb (EggIdletime *idletime, guint alarm_id, CpmId
  * We're no longer idle, the user moved
  **/
 static void
-cpm_idle_idletime_reset_cb (EggIdletime *idletime, CpmIdle *idle)
+cpm_idle_idletime_reset_cb (EggIdletime *idletime G_GNUC_UNUSED,
+			    CpmIdle     *idle)
 {
 	egg_debug ("idletime reset");
 
