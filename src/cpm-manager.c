@@ -336,7 +336,9 @@ cpm_manager_play (CpmManager *manager, CpmManagerSound action, gboolean force)
  * Return value: TRUE if we can perform the action.
  **/
 static gboolean
-cpm_manager_is_inhibit_valid (CpmManager *manager, gboolean user_action, const char *action)
+cpm_manager_is_inhibit_valid (CpmManager *manager G_GNUC_UNUSED,
+			      gboolean    user_action G_GNUC_UNUSED,
+			      const char *action G_GNUC_UNUSED)
 {
 	return TRUE;
 }
@@ -381,7 +383,8 @@ cpm_manager_sync_policy_sleep (CpmManager *manager)
  * Return value: Success.
  **/
 static gboolean
-cpm_manager_blank_screen (CpmManager *manager, GError **noerror)
+cpm_manager_blank_screen (CpmManager *manager,
+			  GError    **noerror G_GNUC_UNUSED)
 {
 	gboolean do_lock;
 	gboolean ret = TRUE;
@@ -411,7 +414,8 @@ cpm_manager_blank_screen (CpmManager *manager, GError **noerror)
  * Return value: Success.
  **/
 static gboolean
-cpm_manager_unblank_screen (CpmManager *manager, GError **noerror)
+cpm_manager_unblank_screen (CpmManager *manager,
+			    GError    **noerror G_GNUC_UNUSED)
 {
 	gboolean do_lock;
 	gboolean ret = TRUE;
@@ -434,7 +438,8 @@ cpm_manager_unblank_screen (CpmManager *manager, GError **noerror)
  * cpm_manager_notify_close:
  **/
 static gboolean
-cpm_manager_notify_close (CpmManager *manager, NotifyNotification *notification)
+cpm_manager_notify_close (CpmManager         *manager G_GNUC_UNUSED,
+			  NotifyNotification *notification)
 {
 	gboolean ret = FALSE;
 	GError *error = NULL;
@@ -770,7 +775,9 @@ cpm_manager_idle_do_sleep (CpmManager *manager)
  * session timeout has elapsed for the idle action.
  **/
 static void
-cpm_manager_idle_changed_cb (CpmIdle *idle, CpmIdleMode mode, CpmManager *manager)
+cpm_manager_idle_changed_cb (CpmIdle    *idle G_GNUC_UNUSED,
+			     CpmIdleMode mode,
+			     CpmManager *manager)
 {
 	/* ConsoleKit/systemd say we are not on active console */
 	if (!LOGIND_RUNNING() && !egg_console_kit_is_active (manager->priv->console)) {
@@ -896,7 +903,9 @@ cpm_manager_update_lid_throttle (CpmManager *manager, gboolean lid_is_closed)
  * @manager: This class instance
  **/
 static void
-cpm_manager_button_pressed_cb (CpmButton *button, const gchar *type, CpmManager *manager)
+cpm_manager_button_pressed_cb (CpmButton   *button G_GNUC_UNUSED,
+			       const gchar *type,
+			       CpmManager  *manager)
 {
 	gchar *message;
 	egg_debug ("Button press event type=%s", type);
@@ -946,7 +955,9 @@ cpm_manager_button_pressed_cb (CpmButton *button, const gchar *type, CpmManager 
  * cpm_manager_client_changed_cb:
  **/
 static void
-cpm_manager_client_changed_cb (UpClient *client, GParamSpec *pspec, CpmManager *manager)
+cpm_manager_client_changed_cb (UpClient   *client,
+			       GParamSpec *pspec G_GNUC_UNUSED,
+			       CpmManager *manager)
 {
 	gboolean event_when_closed;
 	gint timeout;
@@ -1051,7 +1062,9 @@ cpm_manager_class_init (CpmManagerClass *klass)
  * We might have to do things when the keys change; do them here.
  **/
 static void
-cpm_manager_settings_changed_cb (GSettings *settings, const gchar *key, CpmManager *manager)
+cpm_manager_settings_changed_cb (GSettings   *settings G_GNUC_UNUSED,
+				 const gchar *key,
+				 CpmManager  *manager)
 {
 	if (g_strcmp0 (key, CPM_SETTINGS_SLEEP_COMPUTER_BATT) == 0 ||
 	    g_strcmp0 (key, CPM_SETTINGS_SLEEP_COMPUTER_AC) == 0 ||
@@ -1064,7 +1077,9 @@ cpm_manager_settings_changed_cb (GSettings *settings, const gchar *key, CpmManag
  * cpm_manager_engine_icon_changed_cb:
  */
 static void
-cpm_manager_engine_icon_changed_cb (CpmEngine  *engine, gchar *icon, CpmManager *manager)
+cpm_manager_engine_icon_changed_cb (CpmEngine  *engine G_GNUC_UNUSED,
+				    gchar      *icon,
+				    CpmManager *manager)
 {
 	cpm_tray_icon_set_icon (manager->priv->tray_icon, icon);
 }
@@ -1073,7 +1088,9 @@ cpm_manager_engine_icon_changed_cb (CpmEngine  *engine, gchar *icon, CpmManager 
  * cpm_manager_engine_summary_changed_cb:
  */
 static void
-cpm_manager_engine_summary_changed_cb (CpmEngine *engine, gchar *summary, CpmManager *manager)
+cpm_manager_engine_summary_changed_cb (CpmEngine  *engine G_GNUC_UNUSED,
+				       gchar      *summary,
+				       CpmManager *manager)
 {
 	cpm_tray_icon_set_tooltip (manager->priv->tray_icon, summary);
 }
@@ -1082,7 +1099,9 @@ cpm_manager_engine_summary_changed_cb (CpmEngine *engine, gchar *summary, CpmMan
  * cpm_manager_engine_low_capacity_cb:
  */
 static void
-cpm_manager_engine_low_capacity_cb (CpmEngine *engine, UpDevice *device, CpmManager *manager)
+cpm_manager_engine_low_capacity_cb (CpmEngine  *engine G_GNUC_UNUSED,
+				    UpDevice   *device,
+				    CpmManager *manager)
 {
 	gchar *message = NULL;
 	const gchar *title;
@@ -1119,7 +1138,9 @@ out:
  * cpm_manager_engine_fully_charged_cb:
  */
 static void
-cpm_manager_engine_fully_charged_cb (CpmEngine *engine, UpDevice *device, CpmManager *manager)
+cpm_manager_engine_fully_charged_cb (CpmEngine  *engine G_GNUC_UNUSED,
+				     UpDevice   *device,
+				     CpmManager *manager)
 {
 	UpDeviceKind kind;
 	gchar *native_path = NULL;
@@ -1169,7 +1190,9 @@ out:
  * cpm_manager_engine_discharging_cb:
  */
 static void
-cpm_manager_engine_discharging_cb (CpmEngine *engine, UpDevice *device, CpmManager *manager)
+cpm_manager_engine_discharging_cb (CpmEngine  *engine G_GNUC_UNUSED,
+				   UpDevice   *device,
+				   CpmManager *manager)
 {
 	UpDeviceKind kind;
 	gboolean ret;
@@ -1270,7 +1293,9 @@ cpm_manager_engine_just_laptop_battery (CpmManager *manager)
  * cpm_manager_engine_charge_low_cb:
  */
 static void
-cpm_manager_engine_charge_low_cb (CpmEngine *engine, UpDevice *device, CpmManager *manager)
+cpm_manager_engine_charge_low_cb (CpmEngine  *engine G_GNUC_UNUSED,
+				  UpDevice   *device,
+				  CpmManager *manager)
 {
 	const gchar *title = NULL;
 	gchar *message = NULL;
@@ -1389,7 +1414,9 @@ out:
  * cpm_manager_engine_charge_critical_cb:
  */
 static void
-cpm_manager_engine_charge_critical_cb (CpmEngine *engine, UpDevice *device, CpmManager *manager)
+cpm_manager_engine_charge_critical_cb (CpmEngine  *engine G_GNUC_UNUSED,
+				       UpDevice   *device,
+				       CpmManager *manager)
 {
 	const gchar *title = NULL;
 	gchar *message = NULL;
@@ -1557,7 +1584,9 @@ out:
  * cpm_manager_engine_charge_action_cb:
  */
 static void
-cpm_manager_engine_charge_action_cb (CpmEngine *engine, UpDevice *device, CpmManager *manager)
+cpm_manager_engine_charge_action_cb (CpmEngine  *engine G_GNUC_UNUSED,
+				     UpDevice   *device,
+				     CpmManager *manager)
 {
 	const gchar *title = NULL;
 	gchar *message = NULL;
@@ -1672,7 +1701,9 @@ out:
  * Log when the DPMS mode is changed.
  **/
 static void
-cpm_manager_dpms_mode_changed_cb (CpmDpms *dpms, CpmDpmsMode mode, CpmManager *manager)
+cpm_manager_dpms_mode_changed_cb (CpmDpms    *dpms G_GNUC_UNUSED,
+				  CpmDpmsMode mode,
+				  CpmManager *manager)
 {
 	egg_debug ("DPMS mode changed: %d", mode);
 
@@ -1713,7 +1744,9 @@ cpm_manager_reset_just_resumed_cb (gpointer user_data)
  * cpm_manager_control_resume_cb
  **/
 static void
-cpm_manager_control_resume_cb (CpmControl *control, CpmControlAction action, CpmManager *manager)
+cpm_manager_control_resume_cb (CpmControl      *control G_GNUC_UNUSED,
+			       CpmControlAction action G_GNUC_UNUSED,
+			       CpmManager      *manager)
 {
 	guint timer_id;
 	manager->priv->just_resumed = TRUE;
@@ -1792,9 +1825,9 @@ cpm_manager_systemd_inhibit (GDBusProxy *proxy) {
 }
 
 static void
-on_icon_theme_change (CtkSettings *settings,
-                      GParamSpec  *pspec,
-                      CpmManager  *manager)
+on_icon_theme_change (CtkSettings *settings G_GNUC_UNUSED,
+		      GParamSpec  *pspec G_GNUC_UNUSED,
+		      CpmManager  *manager)
 {
 	gchar *icon = cpm_engine_get_icon (manager->priv->engine);
 	if (icon == NULL) {
