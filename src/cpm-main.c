@@ -119,7 +119,8 @@ timed_exit_cb (GMainLoop *loop)
  * cpm_main_stop_cb:
  **/
 static void
-cpm_main_stop_cb (CpmSession *session, GMainLoop *loop)
+cpm_main_stop_cb (CpmSession *session G_GNUC_UNUSED,
+		  GMainLoop  *loop)
 {
 	g_main_loop_quit (loop);
 }
@@ -128,7 +129,9 @@ cpm_main_stop_cb (CpmSession *session, GMainLoop *loop)
  * cpm_main_query_end_session_cb:
  **/
 static void
-cpm_main_query_end_session_cb (CpmSession *session, guint flags, GMainLoop *loop)
+cpm_main_query_end_session_cb (CpmSession *session,
+			       guint       flags G_GNUC_UNUSED,
+			       GMainLoop  *loop G_GNUC_UNUSED)
 {
 	/* just send response */
 	cpm_session_end_session_response (session, TRUE, NULL);
@@ -138,7 +141,9 @@ cpm_main_query_end_session_cb (CpmSession *session, guint flags, GMainLoop *loop
  * cpm_main_end_session_cb:
  **/
 static void
-cpm_main_end_session_cb (CpmSession *session, guint flags, GMainLoop *loop)
+cpm_main_end_session_cb (CpmSession *session,
+			 guint       flags G_GNUC_UNUSED,
+			 GMainLoop  *loop)
 {
 	/* send response */
 	cpm_session_end_session_response (session, TRUE, NULL);
