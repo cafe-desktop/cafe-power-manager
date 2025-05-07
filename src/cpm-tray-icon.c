@@ -140,7 +140,8 @@ cpm_tray_icon_set_icon (CpmTrayIcon *icon, const gchar *icon_name)
  * cpm_tray_icon_show_info_cb:
  **/
 static void
-cpm_tray_icon_show_info_cb (CtkMenuItem *item, gpointer data)
+cpm_tray_icon_show_info_cb (CtkMenuItem *item,
+			    gpointer     data G_GNUC_UNUSED)
 {
 	gchar *path;
 	const gchar *object_path;
@@ -157,7 +158,8 @@ cpm_tray_icon_show_info_cb (CtkMenuItem *item, gpointer data)
  * @action: A valid CtkAction
  **/
 static void
-cpm_tray_icon_show_preferences_cb (CtkMenuItem *item, gpointer data)
+cpm_tray_icon_show_preferences_cb (CtkMenuItem *item G_GNUC_UNUSED,
+				   gpointer     data G_GNUC_UNUSED)
 {
 	const gchar *command = "cafe-power-preferences";
 
@@ -173,7 +175,8 @@ cpm_tray_icon_show_preferences_cb (CtkMenuItem *item, gpointer data)
  * @action: A valid CtkAction
  **/
 static void
-cpm_tray_icon_show_about_cb (CtkMenuItem *item, gpointer data)
+cpm_tray_icon_show_about_cb (CtkMenuItem *item G_GNUC_UNUSED,
+			     gpointer     data G_GNUC_UNUSED)
 {
 	GKeyFile *key_file;
 	GBytes *bytes;
@@ -299,7 +302,9 @@ cpm_tray_icon_add_device (CpmTrayIcon *icon, CtkMenu *menu, const GPtrArray *arr
  * cpm_tray_icon_add_primary_device:
  **/
 static void
-cpm_tray_icon_add_primary_device (CpmTrayIcon *icon, CtkMenu *menu, UpDevice *device)
+cpm_tray_icon_add_primary_device (CpmTrayIcon *icon G_GNUC_UNUSED,
+				  CtkMenu     *menu,
+				  UpDevice    *device)
 {
 	CtkWidget *item;
 	gchar *time_str;
@@ -443,7 +448,10 @@ cpm_tray_icon_popup_menu (CpmTrayIcon *icon, guint32 timestamp)
  * Display the popup menu.
  **/
 static void
-cpm_tray_icon_popup_menu_cb (CtkStatusIcon *status_icon, guint button, guint32 timestamp, CpmTrayIcon *icon)
+cpm_tray_icon_popup_menu_cb (CtkStatusIcon *status_icon G_GNUC_UNUSED,
+			     guint          button G_GNUC_UNUSED,
+			     guint32        timestamp,
+			     CpmTrayIcon   *icon)
 {
 	egg_debug ("icon right clicked");
 	cpm_tray_icon_popup_menu (icon, timestamp);
@@ -457,7 +465,8 @@ cpm_tray_icon_popup_menu_cb (CtkStatusIcon *status_icon, guint button, guint32 t
  * Callback when the icon is clicked
  **/
 static void
-cpm_tray_icon_activate_cb (CtkStatusIcon *status_icon, CpmTrayIcon *icon)
+cpm_tray_icon_activate_cb (CtkStatusIcon *status_icon G_GNUC_UNUSED,
+			   CpmTrayIcon   *icon)
 {
 	egg_debug ("icon left clicked");
 	cpm_tray_icon_popup_menu (icon, ctk_get_current_event_time());
