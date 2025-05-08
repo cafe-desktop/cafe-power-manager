@@ -341,7 +341,9 @@ out:
  * egg_console_kit_active_changed_cb:
  **/
 static void
-egg_console_kit_active_changed_cb (DBusGProxy *proxy, gboolean active, EggConsoleKit *console)
+egg_console_kit_active_changed_cb (DBusGProxy    *proxy G_GNUC_UNUSED,
+				   gboolean       active,
+				   EggConsoleKit *console)
 {
 	egg_debug ("emitting active: %i", active);
 	g_signal_emit (console, signals [EGG_CONSOLE_KIT_ACTIVE_CHANGED], 0, active);
