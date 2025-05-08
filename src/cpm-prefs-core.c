@@ -120,7 +120,8 @@ cpm_prefs_activate_window (CtkApplication *app, CpmPrefs *prefs)
  * @prefs: This prefs class instance
  **/
 static void
-cpm_prefs_help_cb (CtkWidget *widget, CpmPrefs *prefs)
+cpm_prefs_help_cb (CtkWidget *widget G_GNUC_UNUSED,
+		   CpmPrefs  *prefs)
 {
 	egg_debug ("emitting action-help");
 	g_signal_emit (prefs, signals [ACTION_HELP], 0);
@@ -145,7 +146,8 @@ cpm_prefs_icon_radio_cb (CtkWidget *widget, CpmPrefs *prefs)
  * @value: The value in %.
  **/
 static gchar *
-cpm_prefs_format_percentage_cb (CtkScale *scale, gdouble value)
+cpm_prefs_format_percentage_cb (CtkScale *scale G_GNUC_UNUSED,
+				gdouble   value)
 {
 	return g_strdup_printf ("%.0f%%", value);
 }
@@ -333,7 +335,8 @@ cpm_prefs_setup_time_combo (CpmPrefs *prefs, const gchar *widget_name,
  * @prefs: This prefs class instance
  **/
 static void
-cpm_prefs_close_cb (CtkWidget *widget, CpmPrefs *prefs)
+cpm_prefs_close_cb (CtkWidget *widget G_GNUC_UNUSED,
+		    CpmPrefs  *prefs)
 {
 	egg_debug ("emitting action-close");
 	g_signal_emit (prefs, signals [ACTION_CLOSE], 0);
@@ -346,7 +349,9 @@ cpm_prefs_close_cb (CtkWidget *widget, CpmPrefs *prefs)
  * @prefs: This prefs class instance
  **/
 static gboolean
-cpm_prefs_delete_event_cb (CtkWidget *widget, CdkEvent *event, CpmPrefs *prefs)
+cpm_prefs_delete_event_cb (CtkWidget *widget,
+			   CdkEvent  *event G_GNUC_UNUSED,
+			   CpmPrefs  *prefs)
 {
 	cpm_prefs_close_cb (widget, prefs);
 	return FALSE;
