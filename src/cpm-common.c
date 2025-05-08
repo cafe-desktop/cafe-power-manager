@@ -162,7 +162,9 @@ cpm_help_display (const gchar *link_id)
  * cpm_dialog_page_scroll_event_cb:
  **/
 gboolean
-cpm_dialog_page_scroll_event_cb (CtkWidget *widget, CdkEventScroll *event, CtkWindow *window)
+cpm_dialog_page_scroll_event_cb (CtkWidget      *widget,
+				 CdkEventScroll *event,
+				 CtkWindow      *window G_GNUC_UNUSED)
 {
         CtkNotebook *notebook = CTK_NOTEBOOK (widget);
         CtkWidget *child, *event_widget, *action_widget;
