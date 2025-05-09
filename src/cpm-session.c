@@ -135,7 +135,9 @@ cpm_session_get_suspend_inhibited (CpmSession *session)
  * cpm_session_presence_status_changed_cb:
  **/
 static void
-cpm_session_presence_status_changed_cb (DBusGProxy *proxy, guint status, CpmSession *session)
+cpm_session_presence_status_changed_cb (DBusGProxy *proxy G_GNUC_UNUSED,
+					guint       status,
+					CpmSession *session)
 {
 	gboolean is_idle;
 	is_idle = (status == CPM_SESSION_STATUS_ENUM_IDLE);
@@ -249,7 +251,8 @@ out:
  * cpm_session_stop_cb:
  **/
 static void
-cpm_session_stop_cb (DBusGProxy *proxy, CpmSession *session)
+cpm_session_stop_cb (DBusGProxy *proxy G_GNUC_UNUSED,
+		     CpmSession *session)
 {
 	egg_debug ("emitting ::stop()");
 	g_signal_emit (session, signals [STOP], 0);
@@ -259,7 +262,9 @@ cpm_session_stop_cb (DBusGProxy *proxy, CpmSession *session)
  * cpm_session_query_end_session_cb:
  **/
 static void
-cpm_session_query_end_session_cb (DBusGProxy *proxy, guint flags, CpmSession *session)
+cpm_session_query_end_session_cb (DBusGProxy *proxy G_GNUC_UNUSED,
+				  guint       flags,
+				  CpmSession *session)
 {
 	egg_debug ("emitting ::query-end-session(%i)", flags);
 	g_signal_emit (session, signals [QUERY_END_SESSION], 0, flags);
@@ -269,7 +274,9 @@ cpm_session_query_end_session_cb (DBusGProxy *proxy, guint flags, CpmSession *se
  * cpm_session_end_session_cb:
  **/
 static void
-cpm_session_end_session_cb (DBusGProxy *proxy, guint flags, CpmSession *session)
+cpm_session_end_session_cb (DBusGProxy *proxy G_GNUC_UNUSED,
+			    guint       flags,
+			    CpmSession *session)
 {
 	egg_debug ("emitting ::end-session(%i)", flags);
 	g_signal_emit (session, signals [END_SESSION], 0, flags);
@@ -372,7 +379,9 @@ out:
  * cpm_session_inhibit_changed_cb:
  **/
 static void
-cpm_session_inhibit_changed_cb (DBusGProxy *proxy, const gchar *id, CpmSession *session)
+cpm_session_inhibit_changed_cb (DBusGProxy  *proxy G_GNUC_UNUSED,
+				const gchar *id G_GNUC_UNUSED,
+				CpmSession  *session)
 {
 	gboolean is_idle_inhibited;
 	gboolean is_suspend_inhibited;

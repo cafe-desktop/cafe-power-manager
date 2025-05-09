@@ -133,7 +133,8 @@ cpm_control_systemd_shutdown (void) {
  * Shuts down the computer
  **/
 gboolean
-cpm_control_shutdown (CpmControl *control, GError **error)
+cpm_control_shutdown (CpmControl *control G_GNUC_UNUSED,
+		      GError    **error)
 {
 	gboolean ret;
 	EggConsoleKit *console;

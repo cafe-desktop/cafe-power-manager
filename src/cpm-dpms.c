@@ -82,7 +82,9 @@ cpm_dpms_error_quark (void)
  * cpm_dpms_x11_get_mode:
  **/
 static gboolean
-cpm_dpms_x11_get_mode (CpmDpms *dpms, CpmDpmsMode *mode, GError **error)
+cpm_dpms_x11_get_mode (CpmDpms     *dpms,
+		       CpmDpmsMode *mode,
+		       GError     **error G_GNUC_UNUSED)
 {
 	CpmDpmsMode result;
 	BOOL enabled = FALSE;

@@ -88,7 +88,8 @@ cpm_phone_coldplug (CpmPhone *phone)
  * Return value: if present
  **/
 gboolean
-cpm_phone_get_present (CpmPhone	*phone, guint idx)
+cpm_phone_get_present (CpmPhone *phone,
+		       guint     idx G_GNUC_UNUSED)
 {
 	g_return_val_if_fail (phone != NULL, FALSE);
 	g_return_val_if_fail (CPM_IS_PHONE (phone), FALSE);
@@ -100,7 +101,8 @@ cpm_phone_get_present (CpmPhone	*phone, guint idx)
  * Return value: if present
  **/
 guint
-cpm_phone_get_percentage (CpmPhone *phone, guint idx)
+cpm_phone_get_percentage (CpmPhone *phone,
+			  guint     idx G_GNUC_UNUSED)
 {
 	g_return_val_if_fail (phone != NULL, 0);
 	g_return_val_if_fail (CPM_IS_PHONE (phone), 0);
@@ -112,7 +114,8 @@ cpm_phone_get_percentage (CpmPhone *phone, guint idx)
  * Return value: if present
  **/
 gboolean
-cpm_phone_get_on_ac (CpmPhone *phone, guint idx)
+cpm_phone_get_on_ac (CpmPhone *phone,
+		     guint     idx G_GNUC_UNUSED)
 {
 	g_return_val_if_fail (phone != NULL, FALSE);
 	g_return_val_if_fail (CPM_IS_PHONE (phone), FALSE);
@@ -137,7 +140,11 @@ cpm_phone_get_num_batteries (CpmPhone *phone)
 /** Invoked when we get the BatteryStateChanged
  */
 static void
-cpm_phone_battery_state_changed (DBusGProxy *proxy, guint idx, guint percentage, gboolean on_ac, CpmPhone *phone)
+cpm_phone_battery_state_changed (DBusGProxy *proxy G_GNUC_UNUSED,
+				 guint       idx,
+				 guint       percentage,
+				 gboolean    on_ac,
+				 CpmPhone   *phone)
 {
 	g_return_if_fail (CPM_IS_PHONE (phone));
 
@@ -152,7 +159,9 @@ cpm_phone_battery_state_changed (DBusGProxy *proxy, guint idx, guint percentage,
 /** Invoked when we get NumberBatteriesChanged
  */
 static void
-cpm_phone_num_batteries_changed (DBusGProxy *proxy, guint number, CpmPhone *phone)
+cpm_phone_num_batteries_changed (DBusGProxy *proxy G_GNUC_UNUSED,
+				 guint       number,
+				 CpmPhone   *phone)
 {
 	g_return_if_fail (CPM_IS_PHONE (phone));
 
@@ -224,9 +233,10 @@ cpm_phone_class_init (CpmPhoneClass *klass)
  * cpm_phone_service_appeared_cb:
  */
 static void
-cpm_phone_service_appeared_cb (GDBusConnection *connection,
-			       const gchar *name, const gchar *name_owner,
-			       CpmPhone *phone)
+cpm_phone_service_appeared_cb (GDBusConnection *connection G_GNUC_UNUSED,
+			       const gchar     *name G_GNUC_UNUSED,
+			       const gchar     *name_owner G_GNUC_UNUSED,
+			       CpmPhone        *phone)
 {
 	GError *error = NULL;
 
@@ -284,9 +294,9 @@ cpm_phone_service_appeared_cb (GDBusConnection *connection,
  * cpm_phone_service_vanished_cb:
  */
 static void
-cpm_phone_service_vanished_cb (GDBusConnection *connection,
-			        const gchar *name,
-			        CpmPhone *phone)
+cpm_phone_service_vanished_cb (GDBusConnection *connection G_GNUC_UNUSED,
+			       const gchar     *name G_GNUC_UNUSED,
+			       CpmPhone        *phone)
 {
 	g_return_if_fail (CPM_IS_PHONE (phone));
 

@@ -307,11 +307,11 @@ cpm_kbd_backlight_on_brightness_changed (CpmKbdBacklight *backlight,
  * cpm_kbd_backlight_on_dbus_signal:
  **/
 static void
-cpm_kbd_backlight_on_dbus_signal (GDBusProxy *proxy,
-                 gchar      *sender_name,
-                 gchar      *signal_name,
-                 GVariant   *parameters,
-                 gpointer    user_data)
+cpm_kbd_backlight_on_dbus_signal (GDBusProxy *proxy G_GNUC_UNUSED,
+				  gchar      *sender_name G_GNUC_UNUSED,
+				  gchar      *signal_name,
+				  GVariant   *parameters,
+				  gpointer    user_data)
 {
    guint value;
    CpmKbdBacklight *backlight = CPM_KBD_BACKLIGHT (user_data);
@@ -336,14 +336,14 @@ cpm_kbd_backlight_on_dbus_signal (GDBusProxy *proxy,
  * @user_data:
  **/
 static void
-cpm_kbd_backlight_dbus_method_call (GDBusConnection *connection,
-                   const gchar *sender,
-                   const gchar *object_path,
-                   const gchar *interface_name,
-                   const gchar *method_name,
-                   GVariant *parameters,
-                   GDBusMethodInvocation *invocation,
-                   gpointer user_data)
+cpm_kbd_backlight_dbus_method_call (GDBusConnection       *connection G_GNUC_UNUSED,
+				    const gchar           *sender G_GNUC_UNUSED,
+				    const gchar           *object_path G_GNUC_UNUSED,
+				    const gchar           *interface_name G_GNUC_UNUSED,
+				    const gchar           *method_name,
+				    GVariant              *parameters,
+				    GDBusMethodInvocation *invocation,
+				    gpointer               user_data)
 {
    guint value;
    gboolean ret;
@@ -389,13 +389,13 @@ cpm_kbd_backlight_dbus_method_call (GDBusConnection *connection,
  * Return value:
  **/
 static GVariant *
-cpm_kbd_backlight_dbus_property_get (GDBusConnection *connection,
-                    const gchar *sender,
-                    const gchar *object_path,
-                    const gchar *interface_name,
-                    const gchar *property_name,
-                    GError **error,
-                    gpointer user_data)
+cpm_kbd_backlight_dbus_property_get (GDBusConnection *connection G_GNUC_UNUSED,
+				     const gchar     *sender G_GNUC_UNUSED,
+				     const gchar     *object_path G_GNUC_UNUSED,
+				     const gchar     *interface_name G_GNUC_UNUSED,
+				     const gchar     *property_name G_GNUC_UNUSED,
+				     GError         **error G_GNUC_UNUSED,
+				     gpointer         user_data G_GNUC_UNUSED)
 {
    /* Do nothing, we have no props */
    return NULL;
@@ -412,14 +412,14 @@ cpm_kbd_backlight_dbus_property_get (GDBusConnection *connection,
  * Return value:
  **/
 static gboolean
-cpm_kbd_backlight_dbus_property_set (GDBusConnection *connection,
-                    const gchar *sender,
-                    const gchar *object_path,
-                        const gchar *interface_name,
-                        const gchar *property_name,
-                    GVariant *value,
-                    GError **error,
-                    gpointer user_data)
+cpm_kbd_backlight_dbus_property_set (GDBusConnection *connection G_GNUC_UNUSED,
+				     const gchar     *sender G_GNUC_UNUSED,
+				     const gchar     *object_path G_GNUC_UNUSED,
+				     const gchar     *interface_name G_GNUC_UNUSED,
+				     const gchar     *property_name G_GNUC_UNUSED,
+				     GVariant        *value G_GNUC_UNUSED,
+				     GError         **error G_GNUC_UNUSED,
+				     gpointer         user_data G_GNUC_UNUSED)
 {
    /* do nothing, no properties defined */
    return FALSE;
@@ -479,9 +479,9 @@ cpm_kbd_backlight_evaluate_power_source_and_set (CpmKbdBacklight *backlight)
  * Just make sure that the backlight is back on
  **/
 static void
-cpm_kbd_backlight_control_resume_cb (CpmControl *control,
-                    CpmControlAction action,
-                    CpmKbdBacklight *backlight)
+cpm_kbd_backlight_control_resume_cb (CpmControl      *control G_GNUC_UNUSED,
+				     CpmControlAction action G_GNUC_UNUSED,
+				     CpmKbdBacklight *backlight)
 {
    gboolean ret;
 
@@ -498,9 +498,9 @@ cpm_kbd_backlight_control_resume_cb (CpmControl *control,
  * Does the actions when the ac power source is inserted/removed.
  **/
 static void
-cpm_kbd_backlight_client_changed_cb (UpClient *client,
-                                     GParamSpec *pspec,
-                                     CpmKbdBacklight *backlight)
+cpm_kbd_backlight_client_changed_cb (UpClient        *client G_GNUC_UNUSED,
+				     GParamSpec      *pspec G_GNUC_UNUSED,
+				     CpmKbdBacklight *backlight)
 {
    cpm_kbd_backlight_evaluate_power_source_and_set (backlight);
 }
@@ -512,9 +512,9 @@ cpm_kbd_backlight_client_changed_cb (UpClient *client,
  * @backlight: This class instance
  **/
 static void
-cpm_kbd_backlight_button_pressed_cb (CpmButton *button,
-                    const gchar *type,
-                    CpmKbdBacklight *backlight)
+cpm_kbd_backlight_button_pressed_cb (CpmButton       *button G_GNUC_UNUSED,
+				     const gchar     *type,
+				     CpmKbdBacklight *backlight)
 {
    static guint saved_brightness;
    gboolean ret;
@@ -565,9 +565,9 @@ cpm_kbd_backlight_button_pressed_cb (CpmButton *button,
  * session timeout has elapsed for the idle action.
  **/
 static void
-cpm_kbd_backlight_idle_changed_cb (CpmIdle *idle,
-                  CpmIdleMode mode,
-                  CpmKbdBacklight *backlight)
+cpm_kbd_backlight_idle_changed_cb (CpmIdle         *idle G_GNUC_UNUSED,
+				   CpmIdleMode      mode,
+				   CpmKbdBacklight *backlight)
 {
    gfloat brightness;
    gfloat scale;
