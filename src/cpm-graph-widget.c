@@ -595,7 +595,8 @@ cpm_graph_widget_draw_labels (CpmGraphWidget *graph, cairo_t *cr)
  * Draw the X and the Y labels onto the graph.
  **/
 static guint
-cpm_graph_widget_get_y_label_max_width (CpmGraphWidget *graph, cairo_t *cr)
+cpm_graph_widget_get_y_label_max_width (CpmGraphWidget *graph,
+					cairo_t        *cr G_GNUC_UNUSED)
 {
 	guint i;
 	gchar *text;
@@ -1028,8 +1029,10 @@ cpm_graph_widget_draw_legend (CpmGraphWidget *graph, gint x, gint y, gint width,
  * from machine to machine.
  **/
 static gboolean
-cpm_graph_widget_legend_calculate_size (CpmGraphWidget *graph, cairo_t *cr,
-					guint *width, guint *height)
+cpm_graph_widget_legend_calculate_size (CpmGraphWidget *graph,
+					cairo_t        *cr G_GNUC_UNUSED,
+					guint          *width,
+					guint          *height)
 {
 	guint i;
 	PangoRectangle ink_rect, logical_rect;

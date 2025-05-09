@@ -324,9 +324,10 @@ cpm_applet_draw_cb (CpmBrightnessApplet *applet)
  * Enqueues an expose event (don't know why it's not the default behaviour)
  **/
 static void
-cpm_applet_change_background_cb (CpmBrightnessApplet *applet,
-				 CafePanelAppletBackgroundType arg1,
-				 cairo_pattern_t *arg2, gpointer data)
+cpm_applet_change_background_cb (CpmBrightnessApplet          *applet,
+				 CafePanelAppletBackgroundType arg1 G_GNUC_UNUSED,
+				 cairo_pattern_t              *arg2 G_GNUC_UNUSED,
+				 gpointer                      data G_GNUC_UNUSED)
 {
 	ctk_widget_queue_draw (CTK_WIDGET (applet));
 }
@@ -405,7 +406,8 @@ cpm_applet_update_popup_level (CpmBrightnessApplet *applet)
  * callback for the plus button
  **/
 static gboolean
-cpm_applet_plus_cb (CtkWidget *w, CpmBrightnessApplet *applet)
+cpm_applet_plus_cb (CtkWidget           *w G_GNUC_UNUSED,
+		    CpmBrightnessApplet *applet)
 {
 	if (applet->level < 100) {
 		applet->level++;
@@ -423,7 +425,8 @@ cpm_applet_plus_cb (CtkWidget *w, CpmBrightnessApplet *applet)
  * callback for the minus button
  **/
 static gboolean
-cpm_applet_minus_cb (CtkWidget *w, CpmBrightnessApplet *applet)
+cpm_applet_minus_cb (CtkWidget           *w G_GNUC_UNUSED,
+		     CpmBrightnessApplet *applet)
 {
 	if (applet->level > 0) {
 		applet->level--;
@@ -441,7 +444,8 @@ cpm_applet_minus_cb (CtkWidget *w, CpmBrightnessApplet *applet)
  * callback for the slider
  **/
 static gboolean
-cpm_applet_slide_cb (CtkWidget *w, CpmBrightnessApplet *applet)
+cpm_applet_slide_cb (CtkWidget *w G_GNUC_UNUSED,
+		     CpmBrightnessApplet *applet)
 {
 	applet->level = ctk_range_get_value (CTK_RANGE(applet->slider));
 	applet->call_worked = cpm_applet_set_brightness (applet);
@@ -458,7 +462,9 @@ cpm_applet_slide_cb (CtkWidget *w, CpmBrightnessApplet *applet)
  * mainly escape to unpop and arrows to change brightness
  **/
 static gboolean
-cpm_applet_key_press_cb (CtkWidget *popup, CdkEventKey *event, CpmBrightnessApplet *applet)
+cpm_applet_key_press_cb (CtkWidget           *popup G_GNUC_UNUSED,
+			 CdkEventKey         *event,
+			 CpmBrightnessApplet *applet)
 {
 	int i;
 	
@@ -750,7 +756,8 @@ cpm_applet_popup_cb (CpmBrightnessApplet *applet, CdkEventButton *event)
  * Updtes icon when theme changes
  **/
 static void
-cpm_applet_theme_change_cb (CtkIconTheme *icon_theme, gpointer data)
+cpm_applet_theme_change_cb (CtkIconTheme *icon_theme G_GNUC_UNUSED,
+			    gpointer      data)
 {
 	CpmBrightnessApplet *applet = CPM_BRIGHTNESS_APPLET (data);
 	cpm_applet_get_icon (applet);
@@ -774,7 +781,8 @@ cpm_applet_stop_scroll_events_cb (CtkWidget *widget, CdkEvent  *event)
  * displays about dialog
  **/
 static void
-cpm_applet_dialog_about_cb (CtkAction *action, gpointer data)
+cpm_applet_dialog_about_cb (CtkAction *action G_GNUC_UNUSED,
+			    gpointer   data G_GNUC_UNUSED)
 {
 	static const gchar *authors[] = {
 		"Benjamin Canou <bookeldor@gmail.com>",
@@ -834,7 +842,8 @@ cpm_applet_dialog_about_cb (CtkAction *action, gpointer data)
  * open cpm help
  **/
 static void
-cpm_applet_help_cb (CtkAction *action, gpointer data)
+cpm_applet_help_cb (CtkAction *action G_GNUC_UNUSED,
+		    gpointer   data G_GNUC_UNUSED)
 {
 	cpm_help_display ("applets-general#applets-brightness");
 }
@@ -858,14 +867,14 @@ cpm_applet_destroy_cb (CtkWidget *widget)
  * @klass: Class instance
  **/
 static void
-cpm_brightness_applet_class_init (CpmBrightnessAppletClass *class)
+cpm_brightness_applet_class_init (CpmBrightnessAppletClass *class G_GNUC_UNUSED)
 {
 	/* nothing to do here */
 }
 
 static void
-brightness_changed_cb (DBusGProxy          *proxy,
-		       guint	            brightness,
+brightness_changed_cb (DBusGProxy          *proxy G_GNUC_UNUSED,
+		       guint                brightness,
 		       CpmBrightnessApplet *applet)
 {
 	egg_debug ("BrightnessChanged detected: %i\n", brightness);
@@ -934,9 +943,9 @@ cpm_brightness_applet_dbus_disconnect (CpmBrightnessApplet *applet)
  * cpm_brightness_applet_name_appeared_cb:
  **/
 static void
-cpm_brightness_applet_name_appeared_cb (GDBusConnection *connection,
-					const gchar *name,
-					const gchar *name_owner,
+cpm_brightness_applet_name_appeared_cb (GDBusConnection     *connection G_GNUC_UNUSED,
+					const gchar         *name G_GNUC_UNUSED,
+					const gchar         *name_owner G_GNUC_UNUSED,
 					CpmBrightnessApplet *applet)
 {
 	cpm_brightness_applet_dbus_connect (applet);
@@ -948,9 +957,9 @@ cpm_brightness_applet_name_appeared_cb (GDBusConnection *connection,
  * cpm_brightness_applet_name_vanished_cb:
  **/
 void
-cpm_brightness_applet_name_vanished_cb (GDBusConnection *connection,
-					 const gchar *name,
-					 CpmBrightnessApplet *applet)
+cpm_brightness_applet_name_vanished_cb (GDBusConnection     *connection G_GNUC_UNUSED,
+					const gchar         *name G_GNUC_UNUSED,
+					CpmBrightnessApplet *applet)
 {
 	cpm_brightness_applet_dbus_disconnect (applet);
 	cpm_applet_update_tooltip (applet);
@@ -1041,7 +1050,9 @@ cpm_brightness_applet_init (CpmBrightnessApplet *applet)
  * the function called by libcafe-panel-applet factory after creation
  **/
 static gboolean
-cpm_applet_cb (CafePanelApplet *_applet, const gchar *iid, gpointer data)
+cpm_applet_cb (CafePanelApplet *_applet,
+	       const gchar     *iid,
+	       gpointer         data G_GNUC_UNUSED)
 {
 	CpmBrightnessApplet *applet = CPM_BRIGHTNESS_APPLET(_applet);
 	CtkActionGroup *action_group;

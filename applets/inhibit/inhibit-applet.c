@@ -271,7 +271,8 @@ cpm_applet_click_cb (CpmInhibitApplet *applet, CdkEventButton *event)
  * displays about dialog
  **/
 static void
-cpm_applet_dialog_about_cb (CtkAction *action, gpointer data)
+cpm_applet_dialog_about_cb (CtkAction *action G_GNUC_UNUSED,
+			    gpointer   data G_GNUC_UNUSED)
 {
 	static const gchar *authors[] = {
 		"Benjamin Canou <bookeldor@gmail.com>",
@@ -331,7 +332,8 @@ cpm_applet_dialog_about_cb (CtkAction *action, gpointer data)
  * open cpm help
  **/
 static void
-cpm_applet_help_cb (CtkAction *action, gpointer data)
+cpm_applet_help_cb (CtkAction *action G_GNUC_UNUSED,
+		    gpointer   data G_GNUC_UNUSED)
 {
 	cpm_help_display ("applets-general#applets-inhibit");
 }
@@ -353,7 +355,7 @@ cpm_applet_destroy_cb (CtkWidget *widget)
  * @klass: Class instance
  **/
 static void
-cpm_inhibit_applet_class_init (CpmInhibitAppletClass *class)
+cpm_inhibit_applet_class_init (CpmInhibitAppletClass *class G_GNUC_UNUSED)
 {
 	/* nothing to do here */
 }
@@ -416,9 +418,9 @@ cpm_inhibit_applet_dbus_disconnect (CpmInhibitApplet *applet)
  * cpm_inhibit_applet_name_appeared_cb:
  **/
 static void
-cpm_inhibit_applet_name_appeared_cb (GDBusConnection *connection,
-				     const gchar *name,
-				     const gchar *name_owner,
+cpm_inhibit_applet_name_appeared_cb (GDBusConnection  *connection G_GNUC_UNUSED,
+				     const gchar      *name G_GNUC_UNUSED,
+				     const gchar      *name_owner G_GNUC_UNUSED,
 				     CpmInhibitApplet *applet)
 {
 	cpm_inhibit_applet_dbus_connect (applet);
@@ -430,8 +432,8 @@ cpm_inhibit_applet_name_appeared_cb (GDBusConnection *connection,
  * cpm_inhibit_applet_name_vanished_cb:
  **/
 void
-cpm_inhibit_applet_name_vanished_cb (GDBusConnection *connection,
-				     const gchar *name,
+cpm_inhibit_applet_name_vanished_cb (GDBusConnection  *connection G_GNUC_UNUSED,
+				     const gchar      *name G_GNUC_UNUSED,
 				     CpmInhibitApplet *applet)
 {
 	cpm_inhibit_applet_dbus_disconnect (applet);
@@ -497,7 +499,9 @@ cpm_inhibit_applet_init (CpmInhibitApplet *applet)
  * the function called by libcafe-panel-applet factory after creation
  **/
 static gboolean
-cpm_applet_cb (CafePanelApplet *_applet, const gchar *iid, gpointer data)
+cpm_applet_cb (CafePanelApplet *_applet,
+	       const gchar     *iid,
+	       gpointer         data G_GNUC_UNUSED)
 {
 	CpmInhibitApplet *applet = CPM_INHIBIT_APPLET(_applet);
 	CtkActionGroup *action_group;

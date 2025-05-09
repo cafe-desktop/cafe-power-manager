@@ -102,7 +102,8 @@ enum {
  * cpm_stats_button_help_cb:
  **/
 static void
-cpm_stats_button_help_cb (CtkWidget *widget, gboolean data)
+cpm_stats_button_help_cb (CtkWidget *widget G_GNUC_UNUSED,
+			  gboolean   data G_GNUC_UNUSED)
 {
 	cpm_help_display ("statistics");
 }
@@ -770,7 +771,10 @@ cpm_stats_set_title (CtkWindow *window, gint page_num)
  * cpm_stats_notebook_changed_cb:
  **/
 static void
-cpm_stats_notebook_changed_cb (CtkNotebook *notebook, gpointer page, gint page_num, gpointer user_data)
+cpm_stats_notebook_changed_cb (CtkNotebook *notebook G_GNUC_UNUSED,
+			       gpointer     page G_GNUC_UNUSED,
+			       gint         page_num,
+			       gpointer     user_data G_GNUC_UNUSED)
 {
 	UpDevice *device;
 	CtkWidget *widget;
@@ -813,7 +817,8 @@ cpm_stats_button_update_ui (void)
  * cpm_stats_devices_treeview_clicked_cb:
  **/
 static void
-cpm_stats_devices_treeview_clicked_cb (CtkTreeSelection *selection, gboolean data)
+cpm_stats_devices_treeview_clicked_cb (CtkTreeSelection *selection,
+				       gboolean          data G_GNUC_UNUSED)
 {
 	CtkTreeModel *model;
 	CtkTreeIter iter;
@@ -845,7 +850,8 @@ cpm_stats_devices_treeview_clicked_cb (CtkTreeSelection *selection, gboolean dat
  * cpm_stats_window_activated_cb
  **/
 static void
-cpm_stats_window_activated_cb (CtkApplication *app, gpointer data)
+cpm_stats_window_activated_cb (CtkApplication *app,
+			       gpointer        data G_GNUC_UNUSED)
 {
 	CtkWidget *widget;
 	widget = CTK_WIDGET (ctk_builder_get_object (builder, "dialog_stats"));
@@ -857,7 +863,9 @@ cpm_stats_window_activated_cb (CtkApplication *app, gpointer data)
  * cpm_stats_device_changed_cb:
  **/
 static void
-cpm_stats_device_changed_cb (UpDevice *device, GParamSpec *pspec, gpointer user_data)
+cpm_stats_device_changed_cb (UpDevice   *device,
+			     GParamSpec *pspec G_GNUC_UNUSED,
+			     gpointer    user_data G_GNUC_UNUSED)
 {
 	const gchar *object_path;
 	object_path = up_device_get_object_path (device);
@@ -917,7 +925,9 @@ cpm_stats_add_device (UpDevice *device, GPtrArray *devices)
  * cpm_stats_device_added_cb:
  **/
 static void
-cpm_stats_device_added_cb (UpClient *client, UpDevice *device, GPtrArray *devices)
+cpm_stats_device_added_cb (UpClient  *client G_GNUC_UNUSED,
+			   UpDevice  *device,
+			   GPtrArray *devices)
 {
 	const gchar *object_path;
 	object_path = up_device_get_object_path (device);
@@ -930,7 +940,9 @@ cpm_stats_device_added_cb (UpClient *client, UpDevice *device, GPtrArray *device
  * cpm_stats_device_removed_cb:
  **/
 static void
-cpm_stats_device_removed_cb (UpClient *client, const gchar *object_path, GPtrArray *devices)
+cpm_stats_device_removed_cb (UpClient    *client G_GNUC_UNUSED,
+			     const gchar *object_path,
+			     GPtrArray   *devices)
 {
 	CtkTreeIter iter;
 	gchar *id = NULL;
@@ -968,7 +980,8 @@ cpm_stats_device_removed_cb (UpClient *client, const gchar *object_path, GPtrArr
  * cpm_stats_history_type_combo_changed_cb:
  **/
 static void
-cpm_stats_history_type_combo_changed_cb (CtkWidget *widget, gpointer data)
+cpm_stats_history_type_combo_changed_cb (CtkWidget *widget,
+					 gpointer   data G_GNUC_UNUSED)
 {
 	guint active;
 	const gchar *axis_x = NULL;
@@ -1020,7 +1033,8 @@ cpm_stats_history_type_combo_changed_cb (CtkWidget *widget, gpointer data)
  * cpm_stats_type_combo_changed_cb:
  **/
 static void
-cpm_stats_type_combo_changed_cb (CtkWidget *widget, gpointer data)
+cpm_stats_type_combo_changed_cb (CtkWidget *widget,
+				 gpointer   data G_GNUC_UNUSED)
 {
 	guint active;
 	const gchar *axis_x = NULL;
@@ -1072,7 +1086,8 @@ cpm_stats_type_combo_changed_cb (CtkWidget *widget, gpointer data)
  * cpm_stats_range_combo_changed:
  **/
 static void
-cpm_stats_range_combo_changed (CtkWidget *widget, gpointer data)
+cpm_stats_range_combo_changed (CtkWidget *widget,
+			       gpointer   data G_GNUC_UNUSED)
 {
 	guint active;
 
@@ -1102,7 +1117,8 @@ cpm_stats_range_combo_changed (CtkWidget *widget, gpointer data)
  * @widget: The CtkWidget object
  **/
 static void
-cpm_stats_smooth_checkbox_history_cb (CtkWidget *widget, gpointer data)
+cpm_stats_smooth_checkbox_history_cb (CtkWidget *widget,
+				      gpointer   data G_GNUC_UNUSED)
 {
 	gboolean checked;
 	checked = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (widget));
@@ -1115,7 +1131,8 @@ cpm_stats_smooth_checkbox_history_cb (CtkWidget *widget, gpointer data)
  * @widget: The CtkWidget object
  **/
 static void
-cpm_stats_smooth_checkbox_stats_cb (CtkWidget *widget, gpointer data)
+cpm_stats_smooth_checkbox_stats_cb (CtkWidget *widget,
+				    gpointer   data G_GNUC_UNUSED)
 {
 	gboolean checked;
 	checked = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (widget));
@@ -1128,7 +1145,8 @@ cpm_stats_smooth_checkbox_stats_cb (CtkWidget *widget, gpointer data)
  * @widget: The CtkWidget object
  **/
 static void
-cpm_stats_points_checkbox_history_cb (CtkWidget *widget, gpointer data)
+cpm_stats_points_checkbox_history_cb (CtkWidget *widget,
+				      gpointer   data G_GNUC_UNUSED)
 {
 	gboolean checked;
 	checked = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (widget));
@@ -1141,7 +1159,8 @@ cpm_stats_points_checkbox_history_cb (CtkWidget *widget, gpointer data)
  * @widget: The CtkWidget object
  **/
 static void
-cpm_stats_points_checkbox_stats_cb (CtkWidget *widget, gpointer data)
+cpm_stats_points_checkbox_stats_cb (CtkWidget *widget,
+				    gpointer   data G_GNUC_UNUSED)
 {
 	gboolean checked;
 	checked = ctk_toggle_button_get_active (CTK_TOGGLE_BUTTON (widget));

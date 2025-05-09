@@ -412,7 +412,9 @@ cpm_settings_key_changed_cb (GSettings *settings, const gchar *key, CpmBacklight
  * Does the actions when the ac power source is inserted/removed.
  **/
 static void
-cpm_backlight_client_changed_cb (UpClient *client, GParamSpec *pspec, CpmBacklight *backlight)
+cpm_backlight_client_changed_cb (UpClient     *client G_GNUC_UNUSED,
+				 GParamSpec   *pspec G_GNUC_UNUSED,
+				 CpmBacklight *backlight)
 {
 	cpm_backlight_brightness_evaluate_and_set (backlight, FALSE, TRUE);
 }
@@ -425,7 +427,9 @@ cpm_backlight_client_changed_cb (UpClient *client, GParamSpec *pspec, CpmBacklig
  * @brightness: This class instance
  **/
 static void
-cpm_backlight_button_pressed_cb (CpmButton *button, const gchar *type, CpmBacklight *backlight)
+cpm_backlight_button_pressed_cb (CpmButton    *button G_GNUC_UNUSED,
+				 const gchar  *type,
+				 CpmBacklight *backlight)
 {
 	gboolean ret;
 	GError *error = NULL;
@@ -560,7 +564,9 @@ cpm_backlight_notify_system_idle_changed (CpmBacklight *backlight, gboolean is_i
  * session timeout has elapsed for the idle action.
  **/
 static void
-idle_changed_cb (CpmIdle *idle, CpmIdleMode mode, CpmBacklight *backlight)
+idle_changed_cb (CpmIdle      *idle G_GNUC_UNUSED,
+		 CpmIdleMode   mode,
+		 CpmBacklight *backlight)
 {
 	gboolean ret;
 	GError *error = NULL;
@@ -642,7 +648,9 @@ idle_changed_cb (CpmIdle *idle, CpmIdleMode mode, CpmBacklight *backlight)
  * This callback is called when the brightness value changes.
  **/
 static void
-brightness_changed_cb (CpmBrightness *brightness, guint percentage, CpmBacklight *backlight)
+brightness_changed_cb (CpmBrightness *brightness G_GNUC_UNUSED,
+		       guint          percentage,
+		       CpmBacklight  *backlight)
 {
 	/* save the new percentage */
 	backlight->priv->master_percentage = percentage;
@@ -660,7 +668,9 @@ brightness_changed_cb (CpmBrightness *brightness, guint percentage, CpmBacklight
  * We have to update the caches on resume
  **/
 static void
-control_resume_cb (CpmControl *control, CpmControlAction action, CpmBacklight *backlight)
+control_resume_cb (CpmControl      *control G_GNUC_UNUSED,
+		   CpmControlAction action G_GNUC_UNUSED,
+		   CpmBacklight    *backlight)
 {
 	gboolean ret;
 	GError *error = NULL;

@@ -91,7 +91,9 @@ cpm_button_emit_type (CpmButton *button, const gchar *type)
  * cpm_button_filter_x_events:
  **/
 static CdkFilterReturn
-cpm_button_filter_x_events (CdkXEvent *xevent, CdkEvent *event, gpointer data)
+cpm_button_filter_x_events (CdkXEvent *xevent,
+			    CdkEvent  *event G_GNUC_UNUSED,
+			    gpointer   data)
 {
 	CpmButton *button = (CpmButton *) data;
 	XEvent *xev = (XEvent *) xevent;
@@ -323,7 +325,9 @@ cpm_button_reset_time (CpmButton *button)
  * cpm_button_client_changed_cb
  **/
 static void
-cpm_button_client_changed_cb (UpClient *client, GParamSpec *pspec, CpmButton *button)
+cpm_button_client_changed_cb (UpClient   *client G_GNUC_UNUSED,
+			      GParamSpec *pspec G_GNUC_UNUSED,
+			      CpmButton  *button)
 {
 	gboolean lid_is_closed;
 

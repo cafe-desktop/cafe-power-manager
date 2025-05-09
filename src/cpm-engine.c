@@ -99,7 +99,8 @@ static void cpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, C
  * Return value: A CpmEngine state, e.g. CPM_ENGINE_WARNING_DISCHARGING
  **/
 static UpDeviceLevel
-cpm_engine_get_warning (CpmEngine *engine, UpDevice *device)
+cpm_engine_get_warning (CpmEngine *engine G_GNUC_UNUSED,
+			UpDevice  *device)
 {
 	UpDeviceLevel warning;
 	g_object_get (device, "warning-level", &warning, NULL);
@@ -451,7 +452,8 @@ cpm_engine_device_check_capacity (CpmEngine *engine, UpDevice *device)
  * cpm_engine_get_composite_device:
  **/
 static UpDevice *
-cpm_engine_get_composite_device (CpmEngine *engine, UpDevice *original_device)
+cpm_engine_get_composite_device (CpmEngine *engine,
+				 UpDevice  *original_device G_GNUC_UNUSED)
 {
 	return engine->priv->battery_composite;
 }
@@ -460,7 +462,8 @@ cpm_engine_get_composite_device (CpmEngine *engine, UpDevice *original_device)
  * cpm_engine_update_composite_device:
  **/
 static UpDevice *
-cpm_engine_update_composite_device (CpmEngine *engine, UpDevice *original_device)
+cpm_engine_update_composite_device (CpmEngine *engine,
+				    UpDevice  *original_device G_GNUC_UNUSED)
 {
 	gchar *text;
 
@@ -551,7 +554,9 @@ cpm_engine_coldplug_idle_cb (CpmEngine *engine)
  * cpm_engine_device_added_cb:
  **/
 static void
-cpm_engine_device_added_cb (UpClient *client, UpDevice *device, CpmEngine *engine)
+cpm_engine_device_added_cb (UpClient  *client G_GNUC_UNUSED,
+			    UpDevice  *device,
+			    CpmEngine *engine)
 {
 	cpm_engine_device_add (engine, device);
 }
@@ -560,7 +565,9 @@ cpm_engine_device_added_cb (UpClient *client, UpDevice *device, CpmEngine *engin
  * cpm_engine_device_removed_cb:
  **/
 static void
-cpm_engine_device_removed_cb (UpClient *client, const char *object_path, CpmEngine *engine)
+cpm_engine_device_removed_cb (UpClient   *client G_GNUC_UNUSED,
+			      const char *object_path,
+			      CpmEngine  *engine)
 {
 	guint i;
 
@@ -579,7 +586,9 @@ cpm_engine_device_removed_cb (UpClient *client, const char *object_path, CpmEngi
  * cpm_engine_device_changed_cb:
  **/
 static void
-cpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, CpmEngine *engine)
+cpm_engine_device_changed_cb (UpDevice   *device,
+			      GParamSpec *pspec G_GNUC_UNUSED,
+			      CpmEngine  *engine)
 {
 	UpDeviceKind kind;
 	UpDeviceState state;
@@ -700,7 +709,9 @@ cpm_engine_get_primary_device (CpmEngine *engine)
  * phone_device_added_cb:
  **/
 static void
-phone_device_added_cb (CpmPhone *phone, guint idx, CpmEngine *engine)
+phone_device_added_cb (CpmPhone  *phone G_GNUC_UNUSED,
+		       guint      idx,
+		       CpmEngine *engine)
 {
 	UpDevice *device;
 	device = up_device_new ();
@@ -725,7 +736,9 @@ phone_device_added_cb (CpmPhone *phone, guint idx, CpmEngine *engine)
  * phone_device_removed_cb:
  **/
 static void
-phone_device_removed_cb (CpmPhone *phone, guint idx, CpmEngine *engine)
+phone_device_removed_cb (CpmPhone  *phone G_GNUC_UNUSED,
+			 guint      idx,
+			 CpmEngine *engine)
 {
 	guint i;
 	UpDevice *device;

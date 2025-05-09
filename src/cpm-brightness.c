@@ -795,7 +795,9 @@ cpm_brightness_may_have_changed (CpmBrightness *brightness)
  * cpm_brightness_filter_xevents:
  **/
 static CdkFilterReturn
-cpm_brightness_filter_xevents (CdkXEvent *xevent, CdkEvent *event, gpointer data)
+cpm_brightness_filter_xevents (CdkXEvent *xevent G_GNUC_UNUSED,
+			       CdkEvent  *event,
+			       gpointer   data)
 {
 	CpmBrightness *brightness = CPM_BRIGHTNESS (data);
 	if (event->type == CDK_NOTHING)
@@ -811,7 +813,8 @@ static void cpm_brightness_update_cache (CpmBrightness *brightness);
  * cpm_brightness_monitors_changed:
  **/
 static void
-cpm_brightness_monitors_changed (CdkScreen *screen, CpmBrightness *brightness)
+cpm_brightness_monitors_changed (CdkScreen     *screen G_GNUC_UNUSED,
+				 CpmBrightness *brightness)
 {
 	g_return_if_fail (CPM_IS_BRIGHTNESS (brightness));
 	cpm_brightness_update_cache (brightness);

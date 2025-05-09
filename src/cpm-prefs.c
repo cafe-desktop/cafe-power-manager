@@ -41,7 +41,7 @@
  * What to do when help is requested
  **/
 static void
-cpm_prefs_help_cb (CpmPrefs *prefs)
+cpm_prefs_help_cb (CpmPrefs *prefs G_GNUC_UNUSED)
 {
 	cpm_help_display ("preferences");
 }
