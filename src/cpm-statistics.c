@@ -504,8 +504,7 @@ cpm_stats_update_info_page_history (UpDevice *device)
 	gboolean points;
 	CpmPointObj *point;
 	GPtrArray *new;
-	gint32 offset = 0;
-	GTimeVal timeval;
+	gint32 offset;
 
 	new = g_ptr_array_new_with_free_func ((GDestroyNotify) cpm_point_obj_free);
 	if (g_strcmp0 (history_type, CPM_HISTORY_CHARGE_VALUE) == 0) {
@@ -552,8 +551,7 @@ cpm_stats_update_info_page_history (UpDevice *device)
 	ctk_widget_hide (widget);
 	ctk_widget_show (graph_history);
 
-	g_get_current_time (&timeval);
-	offset = timeval.tv_sec;
+	offset = (gint32) (g_get_real_time () / G_USEC_PER_SEC);
 
 	for (i=0; i<array->len; i++) {
 		item = (UpHistoryItem *) g_ptr_array_index (array, i);
@@ -563,7 +561,7 @@ cpm_stats_update_info_page_history (UpDevice *device)
 			continue;
 
 		point = cpm_point_obj_new ();
-		point->x = (gint32) up_history_item_get_time (item) - offset;
+		point->x = ((gint32) up_history_item_get_time (item)) - offset;
 		point->y = up_history_item_get_value (item);
 		if (up_history_item_get_state (item) == UP_DEVICE_STATE_CHARGING)
 			point->color = egg_color_from_rgb (255, 0, 0);
