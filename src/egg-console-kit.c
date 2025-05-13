@@ -34,12 +34,9 @@
 static void     egg_console_kit_finalize	(GObject		*object);
 
 #define CONSOLEKIT_NAME			"org.freedesktop.ConsoleKit"
-#define CONSOLEKIT_PATH			"/org/freedesktop/ConsoleKit"
-#define CONSOLEKIT_INTERFACE		"org.freedesktop.ConsoleKit"
 
 #define CONSOLEKIT_MANAGER_PATH	 	"/org/freedesktop/ConsoleKit/Manager"
 #define CONSOLEKIT_MANAGER_INTERFACE    "org.freedesktop.ConsoleKit.Manager"
-#define CONSOLEKIT_SEAT_INTERFACE       "org.freedesktop.ConsoleKit.Seat"
 #define CONSOLEKIT_SESSION_INTERFACE    "org.freedesktop.ConsoleKit.Session"
 
 struct EggConsoleKitPrivate

@@ -37,9 +37,6 @@
 
 static void     cpm_engine_finalize   (GObject	  *object);
 
-#define CPM_ENGINE_RESUME_DELAY		2*1000
-#define CPM_ENGINE_WARN_ACCURACY	20
-
 struct CpmEnginePrivate
 {
 	GSettings		*settings;
@@ -85,7 +82,6 @@ static UpDevice *cpm_engine_update_composite_device (CpmEngine *engine, UpDevice
 static void cpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, CpmEngine *engine);
 
 #define CPM_ENGINE_WARNING_NONE UP_DEVICE_LEVEL_NONE
-#define CPM_ENGINE_WARNING_DISCHARGING UP_DEVICE_LEVEL_DISCHARGING
 #define CPM_ENGINE_WARNING_LOW UP_DEVICE_LEVEL_LOW
 #define CPM_ENGINE_WARNING_CRITICAL UP_DEVICE_LEVEL_CRITICAL
 #define CPM_ENGINE_WARNING_ACTION UP_DEVICE_LEVEL_ACTION
@@ -96,7 +92,7 @@ static void cpm_engine_device_changed_cb (UpDevice *device, GParamSpec *pspec, C
  * This gets the possible engine state for the device according to the
  * policy, which could be per-percent, or per-time.
  *
- * Return value: A CpmEngine state, e.g. CPM_ENGINE_WARNING_DISCHARGING
+ * Return value: A CpmEngine state, e.g. CPM_ENGINE_WARNING_CRITICAL
  **/
 static UpDeviceLevel
 cpm_engine_get_warning (CpmEngine *engine G_GNUC_UNUSED,

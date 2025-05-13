@@ -39,10 +39,6 @@
 
 #define CPM_TYPE_INHIBIT_APPLET		(cpm_inhibit_applet_get_type ())
 #define CPM_INHIBIT_APPLET(o)		(G_TYPE_CHECK_INSTANCE_CAST ((o), CPM_TYPE_INHIBIT_APPLET, CpmInhibitApplet))
-#define CPM_INHIBIT_APPLET_CLASS(k)	(G_TYPE_CHECK_CLASS_CAST((k), CPM_TYPE_INHIBIT_APPLET, CpmInhibitAppletClass))
-#define CPM_IS_INHIBIT_APPLET(o)	(G_TYPE_CHECK_INSTANCE_TYPE ((o), CPM_TYPE_INHIBIT_APPLET))
-#define CPM_IS_INHIBIT_APPLET_CLASS(k)	(G_TYPE_CHECK_CLASS_TYPE ((k), CPM_TYPE_INHIBIT_APPLET))
-#define CPM_INHIBIT_APPLET_GET_CLASS(o)	(G_TYPE_INSTANCE_GET_CLASS ((o), CPM_TYPE_INHIBIT_APPLET, CpmInhibitAppletClass))
 
 typedef struct{
 	CafePanelApplet parent;
@@ -86,8 +82,6 @@ static void	cpm_applet_destroy_cb		(CtkWidget *widget);
 #define CPM_INHIBIT_APPLET_ICON_UNINHIBIT	"cpm-hibernate"
 #define CPM_INHIBIT_APPLET_NAME			_("Power Manager Inhibit Applet")
 #define CPM_INHIBIT_APPLET_DESC			_("Allows user to inhibit automatic power saving.")
-#define CAFE_PANEL_APPLET_VERTICAL(p)					\
-	 (((p) == CAFE_PANEL_APPLET_ORIENT_LEFT) || ((p) == CAFE_PANEL_APPLET_ORIENT_RIGHT))
 
 
 /** cookie is returned as an unsigned integer */
