@@ -43,8 +43,6 @@
 #define DIALOG_FADE_TIMEOUT 1500 /* timeout before fade starts */
 #define FADE_TIMEOUT 10        /* timeout in ms between each frame of the fade */
 
-#define BG_ALPHA 0.75
-
 struct CsdOsdWindowPrivate
 {
         guint                    is_composited : 1;

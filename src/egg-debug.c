@@ -44,14 +44,9 @@
 #include "egg-debug.h"
 
 #define CONSOLE_RESET		0
-#define CONSOLE_BLACK 		30
 #define CONSOLE_RED		31
 #define CONSOLE_GREEN		32
-#define CONSOLE_YELLOW		33
 #define CONSOLE_BLUE		34
-#define CONSOLE_MAGENTA		35
-#define CONSOLE_CYAN		36
-#define CONSOLE_WHITE		37
 
 static gint fd = -1;
 

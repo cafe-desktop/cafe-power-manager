@@ -29,7 +29,7 @@
 #include <ctk/ctk.h>
 #include <math.h>
 #include <string.h>
-#define UPOWER_ENABLE_DEPRECATED
+
 #include <libupower-glib/upower.h>
 
 #include "egg-debug.h"
