@@ -1,0 +1,4 @@
+cpm-statistics: avoid deprecated GTimeVal
+
+based in mate-power-manager commit:
+https://github.com/mate-desktop/mate-power-manager/commit/c615e430f8041c0284c4b3596c1201a9edba4a79
