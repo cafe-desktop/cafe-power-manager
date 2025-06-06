@@ -13,9 +13,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-power-manager 1.25.0\n"
+"Project-Id-Version: cafe-power-manager 2.0.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2023-09-14 10:39+0200\n"
+"POT-Creation-Date: 2025-06-06 10:33+0200\n"
 "PO-Revision-Date: 2020-02-15 16:27+0000\n"
 "Last-Translator: Любомир Василев, 2020\n"
 "Language-Team: Bulgarian (https://www.transifex.com/cafe/teams/13566/bg/)\n"
@@ -25,30 +25,30 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: applets/brightness/brightness-applet.c:107
+#: applets/brightness/brightness-applet.c:103
 msgid "Power Manager Brightness Applet"
 msgstr "Аплет за захранването и управление на яркостта"
 
-#: applets/brightness/brightness-applet.c:108
+#: applets/brightness/brightness-applet.c:104
 msgid "Adjusts laptop panel brightness."
 msgstr "Управление на яркостта на екрана на преносимия компютър"
 
-#: applets/brightness/brightness-applet.c:364
-#: applets/inhibit/inhibit-applet.c:225
+#: applets/brightness/brightness-applet.c:361
+#: applets/inhibit/inhibit-applet.c:219
 msgid "Cannot connect to cafe-power-manager"
 msgstr "Неуспех при свързването с управлението на захранването на CAFE"
 
-#: applets/brightness/brightness-applet.c:366
+#: applets/brightness/brightness-applet.c:363
 msgid "Cannot get laptop panel brightness"
 msgstr "Не може да се определи яркостта на екрана"
 
-#: applets/brightness/brightness-applet.c:368
+#: applets/brightness/brightness-applet.c:365
 #, c-format
 msgid "LCD brightness : %d%%"
 msgstr "Яркост на екрана: %d %%"
 
-#: applets/brightness/brightness-applet.c:790
-#: applets/inhibit/inhibit-applet.c:287
+#: applets/brightness/brightness-applet.c:794
+#: applets/inhibit/inhibit-applet.c:282
 msgid ""
 "Power Manager is free software; you can redistribute it and/or modify it "
 "under the terms of the GNU General Public License as published by the Free "
@@ -56,8 +56,8 @@ msgid ""
 "any later version."
 msgstr ""
 
-#: applets/brightness/brightness-applet.c:795
-#: applets/inhibit/inhibit-applet.c:292
+#: applets/brightness/brightness-applet.c:799
+#: applets/inhibit/inhibit-applet.c:287
 msgid ""
 "Power Manager is distributed in the hope that it will be useful, but WITHOUT "
 "ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or "
@@ -65,27 +65,27 @@ msgid ""
 "more details."
 msgstr ""
 
-#: applets/brightness/brightness-applet.c:800
-#: applets/inhibit/inhibit-applet.c:297
+#: applets/brightness/brightness-applet.c:804
+#: applets/inhibit/inhibit-applet.c:292
 msgid ""
 "You should have received a copy of the GNU General Public License along with "
 "this program; if not, write to the Free Software Foundation, Inc., 51 "
 "Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA."
 msgstr ""
 
-#: applets/brightness/brightness-applet.c:813
+#: applets/brightness/brightness-applet.c:817
 msgid "About Power Manager Brightness Applet"
 msgstr ""
 
-#: applets/brightness/brightness-applet.c:815
+#: applets/brightness/brightness-applet.c:819
 msgid ""
 "Copyright © 2006 Benjamin Canou\n"
 "Copyright © 2011-2020 MATE developers\n"
-"Copyright © 2023 Pablo Barciela"
+"Copyright © 2023-2025 Pablo Barciela"
 msgstr ""
 
-#: applets/brightness/brightness-applet.c:823
-#: applets/inhibit/inhibit-applet.c:320 src/cpm-tray-icon.c:214
+#: applets/brightness/brightness-applet.c:827
+#: applets/inhibit/inhibit-applet.c:315 src/cpm-tray-icon.c:217
 msgid "translator-credits"
 msgstr ""
 "Владимир „Kaladan“ Петков <vpetkov@i-space.org>\n"
@@ -97,69 +97,69 @@ msgstr ""
 "Научете повече за нас на http://cafe.cult.bg\n"
 "Докладвайте за грешки на http://cafe.cult.bg/bugs"
 
-#: applets/brightness/brightness-applet.c:1051
-#: applets/inhibit/inhibit-applet.c:507
+#: applets/brightness/brightness-applet.c:1058
+#: applets/inhibit/inhibit-applet.c:505
 msgid "_About"
 msgstr "_Относно…"
 
-#: applets/brightness/brightness-applet.c:1054
-#: applets/inhibit/inhibit-applet.c:510
+#: applets/brightness/brightness-applet.c:1061
+#: applets/inhibit/inhibit-applet.c:508
 msgid "_Help"
 msgstr "_Помощ"
 
-#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:5
+#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:4
 msgid "Brightness Applet Factory"
 msgstr "Фабрика за аплета за управлението на яркостта"
 
-#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:9
+#: applets/brightness/org.cafe.BrightnessApplet.cafe-panel-applet.desktop.in.in:8
 msgid "Brightness Applet"
 msgstr "Аплет за яркостта"
 
-#: applets/inhibit/inhibit-applet.c:87
+#: applets/inhibit/inhibit-applet.c:83
 msgid "Power Manager Inhibit Applet"
 msgstr "Аплет за предотвратяването на автоматичното енергоспестяване"
 
-#: applets/inhibit/inhibit-applet.c:88
+#: applets/inhibit/inhibit-applet.c:84
 msgid "Allows user to inhibit automatic power saving."
 msgstr ""
 "Позволява на потребителя да предотврати автоматичното енергоспестяване."
 
-#: applets/inhibit/inhibit-applet.c:228
+#: applets/inhibit/inhibit-applet.c:222
 msgid "Automatic sleep inhibited"
 msgstr "Автоматичното приспиване е изключено"
 
-#: applets/inhibit/inhibit-applet.c:230
+#: applets/inhibit/inhibit-applet.c:224
 msgid "Automatic sleep enabled"
 msgstr "Автоматичното приспиване е включено"
 
-#: applets/inhibit/inhibit-applet.c:258
+#: applets/inhibit/inhibit-applet.c:252
 msgid "Manual inhibit"
 msgstr "Ръчно предотвратяване"
 
-#: applets/inhibit/inhibit-applet.c:310
+#: applets/inhibit/inhibit-applet.c:305
 msgid "About Power Manager Inhibit Applet"
 msgstr ""
 
-#: applets/inhibit/inhibit-applet.c:312
+#: applets/inhibit/inhibit-applet.c:307
 msgid ""
 "Copyright © 2006-2007 Richard Hughes\n"
 "Copyright © 2011-2020 MATE developers\n"
-"Copyright © 2023 Pablo Barciela"
+"Copyright © 2023-2025 Pablo Barciela"
 msgstr ""
 
-#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:5
+#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:4
 msgid "Inhibit Applet Factory"
 msgstr "Фабрика за аплета за предотвратяването"
 
-#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:9
+#: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:8
 msgid "Inhibit Applet"
 msgstr "Аплет за предотвратяване"
 
-#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:204
+#: data/cafe-power-manager.desktop.in.in:2 src/cpm-tray-icon.c:207
 msgid "Power Manager"
 msgstr "Управление на захранването"
 
-#: data/cafe-power-manager.desktop.in.in:4 src/cpm-tray-icon.c:206
+#: data/cafe-power-manager.desktop.in.in:3 src/cpm-tray-icon.c:209
 msgid "Power management daemon"
 msgstr "Демон за управление на захранването"
 
@@ -879,25 +879,25 @@ msgstr "Кога да се показва иконката за уведомяв
 msgid "Display options for the notification icon."
 msgstr "Показване на опциите на иконката за уведомяване."
 
-#: data/cafe-power-preferences.desktop.in.in:3
+#: data/cafe-power-preferences.desktop.in.in:2
 msgid "Power Management"
 msgstr "Управление на захранването"
 
-#: data/cafe-power-preferences.desktop.in.in:4
+#: data/cafe-power-preferences.desktop.in.in:3
 msgid "Configure power management"
 msgstr "Настройки на управлението на захранването"
 
 #. Translators: Search terms to find this application. Do NOT translate or localize the semicolons! The list MUST also end with a semicolon!
-#: data/cafe-power-preferences.desktop.in.in:13
+#: data/cafe-power-preferences.desktop.in.in:12
 msgid "CAFE;power;management;preferences;settings;"
 msgstr ""
 
-#: data/cafe-power-statistics.desktop.in.in:3 data/cpm-statistics.ui:8
-#: src/cpm-statistics.c:764 src/cpm-statistics.c:1233
+#: data/cafe-power-statistics.desktop.in.in:2 data/cpm-statistics.ui:8
+#: src/cpm-statistics.c:763 src/cpm-statistics.c:1250
 msgid "Power Statistics"
 msgstr "Статистика на захранването"
 
-#: data/cafe-power-statistics.desktop.in.in:4
+#: data/cafe-power-statistics.desktop.in.in:3
 msgid "Observe power management"
 msgstr "Спазване на управлението на захранването"
 
@@ -1046,47 +1046,47 @@ msgstr "Задаване на тази политика за всички пот
 msgid "Closes the program"
 msgstr "Спира програмата"
 
-#: src/cpm-backlight-helper.c:166
+#: src/cpm-backlight-helper.c:165
 msgid "Set the current brightness"
 msgstr "Промяна на осветеността на екрана"
 
-#: src/cpm-backlight-helper.c:169
+#: src/cpm-backlight-helper.c:168
 msgid "Get the current brightness"
 msgstr "Получаване на осветеността на екрана"
 
-#: src/cpm-backlight-helper.c:172
+#: src/cpm-backlight-helper.c:171
 msgid "Get the number of brightness levels supported"
 msgstr "Получаване на броя на възможните нива на осветеност"
 
-#: src/cpm-backlight-helper.c:184
+#: src/cpm-backlight-helper.c:183
 msgid "CAFE Power Manager Backlight Helper"
 msgstr "Помощник за подсветката към управлението на захранването на CAFE"
 
-#: src/cpm-backlight-helper.c:192
+#: src/cpm-backlight-helper.c:191
 msgid "No valid option was specified"
 msgstr "Не е указана правилна настройка"
 
-#: src/cpm-backlight-helper.c:201
+#: src/cpm-backlight-helper.c:200
 msgid "No backlights were found on your system"
 msgstr "В системата не са открити устройства с подсветка"
 
-#: src/cpm-backlight-helper.c:212
+#: src/cpm-backlight-helper.c:211
 msgid "Could not get the value of the backlight"
 msgstr "Неуспех при получаване на степента на осветеност"
 
-#: src/cpm-backlight-helper.c:230
+#: src/cpm-backlight-helper.c:229
 msgid "Could not get the maximum value of the backlight"
 msgstr "Неуспех при получаване на максималната стойност за осветеността"
 
-#: src/cpm-backlight-helper.c:247
+#: src/cpm-backlight-helper.c:246
 msgid "This program can only be used by the root user"
 msgstr "Програмата може да се ползва само от системен администратор"
 
-#: src/cpm-backlight-helper.c:256
+#: src/cpm-backlight-helper.c:255
 msgid "This program must only be run through pkexec"
 msgstr "Тази програма трябва да се изпълнява само чрез pkexec"
 
-#: src/cpm-backlight-helper.c:267
+#: src/cpm-backlight-helper.c:266
 msgid "Could not set the value of the backlight"
 msgstr "Неуспешна промяна на осветеността"
 
@@ -1185,31 +1185,31 @@ msgstr "%.1f W"
 msgid "%.1fV"
 msgstr "%.1f V"
 
-#: src/cpm-main.c:172 src/cpm-prefs.c:77 src/cpm-statistics.c:1216
+#: src/cpm-main.c:177 src/cpm-prefs.c:77 src/cpm-statistics.c:1233
 msgid "Show extra debugging information"
 msgstr ""
 "Допълнителна информация за изчистване на\n"
 "                                    грешки"
 
-#: src/cpm-main.c:174
+#: src/cpm-main.c:179
 msgid "Show version of installed program and exit"
 msgstr ""
 "Показване на версията на инсталираната\n"
 "                                    програма и спиране на програмата"
 
-#: src/cpm-main.c:176
+#: src/cpm-main.c:181
 msgid "Exit after a small delay (for debugging)"
 msgstr ""
 "Изход след малко забавяне (за изчистване на\n"
 "                                    грешки)"
 
-#: src/cpm-main.c:178
+#: src/cpm-main.c:183
 msgid "Exit after the manager has loaded (for debugging)"
 msgstr ""
 "Изход след зареждане на управлението (за\n"
 "                                    изчистване на грешки)"
 
-#: src/cpm-main.c:189 src/cpm-main.c:193
+#: src/cpm-main.c:194 src/cpm-main.c:198
 msgid "CAFE Power Manager"
 msgstr "Управление на захранването на CAFE"
 
@@ -1253,51 +1253,51 @@ msgstr "Събуждане"
 msgid "Suspend failed"
 msgstr "Неуспешно приспиване"
 
-#: src/cpm-manager.c:578
+#: src/cpm-manager.c:583
 msgid "Computer failed to suspend."
 msgstr "Неуспех при приспиване на компютъра."
 
-#: src/cpm-manager.c:580
+#: src/cpm-manager.c:585
 msgid "Failed to suspend"
 msgstr "Неуспешно приспиване"
 
-#: src/cpm-manager.c:584
+#: src/cpm-manager.c:589
 msgid "Computer failed to hibernate."
 msgstr "Неуспех при дълбоко приспиване на компютъра."
 
-#: src/cpm-manager.c:586
+#: src/cpm-manager.c:591
 msgid "Failed to hibernate"
 msgstr "Неуспешно дълбоко приспиване"
 
-#: src/cpm-manager.c:591
+#: src/cpm-manager.c:596
 msgid "Failure was reported as:"
 msgstr "Докладваната грешка е:"
 
-#: src/cpm-manager.c:604
+#: src/cpm-manager.c:609
 msgid "Visit help page"
 msgstr "Погледнете страницата с помощта"
 
-#: src/cpm-manager.c:850
+#: src/cpm-manager.c:857
 msgid "Display DPMS activated"
 msgstr "Управлението на захранването на екрана е включено"
 
-#: src/cpm-manager.c:869
+#: src/cpm-manager.c:876
 msgid "On battery power"
 msgstr "На батерии"
 
-#: src/cpm-manager.c:887
+#: src/cpm-manager.c:894
 msgid "Laptop lid is closed"
 msgstr "Екранът е затворен"
 
-#: src/cpm-manager.c:925
+#: src/cpm-manager.c:934
 msgid "Power Information"
 msgstr "Информация за заряда"
 
-#: src/cpm-manager.c:1107
+#: src/cpm-manager.c:1126
 msgid "Battery may be broken"
 msgstr "Батериите ви може да са повредени"
 
-#: src/cpm-manager.c:1110
+#: src/cpm-manager.c:1129
 #, c-format
 msgid ""
 "Battery has a very low capacity (%1.1f%%), which means that it may be old or "
@@ -1306,157 +1306,157 @@ msgstr ""
 "Батерията има много нисък капацитет (%1.1f %%), което означава, че може да е "
 "остаряла или повредена."
 
-#: src/cpm-manager.c:1159
+#: src/cpm-manager.c:1180
 msgid "Battery Charged"
 msgid_plural "Batteries Charged"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-manager.c:1205
+#: src/cpm-manager.c:1228
 msgid "Battery Discharging"
 msgstr "Батериите се разреждат"
 
-#: src/cpm-manager.c:1209
+#: src/cpm-manager.c:1232
 #, c-format
 msgid "%s of battery power remaining (%.0f%%)"
 msgstr "Остават %s работа от батерии (%.0f %%)"
 
-#: src/cpm-manager.c:1212 src/cpm-manager.c:1224
+#: src/cpm-manager.c:1235 src/cpm-manager.c:1247
 #, c-format
 msgid "%s discharging (%.0f%%)"
 msgstr "%s се разрежда (%.0f %%)"
 
-#: src/cpm-manager.c:1217
+#: src/cpm-manager.c:1240
 msgid "UPS Discharging"
 msgstr "Разреждане на непрекъсваемото токозахранване"
 
-#: src/cpm-manager.c:1221
+#: src/cpm-manager.c:1244
 #, c-format
 msgid "%s of UPS backup power remaining (%.0f%%)"
 msgstr "Остават %s работа от непрекъсваемо токозахранване (%.0f %%)"
 
-#: src/cpm-manager.c:1305
+#: src/cpm-manager.c:1330
 msgid "Battery low"
 msgstr "Ниско ниво на батерията"
 
-#: src/cpm-manager.c:1308
+#: src/cpm-manager.c:1333
 msgid "Laptop battery low"
 msgstr "Ниско ниво на батерията на преносим компютър"
 
-#: src/cpm-manager.c:1314
+#: src/cpm-manager.c:1339
 #, c-format
 msgid "Approximately <b>%s</b> remaining (%.0f%%)"
 msgstr "Остава приблизително <b>%s</b> (%.0f %%)"
 
-#: src/cpm-manager.c:1318
+#: src/cpm-manager.c:1343
 msgid "UPS low"
 msgstr "Ниско ниво на непрекъсваемото токозахранване"
 
-#: src/cpm-manager.c:1322
+#: src/cpm-manager.c:1347
 #, c-format
 msgid "Approximately <b>%s</b> of remaining UPS backup power (%.0f%%)"
 msgstr ""
 "Остава приблизително <b>%s</b> живот на непрекъсваемото токозахранване (%.0f "
 "%%)"
 
-#: src/cpm-manager.c:1331 src/cpm-manager.c:1470
+#: src/cpm-manager.c:1356 src/cpm-manager.c:1497
 msgid "Mouse battery low"
 msgstr "Ниско ниво на батерията на мишката"
 
-#: src/cpm-manager.c:1334
+#: src/cpm-manager.c:1359
 #, c-format
 msgid "Wireless mouse is low in power (%.0f%%)"
 msgstr "Зарядът на безжичната мишка е нисък (%.0f %%)"
 
-#: src/cpm-manager.c:1338 src/cpm-manager.c:1478
+#: src/cpm-manager.c:1363 src/cpm-manager.c:1505
 msgid "Keyboard battery low"
 msgstr "Ниско ниво на батерията на клавиатурата"
 
-#: src/cpm-manager.c:1341
+#: src/cpm-manager.c:1366
 #, c-format
 msgid "Wireless keyboard is low in power (%.0f%%)"
 msgstr "Зарядът на безжичната клавиатура е нисък (%.0f %%)"
 
-#: src/cpm-manager.c:1345 src/cpm-manager.c:1487
+#: src/cpm-manager.c:1370 src/cpm-manager.c:1514
 msgid "PDA battery low"
 msgstr "Ниско ниво на батерията на цифровия помощник"
 
-#: src/cpm-manager.c:1348
+#: src/cpm-manager.c:1373
 #, c-format
 msgid "PDA is low in power (%.0f%%)"
 msgstr "Зарядът на цифровия помощник е нисък (%.0f %%)"
 
-#: src/cpm-manager.c:1352 src/cpm-manager.c:1497 src/cpm-manager.c:1507
+#: src/cpm-manager.c:1377 src/cpm-manager.c:1524 src/cpm-manager.c:1534
 msgid "Cell phone battery low"
 msgstr "Ниско ниво на батерията на мобилния телефон"
 
-#: src/cpm-manager.c:1355
+#: src/cpm-manager.c:1380
 #, c-format
 msgid "Cell phone is low in power (%.0f%%)"
 msgstr "Зарядът на мобилния телефон е нисък (%.0f %%)"
 
-#: src/cpm-manager.c:1359
+#: src/cpm-manager.c:1384
 msgid "Media player battery low"
 msgstr "Ниско ниво на батерията на музикалното устройство"
 
-#: src/cpm-manager.c:1362
+#: src/cpm-manager.c:1387
 #, c-format
 msgid "Media player is low in power (%.0f%%)"
 msgstr "Зарядът на музикалното устройство е нисък (%.0f %%)"
 
-#: src/cpm-manager.c:1366 src/cpm-manager.c:1516
+#: src/cpm-manager.c:1391 src/cpm-manager.c:1543
 msgid "Tablet battery low"
 msgstr "Ниско ниво на батерията на планшетния компютър"
 
-#: src/cpm-manager.c:1369
+#: src/cpm-manager.c:1394
 #, c-format
 msgid "Tablet is low in power (%.0f%%)"
 msgstr "Зарядът на планшетния компютър е нисък (%.0f %%)"
 
-#: src/cpm-manager.c:1373 src/cpm-manager.c:1525
+#: src/cpm-manager.c:1398 src/cpm-manager.c:1552
 msgid "Attached computer battery low"
 msgstr "Ниско ниво на батерията на свързания компютър"
 
-#: src/cpm-manager.c:1376
+#: src/cpm-manager.c:1401
 #, c-format
 msgid "Attached computer is low in power (%.0f%%)"
 msgstr "Зарядът на свързания компютър е нисък (%.0f %%)"
 
-#: src/cpm-manager.c:1424
+#: src/cpm-manager.c:1451
 msgid "Battery critically low"
 msgstr "Критично ниско ниво на батерията"
 
-#: src/cpm-manager.c:1427 src/cpm-manager.c:1585
+#: src/cpm-manager.c:1454 src/cpm-manager.c:1614
 msgid "Laptop battery critically low"
 msgstr "Критично ниско ниво на батерията"
 
-#: src/cpm-manager.c:1436
+#: src/cpm-manager.c:1463
 msgid "Plug in your AC adapter to avoid losing data."
 msgstr "Включете адаптера за ел. мрежа, за да не загубите данни."
 
-#: src/cpm-manager.c:1440
+#: src/cpm-manager.c:1467
 msgid "Computer will suspend very soon unless it is plugged in."
 msgstr ""
 "Съвсем скоро този компютър ще бъде приспан, ако не го включите в "
 "електрическата мрежа."
 
-#: src/cpm-manager.c:1444
+#: src/cpm-manager.c:1471
 msgid "Computer will hibernate very soon unless it is plugged in."
 msgstr ""
 "Съвсем скоро този компютър ще бъде дълбоко приспан, ако не го включите в "
 "електрическата мрежа."
 
-#: src/cpm-manager.c:1448
+#: src/cpm-manager.c:1475
 msgid "Computer will shutdown very soon unless it is plugged in."
 msgstr ""
 "Съвсем скоро този компютър ще бъде изключен, ако не го включите в "
 "електрическата мрежа."
 
-#: src/cpm-manager.c:1455 src/cpm-manager.c:1621
+#: src/cpm-manager.c:1482 src/cpm-manager.c:1650
 msgid "UPS critically low"
 msgstr "Критично ниско ниво на непрекъсваемото токозахранване"
 
-#: src/cpm-manager.c:1459
+#: src/cpm-manager.c:1486
 #, c-format
 msgid ""
 "Approximately <b>%s</b> of remaining UPS power (%.0f%%). Restore AC power to "
@@ -1466,7 +1466,7 @@ msgstr ""
 "%%). Включете компютъра към електрическата мрежа, за да избегнете загуба на "
 "данни."
 
-#: src/cpm-manager.c:1473
+#: src/cpm-manager.c:1500
 #, c-format
 msgid ""
 "Wireless mouse is very low in power (%.0f%%). This device will soon stop "
@@ -1475,7 +1475,7 @@ msgstr ""
 "Безжичната мишка е с много нисък заряд (%.0f %%). Ако не я презаредите, ще "
 "се изключи."
 
-#: src/cpm-manager.c:1481
+#: src/cpm-manager.c:1508
 #, c-format
 msgid ""
 "Wireless keyboard is very low in power (%.0f%%). This device will soon stop "
@@ -1484,7 +1484,7 @@ msgstr ""
 "Безжичната клавиатура е с много нисък заряд (%.0f %%). Ако не я презаредите, "
 "ще се изключи."
 
-#: src/cpm-manager.c:1490
+#: src/cpm-manager.c:1517
 #, c-format
 msgid ""
 "PDA is very low in power (%.0f%%). This device will soon stop functioning if "
@@ -1493,7 +1493,7 @@ msgstr ""
 "Цифровият помощник е с много нисък заряд (%.0f %%). Ако не го презаредите, "
 "ще се изключи."
 
-#: src/cpm-manager.c:1500
+#: src/cpm-manager.c:1527
 #, c-format
 msgid ""
 "Cell phone is very low in power (%.0f%%). This device will soon stop "
@@ -1502,7 +1502,7 @@ msgstr ""
 "Мобилният телефон е с много нисък заряд (%.0f %%). Ако не го презаредите, ще "
 "се изключи."
 
-#: src/cpm-manager.c:1510
+#: src/cpm-manager.c:1537
 #, c-format
 msgid ""
 "Media player is very low in power (%.0f%%). This device will soon stop "
@@ -1511,7 +1511,7 @@ msgstr ""
 "Музикалното устройство е с много нисък заряд (%.0f %%). Ако не го "
 "презаредите, ще се изключи."
 
-#: src/cpm-manager.c:1519
+#: src/cpm-manager.c:1546
 #, c-format
 msgid ""
 "Tablet is very low in power (%.0f%%). This device will soon stop functioning "
@@ -1520,7 +1520,7 @@ msgstr ""
 "Планшетният компютър е с много нисък заряд (%.0f %%). Ако не го презаредите, "
 "ще се изключи."
 
-#: src/cpm-manager.c:1528
+#: src/cpm-manager.c:1555
 #, c-format
 msgid ""
 "Attached computer is very low in power (%.0f%%). The device will soon "
@@ -1529,7 +1529,7 @@ msgstr ""
 "Свързаният компютър е с много нисък заряд (%.0f %%). Ако не го презаредите, "
 "ще се изключи."
 
-#: src/cpm-manager.c:1593
+#: src/cpm-manager.c:1622
 msgid ""
 "The battery is below the critical level and this computer will <b>power-off</"
 "b> when the battery becomes completely empty."
@@ -1537,7 +1537,7 @@ msgstr ""
 "Батерията е под критично ниското ниво. Този компютър ще бъде <b>изгасен</b>, "
 "когато батерията напълно се изчерпи."
 
-#: src/cpm-manager.c:1599
+#: src/cpm-manager.c:1628
 msgid ""
 "The battery is below the critical level and this computer is about to "
 "suspend.<br><b>NOTE:</b> A small amount of power is required to keep your "
@@ -1547,20 +1547,20 @@ msgstr ""
 "<br><b>БЕЛЕЖКА:</b> За поддържането на компютъра в това състояние е "
 "необходим малък заряд на батерията."
 
-#: src/cpm-manager.c:1606
+#: src/cpm-manager.c:1635
 msgid ""
 "The battery is below the critical level and this computer is about to "
 "hibernate."
 msgstr ""
 "Батерията е под критично ниското ниво. Този компютър ще бъде приспан дълбоко."
 
-#: src/cpm-manager.c:1611
+#: src/cpm-manager.c:1640
 msgid ""
 "The battery is below the critical level and this computer is about to "
 "shutdown."
 msgstr "Батерията е под критично ниското ниво. Този компютър ще бъде изключен."
 
-#: src/cpm-manager.c:1629
+#: src/cpm-manager.c:1658
 msgid ""
 "The UPS is below the critical level and this computer will <b>power-off</b> "
 "when the UPS becomes completely empty."
@@ -1568,13 +1568,13 @@ msgstr ""
 "Батерията е под критично ниското ниво. Този компютър ще бъде <b>изгасен</b>, "
 "когато непрекъсваемото токозахранване се изтощи."
 
-#: src/cpm-manager.c:1635
+#: src/cpm-manager.c:1664
 msgid ""
 "The UPS is below the critical level and this computer is about to hibernate."
 msgstr ""
 "Батерията е под критично ниското ниво. Този компютър ще бъде дълбоко приспан."
 
-#: src/cpm-manager.c:1640
+#: src/cpm-manager.c:1669
 msgid ""
 "The UPS is below the critical level and this computer is about to shutdown."
 msgstr "Батерията е под критично ниското ниво. Този компютър ще бъде изключен."
@@ -1583,35 +1583,35 @@ msgstr "Батерията е под критично ниското ниво. �
 msgid "CAFE Power Preferences"
 msgstr "Настройки на захранването"
 
-#: src/cpm-prefs-core.c:238
+#: src/cpm-prefs-core.c:240
 msgid "Shutdown"
 msgstr "Изключване"
 
-#: src/cpm-prefs-core.c:245
+#: src/cpm-prefs-core.c:247
 msgid "Suspend"
 msgstr "Приспиване"
 
-#: src/cpm-prefs-core.c:248
+#: src/cpm-prefs-core.c:250
 msgid "Hibernate"
 msgstr "Дълбоко приспиване"
 
-#: src/cpm-prefs-core.c:251
+#: src/cpm-prefs-core.c:253
 msgid "Blank screen"
 msgstr "Черен екран"
 
-#: src/cpm-prefs-core.c:254
+#: src/cpm-prefs-core.c:256
 msgid "Ask me"
 msgstr "Запитване към потребителя"
 
-#: src/cpm-prefs-core.c:257
+#: src/cpm-prefs-core.c:259
 msgid "Do nothing"
 msgstr "Да не се прави нищо"
 
-#: src/cpm-prefs-core.c:317
+#: src/cpm-prefs-core.c:319
 msgid "Never"
 msgstr "Никога"
 
-#: src/cpm-statistics.c:67 src/cpm-statistics.c:410
+#: src/cpm-statistics.c:67 src/cpm-statistics.c:411
 msgid "Rate"
 msgstr "Лихва"
 
@@ -1619,11 +1619,11 @@ msgstr "Лихва"
 msgid "Charge"
 msgstr "Заряд"
 
-#: src/cpm-statistics.c:69 src/cpm-statistics.c:424
+#: src/cpm-statistics.c:69 src/cpm-statistics.c:425
 msgid "Time to full"
 msgstr "Време за зареждане"
 
-#: src/cpm-statistics.c:70 src/cpm-statistics.c:429
+#: src/cpm-statistics.c:70 src/cpm-statistics.c:430
 msgid "Time to empty"
 msgstr "Време за разреждане"
 
@@ -1663,199 +1663,200 @@ msgstr "Точност спрямо зареждането"
 msgid "Discharge accuracy"
 msgstr "Точност спрямо разреждането"
 
-#: src/cpm-statistics.c:121
+#: src/cpm-statistics.c:122
 msgid "Attribute"
 msgstr "Атрибут"
 
-#: src/cpm-statistics.c:128
+#: src/cpm-statistics.c:129
 msgid "Value"
 msgstr "Стойност"
 
-#: src/cpm-statistics.c:145
+#: src/cpm-statistics.c:146
 msgid "Image"
 msgstr "Изображение"
 
-#: src/cpm-statistics.c:151
+#: src/cpm-statistics.c:152
 msgid "Description"
 msgstr "Описание"
 
-#: src/cpm-statistics.c:230
+#: src/cpm-statistics.c:231
 msgid "Unknown"
 msgstr "Неизвестно"
 
-#: src/cpm-statistics.c:234
+#: src/cpm-statistics.c:235
 #, c-format
 msgid "%.0f second"
 msgid_plural "%.0f seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:239
+#: src/cpm-statistics.c:240
 #, c-format
 msgid "%.1f minute"
 msgid_plural "%.1f minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:244
+#: src/cpm-statistics.c:245
 #, c-format
 msgid "%.1f hour"
 msgid_plural "%.1f hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:248
+#: src/cpm-statistics.c:249
 #, c-format
 msgid "%.1f day"
 msgid_plural "%.1f days"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:257
+#: src/cpm-statistics.c:258
 msgid "Yes"
 msgstr "Да"
 
-#: src/cpm-statistics.c:257
+#: src/cpm-statistics.c:258
 msgid "No"
 msgstr "Не"
 
-#: src/cpm-statistics.c:346
+#: src/cpm-statistics.c:347
 msgid "Device"
 msgstr "Устройство"
 
-#: src/cpm-statistics.c:349
+#: src/cpm-statistics.c:350
 msgid "Type"
 msgstr "Вид"
 
-#: src/cpm-statistics.c:351
+#: src/cpm-statistics.c:352
 msgid "Vendor"
 msgstr "Производител"
 
-#: src/cpm-statistics.c:353
+#: src/cpm-statistics.c:354
 msgid "Model"
 msgstr "Модел"
 
-#: src/cpm-statistics.c:355
+#: src/cpm-statistics.c:356
 msgid "Serial number"
 msgstr "Сериен номер"
 
-#: src/cpm-statistics.c:360
+#: src/cpm-statistics.c:361
 msgid "Supply"
 msgstr "Предлагане"
 
-#: src/cpm-statistics.c:363
+#: src/cpm-statistics.c:364
 #, c-format
 msgid "%d second"
 msgid_plural "%d seconds"
 msgstr[0] ""
 msgstr[1] ""
 
-#: src/cpm-statistics.c:367
+#: src/cpm-statistics.c:368
 msgid "Refreshed"
 msgstr "Опреснена"
 
-#: src/cpm-statistics.c:377
+#: src/cpm-statistics.c:378
 msgid "Present"
 msgstr "Налична"
 
-#: src/cpm-statistics.c:384
+#: src/cpm-statistics.c:385
 msgid "Rechargeable"
 msgstr "Презареждаща"
 
-#: src/cpm-statistics.c:390
+#: src/cpm-statistics.c:391
 msgid "State"
 msgstr "Състояние"
 
-#: src/cpm-statistics.c:394
+#: src/cpm-statistics.c:395
 msgid "Energy"
 msgstr "Енергия"
 
-#: src/cpm-statistics.c:397
+#: src/cpm-statistics.c:398
 msgid "Energy when empty"
 msgstr "Енергия след разреждане"
 
-#: src/cpm-statistics.c:400
+#: src/cpm-statistics.c:401
 msgid "Energy when full"
 msgstr "Енергия след зареждане"
 
-#: src/cpm-statistics.c:403
+#: src/cpm-statistics.c:404
 msgid "Energy (design)"
 msgstr "Енергия (проектна)"
 
-#: src/cpm-statistics.c:417
+#: src/cpm-statistics.c:418
 msgid "Voltage"
 msgstr "Напрежение"
 
-#: src/cpm-statistics.c:439
+#: src/cpm-statistics.c:440
 msgid "Percentage"
 msgstr "Процент"
 
-#: src/cpm-statistics.c:446
+#: src/cpm-statistics.c:447
 msgid "Capacity"
 msgstr "Капацитет"
 
-#: src/cpm-statistics.c:451
+#: src/cpm-statistics.c:452
 msgid "Technology"
 msgstr "Технология"
 
-#: src/cpm-statistics.c:456
+#: src/cpm-statistics.c:457
 msgid "Online"
 msgstr "На линия"
 
-#: src/cpm-statistics.c:756
+#: src/cpm-statistics.c:755
 msgid "Device Information"
 msgstr "Информация за устройството"
 
-#: src/cpm-statistics.c:758
+#: src/cpm-statistics.c:757
 msgid "Device History"
 msgstr "История на устройството"
 
-#: src/cpm-statistics.c:760
+#: src/cpm-statistics.c:759
 msgid "Device Profile"
 msgstr "Профил на устройството"
 
-#: src/cpm-statistics.c:982 src/cpm-statistics.c:988 src/cpm-statistics.c:994
-#: src/cpm-statistics.c:1000
+#: src/cpm-statistics.c:993 src/cpm-statistics.c:999 src/cpm-statistics.c:1005
+#: src/cpm-statistics.c:1011
 msgid "Time elapsed"
 msgstr "Изминало време"
 
-#: src/cpm-statistics.c:984
+#: src/cpm-statistics.c:995
 msgid "Power"
 msgstr "Степен"
 
-#: src/cpm-statistics.c:990 src/cpm-statistics.c:1034 src/cpm-statistics.c:1040
-#: src/cpm-statistics.c:1046 src/cpm-statistics.c:1052
+#: src/cpm-statistics.c:1001 src/cpm-statistics.c:1046
+#: src/cpm-statistics.c:1052 src/cpm-statistics.c:1058
+#: src/cpm-statistics.c:1064
 msgid "Cell charge"
 msgstr "Заряд на клетката"
 
-#: src/cpm-statistics.c:996 src/cpm-statistics.c:1002
+#: src/cpm-statistics.c:1007 src/cpm-statistics.c:1013
 msgid "Predicted time"
 msgstr "Прогнозирано време"
 
-#: src/cpm-statistics.c:1036 src/cpm-statistics.c:1048
+#: src/cpm-statistics.c:1048 src/cpm-statistics.c:1060
 msgid "Correction factor"
 msgstr "Фактор за корекция"
 
-#: src/cpm-statistics.c:1042 src/cpm-statistics.c:1054
+#: src/cpm-statistics.c:1054 src/cpm-statistics.c:1066
 msgid "Prediction accuracy"
 msgstr "Точност на прогнозата"
 
-#: src/cpm-statistics.c:1219
+#: src/cpm-statistics.c:1236
 msgid "Select this device at startup"
 msgstr "Избиране на това устройство при стартиране"
 
-#: src/cpm-tray-icon.c:207
+#: src/cpm-tray-icon.c:210
 msgid ""
 "Copyright © 2011-2020 MATE developers\n"
-"Copyright © 2023 Pablo Barciela"
+"Copyright © 2023-2025 Pablo Barciela"
 msgstr ""
 
-#: src/cpm-tray-icon.c:318
+#: src/cpm-tray-icon.c:323
 #, c-format
 msgid "%s remaining"
 msgstr "Остават %s"
 
-#: src/cpm-tray-icon.c:372
+#: src/cpm-tray-icon.c:377
 msgid "_Preferences"
 msgstr "_Настройки"
 
