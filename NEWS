@@ -1,3 +1,14 @@
+### cafe-power-manager 2.0.0
+
+  * ci: some improvements
+  * po,hu: Fix build since gettext 0.22
+  * cpm-screensaver: org.freedesktop.ScreenSaver instead org.cafe.ScreenSaver
+  * update copyright to 2025 in about dialogs
+  * add G_GNUC_UNUSED in unused parameters
+  * cpm-statistics: avoid deprecated GTimeVal
+  * remove unused macros
+  * update translations
+
 ### cafe-power-manager 1.25.0
 
   * initial release: mate-power-manager 1.24.2 fork
