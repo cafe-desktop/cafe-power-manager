@@ -26,7 +26,7 @@ requires:
     - libxml-parser-perl
     - libxrandr-dev
     - make
-    - pkg-config
+    - pkgconf
     - xmlto
     - yelp-tools
 
