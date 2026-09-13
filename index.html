@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="icon" href="https://github.com/cafe-desktop/cafe-power-manager/raw/master/data/icons/16x16/apps/cafe-power-manager.png" />
+  <title>cafe-power-manager Code Analyzer results</title>
+</head>
+<body>
+<h1>
+  <a href="https://github.com/cafe-desktop">cafe-desktop</a>/<a href="https://github.com/cafe-desktop/cafe-power-manager">cafe-power-manager</a> Static analyzer results
+</h1>
+  <a href="https://github.com/cafe-desktop/cafe-power-manager" title="Github"><i class="fa fa-github fa-2x"></i>GitHub</a>
+  <a href="https://github.com/cafe-desktop/cafe-power-manager/actions/workflows/main.yml" title="Gihub Actions"><img src="https://github.com/cafe-desktop/cafe-power-manager/actions/workflows/main.yml/badge.svg" alt="Build Status" /></a>
+<hr/>
+Commit: <a href="https://github.com/cafe-desktop/cafe-power-manager/commit/e4a50330fc811814755b42431b98e6875555d607">e4a50330fc811814755b42431b98e6875555d607</a><br/>
+Compare: <a href="https://github.com/cafe-desktop/cafe-power-manager/compare/"></a><br/>
+Branch: <a href="https://github.com/cafe-desktop/cafe-power-manager/tree/devel">devel</a><br/>
+Time: 2026-09-13 09:16:57+00:00<br/>
+Messages:<br/>
+<pre>
+egg-idletime: fix use-after-free in egg_idletime_alarm_free()
+
+Fixes the warning:
+
+egg-idletime.c:336:2: warning: Use of memory after it is freed [unix.Malloc]
+  336 |         g_ptr_array_remove (idletime->priv->array, alarm);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+</pre>
+<a href="https://cafe-desktop.github.io/cafe-power-manager/output_e4a50330fc811814755b42431b98e6875555d607">Logs</a><br/>
+<br/>
+Warnings: 163<br/>
+<hr/>
+<ul>
+<li><a href="2026-09-13-091657-8747-cppcheck@e4a50330fc81_devel">2026-09-13-091657-8747-cppcheck@e4a50330fc81_devel</a></li>
+<li><a href="2026-09-13-091543-90938-1@e4a50330fc81_devel">2026-09-13-091543-90938-1@e4a50330fc81_devel</a></li>
+<li><a href=2026-09-12-091738-8486-cppcheck@06102826e657_master title="rename Gdk -> Cdk">2026-09-12-091738-8486-cppcheck@06102826e657_master</a> <a href="2026-09-12-091738-8486-cppcheck@06102826e657_master/output_06102826e6579c58a88ae0f18e329460b292c713">logs</a> 165</li>
+<li><a href=2026-09-12-091614-90937-1@06102826e657_master title="rename Gdk -> Cdk">2026-09-12-091614-90937-1@06102826e657_master</a> <a href="2026-09-12-091614-90937-1@06102826e657_master/output_06102826e6579c58a88ae0f18e329460b292c713">logs</a> 165</li>
+<li><a href=2026-09-11-211435-7917-cppcheck@ee44306dcfab_cdkpixbuf title="rename Gdk -> Cdk">2026-09-11-211435-7917-cppcheck@ee44306dcfab_cdkpixbuf</a> <a href="2026-09-11-211435-7917-cppcheck@ee44306dcfab_cdkpixbuf/output_ee44306dcfab0ba6e790fa1b87c106b05a9fb74f">logs</a> 165</li>
+<li><a href=2026-09-11-211320-90939-1@ee44306dcfab_cdkpixbuf title="rename Gdk -> Cdk">2026-09-11-211320-90939-1@ee44306dcfab_cdkpixbuf</a> <a href="2026-09-11-211320-90939-1@ee44306dcfab_cdkpixbuf/output_ee44306dcfab0ba6e790fa1b87c106b05a9fb74f">logs</a> 165</li>
+<li><a href=2025-09-25-072454-3629-cppcheck@e1612b2a67ef_master title="ci: 'pkgconf' instead transitional 'pkg-config'">2025-09-25-072454-3629-cppcheck@e1612b2a67ef_master</a> <a href="2025-09-25-072454-3629-cppcheck@e1612b2a67ef_master/output_e1612b2a67ef1e110a885585eb852a2d5ac8c236">logs</a> 157</li>
+<li><a href=2025-09-25-072322-94046-1@e1612b2a67ef_master title="ci: 'pkgconf' instead transitional 'pkg-config'">2025-09-25-072322-94046-1@e1612b2a67ef_master</a> <a href="2025-09-25-072322-94046-1@e1612b2a67ef_master/output_e1612b2a67ef1e110a885585eb852a2d5ac8c236">logs</a> 157</li>
+<li><a href=2025-08-10-211751-3544-cppcheck@bb80913549c7_master title="ci: add debian stable build">2025-08-10-211751-3544-cppcheck@bb80913549c7_master</a> <a href="2025-08-10-211751-3544-cppcheck@bb80913549c7_master/output_bb80913549c714560eaa2cc4114d77a38a444cf4">logs</a> 158</li>
+<li><a href=2025-08-10-211619-93737-1@bb80913549c7_master title="ci: add debian stable build">2025-08-10-211619-93737-1@bb80913549c7_master</a> <a href="2025-08-10-211619-93737-1@bb80913549c7_master/output_bb80913549c714560eaa2cc4114d77a38a444cf4">logs</a> 158</li>
+<li><a href=2025-08-10-210634-4631-cppcheck@bb80913549c7_devel title="ci: add debian stable build">2025-08-10-210634-4631-cppcheck@bb80913549c7_devel</a> <a href="2025-08-10-210634-4631-cppcheck@bb80913549c7_devel/output_bb80913549c714560eaa2cc4114d77a38a444cf4">logs</a> 158</li>
+<li><a href=2025-08-10-210500-93737-1@bb80913549c7_devel title="ci: add debian stable build">2025-08-10-210500-93737-1@bb80913549c7_devel</a> <a href="2025-08-10-210500-93737-1@bb80913549c7_devel/output_bb80913549c714560eaa2cc4114d77a38a444cf4">logs</a> 158</li>
+<li><a href=2025-06-06-093416-8309-cppcheck@5e010d0f2260_master title="Release 2.0.0">2025-06-06-093416-8309-cppcheck@5e010d0f2260_master</a> <a href="2025-06-06-093416-8309-cppcheck@5e010d0f2260_master/output_5e010d0f22600348ddab1e0df859f308a39bd59c">logs</a> 158</li>
+<li><a href=2025-06-06-093403-5491-cppcheck@5e010d0f2260_devel title="Release 2.0.0">2025-06-06-093403-5491-cppcheck@5e010d0f2260_devel</a> <a href="2025-06-06-093403-5491-cppcheck@5e010d0f2260_devel/output_5e010d0f22600348ddab1e0df859f308a39bd59c">logs</a> 158</li>
+<li><a href=2025-06-06-093240-93950-1@5e010d0f2260_master title="Release 2.0.0">2025-06-06-093240-93950-1@5e010d0f2260_master</a> <a href="2025-06-06-093240-93950-1@5e010d0f2260_master/output_5e010d0f22600348ddab1e0df859f308a39bd59c">logs</a> 158</li>
+<li><a href=2025-06-06-093229-93950-1@5e010d0f2260_devel title="Release 2.0.0">2025-06-06-093229-93950-1@5e010d0f2260_devel</a> <a href="2025-06-06-093229-93950-1@5e010d0f2260_devel/output_5e010d0f22600348ddab1e0df859f308a39bd59c">logs</a> 158</li>
+<li><a href=2025-06-06-085929-9096-cppcheck@5e010d0f2260_devel title="Release 2.0.0">2025-06-06-085929-9096-cppcheck@5e010d0f2260_devel</a> <a href="2025-06-06-085929-9096-cppcheck@5e010d0f2260_devel/output_5e010d0f22600348ddab1e0df859f308a39bd59c">logs</a> 158</li>
+<li><a href=2025-06-06-085756-93949-1@5e010d0f2260_devel title="Release 2.0.0">2025-06-06-085756-93949-1@5e010d0f2260_devel</a> <a href="2025-06-06-085756-93949-1@5e010d0f2260_devel/output_5e010d0f22600348ddab1e0df859f308a39bd59c">logs</a> 158</li>
+<li><a href=2025-06-06-084801-9018-cppcheck@aeddf1f298f1_devel title="po: update translations for 2.0.0">2025-06-06-084801-9018-cppcheck@aeddf1f298f1_devel</a> <a href="2025-06-06-084801-9018-cppcheck@aeddf1f298f1_devel/output_aeddf1f298f19b1507bd2f564d6095f7d31bcff9">logs</a> 158</li>
+<li><a href=2025-06-06-084626-93949-1@aeddf1f298f1_devel title="po: update translations for 2.0.0">2025-06-06-084626-93949-1@aeddf1f298f1_devel</a> <a href="2025-06-06-084626-93949-1@aeddf1f298f1_devel/output_aeddf1f298f19b1507bd2f564d6095f7d31bcff9">logs</a> 158</li>
+</ul>
+80M
+</body>
+</html>

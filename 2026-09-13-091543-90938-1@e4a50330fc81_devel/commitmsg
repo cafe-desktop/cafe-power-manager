@@ -1,0 +1,7 @@
+egg-idletime: fix use-after-free in egg_idletime_alarm_free()
+
+Fixes the warning:
+
+egg-idletime.c:336:2: warning: Use of memory after it is freed [unix.Malloc]
+  336 |         g_ptr_array_remove (idletime->priv->array, alarm);
+      |         ^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
