@@ -331,9 +331,9 @@ egg_idletime_alarm_free (EggIdletime *idletime, EggIdletimeAlarm *alarm)
 
 	if (alarm->xalarm)
 		XSyncDestroyAlarm (idletime->priv->dpy, alarm->xalarm);
+	g_ptr_array_remove (idletime->priv->array, alarm);
 	g_object_unref (alarm->idletime);
 	g_free (alarm);
-	g_ptr_array_remove (idletime->priv->array, alarm);
 	return TRUE;
 }
 
