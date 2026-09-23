@@ -1,3 +1,10 @@
+### cafe-power-manager 2.1.0
+
+  * ci: some improvements
+  * port from GxkPixbuf to CdkPixbuf
+  * egg-idletime: fix use-after-free in egg_idletime_alarm_free()
+
+
 ### cafe-power-manager 2.0.0
 
   * ci: some improvements
@@ -8,6 +15,7 @@
   * cpm-statistics: avoid deprecated GTimeVal
   * remove unused macros
   * update translations
+
 
 ### cafe-power-manager 1.25.0
 
