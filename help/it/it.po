@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-09-14 10:39+0200\n"
+"POT-Creation-Date: 2026-09-25 17:33+0200\n"
 "PO-Revision-Date: 2020-02-15 16:28+0000\n"
 "Last-Translator: Alessandro Volturno <alelvb@inwind.it>, 2020\n"
 "Language-Team: Italian (https://www.transifex.com/cafe/teams/13566/it/)\n"
@@ -221,8 +221,8 @@ msgstr ""
 #. (itstool) path: note/para
 #: C/index.docbook:180
 msgid ""
-"You can disable this notification by changing the dconf key <command>org."
-"cafe.power-manager notify-discharging</command>."
+"You can disable this notification by changing the dconf key "
+"<command>org.cafe.power-manager notify-discharging</command>."
 msgstr ""
 "E' possibile disabilitare questa notifica modificando la chiave dconf "
 "<command>org.cafe.power-manager notify-discharging</command>."
@@ -255,8 +255,8 @@ msgstr ""
 #. (itstool) path: note/para
 #: C/index.docbook:200
 msgid ""
-"You can disable this notification by changing the dconf key <command>org."
-"cafe.power-manager notify-fully-charged</command>."
+"You can disable this notification by changing the dconf key "
+"<command>org.cafe.power-manager notify-fully-charged</command>."
 msgstr ""
 "E' possibile disabilitare questa notifica modificando la chiave dconf "
 "<command>org.cafe.power-manager notify-fully-charged</command>."
@@ -309,8 +309,8 @@ msgstr ""
 #. (itstool) path: note/para
 #: C/index.docbook:232
 msgid ""
-"You can disable this notification by changing the dconf key <command>org."
-"cafe.power-manager notify-low-power</command>."
+"You can disable this notification by changing the dconf key "
+"<command>org.cafe.power-manager notify-low-power</command>."
 msgstr ""
 "E' possibile disabilitare questa notifica modificando la chiave dconf "
 "<command>org.cafe.power-manager notify-low-power</command>."
@@ -392,8 +392,8 @@ msgstr ""
 #. (itstool) path: note/para
 #: C/index.docbook:276
 msgid ""
-"You can disable this notification by changing the dconf key <command>org."
-"cafe.power-manager notify-sleep-failed</command>."
+"You can disable this notification by changing the dconf key "
+"<command>org.cafe.power-manager notify-sleep-failed</command>."
 msgstr ""
 "E' possibile disabilitare questa notifica modificando la chiave dconf "
 "<command>org.cafe.power-manager notify-sleep-failed</command>."
@@ -1041,10 +1041,10 @@ msgid ""
 msgstr ""
 "È necessario cambiare la modalità di sospensione del DPMS usato dal "
 "<application>Gestore di alimentazione di CAFE</application>. Apri "
-"<command>dconf-editor</command>, quindi cambia le chiavi <literal>org.cafe."
-"cafe.power-manager dpms-method-ac</literal> e <literal>org.cafe.power-"
-"manager dpms-method-battery</literal> in una delle modalità che risultano "
-"funzionanti, ad esempio standby, suspend o off."
+"<command>dconf-editor</command>, quindi cambia le chiavi "
+"<literal>org.cafe.cafe.power-manager dpms-method-ac</literal> e "
+"<literal>org.cafe.power-manager dpms-method-battery</literal> in una delle "
+"modalità che risultano funzionanti, ad esempio standby, suspend o off."
 
 #. (itstool) path: section/title
 #: C/index.docbook:689
@@ -1135,8 +1135,8 @@ msgid ""
 "For the first case, try to find the HAL processes that are running: "
 "<command>ps -eaf | grep hal</command>"
 msgstr ""
-"Nel primo caso prova ad esaminare i processi HAL in esecuzione: <command>ps -"
-"eaf | grep hal</command>"
+"Nel primo caso prova ad esaminare i processi HAL in esecuzione: <command>ps "
+"-eaf | grep hal</command>"
 
 #. (itstool) path: section/para
 #: C/index.docbook:747

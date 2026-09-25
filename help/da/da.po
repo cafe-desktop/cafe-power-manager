@@ -6,7 +6,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-09-14 10:39+0200\n"
+"POT-Creation-Date: 2026-09-25 17:33+0200\n"
 "PO-Revision-Date: 2020-02-15 16:28+0000\n"
 "Last-Translator: Stefano Karapetsas <stefano@karapetsas.com>, 2020\n"
 "Language-Team: Danish (https://www.transifex.com/cafe/teams/13566/da/)\n"
@@ -215,11 +215,11 @@ msgstr ""
 #. (itstool) path: note/para
 #: C/index.docbook:180
 msgid ""
-"You can disable this notification by changing the dconf key <command>org."
-"cafe.power-manager notify-discharging</command>."
+"You can disable this notification by changing the dconf key "
+"<command>org.cafe.power-manager notify-discharging</command>."
 msgstr ""
-"Du kan deaktivere denne påmindelse ved at ændre dconf-nøglen <command>org."
-"cafe.power-manager notify-discharging</command>."
+"Du kan deaktivere denne påmindelse ved at ændre dconf-nøglen "
+"<command>org.cafe.power-manager notify-discharging</command>."
 
 #. (itstool) path: section/title
 #: C/index.docbook:188
@@ -249,11 +249,11 @@ msgstr ""
 #. (itstool) path: note/para
 #: C/index.docbook:200
 msgid ""
-"You can disable this notification by changing the dconf key <command>org."
-"cafe.power-manager notify-fully-charged</command>."
+"You can disable this notification by changing the dconf key "
+"<command>org.cafe.power-manager notify-fully-charged</command>."
 msgstr ""
-"Du kan ændre denne påmindelse ved at ændre dconf-nøglen  <command>org.cafe."
-"power-manager notify-fully-charged</command>."
+"Du kan ændre denne påmindelse ved at ændre dconf-nøglen  "
+"<command>org.cafe.power-manager notify-fully-charged</command>."
 
 #. (itstool) path: note/para
 #: C/index.docbook:206
@@ -302,11 +302,11 @@ msgstr ""
 #. (itstool) path: note/para
 #: C/index.docbook:232
 msgid ""
-"You can disable this notification by changing the dconf key <command>org."
-"cafe.power-manager notify-low-power</command>."
+"You can disable this notification by changing the dconf key "
+"<command>org.cafe.power-manager notify-low-power</command>."
 msgstr ""
-"Du kan deaktivere denne påmindelse ved at ændre dconf-nøglen <command>org."
-"cafe.power-manager notify-low-power</command>."
+"Du kan deaktivere denne påmindelse ved at ændre dconf-nøglen "
+"<command>org.cafe.power-manager notify-low-power</command>."
 
 #. (itstool) path: section/title
 #: C/index.docbook:240
@@ -382,11 +382,11 @@ msgstr ""
 #. (itstool) path: note/para
 #: C/index.docbook:276
 msgid ""
-"You can disable this notification by changing the dconf key <command>org."
-"cafe.power-manager notify-sleep-failed</command>."
+"You can disable this notification by changing the dconf key "
+"<command>org.cafe.power-manager notify-sleep-failed</command>."
 msgstr ""
-"Du kan deaktivere denne påmindelse ved at ændre dconf-nøglen <command>org."
-"cafe.power-manager notify-sleep-failed</command>."
+"Du kan deaktivere denne påmindelse ved at ændre dconf-nøglen "
+"<command>org.cafe.power-manager notify-sleep-failed</command>."
 
 #. (itstool) path: section/title
 #: C/index.docbook:285
@@ -1241,8 +1241,8 @@ msgid ""
 "<_:orderedlist-1/>"
 msgstr ""
 "DETTE DOKUMENT OG MODIFICEREDE VERSIONER GØRES TILGÆNGELIGT UNDER "
-"BETINGELSERNE I GNU FREE DOCUMENTATION LICENSE UNDER DEN FORUDSÆTNING AT: <_:"
-"orderedlist-1/>"
+"BETINGELSERNE I GNU FREE DOCUMENTATION LICENSE UNDER DEN FORUDSÆTNING AT: "
+"<_:orderedlist-1/>"
 
 #. (itstool) path: formalpara/title
 #: C/legal.xml:77

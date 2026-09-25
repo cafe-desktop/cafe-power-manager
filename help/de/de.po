@@ -10,7 +10,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
-"POT-Creation-Date: 2023-09-14 10:39+0200\n"
+"POT-Creation-Date: 2026-09-25 17:33+0200\n"
 "PO-Revision-Date: 2020-02-15 16:28+0000\n"
 "Last-Translator: Marcel Artz <email@marcel-artz.de>, 2020\n"
 "Language-Team: German (https://www.transifex.com/cafe/teams/13566/de/)\n"
@@ -198,8 +198,8 @@ msgstr ""
 #. (itstool) path: note/para
 #: C/index.docbook:180
 msgid ""
-"You can disable this notification by changing the dconf key <command>org."
-"cafe.power-manager notify-discharging</command>."
+"You can disable this notification by changing the dconf key "
+"<command>org.cafe.power-manager notify-discharging</command>."
 msgstr ""
 
 #. (itstool) path: section/title
@@ -227,8 +227,8 @@ msgstr ""
 #. (itstool) path: note/para
 #: C/index.docbook:200
 msgid ""
-"You can disable this notification by changing the dconf key <command>org."
-"cafe.power-manager notify-fully-charged</command>."
+"You can disable this notification by changing the dconf key "
+"<command>org.cafe.power-manager notify-fully-charged</command>."
 msgstr ""
 
 #. (itstool) path: note/para
@@ -271,8 +271,8 @@ msgstr ""
 #. (itstool) path: note/para
 #: C/index.docbook:232
 msgid ""
-"You can disable this notification by changing the dconf key <command>org."
-"cafe.power-manager notify-low-power</command>."
+"You can disable this notification by changing the dconf key "
+"<command>org.cafe.power-manager notify-low-power</command>."
 msgstr ""
 
 #. (itstool) path: section/title
@@ -338,8 +338,8 @@ msgstr ""
 #. (itstool) path: note/para
 #: C/index.docbook:276
 msgid ""
-"You can disable this notification by changing the dconf key <command>org."
-"cafe.power-manager notify-sleep-failed</command>."
+"You can disable this notification by changing the dconf key "
+"<command>org.cafe.power-manager notify-sleep-failed</command>."
 msgstr ""
 
 #. (itstool) path: section/title
@@ -1038,8 +1038,8 @@ msgstr ""
 "DOKUMENTS ODER EIN LIEFERANT EINER DIESER PARTEIEN VON EINER PERSON FÜR "
 "DIREKTE, INDIREKTE, BESONDERE, ZUFÄLLIGE ODER ALS FOLGE AUFGETRETENE SCHÄDEN "
 "IRGENDEINER ART, EINSCHLIESSLICH, ABER NICHT BESCHRÄNKT AUF, SCHÄDEN DURCH "
-"GESCHÄFTSWERTVERLUSTE, ARBEITSAUSFÄLLE, COMPUTERAUSFÄLLE ODER -"
-"FUNKTIONSSTÖRUNGEN ODER JEGLICHE ANDERE SCHÄDEN ODER VERLUSTE, DIE DURCH "
+"GESCHÄFTSWERTVERLUSTE, ARBEITSAUSFÄLLE, COMPUTERAUSFÄLLE ODER "
+"-FUNKTIONSSTÖRUNGEN ODER JEGLICHE ANDERE SCHÄDEN ODER VERLUSTE, DIE DURCH "
 "ODER IM ZUSAMMENHANG MIT DER VERWENDUNG DES DOKUMENTS ODER EINER "
 "MODIFIZIERTEN VERSION DES DOKUMENTS ENTSTANDEN SIND, SELBST WENN DIESE "
 "PARTEI ÜBER MÖGLICHE SCHÄDEN INFORMIERT WORDEN SEIN SOLLTE, HAFTBAR GEMACHT "
