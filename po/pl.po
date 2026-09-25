@@ -19,9 +19,9 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: cafe-power-manager 2.0.0\n"
+"Project-Id-Version: cafe-power-manager 2.1.0\n"
 "Report-Msgid-Bugs-To: https://cafe-desktop.org/\n"
-"POT-Creation-Date: 2025-06-06 10:33+0200\n"
+"POT-Creation-Date: 2026-09-25 17:26+0200\n"
 "PO-Revision-Date: 2020-02-15 16:27+0000\n"
 "Last-Translator: Dominik Adrian Grzywak, 2020\n"
 "Language-Team: Polish (https://www.transifex.com/cafe/teams/13566/pl/)\n"
@@ -89,7 +89,7 @@ msgstr ""
 msgid ""
 "Copyright © 2006 Benjamin Canou\n"
 "Copyright © 2011-2020 MATE developers\n"
-"Copyright © 2023-2025 Pablo Barciela"
+"Copyright © 2023-2026 Pablo Barciela"
 msgstr ""
 
 #: applets/brightness/brightness-applet.c:827
@@ -153,7 +153,7 @@ msgstr ""
 msgid ""
 "Copyright © 2006-2007 Richard Hughes\n"
 "Copyright © 2011-2020 MATE developers\n"
-"Copyright © 2023-2025 Pablo Barciela"
+"Copyright © 2023-2026 Pablo Barciela"
 msgstr ""
 
 #: applets/inhibit/org.cafe.InhibitApplet.cafe-panel-applet.desktop.in.in:4
@@ -1857,7 +1857,7 @@ msgstr "Wybór tego urządzenia podczas uruchamiania"
 #: src/cpm-tray-icon.c:210
 msgid ""
 "Copyright © 2011-2020 MATE developers\n"
-"Copyright © 2023-2025 Pablo Barciela"
+"Copyright © 2023-2026 Pablo Barciela"
 msgstr ""
 
 #: src/cpm-tray-icon.c:323
