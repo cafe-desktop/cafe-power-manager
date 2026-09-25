@@ -3,96 +3,12 @@
 ##########################################################
 requires:
   debian:
-    # Useful URL: https://github.com/cafe-desktop/debian-packages
-    # cafe B-D: libkanberra-ctk3-dev libctk-3-dev libcafe-panel-applet-dev cafe-common
-    - aptitude
-    - autoconf-archive
-    - autopoint
-    - clang
-    - clang-tools
-    - cppcheck
-    - expect #required for unbuffer
-    - gcc
-    - git
-    - libdbus-glib-1-dev
-    - libgcrypt20-dev
-    - libglib2.0-dev
-    - libnotify-dev
-    - libpolkit-gobject-1-dev
-    - libtool-bin
-    - libupower-glib-dev
-    - libx11-dev
-    - libxext-dev
-    - libxml-parser-perl
-    - libxrandr-dev
-    - make
-    - pkgconf
-    - xmlto
-    - yelp-tools
-
-    #required for cafe-common
-    - autoconf
-
-    #required for cafe-panel
-    - gir1.2-freedesktop
-    - gobject-introspection
-    - gtk-doc-tools
-    - libatk1.0-dev
-    - libcairo2-dev
-    - libdconf-dev
-    - libgirepository1.0-dev
-    - libice-dev
-    - libpango1.0-dev
-    - librsvg2-dev
-    - libsm-dev
-    - libsoup-3.0-dev
-    - libxau-dev
-    - lsb-release
-    - meson
-
-    #required for libcafeweather
-    - intltool
-    - libtool
-    - libxml2-dev
-    - libxml2-utils
-    - tzdata
-
-    #required for cafe-desktop
-    - iso-codes
-    - libglib2.0-doc
-    - libstartup-notification0-dev
-
-    #required for libvnck
-    - build-essential
-    - docbook-xml
-    - gettext
-    - libxres-dev
-    - ninja-build
-
-    #required for libkanberra
-    - gnome-pkg-tools
-    - libltdl-dev
-    - libasound2-dev
-    - libvorbis-dev
-    - libtdb-dev
-    - libpulse-dev
-    - libgstreamer1.0-dev
 
 before_scripts:
-  - ./html-cppcheck
-  - ./debrepo-install 'libctk-3-dev gir1.2-ctk-3.0 libctk-3-common libctk-3-0 libctk-3-doc'
-  - ./install-from-git https://github.com/cafe-desktop/libkanberra master
-  - ./install-from-git https://github.com/cafe-desktop/libvnck master meson
-  - ./install-from-git https://github.com/cafe-desktop/cafe-common master
-  - ./install-from-git https://github.com/cafe-desktop/cafe-desktop master
-  - ./install-from-git https://github.com/cafe-desktop/cafe-menus master
-  - ./install-from-git https://github.com/cafe-desktop/libcafeweather master
-  - ./install-from-git https://github.com/cafe-desktop/cafe-panel master
+  - ./debrepo-install
 
 build_scripts:
-  - ./before-build
-  - ./make-scanbuild '--without-keyring --enable-compile-warnings=maximum'
-  - ./after-build
+  - ./build-debs https://github.com/cafe-desktop/debian-packages devel cafe-power-manager
 
 after_scripts:
   - if [ -f "gen-index" ]; then ./gen-index -l 20 -i https://github.com/${OWNER_NAME}/${REPO_NAME}/raw/master/data/icons/16x16/apps/cafe-power-manager.png; fi
