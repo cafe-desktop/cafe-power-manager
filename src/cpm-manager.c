@@ -840,18 +840,23 @@ static void
 cpm_manager_update_dpms_throttle (CpmManager *manager)
 {
 	CpmDpmsMode mode;
+	gboolean ret;
 	cpm_dpms_get_mode (manager->priv->dpms, &mode, NULL);
 
 	/* Throttle the manager when DPMS is active since we can't see it anyway */
 	if (mode == CPM_DPMS_MODE_ON) {
 		if (manager->priv->screensaver_dpms_throttle_id != 0) {
-			cpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_dpms_throttle_id);
-			manager->priv->screensaver_dpms_throttle_id = 0;
+			ret = cpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_dpms_throttle_id);
+			if (ret)
+				manager->priv->screensaver_dpms_throttle_id = 0;
 		}
 	} else {
 		/* if throttle already exists then remove */
 		if (manager->priv->screensaver_dpms_throttle_id != 0) {
-			cpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_dpms_throttle_id);
+			ret = cpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_dpms_throttle_id);
+			if (!ret)
+				return;
+			manager->priv->screensaver_dpms_throttle_id = 0;
 		}
 		/* TRANSLATORS: this is the cafe-screensaver throttle */
 		manager->priv->screensaver_dpms_throttle_id = cpm_screensaver_add_throttle (manager->priv->screensaver, _("Display DPMS activated"));
@@ -861,17 +866,24 @@ cpm_manager_update_dpms_throttle (CpmManager *manager)
 static void
 cpm_manager_update_ac_throttle (CpmManager *manager)
 {
+	gboolean ret;
+
 	/* Throttle the manager when we are not on AC power so we don't
 	   waste the battery */
 	if (!manager->priv->on_battery) {
 		if (manager->priv->screensaver_ac_throttle_id != 0) {
-			cpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_ac_throttle_id);
-			manager->priv->screensaver_ac_throttle_id = 0;
+			ret = cpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_ac_throttle_id);
+			if (ret)
+				manager->priv->screensaver_ac_throttle_id = 0;
 		}
 	} else {
 		/* if throttle already exists then remove */
-		if (manager->priv->screensaver_ac_throttle_id != 0)
-			cpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_ac_throttle_id);
+		if (manager->priv->screensaver_ac_throttle_id != 0) {
+			ret = cpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_ac_throttle_id);
+			if (!ret)
+				return;
+			manager->priv->screensaver_ac_throttle_id = 0;
+		}
 		/* TRANSLATORS: this is the cafe-screensaver throttle */
 		manager->priv->screensaver_ac_throttle_id = cpm_screensaver_add_throttle (manager->priv->screensaver, _("On battery power"));
 	}
@@ -880,17 +892,24 @@ cpm_manager_update_ac_throttle (CpmManager *manager)
 static void
 cpm_manager_update_lid_throttle (CpmManager *manager, gboolean lid_is_closed)
 {
+	gboolean ret;
+
 	/* Throttle the screensaver when the lid is close since we can't see it anyway
 	   and it may overheat the laptop */
 	if (lid_is_closed == FALSE) {
 		if (manager->priv->screensaver_lid_throttle_id != 0) {
-			cpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_lid_throttle_id);
-			manager->priv->screensaver_lid_throttle_id = 0;
+			ret = cpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_lid_throttle_id);
+			if (ret)
+				manager->priv->screensaver_lid_throttle_id = 0;
 		}
 	} else {
 		/* if throttle already exists then remove */
-		if (manager->priv->screensaver_lid_throttle_id != 0)
-			cpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_lid_throttle_id);
+		if (manager->priv->screensaver_lid_throttle_id != 0) {
+			ret = cpm_screensaver_remove_throttle (manager->priv->screensaver, manager->priv->screensaver_lid_throttle_id);
+			if (!ret)
+				return;
+			manager->priv->screensaver_lid_throttle_id = 0;
+		}
 		manager->priv->screensaver_lid_throttle_id = cpm_screensaver_add_throttle (manager->priv->screensaver, _("Laptop lid is closed"));
 	}
 }
