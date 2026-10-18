@@ -580,7 +580,7 @@ idle_changed_cb (CpmIdle      *idle G_GNUC_UNUSED,
 	 * leaves the screen dark until resume or lid-open. */
 	if (cpm_button_is_lid_closed (backlight->priv->button)) {
 		if (mode != CPM_IDLE_MODE_NORMAL) {
-			egg_debug ("ignoring mode %i as lid is closed", mode);
+			egg_debug ("ignoring mode %s as lid is closed", cpm_idle_mode_to_string (mode));
 			return;
 		}
 		egg_warning ("lid reports closed but user is active, waking anyway");
@@ -595,7 +595,7 @@ idle_changed_cb (CpmIdle      *idle G_GNUC_UNUSED,
 	 * NORMAL (wake) transition always goes through. */
 	if (!LOGIND_RUNNING() && !egg_console_kit_is_active (backlight->priv->console)) {
 		if (mode != CPM_IDLE_MODE_NORMAL) {
-			egg_debug ("ignoring mode %i as not on active console", mode);
+			egg_debug ("ignoring mode %s as not on active console", cpm_idle_mode_to_string (mode));
 			return;
 		}
 		egg_warning ("ConsoleKit reports inactive session but user is active, waking anyway");

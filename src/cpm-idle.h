@@ -59,6 +59,7 @@ typedef struct
 GType		 cpm_idle_get_type			(void);
 CpmIdle		*cpm_idle_new				(void);
 CpmIdleMode	 cpm_idle_get_mode			(CpmIdle	*idle);
+const gchar	*cpm_idle_mode_to_string		(CpmIdleMode	 mode);
 void		 cpm_idle_set_check_cpu			(CpmIdle	*idle,
 							 gboolean	 check_type_cpu);
 gboolean	 cpm_idle_set_timeout_dim		(CpmIdle	*idle,

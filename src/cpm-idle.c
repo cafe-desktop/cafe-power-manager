@@ -77,7 +77,7 @@ G_DEFINE_TYPE_WITH_PRIVATE (CpmIdle, cpm_idle, G_TYPE_OBJECT)
 /**
  * cpm_idle_mode_to_string:
  **/
-static const gchar *
+const gchar *
 cpm_idle_mode_to_string (CpmIdleMode mode)
 {
 	if (mode == CPM_IDLE_MODE_NORMAL)
