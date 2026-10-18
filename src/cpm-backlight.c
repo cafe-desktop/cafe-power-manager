@@ -573,14 +573,32 @@ idle_changed_cb (CpmIdle      *idle G_GNUC_UNUSED,
 	gboolean on_battery;
 	CpmDpmsMode dpms_mode;
 
-	/* don't dim or undim the screen when the lid is closed */
-	if (cpm_button_is_lid_closed (backlight->priv->button))
-		return;
+	/* don't dim or undim the screen when the lid is closed.
+	 * A NORMAL transition means the user is generating input, which is not
+	 * possible with the lid closed: if we get one, the reported lid state is
+	 * stale. Never block the wake on it: a blocked wake has no retry and
+	 * leaves the screen dark until resume or lid-open. */
+	if (cpm_button_is_lid_closed (backlight->priv->button)) {
+		if (mode != CPM_IDLE_MODE_NORMAL) {
+			egg_debug ("ignoring mode %i as lid is closed", mode);
+			return;
+		}
+		egg_warning ("lid reports closed but user is active, waking anyway");
+	}
 
-	/* don't dim or undim the screen unless ConsoleKit/systemd say we are on the active console */
+	/* don't dim or undim the screen unless ConsoleKit/systemd say we are on
+	 * the active console. egg_console_kit_is_active() fails closed: it returns
+	 * FALSE on any D-Bus error (ConsoleKit restarting, session object recreated
+	 * after the proxy was cached at startup, transient bus error). A false
+	 * negative here would eat the only wake event, leaving the screen dark
+	 * forever. Power saving transitions (DIM, BLANK) are still skipped, but a
+	 * NORMAL (wake) transition always goes through. */
 	if (!LOGIND_RUNNING() && !egg_console_kit_is_active (backlight->priv->console)) {
-		egg_debug ("ignoring as not on active console");
-		return;
+		if (mode != CPM_IDLE_MODE_NORMAL) {
+			egg_debug ("ignoring mode %i as not on active console", mode);
+			return;
+		}
+		egg_warning ("ConsoleKit reports inactive session but user is active, waking anyway");
 	}
 
 	if (mode == CPM_IDLE_MODE_NORMAL) {
