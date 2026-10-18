@@ -1,0 +1,1 @@
+backlight: log skipped idle modes as strings, not raw enum values
