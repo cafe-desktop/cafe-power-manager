@@ -1,0 +1,1 @@
+backlight: never block the wake transition on stale guards
